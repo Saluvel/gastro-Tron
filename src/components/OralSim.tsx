@@ -40,14 +40,14 @@ export function OralSim({ onExit }: OralSimProps) {
     No des opciones. Espera la respuesta del aspirante. Termina tu mensaje con la pregunta.`;
 
     try {
-      const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) throw new Error("API key missing");
+      const apiKey = process.env.GEMINI_API_KEY || '';
+      if (!apiKey) throw new Error("API_KEY_MISSING");
       const ai = new GoogleGenAI({ apiKey });
       
       const systemMessage: Message = { role: 'system', content: prompt };
       
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-pro",
+        model: "gemini-1.5-pro-latest",
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
       });
 
@@ -58,7 +58,11 @@ export function OralSim({ onExit }: OralSimProps) {
       ]);
     } catch (error) {
       console.error(error);
-      setMessages([{ role: 'assistant', content: "Error de conexión con el tribunal del Board." }]);
+      if (error instanceof Error && error.message === "API_KEY_MISSING") {
+        setMessages([{ role: 'assistant', content: "[ERROR] Falta GEMINI_API_KEY en tu entorno Vercel. Configura esta variable para usar la simulación oral." }]);
+      } else {
+        setMessages([{ role: 'assistant', content: "Error de conexión con el tribunal del Board." }]);
+      }
     }
     setIsTyping(false);
   };
@@ -74,8 +78,8 @@ export function OralSim({ onExit }: OralSimProps) {
     setIsTyping(true);
 
     try {
-      const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) throw new Error("API key missing");
+      const apiKey = process.env.GEMINI_API_KEY || '';
+      if (!apiKey) throw new Error("API_KEY_MISSING");
       const ai = new GoogleGenAI({ apiKey });
 
       const conversationHistory = newMessages.map(m => ({
@@ -91,14 +95,18 @@ export function OralSim({ onExit }: OralSimProps) {
       conversationHistory.push({ role: 'user', parts: [{ text: prompt }] });
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-pro",
+        model: "gemini-1.5-pro-latest",
         contents: conversationHistory,
       });
 
       setMessages([...newMessages, { role: 'assistant', content: response.text || "..." }]);
     } catch (error) {
       console.error(error);
-      setMessages([...newMessages, { role: 'assistant', content: "Error de red." }]);
+      if (error instanceof Error && error.message === "API_KEY_MISSING") {
+        setMessages([...newMessages, { role: 'assistant', content: "[ERROR] Falta GEMINI_API_KEY en tu entorno Vercel. Configura esta variable." }]);
+      } else {
+        setMessages([...newMessages, { role: 'assistant', content: "Error de red." }]);
+      }
     }
     setIsTyping(false);
   };

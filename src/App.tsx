@@ -194,7 +194,8 @@ export const renderWithAcronyms = (text: string) => {
   });
 };
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const apiKeyForOracle = process.env.GEMINI_API_KEY || '';
+const ai = apiKeyForOracle ? new GoogleGenAI({ apiKey: apiKeyForOracle }) : ({} as GoogleGenAI);
 
 const GastroChat = ({ onBack }: { onBack: () => void }) => {
   const [messages, setMessages] = useState<{ role: 'user' | 'model', text: string }[]>([]);
@@ -214,9 +215,15 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
+    if (!apiKeyForOracle) {
+       setMessages(prev => [...prev, { role: 'model', text: "[ERROR] Falta configurar la variable GEMINI_API_KEY en tu entorno (Vercel). Configúrala para usar el Oráculo." }]);
+       setIsLoading(false);
+       return;
+    }
+
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-pro",
+        model: "gemini-1.5-pro-latest",
         contents: userMsg,
         config: {
           systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
@@ -733,6 +740,9 @@ export default function App() {
       }
     } catch (error) {
       console.error(error);
+      if (error instanceof Error && error.message === "MISSING_API_KEY") {
+        alert("Falta la variable de entorno GEMINI_API_KEY en Vercel. Asegúrate de configurarla en los ajustes (Environment Variables) de tu proyecto en Vercel para que la generación de preguntas con IA funcione. Se mostrarán solo las preguntas almacenadas en caché o por defecto.");
+      }
       if (existingQuestions.length > 0) {
         const fallback = [...existingQuestions].sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
         setQuestions(fallback);

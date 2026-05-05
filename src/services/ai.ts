@@ -1,27 +1,27 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Question, Difficulty } from "../types/quiz";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
+const apiKey = process.env.GEMINI_API_KEY || '';
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : ({} as GoogleGenAI);
 
-export async function generateQuestions(topic: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
+async function fetchBatch(topic: string, difficulty: string, count: number): Promise<Question[]> {
   const prompt = `Eres un Profesor de Gastroenterología de nivel mundial evaluando candidatos en un examen de máxima exigencia.
   Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topic}".
   
   LÓGICA DE ESCALAMIENTO SEGÚN NIVEL:
   - Nivel "Fellow": Enfoque en manejo estándar según guías internacionales (ASGE/ESGE/AGA). Casos de presentación clásica pero con distractores académicos.
   - Nivel "Staff": Enfoque en "Zonas Grises". Dilemas terapéuticos donde las guías no son concluyentes o hay contraindicaciones relativas. Manejo de complicaciones peri-procedimiento y presentaciones atípicas.
-  - Nivel "Subspecialist" (Nivel Board Ultra): Máxima complejidad. Casos extremadamente raros, variantes genéticas, interpretación de data de Ensayos Clínicos fase III (Phase III Trials), controversias actuales en la literatura (NEJM, Lancet, Gastroenterology) y escenarios de "rescate" cuando el tratamiento de primera y segunda línea falla.
+  - Nivel "Subspecialist" (Nivel Board Ultra): Máxima complejidad. Casos extremadamente raros, variantes genéticas, interpretación de data de Ensayos Clínicos fase III, controversias actuales en la literatura.
 
   ESTÁNDARES PARA EL EXAMEN:
-  1. ENFOQUE: Casos clínicos de alto impacto. El objetivo es evaluar el razonamiento crítico y la toma de decisiones (Next Best Step).
+  1. ENFOQUE: Casos clínicos de alto impacto. El objetivo es evaluar el razonamiento crítico y la toma de decisiones.
   2. ESTRUCTURA DE RESPUESTA:
-     - La "explanation" DEBE seguir este orden: 
-       A) Interpretación del hallazgo.
-       B) Justificación clínica (por qué las otras son menos probables).
-       C) Justificación basada en Evidencia/Guía/Estudio Hito (cita el nombre del estudio o guía con año).
-  3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser TÉCNICA Y DETALLADA (nivel molecular/celular).
-  4. PERLA CLÍNICA: Un "Axioma" médico definitivo e inolvidable.
-  5. POR QUÉ CADA OPCIÓN ES INCORRECTA: En "whyWrong", explica científicamente por qué cada opción fallida es un error en este contexto específico.
+     A) Interpretación del hallazgo.
+     B) Justificación clínica.
+     C) Justificación basada en Evidencia/Guía/Estudio Hito.
+  3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser técnica y detallada.
+  4. PERLA CLÍNICA: Un "Axioma" médico definitivo.
+  5. POR QUÉ CADA OPCIÓN ES INCORRECTA: Define por qué fallan en "whyWrong".
   
   Estructura JSON:
   {
@@ -31,20 +31,15 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
     "options": ["string", "string", "string", "string"],
     "correctIndex": number,
     "explanation": "string (A+B+C)",
-    "fisiopato": "string (Explicación técnica profunda)",
+    "fisiopato": "string (Explicación técnica)",
     "clinicalPearl": "string",
-    "guideline": "string (Guía de referencia y año)",
-    "whyWrong": {
-      "0": "razón académica",
-      "1": "razón académica",
-      "2": "razón académica",
-      "3": "razón académica"
-    }
+    "guideline": "string",
+    "whyWrong": { "0": "razón", "1": "razón", "2": "razón", "3": "razón" }
   }`;
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-pro",
+      model: "gemini-1.5-pro-latest",
       contents: [{ parts: [{ text: prompt }] }],
       config: {
         responseMimeType: "application/json",
@@ -73,7 +68,7 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
                 }
               }
             },
-            required: ["text", "options", "correctIndex", "explanation", "fisiopato", "clinicalPearl", "guideline"]
+            required: ["text", "options", "correctIndex", "explanation", "fisiopato", "clinicalPearl", "guideline", "whyWrong"]
           }
         }
       }
@@ -85,10 +80,33 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
       ...q,
       id: q.id || Math.random().toString(36).substr(2, 9),
       topic: topic,
-      difficulty: difficulty
+      difficulty: difficulty as Difficulty
     }));
   } catch (error) {
-    console.error("Error generating questions:", error);
+    console.error("Error generating questions batch:", error);
     return [];
   }
+}
+
+export async function generateQuestions(topic: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
+  if (!apiKey) {
+    console.warn("Falta la API Key de Gemini: No se puede conectar con el modelo.");
+    throw new Error("MISSING_API_KEY");
+  }
+
+  // To prevent token truncation or timeout errors, chunk the requests into batches
+  const BATCH_SIZE = 4;
+  const batches: number[] = [];
+  let remaining = count;
+  while (remaining > 0) {
+    batches.push(Math.min(remaining, BATCH_SIZE));
+    remaining -= BATCH_SIZE;
+  }
+
+  // Fetch batches in parallel
+  const results = await Promise.all(
+    batches.map(batchCount => fetchBatch(topic, difficulty, batchCount))
+  );
+
+  return results.flat();
 }
