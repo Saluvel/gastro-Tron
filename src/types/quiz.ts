@@ -34,4 +34,5 @@ export interface UserProgress {
   weakTopics: string[];
   streak: number;
   lastSession: string;
+  achievements: string[];
 }

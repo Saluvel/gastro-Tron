@@ -20,7 +20,11 @@ import {
   Mic,
   User,
   Image as ImageIcon,
-  Activity
+  Activity,
+  Zap,
+  Camera,
+  X,
+  Star
 } from 'lucide-react';
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
@@ -43,7 +47,15 @@ const INITIAL_PROGRESS: UserProgress = {
   weakTopics: [],
   streak: 0,
   lastSession: new Date().toISOString(),
+  achievements: [],
 };
+
+const ACHIEVEMENTS = [
+  { id: 'first_win', name: 'Primer Diagnóstico', desc: 'Responde correctamente tu primera pregunta.', icon: <Activity className="text-tron-cyan" size={20} /> },
+  { id: 'streak_5', name: 'Racha Caliente', desc: 'Alcanza una racha de 5 aciertos seguidos.', icon: <Zap className="text-tron-yellow" size={20} /> },
+  { id: 'master_endo', name: 'Maestro Endoscopista', desc: 'Completa 20 preguntas con >90% de precisión.', icon: <Camera className="text-tron-sub" size={20} /> },
+  { id: 'survival_survivor', name: 'Sobreviviente', desc: 'Supera el modo Supervivencia.', icon: <Trophy className="text-tron-yellow" size={20} /> },
+];
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking'>('lobby');
@@ -62,10 +74,15 @@ export default function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [selectedAtlasItem, setSelectedAtlasItem] = useState<any>(null);
+  const [achievementNotify, setAchievementNotify] = useState<any>(null);
+  const [isTimedMode, setIsTimedMode] = useState(false);
+
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<UserProgress>(() => {
     const saved = localStorage.getItem('gastro_quiz_progress');
-    return saved ? JSON.parse(saved) : INITIAL_PROGRESS;
+    const parsed = saved ? JSON.parse(saved) : INITIAL_PROGRESS;
+    return { ...INITIAL_PROGRESS, ...parsed }; // Ensure new fields are present
   });
 
   const [cachedQuestions, setCachedQuestions] = useState<Record<string, Question[]>>(() => {
@@ -89,6 +106,44 @@ export default function App() {
     const dayOfYear = Math.floor((new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
     return allPearls[dayOfYear % allPearls.length];
   }, []);
+
+  const unlockAchievement = (id: string) => {
+    if (progress.achievements?.includes(id)) return;
+    
+    const achievement = ACHIEVEMENTS.find(a => a.id === id);
+    if (achievement) {
+      playAudio('achievement');
+      setAchievementNotify(achievement);
+      setProgress(prev => ({
+        ...prev,
+        achievements: [...(prev.achievements || []), id]
+      }));
+      setTimeout(() => setAchievementNotify(null), 5000);
+    }
+  };
+
+  // Add notification UI at the end of the main return
+  const AchievementNotification = () => (
+    <AnimatePresence>
+      {achievementNotify && (
+        <motion.div 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-4 bg-black/90 border-2 border-tron-yellow p-4 rounded-xl shadow-[0_0_30px_rgba(255,184,0,0.3)] backdrop-blur-md min-w-[300px]"
+        >
+           <div className="w-12 h-12 rounded-full bg-tron-yellow/20 flex items-center justify-center border border-tron-yellow">
+             {achievementNotify.icon}
+           </div>
+           <div>
+             <div className="text-[10px] text-tron-yellow uppercase font-black tracking-widest">¡Logro Desbloqueado!</div>
+             <div className="text-white font-bold uppercase">{achievementNotify.name}</div>
+             <div className="text-[10px] text-white/40">{achievementNotify.desc}</div>
+           </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 
   // Save progress whenever it changes
   useEffect(() => {
@@ -294,6 +349,12 @@ export default function App() {
     newAnswers[currentQuestionIndex] = index;
     setAnswers(newAnswers);
     setShowFeedback(true);
+
+    if (isAnsCorrect) {
+      unlockAchievement('first_win');
+      if (progress.streak + 1 >= 5) unlockAchievement('streak_5');
+      if (progress.totalCorrect + 1 >= 20 && (progress.totalCorrect + 1) / (progress.totalAttempted + 1) >= 0.9) unlockAchievement('master_endo');
+    }
   };
 
   const nextQuestion = async () => {
@@ -359,6 +420,7 @@ export default function App() {
   if (currentView === 'lobby') {
     return (
       <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen flex flex-col border-x-4 border-tron-cyan/10">
+        <AchievementNotification />
         <header className="flex justify-between items-center mb-12 border-b border-tron-cyan/30 pb-6">
           <div>
             <motion.h1 
@@ -888,6 +950,7 @@ export default function App() {
   if (currentView === 'quiz') {
     return (
       <div className="max-w-6xl mx-auto p-4 md:p-12 min-h-screen py-16 border-x-4 border-tron-cyan/5">
+        <AchievementNotification />
         <header className="flex justify-between items-end mb-12 border-b border-tron-cyan/20 pb-6 text-tron-text">
           <div className="flex items-center gap-6">
             <button 
@@ -1514,54 +1577,232 @@ export default function App() {
   }
 
   if (currentView === 'atlas') {
+    const atlasItems = [
+      { 
+        id: 1,
+        title: "Esófago de Barrett", 
+        class: "Praga C2M5", 
+        desc: "Epitelio columnar metaplásico", 
+        color: "text-tron-sub", 
+        border: "border-tron-sub/30",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Barrett_esophagus_labeled.jpg/800px-Barrett_esophagus_labeled.jpg",
+        hotspot: { x: "50%", y: "45%", label: "Unión Escamocolumnar Desplazada" },
+        longDesc: "Presencia de epitelio columnar que tapiza el esófago distal. La clasificación de Praga evalúa la extensión circunferencial (C) y máxima (M)."
+      },
+      { 
+        id: 2,
+        title: "Pólipo Sésil", 
+        class: "Paris Is, Kudo III", 
+        desc: "Adenoma tubular con displasia", 
+        color: "text-tron-yellow", 
+        border: "border-tron-yellow/30",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Colon_polyp.JPG/800px-Colon_polyp.JPG",
+        hotspot: { x: "40%", y: "40%", label: "Elevación Tipo Is" },
+        longDesc: "Lesión sésil con patrón de criptas tipo III de Kudo, sugestivo de adenoma. Requiere mucosectomía endoscópica."
+      },
+      { 
+        id: 3,
+        title: "Úlcera Gástrica", 
+        class: "Forrest IIa", 
+        desc: "Vaso visible no sangrante", 
+        color: "text-tron-cyan", 
+        border: "border-tron-cyan/30",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gastric_ulcer.jpg/800px-Gastric_ulcer.jpg",
+        hotspot: { x: "55%", y: "50%", label: "Vaso Visible (Alto Riesgo)" },
+        longDesc: "Úlcera de base limpia con vaso prominente. Riesgo de recidiva hemorrágica del 43%. Indicación de terapia dual."
+      },
+      { 
+        id: 4,
+        title: "Colitis Ulcerosa", 
+        class: "Mayo 3", 
+        desc: "Eritema severo, friabilidad, úlceras", 
+        color: "text-tron-sub", 
+        border: "border-tron-sub/30",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ulcerative_Colitis.jpg/800px-Ulcerative_Colitis.jpg",
+        hotspot: { x: "30%", y: "60%", label: "Friabilidad y Exudado" },
+        longDesc: "Mucosa con pérdida total de patrón vascular, sangrado espontáneo y ulceración extensa. Sugiere actividad moderada-severa."
+      },
+      { 
+        id: 5,
+        title: "Várices Esofágicas", 
+        class: "Grado III", 
+        desc: "Cordones gruesos confluyentes", 
+        color: "text-tron-yellow", 
+        border: "border-tron-yellow/30",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Esophageal_varices_01.jpg/800px-Esophageal_varices_01.jpg",
+        hotspot: { x: "50%", y: "70%", label: "Puntos Rojos (Cherry Red)" },
+        longDesc: "Várices de gran tamaño que ocupan más de un tercio de la luz. Los puntos rojos indican debilidad de la pared y alto riesgo de rotura."
+      },
+      { 
+        id: 6,
+        title: "Cáncer Gástrico", 
+        class: "Bormann III", 
+        desc: "Úlcera infiltrante con bordes elevados", 
+        color: "text-tron-cyan", 
+        border: "border-tron-cyan/30",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gastric_cancer_01.jpg/800px-Gastric_cancer_01.jpg",
+        hotspot: { x: "45%", y: "30%", label: "Borde Infiltrativo Irregular" },
+        longDesc: "Lesión ulcerada con infiltración de la pared circundante. La biopsia es mandatoria para determinar histología (tipo Laurén)."
+      },
+    ];
+
     return (
       <div className="max-w-6xl mx-auto p-4 md:p-12 min-h-screen">
         <header className="mb-12 flex justify-between items-end border-b border-white/10 pb-6">
           <div>
             <h1 className="text-4xl md:text-5xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter uppercase flex items-center gap-4">
-              <ImageIcon size={40} className="text-tron-cyan" /> Atlas Endoscópico
+              <Camera size={40} className="text-tron-cyan" /> Atlas Interactiva
             </h1>
             <p className="text-white/40 font-mono tracking-widest uppercase text-xs mt-2">Detección y Clasificación Visual</p>
           </div>
           <button 
-            onClick={() => setCurrentView('lobby')}
-            className="p-2 px-6 border border-white/10 rounded uppercase font-bold text-[10px] tracking-widest hover:bg-white/5 transition-all flex items-center gap-2"
+            onClick={() => { playAudio('click'); setCurrentView('lobby'); }}
+            className="p-2 px-6 border border-white/10 rounded uppercase font-bold text-[10px] tracking-widest hover:bg-white/5 transition-all flex items-center gap-2 text-white/60"
           >
             <RotateCcw size={14} /> Volver
           </button>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { title: "Esófago de Barrett", class: "Praga C2M5", desc: "Epitelio columnar metaplásico", color: "text-tron-sub", border: "border-tron-sub/30" },
-            { title: "Pólipo Sésil", class: "Paris Is, Kudo III", desc: "Adenoma tubular con displasia", color: "text-tron-yellow", border: "border-tron-yellow/30" },
-            { title: "Úlcera Gástrica", class: "Forrest IIa", desc: "Vaso visible no sangrante", color: "text-tron-cyan", border: "border-tron-cyan/30" },
-            { title: "Colitis Ulcerosa", class: "Mayo 3", desc: "Eritema severo, friabilidad, úlceras", color: "text-tron-sub", border: "border-tron-sub/30" },
-            { title: "Várices Esofágicas", class: "Grado III", desc: "Cordones gruesos confluyentes", color: "text-tron-yellow", border: "border-tron-yellow/30" },
-            { title: "Cáncer Gástrico", class: "Bormann III", desc: "Úlcera infiltrante con bordes elevados", color: "text-tron-cyan", border: "border-tron-cyan/30" },
-          ].map((item, idx) => (
-            <TronCard key={idx} accentColor="rgba(255,255,255,0.1)" className={`p-0 overflow-hidden border ${item.border}`}>
-               <div className="h-48 bg-black border-b border-white/10 relative group overflow-hidden flex items-center justify-center">
-                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent opacity-50" />
-                 <ImageIcon size={48} className="text-white/10 group-hover:scale-110 transition-transform duration-500" />
-                 <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/80 rounded font-mono text-[9px] text-white/50 border border-white/10">
+          {atlasItems.map((item, idx) => (
+            <TronCard 
+              key={idx} 
+              accentColor="rgba(255,255,255,0.1)" 
+              className={`p-0 overflow-hidden border cursor-pointer group hover:scale-[1.02] transition-all duration-300 ${item.border}`}
+              onClick={() => { playAudio('click'); setSelectedAtlasItem(item); }}
+            >
+               <div className="h-48 bg-black border-b border-white/10 relative overflow-hidden flex items-center justify-center">
+                 <img 
+                   src={item.url} 
+                   alt={item.title}
+                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                   referrerPolicy="no-referrer"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                 <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/80 rounded font-mono text-[9px] text-white/50 border border-white/10 z-10">
                    IMG_REF_{1000 + idx}
                  </div>
                </div>
                <div className="p-5 bg-tron-card/80">
-                 <h3 className={`font-black text-xl mb-1 uppercase ${item.color}`}>{item.title}</h3>
-                 <div className="flex items-center gap-2 mb-3">
-                   <Target size={12} className={item.color} />
-                   <span className="font-mono text-xs text-white/60 uppercase tracking-widest">{item.class}</span>
-                 </div>
-                 <p className="text-sm font-serif italic text-white/40">{item.desc}</p>
-                 <button className="mt-4 w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded uppercase text-[10px] font-bold tracking-widest transition-colors">
-                   Analizar Imagen
-                 </button>
+                  <h3 className={`font-black text-xl mb-1 uppercase ${item.color}`}>{item.title}</h3>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Target size={12} className={item.color} />
+                    <span className="font-mono text-xs text-white/60 uppercase tracking-widest">{item.class}</span>
+                  </div>
+                  <p className="text-sm font-serif italic text-white/40 mb-4">{item.desc}</p>
+                  <button className="w-full py-2 bg-white/5 group-hover:bg-tron-cyan/10 border border-white/10 group-hover:border-tron-cyan/40 rounded uppercase text-[10px] font-bold tracking-widest transition-all">
+                    Analizar Imagen
+                  </button>
                </div>
             </TronCard>
           ))}
         </div>
+
+        {/* Modal de Análisis Detallado */}
+        <AnimatePresence>
+          {selectedAtlasItem && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-8 backdrop-blur-md"
+              onClick={() => setSelectedAtlasItem(null)}
+            >
+              <motion.div 
+                initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                className="max-w-5xl w-full bg-tron-card border-2 border-tron-cyan/40 rounded-xl overflow-hidden shadow-[0_0_80px_rgba(0,242,255,0.2)]"
+                onClick={e => e.stopPropagation()}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="relative aspect-square lg:aspect-auto h-[400px] lg:h-[600px] bg-black border-r border-white/10 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={selectedAtlasItem.url} 
+                      className="w-full h-full object-contain"
+                      alt="Tactical Scan"
+                    />
+                    
+                    {/* Hotspot */}
+                    <div 
+                      className="absolute"
+                      style={{ left: selectedAtlasItem.hotspot.x, top: selectedAtlasItem.hotspot.y }}
+                    >
+                      <motion.div 
+                        animate={{ scale: [1, 1.6, 1], opacity: [0.5, 1, 0.5] }} 
+                        transition={{ repeat: Infinity, duration: 2.5 }}
+                        className="w-12 h-12 -ml-6 -mt-6 rounded-full border-2 border-tron-cyan bg-tron-cyan/20 blur-sm" 
+                      />
+                      <div className="w-4 h-4 -ml-2 -mt-2 bg-tron-cyan rounded-full shadow-[0_0_15px_#00f2ff]" />
+                      
+                      <div className="ml-6 -mt-2 w-48 p-3 bg-black/80 border border-tron-cyan/50 backdrop-blur-md rounded-md">
+                        <div className="text-[10px] text-tron-cyan uppercase font-black tracking-widest mb-1">Detección Confirmada</div>
+                        <div className="text-xs text-white/90 font-mono">{selectedAtlasItem.hotspot.label}</div>
+                      </div>
+                    </div>
+
+                    {/* Scanning Line Effect */}
+                    <motion.div 
+                      animate={{ top: ['0%', '100%', '0%'] }}
+                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      className="absolute left-0 right-0 h-px bg-tron-cyan/50 shadow-[0_0_10px_#00f2ff] z-10 pointer-events-none"
+                    />
+                  </div>
+
+                  <div className="p-8 lg:p-12 flex flex-col justify-between h-full bg-gradient-to-br from-tron-card to-black">
+                    <div>
+                      <div className="flex justify-between items-start mb-8">
+                        <div>
+                          <div className={`text-xs font-black uppercase tracking-[0.3em] mb-2 ${selectedAtlasItem.color}`}>
+                            CLASIFICACIÓN: {selectedAtlasItem.class}
+                          </div>
+                          <h2 className="text-4xl font-black text-white uppercase tracking-tighter text-glow-cyan">
+                            {selectedAtlasItem.title}
+                          </h2>
+                        </div>
+                        <button 
+                          onClick={() => { playAudio('click'); setSelectedAtlasItem(null); }} 
+                          className="p-2 hover:bg-white/5 rounded-full text-white/30 hover:text-white transition-all"
+                        >
+                          <X size={32} />
+                        </button>
+                      </div>
+
+                      <div className="space-y-8">
+                        <div className="relative">
+                          <p className="text-lg text-white/80 font-serif leading-relaxed italic border-l-4 border-tron-cyan/40 pl-6 py-2">
+                            "{selectedAtlasItem.longDesc}"
+                          </p>
+                          <Activity size={48} className="absolute -right-4 -top-4 text-white/5 rotate-12" />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                           <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                              <div className="text-[10px] text-white/30 uppercase font-black tracking-widest mb-2">Estado Biológico</div>
+                              <div className="text-sm text-tron-staff font-mono uppercase tracking-tight">Estable / Metaplásico</div>
+                           </div>
+                           <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                              <div className="text-[10px] text-white/30 uppercase font-black tracking-widest mb-2">Protocolo Sugerido</div>
+                              <div className="text-sm text-tron-cyan font-mono uppercase tracking-tight">Seguimiento / Biopsia</div>
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-12 flex gap-4">
+                       <button 
+                         onClick={() => { playAudio('click'); setSelectedAtlasItem(null); }}
+                         className="flex-1 py-4 bg-tron-cyan/10 hover:bg-tron-cyan/20 border border-tron-cyan/30 hover:border-tron-cyan text-tron-cyan font-black uppercase tracking-widest rounded-lg transition-all"
+                       >
+                         Cerrar Escaneo
+                       </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
@@ -1619,6 +1860,33 @@ export default function App() {
                  <p className="text-xl font-black text-tron-staff mt-1">
                    {accuracy >= 80 ? 'ATTENDING' : accuracy >= 60 ? 'SENIOR' : 'JUNIOR'}
                  </p>
+               </div>
+             </div>
+
+             <div className="mb-12">
+               <h3 className="text-[10px] uppercase text-white/30 font-black tracking-[0.4em] mb-6 flex items-center gap-2">
+                 <Star size={14} className="text-tron-yellow" /> Archivo de Logros
+               </h3>
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                 {ACHIEVEMENTS.map(ach => (
+                   <div 
+                    key={ach.id} 
+                    className={cn(
+                      "p-4 rounded-xl border flex flex-col items-center text-center transition-all duration-500",
+                      progress.achievements?.includes(ach.id) 
+                        ? "bg-white/5 border-tron-yellow/30 shadow-[0_0_20px_rgba(255,184,0,0.1)]" 
+                        : "bg-black/20 border-white/5 opacity-20 grayscale scale-95"
+                    )}
+                   >
+                     <div className={cn(
+                       "w-12 h-12 rounded-full flex items-center justify-center mb-3 border backdrop-blur-sm",
+                       progress.achievements?.includes(ach.id) ? "bg-tron-yellow/10 border-tron-yellow/50" : "bg-black/40 border-white/5"
+                     )}>
+                       {ach.icon}
+                     </div>
+                     <span className="text-[9px] font-black uppercase text-white tracking-[0.1em] leading-tight">{ach.name}</span>
+                   </div>
+                 ))}
                </div>
              </div>
 
