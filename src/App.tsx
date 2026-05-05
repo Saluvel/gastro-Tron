@@ -245,8 +245,10 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
     <div className="flex flex-col h-[calc(100vh-160px)] md:h-[calc(100vh-200px)] border border-tron-cyan/20 bg-tron-card/50 rounded-2xl overflow-hidden backdrop-blur-md">
        <div className="p-4 border-b border-tron-cyan/20 bg-tron-cyan/5 flex justify-between items-center">
           <div className="flex items-center gap-3">
-             <div className="w-10 h-10 rounded-full border border-tron-cyan flex items-center justify-center shadow-[0_0_10px_rgba(0,242,255,0.4)] animate-pulse">
-                <Brain size={20} className="text-tron-cyan" />
+             <div className="w-10 h-10 rounded-full border-2 border-tron-cyan/30 flex items-center justify-center shadow-[0_0_15px_rgba(0,242,255,0.2)] animate-slow-spin">
+                <div className="w-6 h-6 rounded-full border-2 border-tron-cyan flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-tron-cyan shadow-[0_0_10px_#00f2ff]" />
+                </div>
              </div>
              <div>
                 <h3 className="text-sm font-black text-white tracking-widest uppercase">Oráculo GAS-TRON</h3>
@@ -342,6 +344,7 @@ export default function App() {
   const [selectedPearl, setSelectedPearl] = useState<any>(null);
   const [flashIndex, setFlashIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isOracleOpen, setIsOracleOpen] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<UserProgress>(() => {
@@ -1968,6 +1971,47 @@ export default function App() {
             </aside>
           </div>
         )}
+
+        {/* Floating Oracle Chat Button */}
+        <div className="fixed bottom-8 right-8 z-[60] flex flex-col items-end gap-4">
+          <AnimatePresence>
+            {isOracleOpen && (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="w-[350px] md:w-[450px] shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+              >
+                <div className="h-[500px]">
+                  <GastroChat onBack={() => setIsOracleOpen(false)} />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <button
+            onClick={() => {
+              setIsOracleOpen(!isOracleOpen);
+              playAudio('click');
+            }}
+            className={cn(
+              "group relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500",
+              isOracleOpen ? "rotate-180" : ""
+            )}
+          >
+            <div className="absolute inset-0 rounded-full border-2 border-tron-cyan/30 animate-slow-spin shadow-[0_0_20px_rgba(0,242,255,0.2)]" />
+            <div className="absolute inset-2 rounded-full border-2 border-tron-cyan group-hover:border-white transition-colors flex items-center justify-center shadow-[0_0_15px_rgba(0,242,255,0.4)]">
+              <div className="w-2 h-2 rounded-full bg-tron-cyan group-hover:bg-white animate-pulse" />
+            </div>
+            
+            {/* Tooltip */}
+            {!isOracleOpen && (
+              <div className="absolute right-full mr-4 px-3 py-1 bg-tron-cyan text-black text-[10px] font-black uppercase tracking-widest rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                Consultar Oráculo
+              </div>
+            )}
+          </button>
+        </div>
       </div>
     );
   }

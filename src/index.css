@@ -56,6 +56,15 @@
     @apply bg-white shadow-[0_0_20px_white];
   }
 
+  .animate-slow-spin {
+    animation: slow-spin 4s linear infinite;
+  }
+
+  @keyframes slow-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
   }
