@@ -4,40 +4,41 @@ import { Question, Difficulty } from "../types/quiz";
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export async function generateQuestions(topic: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
-  const prompt = `Eres un Profesor de Gastroenterología de alto nivel preparando a Residentes Senior y Fellows para sus exámenes de certificación (Board).
+  const prompt = `Eres un Profesor de Gastroenterología evaluando a un Fellow de primer año en su EXAMEN ORAL de certificación.
   Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topic}".
   
-  ESTÁNDARES DE CALIDAD EXIGIDOS:
-  1. Si dificultad es "Fellow" o "Staff":
-     - EVITA definiciones simples. ENFÓCATE en: Manejo de complicaciones complejas, algoritmos de decisión de segunda línea y fisiopatología molecular/celular relevante.
-     - La sección "explanation" DEBE dividirse mentalmente en: Hallazgo Clínico + Explicación Fisiopatológica + Justificación de la respuesta correcta.
-  2. Cada pregunta debe incluir una "clinicalPearl" que sea un "mecanismo de memoria" o dato clave para el examen de certificación.
-  3. La sección "fisiopato" es CRÍTICA: Explica el mecanismo biológico subyacente (ej: cascada de citoquinas en Crohn, hemodinámica portal en cirrosis).
-  4. Los distractores (opciones incorrectas) deben ser plausibles y representar errores comunes en la práctica clínica.
+  ESTÁNDARES PARA EL EXAMEN ORAL:
+  1. ENFOQUE: Casos clínicos de "pasillo" y "tablero". El objetivo es evaluar el razonamiento clínico y la toma de decisiones (Next Best Step).
+  2. ESTRUCTURA DE RESPUESTA:
+     - La "explanation" DEBE seguir este orden: 
+       A) Interpretación del hallazgo.
+       B) Justificación clínica.
+       C) Justificación basada en Guía/Estudio Hito (cita el nombre del estudio si aplica).
+  3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" es tu oportunidad de lucirte. DEBE ser MUY DETALLADA a nivel molecular, celular o hemodinámico. Por ejemplo, en porfiria no digas solo "acúmulo de ALA y PBG", explica QUÉ PASA con el grupo Hem, qué enzimas se bloquean exactamente, y POR QUÉ esa molécula específica es neurotóxica (ej: daño neuronal directo vs vasoespasmo). Se busca una nivel de detalle digno de un tratado de medicina interna.
+  4. PERLA CLÍNICA: Al final (en clinicalPearl), danos un "Axioma" médico definitivo que no se le pueda olvidar a un gastroenterólogo sobre este tema.
   
   Estructura JSON:
   {
-    "id": "string",
     "topic": "${topic}",
     "difficulty": "${difficulty}",
-    "text": "string (Caso clínico detallado)",
+    "text": "string (Caso clínico estructurado)",
     "options": ["string", "string", "string", "string"],
     "correctIndex": number,
-    "explanation": "string",
-    "fisiopato": "string",
+    "explanation": "string (A+B+C)",
+    "fisiopato": "string (Explicación técnica profunda)",
     "clinicalPearl": "string",
-    "guideline": "string",
+    "guideline": "string (Guía de referencia y año)",
     "whyWrong": {
-      "0": "explicación de por qué es incorrecta",
-      "1": "explicación de por qué es incorrecta",
-      "2": "explicación de por qué es incorrecta",
-      "3": "explicación de por qué es incorrecta"
+      "0": "razón académica",
+      "1": "razón académica",
+      "2": "razón académica",
+      "3": "razón académica"
     }
   }`;
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.5-pro",
       contents: [{ parts: [{ text: prompt }] }],
       config: {
         responseMimeType: "application/json",

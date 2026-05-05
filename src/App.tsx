@@ -16,15 +16,23 @@ import {
   TrendingDown,
   LayoutDashboard,
   Timer,
-  ShieldCheck
+  ShieldCheck,
+  Mic,
+  User,
+  Image as ImageIcon,
+  Activity
 } from 'lucide-react';
-import { MeldCalculator, ChildPughCalculator } from './components/Calculators';
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
 import { Question, Difficulty, UserProgress, Topic } from './types/quiz';
 import { generateQuestions } from './services/ai';
 import { GlowButton } from './components/GlowButton';
 import { TronCard } from './components/TronCard';
+import { OralSim } from './components/OralSim';
+import { RadarChart } from './components/RadarChart';
+import { ClinicalCases } from './components/ClinicalCases';
+import { Leaderboard } from './components/Leaderboard';
+import { playAudio } from './lib/audio';
 import { cn } from './lib/utils';
 
 // --- INITIAL STATE & PERSISTENCE ---
@@ -38,8 +46,12 @@ const INITIAL_PROGRESS: UserProgress = {
 };
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks'>('lobby');
+  const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking'>('lobby');
   const [isSimMode, setIsSimMode] = useState(false);
+  const [isSurvivalMode, setIsSurvivalMode] = useState(false);
+  const [showDailyGuide, setShowDailyGuide] = useState(false);
+  const [isOralMode, setIsOralMode] = useState(true); // Default to true as per user interest
+  const [revealedOral, setRevealedOral] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
   const [targetQuestionCount, setTargetCount] = useState(10);
   const [pearlsSearch, setPearlsSearch] = useState('');
@@ -66,6 +78,18 @@ export default function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
+  const dailyPearl = useMemo(() => {
+    const allPearls = SEED_QUESTIONS.map(q => ({
+      text: q.clinicalPearl,
+      topic: GASTRO_TOPICS.find(t => t.id === q.topic)?.name,
+      ref: q.guideline,
+      question: q.text,
+      explanation: q.explanation
+    }));
+    const dayOfYear = Math.floor((new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+    return allPearls[dayOfYear % allPearls.length];
+  }, []);
+
   // Save progress whenever it changes
   useEffect(() => {
     localStorage.setItem('gastro_quiz_progress', JSON.stringify(progress));
@@ -86,13 +110,34 @@ export default function App() {
 
   const userRank = useMemo(() => {
     const xp = progress.totalCorrect * 10;
-    if (xp > 3000) return { name: 'Gastro-Chief (Staff)', color: 'text-tron-sub' };
-    if (xp > 2000) return { name: 'Senior Fellow', color: 'text-tron-staff' };
+    if (xp > 5000) return { name: 'Maestro Consultor (Chief)', color: 'text-tron-sub' };
+    if (xp > 2500) return { name: 'Senior Fellow', color: 'text-tron-staff' };
     if (xp > 1200) return { name: 'Fellow Gastro', color: 'text-tron-fellow' };
-    if (xp > 600) return { name: 'Residente R3 (Chief)', color: 'text-tron-cyan' };
-    if (xp > 200) return { name: 'Residente R2', color: 'text-tron-yellow' };
+    if (xp > 500) return { name: 'Residente R3 (Senior)', color: 'text-tron-cyan' };
+    if (xp > 150) return { name: 'Residente R2', color: 'text-tron-yellow' };
     return { name: 'Residente R2 (Base)', color: 'text-white/60' };
   }, [progress.totalCorrect]);
+
+  const stats = useMemo(() => {
+    const topicsArray = Object.keys(progress.byTopic);
+    const worstTopicId = topicsArray.reduce((prev, curr) => {
+      const prevStats = progress.byTopic[prev];
+      const currStats = progress.byTopic[curr];
+      const prevRatio = prevStats.correct / prevStats.attempted;
+      const currRatio = currStats.correct / currStats.attempted;
+      return prevRatio < currRatio ? prev : curr;
+    }, topicsArray[0] || '');
+
+    const worstTopicName = GASTRO_TOPICS.find(t => t.id === worstTopicId)?.name || 'Sin datos';
+    
+    return {
+      accuracy: progress.totalAttempted > 0 
+        ? Math.round((progress.totalCorrect / progress.totalAttempted) * 100) 
+        : 0,
+      worstTopic: worstTopicName,
+      totalXp: progress.totalCorrect * 10
+    };
+  }, [progress]);
 
   const toggleBookmark = (id: string) => {
     setBookmarks(prev => 
@@ -105,8 +150,10 @@ export default function App() {
   }, [showFeedback, currentQuestionIndex, answers, questions]);
 
   const startSimMode = async () => {
+    playAudio('start');
     setIsLoading(true);
     setIsSimMode(true);
+    setIsSurvivalMode(false);
     setCurrentView('quiz');
     
     // Pick 5 questions from each major topic pool (seeds + cache)
@@ -132,6 +179,31 @@ export default function App() {
     setIsLoading(false);
   };
 
+  const startSurvivalMode = async () => {
+    playAudio('start');
+    setIsLoading(true);
+    setIsSimMode(false);
+    setIsSurvivalMode(true);
+    setCurrentView('quiz');
+    
+    const allSeeds = SEED_QUESTIONS;
+    const allCached = Object.values(cachedQuestions).flat() as Question[];
+    const simQuestions = [...allSeeds, ...allCached].sort(() => Math.random() - 0.5);
+    
+    if (simQuestions.length < 10) {
+      alert("Necesitas acumular más preguntas para el Modo Supervivencia.");
+      setCurrentView('lobby');
+      setIsSurvivalMode(false);
+    } else {
+      setQuestions(simQuestions);
+      setAnswers(new Array(simQuestions.length).fill(null));
+      setCurrentQuestionIndex(0);
+      setShowFeedback(false);
+      setTimeLeft(0); // No global timer, just death on wrong
+    }
+    setIsLoading(false);
+  };
+
   // Timer logic for Sim Mode
   useEffect(() => {
     let timer: any;
@@ -151,8 +223,10 @@ export default function App() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
   const startQuiz = async (topic: Topic) => {
+    playAudio('start');
     setSelectedTopic(topic);
     setIsSimMode(false);
+    setIsSurvivalMode(false);
     setIsLoading(true);
     setCurrentView('quiz');
     
@@ -189,6 +263,7 @@ export default function App() {
         setAnswers(new Array(finalQuestions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowFeedback(false);
+        setRevealedOral(false);
       } else {
         throw new Error("No hay preguntas disponibles");
       }
@@ -200,6 +275,7 @@ export default function App() {
         setAnswers(new Array(fallback.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowFeedback(false);
+        setRevealedOral(false);
       } else {
         alert("Error al cargar protocolos. Verifica tu conexión.");
         setCurrentView('lobby');
@@ -210,6 +286,10 @@ export default function App() {
 
   const handleAnswerSelect = (index: number) => {
     if (showFeedback) return;
+    const isAnsCorrect = index === questions[currentQuestionIndex].correctIndex;
+    if (isAnsCorrect) playAudio('correct');
+    else playAudio('wrong');
+    
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = index;
     setAnswers(newAnswers);
@@ -217,6 +297,12 @@ export default function App() {
   };
 
   const nextQuestion = async () => {
+    // If Survival Mode and answered wrong, game over
+    if (isSurvivalMode && answers[currentQuestionIndex] !== questions[currentQuestionIndex].correctIndex) {
+      finishQuiz();
+      return;
+    }
+
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setShowFeedback(false);
@@ -278,9 +364,23 @@ export default function App() {
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-5xl md:text-6xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter"
+              className="text-5xl md:text-6xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter flex items-center gap-3"
             >
-              GASTRO-TRON <span className="text-xs font-mono tracking-[0.3em] text-tron-yellow ml-4 uppercase opacity-70">Fellowship Protocol</span>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                className="w-12 h-12 md:w-16 md:h-16 text-tron-cyan shrink-0 drop-shadow-[0_0_15px_rgba(0,242,255,0.8)] animate-[spin_8s_linear_infinite]"
+              >
+                <circle cx="12" cy="12" r="10" strokeWidth="2" strokeDasharray="16 4" />
+                <circle cx="12" cy="12" r="6" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.7" />
+                <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.9" />
+              </svg>
+              <span>GASTRO-TRON</span> 
+              <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] text-tron-yellow ml-2 md:ml-4 uppercase opacity-70 self-end mb-2 hidden sm:inline-block">
+                Fellowship Protocol
+              </span>
             </motion.h1>
             <p className="text-cyan-200/60 font-medium uppercase tracking-[0.2em] mt-2 italic text-sm">
               Especialidad Médica & Perlas Fisiopatológicas
@@ -314,14 +414,14 @@ export default function App() {
                 <div className="text-right">
                   <p className="text-[10px] text-tron-yellow uppercase tracking-widest font-bold mb-1">Total Acumulado</p>
                   <p className="text-4xl font-mono text-white leading-none">
-                    {progress.totalCorrect * 10} <span className="text-xs text-tron-cyan">XP</span>
+                    {stats.totalXp} <span className="text-xs text-tron-cyan">XP</span>
                   </p>
                 </div>
                 <div className="w-[1px] bg-tron-cyan/20"></div>
                 <div className="text-right">
                   <p className="text-[10px] text-tron-yellow uppercase tracking-widest font-bold mb-1">Rendimiento</p>
                   <p className="text-4xl font-mono text-white leading-none">
-                    {progress.totalAttempted > 0 ? Math.round((progress.totalCorrect / progress.totalAttempted) * 100) : 0}%
+                    {stats.accuracy}%
                   </p>
                 </div>
               </div>
@@ -332,35 +432,66 @@ export default function App() {
           <aside className="col-span-12 lg:col-span-3 space-y-6">
             <div className="bg-tron-aside border border-tron-cyan/20 p-5 rounded-xl">
               <p className="text-[10px] text-tron-cyan uppercase font-bold mb-4 tracking-widest flex items-center gap-2">
-                <Target size={12} /> Estado de Protocolo
+                <Brain size={12} /> ADN de Rendimiento
               </p>
               <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between text-[10px] uppercase tracking-tighter mb-1 text-white/40 font-bold">
-                    <span>Nivel de Acceso</span>
-                    <span className="text-tron-staff">{selectedDifficulty}</span>
+                <div className="p-3 bg-white/5 rounded border border-white/5">
+                  <p className="text-[9px] text-white/40 uppercase mb-1 font-bold">Punto Débil Crítico</p>
+                  <p className={cn(
+                    "text-xs font-bold truncate",
+                    stats.accuracy < 50 ? "text-tron-yellow" : "text-tron-sub"
+                  )}>
+                    {stats.worstTopic}
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2 bg-white/5 rounded">
+                    <p className="text-[8px] text-white/40 uppercase">Precisión</p>
+                    <p className="text-lg font-mono text-tron-cyan">{stats.accuracy}%</p>
                   </div>
-                  <div className="h-1 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-tron-staff w-1/3 shadow-[0_0_5px_#ff9500]" />
+                  <div className="p-2 bg-white/5 rounded">
+                    <p className="text-[8px] text-white/40 uppercase">Racha</p>
+                    <p className="text-lg font-mono text-tron-yellow">{progress.streak} <span className="text-[8px]">WIN</span></p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
+                  <p className="text-[9px] text-white/30 uppercase tracking-[0.2em] font-bold mt-2">Dificultad de Sesión</p>
                   {(['Fellow', 'Staff', 'Subspecialist'] as Difficulty[]).map(lvl => (
                     <button 
                       key={lvl}
                       onClick={() => setSelectedDifficulty(lvl)}
                       className={cn(
-                        "w-full text-left p-3 text-xs border-l-2 transition-all uppercase tracking-widest font-bold",
+                        "w-full text-left px-3 py-2 text-[10px] border-l-2 transition-all uppercase tracking-widest font-bold",
                         selectedDifficulty === lvl 
                           ? "bg-tron-cyan/10 border-tron-cyan text-tron-cyan"
-                          : "border-transparent text-white/30 hover:bg-white/5 hover:text-white/60"
+                          : "border-transparent text-white/20 hover:bg-white/5 hover:text-white/40"
                       )}
                     >
-                      {lvl}
+                      {lvl === 'Subspecialist' ? 'Nivel Board (Ultra)' : lvl}
                     </button>
                   ))}
                 </div>
               </div>
+            </div>
+
+            <div className="bg-tron-aside border border-tron-yellow/20 p-5 rounded-xl">
+               <p className="text-[10px] text-tron-yellow uppercase font-bold mb-4 tracking-widest flex items-center gap-2">
+                 <Trophy size={12} /> Logros
+               </p>
+               <div className="flex flex-wrap gap-2">
+                 <div className={cn("p-2 rounded border", progress.totalCorrect >= 10 ? "border-tron-yellow text-tron-yellow bg-tron-yellow/10 shadow-[0_0_10px_rgba(255,184,0,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Primera Gota: 10 Correctas">
+                    <Target size={16} />
+                 </div>
+                 <div className={cn("p-2 rounded border", progress.streak >= 5 ? "border-tron-cyan text-tron-cyan bg-tron-cyan/10 shadow-[0_0_10px_rgba(0,242,255,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="On Fire: Racha de 5">
+                    <TrendingDown size={16} />
+                 </div>
+                 <div className={cn("p-2 rounded border", progress.totalAttempted >= 50 ? "border-tron-sub text-tron-sub bg-tron-sub/10 shadow-[0_0_10px_rgba(255,68,68,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Sobreviviente: 50 Intentos">
+                    <ShieldCheck size={16} />
+                 </div>
+                 <div className={cn("p-2 rounded border", Object.values(progress.byTopic).some(t => (t as { attempted: number; correct: number }).correct >= 20) ? "border-white text-white bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.4)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Jefe de Servicio: 20 Correctas en 1 Tema">
+                    <Trophy size={16} />
+                 </div>
+               </div>
             </div>
 
             {progress.weakTopics.length > 0 && (
@@ -389,6 +520,18 @@ export default function App() {
               <p className="text-[10px] text-white/40 uppercase font-bold mb-4 tracking-widest">Protocolos de Estudio</p>
               <div className="space-y-2">
                 <button 
+                  onClick={() => setCurrentView('oral_sim')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'oral_sim' 
+                      ? "bg-tron-sub/20 border-tron-sub text-tron-sub" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <Mic size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Simulador Board Oral</span>
+                </button>
+                <button 
                   onClick={() => setCurrentView('pearls')}
                   className={cn(
                     "w-full p-3 rounded flex items-center gap-3 transition-all border",
@@ -411,6 +554,66 @@ export default function App() {
                 >
                   <ShieldCheck size={18} />
                   <span className="text-xs uppercase font-bold tracking-tight">Casos Guardados</span>
+                </button>
+                <button 
+                  onClick={() => setCurrentView('flashcards')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'flashcards' 
+                      ? "bg-tron-yellow/20 border-tron-yellow text-tron-yellow" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <Brain size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Memoria (Flashcards)</span>
+                </button>
+                <button 
+                  onClick={() => setCurrentView('atlas')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'atlas' 
+                      ? "bg-tron-cyan/20 border-tron-cyan text-tron-cyan" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <LayoutDashboard size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Atlas Visual</span>
+                </button>
+                <button 
+                  onClick={() => setCurrentView('cases')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'cases' 
+                      ? "bg-tron-cyan/20 border-tron-cyan text-tron-cyan" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <Activity size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Casos Ramificados</span>
+                </button>
+                <button 
+                  onClick={() => setCurrentView('ranking')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'ranking' 
+                      ? "bg-tron-yellow/20 border-tron-yellow text-tron-yellow" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <Trophy size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">La Red (Ranking)</span>
+                </button>
+                <button 
+                  onClick={() => setCurrentView('profile')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'profile' 
+                      ? "bg-tron-cyan/20 border-tron-cyan text-tron-cyan" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <User size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Disco de Identidad</span>
                 </button>
               </div>
             </div>
@@ -444,27 +647,44 @@ export default function App() {
           </aside>
 
           <section className="col-span-12 lg:col-span-9">
-             <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <TronCard accentColor="rgba(255,184,0,0.4)" className="p-8 border-2 border-tron-yellow/50 bg-tron-yellow/5 h-full">
                    <p className="text-tron-yellow font-black uppercase tracking-widest mb-4 flex items-center gap-2">
-                     <ShieldCheck size={16} /> Protocolo de Simulacro
+                     <ShieldCheck size={16} /> Protocolo Simulacro
                    </p>
-                   <h2 className="text-2xl font-bold text-white mb-2">Prueba de Suficiencia Fellow</h2>
+                   <h2 className="text-2xl font-bold text-white mb-2">Time Attack</h2>
                    <p className="text-xs text-white/50 font-serif italic mb-6">
-                     Examen trans-temático. 60 segundos por pregunta. Sin retroalimentación inmediata.
+                     Trans-temático. 60s por preg.
                    </p>
                    <GlowButton 
                     variant="staff" 
                     onClick={startSimMode}
-                    className="w-full"
+                    className="w-full mt-auto"
                    >
-                     Iniciar Simulación
+                     Iniciar
+                   </GlowButton>
+                </TronCard>
+
+                <TronCard accentColor="rgba(255,68,68,0.4)" className="p-8 border-2 border-tron-sub/50 bg-tron-sub/5 h-full">
+                   <p className="text-tron-sub font-black uppercase tracking-widest mb-4 flex items-center gap-2">
+                     <Target size={16} /> Muerte Súbita
+                   </p>
+                   <h2 className="text-2xl font-bold text-white mb-2">Supervivencia</h2>
+                   <p className="text-xs text-white/50 font-serif italic mb-6">
+                     Un error y se acaba el protocolo. ¿Cuántas lograrás?
+                   </p>
+                   <GlowButton 
+                    variant="sub" 
+                    onClick={startSurvivalMode}
+                    className="w-full mt-auto border-tron-sub text-tron-sub"
+                   >
+                     Entrar al Grid
                    </GlowButton>
                 </TronCard>
 
                 <TronCard accentColor="rgba(0,242,255,0.4)" className="p-8 border-2 border-tron-cyan/20 bg-tron-cyan/5 h-full">
                    <p className="text-tron-cyan font-black uppercase tracking-widest mb-4 flex items-center gap-2">
-                     <LayoutDashboard size={16} /> Configuración Global
+                     <LayoutDashboard size={16} /> Configuración
                    </p>
                    <h2 className="text-xl font-bold text-white mb-6">Carga de Protocolo</h2>
                    
@@ -490,15 +710,70 @@ export default function App() {
                         * Afecta tanto módulos individuales como simulacros.
                       </p>
                    </div>
+
+                   <div className="mt-8 pt-6 border-t border-white/5 space-y-4">
+                      <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold">Modo de Evaluación</p>
+                      <button 
+                        onClick={() => setIsOralMode(!isOralMode)}
+                        className={cn(
+                          "w-full p-4 rounded-xl border flex items-center justify-between transition-all group",
+                          isOralMode ? "bg-tron-cyan/10 border-tron-cyan shadow-[0_0_15px_rgba(0,242,255,0.1)]" : "bg-white/5 border-white/10 opacity-60"
+                        )}
+                      >
+                        <div className="flex items-center gap-3 text-left">
+                          <Mic size={20} className={isOralMode ? "text-tron-cyan" : "text-white/40"} />
+                          <div>
+                            <p className={cn("text-xs font-bold uppercase", isOralMode ? "text-tron-cyan" : "text-white")}>Interrogatorio Oral</p>
+                            <p className="text-[9px] text-white/30 uppercase">Oculta opciones hasta que verbalices</p>
+                          </div>
+                        </div>
+                        <div className={cn(
+                          "w-10 h-5 rounded-full relative transition-colors",
+                          isOralMode ? "bg-tron-cyan" : "bg-white/10"
+                        )}>
+                          <div className={cn(
+                            "absolute top-1 w-3 h-3 rounded-full bg-black transition-all",
+                            isOralMode ? "right-1" : "left-1"
+                          )} />
+                        </div>
+                      </button>
+                    </div>
                 </TronCard>
               </div>
 
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-6 pt-4">
                  <h2 className="text-2xl font-display font-black text-white uppercase tracking-tighter italic">
                    Módulos Especializados <span className="text-tron-cyan opacity-50 ml-2">[{targetQuestionCount} Preguntas]</span>
                  </h2>
                  <div className="h-[1px] flex-1 bg-gradient-to-r from-tron-cyan/40 to-transparent ml-6" />
               </div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-8 p-6 rounded-2xl border-2 border-tron-sub/40 bg-tron-sub/5 relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Lightbulb size={120} />
+                </div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="bg-tron-sub text-black text-[10px] font-black px-2 py-0.5 rounded-sm uppercase tracking-widest shadow-[0_0_10px_rgba(255,68,68,0.5)]">
+                      High-Yield Daily Pearl
+                    </span>
+                    <span className="text-[10px] text-white/40 uppercase font-mono tracking-widest">
+                      Protocolo #{new Date().getDate()} | {dailyPearl.topic}
+                    </span>
+                  </div>
+                  <p className="text-xl md:text-2xl text-white font-serif italic leading-tight mb-4 pr-12">
+                    "{dailyPearl.text}"
+                  </p>
+                  <div className="flex items-center gap-4 text-[9px] text-tron-sub/60 uppercase font-bold tracking-[0.2em]">
+                    <span className="flex items-center gap-1"><FileText size={10} /> Evidencia: {dailyPearl.ref}</span>
+                    <button onClick={() => setShowDailyGuide(true)} className="hover:text-tron-sub transition-colors underline decoration-dotted underline-offset-4">Ver Guía Completa</button>
+                  </div>
+                </div>
+              </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {GASTRO_TOPICS.map((topic) => (
@@ -536,6 +811,69 @@ export default function App() {
           </section>
         </main>
 
+        <AnimatePresence>
+          {showDailyGuide && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+              onClick={() => setShowDailyGuide(false)}
+            >
+              <motion.div 
+                initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="w-full max-w-2xl"
+              >
+                <TronCard accentColor="rgba(0,242,255,0.4)" className="p-8 border-2 border-tron-cyan/30 bg-tron-card/95 relative shadow-[0_0_50px_rgba(0,242,255,0.1)]">
+                  <button 
+                    onClick={() => setShowDailyGuide(false)}
+                    className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
+                  >
+                     <RotateCcw size={16} />
+                  </button>
+                  <div className="flex items-center gap-3 text-tron-cyan mb-6">
+                    <Brain size={24} />
+                    <h3 className="font-black text-2xl uppercase tracking-tighter">Análisis de Perla</h3>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-[10px] text-white/40 uppercase tracking-widest font-bold mb-2">Contexto Clínico</h4>
+                      <p className="text-white/80 font-serif leading-relaxed text-sm p-4 bg-white/5 rounded border border-white/5">
+                        {dailyPearl.question}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-[10px] text-tron-yellow uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+                        <Lightbulb size={12} /> Perla Dorada
+                      </h4>
+                      <p className="text-xl text-tron-yellow font-serif italic border-l-2 border-tron-yellow/50 pl-4 py-1">
+                        "{dailyPearl.text}"
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-[10px] text-white/40 uppercase tracking-widest font-bold mb-2">Explicación Racional</h4>
+                      <div className="text-white/70 font-sans text-sm leading-loose p-5 bg-black/40 rounded border border-white/10 space-y-4">
+                        <div className="whitespace-pre-wrap">{dailyPearl.explanation || "No hay explicación extendida disponible."}</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 pt-4 border-t border-white/10 flex justify-between items-center text-[10px] uppercase font-bold text-white/40 tracking-widest">
+                    <span>{dailyPearl.topic}</span>
+                    <span className="flex items-center gap-2"><FileText size={12} className="text-tron-sub" /> {dailyPearl.ref}</span>
+                  </div>
+                </TronCard>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <footer className="mt-12 flex justify-between items-center py-6 border-t border-white/5">
           <div className="flex gap-3 items-center opacity-30">
              <div className="w-2 h-2 bg-tron-cyan rounded-full animate-pulse shadow-[0_0_10px_cyan]" />
@@ -568,17 +906,19 @@ export default function App() {
             </h2>
           </div>
           <div className="flex items-center gap-4">
-            <button
-               onClick={() => toggleBookmark(currentQuestion.id)}
-               className={cn(
-                 "p-2 rounded-lg border transition-all hover:scale-110 active:scale-95",
-                 bookmarks.includes(currentQuestion.id) 
-                   ? "bg-tron-yellow text-black border-tron-yellow shadow-[0_0_15px_#ffb800]" 
-                   : "bg-white/5 text-white/30 border-white/10 hover:border-tron-yellow/50"
-               )}
-            >
-              <ShieldCheck size={20} fill={bookmarks.includes(currentQuestion.id) ? "currentColor" : "none"} />
-            </button>
+            {currentQuestion && (
+              <button
+                 onClick={() => toggleBookmark(currentQuestion.id)}
+                 className={cn(
+                   "p-2 rounded-lg border transition-all hover:scale-110 active:scale-95",
+                   bookmarks.includes(currentQuestion.id) 
+                     ? "bg-tron-yellow text-black border-tron-yellow shadow-[0_0_15px_#ffb800]" 
+                     : "bg-white/5 text-white/30 border-white/10 hover:border-tron-yellow/50"
+                 )}
+              >
+                <ShieldCheck size={20} fill={bookmarks.includes(currentQuestion.id) ? "currentColor" : "none"} />
+              </button>
+            )}
             {isSimMode && (
               <div className={cn(
                 "px-4 py-2 border rounded-lg font-mono text-xl shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-3 animate-in fade-in slide-in-from-right-4",
@@ -630,12 +970,19 @@ export default function App() {
                       {currentQuestion?.text}
                     </h3>
 
-                    <div className="grid gap-4">
+                    <motion.div 
+                      layout
+                      className="grid gap-4"
+                    >
                       {currentQuestion?.options.map((opt, i) => {
                         const isSelected = answers[currentQuestionIndex] === i;
-                        const isCorrectOption = currentQuestion.correctIndex === i;
+                        const isCorrectOption = currentQuestion?.correctIndex === i;
                         
                         let styleClass = "border-white/10 hover:border-tron-cyan/40 hover:bg-white/5";
+                        if (isOralMode && !revealedOral && !showFeedback) {
+                          styleClass = "border-white/5 bg-white/[0.02] cursor-not-allowed filter blur-[4px] pointer-events-none";
+                        }
+                        
                         let labelBg = "bg-white/5 text-white/40";
                         
                         if (showFeedback) {
@@ -672,7 +1019,33 @@ export default function App() {
                           </button>
                         );
                       })}
-                    </div>
+                    </motion.div>
+
+                    {isOralMode && !revealedOral && !showFeedback && (
+                      <div className="mt-8 flex flex-col items-center gap-6 py-12 border-2 border-dashed border-tron-cyan/20 rounded-2xl bg-tron-cyan/[0.02] backdrop-blur-sm">
+                        <motion.div 
+                          animate={{ scale: [1, 1.1, 1] }} 
+                          transition={{ repeat: Infinity, duration: 2 }}
+                          className="p-6 bg-tron-cyan/10 rounded-full text-tron-cyan shadow-[0_0_30px_rgba(0,242,255,0.2)]"
+                        >
+                          <Mic size={48} />
+                        </motion.div>
+                        <div className="text-center space-y-2">
+                          <h4 className="text-white font-black uppercase tracking-[0.3em] text-lg">¡Responde en Voz Alta!</h4>
+                          <p className="text-white/40 text-sm max-w-xs mx-auto">
+                            Estructura tu respuesta oral antes de revelar las alternativas científicas.
+                          </p>
+                        </div>
+                        <GlowButton 
+                          onClick={() => setRevealedOral(true)}
+                          size="lg"
+                          variant="cyan"
+                          className="mt-4 px-12"
+                        >
+                          Revelar Alternativas
+                        </GlowButton>
+                      </div>
+                    )}
                   </TronCard>
                 </motion.div>
               </AnimatePresence>
@@ -687,9 +1060,12 @@ export default function App() {
                     className="space-y-6"
                   >
                     <div className={cn(
-                      "p-6 rounded-2xl border-2 flex flex-col gap-4 shadow-lg",
+                      "p-6 rounded-2xl border-2 flex flex-col gap-4 shadow-lg relative overflow-hidden",
                       isCorrect ? "border-tron-cyan bg-tron-cyan/5 shadow-tron-cyan/20" : "border-tron-yellow bg-tron-yellow/5 shadow-tron-yellow/20"
                     )}>
+                      <div className="absolute top-0 right-0 px-2 py-1 bg-white/5 text-[8px] font-mono uppercase tracking-widest text-white/30 border-b border-l border-white/10">
+                        EBM Grade: 1A (High)
+                      </div>
                       <h4 className={cn(
                         "text-xl font-black uppercase tracking-tighter flex items-center gap-2",
                         isCorrect ? "text-tron-cyan" : "text-tron-yellow"
@@ -698,7 +1074,7 @@ export default function App() {
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
                       <p className="text-gray-200 text-lg leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
-                        {currentQuestion.explanation}
+                        {currentQuestion?.explanation}
                       </p>
                     </div>
 
@@ -707,7 +1083,7 @@ export default function App() {
                         <Brain size={16} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
                       <p className="text-base text-white/70 leading-relaxed font-mono">
-                        {currentQuestion.fisiopato}
+                        {currentQuestion?.fisiopato}
                       </p>
                     </TronCard>
 
@@ -716,13 +1092,13 @@ export default function App() {
                         <Lightbulb size={16} /> Perla Clínica
                       </h5>
                       <p className="text-base text-white font-serif leading-relaxed italic">
-                        "{currentQuestion.clinicalPearl}"
+                        "{currentQuestion?.clinicalPearl}"
                       </p>
                     </div>
 
                     <div className="flex flex-col gap-4 pt-4">
                       <div className="flex items-center gap-2 text-[10px] text-white/20 uppercase tracking-widest font-mono">
-                         <FileText size={12} /> Ref: {currentQuestion.guideline}
+                         <FileText size={12} /> Ref: {currentQuestion?.guideline}
                       </div>
                       <GlowButton 
                         size="lg" 
@@ -760,14 +1136,14 @@ export default function App() {
            className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         >
           <div className="text-center md:text-left">
-            <Trophy size={100} className="text-tron-staff mb-8 drop-shadow-[0_0_20px_#ff9500] mx-auto md:mx-0" />
-            <h2 className="text-5xl md:text-6xl font-display font-black text-white mb-4 tracking-tighter uppercase leading-none">
-              Protocolo <br/><span className="text-tron-cyan text-glow-cyan text-4xl">Finalizado</span>
+            <Trophy size={100} className={isSurvivalMode ? "text-tron-sub mb-8 mx-auto md:mx-0" : "text-tron-staff mb-8 drop-shadow-[0_0_20px_#ff9500] mx-auto md:mx-0"} />
+            <h2 className={cn("text-5xl md:text-6xl font-display font-black mb-4 tracking-tighter uppercase leading-none", isSurvivalMode ? "text-tron-sub" : "text-white")}>
+              {isSurvivalMode ? "Fin de la Línea" : "Protocolo"} <br/><span className={isSurvivalMode ? "text-tron-sub/50 text-4xl" : "text-tron-cyan text-glow-cyan text-4xl"}>{isSurvivalMode ? "Simulación Terminada" : "Finalizado"}</span>
             </h2>
-            <p className="text-white/30 uppercase tracking-[0.4em] text-xs font-mono mb-8 border-l-2 border-tron-yellow pl-6 py-2">
-              Módulo: {selectedTopic?.name} <br/>
-              Status: <span className={scorePercent >= 70 ? "text-tron-cyan" : "text-tron-yellow"}>
-                {scorePercent >= 70 ? "Competencia Aprobada" : "Refuerzo Requerido"}
+            <p className={cn("uppercase tracking-[0.4em] text-xs font-mono mb-8 border-l-2 pl-6 py-2", isSurvivalMode ? "text-tron-sub border-tron-sub" : "text-white/30 border-tron-yellow")}>
+              {isSurvivalMode ? "Muerte Súbita" : `Módulo: ${selectedTopic?.name}`} <br/>
+              Status: <span className={isSurvivalMode ? "text-white" : (scorePercent >= 70 ? "text-tron-cyan" : "text-tron-yellow")}>
+                {isSurvivalMode ? `Superaste ${correctCount} niveles` : (scorePercent >= 70 ? "Competencia Aprobada" : "Refuerzo Requerido")}
               </span>
             </p>
             
@@ -779,16 +1155,28 @@ export default function App() {
               >
                 Menú de Protocolos
               </GlowButton>
-              <GlowButton 
-                variant="cyan"
-                onClick={() => startQuiz(selectedTopic!)}
-                className="flex-1"
-              >
-                Reiniciar Módulo
-              </GlowButton>
+              {!isSurvivalMode && (
+                <GlowButton 
+                  variant="cyan"
+                  onClick={() => startQuiz(selectedTopic!)}
+                  className="flex-1"
+                >
+                  Reiniciar Módulo
+                </GlowButton>
+              )}
+              {isSurvivalMode && (
+                <GlowButton 
+                  variant="sub"
+                  onClick={startSurvivalMode}
+                  className="flex-1 border-tron-sub text-tron-sub"
+                >
+                  Nuevo Intento
+                </GlowButton>
+              )}
               {/* Added option for AI expansion */}
-              <GlowButton 
-                variant="staff"
+              {!isSurvivalMode && (
+                <GlowButton 
+                  variant="staff"
                 onClick={async () => {
                    setIsLoading(true);
                    try {
@@ -814,6 +1202,7 @@ export default function App() {
               >
                 Expandir con IA (+5)
               </GlowButton>
+              )}
             </div>
           </div>
 
@@ -869,7 +1258,7 @@ export default function App() {
   if (currentView === 'bookmarks') {
     const bookmarkedQuestions = [
       ...SEED_QUESTIONS,
-      ...Object.values(cachedQuestions).flat()
+      ...(Object.values(cachedQuestions).flat() as Question[])
     ].filter(q => bookmarks.includes(q.id));
     
     return (
@@ -938,7 +1327,7 @@ export default function App() {
   if (currentView === 'pearls') {
     const allKnownQuestions = [
       ...SEED_QUESTIONS,
-      ...Object.values(cachedQuestions).flat()
+      ...(Object.values(cachedQuestions).flat() as Question[])
     ];
 
     const filteredPearls = allKnownQuestions.filter(q => {
@@ -1044,6 +1433,240 @@ export default function App() {
         </div>
       </div>
     );
+  }
+
+  if (currentView === 'flashcards') {
+    const allKnownQuestions = [
+      ...SEED_QUESTIONS,
+      ...(Object.values(cachedQuestions).flat() as Question[])
+    ];
+    
+    // Quick state for flashcards since it's transient
+    const [flashIndex, setFlashIndex] = useState(0);
+    const [isFlipped, setIsFlipped] = useState(false);
+    
+    const nextCard = () => {
+      setIsFlipped(false);
+      setTimeout(() => setFlashIndex((flashIndex + 1) % allKnownQuestions.length), 150);
+    };
+
+    const q = allKnownQuestions[flashIndex];
+
+    return (
+      <div className="max-w-4xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/40 flex flex-col justify-center items-center">
+        <header className="absolute top-0 w-full p-8 flex justify-between items-center max-w-4xl">
+          <button 
+            onClick={() => setCurrentView('pearls')}
+            className="p-1 px-4 border border-white/10 rounded hover:bg-white/5 hover:text-tron-yellow transition-colors flex items-center gap-2"
+          >
+            <RotateCcw size={14} /> 
+            <span className="text-[10px] uppercase font-bold tracking-widest">Volver a Perlas</span>
+          </button>
+          <div className="text-white/40 font-mono text-sm">
+             Memoria {flashIndex + 1}/{allKnownQuestions.length}
+          </div>
+        </header>
+
+        <div className="w-full aspect-[4/3] max-w-2xl [perspective:1000px] cursor-pointer group" onClick={() => setIsFlipped(!isFlipped)}>
+          <motion.div 
+            className="w-full h-full relative [transform-style:preserve-3d] transition-all duration-500 ease-out"
+            animate={{ rotateY: isFlipped ? 180 : 0 }}
+          >
+            {/* FRONT */}
+            <div className="absolute inset-0 backface-hidden [backface-visibility:hidden]">
+              <TronCard accentColor="rgba(0,242,255,0.3)" className="w-full h-full flex flex-col justify-center items-center text-center p-12 bg-tron-card/80 hover:border-tron-cyan transition-colors">
+                <Brain size={48} className="text-tron-cyan mb-8 opacity-50" />
+                <h3 className="text-2xl md:text-3xl text-white font-serif leading-relaxed line-clamp-4">
+                  {q.text}
+                </h3>
+                <p className="absolute bottom-8 text-[10px] text-white/20 uppercase tracking-[0.3em] font-black group-hover:text-tron-cyan/50 transition-colors">
+                  Toca para revelar perla
+                </p>
+              </TronCard>
+            </div>
+
+            {/* BACK */}
+            <div className="absolute inset-0 backface-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <TronCard accentColor="rgba(255,184,0,0.4)" className="w-full h-full flex flex-col justify-center items-center text-center p-12 bg-tron-yellow/5 border-tron-yellow/50">
+                <Lightbulb size={48} className="text-tron-yellow mb-6 shadow-[0_0_15px_#ffb800] rounded-full" />
+                <p className="text-xl md:text-2xl text-white font-serif leading-relaxed italic border-x-2 border-tron-yellow/30 px-8">
+                  "{q.clinicalPearl}"
+                </p>
+                <div className="mt-8 py-3 px-6 bg-black/40 rounded-full border border-tron-yellow/20">
+                   <p className="text-xs text-white/50 font-mono uppercase">Ref: {q.guideline}</p>
+                </div>
+              </TronCard>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-12 flex gap-6">
+           <GlowButton variant="staff" size="lg" onClick={(e) => { e.stopPropagation(); nextCard(); }}>
+             Siguiente Perla <ChevronRight size={18} className="ml-2 inline" />
+           </GlowButton>
+        </div>
+      </div>
+    );
+  }
+
+  if (currentView === 'oral_sim') {
+    return <OralSim onExit={() => setCurrentView('lobby')} />;
+  }
+
+  if (currentView === 'atlas') {
+    return (
+      <div className="max-w-6xl mx-auto p-4 md:p-12 min-h-screen">
+        <header className="mb-12 flex justify-between items-end border-b border-white/10 pb-6">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter uppercase flex items-center gap-4">
+              <ImageIcon size={40} className="text-tron-cyan" /> Atlas Endoscópico
+            </h1>
+            <p className="text-white/40 font-mono tracking-widest uppercase text-xs mt-2">Detección y Clasificación Visual</p>
+          </div>
+          <button 
+            onClick={() => setCurrentView('lobby')}
+            className="p-2 px-6 border border-white/10 rounded uppercase font-bold text-[10px] tracking-widest hover:bg-white/5 transition-all flex items-center gap-2"
+          >
+            <RotateCcw size={14} /> Volver
+          </button>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { title: "Esófago de Barrett", class: "Praga C2M5", desc: "Epitelio columnar metaplásico", color: "text-tron-sub", border: "border-tron-sub/30" },
+            { title: "Pólipo Sésil", class: "Paris Is, Kudo III", desc: "Adenoma tubular con displasia", color: "text-tron-yellow", border: "border-tron-yellow/30" },
+            { title: "Úlcera Gástrica", class: "Forrest IIa", desc: "Vaso visible no sangrante", color: "text-tron-cyan", border: "border-tron-cyan/30" },
+            { title: "Colitis Ulcerosa", class: "Mayo 3", desc: "Eritema severo, friabilidad, úlceras", color: "text-tron-sub", border: "border-tron-sub/30" },
+            { title: "Várices Esofágicas", class: "Grado III", desc: "Cordones gruesos confluyentes", color: "text-tron-yellow", border: "border-tron-yellow/30" },
+            { title: "Cáncer Gástrico", class: "Bormann III", desc: "Úlcera infiltrante con bordes elevados", color: "text-tron-cyan", border: "border-tron-cyan/30" },
+          ].map((item, idx) => (
+            <TronCard key={idx} accentColor="rgba(255,255,255,0.1)" className={`p-0 overflow-hidden border ${item.border}`}>
+               <div className="h-48 bg-black border-b border-white/10 relative group overflow-hidden flex items-center justify-center">
+                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent opacity-50" />
+                 <ImageIcon size={48} className="text-white/10 group-hover:scale-110 transition-transform duration-500" />
+                 <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/80 rounded font-mono text-[9px] text-white/50 border border-white/10">
+                   IMG_REF_{1000 + idx}
+                 </div>
+               </div>
+               <div className="p-5 bg-tron-card/80">
+                 <h3 className={`font-black text-xl mb-1 uppercase ${item.color}`}>{item.title}</h3>
+                 <div className="flex items-center gap-2 mb-3">
+                   <Target size={12} className={item.color} />
+                   <span className="font-mono text-xs text-white/60 uppercase tracking-widest">{item.class}</span>
+                 </div>
+                 <p className="text-sm font-serif italic text-white/40">{item.desc}</p>
+                 <button className="mt-4 w-full py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded uppercase text-[10px] font-bold tracking-widest transition-colors">
+                   Analizar Imagen
+                 </button>
+               </div>
+            </TronCard>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (currentView === 'profile') {
+    const accuracy = progress.totalAttempted > 0 ? Math.round((progress.totalCorrect / progress.totalAttempted) * 100) : 0;
+    
+    return (
+      <div className="max-w-4xl mx-auto p-4 md:p-12 min-h-screen flex flex-col">
+        <header className="mb-12 flex justify-between items-end">
+          <button 
+            onClick={() => setCurrentView('lobby')}
+            className="p-2 px-6 border border-white/10 rounded uppercase font-bold text-[10px] tracking-widest hover:bg-white/5 transition-all text-white/60 flex items-center gap-2"
+          >
+            <RotateCcw size={14} /> Lobby
+          </button>
+        </header>
+
+        <div className="flex-1 flex flex-col items-center justify-center">
+           <div className="relative mb-16">
+             {/* Identity Disk */}
+             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-tron-cyan/20 flex items-center justify-center relative shadow-[0_0_50px_rgba(0,242,255,0.1)]">
+                <div className="absolute inset-0 rounded-full border-2 border-tron-cyan border-dashed animate-[spin_20s_linear_infinite]" />
+                <div className="absolute inset-4 rounded-full border-4 border-tron-cyan/40" />
+                <div className="absolute inset-8 rounded-full border border-tron-cyan/60 animate-[spin_10s_linear_infinite_reverse]" />
+                
+                <div className="w-32 h-32 md:w-40 md:h-40 bg-tron-cyan/10 rounded-full flex flex-col items-center justify-center border-2 border-tron-cyan shadow-[inset_0_0_20px_rgba(0,242,255,0.5)] backdrop-blur-sm z-10">
+                  <User size={32} className="text-tron-cyan mb-2" />
+                  <span className="font-black text-2xl text-white">{accuracy}%</span>
+                  <span className="uppercase text-[9px] tracking-widest text-tron-cyan font-mono">Precisión</span>
+                </div>
+             </div>
+           </div>
+
+           <div className="w-full max-w-2xl bg-tron-card/50 border border-tron-cyan/20 rounded-2xl p-8 backdrop-blur-md">
+             <h2 className="text-2xl font-black uppercase text-center text-tron-cyan mb-8 tracking-widest flex items-center justify-center gap-3">
+                <Activity size={24} /> Estadísticas de Sistema
+             </h2>
+             
+             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+               <div className="bg-white/5 p-4 rounded text-center border border-white/10">
+                 <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Intentos</p>
+                 <p className="text-2xl font-black text-white">{progress.totalAttempted}</p>
+               </div>
+               <div className="bg-white/5 p-4 rounded text-center border border-white/10">
+                 <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Aciertos</p>
+                 <p className="text-2xl font-black text-tron-cyan">{progress.totalCorrect}</p>
+               </div>
+               <div className="bg-white/5 p-4 rounded text-center border border-white/10">
+                 <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Racha</p>
+                 <p className="text-2xl font-black text-tron-yellow">{progress.streak}</p>
+               </div>
+               <div className="bg-white/5 p-4 rounded text-center border border-white/10">
+                 <p className="text-[10px] text-white/40 uppercase tracking-widest mb-1">Rango</p>
+                 <p className="text-xl font-black text-tron-staff mt-1">
+                   {accuracy >= 80 ? 'ATTENDING' : accuracy >= 60 ? 'SENIOR' : 'JUNIOR'}
+                 </p>
+               </div>
+             </div>
+
+             <div className="space-y-4">
+                <h3 className="text-xs uppercase text-white/50 font-bold tracking-widest mb-4">Mapeo de Competencias</h3>
+                
+                {Object.keys(progress.byTopic).length >= 3 && (
+                  <div className="flex justify-center my-8">
+                    <RadarChart 
+                      data={Object.entries(progress.byTopic).map(([topicId, statsVar]) => {
+                        const stats = statsVar as { attempted: number; correct: number };
+                        const topic = GASTRO_TOPICS.find(t => t.id === topicId);
+                        const pct = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
+                        return { label: topic?.name?.substring(0, 10) + '...' || topicId, value: pct };
+                      })}
+                      size={250}
+                    />
+                  </div>
+                )}
+
+                {Object.entries(progress.byTopic).map(([topicId, statsVar]) => {
+                  const stats = statsVar as { attempted: number; correct: number };
+                  const topic = GASTRO_TOPICS.find(t => t.id === topicId);
+                  if (!topic) return null;
+                  const pct = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
+                  return (
+                    <div key={topicId} className="flex items-center gap-4">
+                      <span className="w-1/3 text-xs font-mono text-white/70 truncate">{topic.name}</span>
+                      <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden">
+                        <div className={cn("h-full", pct > 70 ? "bg-tron-cyan" : pct > 40 ? "bg-tron-yellow" : "bg-tron-sub")} style={{ width: `${pct}%` }} />
+                      </div>
+                      <span className="w-12 text-right text-xs font-mono">{pct}%</span>
+                    </div>
+                  );
+                })}
+             </div>
+           </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (currentView === 'cases') {
+    return <ClinicalCases onExit={() => setCurrentView('lobby')} />;
+  }
+
+  if (currentView === 'ranking') {
+    return <Leaderboard onExit={() => setCurrentView('lobby')} localProgress={progress} />;
   }
 
   return null;

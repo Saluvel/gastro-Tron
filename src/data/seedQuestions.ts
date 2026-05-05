@@ -904,5 +904,97 @@ export const SEED_QUESTIONS: Question[] = [
       1: 'Insuficiente para la variante segmentaria por el riesgo neoplásico.',
       3: 'No aborda la patología de la pared de la vesícula.'
     }
+  },
+  {
+    id: 'seed_3',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: 'Un paciente de 45 años consulta por dolor sordo en hipocondrio derecho. La ecografía muestra una dilatación de la vía biliar intra y extrahepática (CBD 11mm). Se realiza CPRE y RM que descartan litiasis, estenosis o neoplasia. ¿Cuál es la causa más probable de dilatación biliar "no obstructiva" en este contexto?',
+    options: [
+      'Dilatación post-colecistectomía compensatoria',
+      'Disfunción del Esfínter de Oddi tipo III',
+      'Quiste de colédoco tipo I de Todani',
+      'Hepatopatía crónica avanzada'
+    ],
+    correctIndex: 0,
+    explanation: 'Tras una colecistectomía, la vía biliar puede dilatarse por pérdida de la distensibilidad del reservorio biliar (vesícula), asumiendo un rol de conducto de baja resistencia. CBD hasta 10-12mm es considerado normal en pacientes colecistectomizados si son asintomáticos.',
+    fisiopato: 'La vesícula biliar actúa como un sistema de capacitancia que amortigua la presión del colédoco. Al ser removida, la presión basal de la vía biliar aumenta ligeramente, provocando una dilatación estructural por ley de Laplace.',
+    clinicalPearl: 'En un post-colecistectomizado, no te asustes por un colédoco de 10mm; busca siempre la correlación con pruebas de perfil hepático.',
+    guideline: 'Manual de Enfermedades Digestivas (Chile) / ACG Clinical Guideline 2024',
+    whyWrong: {
+      0: 'Respuesta correcta basada en adaptación mecánica.',
+      1: 'Suele cursar con dolor cólico intenso y alteraciones transitorias de las transaminasas.',
+      2: 'Suele diagnosticarse por morfología quística específica en RM, no solo dilatación uniforme.',
+      3: 'No causa dilatación de la vía biliar extrahepática de forma aislada.'
+    }
+  },
+  {
+    id: 'seed_4',
+    topic: 'intestino_ext',
+    difficulty: 'Fellow',
+    text: 'En el enfoque de la diarrea crónica (>4 semanas), ¿cuál de los siguientes hallazgos sugiere fuertemente una etiología osmótica sobre una secretora?',
+    options: [
+      'Gap osmótico fecal > 125 mOsm/kg',
+      'Persistencia de la diarrea con el ayuno',
+      'Volumen fecal > 1 L/día',
+      'pH fecal alcalino'
+    ],
+    correctIndex: 0,
+    explanation: 'La diarrea osmótica se debe a solutos no absorbidos en el lumen que retienen agua. Un Gap osmótico (290 - 2*[Na + K]) elevado indica que hay solutos distintos a los electrolitos normales causando la osmolaridad.',
+    fisiopato: 'La presencia de sustancias osmóticamente activas reduce la actividad del agua intraluminal, superando la capacidad de reabsorción del colon mediante el gradiente osmótico invertido.',
+    clinicalPearl: 'Diarrea que cede con el ayuno = Osmótica. Diarrea que persiste en la noche/ayuno = Secretora.',
+    guideline: 'Manual de Enfermedades Digestivas Chile / AGA Guidelines on Chronic Diarrhea',
+    whyWrong: {
+      0: 'Hallazgo clave que define el mecanismo osmótico.',
+      1: 'Esto es típico de la diarrea secretora.',
+      2: 'Los grandes volúmenes suelen ser secretores (ej. VIPoma).',
+      3: 'El pH ácido sugiere malabsorción de carbohidratos, el alcalino es inespecífico.'
+    }
+  },
+  {
+    id: 'seed_5',
+    topic: 'intestino_ext',
+    difficulty: 'Fellow',
+    text: 'Un paciente con Porfiria Cutánea Tarda (PCT) presenta ampollas en zonas fotoexpuestas. ¿Cuál es el defecto enzimático subyacente y qué factor de riesgo de gastroenterología es MANDATORIO descartar?',
+    options: [
+      'Deficiencia de Uroporfirinógeno descarboxilasa - Virus Hepatitis C (VHC)',
+      'Deficiencia de ALA-sintetasa - Alcoholismo crónico',
+      'Deficiencia de Ferroquelatasa - Sobrecarga de hierro',
+      'Deficiencia de Bilirrubina UDP-GT - Sarcoidosis'
+    ],
+    correctIndex: 0,
+    explanation: 'La PCT es la porfiria más común. Existe una fuerte asociación (hasta 50-70%) con la infección por Virus de la Hepatitis C (VHC), la cual debe ser tamizada en todo paciente con este diagnóstico cutáneo.',
+    fisiopato: 'La inhibición de la uroporfirinógeno descarboxilasa hepática lleva a la acumulación de uroporfirinas, que son fotosensibilizantes en la dermis al interactuar con luz UV.',
+    clinicalPearl: 'En presencia de PCT, busca hepatitis C y hemocromatosis (sobrecarga de hierro).',
+    guideline: 'EASL Guidelines for Management of HCV 2024 / Merck Manual',
+    whyWrong: {
+      0: 'Asociación clásica y obligatoria en medicina interna/gastro.',
+      1: 'La ALA-sintetasa es el paso limitante pero no define la PCT.',
+      2: 'La ferroquelatasa está involucrada en la protoporfiria eritropoyética.',
+      3: 'Referencia a síndrome de Gilbert/Crigler-Najjar.'
+    }
+  },
+  {
+    id: 'seed_6',
+    topic: 'intestino_ext',
+    difficulty: 'Fellow',
+    text: 'En un paciente con Hemorragia Digestiva Baja masiva por enfermedad diverticular, reanimado y estable, se realiza colonoscopia que evidencia un divertículo con un vaso visible no sangrante en colon derecho. ¿Cuál es el manejo endoscópico de primera elección y su justificación?',
+    options: [
+      'Inyección de epinefrina sola por su alto poder vasoconstrictor',
+      'Colocación de Endoclip en la base del vaso visible',
+      'Coagulación con Argón Plasma (APC) sobre el ostium diverticular',
+      'Cirugía urgente (Hemicolectomía derecha) sin terapia endoscópica'
+    ],
+    correctIndex: 1,
+    explanation: 'La terapia mecánica (endoclips/ligadura) es el estándar de oro en sangrado diverticular. Se debe clipar la arteria nutricia en el cuello o base del divertículo.',
+    fisiopato: 'El sangrado diverticular ocurre por la ruptura de la "vasa recta" asimétrica que penetra subserosamente el cuello del divertículo extendiéndose sobre el domo. La compresión mecánica focalizada (clip) colapsa la vasa recta sin riesgo térmico perforativo transmural.',
+    clinicalPearl: 'Hemostasia en sangrado diverticular: CLIPAR o LIGAR. NUNCA quemar el domo (alto riesgo de perforación por ausencia de capa muscular).',
+    guideline: 'ACG Clinical Guideline: Management of Patients With Acute Lower Gastrointestinal Bleeding',
+    whyWrong: {
+      0: 'La epinefrina sola tiene una alta tasa de resangrado, debe usarse como puente a otra terapia, pero en divertículos se prefiere el clip directo.',
+      1: 'Es la primera línea recomendada mecanicamente.',
+      2: 'Alta tasa de perforación dado que el divertículo carece de capa muscular propia.',
+      3: 'Solo se indica cirugía si falla la hemostasia endoscópica/angiográfica o hay inestabilidad hemodinámica persistente.'
+    }
   }
 ];

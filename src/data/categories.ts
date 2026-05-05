@@ -22,13 +22,11 @@ export const GASTRO_TOPICS: Topic[] = [
   {
     id: 'biologia',
     name: 'Biología y Genética',
-    description: 'Bases celulares, oncogenes y síndromes hereditarios.',
-    color: 'var(--color-tron-cyan)'
+    description: 'Bases celulares, oncogenes y síndromes hereditarios.'
   },
   {
     id: 'nutricion',
     name: 'Nutrición e Inmunología',
-    description: 'Absorción de micronutrientes, inmunidad mucosa y TPN.',
-    color: 'var(--color-tron-yellow)'
+    description: 'Absorción de micronutrientes, inmunidad mucosa y TPN.'
   }
 ];
