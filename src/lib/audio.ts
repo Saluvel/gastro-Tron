@@ -6,11 +6,33 @@ export const setSoundEnabled = (enabled: boolean) => {
 
 export const getSoundEnabled = () => isSoundEnabled;
 
-export const playAudio = (type: 'hover' | 'click' | 'correct' | 'wrong' | 'start' | 'achievement') => {
+export const playAudio = (type: 'hover' | 'click' | 'correct' | 'wrong' | 'start' | 'achievement' | 'laugh') => {
   if (!isSoundEnabled) return;
   
   try {
     const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    
+    if (type === 'laugh') {
+      // Create a sequence of descending notes for a "creepy laugh"
+      const now = audioCtx.currentTime;
+      [0, 0.15, 0.3, 0.45, 0.6].forEach((delay, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(150 - (i * 20), now + delay);
+        osc.frequency.exponentialRampToValueAtTime(80 - (i * 15), now + delay + 0.1);
+        
+        gain.gain.setValueAtTime(0.1, now + delay);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + delay + 0.1);
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + delay);
+        osc.stop(now + delay + 0.1);
+      });
+      return;
+    }
+
     const oscillator = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
     

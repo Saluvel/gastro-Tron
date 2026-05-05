@@ -4,18 +4,24 @@ import { Question, Difficulty } from "../types/quiz";
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export async function generateQuestions(topic: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
-  const prompt = `Eres un Profesor de Gastroenterología evaluando a un Fellow de primer año en su EXAMEN ORAL de certificación.
+  const prompt = `Eres un Profesor de Gastroenterología de nivel mundial evaluando candidatos en un examen de máxima exigencia.
   Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topic}".
   
-  ESTÁNDARES PARA EL EXAMEN ORAL:
-  1. ENFOQUE: Casos clínicos de "pasillo" y "tablero". El objetivo es evaluar el razonamiento clínico y la toma de decisiones (Next Best Step).
+  LÓGICA DE ESCALAMIENTO SEGÚN NIVEL:
+  - Nivel "Fellow": Enfoque en manejo estándar según guías internacionales (ASGE/ESGE/AGA). Casos de presentación clásica pero con distractores académicos.
+  - Nivel "Staff": Enfoque en "Zonas Grises". Dilemas terapéuticos donde las guías no son concluyentes o hay contraindicaciones relativas. Manejo de complicaciones peri-procedimiento y presentaciones atípicas.
+  - Nivel "Subspecialist" (Nivel Board Ultra): Máxima complejidad. Casos extremadamente raros, variantes genéticas, interpretación de data de Ensayos Clínicos fase III (Phase III Trials), controversias actuales en la literatura (NEJM, Lancet, Gastroenterology) y escenarios de "rescate" cuando el tratamiento de primera y segunda línea falla.
+
+  ESTÁNDARES PARA EL EXAMEN:
+  1. ENFOQUE: Casos clínicos de alto impacto. El objetivo es evaluar el razonamiento crítico y la toma de decisiones (Next Best Step).
   2. ESTRUCTURA DE RESPUESTA:
      - La "explanation" DEBE seguir este orden: 
        A) Interpretación del hallazgo.
-       B) Justificación clínica.
-       C) Justificación basada en Guía/Estudio Hito (cita el nombre del estudio si aplica).
-  3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" es tu oportunidad de lucirte. DEBE ser MUY DETALLADA a nivel molecular, celular o hemodinámico. Por ejemplo, en porfiria no digas solo "acúmulo de ALA y PBG", explica QUÉ PASA con el grupo Hem, qué enzimas se bloquean exactamente, y POR QUÉ esa molécula específica es neurotóxica (ej: daño neuronal directo vs vasoespasmo). Se busca una nivel de detalle digno de un tratado de medicina interna.
-  4. PERLA CLÍNICA: Al final (en clinicalPearl), danos un "Axioma" médico definitivo que no se le pueda olvidar a un gastroenterólogo sobre este tema.
+       B) Justificación clínica (por qué las otras son menos probables).
+       C) Justificación basada en Evidencia/Guía/Estudio Hito (cita el nombre del estudio o guía con año).
+  3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser TÉCNICA Y DETALLADA (nivel molecular/celular).
+  4. PERLA CLÍNICA: Un "Axioma" médico definitivo e inolvidable.
+  5. POR QUÉ CADA OPCIÓN ES INCORRECTA: En "whyWrong", explica científicamente por qué cada opción fallida es un error en este contexto específico.
   
   Estructura JSON:
   {

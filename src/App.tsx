@@ -30,7 +30,9 @@ import {
   VolumeX,
   Trash2,
   Palette,
-  AlertTriangle
+  AlertTriangle,
+  Skull,
+  Database
 } from 'lucide-react';
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
@@ -51,9 +53,13 @@ const INITIAL_PROGRESS: UserProgress = {
   totalCorrect: 0,
   byTopic: {},
   weakTopics: [],
+  reviewIds: [],
   streak: 0,
   lastSession: new Date().toISOString(),
   achievements: [],
+  hasCompletedTutorial: false,
+  lastMissionDate: new Date().toISOString(),
+  missionProgress: 0,
   settings: {
     sound: true,
     theme: 'tron'
@@ -67,7 +73,7 @@ const ACHIEVEMENTS = [
   { id: 'survival_survivor', name: 'Sobreviviente', desc: 'Supera el modo Supervivencia.', icon: <Trophy className="text-tron-yellow" size={20} /> },
 ];
 
-const Acronym = ({ term, definition }: { term: string; definition: string }) => {
+const Acronym = ({ term, definition }: { term: string; definition: string; key?: any }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <span className="relative inline-block" onMouseLeave={() => setIsOpen(false)}>
@@ -184,7 +190,7 @@ export const renderWithAcronyms = (text: string) => {
 };
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking'>('lobby');
+  const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking' | 'archive'>('lobby');
   const [isSimMode, setIsSimMode] = useState(false);
   const [isSurvivalMode, setIsSurvivalMode] = useState(false);
   const [showDailyGuide, setShowDailyGuide] = useState(false);
@@ -205,12 +211,19 @@ export default function App() {
   const [isTimedMode, setIsTimedMode] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [resetDoubleCheck, setResetDoubleCheck] = useState(false);
+  const [selectedPearl, setSelectedPearl] = useState<any>(null);
 
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<UserProgress>(() => {
     const saved = localStorage.getItem('gastro_quiz_progress');
     const parsed = saved ? JSON.parse(saved) : INITIAL_PROGRESS;
-    return { ...INITIAL_PROGRESS, ...parsed, settings: parsed?.settings || INITIAL_PROGRESS.settings }; // Ensure new fields are present
+    return { 
+      ...INITIAL_PROGRESS, 
+      ...parsed, 
+      settings: parsed?.settings || INITIAL_PROGRESS.settings,
+      reviewIds: parsed?.reviewIds || [],
+      hasCompletedTutorial: parsed?.hasCompletedTutorial ?? false
+    };
   });
 
   const [cachedQuestions, setCachedQuestions] = useState<Record<string, Question[]>>(() => {
@@ -271,6 +284,83 @@ export default function App() {
       )}
     </AnimatePresence>
   );
+
+  const IntroOverlay = () => {
+    const [step, setStep] = useState(0);
+    const steps = [
+      {
+        title: "INICIALIZANDO KERNEL",
+        text: "Bienvenido, Fellow. El sistema GASTRON ha sido cargado para optimizar tu rendimiento clínico en gastroenterología.",
+        icon: <Zap className="text-tron-cyan" size={48} />
+      },
+      {
+        title: "EL DISCO DE IDENTIDAD",
+        text: "Tu progreso se almacena en el núcleo. Cada acierto aumenta tu Sincronía (Sync Level). Un nivel bajo indica datos corruptos en tu formación.",
+        icon: <User className="text-tron-yellow" size={48} />
+      },
+      {
+        title: "LA RED DE CONOCIMIENTO",
+        text: "Navega por los sectores (Hepatología, Endoscopia, etc.) y limpia la corrupción respondiendo correctamente. ¡Buena suerte en la simulación!",
+        icon: <Activity className="text-tron-sub" size={48} />
+      }
+    ];
+
+    if (progress.hasCompletedTutorial) return null;
+
+    return (
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6"
+      >
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="w-full h-full bg-[linear-gradient(rgba(0,242,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,242,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        </div>
+
+        <motion.div 
+          key={step}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="max-w-md w-full text-center space-y-8"
+        >
+          <div className="relative mx-auto w-24 h-24 flex items-center justify-center">
+             <motion.div 
+               animate={{ rotate: 360 }}
+               transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+               className="absolute inset-0 border-2 border-tron-cyan border-dashed rounded-full"
+             />
+             {steps[step].icon}
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-3xl font-black text-tron-cyan tracking-tighter uppercase text-glow-cyan">
+              {steps[step].title}
+            </h2>
+            <p className="text-white/70 font-serif italic text-lg leading-relaxed">
+              {steps[step].text}
+            </p>
+          </div>
+
+          <div className="flex justify-center gap-2">
+            {steps.map((_, i) => (
+              <div key={i} className={cn("w-2 h-2 rounded-full transition-colors", step === i ? "bg-tron-cyan shadow-[0_0_8px_cyan]" : "bg-white/10")} />
+            ))}
+          </div>
+
+          <GlowButton 
+            onClick={() => {
+              playAudio('click');
+              if (step < steps.length - 1) setStep(step + 1);
+              else setProgress(prev => ({ ...prev, hasCompletedTutorial: true }));
+            }}
+            className="w-full py-4 text-lg"
+          >
+            {step === steps.length - 1 ? "Entrar en la Red" : "Continuar Protocolo"}
+          </GlowButton>
+        </motion.div>
+      </motion.div>
+    );
+  };
 
   // Save progress whenever it changes
   useEffect(() => {
@@ -386,7 +476,7 @@ export default function App() {
   };
 
   const startSurvivalMode = async () => {
-    playAudio('start');
+    playAudio('laugh');
     setIsLoading(true);
     setIsSimMode(false);
     setIsSurvivalMode(true);
@@ -526,6 +616,15 @@ export default function App() {
       unlockAchievement('first_win');
       if (progress.streak + 1 >= 5) unlockAchievement('streak_5');
       if (progress.totalCorrect + 1 >= 20 && (progress.totalCorrect + 1) / (progress.totalAttempted + 1) >= 0.9) unlockAchievement('master_endo');
+    } else {
+      // Track missed question for "Corrupted Data" review
+      const qId = questions[currentQuestionIndex].id;
+      if (qId && !progress.reviewIds.includes(qId)) {
+        setProgress(prev => ({
+          ...prev,
+          reviewIds: [...prev.reviewIds, qId]
+        }));
+      }
     }
   };
 
@@ -553,6 +652,14 @@ export default function App() {
     const topicId = selectedTopic!.id;
     const existing = newByTopic[topicId] || { attempted: 0, correct: 0 };
     newByTopic[topicId] = {
+      attempted: Math.min(20, existing.attempted + attemptedCount), // Cap at 20 for completion
+      correct: existing.correct + correctCount
+    };
+
+    // If total attempted across all sessions for this topic hits 20, they "completed" it effectively for the bar
+    // but we still track total for accuracy. Actually, user says 100% at 20.
+    // Let's not cap it for the logic, but for the UI.
+    newByTopic[topicId] = {
       attempted: existing.attempted + attemptedCount,
       correct: existing.correct + correctCount
     };
@@ -569,6 +676,18 @@ export default function App() {
     // Streak logic: increment if all correct, otherwise reset
     const newStreak = correctCount === questions.length ? progress.streak + 1 : 0;
 
+    // Daily Mission Update: 10 questions per mission
+    const missionUpdatedRecord = { ...progress };
+    const today = new Date().toISOString().split('T')[0];
+    const lastDate = progress.lastMissionDate?.split('T')[0];
+    let missionProgress = progress.missionProgress || 0;
+    
+    if (today !== lastDate) {
+      missionProgress = Math.min(10, attemptedCount);
+    } else {
+      missionProgress = Math.min(10, missionProgress + attemptedCount);
+    }
+
     setProgress(prev => ({
       ...prev,
       totalAttempted: prev.totalAttempted + attemptedCount,
@@ -576,10 +695,28 @@ export default function App() {
       byTopic: newByTopic,
       weakTopics: newWeakTopics,
       streak: newStreak,
-      lastSession: new Date().toISOString()
+      lastSession: new Date().toISOString(),
+      lastMissionDate: today,
+      missionProgress: missionProgress
     }));
 
     setCurrentView('results');
+  };
+
+  const resetTopicProgress = (topicId: string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    playAudio('click');
+    const confirmed = window.confirm(`¿Seguro que deseas resetear el progreso de este tema? Las preguntas marcadas (bookmarks) permanecerán intactas.`);
+    if (confirmed) {
+      setProgress(prev => {
+        const newByTopic = { ...prev.byTopic };
+        delete newByTopic[topicId];
+        return {
+          ...prev,
+          byTopic: newByTopic
+        };
+      });
+    }
   };
 
   const quitQuiz = () => {
@@ -592,6 +729,7 @@ export default function App() {
   if (currentView === 'lobby') {
     return (
       <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen flex flex-col border-x-4 border-tron-cyan/10 relative">
+        <IntroOverlay />
         <AchievementNotification />
         
         <AnimatePresence>
@@ -709,7 +847,10 @@ export default function App() {
                 <circle cx="12" cy="12" r="6" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.7" />
                 <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.9" />
               </svg>
-              <span>GASTRO-TRON</span> 
+              <div className="flex flex-col leading-[0.8] items-start font-black tracking-tighter text-tron-cyan text-glow-cyan">
+                <span>GASTRO</span>
+                <span>TRON</span>
+              </div>
               <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] text-tron-yellow ml-2 md:ml-4 uppercase opacity-70 self-end mb-2 hidden sm:inline-block">
                 Fellowship Protocol
               </span>
@@ -769,6 +910,56 @@ export default function App() {
 
         <main className="grid grid-cols-12 gap-8 flex-1">
           <aside className="col-span-12 lg:col-span-3 space-y-6">
+            <div className="bg-tron-aside border border-tron-cyan/20 p-5 rounded-xl">
+              <p className="text-[10px] text-tron-cyan uppercase font-bold mb-4 tracking-widest flex items-center gap-2">
+                <LayoutDashboard size={12} /> Análisis de Sectores
+              </p>
+              <div className="grid grid-cols-6 lg:grid-cols-4 gap-2">
+                {GASTRO_TOPICS.map(topic => {
+                  const tStats = progress.byTopic[topic.id] || { attempted: 0, correct: 0 };
+                  const tPercent = tStats.attempted > 0 ? (tStats.correct / tStats.attempted) * 100 : 0;
+                  const status = tPercent >= 80 ? 'stable' : tPercent >= 50 ? 'warning' : tStats.attempted > 0 ? 'critical' : 'unknown';
+                  
+                  return (
+                    <div 
+                      key={topic.id}
+                      className={cn(
+                        "h-8 border flex items-center justify-center relative group transition-all",
+                        status === 'stable' ? "border-tron-cyan/40 bg-tron-cyan/10" :
+                        status === 'warning' ? "border-tron-yellow/40 bg-tron-yellow/10" :
+                        status === 'critical' ? "border-tron-sub/40 bg-tron-sub/5 animate-pulse" :
+                        "border-white/5 bg-white/[0.02]"
+                      )}
+                      title={`${topic.name}: ${Math.round(tPercent)}%`}
+                    >
+                       <span className="text-[7px] text-white/30 font-mono tracking-tighter uppercase px-1 truncate">
+                         {topic.id.slice(0, 3)}
+                       </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="bg-tron-aside border border-tron-cyan/20 p-5 rounded-xl">
+              <div className="flex justify-between items-center mb-3">
+                  <p className="text-[10px] text-tron-cyan uppercase font-bold tracking-widest flex items-center gap-2">
+                    <Zap size={14} /> Misión Diaria
+                  </p>
+                  <span className="text-[10px] text-white/40 font-mono">{(progress.missionProgress || 0)}/10</span>
+              </div>
+              <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: `${Math.min(100, ((progress.missionProgress || 0) / 10) * 100)}%` }}
+                    className="h-full bg-tron-cyan shadow-[0_0_10px_cyan]"
+                  />
+              </div>
+              <p className="mt-3 text-[8px] text-white/40 font-serif italic uppercase tracking-wider leading-relaxed">
+                Sincroniza 10 protocolos hoy para mantener la integridad.
+              </p>
+            </div>
+
             <div className="bg-tron-aside border border-tron-cyan/20 p-5 rounded-xl">
               <p className="text-[10px] text-tron-cyan uppercase font-bold mb-4 tracking-widest flex items-center gap-2">
                 <Brain size={12} /> ADN de Rendimiento
@@ -895,6 +1086,18 @@ export default function App() {
                   <span className="text-xs uppercase font-bold tracking-tight">Casos Guardados</span>
                 </button>
                 <button 
+                  onClick={() => setCurrentView('archive')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'archive' 
+                      ? "bg-tron-sub/20 border-tron-sub text-tron-sub shadow-[0_0_15px_rgba(255,68,68,0.3)]" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <Database size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Memory Core (Corrupto)</span>
+                </button>
+                <button 
                   onClick={() => setCurrentView('flashcards')}
                   className={cn(
                     "w-full p-3 rounded flex items-center gap-3 transition-all border",
@@ -1015,9 +1218,9 @@ export default function App() {
                    <GlowButton 
                     variant="sub" 
                     onClick={startSurvivalMode}
-                    className="w-full mt-auto border-tron-sub text-tron-sub"
+                    className="w-full mt-auto border-tron-sub flex items-center justify-center gap-2"
                    >
-                     Entrar al Grid
+                     <Skull size={32} /> Iniciar Protocolo
                    </GlowButton>
                 </TronCard>
 
@@ -1115,37 +1318,68 @@ export default function App() {
               </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {GASTRO_TOPICS.map((topic) => (
-                <motion.div
-                  key={topic.id}
-                  whileHover={{ scale: 1.01, x: 5 }}
-                  onClick={() => startQuiz(topic)}
-                  className="cursor-pointer"
-                >
-                  <TronCard 
-                    accentColor={progress.weakTopics.includes(topic.id) ? "rgba(255,68,68,0.3)" : "rgba(0,242,255,0.2)"}
-                    className="h-full group hover:border-tron-cyan/50 transition-all flex flex-col"
+              {GASTRO_TOPICS.map((topic) => {
+                const topicStats = progress.byTopic[topic.id] || { attempted: 0, correct: 0 };
+                const completionPercent = Math.min(100, Math.round((topicStats.attempted / 20) * 100));
+                
+                return (
+                  <motion.div
+                    key={topic.id}
+                    whileHover={{ scale: 1.01, x: 5 }}
+                    onClick={() => startQuiz(topic)}
+                    className="cursor-pointer relative group"
                   >
-                    <h3 className="text-lg font-bold text-white group-hover:text-glow-cyan group-hover:text-tron-cyan transition-all">
-                      {topic.name}
-                    </h3>
-                    <p className="text-xs text-white/40 mt-2 font-serif leading-relaxed italic">
-                      {topic.description}
-                    </p>
-                    <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
-                      <div className="flex gap-1">
-                        {[1,2,3].map(i => (
-                          <div key={i} className={cn(
-                            "w-4 h-1 rounded-full",
-                            (progress.byTopic[topic.id]?.correct || 0) > i * 10 ? "bg-tron-cyan shadow-[0_0_5px_cyan]" : "bg-white/5"
-                          )} />
-                        ))}
+                    <TronCard 
+                      accentColor={progress.weakTopics.includes(topic.id) ? "rgba(255,68,68,0.3)" : "rgba(0,242,255,0.2)"}
+                      className="h-full group hover:border-tron-cyan/50 transition-all flex flex-col"
+                    >
+                      <div className="flex justify-between items-start">
+                        <h3 className="text-lg font-bold text-white group-hover:text-glow-cyan group-hover:text-tron-cyan transition-all">
+                          {topic.name}
+                        </h3>
+                        {topicStats.attempted > 0 && (
+                          <button 
+                            onClick={(e) => resetTopicProgress(topic.id, e)}
+                            className="p-1 text-white/20 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
+                            title="Resetear Progreso de Tema"
+                          >
+                            <RotateCcw size={12} />
+                          </button>
+                        )}
                       </div>
-                      <ChevronRight size={14} className="text-tron-cyan opacity-40 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </TronCard>
-                </motion.div>
-              ))}
+                      <p className="text-xs text-white/40 mt-2 font-serif leading-relaxed italic">
+                        {topic.description}
+                      </p>
+                      
+                      <div className="mt-auto pt-6">
+                        <div className="flex justify-between items-end mb-2">
+                          <span className="text-[9px] uppercase tracking-widest text-white/30 font-black">Progreso Módulo</span>
+                          <span className="text-[10px] font-mono text-tron-cyan">{completionPercent}%</span>
+                        </div>
+                        <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+                          <motion.div 
+                            className="h-full bg-tron-cyan shadow-[0_0_10px_rgba(0,242,255,0.5)]"
+                            initial={{ width: 0 }}
+                            animate={{ width: `${completionPercent}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div className="flex gap-1">
+                          {[1,2,3].map(i => (
+                            <div key={i} className={cn(
+                              "w-4 h-1 rounded-full",
+                              (progress.byTopic[topic.id]?.correct || 0) > i * 10 ? "bg-tron-cyan shadow-[0_0_5px_cyan]" : "bg-white/5"
+                            )} />
+                          ))}
+                        </div>
+                        <ChevronRight size={14} className="text-tron-cyan opacity-40 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </TronCard>
+                  </motion.div>
+                );
+              })}
             </div>
           </section>
         </main>
@@ -1508,9 +1742,9 @@ export default function App() {
                 <GlowButton 
                   variant="sub"
                   onClick={startSurvivalMode}
-                  className="flex-1 border-tron-sub text-tron-sub"
+                  className="flex-1 border-tron-sub flex items-center justify-center gap-2"
                 >
-                  Nuevo Intento
+                  <Skull size={32} /> Nuevo Intento
                 </GlowButton>
               )}
               {/* Added option for AI expansion */}
@@ -1737,6 +1971,8 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2 }}
+                onClick={() => { playAudio('click'); setSelectedPearl(q); }}
+                className="cursor-pointer"
               >
                 <TronCard accentColor="#ffb800" className="p-6 h-full flex flex-col justify-between group hover:border-tron-yellow/50 transition-all bg-tron-card/40 backdrop-blur-md">
                   <div>
@@ -1771,6 +2007,79 @@ export default function App() {
             ))
           )}
         </div>
+
+        {/* --- Pearl Expansion Modal --- */}
+        <AnimatePresence>
+          {selectedPearl && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl"
+              onClick={() => setSelectedPearl(null)}
+            >
+              <motion.div 
+                initial={{ scale: 0.9, y: 50 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: 50 }}
+                className="bg-tron-card border-2 border-tron-cyan/30 rounded-3xl w-full max-w-2xl overflow-hidden shadow-[0_0_100px_rgba(0,242,255,0.15)]"
+                onClick={e => e.stopPropagation()}
+              >
+                <div className="relative p-8 pt-12">
+                   <button 
+                     onClick={() => setSelectedPearl(null)}
+                     className="absolute top-6 right-6 p-2 rounded-full hover:bg-white/10 text-white/40 hover:text-white transition-all"
+                   >
+                     <X size={24} />
+                   </button>
+
+                   <div className="flex items-center gap-3 mb-8">
+                     <div className="w-12 h-12 rounded-2xl bg-tron-yellow/10 flex items-center justify-center border border-tron-yellow/20">
+                       <Lightbulb className="text-tron-yellow" size={24} />
+                     </div>
+                     <div>
+                       <div className="text-[10px] uppercase font-black tracking-[0.3em] text-tron-yellow/60">Perla Clínica</div>
+                       <div className="text-sm text-white/50">{selectedPearl.topic}</div>
+                     </div>
+                   </div>
+
+                   <div className="space-y-8">
+                     <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <p className="text-xl md:text-2xl text-white font-serif italic leading-relaxed text-glow-yellow">
+                          "{selectedPearl.clinicalPearl}"
+                        </p>
+                     </div>
+
+                     <div className="space-y-6">
+                        <div>
+                          <h4 className="text-[10px] uppercase font-black text-white/30 tracking-widest mb-3 flex items-center gap-2">
+                             <Target size={12} /> Contexto Médico
+                          </h4>
+                          <p className="text-white/70 text-sm leading-relaxed border-l-2 border-tron-cyan/30 pl-4 py-1">
+                            {selectedPearl.text}
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="text-[10px] uppercase font-black text-white/30 tracking-widest mb-3 flex items-center gap-2">
+                             <Activity size={12} /> Referencia y Guía
+                          </h4>
+                          <p className="text-tron-yellow text-xs font-mono bg-tron-yellow/5 py-2 px-4 rounded border border-tron-yellow/10 inline-block uppercase">
+                            {selectedPearl.guideline}
+                          </p>
+                        </div>
+                     </div>
+                   </div>
+                </div>
+                <div className="p-6 bg-black/40 border-t border-white/5 flex justify-center">
+                   <GlowButton onClick={() => setSelectedPearl(null)} className="px-12">
+                      Entendido
+                   </GlowButton>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
@@ -1862,31 +2171,31 @@ export default function App() {
         desc: "Epitelio columnar metaplásico", 
         color: "text-tron-sub", 
         border: "border-tron-sub/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Barrett_esophagus_labeled.jpg/800px-Barrett_esophagus_labeled.jpg",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Barrett_esophagus_labeled.jpg/1200px-Barrett_esophagus_labeled.jpg",
         hotspot: { x: "50%", y: "45%", label: "Unión Escamocolumnar Desplazada" },
         longDesc: "Presencia de epitelio columnar que tapiza el esófago distal. La clasificación de Praga evalúa la extensión circunferencial (C) y máxima (M)."
       },
       { 
         id: 2,
-        title: "Pólipo Sésil", 
+        title: "Pólipo Sésil (Adenoma)", 
         class: "Paris Is, Kudo III", 
         desc: "Adenoma tubular con displasia", 
         color: "text-tron-yellow", 
         border: "border-tron-yellow/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Colon_polyp.JPG/800px-Colon_polyp.JPG",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Colon_polyp.JPG/1200px-Colon_polyp.JPG",
         hotspot: { x: "40%", y: "40%", label: "Elevación Tipo Is" },
-        longDesc: "Lesión sésil con patrón de criptas tipo III de Kudo, sugestivo de adenoma. Requiere mucosectomía endoscópica."
+        longDesc: "Lesión sésil con patrón de criptas tipo III de Kudo, sugestivo de adenoma. Requiere mucosectomía endoscópica (EMR)."
       },
       { 
         id: 3,
-        title: "Úlcera Gástrica", 
+        title: "Úlcera Gástrica (Forrest IIa)", 
         class: "Forrest IIa", 
         desc: "Vaso visible no sangrante", 
         color: "text-tron-cyan", 
         border: "border-tron-cyan/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gastric_ulcer.jpg/800px-Gastric_ulcer.jpg",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gastric_ulcer.jpg/1200px-Gastric_ulcer.jpg",
         hotspot: { x: "55%", y: "50%", label: "Vaso Visible (Alto Riesgo)" },
-        longDesc: "Úlcera de base limpia con vaso prominente. Riesgo de recidiva hemorrágica del 43%. Indicación de terapia dual."
+        longDesc: "Úlcera de base limpia con vaso prominente. Riesgo de recidiva hemorrágica del 43%. Indicación de terapia dual (Adrenalina + Clip/Térmico)."
       },
       { 
         id: 4,
@@ -1895,9 +2204,9 @@ export default function App() {
         desc: "Eritema severo, friabilidad, úlceras", 
         color: "text-tron-sub", 
         border: "border-tron-sub/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ulcerative_Colitis.jpg/800px-Ulcerative_Colitis.jpg",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ulcerative_Colitis.jpg/1200px-Ulcerative_Colitis.jpg",
         hotspot: { x: "30%", y: "60%", label: "Friabilidad y Exudado" },
-        longDesc: "Mucosa con pérdida total de patrón vascular, sangrado espontáneo y ulceración extensa. Sugiere actividad moderada-severa."
+        longDesc: "Mucosa con pérdida total de patrón vascular, sangrado espontáneo y ulceración extensa. Sugiere actividad moderada-severa (Mayo 3)."
       },
       { 
         id: 5,
@@ -1906,20 +2215,20 @@ export default function App() {
         desc: "Cordones gruesos confluyentes", 
         color: "text-tron-yellow", 
         border: "border-tron-yellow/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Esophageal_varices_01.jpg/800px-Esophageal_varices_01.jpg",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Esophageal_varices_01.jpg/1200px-Esophageal_varices_01.jpg",
         hotspot: { x: "50%", y: "70%", label: "Puntos Rojos (Cherry Red)" },
-        longDesc: "Várices de gran tamaño que ocupan más de un tercio de la luz. Los puntos rojos indican debilidad de la pared y alto riesgo de rotura."
+        longDesc: "Várices de gran tamaño que ocupan más de un tercio de la luz. Los puntos rojos indican debilidad de la pared y alto riesgo de rotura inminente."
       },
       { 
         id: 6,
         title: "Cáncer Gástrico", 
-        class: "Bormann III", 
+        class: "Borrmann III", 
         desc: "Úlcera infiltrante con bordes elevados", 
         color: "text-tron-cyan", 
         border: "border-tron-cyan/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gastric_cancer_01.jpg/800px-Gastric_cancer_01.jpg",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gastric_cancer_01.jpg/1200px-Gastric_cancer_01.jpg",
         hotspot: { x: "45%", y: "30%", label: "Borde Infiltrativo Irregular" },
-        longDesc: "Lesión ulcerada con infiltración de la pared circundante. La biopsia es mandatoria para determinar histología (tipo Laurén)."
+        longDesc: "Lesión ulcerada con infiltración de la pared circundante. La biopsia es mandatoria para determinar histología (tipo Laurén) y grado de diferenciación."
       },
     ];
 
@@ -2093,6 +2402,69 @@ export default function App() {
     );
   }
 
+  if (currentView === 'archive') {
+    const errorQuestions = [
+      ...SEED_QUESTIONS,
+      ...(Object.values(cachedQuestions).flat() as Question[])
+    ].filter(q => progress.reviewIds.includes(q.id));
+
+    return (
+      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/60">
+        <header className="flex justify-between items-center mb-12 border-b border-tron-sub/30 pb-6">
+          <div className="flex items-center gap-6">
+            <button 
+              onClick={() => { playAudio('click'); setCurrentView('lobby'); }}
+              className="p-1 px-4 border border-white/10 rounded hover:bg-white/5 hover:text-tron-sub transition-colors flex items-center gap-2 group"
+            >
+              <RotateCcw size={14} className="group-hover:rotate-[-45deg] transition-transform" /> 
+              <span className="text-[10px] uppercase font-bold tracking-widest">Volver</span>
+            </button>
+            <h2 className="text-tron-sub font-display text-4xl font-black tracking-tighter uppercase italic">
+              Memory Core <span className="text-white text-2xl ml-4 opacity-50">Datos Corruptos</span>
+            </h2>
+          </div>
+        </header>
+
+        <div className="grid grid-cols-1 gap-8">
+           {errorQuestions.length === 0 ? (
+             <div className="py-40 text-center">
+                <ShieldCheck size={64} className="mx-auto mb-6 text-tron-cyan opacity-20" />
+                <p className="font-mono uppercase tracking-[0.3em] text-white/20">Integridad del Sistema al 100%</p>
+             </div>
+           ) : (
+             errorQuestions.map(q => (
+               <motion.div key={q.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                 <TronCard accentColor="#ff4444" className="p-8 border-tron-sub/40 bg-tron-sub/5 shadow-[inset_0_0_40px_rgba(255,68,68,0.05)]">
+                    <div className="flex justify-between items-start mb-6">
+                      <div>
+                        <span className="text-[10px] text-tron-sub uppercase font-black tracking-widest block mb-2">{q.topic}</span>
+                        <h3 className="text-xl font-serif text-white/90 italic line-through decoration-tron-sub/50 decoration-2">{renderWithAcronyms(q.text)}</h3>
+                      </div>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-8 pt-6 border-t border-white/10">
+                      <div className="space-y-4">
+                        <h4 className="text-[10px] uppercase font-black text-tron-sub tracking-widest">Corrección de Falla</h4>
+                        <p className="text-white font-serif italic text-lg leading-relaxed bg-tron-sub/10 p-4 border-l-2 border-tron-sub">
+                          {renderWithAcronyms(q.explanation)}
+                        </p>
+                      </div>
+                      <div className="bg-black/40 p-6 rounded-xl border border-tron-sub/20">
+                        <h4 className="text-[10px] uppercase font-black text-white/40 tracking-widest mb-4">Racional Fisiopatológico</h4>
+                        <p className="text-base text-gray-300 font-mono italic">
+                          {q.fisiopato}
+                        </p>
+                      </div>
+                    </div>
+                 </TronCard>
+               </motion.div>
+             ))
+           )}
+        </div>
+      </div>
+    );
+  }
+
   if (currentView === 'profile') {
     const accuracy = progress.totalAttempted > 0 ? Math.round((progress.totalCorrect / progress.totalAttempted) * 100) : 0;
     
@@ -2108,20 +2480,23 @@ export default function App() {
         </header>
 
         <div className="flex-1 flex flex-col items-center justify-center">
-           <div className="relative mb-16">
-             {/* Identity Disk */}
-             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-tron-cyan/20 flex items-center justify-center relative shadow-[0_0_50px_rgba(0,242,255,0.1)]">
-                <div className="absolute inset-0 rounded-full border-2 border-tron-cyan border-dashed animate-[spin_20s_linear_infinite]" />
-                <div className="absolute inset-4 rounded-full border-4 border-tron-cyan/40" />
-                <div className="absolute inset-8 rounded-full border border-tron-cyan/60 animate-[spin_10s_linear_infinite_reverse]" />
-                
-                <div className="w-32 h-32 md:w-40 md:h-40 bg-tron-cyan/10 rounded-full flex flex-col items-center justify-center border-2 border-tron-cyan shadow-[inset_0_0_20px_rgba(0,242,255,0.5)] backdrop-blur-sm z-10">
-                  <User size={32} className="text-tron-cyan mb-2" />
-                  <span className="font-black text-2xl text-white">{accuracy}%</span>
-                  <span className="uppercase text-[9px] tracking-widest text-tron-cyan font-mono">Precisión</span>
-                </div>
-             </div>
-           </div>
+            <div className="relative mb-16">
+              {/* Identity Disk: Original Clean Style */}
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center relative">
+                 {/* Outer Rotating Ring */}
+                 <div className="absolute inset-0 rounded-full border-2 border-tron-cyan border-dashed animate-[spin_20s_linear_infinite] opacity-60" />
+                 
+                 {/* Inner Counter-Rotating Ring */}
+                 <div className="absolute inset-6 rounded-full border border-tron-cyan/60 animate-[spin_10s_linear_infinite_reverse]" />
+                 
+                 {/* Core Processor */}
+                 <div className="w-32 h-32 md:w-44 md:h-44 bg-tron-cyan/10 rounded-full flex flex-col items-center justify-center border-2 border-tron-cyan shadow-[0_0_40px_rgba(0,242,255,0.3),inset_0_0_20px_rgba(0,242,255,0.5)] backdrop-blur-md z-10">
+                   <User size={40} className="text-tron-cyan mb-2 drop-shadow-[0_0_8px_rgba(0,242,255,1)]" />
+                   <span className="font-black text-4xl text-white text-glow-cyan leading-none">{accuracy}%</span>
+                   <span className="uppercase text-[10px] tracking-[0.4em] text-tron-cyan font-black mt-2">LINK SYNC</span>
+                 </div>
+              </div>
+            </div>
 
            <div className="w-full max-w-2xl bg-tron-card/50 border border-tron-cyan/20 rounded-2xl p-8 backdrop-blur-md">
              <h2 className="text-2xl font-black uppercase text-center text-tron-cyan mb-8 tracking-widest flex items-center justify-center gap-3">

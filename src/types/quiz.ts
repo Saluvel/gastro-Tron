@@ -32,9 +32,13 @@ export interface UserProgress {
     };
   };
   weakTopics: string[];
+  reviewIds: string[];
   streak: number;
   lastSession: string;
   achievements: string[];
+  hasCompletedTutorial?: boolean;
+  lastMissionDate?: string;
+  missionProgress?: number;
   settings?: {
     sound: boolean;
     theme: 'tron' | 'neon' | 'hacker';
