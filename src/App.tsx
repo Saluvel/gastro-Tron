@@ -223,7 +223,7 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
 
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-1.5-pro-latest",
+        model: "gemini-3-flash-preview",
         contents: userMsg,
         config: {
           systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."

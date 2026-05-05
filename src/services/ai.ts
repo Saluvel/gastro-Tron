@@ -23,23 +23,26 @@ async function fetchBatch(topic: string, difficulty: string, count: number): Pro
   4. PERLA CLÍNICA: Un "Axioma" médico definitivo.
   5. POR QUÉ CADA OPCIÓN ES INCORRECTA: Define por qué fallan en "whyWrong".
   
-  Estructura JSON:
-  {
-    "topic": "${topic}",
-    "difficulty": "${difficulty}",
-    "text": "string (Caso clínico estructurado)",
-    "options": ["string", "string", "string", "string"],
-    "correctIndex": number,
-    "explanation": "string (A+B+C)",
-    "fisiopato": "string (Explicación técnica)",
-    "clinicalPearl": "string",
-    "guideline": "string",
-    "whyWrong": { "0": "razón", "1": "razón", "2": "razón", "3": "razón" }
-  }`;
+  Estructura JSON requerida (DEBES DEVOLVER UNA MATRIZ JSON DE EXACTAMENTE ${count} OBJETOS DIFERENTES, repitiendo esta estructura para cada pregunta):
+  [
+    {
+      "topic": "${topic}",
+      "difficulty": "${difficulty}",
+      "text": "string (Caso clínico estructurado)",
+      "options": ["string", "string", "string", "string"],
+      "correctIndex": 0,
+      "explanation": "string (A+B+C)",
+      "fisiopato": "string (Explicación técnica)",
+      "clinicalPearl": "string",
+      "guideline": "string",
+      "whyWrong": { "0": "razón", "1": "razón", "2": "razón", "3": "razón" }
+    },
+    // ... DEBES INCLUIR LAS ${count} PREGUNTAS AQUÍ
+  ]`;
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-1.5-pro-latest",
+      model: "gemini-3-flash-preview",
       contents: [{ parts: [{ text: prompt }] }],
       config: {
         responseMimeType: "application/json",
@@ -94,8 +97,8 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
     throw new Error("MISSING_API_KEY");
   }
 
-  // To prevent token truncation or timeout errors, chunk the requests into batches
-  const BATCH_SIZE = 4;
+  // To prevent rate limits and model truncation, chunk the requests into smaller batches
+  const BATCH_SIZE = 5;
   const batches: number[] = [];
   let remaining = count;
   while (remaining > 0) {
