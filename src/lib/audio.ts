@@ -1,4 +1,14 @@
+let isSoundEnabled = true;
+
+export const setSoundEnabled = (enabled: boolean) => {
+  isSoundEnabled = enabled;
+};
+
+export const getSoundEnabled = () => isSoundEnabled;
+
 export const playAudio = (type: 'hover' | 'click' | 'correct' | 'wrong' | 'start' | 'achievement') => {
+  if (!isSoundEnabled) return;
+  
   try {
     const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
     const oscillator = audioCtx.createOscillator();

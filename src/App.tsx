@@ -24,7 +24,13 @@ import {
   Zap,
   Camera,
   X,
-  Star
+  Star,
+  Settings,
+  Volume2,
+  VolumeX,
+  Trash2,
+  Palette,
+  AlertTriangle
 } from 'lucide-react';
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
@@ -36,7 +42,7 @@ import { OralSim } from './components/OralSim';
 import { RadarChart } from './components/RadarChart';
 import { ClinicalCases } from './components/ClinicalCases';
 import { Leaderboard } from './components/Leaderboard';
-import { playAudio } from './lib/audio';
+import { playAudio, setSoundEnabled } from './lib/audio';
 import { cn } from './lib/utils';
 
 // --- INITIAL STATE & PERSISTENCE ---
@@ -48,6 +54,10 @@ const INITIAL_PROGRESS: UserProgress = {
   streak: 0,
   lastSession: new Date().toISOString(),
   achievements: [],
+  settings: {
+    sound: true,
+    theme: 'tron'
+  }
 };
 
 const ACHIEVEMENTS = [
@@ -56,6 +66,122 @@ const ACHIEVEMENTS = [
   { id: 'master_endo', name: 'Maestro Endoscopista', desc: 'Completa 20 preguntas con >90% de precisión.', icon: <Camera className="text-tron-sub" size={20} /> },
   { id: 'survival_survivor', name: 'Sobreviviente', desc: 'Supera el modo Supervivencia.', icon: <Trophy className="text-tron-yellow" size={20} /> },
 ];
+
+const Acronym = ({ term, definition }: { term: string; definition: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <span className="relative inline-block" onMouseLeave={() => setIsOpen(false)}>
+      <span 
+        onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }}
+        onMouseEnter={() => setIsOpen(true)}
+        className="border-b border-dashed border-tron-cyan text-tron-cyan cursor-pointer hover:bg-tron-cyan/10 transition-colors px-0.5"
+        title={definition}
+      >
+        {term}
+      </span>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.span 
+            initial={{ opacity: 0, y: 5, scale: 0.95 }} 
+            animate={{ opacity: 1, y: 0, scale: 1 }} 
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max max-w-[250px] bg-tron-aside border border-tron-cyan/30 p-2 text-[10px] sm:text-xs text-white rounded shadow-xl z-[1000] text-center font-sans not-italic leading-tight pointer-events-none"
+          >
+            {definition}
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </span>
+  );
+};
+
+const ACRONYMS_DICT: Record<string, string> = {
+  "ASGE": "American Society for Gastrointestinal Endoscopy",
+  "ESGE": "European Society of Gastrointestinal Endoscopy",
+  "AGA": "American Gastroenterological Association",
+  "IDSA": "Infectious Diseases Society of America",
+  "SHEA": "Society for Healthcare Epidemiology of America",
+  "CDI": "Clostridioides difficile infection",
+  "ERGE": "Enfermedad por Reflujo Gastroesofágico",
+  "IBP": "Inhibidor de la Bomba de Protones",
+  "IBPs": "Inhibidores de la Bomba de Protones",
+  "AET": "Acid Exposure Time",
+  "HDA": "Hemorragia Digestiva Alta",
+  "GES": "Garantías Explícitas en Salud",
+  "EII": "Enfermedad Inflamatoria Intestinal",
+  "CU": "Colitis Ulcerosa",
+  "ECCO": "European Crohn's and Colitis Organisation",
+  "PCR": "Proteína C Reactiva",
+  "OLGIM": "Operative Link on Gastric Intestinal Metaplasia",
+  "ACHED": "Asociación Chilena de Endoscopia Digestiva",
+  "HAI": "Hepatitis Autoinmune",
+  "AZA": "Azatioprina",
+  "EASL": "European Association for the Study of the Liver",
+  "IRP": "Integrated Relaxation Pressure",
+  "DLP": "Distal Latency Period",
+  "POEM": "Peroral Endoscopic Myotomy",
+  "ISDE": "International Society for Diseases of the Esophagus",
+  "ACG": "American College of Gastroenterology",
+  "IAP": "International Association of Pancreatology",
+  "APA": "American Pancreatic Association",
+  "WON": "Walled-off Necrosis",
+  "TIPS": "Transjugular Intrahepatic Portosystemic Shunt",
+  "STRIDE-II": "Selecting Therapeutic Targets in Inflammatory Bowel Disease II",
+  "IOIBD": "International Organization for the Study of Inflammatory Bowel Diseases",
+  "HBV": "Hepatitis B Virus",
+  "HBeAg": "Hepatitis B e Antigen",
+  "HBsAg": "Hepatitis B surface Antigen",
+  "CBP": "Colangitis Biliar Primaria",
+  "AUDC": "Ácido Ursodesoxicólico",
+  "AASLD": "American Association for the Study of Liver Diseases",
+  "FXR": "Farnesoid X Receptor",
+  "ASCRS": "American Society of Colon and Rectal Surgeons",
+  "PBE": "Peritonitis Bacteriana Espontánea",
+  "USMSTF": "US Multi-Society Task Force on Colorectal Cancer",
+  "EGFR": "Epidermal Growth Factor Receptor",
+  "PI3K": "Fosfoinosítido 3-quinasa",
+  "GALT": "Gut-Associated Lymphoid Tissue",
+  "PSC": "Células Estelares Pancreáticas (Pancreatic Stellate Cells)",
+  "SHR": "Síndrome Hepatorrenal",
+  "SIRS": "Síndrome de Respuesta Inflamatoria Sistémica",
+  "BSG": "British Society of Gastroenterology",
+  "NASPGHAN": "North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition",
+  "EGD": "Esófagogastroduodenoscopia",
+  "TAC": "Tomografía Axial Computarizada",
+  "TC": "Tomografía Computarizada",
+  "RFA": "Ablación por Radiofrecuencia (Radiofrequency Ablation)",
+  "EMR": "Resección Mucosa Endoscópica (Endoscopic Mucosal Resection)",
+  "EUS-FNA": "Endoscopic Ultrasound-Guided Fine-Needle Aspiration",
+  "EUS": "Endoscopic Ultrasound",
+  "FNA": "Fine-Needle Aspiration",
+  "CEA": "Antígeno Carcinoembrionario (Carcinoembryonic Antigen)",
+  "MCN": "Mucinous Cystic Neoplasm",
+  "IPMN": "Intraductal Papillary Mucinous Neoplasm",
+  "EGJOO": "Esophagogastric Junction Outflow Obstruction",
+  "FA": "Fibrilación Auricular",
+  "IMA": "Isquemia Mesentérica Aguda",
+  "AMS": "Arteria Mesentérica Superior",
+  "NBI": "Narrow Band Imaging",
+  "FICE": "Flexible Spectral Imaging Color Enhancement",
+  "BLI": "Blue Light Imaging",
+  "LCI": "Linked Color Imaging",
+  "AINEs": "Antiinflamatorios No Esteroideos",
+  "AINE": "Antiinflamatorio No Esteroideo"
+};
+
+const acronymKeys = Object.keys(ACRONYMS_DICT).sort((a,b) => b.length - a.length);
+const acronymsRegex = new RegExp(`\\b(${acronymKeys.join('|')})\\b`, 'g');
+
+export const renderWithAcronyms = (text: string) => {
+  if (!text) return null;
+  const parts = text.split(acronymsRegex);
+  return parts.map((part, index) => {
+    if (ACRONYMS_DICT[part]) {
+      return <Acronym key={index} term={part} definition={ACRONYMS_DICT[part]} />;
+    }
+    return <React.Fragment key={index}>{part}</React.Fragment>;
+  });
+};
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking'>('lobby');
@@ -77,12 +203,14 @@ export default function App() {
   const [selectedAtlasItem, setSelectedAtlasItem] = useState<any>(null);
   const [achievementNotify, setAchievementNotify] = useState<any>(null);
   const [isTimedMode, setIsTimedMode] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [resetDoubleCheck, setResetDoubleCheck] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<UserProgress>(() => {
     const saved = localStorage.getItem('gastro_quiz_progress');
     const parsed = saved ? JSON.parse(saved) : INITIAL_PROGRESS;
-    return { ...INITIAL_PROGRESS, ...parsed }; // Ensure new fields are present
+    return { ...INITIAL_PROGRESS, ...parsed, settings: parsed?.settings || INITIAL_PROGRESS.settings }; // Ensure new fields are present
   });
 
   const [cachedQuestions, setCachedQuestions] = useState<Record<string, Question[]>>(() => {
@@ -122,7 +250,6 @@ export default function App() {
     }
   };
 
-  // Add notification UI at the end of the main return
   const AchievementNotification = () => (
     <AnimatePresence>
       {achievementNotify && (
@@ -159,6 +286,30 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('gastro_quiz_bookmarks', JSON.stringify(bookmarks));
   }, [bookmarks]);
+
+  // Apply settings
+  useEffect(() => {
+    setSoundEnabled(progress.settings?.sound ?? true);
+    
+    const root = document.documentElement;
+    const t = progress.settings?.theme || 'tron';
+    if (t === 'neon') {
+      root.style.setProperty('--color-tron-cyan', '#ff00ff');
+      root.style.setProperty('--color-tron-yellow', '#00e5ff');
+      root.style.setProperty('--color-tron-bg', '#0c0514');
+      root.style.setProperty('--color-tron-aside', '#130a1c');
+    } else if (t === 'hacker') {
+      root.style.setProperty('--color-tron-cyan', '#00ff00');
+      root.style.setProperty('--color-tron-yellow', '#33ff33');
+      root.style.setProperty('--color-tron-bg', '#020a02');
+      root.style.setProperty('--color-tron-aside', '#051405');
+    } else {
+      root.style.setProperty('--color-tron-cyan', '#00f2ff');
+      root.style.setProperty('--color-tron-yellow', '#ffb800');
+      root.style.setProperty('--color-tron-bg', '#050508');
+      root.style.setProperty('--color-tron-aside', '#0a0a14');
+    }
+  }, [progress.settings]);
 
   // --- LOGIC ---
   const currentQuestion = questions[currentQuestionIndex];
@@ -277,6 +428,27 @@ export default function App() {
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
+  const updateSettings = (updates: Partial<typeof INITIAL_PROGRESS.settings>) => {
+    playAudio('click');
+    setProgress(prev => ({
+      ...prev,
+      settings: { ...prev.settings, ...updates } as any
+    }));
+  };
+
+  const resetAllProgress = () => {
+    playAudio('wrong');
+    setProgress(INITIAL_PROGRESS);
+    setCachedQuestions({});
+    setBookmarks([]);
+    localStorage.removeItem('gastro_quiz_progress');
+    localStorage.removeItem('gastro_quiz_cached_questions');
+    localStorage.removeItem('gastro_quiz_bookmarks');
+    setShowSettings(false);
+    setResetDoubleCheck(false);
+  };
+
   const startQuiz = async (topic: Topic) => {
     playAudio('start');
     setSelectedTopic(topic);
@@ -419,9 +591,107 @@ export default function App() {
   
   if (currentView === 'lobby') {
     return (
-      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen flex flex-col border-x-4 border-tron-cyan/10">
+      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen flex flex-col border-x-4 border-tron-cyan/10 relative">
         <AchievementNotification />
-        <header className="flex justify-between items-center mb-12 border-b border-tron-cyan/30 pb-6">
+        
+        <AnimatePresence>
+          {showSettings && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+            >
+              <motion.div 
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: 20 }}
+                className="bg-tron-card border border-tron-cyan/30 rounded-2xl w-full max-w-md shadow-[0_0_50px_rgba(0,242,255,0.1)] overflow-hidden"
+              >
+                <div className="flex justify-between items-center p-6 border-b border-tron-cyan/20">
+                  <h2 className="text-xl font-display font-black text-tron-cyan uppercase tracking-widest flex items-center gap-3">
+                    <Settings size={20} /> Configuración del Sistema
+                  </h2>
+                  <button onClick={() => { playAudio('click'); setShowSettings(false); setResetDoubleCheck(false); }} className="text-white/40 hover:text-white transition-colors">
+                    <X size={24} />
+                  </button>
+                </div>
+                
+                <div className="p-6 space-y-8">
+                  <div className="space-y-4">
+                    <h3 className="text-[10px] text-white/50 uppercase font-black tracking-[0.2em] flex items-center gap-2 mb-4">
+                      <Palette size={14} /> Protocolo Visual
+                    </h3>
+                    <div className="grid grid-cols-3 gap-3">
+                      {(['tron', 'neon', 'hacker'] as const).map(th => (
+                        <button
+                          key={th}
+                          onClick={() => updateSettings({ theme: th })}
+                          className={cn(
+                            "py-3 px-2 rounded border uppercase text-[10px] font-bold tracking-widest transition-all",
+                            progress.settings?.theme === th 
+                              ? "bg-tron-cyan/10 border-tron-cyan text-tron-cyan shadow-[0_0_15px_rgba(0,242,255,0.2)]" 
+                              : "bg-black/40 border-white/10 text-white/40 hover:border-white/30"
+                          )}
+                        >
+                          {th}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-[10px] text-white/50 uppercase font-black tracking-[0.2em] flex items-center gap-2 mb-4">
+                      <Volume2 size={14} /> Feedback Auditivo
+                    </h3>
+                    <button
+                      onClick={() => updateSettings({ sound: !progress.settings?.sound })}
+                      className="w-full py-4 border border-white/10 rounded flex items-center justify-between px-6 bg-black/20 hover:bg-white/5 transition-colors"
+                    >
+                      <span className="text-sm font-bold uppercase text-white/80">Sensor Acústico</span>
+                      {progress.settings?.sound ? <Volume2 className="text-tron-cyan" /> : <VolumeX className="text-white/30" />}
+                    </button>
+                  </div>
+
+                  <div className="space-y-4 pt-4 border-t border-red-500/20">
+                    <h3 className="text-[10px] text-red-500/50 uppercase font-black tracking-[0.2em] flex items-center gap-2 mb-4">
+                      <AlertTriangle size={14} /> Zona de Riesgo
+                    </h3>
+                    
+                    {!resetDoubleCheck ? (
+                      <button
+                        onClick={() => { playAudio('wrong'); setResetDoubleCheck(true); }}
+                        className="w-full py-4 border border-red-500/30 rounded flex items-center justify-center gap-3 bg-red-500/10 hover:bg-red-500/20 text-red-500 font-bold uppercase text-sm tracking-widest transition-all"
+                      >
+                        <Trash2 size={18} /> Purgar Datos
+                      </button>
+                    ) : (
+                      <div className="space-y-3">
+                        <p className="text-[10px] text-red-400 font-mono text-center uppercase">¿Confirmas la aniquilación total de tu progreso?</p>
+                        <div className="flex gap-3">
+                           <button
+                              onClick={() => { playAudio('click'); setResetDoubleCheck(false); }}
+                              className="flex-1 py-3 border border-white/20 rounded text-white/60 hover:text-white uppercase text-xs font-bold transition-all"
+                            >
+                              Abortar
+                            </button>
+                            <button
+                              onClick={resetAllProgress}
+                              className="flex-1 py-3 bg-red-600 hover:bg-red-500 text-white border border-red-500 rounded uppercase text-xs font-black shadow-[0_0_20px_rgba(255,0,0,0.4)] transition-all"
+                            >
+                              Confirmar Purga
+                            </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <header className="flex justify-between items-center mb-12 border-b border-tron-cyan/30 pb-6 relative z-10">
           <div>
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
@@ -448,7 +718,14 @@ export default function App() {
               Especialidad Médica & Perlas Fisiopatológicas
             </p>
           </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
+              <button 
+                onClick={() => { playAudio('click'); setShowSettings(true); }}
+                className="p-2 border border-tron-cyan/30 rounded text-tron-cyan hover:bg-tron-cyan/10 hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] transition-all"
+                title="Configuración"
+              >
+                <Settings size={18} />
+              </button>
               <GlowButton 
                 variant="outline"
                 size="sm"
@@ -541,16 +818,16 @@ export default function App() {
                  <Trophy size={12} /> Logros
                </p>
                <div className="flex flex-wrap gap-2">
-                 <div className={cn("p-2 rounded border", progress.totalCorrect >= 10 ? "border-tron-yellow text-tron-yellow bg-tron-yellow/10 shadow-[0_0_10px_rgba(255,184,0,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Primera Gota: 10 Correctas">
-                    <Target size={16} />
+                 <div className={cn("p-2 rounded border", progress.achievements?.includes('first_win') ? "border-tron-yellow text-tron-yellow bg-tron-yellow/10 shadow-[0_0_10px_rgba(255,184,0,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Primer Diagnóstico">
+                    <Activity size={16} />
                  </div>
-                 <div className={cn("p-2 rounded border", progress.streak >= 5 ? "border-tron-cyan text-tron-cyan bg-tron-cyan/10 shadow-[0_0_10px_rgba(0,242,255,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="On Fire: Racha de 5">
-                    <TrendingDown size={16} />
+                 <div className={cn("p-2 rounded border", progress.achievements?.includes('streak_5') ? "border-tron-cyan text-tron-cyan bg-tron-cyan/10 shadow-[0_0_10px_rgba(0,242,255,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Racha Caliente">
+                    <Zap size={16} />
                  </div>
-                 <div className={cn("p-2 rounded border", progress.totalAttempted >= 50 ? "border-tron-sub text-tron-sub bg-tron-sub/10 shadow-[0_0_10px_rgba(255,68,68,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Sobreviviente: 50 Intentos">
-                    <ShieldCheck size={16} />
+                 <div className={cn("p-2 rounded border", progress.achievements?.includes('master_endo') ? "border-tron-sub text-tron-sub bg-tron-sub/10 shadow-[0_0_10px_rgba(255,68,68,0.3)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Maestro Endoscopista">
+                    <Camera size={16} />
                  </div>
-                 <div className={cn("p-2 rounded border", Object.values(progress.byTopic).some(t => (t as { attempted: number; correct: number }).correct >= 20) ? "border-white text-white bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.4)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Jefe de Servicio: 20 Correctas en 1 Tema">
+                 <div className={cn("p-2 rounded border", progress.achievements?.includes('survival_survivor') ? "border-white text-white bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.4)]" : "border-white/10 text-white/30 bg-white/5 opacity-50 filter grayscale")} title="Sobreviviente">
                     <Trophy size={16} />
                  </div>
                </div>
@@ -828,7 +1105,7 @@ export default function App() {
                     </span>
                   </div>
                   <p className="text-xl md:text-2xl text-white font-serif italic leading-tight mb-4 pr-12">
-                    "{dailyPearl.text}"
+                    "{renderWithAcronyms(dailyPearl.text)}"
                   </p>
                   <div className="flex items-center gap-4 text-[9px] text-tron-sub/60 uppercase font-bold tracking-[0.2em]">
                     <span className="flex items-center gap-1"><FileText size={10} /> Evidencia: {dailyPearl.ref}</span>
@@ -905,7 +1182,7 @@ export default function App() {
                     <div>
                       <h4 className="text-[10px] text-white/40 uppercase tracking-widest font-bold mb-2">Contexto Clínico</h4>
                       <p className="text-white/80 font-serif leading-relaxed text-sm p-4 bg-white/5 rounded border border-white/5">
-                        {dailyPearl.question}
+                        {renderWithAcronyms(dailyPearl.question)}
                       </p>
                     </div>
 
@@ -914,14 +1191,14 @@ export default function App() {
                         <Lightbulb size={12} /> Perla Dorada
                       </h4>
                       <p className="text-xl text-tron-yellow font-serif italic border-l-2 border-tron-yellow/50 pl-4 py-1">
-                        "{dailyPearl.text}"
+                        "{renderWithAcronyms(dailyPearl.text)}"
                       </p>
                     </div>
 
                     <div>
                       <h4 className="text-[10px] text-white/40 uppercase tracking-widest font-bold mb-2">Explicación Racional</h4>
                       <div className="text-white/70 font-sans text-sm leading-loose p-5 bg-black/40 rounded border border-white/10 space-y-4">
-                        <div className="whitespace-pre-wrap">{dailyPearl.explanation || "No hay explicación extendida disponible."}</div>
+                        <div className="whitespace-pre-wrap">{renderWithAcronyms(dailyPearl.explanation || "No hay explicación extendida disponible.")}</div>
                       </div>
                     </div>
                   </div>
@@ -1030,7 +1307,7 @@ export default function App() {
                     className="mb-8 p-10 min-h-[300px] flex flex-col bg-tron-card/50"
                   >
                     <h3 className="text-2xl md:text-3xl text-white font-serif font-light leading-relaxed mb-12">
-                      {currentQuestion?.text}
+                      {currentQuestion?.text ? renderWithAcronyms(currentQuestion.text) : null}
                     </h3>
 
                     <motion.div 
@@ -1076,7 +1353,7 @@ export default function App() {
                             )}>
                               {String.fromCharCode(65 + i)}
                             </span>
-                            <span className="flex-1 leading-tight">{opt}</span>
+                            <span className="flex-1 leading-tight">{renderWithAcronyms(opt)}</span>
                             {showFeedback && isCorrectOption && <CheckCircle2 size={24} className="text-tron-cyan" />}
                             {showFeedback && isSelected && !isCorrectOption && <XCircle size={24} className="text-tron-yellow" />}
                           </button>
@@ -1137,7 +1414,7 @@ export default function App() {
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
                       <p className="text-gray-200 text-lg leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
-                        {currentQuestion?.explanation}
+                        {currentQuestion?.explanation ? renderWithAcronyms(currentQuestion.explanation) : null}
                       </p>
                     </div>
 
@@ -1146,7 +1423,7 @@ export default function App() {
                         <Brain size={16} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
                       <p className="text-base text-white/70 leading-relaxed font-mono">
-                        {currentQuestion?.fisiopato}
+                        {currentQuestion?.fisiopato ? renderWithAcronyms(currentQuestion.fisiopato) : null}
                       </p>
                     </TronCard>
 
@@ -1155,7 +1432,7 @@ export default function App() {
                         <Lightbulb size={16} /> Perla Clínica
                       </h5>
                       <p className="text-base text-white font-serif leading-relaxed italic">
-                        "{currentQuestion?.clinicalPearl}"
+                        "{currentQuestion?.clinicalPearl ? renderWithAcronyms(currentQuestion.clinicalPearl) : null}"
                       </p>
                     </div>
 
@@ -1354,7 +1631,7 @@ export default function App() {
                   <div className="flex justify-between items-start mb-6">
                     <div>
                       <span className="text-[10px] text-tron-cyan uppercase font-black tracking-widest block mb-2">{q.topic}</span>
-                      <h3 className="text-xl font-serif text-white leading-relaxed">{q.text}</h3>
+                      <h3 className="text-xl font-serif text-white leading-relaxed">{renderWithAcronyms(q.text)}</h3>
                     </div>
                     <button 
                       onClick={() => toggleBookmark(q.id)}
@@ -1368,13 +1645,13 @@ export default function App() {
                     <div className="space-y-4">
                       <h4 className="text-[10px] uppercase font-black text-white/40 tracking-widest">Resumen Clínico</h4>
                       <p className="text-white font-serif italic text-lg leading-relaxed border-l-2 border-tron-yellow/30 pl-6">
-                        {q.explanation}
+                        {renderWithAcronyms(q.explanation)}
                       </p>
                     </div>
                     <div className="bg-black/20 p-6 rounded-xl border border-white/5">
                       <h4 className="text-[10px] uppercase font-black text-tron-yellow tracking-widest mb-4">Perla de Fellowship</h4>
                       <p className="text-base text-gray-300 font-mono italic">
-                        "{q.clinicalPearl}"
+                        "{renderWithAcronyms(q.clinicalPearl)}"
                       </p>
                     </div>
                   </div>
@@ -1474,13 +1751,13 @@ export default function App() {
                     </div>
                     
                     <p className="text-white text-lg font-serif leading-relaxed italic mb-6 border-l-2 border-tron-yellow/30 pl-6 border-dotted">
-                      {q.clinicalPearl}
+                      {renderWithAcronyms(q.clinicalPearl)}
                     </p>
 
                     <div className="space-y-2 mb-6 opacity-60 group-hover:opacity-100 transition-opacity">
                       <p className="text-[10px] text-tron-cyan uppercase tracking-widest font-bold">Contexto Original:</p>
                       <p className="text-xs text-white/60 font-serif leading-relaxed line-clamp-2">
-                        {q.text}
+                        {renderWithAcronyms(q.text)}
                       </p>
                     </div>
                   </div>
@@ -1540,7 +1817,7 @@ export default function App() {
               <TronCard accentColor="rgba(0,242,255,0.3)" className="w-full h-full flex flex-col justify-center items-center text-center p-12 bg-tron-card/80 hover:border-tron-cyan transition-colors">
                 <Brain size={48} className="text-tron-cyan mb-8 opacity-50" />
                 <h3 className="text-2xl md:text-3xl text-white font-serif leading-relaxed line-clamp-4">
-                  {q.text}
+                  {renderWithAcronyms(q.text)}
                 </h3>
                 <p className="absolute bottom-8 text-[10px] text-white/20 uppercase tracking-[0.3em] font-black group-hover:text-tron-cyan/50 transition-colors">
                   Toca para revelar perla
@@ -1553,7 +1830,7 @@ export default function App() {
               <TronCard accentColor="rgba(255,184,0,0.4)" className="w-full h-full flex flex-col justify-center items-center text-center p-12 bg-tron-yellow/5 border-tron-yellow/50">
                 <Lightbulb size={48} className="text-tron-yellow mb-6 shadow-[0_0_15px_#ffb800] rounded-full" />
                 <p className="text-xl md:text-2xl text-white font-serif leading-relaxed italic border-x-2 border-tron-yellow/30 px-8">
-                  "{q.clinicalPearl}"
+                  "{renderWithAcronyms(q.clinicalPearl)}"
                 </p>
                 <div className="mt-8 py-3 px-6 bg-black/40 rounded-full border border-tron-yellow/20">
                    <p className="text-xs text-white/50 font-mono uppercase">Ref: {q.guideline}</p>
@@ -1651,7 +1928,7 @@ export default function App() {
         <header className="mb-12 flex justify-between items-end border-b border-white/10 pb-6">
           <div>
             <h1 className="text-4xl md:text-5xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter uppercase flex items-center gap-4">
-              <Camera size={40} className="text-tron-cyan" /> Atlas Interactiva
+              <Camera size={40} className="text-tron-cyan" /> Atlas Interactivo
             </h1>
             <p className="text-white/40 font-mono tracking-widest uppercase text-xs mt-2">Detección y Clasificación Visual</p>
           </div>
@@ -1776,15 +2053,24 @@ export default function App() {
                           <Activity size={48} className="absolute -right-4 -top-4 text-white/5 rotate-12" />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                            <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
-                              <div className="text-[10px] text-white/30 uppercase font-black tracking-widest mb-2">Estado Biológico</div>
-                              <div className="text-sm text-tron-staff font-mono uppercase tracking-tight">Estable / Metaplásico</div>
+                              <div className="text-[10px] text-white/30 uppercase font-black tracking-widest mb-2">Hallazgos Clave</div>
+                              <div className="text-sm text-tron-staff font-mono uppercase tracking-tight">Arquitectura Vascular Irregular</div>
                            </div>
                            <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
                               <div className="text-[10px] text-white/30 uppercase font-black tracking-widest mb-2">Protocolo Sugerido</div>
-                              <div className="text-sm text-tron-cyan font-mono uppercase tracking-tight">Seguimiento / Biopsia</div>
+                              <div className="text-sm text-tron-cyan font-mono uppercase tracking-tight">Biopsia dirigida / Escisión</div>
                            </div>
+                        </div>
+
+                        <div className="mt-6 p-4 bg-tron-cyan/5 border border-tron-cyan/20 rounded-lg">
+                           <h4 className="text-[10px] text-tron-cyan uppercase font-black tracking-widest mb-2 flex items-center gap-2">
+                             <ShieldCheck size={12} /> Nota de Especialidad
+                           </h4>
+                           <p className="text-xs text-white/60 font-serif italic">
+                             Siempre correlacionar con la clínica del paciente y las guías <Acronym term="ASGE" definition="American Society for Gastrointestinal Endoscopy" />/<Acronym term="ESGE" definition="European Society of Gastrointestinal Endoscopy" /> vigentes para el manejo de lesiones premalignas.
+                           </p>
                         </div>
                       </div>
                     </div>
@@ -1863,6 +2149,8 @@ export default function App() {
                </div>
              </div>
 
+
+
              <div className="mb-12">
                <h3 className="text-[10px] uppercase text-white/30 font-black tracking-[0.4em] mb-6 flex items-center gap-2">
                  <Star size={14} className="text-tron-yellow" /> Archivo de Logros
@@ -1875,7 +2163,7 @@ export default function App() {
                       "p-4 rounded-xl border flex flex-col items-center text-center transition-all duration-500",
                       progress.achievements?.includes(ach.id) 
                         ? "bg-white/5 border-tron-yellow/30 shadow-[0_0_20px_rgba(255,184,0,0.1)]" 
-                        : "bg-black/20 border-white/5 opacity-20 grayscale scale-95"
+                        : "bg-black/20 border-white/5 opacity-20 filter grayscale scale-95"
                     )}
                    >
                      <div className={cn(

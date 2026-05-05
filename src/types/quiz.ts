@@ -35,4 +35,8 @@ export interface UserProgress {
   streak: number;
   lastSession: string;
   achievements: string[];
+  settings?: {
+    sound: boolean;
+    theme: 'tron' | 'neon' | 'hacker';
+  };
 }
