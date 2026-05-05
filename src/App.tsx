@@ -1071,29 +1071,27 @@ export default function App() {
               Especialidad Médica & Perlas Fisiopatológicas
             </p>
           </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-2 sm:gap-4 items-center">
               <button 
                 onClick={() => { playAudio('click'); setShowSettings(true); }}
-                className="p-2 border border-tron-cyan/30 rounded text-tron-cyan hover:bg-tron-cyan/10 hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] transition-all"
+                className="flex items-center justify-center h-9 w-9 border-2 border-tron-cyan/30 rounded-lg text-tron-cyan hover:bg-tron-cyan/10 hover:border-tron-cyan hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] transition-all"
                 title="Configuración"
               >
-                <Settings size={18} />
+                <Settings size={16} />
               </button>
               <GlowButton 
                 variant="outline"
-                size="sm"
                 onClick={() => setCurrentView('bookmarks')}
-                className="text-[10px] uppercase font-bold tracking-widest"
+                className="h-9 px-3 sm:px-4 text-[10px] uppercase font-bold tracking-widest flex flex-row items-center justify-center !py-0"
               >
-                <ShieldCheck size={12} className="mr-2" /> Mis Marcadores ({bookmarks.length})
+                <ShieldCheck size={14} className="mr-1 sm:mr-2" /> <span className="hidden sm:inline">Mis Marcadores</span><span className="sm:hidden">Marcadores</span> ({bookmarks.length})
               </GlowButton>
               <GlowButton 
                 variant="outline"
-                size="sm"
                 onClick={() => setCurrentView('pearls')}
-                className="text-[10px] uppercase font-bold tracking-widest"
+                className="h-9 px-3 sm:px-4 text-[10px] uppercase font-bold tracking-widest flex flex-row items-center justify-center !py-0"
               >
-                <Lightbulb size={12} className="mr-2" /> Galería de Perlas
+                <Lightbulb size={14} className="mr-1 sm:mr-2" /> <span className="hidden sm:inline">Galería de Perlas</span><span className="sm:hidden">Perlas</span>
               </GlowButton>
               <div className="hidden md:flex gap-8">
                 <div className="text-right">
