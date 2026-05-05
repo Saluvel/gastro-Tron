@@ -200,9 +200,14 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    playAudio('magic');
+  }, []);
+
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return;
     
+    playAudio('magic');
     const userMsg = input.trim();
     setInput('');
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
@@ -219,6 +224,7 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
 
       const modelText = response.text || "Error al procesar la respuesta del Oráculo.";
       setMessages(prev => [...prev, { role: 'model', text: modelText }]);
+      playAudio('magic');
     } catch (error) {
       console.error(error);
       setMessages(prev => [...prev, { role: 'model', text: "Falla de conexión con el Oráculo. Los servidores de la Red están saturados." }]);
@@ -308,7 +314,10 @@ export default function App() {
   const [isOralMode, setIsOralMode] = useState(true); // Default to true as per user interest
   const [revealedOral, setRevealedOral] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
-  const [targetQuestionCount, setTargetCount] = useState(10);
+  const [targetQuestionCount, setTargetCount] = useState(() => {
+    const saved = localStorage.getItem('gastro_quiz_target_count');
+    return saved ? parseInt(saved, 10) : 10;
+  });
   const [pearlsSearch, setPearlsSearch] = useState('');
   const [pearlsFilterTopic, setPearlsFilterTopic] = useState<string | 'all'>('all');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
@@ -472,6 +481,11 @@ export default function App() {
       </motion.div>
     );
   };
+
+  // Save target count
+  useEffect(() => {
+    localStorage.setItem('gastro_quiz_target_count', targetQuestionCount.toString());
+  }, [targetQuestionCount]);
 
   // Save progress whenever it changes
   useEffect(() => {
@@ -672,7 +686,8 @@ export default function App() {
 
       if (currentPool.length < targetQuestionCount) {
         const needed = targetQuestionCount - currentPool.length;
-        const newAIQuestions = await generateQuestions(topic.name, selectedDifficulty, Math.min(needed, 10));
+        // Increase limit to satisfy user request, max 20 per call for stability
+        const newAIQuestions = await generateQuestions(topic.name, selectedDifficulty, Math.min(needed, 20));
         
         // Save to cache
         setCachedQuestions(prev => ({
@@ -849,7 +864,7 @@ export default function App() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           whileHover={{ scale: 1.1, shadow: "0 0 20px rgba(0,242,255,0.6)" }}
-          onClick={() => { playAudio('click'); setCurrentView('chat'); }}
+          onClick={() => { playAudio('magic'); setCurrentView('chat'); }}
           className="fixed bottom-8 right-8 z-[90] w-16 h-16 bg-tron-cyan rounded-full flex items-center justify-center text-black shadow-[0_0_30px_rgba(0,242,255,0.4)] border-4 border-white/20 group"
         >
           <MessageSquare size={30} className="group-hover:rotate-12 transition-transform" />
@@ -1236,7 +1251,7 @@ export default function App() {
                   <span className="text-xs uppercase font-bold tracking-tight">Memoria (Flashcards)</span>
                 </button>
                 <button 
-                  onClick={() => setCurrentView('chat')}
+                  onClick={() => { playAudio('magic'); setCurrentView('chat'); }}
                   className={cn(
                     "w-full p-4 rounded-xl flex items-center gap-3 transition-all border-2",
                     currentView === 'chat' 

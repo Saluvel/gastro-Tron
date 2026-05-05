@@ -6,7 +6,7 @@ export const setSoundEnabled = (enabled: boolean) => {
 
 export const getSoundEnabled = () => isSoundEnabled;
 
-export const playAudio = (type: 'hover' | 'click' | 'correct' | 'wrong' | 'start' | 'achievement' | 'laugh') => {
+export const playAudio = (type: 'hover' | 'click' | 'correct' | 'wrong' | 'start' | 'achievement' | 'laugh' | 'magic') => {
   if (!isSoundEnabled) return;
   
   try {
@@ -29,6 +29,26 @@ export const playAudio = (type: 'hover' | 'click' | 'correct' | 'wrong' | 'start
         gain.connect(audioCtx.destination);
         osc.start(now + delay);
         osc.stop(now + delay + 0.1);
+      });
+      return;
+    }
+
+    if (type === 'magic') {
+      const now = audioCtx.currentTime;
+      // Rising ethereal scale
+      [880, 1108.73, 1318.51, 1661.22, 1760].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + (i * 0.08));
+        
+        gain.gain.setValueAtTime(0.05, now + (i * 0.08));
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (i * 0.08) + 0.3);
+        
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + (i * 0.08));
+        osc.stop(now + (i * 0.08) + 0.3);
       });
       return;
     }
