@@ -1,0 +1,6 @@
+{
+  "name": "Quiz Gastro Tron",
+  "description": "Aplicación de quiz interactivo sobre gastroenterología con estética Tron. Cubre diagnósticos y tratamientos actualizados para médicos y residentes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI-powered question generation", "Interactive learning", "Performance monitoring"]
+}

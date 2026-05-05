@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tron-bg: #050508;
+  --color-tron-aside: #0a0a14;
+  --color-tron-card: #0f0f1d;
+  --color-tron-feedback: #150d18;
+  --color-tron-cyan: #00f2ff;
+  --color-tron-yellow: #ffb800;
+  --color-tron-fellow: #4da6ff;
+  --color-tron-staff: #ffb800;
+  --color-tron-sub: #ff4444;
+  --color-tron-text: #e0e0e0;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-tron-bg text-tron-text overflow-x-hidden antialiased;
+    background-image: 
+      radial-gradient(circle at 50% 10%, #1a1f3d 0%, #050508 100%);
+  }
+}
+
+@layer components {
+  .glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    border: 1px solid rgba(0, 242, 255, 0.4);
+  }
+  
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.8);
+  }
+
+  .text-glow-yellow {
+    text-shadow: 0 0 8px rgba(255, 184, 0, 0.6);
+  }
+
+  .tron-border {
+    @apply border border-tron-cyan/20;
+  }
+
+  .tron-card-outer {
+    @apply bg-tron-card border-2 border-tron-cyan/30 rounded-2xl shadow-[0_0_30px_rgba(0,242,255,0.05)];
+  }
+
+  .skew-btn {
+    @apply px-8 py-3 bg-tron-cyan text-black font-black uppercase text-sm tracking-[0.2em] transform transition-all duration-200;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  }
+
+  .skew-btn:hover {
+    @apply bg-white shadow-[0_0_20px_white];
+  }
+}
