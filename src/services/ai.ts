@@ -21,7 +21,7 @@ async function fetchBatch(topic: string, difficulty: string, count: number): Pro
      C) Justificación basada en Evidencia/Guía/Estudio Hito.
   3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser técnica y detallada.
   4. PERLA CLÍNICA: Un "Axioma" médico definitivo.
-  5. POR QUÉ CADA OPCIÓN ES INCORRECTA: Define por qué fallan en "whyWrong".
+  5. ANÁLISIS DE DISTRACTORES (MANDATORIO): En el objeto "whyWrong", debes proporcionar una justificación fisiopatológica o clínica corta y precisa de POR QUÉ cada opción incorrecta es falsa en este escenario específico. Los distractores deben ser "plausibles" pero incorrectos por una razón científica clara.
   
   Estructura JSON requerida (DEBES DEVOLVER UNA MATRIZ JSON DE EXACTAMENTE ${count} OBJETOS DIFERENTES, repitiendo esta estructura para cada pregunta):
   [

@@ -593,6 +593,12 @@ export default function App() {
   }, [showFeedback, currentQuestionIndex, answers, questions]);
 
   const startSimMode = async () => {
+    if (isSimMode && !isSurvivalMode && questions.length > 0 && currentView !== 'results') {
+      playAudio('start');
+      setCurrentView('quiz');
+      return;
+    }
+
     playAudio('start');
     setIsLoading(true);
     setIsSimMode(true);
@@ -623,6 +629,12 @@ export default function App() {
   };
 
   const startSurvivalMode = async () => {
+    if (isSurvivalMode && !isSimMode && questions.length > 0 && currentView !== 'results') {
+      playAudio('laugh');
+      setCurrentView('quiz');
+      return;
+    }
+
     playAudio('laugh');
     setIsLoading(true);
     setIsSimMode(false);
@@ -687,6 +699,13 @@ export default function App() {
   };
 
   const startQuiz = async (topic: Topic) => {
+    // Intentar reanudar si es el mismo tema y no hemos terminado
+    if (!isSimMode && !isSurvivalMode && selectedTopic?.id === topic.id && questions.length > 0 && currentView !== 'results') {
+      playAudio('start');
+      setCurrentView('quiz');
+      return;
+    }
+
     playAudio('start');
     setSelectedTopic(topic);
     setIsSimMode(false);
@@ -1900,6 +1919,31 @@ export default function App() {
                       </p>
                     </div>
 
+                    {currentQuestion?.whyWrong && (
+                      <TronCard accentColor="rgba(255,184,0,0.1)" className="p-6 bg-black/40">
+                        <h5 className="text-sm uppercase font-black text-tron-yellow mb-4 tracking-[0.2em] flex items-center gap-2">
+                          <AlertTriangle size={16} className="text-tron-yellow" /> ¿Por qué fallan las otras?
+                        </h5>
+                        <div className="space-y-4">
+                          {currentQuestion.options.map((opt, idx) => {
+                            if (idx === currentQuestion.correctIndex) return null;
+                            const reason = currentQuestion.whyWrong?.[idx];
+                            if (!reason) return null;
+                            return (
+                              <div key={idx} className="border-l border-white/10 pl-4 py-1">
+                                <div className="text-[10px] text-white/40 uppercase font-black tracking-widest mb-1">
+                                  Opción {String.fromCharCode(65 + idx)}: {opt.length > 40 ? opt.substring(0, 40) + '...' : opt}
+                                </div>
+                                <p className="text-xs text-white/70 italic leading-relaxed">
+                                  {renderWithAcronyms(reason)}
+                                </p>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </TronCard>
+                    )}
+
                     <div className="flex flex-col gap-4 pt-4">
                       <div className="flex items-center gap-2 text-[10px] text-white/20 uppercase tracking-widest font-mono">
                          <FileText size={12} /> Ref: {currentQuestion?.guideline}
@@ -1954,7 +1998,16 @@ export default function App() {
             <div className="flex flex-col sm:flex-row gap-4">
               <GlowButton 
                 variant="outline" 
-                onClick={() => setCurrentView('lobby')}
+                onClick={() => {
+                  setCurrentView('lobby');
+                  // Limpiar sesión al volver deliberadamente desde resultados
+                  setSelectedTopic(null);
+                  setQuestions([]);
+                  setAnswers([]);
+                  setCurrentQuestionIndex(0);
+                  setIsSimMode(false);
+                  setIsSurvivalMode(false);
+                }}
                 className="flex-1"
               >
                 Menú de Protocolos
