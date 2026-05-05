@@ -32,8 +32,12 @@ import {
   Palette,
   AlertTriangle,
   Skull,
-  Database
+  Database,
+  MessageSquare,
+  Send,
+  Loader2
 } from 'lucide-react';
+import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
 import { Question, Difficulty, UserProgress, Topic } from './types/quiz';
@@ -189,8 +193,115 @@ export const renderWithAcronyms = (text: string) => {
   });
 };
 
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+const GastroChat = ({ onBack }: { onBack: () => void }) => {
+  const [messages, setMessages] = useState<{ role: 'user' | 'model', text: string }[]>([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const sendMessage = async () => {
+    if (!input.trim() || isLoading) return;
+    
+    const userMsg = input.trim();
+    setInput('');
+    setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
+    setIsLoading(true);
+
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: userMsg,
+        config: {
+          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
+        }
+      });
+
+      const modelText = response.text || "Error al procesar la respuesta del Oráculo.";
+      setMessages(prev => [...prev, { role: 'model', text: modelText }]);
+    } catch (error) {
+      console.error(error);
+      setMessages(prev => [...prev, { role: 'model', text: "Falla de conexión con el Oráculo. Los servidores de la Red están saturados." }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col h-[calc(100vh-160px)] md:h-[calc(100vh-200px)] border border-tron-cyan/20 bg-tron-card/50 rounded-2xl overflow-hidden backdrop-blur-md">
+       <div className="p-4 border-b border-tron-cyan/20 bg-tron-cyan/5 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+             <div className="w-10 h-10 rounded-full border border-tron-cyan flex items-center justify-center shadow-[0_0_10px_rgba(0,242,255,0.4)] animate-pulse">
+                <Brain size={20} className="text-tron-cyan" />
+             </div>
+             <div>
+                <h3 className="text-sm font-black text-white tracking-widest uppercase">Oráculo GAS-TRON</h3>
+                <span className="text-[8px] text-tron-cyan/60 font-mono uppercase tracking-tighter">Status: En Línea (Gemini Protocol)</span>
+             </div>
+          </div>
+          <button onClick={onBack} className="text-white/40 hover:text-white transition-colors">
+            <X size={20} />
+          </button>
+       </div>
+
+       <div className="flex-1 overflow-y-auto p-4 space-y-4 font-mono text-sm">
+          {messages.length === 0 && (
+             <div className="h-full flex flex-col items-center justify-center opacity-30 text-center px-8">
+                <MessageSquare size={48} className="mb-4" />
+                <p className="uppercase tracking-[0.2em] italic font-black text-xs">Cargando interfaz de consulta... Haz una pregunta técnica sobre Gastroenterología.</p>
+             </div>
+          )}
+          {messages.map((msg, i) => (
+             <motion.div 
+               key={i}
+               initial={{ opacity: 0, x: msg.role === 'user' ? 20 : -20 }}
+               animate={{ opacity: 1, x: 0 }}
+               className={cn(
+                 "max-w-[85%] p-4 rounded-xl border",
+                 msg.role === 'user' 
+                  ? "ml-auto bg-tron-cyan/10 border-tron-cyan/30 text-white" 
+                  : "mr-auto bg-white/5 border-white/10 text-cyan-50"
+               )}
+             >
+                <div className="text-[10px] uppercase font-black tracking-widest mb-1 opacity-50">
+                   {msg.role === 'user' ? 'Fellow_ID' : 'Oráculo_AI'}
+                </div>
+                <div className="whitespace-pre-wrap leading-relaxed">{msg.text}</div>
+             </motion.div>
+          ))}
+          {isLoading && (
+             <div className="mr-auto bg-white/5 border border-white/10 p-4 rounded-xl max-w-[85%]">
+                <Loader2 size={20} className="animate-spin text-tron-cyan" />
+             </div>
+          )}
+       </div>
+
+       <div className="p-4 border-t border-tron-cyan/20 bg-black/40">
+          <div className="relative">
+             <input 
+               type="text"
+               value={input}
+               onChange={(e) => setInput(e.target.value)}
+               onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+               placeholder="Ingrese consulta para el Oráculo..."
+               className="w-full bg-black/60 border border-tron-cyan/30 rounded-full py-3 px-6 pr-14 text-white focus:outline-none focus:border-tron-cyan/60 transition-colors placeholder:text-white/20 italic"
+             />
+             <button 
+               onClick={sendMessage}
+               disabled={isLoading || !input.trim()}
+               className="absolute right-2 top-1.5 p-2 bg-tron-cyan rounded-full text-black hover:bg-white transition-all disabled:opacity-30"
+             >
+                <Send size={18} />
+             </button>
+          </div>
+          <p className="mt-2 text-[8px] text-center text-white/20 uppercase tracking-widest">Atención: La simulación AI puede generar datos inexactos. Verifique con guías clínicas.</p>
+       </div>
+    </div>
+  );
+};
+
 export default function App() {
-  const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking' | 'archive'>('lobby');
+  const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking' | 'archive' | 'chat'>('lobby');
   const [isSimMode, setIsSimMode] = useState(false);
   const [isSurvivalMode, setIsSurvivalMode] = useState(false);
   const [showDailyGuide, setShowDailyGuide] = useState(false);
@@ -290,7 +401,7 @@ export default function App() {
     const steps = [
       {
         title: "INICIALIZANDO KERNEL",
-        text: "Bienvenido, Fellow. El sistema GASTRON ha sido cargado para optimizar tu rendimiento clínico en gastroenterología.",
+        text: "Bienvenido, Fellow. El sistema GAS-TRON ha sido cargado para optimizar tu rendimiento clínico en gastroenterología.",
         icon: <Zap className="text-tron-cyan" size={48} />
       },
       {
@@ -848,7 +959,7 @@ export default function App() {
                 <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.9" />
               </svg>
               <div className="flex flex-col leading-[0.8] items-start font-black tracking-tighter text-tron-cyan text-glow-cyan">
-                <span>GASTRO</span>
+                <span>GAS-</span>
                 <span>TRON</span>
               </div>
               <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] text-tron-yellow ml-2 md:ml-4 uppercase opacity-70 self-end mb-2 hidden sm:inline-block">
@@ -1108,6 +1219,18 @@ export default function App() {
                 >
                   <Brain size={18} />
                   <span className="text-xs uppercase font-bold tracking-tight">Memoria (Flashcards)</span>
+                </button>
+                <button 
+                  onClick={() => setCurrentView('chat')}
+                  className={cn(
+                    "w-full p-3 rounded flex items-center gap-3 transition-all border",
+                    currentView === 'chat' 
+                      ? "bg-tron-cyan/20 border-tron-cyan text-tron-cyan" 
+                      : "bg-white/5 border-transparent text-white/60 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <MessageSquare size={18} />
+                  <span className="text-xs uppercase font-bold tracking-tight">Consultar Oráculo (AI)</span>
                 </button>
                 <button 
                   onClick={() => setCurrentView('atlas')}
@@ -2598,6 +2721,29 @@ export default function App() {
 
   if (currentView === 'ranking') {
     return <Leaderboard onExit={() => setCurrentView('lobby')} localProgress={progress} />;
+  }
+
+  if (currentView === 'chat') {
+    return (
+      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10">
+        <header className="flex justify-between items-center mb-12">
+          <button 
+            onClick={() => { playAudio('click'); setCurrentView('lobby'); }}
+            className="p-1 px-4 border border-white/10 rounded hover:bg-white/5 hover:text-tron-cyan transition-colors flex items-center gap-2 group"
+          >
+            <RotateCcw size={14} className="group-hover:rotate-[-45deg] transition-transform" /> 
+            <span className="text-[10px] uppercase font-bold tracking-widest">Volver</span>
+          </button>
+          <div className="text-right">
+             <h2 className="text-white font-display text-4xl font-black tracking-tighter uppercase italic">
+               Oracle <span className="text-tron-cyan">Interface</span>
+             </h2>
+             <p className="text-[10px] text-tron-cyan/40 font-mono tracking-widest">GEMINI_PROTOCOL_V3</p>
+          </div>
+        </header>
+        <GastroChat onBack={() => setCurrentView('lobby')} />
+      </div>
+    );
   }
 
   return null;
