@@ -17,6 +17,7 @@ import {
   LayoutDashboard,
   Timer,
   ShieldCheck,
+  TrendingUp,
   Mic,
   User,
   Image as ImageIcon,
@@ -215,7 +216,7 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
 
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.5-pro",
         contents: userMsg,
         config: {
           systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
@@ -332,6 +333,8 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [resetDoubleCheck, setResetDoubleCheck] = useState(false);
   const [selectedPearl, setSelectedPearl] = useState<any>(null);
+  const [flashIndex, setFlashIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<UserProgress>(() => {
@@ -355,6 +358,18 @@ export default function App() {
     const saved = localStorage.getItem('gastro_quiz_bookmarks');
     return saved ? JSON.parse(saved) : [];
   });
+
+  const allKnownQuestions = useMemo(() => [
+    ...SEED_QUESTIONS,
+    ...(Object.values(cachedQuestions).flat() as Question[])
+  ], [cachedQuestions]);
+
+  useEffect(() => {
+    if (currentView === 'flashcards') {
+      setFlashIndex(0);
+      setIsFlipped(false);
+    }
+  }, [currentView]);
 
   const dailyPearl = useMemo(() => {
     const allPearls = SEED_QUESTIONS.map(q => ({
@@ -684,18 +699,24 @@ export default function App() {
     try {
       let currentPool = [...existingQuestions];
 
-      if (currentPool.length < targetQuestionCount) {
+      // If we don't have enough, try to generate to reach the target
+      // We'll give it up to 2 attempts if the AI returns too few
+      let attempts = 0;
+      while (currentPool.length < targetQuestionCount && attempts < 2) {
         const needed = targetQuestionCount - currentPool.length;
-        // Increase limit to satisfy user request, max 20 per call for stability
-        const newAIQuestions = await generateQuestions(topic.name, selectedDifficulty, Math.min(needed, 20));
+        const newAIQuestions = await generateQuestions(topic.name, selectedDifficulty, needed);
         
-        // Save to cache
-        setCachedQuestions(prev => ({
-          ...prev,
-          [topic.id]: [...(prev[topic.id] || []), ...newAIQuestions]
-        }));
-        
-        currentPool = [...currentPool, ...newAIQuestions];
+        if (newAIQuestions && newAIQuestions.length > 0) {
+          // Save to cache
+          setCachedQuestions(prev => ({
+            ...prev,
+            [topic.id]: [...(prev[topic.id] || []), ...newAIQuestions]
+          }));
+          
+          currentPool = [...currentPool, ...newAIQuestions];
+        }
+        attempts++;
+        if (newAIQuestions.length >= needed) break; // AI fulfilled the request
       }
       
       // Shuffle and pick the target count
@@ -713,14 +734,14 @@ export default function App() {
     } catch (error) {
       console.error(error);
       if (existingQuestions.length > 0) {
-        const fallback = existingQuestions.sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
+        const fallback = [...existingQuestions].sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
         setQuestions(fallback);
         setAnswers(new Array(fallback.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowFeedback(false);
         setRevealedOral(false);
       } else {
-        alert("Error al cargar protocolos. Verifica tu conexión.");
+        // Use an inline message instead of alert for better UX in preview
         setCurrentView('lobby');
       }
     }
@@ -843,6 +864,56 @@ export default function App() {
           byTopic: newByTopic
         };
       });
+    }
+  };
+
+  const upgradeDifficultyMidQuiz = async () => {
+    const levels: Difficulty[] = ['Fellow', 'Staff', 'Subspecialist'];
+    const currentIndex = levels.indexOf(selectedDifficulty);
+    
+    if (currentIndex < levels.length - 1) {
+      const nextLevel = levels[currentIndex + 1];
+      setSelectedDifficulty(nextLevel);
+      playAudio('magic');
+
+      if (selectedTopic && currentView === 'quiz') {
+        setIsLoading(true);
+        try {
+          const remainingCount = questions.length - (currentQuestionIndex + 1);
+          if (remainingCount > 0) {
+            let collectedNew = [];
+            let attempts = 0;
+            while (collectedNew.length < remainingCount && attempts < 2) {
+              const neededNow = remainingCount - collectedNew.length;
+              const nextQuestionsBatch = await generateQuestions(selectedTopic.name, nextLevel, neededNow);
+              if (nextQuestionsBatch && nextQuestionsBatch.length > 0) {
+                collectedNew = [...collectedNew, ...nextQuestionsBatch];
+                // Also save to cache for later
+                setCachedQuestions(prev => ({
+                  ...prev,
+                  [selectedTopic.id]: [...(prev[selectedTopic.id] || []), ...nextQuestionsBatch]
+                }));
+              }
+              attempts++;
+              if (nextQuestionsBatch.length >= neededNow) break;
+            }
+
+            if (collectedNew.length > 0) {
+              setQuestions(prev => {
+                const updated = [...prev];
+                // Replace remaining questions with higher difficulty ones (limit to original count if we got more)
+                const toInsert = collectedNew.slice(0, remainingCount);
+                updated.splice(currentQuestionIndex + 1, remainingCount, ...toInsert);
+                return updated;
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Failed to upscale difficulty:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      }
     }
   };
 
@@ -1251,18 +1322,6 @@ export default function App() {
                   <span className="text-xs uppercase font-bold tracking-tight">Memoria (Flashcards)</span>
                 </button>
                 <button 
-                  onClick={() => { playAudio('magic'); setCurrentView('chat'); }}
-                  className={cn(
-                    "w-full p-4 rounded-xl flex items-center gap-3 transition-all border-2",
-                    currentView === 'chat' 
-                      ? "bg-tron-cyan/30 border-tron-cyan text-tron-cyan shadow-[0_0_20px_rgba(0,242,255,0.4)]" 
-                      : "bg-tron-cyan/10 border-tron-cyan/40 text-tron-cyan hover:bg-tron-cyan/20 hover:border-tron-cyan"
-                  )}
-                >
-                  <MessageSquare size={20} className="animate-pulse" />
-                  <span className="text-sm font-black uppercase tracking-widest">Consultar Oráculo (AI)</span>
-                </button>
-                <button 
                   onClick={() => setCurrentView('atlas')}
                   className={cn(
                     "w-full p-3 rounded flex items-center gap-3 transition-all border",
@@ -1630,6 +1689,16 @@ export default function App() {
               <span className="text-xs bg-white/5 px-2 py-0.5 rounded text-white/40 font-mono tracking-widest ml-4 border border-white/10 uppercase">
                 {selectedDifficulty}
               </span>
+              {selectedDifficulty !== 'Subspecialist' && (
+                <button
+                  onClick={upgradeDifficultyMidQuiz}
+                  className="ml-4 p-1 px-3 bg-tron-yellow/10 border border-tron-yellow/30 rounded text-tron-yellow text-[10px] uppercase font-bold tracking-tighter hover:bg-tron-yellow/20 transition-all flex items-center gap-1 group shadow-[0_0_10px_rgba(255,184,0,0.1)] hover:shadow-[0_0_20px_rgba(255,184,0,0.3)]"
+                  title="Subir dificultad del módulo"
+                >
+                  <TrendingUp size={12} className="group-hover:-translate-y-0.5 transition-transform" />
+                  Incrementar Nivel
+                </button>
+              )}
             </h2>
           </div>
           <div className="flex items-center gap-4">
@@ -2238,21 +2307,23 @@ export default function App() {
   }
 
   if (currentView === 'flashcards') {
-    const allKnownQuestions = [
-      ...SEED_QUESTIONS,
-      ...(Object.values(cachedQuestions).flat() as Question[])
-    ];
-    
-    // Quick state for flashcards since it's transient
-    const [flashIndex, setFlashIndex] = useState(0);
-    const [isFlipped, setIsFlipped] = useState(false);
+    if (allKnownQuestions.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-screen text-white">
+          <p>Cargando banco de perlas...</p>
+          <GlowButton onClick={() => setCurrentView('lobby')} className="mt-4">Regresar</GlowButton>
+        </div>
+      );
+    }
     
     const nextCard = () => {
       setIsFlipped(false);
-      setTimeout(() => setFlashIndex((flashIndex + 1) % allKnownQuestions.length), 150);
+      setTimeout(() => {
+        setFlashIndex(prev => (prev + 1) % allKnownQuestions.length);
+      }, 150);
     };
 
-    const q = allKnownQuestions[flashIndex];
+    const q = allKnownQuestions[flashIndex] || allKnownQuestions[0];
 
     return (
       <div className="max-w-4xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/40 flex flex-col justify-center items-center">
@@ -2269,33 +2340,54 @@ export default function App() {
           </div>
         </header>
 
-        <div className="w-full aspect-[4/3] max-w-2xl [perspective:1000px] cursor-pointer group" onClick={() => setIsFlipped(!isFlipped)}>
+        <div className="w-full aspect-[4/3] max-w-2xl [perspective:1000px] group">
           <motion.div 
             className="w-full h-full relative [transform-style:preserve-3d] transition-all duration-500 ease-out"
             animate={{ rotateY: isFlipped ? 180 : 0 }}
           >
             {/* FRONT */}
             <div className="absolute inset-0 backface-hidden [backface-visibility:hidden]">
-              <TronCard accentColor="rgba(0,242,255,0.3)" className="w-full h-full flex flex-col justify-center items-center text-center p-12 bg-tron-card/80 hover:border-tron-cyan transition-colors">
-                <Brain size={48} className="text-tron-cyan mb-8 opacity-50" />
-                <h3 className="text-2xl md:text-3xl text-white font-serif leading-relaxed line-clamp-4">
-                  {renderWithAcronyms(q.text)}
-                </h3>
-                <p className="absolute bottom-8 text-[10px] text-white/20 uppercase tracking-[0.3em] font-black group-hover:text-tron-cyan/50 transition-colors">
-                  Toca para revelar perla
-                </p>
+              <TronCard 
+                accentColor="rgba(0,242,255,0.3)" 
+                className="w-full h-full flex flex-col items-center text-center p-8 md:p-12 bg-tron-card/80 hover:border-tron-cyan transition-colors relative"
+                onClick={() => setIsFlipped(true)}
+              >
+                <div className="w-full h-full flex flex-col justify-center overflow-y-auto custom-scrollbar px-2" onClick={(e) => e.stopPropagation()}>
+                  <Brain size={48} className="text-tron-cyan mb-8 opacity-50 shrink-0 mx-auto" />
+                  <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-serif leading-relaxed">
+                    {renderWithAcronyms(q.text)}
+                  </h3>
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); setIsFlipped(true); }}
+                    className="mt-8 mx-auto py-2 px-6 bg-tron-cyan/10 border border-tron-cyan/40 rounded-full text-tron-cyan text-[10px] uppercase font-black hover:bg-tron-cyan/20 transition-all tracking-[0.2em]"
+                  >
+                    Revelar Perla
+                  </button>
+                </div>
               </TronCard>
             </div>
 
             {/* BACK */}
             <div className="absolute inset-0 backface-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
-              <TronCard accentColor="rgba(255,184,0,0.4)" className="w-full h-full flex flex-col justify-center items-center text-center p-12 bg-tron-yellow/5 border-tron-yellow/50">
-                <Lightbulb size={48} className="text-tron-yellow mb-6 shadow-[0_0_15px_#ffb800] rounded-full" />
-                <p className="text-xl md:text-2xl text-white font-serif leading-relaxed italic border-x-2 border-tron-yellow/30 px-8">
-                  "{renderWithAcronyms(q.clinicalPearl)}"
-                </p>
-                <div className="mt-8 py-3 px-6 bg-black/40 rounded-full border border-tron-yellow/20">
-                   <p className="text-xs text-white/50 font-mono uppercase">Ref: {q.guideline}</p>
+              <TronCard 
+                accentColor="rgba(255,184,0,0.4)" 
+                className="w-full h-full flex flex-col items-center text-center p-8 md:p-12 bg-tron-yellow/5 border-tron-yellow/50 relative"
+                onClick={() => setIsFlipped(false)}
+              >
+                <div className="w-full h-full flex flex-col justify-center overflow-y-auto custom-scrollbar px-2" onClick={(e) => e.stopPropagation()}>
+                  <Lightbulb size={48} className="text-tron-yellow mb-6 shadow-[0_0_15px_#ffb800] rounded-full shrink-0 mx-auto" />
+                  <p className="text-lg md:text-xl lg:text-2xl text-white font-serif leading-relaxed italic border-x-2 border-tron-yellow/30 px-6">
+                    "{renderWithAcronyms(q.clinicalPearl)}"
+                  </p>
+                  <div className="mt-8 py-3 px-6 bg-black/40 rounded-full border border-tron-yellow/20 shrink-0 mx-auto w-fit">
+                    <p className="text-xs text-white/50 font-mono uppercase">Ref: {q.guideline}</p>
+                  </div>
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); setIsFlipped(false); }}
+                    className="mt-6 mx-auto py-1 px-4 text-white/40 text-[9px] uppercase tracking-widest hover:text-white transition-colors"
+                  >
+                    Volver a pregunta
+                  </button>
                 </div>
               </TronCard>
             </div>
