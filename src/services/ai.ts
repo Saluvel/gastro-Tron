@@ -53,7 +53,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       ]`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-flash-latest",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
