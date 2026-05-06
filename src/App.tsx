@@ -554,6 +554,16 @@ export default function App() {
   // --- LOGIC ---
   const currentQuestion = questions[currentQuestionIndex];
 
+  // REAL-TIME STREAK TRACKING (Current Session)
+  const [currentStreak, setCurrentStreak] = useState(0);
+
+  const streakVisuals = useMemo(() => {
+    if (currentStreak >= 10) return { color: '#ffb800', shadow: '0 0 40px #ffb800', text: 'Sincronía Legendaria (GOD MODE)', intensity: 'animate-pulse-fast' };
+    if (currentStreak >= 6) return { color: '#ffffff', shadow: '0 0 30px #ffffff', text: 'Overdrive Activado', intensity: 'animate-pulse' };
+    if (currentStreak >= 3) return { color: '#00f2ff', shadow: '0 0 20px #00f2ff', text: 'Sincronía Estable', intensity: '' };
+    return null;
+  }, [currentStreak]);
+
   const userRank = useMemo(() => {
     const xp = progress.totalCorrect * 10;
     if (xp > 5000) return { name: 'Maestro Consultor (Chief)', color: 'text-tron-sub' };
@@ -783,8 +793,13 @@ export default function App() {
   const handleAnswerSelect = (index: number) => {
     if (showFeedback) return;
     const isAnsCorrect = index === questions[currentQuestionIndex].correctIndex;
-    if (isAnsCorrect) playAudio('correct');
-    else playAudio('wrong');
+    if (isAnsCorrect) {
+      playAudio('correct');
+      setCurrentStreak(prev => prev + 1);
+    } else {
+      playAudio('wrong');
+      setCurrentStreak(0);
+    }
     
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = index;
@@ -1475,7 +1490,7 @@ export default function App() {
                    <div className="space-y-4">
                       <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold">Cantidad de Preguntas por Sesión</p>
                       <div className="flex gap-2">
-                        {[5, 10, 15, 20].map(count => (
+                        {[5, 10, 20, 30].map(count => (
                           <button
                             key={count}
                             onClick={() => setTargetCount(count)}
@@ -1754,21 +1769,90 @@ export default function App() {
               </div>
             )}
             <div className="text-right">
-            <span className="text-4xl font-mono text-white">
-              {String(currentQuestionIndex + 1).padStart(2, '0')}
-              <span className="text-white/10 mx-1">/</span>
-              {String(questions.length).padStart(2, '0')}
+            <span className="text-4xl font-mono text-white flex items-baseline gap-4">
+              {/* Session Streak Indicator */}
+              <AnimatePresence mode="wait">
+                {currentStreak > 0 && (
+                  <motion.div 
+                    key={currentStreak}
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 1.5, opacity: 0 }}
+                    className={cn(
+                      "flex items-center gap-1 text-sm font-black italic uppercase italic tracking-tighter",
+                      currentStreak >= 10 ? "text-tron-yellow" : currentStreak >= 6 ? "text-white" : "text-tron-cyan"
+                    )}
+                  >
+                    <Zap size={14} fill="currentColor" /> x{currentStreak}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <span>
+                {String(currentQuestionIndex + 1).padStart(2, '0')}
+                <span className="text-white/10 mx-1">/</span>
+                {String(questions.length).padStart(2, '0')}
+              </span>
             </span>
-            <div className="w-32 h-1 bg-white/5 mt-2 rounded-full overflow-hidden">
+            <div className="w-32 h-1 bg-white/5 mt-2 rounded-full overflow-hidden border border-white/5">
                <motion.div 
-                className="h-full bg-tron-cyan shadow-[0_0_10px_cyan]"
+                className="h-full relative overflow-hidden"
                 initial={{ width: 0 }}
-                animate={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
-               />
+                animate={{ 
+                  width: `${((currentQuestionIndex + (showFeedback ? 1 : 0)) / questions.length) * 100}%`,
+                  backgroundColor: streakVisuals?.color || 'var(--color-tron-cyan)'
+                }}
+                style={{ boxShadow: streakVisuals?.shadow }}
+               >
+                 <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)] animate-[shimmer_2s_infinite]" />
+               </motion.div>
             </div>
+            {streakVisuals && (
+              <div className={cn("text-[8px] uppercase font-bold tracking-widest mt-1 text-right", streakVisuals.intensity)} style={{ color: streakVisuals.color }}>
+                {streakVisuals.text}
+              </div>
+            )}
           </div>
         </div>
       </header>
+
+      {/* Identity Discs & Grid Background Effects */}
+      <AnimatePresence>
+        {currentStreak >= 3 && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
+          >
+             {/* Top Disc */}
+             <motion.div 
+               className="absolute -top-[20%] -left-[10%] w-[60vw] aspect-square border border-tron-cyan/20 rounded-full animate-slow-spin-reverse"
+               style={{ boxShadow: streakVisuals?.shadow ? `inset 0 0 100px ${streakVisuals.color}22` : '' }}
+             />
+             
+             {/* Bottom Disc */}
+             <motion.div 
+               className="absolute -bottom-[20%] -right-[10%] w-[70vw] aspect-square border-2 border-tron-cyan/10 rounded-full animate-slow-spin"
+             />
+
+             {currentStreak >= 6 && (
+               <>
+                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tron-cyan/40 to-transparent animate-pulse" />
+                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tron-cyan/40 to-transparent animate-pulse" />
+               </>
+             )}
+
+             {currentStreak >= 10 && (
+               <motion.div 
+                 animate={{ opacity: [0.05, 0.15, 0.05] }}
+                 transition={{ duration: 0.5, repeat: Infinity }}
+                 className="absolute inset-0 bg-tron-yellow/5"
+               />
+             )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-40">
@@ -1779,7 +1863,7 @@ export default function App() {
             <p className="text-tron-yellow mt-12 font-mono uppercase tracking-[0.5em] text-sm animate-pulse">Sincronizando Heurística...</p>
           </div>
         ) : (
-          <div className="grid grid-cols-12 gap-8">
+          <div className="grid grid-cols-12 gap-12 items-start">
             <div className="col-span-12 lg:col-span-8">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -1787,6 +1871,7 @@ export default function App() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
+                  className="space-y-6"
                 >
                   <TronCard 
                     accentColor="rgba(0,242,255,0.4)" 
@@ -1877,8 +1962,8 @@ export default function App() {
               </AnimatePresence>
             </div>
 
-            <aside className="col-span-12 lg:col-span-4">
-              <AnimatePresence>
+            <aside className="col-span-12 lg:col-span-4 space-y-8">
+               <AnimatePresence>
                 {showFeedback ? (
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}

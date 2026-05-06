@@ -4,9 +4,10 @@ import { Question, Difficulty } from "../types/quiz";
 const apiKey = process.env.GEMINI_API_KEY || '';
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : ({} as GoogleGenAI);
 
-async function fetchBatch(topic: string, difficulty: string, count: number): Promise<Question[]> {
+async function fetchBatch(topic: string, difficulty: string, count: number, focusArea?: string): Promise<Question[]> {
   const prompt = `Eres un Profesor de Gastroenterología de nivel mundial evaluando candidatos en un examen de máxima exigencia.
   Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topic}".
+  ${focusArea ? `IMPORTANTE: Para este lote, prioriza el área de enfoque: "${focusArea}" asegurando que las preguntas sean variadas dentro de este nicho.` : ''}
   
   LÓGICA DE ESCALAMIENTO SEGÚN NIVEL:
   - Nivel "Fellow": Enfoque en manejo estándar según guías internacionales (ASGE/ESGE/AGA). Casos de presentación clásica pero con distractores académicos.
@@ -15,7 +16,14 @@ async function fetchBatch(topic: string, difficulty: string, count: number): Pro
 
   ESTÁNDARES PARA EL EXAMEN:
   1. ENFOQUE: Casos clínicos de alto impacto. El objetivo es evaluar el razonamiento crítico y la toma de decisiones.
-  2. ESTRUCTURA DE RESPUESTA:
+  2. MÁXIMA VARIEDAD OBLIGATORIA: Para el tema "${topic}", debes cubrir un espectro de 360 grados. NO te centres en un solo patógeno o condición. Si el tema es general (ej. Diarrea Aguda), debes incluir:
+     - Virus (Norovirus, Rotavirus).
+     - Bacterias (Salmonella, Campylobacter, Shigella, Yersinia, Vibrio).
+     - Parásitos (Giardia, Cryptosporidium).
+     - Causas no infecciosas (Fármacos, Autoinmune, Isquemia).
+     - Manejo de electrolitos y sepsis.
+     - NO permitas que más del 15% de las preguntas de este lote traten sobre la misma entidad específica (ej. C. diff).
+  3. ESTRUCTURA DE RESPUESTA:
      A) Interpretación del hallazgo.
      B) Justificación clínica.
      C) Justificación basada en Evidencia/Guía/Estudio Hito.
@@ -99,16 +107,31 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
 
   // To prevent rate limits and model truncation, chunk the requests into smaller batches
   const BATCH_SIZE = 5;
-  const batches: number[] = [];
+  const batches: { count: number; focus: string }[] = [];
+  
+  const focusAreas = [
+    "Epidemiología y Diagnóstico Diferencial",
+    "Fisiopatología y Presentación Clínica Atípica",
+    "Manejo Terapéutico y Farmacología",
+    "Complicaciones y Pronóstico",
+    "Interpretación de Guías y Estudios Recientes"
+  ];
+
   let remaining = count;
+  let focusIdx = 0;
   while (remaining > 0) {
-    batches.push(Math.min(remaining, BATCH_SIZE));
-    remaining -= BATCH_SIZE;
+    const currentBatchCount = Math.min(remaining, BATCH_SIZE);
+    batches.push({ 
+      count: currentBatchCount, 
+      focus: focusAreas[focusIdx % focusAreas.length] 
+    });
+    remaining -= currentBatchCount;
+    focusIdx++;
   }
 
   // Fetch batches in parallel
   const results = await Promise.all(
-    batches.map(batchCount => fetchBatch(topic, difficulty, batchCount))
+    batches.map(batch => fetchBatch(topic, difficulty, batch.count, batch.focus))
   );
 
   return results.flat();
