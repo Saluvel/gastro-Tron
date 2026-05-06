@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 import { Question, Difficulty } from "../types/quiz";
 
 export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
@@ -19,7 +19,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
     ];
 
     const shuffledFocus = [...focusAreas].sort(() => Math.random() - 0.5);
-    const BATCH_SIZE = 15;
+    const BATCH_SIZE = 5;
     const allQuestions: Question[] = [];
     
     let remaining = count;
@@ -53,10 +53,38 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       ]`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.1-pro-preview",
         contents: prompt,
         config: {
-          responseMimeType: "application/json"
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.ARRAY,
+            items: {
+              type: Type.OBJECT,
+              properties: {
+                id: { type: Type.STRING },
+                topic: { type: Type.STRING },
+                difficulty: { type: Type.STRING },
+                text: { type: Type.STRING },
+                options: { type: Type.ARRAY, items: { type: Type.STRING } },
+                correctIndex: { type: Type.INTEGER },
+                explanation: { type: Type.STRING },
+                fisiopato: { type: Type.STRING },
+                clinicalPearl: { type: Type.STRING },
+                guideline: { type: Type.STRING },
+                pillar: { type: Type.STRING },
+                whyWrong: { 
+                  type: Type.OBJECT, 
+                  properties: {
+                    "0": { type: Type.STRING },
+                    "1": { type: Type.STRING },
+                    "2": { type: Type.STRING },
+                    "3": { type: Type.STRING }
+                  }
+                }
+              }
+            }
+          }
         }
       });
 
