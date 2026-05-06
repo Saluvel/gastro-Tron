@@ -94,8 +94,10 @@ async function fetchBatch(topicId: string, topicName: string, difficulty: string
     while (attempts < maxAttempts) {
       try {
         console.log(`Intentando llamar al oráculo de GAS-TRON (intento ${attempts + 1})...`);
+        const modelToUse = attempts === 0 ? "gemini-3-flash-preview" : "gemini-1.5-flash";
+        
         response = await ai.models.generateContent({
-          model: "gemini-3-flash-preview",
+          model: modelToUse,
           contents: [{ parts: [{ text: prompt }] }],
           config: {
             responseMimeType: "application/json",
@@ -195,13 +197,24 @@ export async function generateQuestions(topicId: string, topicName: string, diff
     focusIdx++;
   }
 
-  // Fetch batches in parallel
-  const resultsArr = await Promise.all(
-    batches.map(batch => fetchBatch(topicId, topicName, difficulty, batch.count, batch.focus))
-  );
-
-  const flatResults = resultsArr.flat();
+  // Fetch batches sequentially to avoid rate limits (RPM) on free tier
+  const allQuestions: Question[] = [];
   
+  for (const batch of batches) {
+    try {
+      const batchQuestions = await fetchBatch(topicId, topicName, difficulty, batch.count, batch.focus);
+      if (batchQuestions && batchQuestions.length > 0) {
+        allQuestions.push(...batchQuestions);
+      }
+      // Pequeño retardo entre lotes para evitar picos de RPM
+      if (batches.indexOf(batch) < batches.length - 1) {
+        await new Promise(res => setTimeout(res, 500));
+      }
+    } catch (e) {
+      console.warn("Fallo en lote individual de IA, continuando...", e);
+    }
+  }
+
   // Shuffle all questions before returning to avoid thematic grouping
-  return flatResults.sort(() => Math.random() - 0.5);
+  return allQuestions.sort(() => Math.random() - 0.5);
 }

@@ -655,6 +655,15 @@ export default function App() {
 
   // REAL-TIME STREAK TRACKING (Current Session)
   const [currentStreak, setCurrentStreak] = useState(0);
+  const [showStreakMsg, setShowStreakMsg] = useState(false);
+
+  useEffect(() => {
+    if (currentStreak > 0 && currentStreak % 5 === 0) {
+      setShowStreakMsg(true);
+      const timer = setTimeout(() => setShowStreakMsg(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentStreak]);
 
   const streakVisuals = useMemo(() => {
     if (currentStreak >= 20) return { color: '#ff00ff', shadow: '0 0 60px #ff00ff', text: 'DIOS DE LA GASTROENTEROLOGÍA', msg: '¡Imparable! Protocolo Omega Activado.', intensity: 'animate-pulse-fast', level: 5 };
@@ -755,6 +764,54 @@ export default function App() {
             </span>
           </motion.div>
         )}
+      </div>
+    );
+  };
+
+  // --- STREAK MOTIVATION OVERLAY ---
+  const StreakMotivation = () => {
+    if (!showStreakMsg) return null;
+    const { color, text, msg } = streakVisuals;
+
+    return (
+      <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 1.2 }}
+          className="bg-black/80 backdrop-blur-xl border-4 p-12 rounded-[3rem] text-center shadow-[0_0_100px_rgba(0,0,0,0.8)] relative overflow-hidden"
+          style={{ borderColor: color }}
+        >
+          {/* Animated Background Rings */}
+          <div className="absolute inset-0 z-0">
+             <div className="absolute inset-[-100%] animate-[spin_10s_linear_infinite] opacity-10" 
+                  style={{ background: `conic-gradient(from 0deg, transparent, ${color}, transparent)` }} />
+          </div>
+
+          <div className="relative z-10 flex flex-col items-center">
+            <motion.div 
+              animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }}
+              transition={{ duration: 0.5, repeat: 3 }}
+              className="mb-6 p-6 rounded-full bg-white/5 border border-white/10"
+            >
+              <Zap size={64} style={{ color }} className="drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
+            </motion.div>
+            
+            <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter mb-4 italic" style={{ color, textShadow: `0 0 30px ${color}` }}>
+              {text}
+            </h2>
+            
+            <div className="flex items-center gap-4 mb-4">
+               <div className="h-px w-12 bg-white/20" />
+               <span className="text-white text-2xl font-black uppercase tracking-[0.2em]">{currentStreak} ACIERTOS SEGUIDOS</span>
+               <div className="h-px w-12 bg-white/20" />
+            </div>
+            
+            <p className="text-white/60 text-xl font-serif italic max-w-md">
+              {msg}
+            </p>
+          </div>
+        </motion.div>
       </div>
     );
   };
@@ -2000,6 +2057,9 @@ export default function App() {
   if (currentView === 'quiz') {
     return (
       <div className="max-w-6xl mx-auto p-4 md:p-12 min-h-screen py-16 border-x-4 border-tron-cyan/5">
+        <AnimatePresence>
+          {showStreakMsg && <StreakMotivation />}
+        </AnimatePresence>
         <AchievementNotification />
         <header className="flex justify-between items-end mb-12 border-b border-tron-cyan/20 pb-6 text-tron-text">
           <div className="flex items-center gap-6">
@@ -2010,13 +2070,32 @@ export default function App() {
               <RotateCcw size={14} className="group-hover:rotate-[-45deg] transition-transform" /> 
               <span className="text-[10px] uppercase font-bold tracking-widest">Menú Principal</span>
             </button>
-            <h2 className="text-tron-cyan font-display text-4xl font-black tracking-tighter flex items-center gap-4">
-              <StreakLogo streak={currentStreak} />
-              {selectedTopic?.name} 
-              <span className="text-xs bg-white/5 px-2 py-0.5 rounded text-white/40 font-mono tracking-widest ml-4 border border-white/10 uppercase">
-                {selectedDifficulty}
-              </span>
-            </h2>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-4 mb-1">
+                <h2 className="text-tron-cyan font-display text-4xl font-black tracking-tighter flex items-center gap-4">
+                  <StreakLogo streak={currentStreak} />
+                  {selectedTopic?.name} 
+                </h2>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs bg-white/5 px-2 py-0.5 rounded text-white/40 font-mono tracking-widest border border-white/10 uppercase">
+                    {selectedDifficulty}
+                  </span>
+                  <span className="text-[10px] font-black text-tron-cyan bg-tron-cyan/10 px-2 py-0.5 rounded border border-tron-cyan/20 uppercase tracking-widest">
+                    Pregunta {currentQuestionIndex + 1} de {questions.length}
+                  </span>
+                </div>
+              </div>
+              
+              {/* Progress Bar */}
+              <div className="w-full h-1 bg-white/5 rounded-full mt-2 overflow-hidden border border-white/5">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
+                  className="h-full bg-tron-cyan shadow-[0_0_10px_#00f2ff]"
+                  transition={{ type: "spring", stiffness: 50, damping: 20 }}
+                />
+              </div>
+            </div>
           </div>
 
           <div className="flex gap-3">
@@ -3291,21 +3370,46 @@ export default function App() {
         </header>
 
         <div className="flex-1 flex flex-col items-center justify-center">
-            <div className="relative mb-16">
-              {/* Identity Disk: Original Clean Style */}
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center relative">
-                 {/* Outer Rotating Ring */}
-                 <div className="absolute inset-0 rounded-full border-2 border-tron-cyan border-dashed animate-[spin_20s_linear_infinite] opacity-60" />
+            <div className="relative mb-16 scale-110 md:scale-125 transition-transform">
+              {/* Identity Disk: Professional Clinical Grade */}
+              <div className="w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-full flex items-center justify-center relative">
+                 {/* Background Pulse */}
+                 <motion.div 
+                    className="absolute inset-0 rounded-full bg-tron-cyan/5 blur-3xl"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                 />
+
+                 {/* Outer Navigation Ring */}
+                 <div className="absolute inset-0 rounded-full border-[6px] border-tron-cyan/10" />
+                 <div className="absolute inset-0 rounded-full border-2 border-tron-cyan/40 border-dashed animate-[spin_30s_linear_infinite]" />
                  
-                 {/* Inner Counter-Rotating Ring */}
-                 <div className="absolute inset-6 rounded-full border border-tron-cyan/60 animate-[spin_10s_linear_infinite_reverse]" />
+                 {/* Mid-Tier Tactical Ring */}
+                 <div className="absolute inset-10 rounded-full border border-tron-cyan/20" />
+                 <motion.div 
+                    className="absolute inset-10 rounded-full border-t-4 border-r-4 border-tron-cyan shadow-[0_0_20px_rgba(0,242,255,0.4)]"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                 />
+
+                 {/* Inner Sensory Ring */}
+                 <div className="absolute inset-20 rounded-full border border-tron-cyan/10 animate-[spin_10s_linear_infinite_reverse]" />
                  
-                 {/* Core Processor */}
-                 <div className="w-32 h-32 md:w-44 md:h-44 bg-tron-cyan/10 rounded-full flex flex-col items-center justify-center border-2 border-tron-cyan shadow-[0_0_40px_rgba(0,242,255,0.3),inset_0_0_20px_rgba(0,242,255,0.5)] backdrop-blur-md z-10">
-                   <User size={40} className="text-tron-cyan mb-2 drop-shadow-[0_0_8px_rgba(0,242,255,1)]" />
-                   <span className="font-black text-4xl text-white text-glow-cyan leading-none">{accuracy}%</span>
-                   <span className="uppercase text-[10px] tracking-[0.4em] text-tron-cyan font-black mt-2">LINK SYNC</span>
-                 </div>
+                 {/* Core Processor: Enhanced Size and Detail */}
+                 <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="w-48 h-48 md:w-64 md:h-64 bg-tron-card rounded-full flex flex-col items-center justify-center border-4 border-tron-cyan shadow-[0_0_60px_rgba(0,242,255,0.4),inset_0_0_30px_rgba(0,242,255,0.5)] backdrop-blur-xl z-10 relative group"
+                 >
+                   <div className="absolute inset-2 rounded-full border border-white/5 pointer-events-none" />
+                   <User size={56} className="text-tron-cyan mb-4 drop-shadow-[0_0_12px_#00f2ff] group-hover:scale-110 transition-transform" />
+                   <div className="flex flex-col items-center">
+                     <span className="font-black text-6xl text-white text-glow-cyan leading-none tabular-nums">{accuracy}%</span>
+                     <div className="flex items-center gap-2 mt-4">
+                        <div className="w-2 h-2 rounded-full bg-tron-cyan animate-pulse" />
+                        <span className="uppercase text-[11px] tracking-[0.5em] text-tron-cyan font-black">SYNC_LEVEL: STABLE</span>
+                     </div>
+                   </div>
+                 </motion.div>
               </div>
             </div>
 
