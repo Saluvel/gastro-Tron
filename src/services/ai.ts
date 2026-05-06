@@ -86,44 +86,57 @@ async function fetchBatch(topicId: string, topicName: string, difficulty: string
   ]`;
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: [{ parts: [{ text: prompt }] }],
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.ARRAY,
-          items: {
-            type: Type.OBJECT,
-            properties: {
-              id: { type: Type.STRING },
-              topic: { type: Type.STRING },
-              difficulty: { type: Type.STRING },
-              text: { type: Type.STRING },
-              options: { type: Type.ARRAY, items: { type: Type.STRING } },
-              correctIndex: { type: Type.NUMBER },
-              explanation: { type: Type.STRING },
-              fisiopato: { type: Type.STRING },
-              clinicalPearl: { type: Type.STRING },
-              guideline: { type: Type.STRING },
-              pillar: { type: Type.STRING },
-              whyWrong: { 
+    let attempts = 0;
+    const maxAttempts = 2;
+    let response;
+
+    while (attempts < maxAttempts) {
+      try {
+        response = await ai.models.generateContent({
+          model: "gemini-1.5-flash",
+          contents: [{ parts: [{ text: prompt }] }],
+          config: {
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: Type.ARRAY,
+              items: {
                 type: Type.OBJECT,
                 properties: {
-                  "0": { type: Type.STRING },
-                  "1": { type: Type.STRING },
-                  "2": { type: Type.STRING },
-                  "3": { type: Type.STRING }
-                }
+                  id: { type: Type.STRING },
+                  topic: { type: Type.STRING },
+                  difficulty: { type: Type.STRING },
+                  text: { type: Type.STRING },
+                  options: { type: Type.ARRAY, items: { type: Type.STRING } },
+                  correctIndex: { type: Type.NUMBER },
+                  explanation: { type: Type.STRING },
+                  fisiopato: { type: Type.STRING },
+                  clinicalPearl: { type: Type.STRING },
+                  guideline: { type: Type.STRING },
+                  pillar: { type: Type.STRING },
+                  whyWrong: { 
+                    type: Type.OBJECT,
+                    properties: {
+                      "0": { type: Type.STRING },
+                      "1": { type: Type.STRING },
+                      "2": { type: Type.STRING },
+                      "3": { type: Type.STRING }
+                    }
+                  }
+                },
+                required: ["text", "options", "correctIndex", "explanation", "fisiopato", "clinicalPearl", "guideline", "pillar", "whyWrong"]
               }
-            },
-            required: ["text", "options", "correctIndex", "explanation", "fisiopato", "clinicalPearl", "guideline", "pillar", "whyWrong"]
+            }
           }
-        }
+        });
+        if (response && response.text) break;
+      } catch (e) {
+        attempts++;
+        if (attempts >= maxAttempts) throw e;
+        await new Promise(res => setTimeout(res, 1000 * attempts)); // Backoff
       }
-    });
+    }
 
-    const text = response.text || '[]';
+    const text = response?.text || '[]';
     const questions = JSON.parse(text) as Question[];
     return questions.map(q => ({
       ...q,
