@@ -2090,7 +2090,7 @@ export default function App() {
               <div className="w-full h-1 bg-white/5 rounded-full mt-2 overflow-hidden border border-white/5">
                 <motion.div 
                   initial={{ width: 0 }}
-                  animate={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
+                  animate={{ width: `${questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0}%` }}
                   className="h-full bg-tron-cyan shadow-[0_0_10px_#00f2ff]"
                   transition={{ type: "spring", stiffness: 50, damping: 20 }}
                 />
