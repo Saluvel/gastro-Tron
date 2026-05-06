@@ -36,20 +36,26 @@ async function fetchBatch(topic: string, difficulty: string, count: number, focu
   ESTÁNDARES PARA EL EXAMEN:
   1. ENFOQUE: Casos clínicos de alto impacto centrados EXCLUSIVAMENTE en pacientes ADULTOS. 
      - PROHIBICIÓN: Queda terminantemente prohibido incluir casos pediátricos (neonatos, niños, adolescentes) o patologías exclusivas de la infancia. El examen es para especialistas de adultos.
-  2. MÁXIMA VARIEDAD OBLIGATORIA: Para el tema "${topic}", debes cubrir un espectro de 360 grados. 
+  2. DIRECTRICES DE CONOCIMIENTO (PILARES DEL PREGUNTADO): Las preguntas deben estar pensadas e inspiradas en lo siguiente:
+     - "Must-Know": Urgencias absolutas, "Red flags", pautas de supervivencia clínica y decisiones de vida o muerte (ej. manejo de HDA, megacolon tóxico, sepsis biliar).
+     - "Board Prep": Patrones clásicos, criterios diagnósticos (Roma IV, Baveno, etc), y algoritmos estándar.
+     - "Mastery": Detalles fisiopatológicos precisos, "trampas" diagnósticas comunes que engañan a los novatos, y "Perlas" de subespecialistas.
+     IMPORTANTE: La propiedad "pillar" en el JSON debe ser EXACTAMENTE uno de estos 3 valores ("Must-Know", "Board Prep", "Mastery").
+
+  3. MÁXIMA VARIEDAD OBLIGATORIA: Para el tema "${topic}", debes cubrir un espectro de 360 grados. 
      - PROHIBICIÓN: No permitas que más del 10% de las preguntas traten sobre el mismo patógeno específico.
      - DISTRIBUCIÓN: Debes incluir obligatoriamente una mezcla de:
        * Epidemiología en ADULTOS y causas más frecuentes según comorbilidades.
        * Fisiopatología y diagnóstico diferencial (Causas no infecciosas como isquemia o fármacos).
        * Manejo terapéutico basado en guías recientes (ACG, AGA, EASL).
        * Complicaciones críticas y criterios de hospitalización en el adulto.
-  3. ESTRUCTURA DE EXPLICACIÓN (En la propiedad "explanation" del JSON):
+  4. ESTRUCTURA DE EXPLICACIÓN (En la propiedad "explanation" del JSON):
      A) Interpretación del hallazgo.
      B) Justificación clínica.
      C) Justificación basada en Evidencia/Guía/Estudio Hito.
-  4. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser técnica y detallada.
-  5. PERLA CLÍNICA: Un "Axioma" médico definitivo.
-  6. ANÁLISIS DE DISTRACTORES (MANDATORIO): En el objeto "whyWrong", debes proporcionar una justificación fisiopatológica o clínica corta y precisa de POR QUÉ cada opción incorrecta es falsa en este escenario específico. Los distractores deben ser "plausibles" pero incorrectos por una razón científica clara.
+  5. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser técnica y detallada.
+  6. PERLA CLÍNICA: Un "Axioma" médico definitivo.
+  7. ANÁLISIS DE DISTRACTORES (MANDATORIO): En el objeto "whyWrong", debes proporcionar una justificación fisiopatológica o clínica corta y precisa de POR QUÉ cada opción incorrecta es falsa en este escenario específico. Los distractores deben ser "plausibles" pero incorrectos por una razón científica clara.
 
   
   Estructura JSON requerida (DEBES DEVOLVER UNA MATRIZ JSON DE EXACTAMENTE ${count} OBJETOS DIFERENTES, repitiendo esta estructura para cada pregunta):
@@ -64,6 +70,7 @@ async function fetchBatch(topic: string, difficulty: string, count: number, focu
       "fisiopato": "string (Explicación técnica)",
       "clinicalPearl": "string",
       "guideline": "string",
+      "pillar": "Must-Know | Board Prep | Mastery",
       "whyWrong": { "0": "razón", "1": "razón", "2": "razón", "3": "razón" }
     },
     // ... DEBES INCLUIR LAS ${count} PREGUNTAS AQUÍ

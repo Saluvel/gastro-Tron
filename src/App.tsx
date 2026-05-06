@@ -879,6 +879,34 @@ export default function App() {
     setResetDoubleCheck(false);
   };
 
+  const startGlobalBoardSim = async () => {
+    playAudio('start');
+    setIsLoading(true);
+    setIsSimMode(true);
+    setIsSurvivalMode(false); // Global Board Simulator uses timer, not survival
+    // We will pick 10 random topics from GASTRO_TOPICS and generate 2 questions each?
+    // Since AI generation per topic takes time, we will use seedQuestions.
+    // In a real scenario we'd use generateQuestions with a generalized topic, or batch requests.
+    // For now, let's use all seed questions mixed, or generate a batch on the fly.
+    try {
+      const mixedQuestions = SEED_QUESTIONS
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 30);
+      
+      setQuestions(mixedQuestions);
+      setAnswers(new Array(mixedQuestions.length).fill(null));
+      setCurrentQuestionIndex(0);
+      setShowFeedback(false);
+      setTimeLeft(mixedQuestions.length * 60); // 1 minute per question
+      setSelectedTopic({ id: 'board_sim', name: 'Simulacro Clínico Global (Board Exam)', description: 'Simulación de 30 preguntas que abarcan todas las áreas. Condición estricta de tiempo.' });
+      setCurrentView('quiz');
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const startQuiz = async (topic: Topic) => {
     // Intentar reanudar si es el mismo tema y no hemos terminado
     if (!isSimMode && !isSurvivalMode && selectedTopic?.id === topic.id && questions.length > 0 && currentView !== 'results') {
@@ -2110,8 +2138,21 @@ export default function App() {
                 >
                   <TronCard 
                     accentColor="rgba(0,242,255,0.4)" 
-                    className="mb-8 p-10 min-h-[300px] flex flex-col bg-tron-card/50"
+                    className="mb-8 p-10 min-h-[300px] flex flex-col bg-tron-card/50 relative"
                   >
+                    {currentQuestion?.pillar && (
+                      <div className="absolute -top-3 left-10">
+                        <span className={cn(
+                          "px-4 py-1 text-[9px] uppercase font-black tracking-widest rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] border",
+                          currentQuestion.pillar === 'Must-Know' ? "bg-tron-sub/20 text-tron-sub border-tron-sub" :
+                          currentQuestion.pillar === 'Board Prep' ? "bg-tron-cyan/20 text-tron-cyan border-tron-cyan" :
+                          "bg-tron-yellow/20 text-tron-yellow border-tron-yellow"
+                        )}>
+                          Pilar: {currentQuestion.pillar}
+                        </span>
+                      </div>
+                    )}
+
                     {/* Feature 1: Visual Atlas Component during Question */}
                     {currentQuestion?.visualHint && (
                       <div className="mb-12">
