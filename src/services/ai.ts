@@ -1,6 +1,14 @@
+import { GoogleGenAI } from "@google/genai";
 import { Question, Difficulty } from "../types/quiz";
 
 export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error("La variable de entorno GEMINI_API_KEY no está configurada. Por favor, asegúrate de que esté configurada en los ajustes del proyecto.");
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
+
   try {
     const focusAreas = [
       "Epidemiología, etiología y causas más frecuentes en la población adulta.",
@@ -23,24 +31,41 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       
       console.log(`Llamando al oráculo de GAS-TRON para lote de ${currentBatchCount} preguntas (${focus})...`);
       
-      const response = await fetch("/api/generate-questions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          topicId, 
-          topicName, 
-          difficulty, 
-          count: currentBatchCount,
-          focusArea: focus
-        }),
+      const prompt = `Genera ${currentBatchCount} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topicName}".
+      Contexto específico: ${focus || 'General'}
+      
+      Devuelve un JSON con este formato:
+      [
+        {
+          "id": "unique_id",
+          "topic": "${topicId}",
+          "difficulty": "${difficulty}",
+          "text": "...",
+          "options": ["...", "...", "...", "..."],
+          "correctIndex": 0,
+          "explanation": "...",
+          "fisiopato": "...",
+          "clinicalPearl": "...",
+          "guideline": "...",
+          "pillar": "Must-Know",
+          "whyWrong": { "0": "...", "1": "...", "2": "...", "3": "..." }
+        }
+      ]`;
+
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json"
+        }
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || `Server error: ${response.statusText}`);
+      const text = response.text;
+      if (!text) {
+        throw new Error("El modelo no devolvió texto.");
       }
 
-      const batch = await response.json();
+      const batch = JSON.parse(text);
       allQuestions.push(...batch);
       
       remaining -= currentBatchCount;
@@ -54,7 +79,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       difficulty: difficulty as Difficulty
     })).sort(() => Math.random() - 0.5);
   } catch (error) {
-    console.error("Error al generar preguntas vía API:", error);
+    console.error("Error al generar preguntas vía IA:", error);
     throw error;
   }
 }

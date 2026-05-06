@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mic, Send, RotateCcw, Brain, ShieldAlert, Sparkles, User } from 'lucide-react';
+import { GoogleGenAI } from '@google/genai';
 import { GASTRO_TOPICS } from '../data/categories';
 import { Topic } from '../types/quiz';
 import { TronCard } from './TronCard';
@@ -39,27 +40,27 @@ export function OralSim({ onExit }: OralSimProps) {
     No des opciones. Espera la respuesta del aspirante. Termina tu mensaje con la pregunta.`;
 
     try {
-      const initialMessages: Message[] = [
-        { role: 'system', content: prompt },
-        { role: 'user', content: 'Inicia el tribunal.' }
-      ];
-
-      const response = await fetch("/api/oral-sim", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: initialMessages })
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) throw new Error("API_KEY_MISSING");
+      const ai = new GoogleGenAI({ apiKey });
+      
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: prompt,
       });
 
-      if (!response.ok) throw new Error("Server error");
-      const data = await response.json();
-
+      const text = response.text;
       setMessages([
         { role: 'system', content: prompt },
-        { role: 'assistant', content: data.text || "Error al iniciar simulación." }
+        { role: 'assistant', content: text || "Error al generar caso." }
       ]);
     } catch (error) {
       console.error(error);
-      setMessages([{ role: 'assistant', content: "Error de conexión con el tribunal del Board (Servidor saturado)." }]);
+      if (error instanceof Error && error.message === "API_KEY_MISSING") {
+        setMessages([{ role: 'assistant', content: "[ERROR] Falta GEMINI_API_KEY en tu entorno. Configura esta variable para usar la simulación oral." }]);
+      } else {
+        setMessages([{ role: 'assistant', content: "Error de conexión con el tribunal del Board." }]);
+      }
     }
     setIsTyping(false);
   };
@@ -75,26 +76,31 @@ export function OralSim({ onExit }: OralSimProps) {
     setIsTyping(true);
 
     try {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) throw new Error("API_KEY_MISSING");
+      const ai = new GoogleGenAI({ apiKey });
+
       const prompt = `El aspirante respondió: "${input}". 
       Evalúa críticamente su respuesta en un parrafito. Si está mal o incompleto, indícale por qué de forma firme. 
       Luego, si corresponde, haz una pregunta de seguimiento (follow-up) subiendo la dificultad. Si el caso ya se resolvió, dale una calificación final (Ej: "Aprobado", "Reprobado") y una perla de oro.`;
 
-      // We send the current state + the evaluation prompt for context
-      const chatMessages = [...newMessages, { role: 'user', content: prompt }];
-
-      const response = await fetch("/api/oral-sim", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: chatMessages })
+      // Simplified: Just send the context + new evaluation instruction
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: [...newMessages.map(m => ({ 
+          role: m.role === 'system' ? 'user' : m.role === 'assistant' ? 'model' : 'user', 
+          parts: [{ text: m.content }] 
+        })), { role: 'user', parts: [{ text: prompt }] }],
       });
 
-      if (!response.ok) throw new Error("Server error");
-      const data = await response.json();
-
-      setMessages([...newMessages, { role: 'assistant', content: data.text || "..." }]);
+      setMessages([...newMessages, { role: 'assistant', content: response.text || "..." }]);
     } catch (error) {
       console.error(error);
-      setMessages([...newMessages, { role: 'assistant', content: "Fallo en la sincronía con el tribunal (Error de red)." }]);
+      if (error instanceof Error && error.message === "API_KEY_MISSING") {
+        setMessages([...newMessages, { role: 'assistant', content: "[ERROR] Falta GEMINI_API_KEY en tu entorno. Configura esta variable." }]);
+      } else {
+        setMessages([...newMessages, { role: 'assistant', content: "Error de red." }]);
+      }
     }
     setIsTyping(false);
   };

@@ -42,6 +42,7 @@ import {
   Search,
   BookMarked
 } from 'lucide-react';
+import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
 import { Question, Difficulty, UserProgress, Topic } from './types/quiz';
@@ -217,21 +218,30 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/oracle", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: userMsg })
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error("API_KEY_MISSING");
+      }
+      
+      const ai = new GoogleGenAI({ apiKey });
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: userMsg,
+        config: {
+          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
+        }
       });
 
-      if (!response.ok) throw new Error("Server error");
-      const data = await response.json();
-
-      const modelText = data.text || "Error al procesar la respuesta del Oráculo.";
+      const modelText = response.text || "Error al procesar la respuesta del Oráculo.";
       setMessages(prev => [...prev, { role: 'model', text: modelText }]);
       playAudio('magic');
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'model', text: "Falla de conexión con el Oráculo. Los servidores de la Red están saturados." }]);
+      if (error instanceof Error && error.message === "API_KEY_MISSING") {
+        setMessages(prev => [...prev, { role: 'model', text: "[ERROR] Falta configurar la variable GEMINI_API_KEY en los ajustes del proyecto para usar el Oráculo." }]);
+      } else {
+        setMessages(prev => [...prev, { role: 'model', text: "Falla de conexión con el Oráculo. Los servidores de la Red están saturados." }]);
+      }
     } finally {
       setIsLoading(false);
     }
