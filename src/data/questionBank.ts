@@ -8,7 +8,7 @@ import { Question } from '../types/quiz';
 export const PRELOADED_QUESTIONS: Question[] = [
   // --- DOLOR ABDOMINAL ---
   {
-    id: 'da-001',
+    id: 'q-1',
     topic: 'dolor_abdominal',
     difficulty: 'Fellow',
     text: 'Un paciente de 65 años consulta por dolor abdominal súbito, desproporcionado al examen físico, con antecedentes de fibrilación auricular. ¿Cuál es el diagnóstico más probable según el Manual Chileno 2025?',
@@ -24,7 +24,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
   
   // --- DIARREA AGUDA ---
   {
-    id: 'dag-001',
+    id: 'q-2',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: 'Paciente con diarrea acuosa profusa tras consumo de mariscos crudos. Presenta deshidratación severa. ¿Cuál es el agente etiológico más probable si se sospecha un mecanismo secretor puro?',
@@ -40,7 +40,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- HEMORRAGIA DIGESTIVA ALTA (HDA) ---
   {
-    id: 'hda-001',
+    id: 'q-3',
     topic: 'hda',
     difficulty: 'Fellow',
     text: 'En una endoscopia por HDA se observa una úlcera con un vaso visible no sangrante. Según la clasificación de Forrest, ¿qué grado es y cuál es su riesgo de resangrado sin terapia?',
@@ -56,7 +56,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- ERGE ---
   {
-    id: 'erge-001',
+    id: 'q-4',
     topic: 'erge',
     difficulty: 'Staff',
     text: 'Según los criterios de Lyon 2.0, ¿cuál de los siguientes hallazgos se considera evidencia DEFINITIVA de ERGE?',
@@ -72,7 +72,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- CIRROSIS ---
   {
-    id: 'cir-001',
+    id: 'q-5',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'En el manejo de la ascitis grado 2, ¿cuál es la relación recomendada de Espironolactona:Furosemida para mantener la normopotasemia?',
@@ -88,7 +88,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- PERFIL HEPÁTICO (MASTERCLASS FINAL EXPANSION) ---
   {
-    id: 'ph-011',
+    id: 'q-6',
     topic: 'perfil_hepatico',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el valor del gradiente de albúmina suero-ascitis (GASA) que indica hipertensión portal con una precisión del 97%?',
@@ -102,7 +102,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'ph-012',
+    id: 'q-7',
     topic: 'perfil_hepatico',
     difficulty: 'Staff',
     text: '¿Qué patrón de enzimas hepáticas sugiere una lesión por fármacos de tipo colestásico (ej: Amoxicilina-Clavulánico)?',
@@ -116,7 +116,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'ph-013',
+    id: 'q-8',
     topic: 'perfil_hepatico',
     difficulty: 'Fellow',
     text: 'En un paciente con colestasis crónica, ¿qué vitamina liposoluble suele ser la primera en deficitarse y debe monitorizarse?',
@@ -130,7 +130,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'ph-014',
+    id: 'q-9',
     topic: 'perfil_hepatico',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la utilidad del aclaramiento de Verde de Indocianina en el preoperatorio de grandes resecciones hepáticas?',
@@ -144,7 +144,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'ph-015',
+    id: 'q-10',
     topic: 'perfil_hepatico',
     difficulty: 'Staff',
     text: 'Un paciente presenta elevación persistente de aminotransferasas (AST/ALT ~1.5) y Ferritina de 1200 ng/mL con Saturación de Transferrina del 65%. ¿Qué estudio genético solicita?',
@@ -160,7 +160,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- EII AVANZADA (MASTERCLASS FINAL EXPANSION) ---
   {
-    id: 'eii-011',
+    id: 'q-11',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo de acción del Risankizumab, aprobado para Crohn moderado-grave?',
@@ -174,7 +174,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'eii-012',
+    id: 'q-12',
     topic: 'eii_avanzada',
     difficulty: 'Staff',
     text: 'En un paciente con Crohn ileal con estenosis fibro-estenótica sintomática (sin inflamación activa), ¿cuál es el manejo de elección?',
@@ -188,7 +188,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Staff Level'
   },
   {
-    id: 'eii-013',
+    id: 'q-13',
     topic: 'eii_avanzada',
     difficulty: 'Fellow',
     text: '¿Qué hallazgo histológico es patognomónico de la Enfermedad de Crohn (aunque solo aparezca en un 30% de las muestras)?',
@@ -202,7 +202,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'eii-014',
+    id: 'q-14',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el riesgo principal del uso crónico de Tofacitinib en pacientes mayores de 50 años con factores de riesgo cardiovascular?',
@@ -216,7 +216,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'eii-015',
+    id: 'q-15',
     topic: 'eii_avanzada',
     difficulty: 'Staff',
     text: 'En el monitoreo de pacientes con biológicos, ¿qué se define como "Remisión Profunda" en EII?',
@@ -232,7 +232,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- DIARREA CRÓNICA ---
   {
-    id: 'dcr-001',
+    id: 'q-16',
     topic: 'diarrea_cronica',
     difficulty: 'Fellow',
     text: '¿Cuál es el examen inicial más adecuado para el tamizaje de esteatorrea en un paciente con sospecha de malabsorción?',
@@ -248,7 +248,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- HEMORRAGIA DIGESTIVA BAJA (HDB) ---
   {
-    id: 'hdb-001',
+    id: 'q-17',
     topic: 'hdb',
     difficulty: 'Fellow',
     text: 'Paciente de 80 años con Rectorragia masiva indolora. Hemodinámicamente estable. ¿Cuál es la causa más frecuente de HDB masiva en el adulto mayor?',
@@ -264,7 +264,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- H. PYLORI ---
   {
-    id: 'hp-001',
+    id: 'q-18',
     topic: 'h_pylori',
     difficulty: 'Staff',
     text: '¿Cuál es el esquema de erradicación de primera línea recomendado en Chile (2025) ante el aumento de la resistencia a claritromicina?',
@@ -280,7 +280,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- CELIACA ---
   {
-    id: 'cel-001',
+    id: 'q-19',
     topic: 'celiaca',
     difficulty: 'Staff',
     text: 'En un paciente con déficit de IgA, ¿cuál es el seromarcador de elección para diagnosticar Enfermedad Celiaca?',
@@ -296,7 +296,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- PANCREATITIS ---
   {
-    id: 'pan-001',
+    id: 'q-20',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es el mejor predictor de severidad precoz (primeras 24-48h) en Pancreatitis Aguda según el Manual Chileno 2025?',
@@ -312,7 +312,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- MASLD (Hígado Graso) ---
   {
-    id: 'masld-001',
+    id: 'q-21',
     topic: 'masld',
     difficulty: 'Staff',
     text: '¿Cuál es el score no invasivo preferido para descartar fibrosis avanzada en pacientes con MASLD en la práctica clínica ambulatoria?',
@@ -328,7 +328,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- HEPATITIS ---
   {
-    id: 'hep-001',
+    id: 'q-22',
     topic: 'hepatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es el marcador serológico que indica inmunidad contra el virus de la Hepatitis B tras la vacunación exitosa?',
@@ -344,7 +344,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- VÍAS BILIARES ---
   {
-    id: 'vb-001',
+    id: 'q-23',
     topic: 'vias_biliares',
     difficulty: 'Staff',
     text: 'En un paciente con Coledocolitiasis sospechada, ¿cuál es el examen de mayor rendimiento diagnóstico antes de considerar una CPRE terapéutica?',
@@ -360,7 +360,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
   
   // --- SECTOR: CIRROSIS (EXPANDIDO 2 - STAFF & ULTRA) ---
   {
-    id: 'cir-005',
+    id: 'q-24',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: '¿Cuál es el mejor manejo para la encefalopatía hepática recurrente a pesar del uso de Lactulosa?',
@@ -374,7 +374,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Staff Level'
   },
   {
-    id: 'cir-006',
+    id: 'q-25',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el criterio para realizar profilaxis primaria de Peritonitis Bacteriana Espontánea (PBE) en cirrosis con ascitis?',
@@ -390,7 +390,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO) ---
   {
-    id: 'erge-002',
+    id: 'q-26',
     topic: 'erge',
     difficulty: 'Fellow',
     text: '¿Cuál es el síntoma extraesofágico con mayor asociación a ERGE según el consenso de Montreal?',
@@ -404,7 +404,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'erge-003',
+    id: 'q-27',
     topic: 'erge',
     difficulty: 'Subspecialist',
     text: '¿Qué parámetro de la pH-metría es el mejor predictor de respuesta a la cirugía antirreflujo (Funduplicatura)?',
@@ -420,7 +420,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA AGUDA (EXPANDIDO) ---
   {
-    id: 'dag-002',
+    id: 'q-28',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: '¿Cuál es el antibiótico de primera elección para el tratamiento empírico de la diarrea del viajero grave o febril en adultos?',
@@ -434,7 +434,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'dag-003',
+    id: 'q-29',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: 'En un paciente con diarrea sanguinolenta y sospecha de E. coli enterohemorrágica (O157:H7), ¿por qué están contraindicados los antibióticos?',
@@ -450,7 +450,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO) ---
   {
-    id: 'hda-002',
+    id: 'q-30',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál es el objetivo de hemoglobina recomendado para la transfusión en HDA no varicosa según guías actuales (Estrategia restrictiva)?',
@@ -464,7 +464,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'hda-003',
+    id: 'q-31',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'Ante una HDA varicosa masiva que no responde a terapia endoscópica inicial ni fármacos vasoactivos, ¿cuál es el puente recomendado?',
@@ -478,7 +478,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'da-003',
+    id: 'q-32',
     topic: 'dolor_abdominal',
     difficulty: 'Staff',
     text: 'En un paciente con dolor abdominal crónico y sospecha de Porfiria Intermitente Aguda, ¿cuál es el hallazgo bioquímico clave durante la crisis?',
@@ -494,7 +494,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO - STAFF & ULTRA) ---
   {
-    id: 'cir-002',
+    id: 'q-33',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'Según Baveno VII, ¿cuál es el umbral de elastografía hepática (FibroScan) para considerar que un paciente tiene Hipertensión Portal Clínicamente Significativa (HPCS)?',
@@ -508,7 +508,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Staff Level'
   },
   {
-    id: 'cir-003',
+    id: 'q-34',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo de acción de la Terlipresina en el tratamiento del Síndrome Hepatorrenal tipo 1 (SHR-AKI)?',
@@ -522,7 +522,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'cir-004',
+    id: 'q-35',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: 'En la patogenia de la Encefalopatía Hepática, ¿cómo afecta el amoníaco a los astrocitos cerebrales?',
@@ -538,7 +538,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PERFIL HEPÁTICO (MASTERCLASS) ---
   {
-    id: 'ph-002',
+    id: 'q-36',
     topic: 'perfil_hepatico',
     difficulty: 'Fellow',
     text: '¿Qué hallazgo en el perfil hepático sugiere colestasis extrahepática obstructiva aguda por coledocolitiasis?',
@@ -552,7 +552,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'ph-003',
+    id: 'q-37',
     topic: 'perfil_hepatico',
     difficulty: 'Subspecialist',
     text: 'Un paciente presenta elevación aislada de Fosfatasa Alcalina de origen óseo. ¿Cómo se confirma este origen usando solo el hepatograma estándar?',
@@ -568,7 +568,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ENFERMEDAD INFLAMATORIA INTESTINAL (EXPANDIDO) ---
   {
-    id: 'eii-002',
+    id: 'q-38',
     topic: 'eii_avanzada',
     difficulty: 'Fellow',
     text: '¿Cuál es el hallazgo endoscópico más característico de la Enfermedad de Crohn que la diferencia de la Colitis Ulcerosa?',
@@ -582,7 +582,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'eii-003',
+    id: 'q-39',
     topic: 'eii_avanzada',
     difficulty: 'Staff',
     text: 'En el manejo de la Colitis Ulcerosa Grave (Criterios de Truelove-Witts), ¿cuál es el plazo de tiempo recomendado para evaluar la respuesta a corticoides endovenosos antes de considerar terapia de rescate?',
@@ -596,7 +596,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'eii-004',
+    id: 'q-40',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo de acción del Upadacitinib, recientemente aprobado para CU moderada-grave?',
@@ -612,7 +612,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA (EXPANDIDO) ---
   {
-    id: 'dcr-002',
+    id: 'q-41',
     topic: 'diarrea_cronica',
     difficulty: 'Fellow',
     text: 'Un paciente presenta diarrea crónica que cede por completo con el ayuno. El hiato osmótico fecal (Osmotic Gap) es de 160 mOsm/kg. ¿Qué tipo de diarrea es?',
@@ -626,7 +626,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'dcr-003',
+    id: 'q-42',
     topic: 'diarrea_cronica',
     difficulty: 'Staff',
     text: '¿Cuál es la utilidad principal de la Calprotectina Fecal en el estudio de diarrea crónica?',
@@ -642,7 +642,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PÁNCREAS (EXPANDIDO) ---
   {
-    id: 'pan-002',
+    id: 'q-43',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: '¿Cuál es el momento óptimo para realizar un drenaje de una necrosis pancreática amurallada (WON) infectada?',
@@ -656,7 +656,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Staff Level'
   },
   {
-    id: 'pan-003',
+    id: 'q-44',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la mutación genética más frecuentemente asociada a Pancreatitis Hereditaria con herencia autosómica dominante?',
@@ -672,7 +672,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 2) ---
   {
-    id: 'hp-004',
+    id: 'q-45',
     topic: 'h_pylori',
     difficulty: 'Fellow',
     text: '¿Cuál es el factor de virulencia de H. pylori más fuertemente asociado con el desarrollo de adenocarcinoma gástrico?',
@@ -686,7 +686,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Phatophysiology'
   },
   {
-    id: 'hp-005',
+    id: 'q-46',
     topic: 'h_pylori',
     difficulty: 'Staff',
     text: 'En una paciente embarazada con dispepsia y H. pylori confirmado, ¿cuál es la conducta recomendada?',
@@ -700,7 +700,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'hp-006',
+    id: 'q-47',
     topic: 'h_pylori',
     difficulty: 'Fellow',
     text: '¿Cuánto tiempo debe haber pasado desde el fin del tratamiento antibiótico para realizar un test de aire espirado confiable?',
@@ -714,7 +714,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'hp-007',
+    id: 'q-48',
     topic: 'h_pylori',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el rol del Vonoprazan en la nueva terapia para H. pylori?',
@@ -730,7 +730,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO 2) ---
   {
-    id: 'cel-002',
+    id: 'q-49',
     topic: 'celiaca',
     difficulty: 'Staff',
     text: '¿Cuál de los siguientes cereales está PERMITIDO en la dieta de un paciente celiaco?',
@@ -744,7 +744,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'cel-003',
+    id: 'q-50',
     topic: 'celiaca',
     difficulty: 'Fellow',
     text: '¿Qué hallazgo en la biopsia duodenal define el grado Marsh 3a?',
@@ -758,7 +758,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'cel-004',
+    id: 'q-51',
     topic: 'celiaca',
     difficulty: 'Subspecialist',
     text: 'En un paciente con síntomas persistentes a pesar de dieta estricta, ¿qué sugiere el hallazgo de linfocitos intraepiteliales con fenotipo aberrante (CD3+, CD8-, CD4-)?',
@@ -774,7 +774,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ESÓFAGO (MOTORES Y CÁNCER) ---
   {
-    id: 'mot-001',
+    id: 'q-52',
     topic: 'motores_esofago',
     difficulty: 'Subspecialist',
     text: 'Según la Clasificación de Chicago 4.0, ¿cuál es el criterio manométrico indispensable para el diagnóstico de Acalasia Tipo III (Espástica)?',
@@ -788,7 +788,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'ces-001',
+    id: 'q-53',
     topic: 'cancer_esofago',
     difficulty: 'Staff',
     text: 'En el seguimiento de un paciente con Esófago de Barrett con displasia de bajo grado confirmada por dos patólogos, ¿cuál es la conducta recomendada?',
@@ -804,7 +804,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ESTÓMAGO (ÚLCERA Y CÁNCER) ---
   {
-    id: 'ulp-001',
+    id: 'q-54',
     topic: 'ulcera_peptica',
     difficulty: 'Fellow',
     text: 'Paciente usuario crónico de AINES presenta úlcera gástrica. ¿Cuál es el mecanismo principal por el cual los AINES no selectivos (COX-1/2) inducen daño gastroduodenal?',
@@ -818,7 +818,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'cag-001',
+    id: 'q-55',
     topic: 'cancer_gastrico',
     difficulty: 'Staff',
     text: 'Según el Manual Chileno 2025, ¿cuál es el objetivo primordial del protocolo de biopsias de Sídney modificado en el tamizaje de cáncer gástrico?',
@@ -834,7 +834,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO) ---
   {
-    id: 'pan-004',
+    id: 'q-56',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es la causa más frecuente de Pancreatitis Aguda a nivel mundial y en Chile?',
@@ -848,7 +848,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'pan-005',
+    id: 'q-57',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: '¿En qué caso está indicado el uso profiláctico de antibióticos en Pancreatitis Aguda?',
@@ -864,7 +864,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (EXPANDIDO) ---
   {
-    id: 'eii-gen-002',
+    id: 'q-58',
     topic: 'eii',
     difficulty: 'Staff',
     text: '¿Cuál es la principal diferencia histológica entre la Colitis Ulcerosa y la Enfermedad de Crohn?',
@@ -878,7 +878,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'eii-gen-003',
+    id: 'q-59',
     topic: 'eii',
     difficulty: 'Fellow',
     text: '¿Cuál es el tratamiento de mantención de primera línea para la Colitis Ulcerosa leve a moderada?',
@@ -894,7 +894,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: BIOLOGÍA Y GENÉTICA ---
   {
-    id: 'bio-001',
+    id: 'q-60',
     topic: 'biologia',
     difficulty: 'Subspecialist',
     text: 'En el Síndrome de Lynch (HNPCC), ¿cuál es el mecanismo genético subyacente que predispone al cáncer colorrectal?',
@@ -910,7 +910,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: NUTRICIÓN E INMUNOLOGÍA ---
   {
-    id: 'nut-001',
+    id: 'q-61',
     topic: 'nutricion',
     difficulty: 'Staff',
     text: '¿Cuál es el sitio anatómico de mayor absorción de la Vitamina B12 (Cobalamina) a través de su unión con el Factor Intrínseco?',
@@ -926,7 +926,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
   
   // --- SECTOR: MASLD (EXPANDIDO) ---
   {
-    id: 'masld-002',
+    id: 'q-62',
     topic: 'masld',
     difficulty: 'Fellow',
     text: '¿Cuál es el pilar fundamental del manejo de la esteatosis hepática metabólica?',
@@ -940,7 +940,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'masld-003',
+    id: 'q-63',
     topic: 'masld',
     difficulty: 'Staff',
     text: '¿Cuál es la principal causa de muerte en pacientes con MASLD?',
@@ -956,7 +956,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO) ---
   {
-    id: 'vb-002',
+    id: 'q-64',
     topic: 'vias_biliares',
     difficulty: 'Fellow',
     text: '¿Cuál es la tríada de Charcot?',
@@ -970,7 +970,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'vb-003',
+    id: 'q-65',
     topic: 'vias_biliares',
     difficulty: 'Staff',
     text: 'En un paciente con colecistitis aguda y riesgo quirúrgico prohibitivo, ¿cuál es la alternativa terapéutica?',
@@ -986,7 +986,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS (EXPANDIDO) ---
   {
-    id: 'hep-002',
+    id: 'q-66',
     topic: 'hepatitis',
     difficulty: 'Fellow',
     text: '¿Qué marcador indica infección crónica por Hepatitis B con alta replicación viral y alta infectividad?',
@@ -1002,7 +1002,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO) ---
   {
-    id: 'hdb-002',
+    id: 'q-67',
     topic: 'hdb',
     difficulty: 'Fellow',
     text: '¿Cuál es el examen de primera línea ante una HDB hemodinámicamente estable?',
@@ -1019,7 +1019,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
   // --- SECTOR: BIOLOGÍA (EXPANDIDO) ---
   // --- SECTOR: TRASTORNOS MOTORES (EXPANDIDO) ---
   {
-    id: 'mot-001',
+    id: 'q-68',
     topic: 'motores_esofago',
     difficulty: 'Fellow',
     text: '¿Cuál es el hallazgo manométrico indispensable para el diagnóstico de Acalasia según Chicago 4.0?',
@@ -1035,7 +1035,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CÁNCER ESÓFAGO (EXPANDIDO) ---
   {
-    id: 'ce-001',
+    id: 'q-69',
     topic: 'cancer_esofago',
     difficulty: 'Staff',
     text: '¿Cuál es el principal factor de riesgo para el Adenocarcinoma de esófago?',
@@ -1051,7 +1051,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CÁNCER GÁSTRICO (EXPANDIDO) ---
   {
-    id: 'cg-001',
+    id: 'q-70',
     topic: 'cancer_gastrico',
     difficulty: 'Subspecialist',
     text: '¿Qué significa un score OLGA III o IV en una biopsia gástrica?',
@@ -1067,7 +1067,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ÚLCERA PÉPTICA (EXPANDIDO) ---
   {
-    id: 'up-001',
+    id: 'q-71',
     topic: 'ulcera_peptica',
     difficulty: 'Fellow',
     text: '¿Cuál es la localización más frecuente de la úlcera péptica secundaria a AINES?',
@@ -1083,7 +1083,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (MÁS PREGUNTAS) ---
   {
-    id: 'cir-011',
+    id: 'q-72',
     topic: 'cirrosis',
     difficulty: 'Fellow',
     text: '¿Cuál es el tratamiento de primera línea para la Peritonitis Bacteriana Espontánea (PBE)?',
@@ -1100,7 +1100,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
   // --- SECTOR: HDA (MÁS PREGUNTAS) ---
   // --- SECTOR: CIRROSIS (EXPANDIDO 2) ---
   {
-    id: 'cir-012',
+    id: 'q-73',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el vasopresor de elección actual para el tratamiento del Síndrome Hepatorrenal tipo 1 (HRS-AKI)?',
@@ -1114,7 +1114,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'cir-013',
+    id: 'q-74',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'En un paciente con encefalopatía hepática recurrente a pesar de lactulosa, ¿qué fármaco debe añadirse?',
@@ -1130,7 +1130,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 2) ---
   {
-    id: 'hda-005',
+    id: 'q-75',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál es el manejo inicial crítico de un paciente con sospecha de HDA varicosa?',
@@ -1146,7 +1146,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 2) ---
   {
-    id: 'erge-004',
+    id: 'q-76',
     topic: 'erge',
     difficulty: 'Subspecialist',
     text: '¿Qué hallazgo en la pH-impedanciometría de 24h confirma el diagnóstico de ERGE en un paciente con síntomas típicos y endoscopia normal?',
@@ -1162,7 +1162,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DOLOR ABDOMINAL (EXPANDIDO 2) ---
   {
-    id: 'da-006',
+    id: 'q-77',
     topic: 'dolor_abdominal',
     difficulty: 'Staff',
     text: '¿Qué signo clínico es más predictivo de Apendicitis Aguda?',
@@ -1178,7 +1178,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (AVANZADO - AASLD/EASL) ---
   {
-    id: 'cir-014',
+    id: 'q-78',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el criterio para el diagnóstico de Fallo Hepático Agudo sobre Crónico (ACLF) según la escala EASL-CLIF?',
@@ -1192,7 +1192,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'cir-015',
+    id: 'q-79',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'En un paciente con cirrosis y várices esofágicas pequeñas que nunca han sangrado, ¿cuál es la recomendación de Baveno VII para iniciar profilaxis primaria con Betabloqueadores No Selectivos (BBNS)?',
@@ -1206,7 +1206,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'cir-016',
+    id: 'q-80',
     topic: 'cirrosis',
     difficulty: 'Fellow',
     text: '¿Cuál es la conducta recomendada ante un paciente con cirrosis que presenta un nódulo de 1.5 cm en una ecografía de screening?',
@@ -1222,7 +1222,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (AVANZADO - IAP/APA) ---
   {
-    id: 'pan-006',
+    id: 'q-81',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es la estrategia nutricional preferida en un paciente con pancreatitis aguda grave?',
@@ -1236,7 +1236,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'pan-007',
+    id: 'q-82',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: 'Un paciente con pancreatitis presenta al día 21 fiebre, leucocitosis y gas en una colección peripancreática en el TAC. ¿Cuál es el microorganismo más frecuentemente aislado?',
@@ -1252,7 +1252,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS B (AVANZADO - AASLD/EASL) ---
   {
-    id: 'hep-003',
+    id: 'q-83',
     topic: 'hepatitis',
     difficulty: 'Subspecialist',
     text: 'Según las guías AASLD 2024, ¿en qué paciente con Hepatitis B crónica Inmunotolerante (Fase 1: HBeAg+, carga viral alta, ALT normal) se justifica iniciar tratamiento?',
@@ -1268,7 +1268,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (AVANZADO - TOKYO) ---
   {
-    id: 'vb-004',
+    id: 'q-84',
     topic: 'vias_biliares',
     difficulty: 'Staff',
     text: 'De acuerdo a los Criterios de Tokyo 2018, ¿qué hallazgo define a una Colecistitis Aguda Grado II (Moderada)?',
@@ -1284,7 +1284,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (AVANZADO - CONSENSO 2023) ---
   {
-    id: 'masld-004',
+    id: 'q-85',
     topic: 'masld',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el criterio diagnóstico para MASLD según la nueva nomenclatura multilingüe de 2023?',
@@ -1300,7 +1300,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (AVANZADO - ECCO/AGA) ---
   {
-    id: 'eii-016',
+    id: 'q-86',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: 'En un paciente con Colitis Ulcerosa en tratamiento con Infliximab que presenta pérdida secundaria de respuesta, ¿cuál es el primer paso recomendado?',
@@ -1316,7 +1316,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (AVANZADO - BAVENO VII) ---
   {
-    id: 'hda-006',
+    id: 'q-87',
     topic: 'hda',
     difficulty: 'Staff',
     text: '¿Cuál es el rol del TIPS precoz (Early-TIPS) en el manejo de la hemorragia varicosa según Baveno VII?',
@@ -1332,7 +1332,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (AVANZADO - ACG/ESPGHAN) ---
   {
-    id: 'cel-005',
+    id: 'q-88',
     topic: 'celiaca',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la conducta recomendada en un paciente adulto con sospecha de Enfermedad Celiaca, Anti-tTG IgA > 10 veces el límite superior normal y Anti-Endomisio positivo, según las guías ACG recientes?',
@@ -1348,7 +1348,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: INTESTINO DELGADO (SIBO) ---
   {
-    id: 'sibo-001',
+    id: 'q-89',
     topic: 'intestino_delgado',
     difficulty: 'Fellow',
     text: '¿Cuál es el valor de corte para el diagnóstico de SIBO usando el Test de Aliento con Lactulosa según el consenso de América del Norte?',
@@ -1364,7 +1364,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PÁNCREAS (TUMORES QUÍSTICOS - FUKUOKA/AGA) ---
   {
-    id: 'pan-008',
+    id: 'q-90',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: 'En un Neoplasia Mucinosa Papilar Intraductal (IPMN), ¿cuál de los siguientes se considera un "Estigma de Alta Sospecha" (High-risk stigmata) de malignidad según Fukuoka 2017?',
@@ -1380,7 +1380,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: NUTRICIÓN (AVANZADO - ESPEN) ---
   {
-    id: 'nut-002',
+    id: 'q-91',
     topic: 'nutricion',
     difficulty: 'Subspecialist',
     text: 'En un paciente con cirrosis descompensada y sarcopenia, ¿cuál es el aporte proteico diario recomendado por las guías ESPEN?',
@@ -1396,7 +1396,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO 3 - REBORN) ---
   {
-    id: 'cir-017',
+    id: 'q-92',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'En un paciente con cirrosis y ascitis refractaria, ¿cuál es el nivel de sodio urinario que sugiere una respuesta adecuada a diuréticos?',
@@ -1410,7 +1410,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'cir-018',
+    id: 'q-93',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el "Punto Cero" hemodinámico para definir Hipertensión Portal Clínicamente Significativa (HPCS) según Baveno VII?',
@@ -1424,7 +1424,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'cir-019',
+    id: 'q-94',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'En un paciente cirrótico con Na sérico de 122 mEq/L persistente, ¿cuál es el manejo de elección según el Consenso EASL?',
@@ -1440,7 +1440,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (EXPANDIDO 3 - REBORN) ---
   {
-    id: 'eii-017',
+    id: 'q-95',
     topic: 'eii',
     difficulty: 'Fellow',
     text: '¿Qué marcador fecal es el más sensible para predecir una recaída clínica en un paciente con Enfermedad de Crohn en remisión aparente?',
@@ -1454,7 +1454,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'eii-018',
+    id: 'q-96',
     topic: 'eii',
     difficulty: 'Subspecialist',
     text: 'En el algoritmo STRIDE-II, ¿cuál es el objetivo terapéutico de Largo Plazo (Ultimate Goal) en EII?',
@@ -1470,7 +1470,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 3) ---
   {
-    id: 'hda-007',
+    id: 'q-97',
     topic: 'hda',
     difficulty: 'Staff',
     text: '¿Cuál es el manejo endoscópico de elección para una úlcera con estigma de Forrest IIa (Vaso visible)?',
@@ -1486,7 +1486,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO 3) ---
   {
-    id: 'pan-010',
+    id: 'q-98',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es el mejor predictor temprano de gravedad en Pancreatitis Aguda a las 24 horas del ingreso?',
@@ -1502,7 +1502,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS VIRAL (EXPANDIDO 3 - AASLD) ---
   {
-    id: 'hep-004',
+    id: 'q-99',
     topic: 'hepatitis',
     difficulty: 'Subspecialist',
     text: 'En una paciente con Hepatitis B crónica que desea embarazo y tiene carga viral > 200,000 UI/mL, ¿cuál es la conducta recomendada?',
@@ -1518,7 +1518,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 3 - LYON 2.0) ---
   {
-    id: 'erge-005',
+    id: 'q-100',
     topic: 'erge',
     difficulty: 'Staff',
     text: '¿Cuál es el diagnóstico en un paciente con pirosis que no responde a IBP, tiene endoscopia normal y pH-impedanciometría con AET < 4%, pero con asociación sintomática positiva?',
@@ -1534,7 +1534,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 4 - MAASTRICHT VI) ---
   {
-    id: 'hp-008',
+    id: 'q-101',
     topic: 'h_pylori',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la terapia de primera línea recomendada por Maastricht VI en regiones con alta resistencia (>15%) a Claritromicina?',
@@ -1548,7 +1548,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hp-009',
+    id: 'q-102',
     topic: 'h_pylori',
     difficulty: 'Staff',
     text: '¿Qué prueba diagnóstica es de elección para confirmar la erradicación de H. pylori?',
@@ -1564,7 +1564,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO 4 - ACG 2023) ---
   {
-    id: 'cel-006',
+    id: 'q-103',
     topic: 'celiaca',
     difficulty: 'Subspecialist',
     text: 'En un paciente con sospecha de Celiaquía y déficit de IgA total, ¿qué marcador serológico debe solicitarse?',
@@ -1580,7 +1580,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PERFIL HEPÁTICO (EXPANDIDO 2 - EASL) ---
   {
-    id: 'ph-030',
+    id: 'q-104',
     topic: 'perfil_hepatico',
     difficulty: 'Staff',
     text: 'Un paciente presenta elevación aislada de GGT. ¿Cuál es la causa no hepática más frecuente?',
@@ -1594,7 +1594,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'ph-031',
+    id: 'q-105',
     topic: 'perfil_hepatico',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el valor del cociente AST/ALT (Ritis) que orienta clásicamente a Hepatitis Alcohólica?',
@@ -1610,7 +1610,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO 4) ---
   {
-    id: 'pan-011',
+    id: 'q-106',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: '¿Cuál es el manejo de elección de un pseudoquiste pancreático asintomático de 5 cm?',
@@ -1626,7 +1626,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO 3 - TOKYO 2018) ---
   {
-    id: 'vb-005',
+    id: 'q-107',
     topic: 'vias_biliares',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el manejo de elección para una coledocolitiasis de 8 mm detectada por ecografía en un paciente con ictericia moderada?',
@@ -1640,7 +1640,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'vb-006',
+    id: 'q-108',
     topic: 'vias_biliares',
     difficulty: 'Staff',
     text: '¿Qué hallazgo ecográfico es el más sugerente de Adenomiomatosis Vesicular?',
@@ -1656,7 +1656,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (EXPANDIDO 5- MASH) ---
   {
-    id: 'masld-005',
+    id: 'q-109',
     topic: 'masld',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el único fármaco aprobado recientemente (2024) específicamente para el tratamiento de la Esteatohepatitis (MASH) con fibrosis moderada-severa?',
@@ -1672,7 +1672,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER GASTRICO (EXPANDIDO 3) ---
   {
-    id: 'cg-002',
+    id: 'q-110',
     topic: 'cancer_gastrico',
     difficulty: 'Staff',
     text: '¿Cuál es el margen de seguridad recomendado para una resección endoscópica de un cáncer gástrico incipiente según las guías japonesas?',
@@ -1688,7 +1688,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA Y EMERGENCIAS (NUEVO) ---
   {
-    id: 'ms-001',
+    id: 'q-111',
     topic: 'muerte_subita',
     difficulty: 'Fellow',
     text: 'Durante una colonoscopia bajo sedación profunda con Propofol, el paciente presenta súbitamente apnea y bradicardia extrema seguida de asistolia. ¿Cuál es la primera acción a realizar?',
@@ -1702,7 +1702,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'ms-002',
+    id: 'q-112',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: '¿Cuál es el ritmo de paro cardiaco más frecuente asociado a trastornos electrolíticos graves (como hiperkalemia) en un paciente con insuficiencia renal y cirrosis?',
@@ -1718,7 +1718,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (NUEVO) ---
   {
-    id: 'ps-001',
+    id: 'q-113',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'Escenario de Simulación: Usted es el líder de una unidad de endoscopia. Un paciente con HDA masiva entra en shock hipovolémico grado IV. Su equipo está confundido. ¿Cuál es la mejor estrategia de liderazgo en este momento?',
@@ -1732,7 +1732,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'ps-002',
+    id: 'q-114',
     topic: 'protocolo_simulacro',
     difficulty: 'Staff',
     text: 'En un simulacro de perforación esofágica post-dilatación, ¿cuál es el tiempo máximo aceptable para la administración de antibióticos de amplio espectro para optimizar el pronóstico?',
@@ -1748,7 +1748,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO 4 - WORLD CLASS) ---
   {
-    id: 'cir-020',
+    id: 'q-115',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo fisiopatológico principal de la vasodilatación esplácnica en la cirrosis avanzada?',
@@ -1762,7 +1762,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'cir-021',
+    id: 'q-116',
     topic: 'cirrosis',
     difficulty: 'Fellow',
     text: '¿Qué mide el score MELD-Na y para qué se utiliza principalmente?',
@@ -1778,7 +1778,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 4 - ESGE/ASGE) ---
   {
-    id: 'hda-008',
+    id: 'q-117',
     topic: 'hda',
     difficulty: 'Staff',
     text: 'En un paciente con HDA por úlcera péptica y uso concomitante de Clopidogrel, ¿cuál es la conducta recomendada respecto al antiagregante?',
@@ -1794,7 +1794,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (EXPANDIDO 4 - TERAPIAS NUEVAS) ---
   {
-    id: 'eii-019',
+    id: 'q-118',
     topic: 'eii',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo de acción del Upadacitinib en el tratamiento de la Colitis Ulcerosa?',
@@ -1810,7 +1810,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO 3 - OAKLAND SCORE) ---
   {
-    id: 'hdb-003',
+    id: 'q-119',
     topic: 'hdb',
     difficulty: 'Fellow',
     text: '¿Para qué se utiliza el Score de Oakland en el contexto de la Hemorragia Digestiva Baja?',
@@ -1826,7 +1826,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS VIRAL (EXPANDIDO 4 - VHC) ---
   {
-    id: 'hep-005',
+    id: 'q-120',
     topic: 'hepatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el esquema pangenotípico de elección actual para el tratamiento de la Hepatitis C (VHC) en un paciente sin cirrosis?',
@@ -1842,7 +1842,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (EXPANDIDO 6 - FIB-4) ---
   {
-    id: 'masld-006',
+    id: 'q-121',
     topic: 'masld',
     difficulty: 'Staff',
     text: '¿Cuál es el valor de corte inferior del Score FIB-4 para descartar fibrosis avanzada en MASLD?',
@@ -1858,7 +1858,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS CRÓNICA (NUEVO) ---
   {
-    id: 'pan-012',
+    id: 'q-122',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el test de función pancreática exocrina más utilizado en la práctica clínica por su facilidad y disponibilidad?',
@@ -1874,7 +1874,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA / EMERGENCIAS (EXPANDIDO) ---
   {
-    id: 'ms-003',
+    id: 'q-123',
     topic: 'muerte_subita',
     difficulty: 'Fellow',
     text: 'Paciente con antecedente de QT largo congénito entra en Torsades de Pointes durante su endoscopia. ¿Cuál es el tratamiento farmacológico de elección inmediato?',
@@ -1890,7 +1890,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA AGUDA (EXPANDIDO) ---
   {
-    id: 'da-007',
+    id: 'q-124',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: '¿Cuál es el patógeno más probable en un brote de diarrea acuosa profusa en un crucero?',
@@ -1904,7 +1904,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'da-008',
+    id: 'q-125',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: 'En un paciente con diarrea disentérica y sospecha de Colitis por C. difficile, ¿cuál es el test inicial de mayor sensibilidad?',
@@ -1920,7 +1920,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 4 - TRATAMIENTO) ---
   {
-    id: 'erge-006',
+    id: 'q-126',
     topic: 'erge',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la cirugía de elección para el tratamiento del ERGE refractario con hernia hiatal confirmada?',
@@ -1936,7 +1936,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MOTORES ESÓFAGO (EXPANDIDO 3 - ACALASIA) ---
   {
-    id: 'mot-002',
+    id: 'q-127',
     topic: 'motores_esofago',
     difficulty: 'Staff',
     text: '¿Qué tipo de Acalasia (Clasificación de Chicago) presenta el mejor pronóstico de respuesta al tratamiento farmacológico o quirúrgico?',
@@ -1952,7 +1952,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DISPEPSIA (NUEVO) ---
   {
-    id: 'dys-001',
+    id: 'q-128',
     topic: 'ulcera_peptica',
     difficulty: 'Fellow',
     text: 'Según los criterios de Roma IV, ¿cuál es la definición de Dispepsia Funcional?',
@@ -1968,7 +1968,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER ESOFAGO (EXPANDIDO 3 - BARRETT) ---
   {
-    id: 'ce-002',
+    id: 'q-129',
     topic: 'cancer_esofago',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el intervalo de vigilancia endoscópica recomendado para un Esófago de Barrett sin displasia confirmado en dos endoscopias?',
@@ -1984,7 +1984,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER GASTRICO (EXPANDIDO 4 - OLGA) ---
   {
-    id: 'cg-003',
+    id: 'q-130',
     topic: 'cancer_gastrico',
     difficulty: 'Staff',
     text: '¿Qué evalúa el sistema OLGA en el estudio de la gastritis crónica?',
@@ -2000,7 +2000,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO 5 - MARSH) ---
   {
-    id: 'cel-007',
+    id: 'q-131',
     topic: 'celiaca',
     difficulty: 'Fellow',
     text: 'Un paciente presenta una biopsia duodenal con linfocitosis intraepitelial (>25/100 enterocitos) pero con vellosidades normales. ¿A qué clasificación de Marsh corresponde?',
@@ -2016,7 +2016,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: BIOLOGÍA Y GENÉTICA (EXPANDIDO) ---
   {
-    id: 'bio-002',
+    id: 'q-132',
     topic: 'biologia',
     difficulty: 'Subspecialist',
     text: '¿Qué mutación genética es la causa más frecuente del Síndrome de Lynch (Cáncer Colorrectal Hereditario No Polipósico)?',
@@ -2032,7 +2032,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: NUTRICIÓN (EXPANDIDO 3) ---
   {
-    id: 'nut-003',
+    id: 'q-133',
     topic: 'nutricion',
     difficulty: 'Staff',
     text: '¿Cuál es el micronutriente cuya deficiencia se asocia clásicamente a la "Acropatía Enteropática" en pacientes con mala absorción severa?',
@@ -2048,7 +2048,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO 4 - COLANGITIS) ---
   {
-    id: 'vb-007',
+    id: 'q-134',
     topic: 'vias_biliares',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la triada de Charcot y para qué patología es sugerente?',
@@ -2064,7 +2064,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PERFIL HEPÁTICO (EXPANDIDO 3 - PATRONES) ---
   {
-    id: 'ph-032',
+    id: 'q-135',
     topic: 'perfil_hepatico',
     difficulty: 'Fellow',
     text: 'Un paciente presenta una elevación de Bilirrubina Indirecta (No conjugada) del 90%, con Hemoglobina y Reticulocitos normales, y enzimas hepáticas normales. ¿Cuál es el diagnóstico más probable?',
@@ -2080,7 +2080,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 5 - RESISTENCIA) ---
   {
-    id: 'hp-010',
+    id: 'q-136',
     topic: 'h_pylori',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo de resistencia bacteriana de H. pylori a la Claritromicina?',
@@ -2096,7 +2096,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 5 - MANEJO PRE-ENDOSCÓPICO) ---
   {
-    id: 'hda-009',
+    id: 'q-137',
     topic: 'hda',
     difficulty: 'Staff',
     text: '¿Cuál es el rol de la Eritromicina endovenosa en el manejo de la HDA aguda?',
@@ -2112,7 +2112,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO / MUERTE SÚBITA (FINAL) ---
   {
-    id: 'ps-003',
+    id: 'q-138',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'Durante un código azul en el área de recuperación de endoscopia, se utiliza un Desfibrilador Externo Automático (DEA). El DEA indica "Descarga no aconsejada". ¿Cuál es el siguiente paso?',
@@ -2126,7 +2126,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'ms-004',
+    id: 'q-139',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: 'En un paciente con Hemorragia Digestiva Varicosa y paro cardiaco concurrente, ¿cuál es la prioridad según los algoritmos de soporte vital avanzado?',
@@ -2142,7 +2142,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 5 - COMPLICACIONES) ---
   {
-    id: 'erge-007',
+    id: 'q-140',
     topic: 'erge',
     difficulty: 'Staff',
     text: '¿Cuál es la conducta recomendada ante una estenosis esofágica péptica confirmada por endoscopia?',
@@ -2158,7 +2158,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA CRÓNICA (EXPANDIDO 3 - MALA ABSORCIÓN) ---
   {
-    id: 'dc-004',
+    id: 'q-141',
     topic: 'diarrea_cronica',
     difficulty: 'Subspecialist',
     text: 'En un paciente con sospecha de mala absorción de ácidos biliares, ¿cuál es el test de oro (aunque poco disponible) para el diagnóstico?',
@@ -2174,7 +2174,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ÚLCERA PÉPTICA (EXPANDIDO 2 - AINES) ---
   {
-    id: 'up-003',
+    id: 'q-142',
     topic: 'ulcera_peptica',
     difficulty: 'Staff',
     text: '¿Cuál es el mecanismo por el cual los AINES inducen daño en la mucosa gástrica?',
@@ -2190,7 +2190,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA / EMERGENCIAS (VÍA AÉREA) ---
   {
-    id: 'ms-005',
+    id: 'q-143',
     topic: 'muerte_subita',
     difficulty: 'Fellow',
     text: '¿Cuál es el dispositivo de vía aérea supraglótico de elección para manejo de emergencia inicial por personal no anestesiólogo en la sala de endoscopia?',
@@ -2206,7 +2206,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 6 - VONOPRAZAN) ---
   {
-    id: 'hp-011',
+    id: 'q-144',
     topic: 'h_pylori',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la ventaja principal del Vonoprazan (P-CAB) sobre los IBP tradicionales en la terapia de erradicación de H. pylori?',
@@ -2222,7 +2222,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO 5 - COLANGITIS ESCLEROSANTE) ---
   {
-    id: 'vb-008',
+    id: 'q-145',
     topic: 'vias_biliares',
     difficulty: 'Subspecialist',
     text: '¿Qué hallazgo en la Colangiorresonancia es patognomónico de la Colangitis Esclerosante Primaria (CEP)?',
@@ -2238,7 +2238,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MOTORES ESÓFAGO (EXPANDIDO 4 - JACKHAMMER) ---
   {
-    id: 'mot-003',
+    id: 'q-146',
     topic: 'motores_esofago',
     difficulty: 'Fellow',
     text: 'En la manometría de alta resolución, ¿cuál es el criterio diagnóstico para un Esófago en Martillo Neumático (Jackhammer Esophagus)?',
@@ -2254,7 +2254,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (EXPANDIDO 7 - MASH FIBROSIS) ---
   {
-    id: 'masld-007',
+    id: 'q-147',
     topic: 'masld',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mejor predictor no invasivo de mortalidad cardiovascular en pacientes con MASLD?',
@@ -2270,7 +2270,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO 5 - HEPATOPULMONAR) ---
   {
-    id: 'cir-022',
+    id: 'q-148',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la triada diagnóstica del Síndrome Hepatopulmonar (SHP)?',
@@ -2286,7 +2286,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PERFIL HEPÁTICO (EXPANDIDO 4 - WILSON) ---
   {
-    id: 'ph-033',
+    id: 'q-149',
     topic: 'perfil_hepatico',
     difficulty: 'Fellow',
     text: 'En un paciente joven con hepatitis aguda fulminante, ¿qué hallazgo bioquímico sugiere fuertemente Enfermedad de Wilson?',
@@ -2302,7 +2302,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 7 - MANEJO DE FALLAS) ---
   {
-    id: 'hp-012',
+    id: 'q-150',
     topic: 'h_pylori',
     difficulty: 'Subspecialist',
     text: 'En un paciente que ha fallado a una terapia cuádruple con bismuto y a una terapia con claritromicina, ¿cuál es la mejor opción de rescate según Maastricht VI?',
@@ -2316,7 +2316,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hp-013',
+    id: 'q-151',
     topic: 'h_pylori',
     difficulty: 'Fellow',
     text: '¿Cuál es la recomendación actual sobre la biopsia gástrica para H. pylori si el paciente requiere una endoscopia por otra razón?',
@@ -2332,7 +2332,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO 6 - INFECCIONES) ---
   {
-    id: 'cir-023',
+    id: 'q-152',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: 'En un paciente cirrótico con ascitis y hemorragia digestiva alta, ¿por qué es mandatorio iniciar profilaxis con Ceftriaxona?',
@@ -2346,7 +2346,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'cir-024',
+    id: 'q-153',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el valor diagnóstico de Gradiente Albúmina Suero-Ascitis (GASA) que indica Hipertensión Portal?',
@@ -2362,7 +2362,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO 5 - COMPLICACIONES) ---
   {
-    id: 'pan-013',
+    id: 'q-154',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es el manejo inicial recomendado para una necrosis pancreática amurallada (WON) de 8 cm que causa compresión gástrica y vómitos?',
@@ -2378,7 +2378,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA / PROTOCOLO SIMULACRO (FENÓMENOS VÍA AÉREA) ---
   {
-    id: 'ms-006',
+    id: 'q-155',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: 'Durante una ERE (CPRE), el paciente comienza con estridor inspiratorio y signos de lucha respiratoria tras el uso de Midazolam/Fentanilo. ¿Cuál es la sospecha inmediata?',
@@ -2392,7 +2392,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'ps-004',
+    id: 'q-156',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'Escenario: Se rompe una várice esofágica masiva "en chorro" durante el primer intento de ligadura. La visión es nula por la sangre. ¿Cuál es la siguiente maniobra correcta?',
@@ -2408,7 +2408,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO 6 - REFRACTARIA) ---
   {
-    id: 'cel-008',
+    id: 'q-157',
     topic: 'celiaca',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la característica inmunofenotípica de los linfocitos intraepiteliales (LIE) que define a la Enfermedad Celiaca Refractaria Tipo II?',
@@ -2424,7 +2424,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 6 - VÁRICES GÁSTRICAS) ---
   {
-    id: 'hda-010',
+    id: 'q-158',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'En un paciente con Hemorragia por Várices Gástricas fúndicas (GOV2 o IGV1), ¿cuál es el agente de inyección endoscópica de elección?',
@@ -2438,7 +2438,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hda-011',
+    id: 'q-159',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál es el umbral de Hemoglobina recomendado para transfundir a un paciente con HDA aguda sin comorbilidades cardiovasculares graves?',
@@ -2454,7 +2454,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PERFIL HEPÁTICO (EXPANDIDO 5 - AUTOINMUNE) ---
   {
-    id: 'ph-034',
+    id: 'q-160',
     topic: 'perfil_hepatico',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el anticuerpo más específico para el diagnóstico de Hepatitis Autoinmune (HAI) Tipo 2?',
@@ -2470,7 +2470,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO 6 - TUMORES) ---
   {
-    id: 'vb-009',
+    id: 'q-161',
     topic: 'vias_biliares',
     difficulty: 'Staff',
     text: '¿Cuál es la clasificación utilizada para describir la extensión anatómica del Colangiocarcinoma Hiliar (Tumor de Klatskin)?',
@@ -2486,7 +2486,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (EXPANDIDO 8 - FIBROSIS AVANZADA) ---
   {
-    id: 'masld-008',
+    id: 'q-162',
     topic: 'masld',
     difficulty: 'Subspecialist',
     text: 'En un paciente con MASLD y FIB-4 de 2.1, ¿cuál es el siguiente paso recomendado para la estratificación de riesgo según las guías AGA/AASLD?',
@@ -2502,7 +2502,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO 6 - INSUFICIENCIA EXOCRINA) ---
   {
-    id: 'pan-014',
+    id: 'q-163',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es la dosis inicial de Terapia de Reemplazo de Enzimas Pancreáticas (PERT) recomendada en las comidas principales para un adulto con insuficiencia exocrina por pancreatitis crónica?',
@@ -2518,7 +2518,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 6 - ESOFAGO DE BARRETT) ---
   {
-    id: 'erge-008',
+    id: 'q-164',
     topic: 'erge',
     difficulty: 'Subspecialist',
     text: 'En un paciente con Esófago de Barrett y displasia de bajo grado confirmada por dos patólogos expertos, ¿cuál es la conducta preferida actualmente?',
@@ -2534,7 +2534,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (EXPANDIDO 5 - TERAPIAS AVANZADAS) ---
   {
-    id: 'eii-020',
+    id: 'q-165',
     topic: 'eii',
     difficulty: 'Fellow',
     text: '¿Cuál de los siguientes biológicos está específicamente indicado para el tratamiento de la enfermedad de Crohn fistulizante perianal refractaria?',
@@ -2550,7 +2550,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA / EMERGENCIAS (FARMACOLOGÍA) ---
   {
-    id: 'ms-007',
+    id: 'q-166',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: 'En el contexto de un paro cardiaco por Fibrilación Ventricular refractaria a 3 descargas, ¿cuál es la dosis de Amiodarona recomendada?',
@@ -2566,7 +2566,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (GESTIÓN DE CRISIS) ---
   {
-    id: 'ps-005',
+    id: 'q-167',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'En un simulacro de perforación colónica tras polipectomía difícil, ¿cuál es el primer paso recomendado si la perforación mide < 10 mm y se detecta inmediatamente?',
@@ -2580,7 +2580,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'ps-006',
+    id: 'q-168',
     topic: 'protocolo_simulacro',
     difficulty: 'Staff',
     text: 'Escenario: Falla el equipo de electrocirugía en medio de una disección submucosa (DSE) con sangrado activo. ¿Qué principio del CRM (Crisis Resource Management) se aplica aquí?',
@@ -2596,7 +2596,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA (REANIMACIÓN AVANZADA) ---
   {
-    id: 'ms-008',
+    id: 'q-169',
     topic: 'muerte_subita',
     difficulty: 'Fellow',
     text: '¿Cuál es el capnógrafo (EtCO2) mínimo sugerido durante la RCP que indica que las compresiones son de calidad y que hay chances de retorno a la circulación espontánea?',
@@ -2612,7 +2612,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (ESTRATIFICACIÓN Y COAGULACIÓN) ---
   {
-    id: 'hda-012',
+    id: 'q-170',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'En un paciente cirrótico con HDA y un INR de 2.5, ¿cuál es la recomendación actual respecto al uso de Plasma Fresco Congelado (PFC)?',
@@ -2626,7 +2626,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hda-013',
+    id: 'q-171',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál de los siguientes fármacos es un inhibidor de la bomba de protones (IBP) que puede ser administrado en bolo seguido de infusión continua para el manejo de la úlcera péptica Forrest IA?',
@@ -2642,7 +2642,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS VIRAL (EXPANDIDO 5 - VHB AVANZADO) ---
   {
-    id: 'hep-006',
+    id: 'q-172',
     topic: 'hepatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el significado clínico de la presencia de anticuerpos Anti-HBc totales positivos con HBsAg negativo y Anti-HBs negativo (Core solo)?',
@@ -2656,7 +2656,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hep-007',
+    id: 'q-173',
     topic: 'hepatitis',
     difficulty: 'Fellow',
     text: 'En un paciente con Hepatitis B crónica, ¿qué marcador es el mejor predictor de la probabilidad de lograr la "Cura Funcional" (aclaramiento de HBsAg)?',
@@ -2672,7 +2672,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (EXPANDIDO 6 - OPTIMIZACIÓN) ---
   {
-    id: 'eii-021',
+    id: 'q-174',
     topic: 'eii',
     difficulty: 'Subspecialist',
     text: 'Paciente con Colitis Ulcerosa en tratamiento con Adalimumab presenta pérdida de respuesta secundaria. El nivel valle es de 2 ug/ml y los anticuerpos anti-droga son negativos. ¿Cuál es la conducta recomendada?',
@@ -2688,7 +2688,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA (SITUACIONES ESPECIALES) ---
   {
-    id: 'ms-009',
+    id: 'q-175',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: '¿Cuál es la profundidad de las compresiones torácicas recomendada en un adulto durante la RCP de alta calidad?',
@@ -2702,7 +2702,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'ms-010',
+    id: 'q-176',
     topic: 'muerte_subita',
     difficulty: 'Fellow',
     text: 'En un paro cardiaco intrahospitalario durante una endoscopia, ¿cuál es el tiempo meta para realizar la primera desfibrilación en ritmos desfibrilables (FV/TVSP)?',
@@ -2718,7 +2718,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (DSE / ENDOSCOPIA AVANZADA) ---
   {
-    id: 'ps-007',
+    id: 'q-177',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'Durante una Disección Submucosa Endoscópica (DSE) de una lesión gástrica, el paciente desarrolla un neumoperitoneo a tensión con compromiso ventilatorio. ¿Cuál es la maniobra de emergencia inmediata?',
@@ -2734,7 +2734,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (SANGRE Y FUEGO) ---
   {
-    id: 'ps-008',
+    id: 'q-178',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'Escenario: Durante una endoscopia terapéutica con argón plasma (APC) en un paciente con traqueostomía y O2 al 100%, se produce una deflagración (fuego) en la vía aérea. ¿Cuál es la primera acción?',
@@ -2750,7 +2750,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA (ETIOLOGÍAS) ---
   {
-    id: 'ms-011',
+    id: 'q-179',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: '¿Cuál es la causa más común de muerte súbita de origen no cardiaco en un paciente cirrótico hospitalizado?',
@@ -2766,7 +2766,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO 4 - ANGIODISPLASIAS) ---
   {
-    id: 'hdb-004',
+    id: 'q-180',
     topic: 'hdb',
     difficulty: 'Subspecialist',
     text: 'En un paciente con sangrado recurrente por angiodisplasias de intestino delgado (obscure GI bleeding), ¿qué fármaco ha demostrado utilidad en reducir la necesidad transfusional?',
@@ -2782,7 +2782,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA CRÓNICA (EXPANDIDO 4 - SIBO) ---
   {
-    id: 'dc-005',
+    id: 'q-181',
     topic: 'diarrea_cronica',
     difficulty: 'Staff',
     text: '¿Cuál es el valor de corte para considerar positivo un test de aliento con Lactulosa o Glucosa para Sobrecrecimiento Bacteriano del Intestino Delgado (SIBO) según el Consenso de Norteamérica?',
@@ -2796,7 +2796,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'dc-006',
+    id: 'q-182',
     topic: 'diarrea_cronica',
     difficulty: 'Fellow',
     text: 'En un paciente con diarrea crónica, esteatorrea y antecedente de bypass gástrico hace 10 años, ¿cuál es la causa más probable de su cuadro?',
@@ -2812,7 +2812,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 7 - TIPS PRECOZ) ---
   {
-    id: 'hda-014',
+    id: 'q-183',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'En un paciente cirrótico Child-Pugh C (< 14 puntos) con HDA varicosa, ¿cuál es el tiempo recomendado para realizar un TIPS de rescate preventivo (Pre-emptive TIPS)?',
@@ -2828,7 +2828,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO 7 - ENCEFALOPATÍA) ---
   {
-    id: 'cir-025',
+    id: 'q-184',
     topic: 'cirrosis',
     difficulty: 'Fellow',
     text: '¿Cuál es el mecanismo de acción de la Rifaximina en el tratamiento de la Encefalopatía Hepática recurrente?',
@@ -2844,7 +2844,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (EXPANDIDO 7 - EMBARAZO) ---
   {
-    id: 'eii-022',
+    id: 'q-185',
     topic: 'eii',
     difficulty: 'Subspecialist',
     text: 'En una paciente con Enfermedad de Crohn estable en tratamiento con Infliximab que desea embarazarse, ¿cuál es la recomendación correcta?',
@@ -2860,7 +2860,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA (VENTILACIÓN SEGUNDA LÍNEA) ---
   {
-    id: 'ms-012',
+    id: 'q-186',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: 'Durante la RCP, se opta por una vía aérea avanzada (intubación). ¿Cuál es la frecuencia ventilatoria recomendada una vez el tubo está instalado?',
@@ -2876,7 +2876,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (EMBOLIA GASEOSA) ---
   {
-    id: 'ps-009',
+    id: 'q-187',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: 'Durante una CPRE compleja, el paciente presenta un colapso cardiovascular súbito tras una esfinterotomía con abundante sangrado e insuflación de aire (no CO2). ¿Cuál es la sospecha diagnóstica más grave?',
@@ -2892,7 +2892,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DOLOR ABDOMINAL (EXPANDIDO 6 - ISQUEMIA) ---
   {
-    id: 'da-006',
+    id: 'q-188',
     topic: 'dolor_abdominal',
     difficulty: 'Subspecialist',
     text: 'Un paciente de 70 años con antecedentes de tabaquismo presenta dolor abdominal post-prandial severo ("angina abdominal"), baja de peso significativa y miedo a comer. ¿Cuál es el estudio de elección sospechando Isquemia Mesentérica Crónica?',
@@ -2908,7 +2908,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA AGUDA (EXPANDIDO 6 - C. DIFFICILE) ---
   {
-    id: 'dag-011',
+    id: 'q-189',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: '¿Cuál es el tratamiento de primera línea recomendado para el primer episodio de infección por Clostridioides difficile (no grave) según las guías actuales?',
@@ -2924,7 +2924,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 7 - MANOMETRÍA) ---
   {
-    id: 'erge-009',
+    id: 'q-190',
     topic: 'erge',
     difficulty: 'Fellow',
     text: 'En la Manometría de Alta Resolución, ¿qué hallazgo es mandatorio para descartar un trastorno motor mayor en un paciente con ERGE refractario antes de una cirugía antirreflujo?',
@@ -2940,7 +2940,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PERFIL HEPÁTICO (EXPANDIDO 6 - ALCOHOL) ---
   {
-    id: 'ph-035',
+    id: 'q-191',
     topic: 'perfil_hepatico',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el puntaje de Maddrey (Discriminant Function) que indica severidad y necesidad de corticoides en la Hepatitis Alcohólica aguda?',
@@ -2956,7 +2956,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'hda-015',
+    id: 'q-192',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál es el manejo inicial de elección para la Hemorragia Digestiva Alta por lesiones de Dieulafoy?',
@@ -2972,7 +2972,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'eii-023',
+    id: 'q-193',
     topic: 'eii',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la meta terapéutica ideal ("STRIDE-II") en el manejo a largo plazo de la Enfermedad Inflamatoria Intestinal?',
@@ -2988,7 +2988,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'ms-013',
+    id: 'q-194',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: 'En el contexto de un paro cardiaco por sospecha de TEP masivo en la sala de endoscopia, ¿qué fármaco se debe considerar si la RCP falla inicialmente?',
@@ -3004,7 +3004,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'ps-010',
+    id: 'q-195',
     topic: 'protocolo_simulacro',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el rol del "Checklist de Verificación" antes de una endoscopia compleja en la prevención de eventos adversos?',
@@ -3020,7 +3020,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO) ---
   {
-    id: 'hdb-007',
+    id: 'q-196',
     topic: 'hdb',
     difficulty: 'Fellow',
     text: '¿Cuál es el hallazgo angiográfico clásico en una Hemangioma Intestinal?',
@@ -3036,7 +3036,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MOTORES ESÓFAGO (EXPANDIDO) ---
   {
-    id: 'mot-005',
+    id: 'q-197',
     topic: 'motores_esofago',
     difficulty: 'Subspecialist',
     text: 'En un paciente con Acalasia Tipo III (Espástica), ¿qué tratamiento ha demostrado mejores tasas de respuesta clínica?',
@@ -3052,7 +3052,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER ESOFAGO (EXPANDIDO) ---
   {
-    id: 'ce-004',
+    id: 'q-198',
     topic: 'cancer_esofago',
     difficulty: 'Staff',
     text: '¿Cuál es la técnica de estadiaje más sensible para evaluar la profundidad de invasión (T) y la presencia de linfonodos regionales (N) en cáncer de esófago?',
@@ -3068,7 +3068,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ÚLCERA PÉPTICA (EXPANDIDO) ---
   {
-    id: 'up-005',
+    id: 'q-199',
     topic: 'ulcera_peptica',
     difficulty: 'Fellow',
     text: '¿Qué hallazgo histológico es característico de una úlcera asociada al uso crónico de AINES en ausencia de H. pylori?',
@@ -3084,7 +3084,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DOLOR ABDOMINAL (EXPANDIDO) ---
   {
-    id: 'da-008',
+    id: 'q-200',
     topic: 'dolor_abdominal',
     difficulty: 'Staff',
     text: 'Un paciente diabético presenta dolor abdominal, náuseas y saciedad precoz. La endoscopia muestra restos de comida tras 12 horas de ayuno. ¿Cuál es el diagnóstico más probable?',
@@ -3100,7 +3100,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER GÁSTRICO (EXPANDIDO) ---
   {
-    id: 'cg-007',
+    id: 'q-201',
     topic: 'cancer_gastrico',
     difficulty: 'Subspecialist',
     text: 'En el cáncer gástrico precoz (Early Gastric Cancer), ¿cuál es el criterio absoluto para intentar una Resección Endoscópica de la Mucosa (EMR)?',
@@ -3116,7 +3116,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO) ---
   {
-    id: 'cel-009',
+    id: 'q-202',
     topic: 'celiaca',
     difficulty: 'Fellow',
     text: '¿Cuál es la utilidad del tipaje HLA-DQ2/DQ8 en la enfermedad celiaca?',
@@ -3132,7 +3132,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: BIOLOGÍA (EXPANDIDO) ---
   {
-    id: 'bio-004',
+    id: 'q-203',
     topic: 'biologia',
     difficulty: 'Fellow',
     text: '¿Cuál es el principal transportador de fructosa en la membrana apical del enterocito?',
@@ -3148,7 +3148,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: NUTRICIÓN (EXPANDIDO) ---
   {
-    id: 'nut-005',
+    id: 'q-204',
     topic: 'nutricion',
     difficulty: 'Staff',
     text: '¿Qué déficit vitamínico es más común tras una Gastrectomía en Y de Roux?',
@@ -3164,7 +3164,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO 2) ---
   {
-    id: 'hdb-008',
+    id: 'q-205',
     topic: 'hdb',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la causa más frecuente de hemorragia digestiva baja severa en el paciente pediátrico?',
@@ -3178,7 +3178,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hdb-009',
+    id: 'q-206',
     topic: 'hdb',
     difficulty: 'Fellow',
     text: 'En un paciente con HDB aguda, ¿qué puntaje de riesgo se recomienda para decidir el alta precoz vs hospitalización?',
@@ -3194,7 +3194,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MOTORES ESÓFAGO (EXPANDIDO 2) ---
   {
-    id: 'mot-006',
+    id: 'q-207',
     topic: 'motores_esofago',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el hallazgo manométrico que define la Obstrucción del Flujo de Salida de la Unión Esofagogástrica (EGJOO)?',
@@ -3210,7 +3210,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER ESOFAGO (EXPANDIDO 2) ---
   {
-    id: 'ce-005',
+    id: 'q-208',
     topic: 'cancer_esofago',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el beneficio de la Quimiorradioterapia Neoadyuvante (Esquema CROSS) en pacientes con cáncer de esófago resecable?',
@@ -3226,7 +3226,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER GÁSTRICO (EXPANDIDO 2) ---
   {
-    id: 'cg-008',
+    id: 'q-209',
     topic: 'cancer_gastrico',
     difficulty: 'Staff',
     text: '¿Cuál es el marcador tumoral más utilizado para el seguimiento (no diagnóstico) del cáncer gástrico?',
@@ -3242,7 +3242,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO 2) ---
   {
-    id: 'cel-010',
+    id: 'q-210',
     topic: 'celiaca',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el hallazgo endoscópico clásico de la enfermedad celiaca en el duodeno?',
@@ -3258,7 +3258,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: BIOLOGÍA (EXPANDIDO 2) ---
   {
-    id: 'bio-005',
+    id: 'q-211',
     topic: 'biologia',
     difficulty: 'Staff',
     text: '¿Qué tipo de epitelio recubre la mayor parte del esófago normal?',
@@ -3274,7 +3274,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: NUTRICIÓN (EXPANDIDO 2) ---
   {
-    id: 'nut-006',
+    id: 'q-212',
     topic: 'nutricion',
     difficulty: 'Fellow',
     text: '¿Cuál es la causa principal del Síndrome de Dumpling tardío tras una cirugía gástrica?',
@@ -3290,7 +3290,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA AGUDA (EXPANDIDO 2) ---
   {
-    id: 'dag-012',
+    id: 'q-213',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: '¿Cuál es el agente patógeno más probable en una diarrea del viajero que presenta disentería (sangre y pus) tras un viaje al Sudeste Asiático?',
@@ -3306,7 +3306,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA CRÓNICA (EXPANDIDO 5) ---
   {
-    id: 'dc-007',
+    id: 'q-214',
     topic: 'diarrea_cronica',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo fisiopatológico de la diarrea en el Síndrome de Zollinger-Ellison?',
@@ -3322,7 +3322,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 8) ---
   {
-    id: 'erge-010',
+    id: 'q-215',
     topic: 'erge',
     difficulty: 'Fellow',
     text: '¿Qué hallazgo en la pH-impedanciometría de 24 horas define la "Hipersensibilidad al Reflujo"?',
@@ -3338,7 +3338,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (EXPANDIDO 9) ---
   {
-    id: 'masld-009',
+    id: 'q-216',
     topic: 'masld',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el primer fármaco aprobado por la FDA específicamente para el tratamiento de la NASH (MASH) con fibrosis significativa (F2-F3)?',
@@ -3354,7 +3354,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS VIRAL (EXPANDIDO 8) ---
   {
-    id: 'hep-008',
+    id: 'q-217',
     topic: 'hepatitis',
     difficulty: 'Staff',
     text: '¿Cuál es el objetivo principal del tratamiento de la Hepatitis C en la era de los Antivirales de Acción Directa (AAD)?',
@@ -3370,7 +3370,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO 7) ---
   {
-    id: 'pan-015',
+    id: 'q-218',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es el signo radiológico en el TAC que sugiere una Pancreatitis Autoinmune Tipo 1?',
@@ -3386,7 +3386,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (EXPANDIDO 8) ---
   {
-    id: 'cir-026',
+    id: 'q-219',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el criterio para diagnosticar una Insuficiencia Hepática Aguda sobre Crónica (ACLF) según el consenso de la EASL-CLIF?',
@@ -3402,7 +3402,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 8) ---
   {
-    id: 'hp-014',
+    id: 'q-220',
     topic: 'h_pylori',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el rol de la Amoxicilina en dosis altas (> 3g/día) o fraccionada en la terapia de erradicación de H. pylori?',
@@ -3418,7 +3418,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO 7) ---
   {
-    id: 'vb-010',
+    id: 'q-221',
     topic: 'vias_biliares',
     difficulty: 'Fellow',
     text: 'En un paciente con sospecha de coledocolitiasis y riesgo intermedio (según ASGE), ¿cuál es el siguiente paso más costo-efectivo?',
@@ -3434,7 +3434,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII AVANZADA (EXPANDIDO 6) ---
   {
-    id: 'eii-av-006',
+    id: 'q-222',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el mecanismo de acción del Upadacitinib en la Colitis Ulcerosa?',
@@ -3448,7 +3448,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'eii-av-007',
+    id: 'q-223',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: 'En el monitoreo de pacientes con EII bajo biológicos, ¿qué significa un "Clearance" (aclaramiento) aumentado del fármaco?',
@@ -3464,7 +3464,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MUERTE SÚBITA (EXPANDIDO 9) ---
   {
-    id: 'ms-014',
+    id: 'q-224',
     topic: 'muerte_subita',
     difficulty: 'Staff',
     text: '¿Cuál es la causa más probable de choque obstructivo que lleva a paro cardiaco en un paciente sometido a una endoscopia bajo ventilación a presión positiva?',
@@ -3480,7 +3480,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PROTOCOLO SIMULACRO (EXPANDIDO 7) ---
   {
-    id: 'ps-011',
+    id: 'q-225',
     topic: 'protocolo_simulacro',
     difficulty: 'Fellow',
     text: 'Se produce una reacción anafiláctica alérgica tras la administración de Propofol. ¿Cuál es el tratamiento de primera línea?',
@@ -3496,7 +3496,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO 4) ---
   {
-    id: 'hda-016',
+    id: 'q-226',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál es el manejo inicial recomendado para un paciente con HDA por sospecha de várices esofágicas antes de la endoscopia?',
@@ -3512,7 +3512,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 9) ---
   {
-    id: 'erge-011',
+    id: 'q-227',
     topic: 'erge',
     difficulty: 'Subspecialist',
     text: 'En un paciente con ERGE refractario a IBP y pH-impedanciometría confirma reflujo ácido persistente, ¿cuál es el rol de la evaluación de la contractilidad de reserva (ej: Maniobra de Tragos Múltiples)?',
@@ -3528,7 +3528,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO 3) ---
   {
-    id: 'hdb-010',
+    id: 'q-228',
     topic: 'hdb',
     difficulty: 'Staff',
     text: '¿Cuál es la causa más frecuente de Rectorragia indolora en el adulto mayor de 60 años?',
@@ -3544,7 +3544,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MOTORES ESÓFAGO (EXPANDIDO 3) ---
   {
-    id: 'mot-007',
+    id: 'q-229',
     topic: 'motores_esofago',
     difficulty: 'Fellow',
     text: 'En la Manometría de Alta Resolución, ¿cómo se define el "Espasmo Esofágico Distal"?',
@@ -3560,7 +3560,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CELIACA (EXPANDIDO 3) ---
   {
-    id: 'cel-011',
+    id: 'q-230',
     topic: 'celiaca',
     difficulty: 'Staff',
     text: '¿Cuál es el anticuerpo más sensible y específico para el diagnóstico inicial de Enfermedad Celiaca con niveles de IgA normales?',
@@ -3576,7 +3576,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA CRÓNICA (EXPANDIDO 6) ---
   {
-    id: 'dc-008',
+    id: 'q-231',
     topic: 'diarrea_cronica',
     difficulty: 'Fellow',
     text: '¿Cuál es el tratamiento de elección para el sobrecrecimiento bacteriano de intestino delgado (SIBO) en pacientes con predominio de Metano?',
@@ -3592,7 +3592,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: BIOLOGÍA (EXPANDIDO 3) ---
   {
-    id: 'bio-006',
+    id: 'q-232',
     topic: 'biologia',
     difficulty: 'Subspecialist',
     text: '¿Qué citoquina es la principal mediadora de la fase aguda y del desarrollo de granulomas en la Enfermedad de Crohn?',
@@ -3608,7 +3608,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: NUTRICIÓN (EXPANDIDO 3) ---
   {
-    id: 'nut-007',
+    id: 'q-233',
     topic: 'nutricion',
     difficulty: 'Staff',
     text: '¿Cuál de los siguientes es un marcador bioquímico temprano de realimentación (Refeeding Syndrome)?',
@@ -3624,7 +3624,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDB (EXPANDIDO 4) ---
   {
-    id: 'hdb-011',
+    id: 'q-234',
     topic: 'hdb',
     difficulty: 'Fellow',
     text: '¿Cuál es el manejo inicial de elección para una Angiodisplasia colónica que causa sangrado crónico recurrente y anemia ferropénica?',
@@ -3638,7 +3638,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'hdb-012',
+    id: 'q-235',
     topic: 'hdb',
     difficulty: 'Subspecialist',
     text: '¿Qué hallazgo en una Angio-TAC sugiere un sangrado de origen diverticular versus uno por angiodisplasia?',
@@ -3654,7 +3654,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MOTORES ESÓFAGO (EXPANDIDO 4) ---
   {
-    id: 'mot-008',
+    id: 'q-236',
     topic: 'motores_esofago',
     difficulty: 'Fellow',
     text: 'En la Manometría de Alta Resolución, ¿qué define un "Esófago Jackhammer" (Esófago hipercontráctil)?',
@@ -3670,7 +3670,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: EII AVANZADA (EXPANDIDO 7) ---
   {
-    id: 'eii-av-008',
+    id: 'q-237',
     topic: 'eii_avanzada',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la dosis recomendada de Infliximab para la inducción en una Colitis Ulcerosa Aguda Grave (CUAG) según protocolos de rescate?',
@@ -3684,7 +3684,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'eii-av-009',
+    id: 'q-238',
     topic: 'eii_avanzada',
     difficulty: 'Fellow',
     text: '¿Cuál es el rol del testeo de anticuerpos anti-fármaco (ej: anti-Infliximab) en la pérdida secundaria de respuesta?',
@@ -3700,7 +3700,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ERGE (EXPANDIDO 10) ---
   {
-    id: 'erge-012',
+    id: 'q-239',
     topic: 'erge',
     difficulty: 'Staff',
     text: '¿Cuál es la cirugía antirreflujo de elección en un paciente con ERGE severo y Obesidad Mórbida (IMC > 35)?',
@@ -3716,7 +3716,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: H. PYLORI (EXPANDIDO 4) ---
   {
-    id: 'hp-015',
+    id: 'q-240',
     topic: 'h_pylori',
     difficulty: 'Staff',
     text: '¿Cuál es la prueba no invasiva de elección para confirmar la erradicación de H. pylori?',
@@ -3732,7 +3732,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (EXPANDIDO 8) ---
   {
-    id: 'pan-016',
+    id: 'q-241',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la indicación de necrosectomía en pancreatitis aguda necrotizante?',
@@ -3748,7 +3748,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: VÍAS BILIARES (EXPANDIDO 8) ---
   {
-    id: 'vb-011',
+    id: 'q-242',
     topic: 'vias_biliares',
     difficulty: 'Fellow',
     text: '¿Cuál es el factor de riesgo más importante para el desarrollo de Colangiocarcinoma en pacientes con Colangitis Esclerosante Primaria (CEP)?',
@@ -3764,7 +3764,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HEPATITIS VIRAL (EXPANDIDO 9) ---
   {
-    id: 'hep-009',
+    id: 'q-243',
     topic: 'hepatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es el significado de un Anti-HBc (anticore) positivo asilado?',
@@ -3780,7 +3780,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: MASLD (EXPANDIDO 10) ---
   {
-    id: 'masld-011',
+    id: 'q-244',
     topic: 'masld',
     difficulty: 'Staff',
     text: '¿Cuál es la intervención más efectiva para la resolución de la esteatohepatitis (MASH) en el largo plazo?',
@@ -3796,7 +3796,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER ESOFAGO (EXPANDIDO 3) ---
   {
-    id: 'ce-006',
+    id: 'q-245',
     topic: 'cancer_esofago',
     difficulty: 'Fellow',
     text: '¿Cuál es el factor pronóstico más importante en el cáncer de esófago resecable?',
@@ -3812,7 +3812,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: ÚLCERA PÉPTICA (EXPANDIDO 4) ---
   {
-    id: 'up-006',
+    id: 'q-246',
     topic: 'ulcera_peptica',
     difficulty: 'Staff',
     text: '¿Cuál es la localización más frecuente de una úlcera péptica por estrés en un paciente crítico en la UCI?',
@@ -3828,7 +3828,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CANCER GÁSTRICO (EXPANDIDO 3) ---
   {
-    id: 'cg-009',
+    id: 'q-247',
     topic: 'cancer_gastrico',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la mutación germinal asociada al Cáncer Gástrico Difuso Hereditario?',
@@ -3844,7 +3844,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA CRÓNICA (EXPANDIDO 7) ---
   {
-    id: 'dc-009',
+    id: 'q-248',
     topic: 'diarrea_cronica',
     difficulty: 'Fellow',
     text: '¿Cuál es el hallazgo histopatológico definitorio de la Colitis Colágena?',
@@ -3860,7 +3860,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DOLOR ABDOMINAL (EXPANDIDO 8) ---
   {
-    id: 'da-009',
+    id: 'q-249',
     topic: 'dolor_abdominal',
     difficulty: 'Staff',
     text: '¿Cuál es la causa más frecuente de Isquemia Mesentérica Aguda embólica?',
@@ -3876,7 +3876,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: CIRROSIS (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'cir-027',
+    id: 'q-250',
     topic: 'cirrosis',
     difficulty: 'Fellow',
     text: 'En un paciente cirrótico con ascitis moderada (grado 2) de reciente diagnóstico, ¿cuál es el abordaje terapéutico de primera línea?',
@@ -3890,7 +3890,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'cir-028',
+    id: 'q-251',
     topic: 'cirrosis',
     difficulty: 'Staff',
     text: '¿Cuál es la complicación más frecuente y temprana post-inserción de un TIPS en un paciente cirrótico?',
@@ -3904,7 +3904,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'cir-029',
+    id: 'q-252',
     topic: 'cirrosis',
     difficulty: 'Subspecialist',
     text: 'Paciente con cirrosis que cursa con Peritonitis Bacteriana Espontánea (PBE). Presenta Bilirrubina 4.5 mg/dL y Creatinina 1.2 mg/dL. ¿Cuál es el manejo preventivo indicado?',
@@ -3918,7 +3918,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'cir-030',
+    id: 'q-253',
     topic: 'cirrosis',
     difficulty: 'Fellow',
     text: '¿Cuál es la primera alteración hemodinámica que desencadena toda la cascada de retención hidrosalina en la cirrosis?',
@@ -3934,7 +3934,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: PANCREATITIS (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'pan-017',
+    id: 'q-254',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál es el patógeno más comúnmente aislado en la necrosis pancreática infectada?',
@@ -3948,7 +3948,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'pan-018',
+    id: 'q-255',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: 'Señale el criterio fundamental que define una pseudoquiste pancreático versus una colección aguda de fluido peripancreático (APFC).',
@@ -3962,7 +3962,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'pan-019',
+    id: 'q-256',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: '¿Qué marcador genético confiere un alto riesgo predisponente para el desarrollo de Pancreatitis Crónica hereditaria, habitualmente de inicio en la infancia?',
@@ -3976,7 +3976,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'pan-020',
+    id: 'q-257',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: 'Femenina de 60 años con antecedente reciente de CPRE presenta dolor abdominal y amilasemia elevada 18 horas después. ¿Cuál es el factor periprocedural que más reduce el riesgo de Pancreatitis Post-CPRE?',
@@ -3990,7 +3990,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'pan-021',
+    id: 'q-258',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: '¿Cuál es la prueba diagnóstica funcional de referencia (Gold Standard histórico aunque de difícil acceso clínico) para evaluar la Insuficiencia Exocrina Pancreática?',
@@ -4004,7 +4004,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'pan-022',
+    id: 'q-259',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: '¿Cuál de los siguientes es el mejor momento estimado para iniciar nutrición enteral en un paciente con pancreatitis aguda severa pronosticada?',
@@ -4018,7 +4018,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'pan-023',
+    id: 'q-260',
     topic: 'pancreatitis',
     difficulty: 'Subspecialist',
     text: 'Ante un paciente con Cáncer de Páncreas avanzado en la cabeza (irresecable) que cursa con ictericia obstructiva indolora, ¿qué prótesis endoscópica biliar se recomienda preferentemente para el manejo paliativo?',
@@ -4032,7 +4032,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'pan-024',
+    id: 'q-261',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: 'En ultrasonido endoscópico (EUS), la lesión quística mucinosa de la cola pancreática se caracteriza clásicamente por presentarse en mujeres, no comunicar con el conducto principal y poseer un estroma análogo ¿a qué tejido?',
@@ -4046,7 +4046,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'pan-025',
+    id: 'q-262',
     topic: 'pancreatitis',
     difficulty: 'Fellow',
     text: 'El hallazgo de una masa en la cabeza del páncreas con dilatación del conducto de Wirsung (signo del doble conducto asociado) y elevación de CA 19-9 a > 1000 U/mL en un adulto mayor sugiere fuertemente:',
@@ -4060,7 +4060,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'pan-026',
+    id: 'q-263',
     topic: 'pancreatitis',
     difficulty: 'Staff',
     text: 'Durante la reanimación inicial por Pancreatitis Aguda severa en las primeras 24 hrs, ¿cuál meta de Ringer Lactato se considera "terapia fluídica dirigida por objetivos" (Goal-directed fluid therapy)?',
@@ -4076,7 +4076,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (EXPANDIDO) ---
   {
-    id: 'hda-017',
+    id: 'q-264',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál es el tiempo máximo recomendado (ventana ideal) para realizar una endoscopia digestiva alta en un paciente con sangrado no variceal hemodinámicamente estable tras resucitación?',
@@ -4090,7 +4090,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'hda-018',
+    id: 'q-265',
     topic: 'hda',
     difficulty: 'Staff',
     text: 'En el manejo de una úlcera péptica Forrest Ib (sangrado en napa), ¿cuál de las siguientes terapias es el estándar actual?',
@@ -4104,7 +4104,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'hda-019',
+    id: 'q-266',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: '¿Qué marcador clínico/endoscópico define la "Hemorragia Oculta de Origen Oscuro"?',
@@ -4118,7 +4118,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'hda-020',
+    id: 'q-267',
     topic: 'hda',
     difficulty: 'Fellow',
     text: 'Paciente con HDA severa (melena masiva, hipotensión). Su nivel de Hemoglobina al ingreso es de 13 g/dL. ¿Cómo se interpreta este laboratorio?',
@@ -4132,7 +4132,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Clinical Logic'
   },
   {
-    id: 'hda-021',
+    id: 'q-268',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'Tras el fracaso de dos intentos de endoscopia terapéutica para el control de un sangrado ulceroso masivo, ¿cuál es la medida de rescate actual preferida?',
@@ -4148,7 +4148,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA AGUDA (EXPANDIDO) ---
   {
-    id: 'dag-013',
+    id: 'q-269',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: '¿Cuál es el mecanismo fisiopatológico principal de la diarrea acuosa masiva en el cólera (Vibrio cholerae)?',
@@ -4162,7 +4162,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'dag-014',
+    id: 'q-270',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: 'En una infección por Salmonella enterica serotipo no tifoidea en un paciente inmunocompetente que cursa con diarrea leve a moderada sin fiebre, ¿cuál es el manejo antibiótico recomendado?',
@@ -4176,7 +4176,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'dag-015',
+    id: 'q-271',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: 'De los siguientes factores asociados con la patogénesis de la infección por Clostridioides difficile, ¿cuál explica mejor la recurrencia frecuente de la enfermedad tras completar la terapia con vancomicina oral?',
@@ -4190,7 +4190,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'dag-016',
+    id: 'q-272',
     topic: 'diarrea_aguda',
     difficulty: 'Subspecialist',
     text: 'En el Síndrome Hemolítico Urémico (SHU) secundario a E. coli productora de toxina Shiga (STEC / EHEC O157:H7), ¿cuál de las siguientes terapias antimicrobianas está recomendada?',
@@ -4204,7 +4204,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Emergency'
   },
   {
-    id: 'dag-017',
+    id: 'q-273',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: 'Un joven que desayunó ensalada de patata y mayonesa presenta vómitos explosivos severos y calambres abdominales solo 3 horas después de comer. No tiene fiebre significativa. ¿Cuál es el agente etiológico más congruente con este modo de inicio fulminante?',
@@ -4220,7 +4220,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: HDA (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'hda-022',
+    id: 'q-274',
     topic: 'hda',
     difficulty: 'Fellow',
     text: '¿Cuál de los siguientes fármacos procinéticos se recomienda usar 30 a 120 minutos antes de la endoscopia en un paciente con sangrado digestivo alto agudo intenso, para mejorar la visualización?',
@@ -4234,7 +4234,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'hda-023',
+    id: 'q-275',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'Un paciente cirrótico tratado profilácticamente con betabloqueadores no selectivos presenta una hemorragia variceal aguda con hipotensión. ¿Qué se debe hacer con el betabloqueador (ej. Propranolol)?',
@@ -4248,7 +4248,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Emergency'
   },
   {
-    id: 'hda-024',
+    id: 'q-276',
     topic: 'hda',
     difficulty: 'Staff',
     text: 'En la clasificación de Forrest, ¿cómo se clasifica una úlcera con un vaso visible no sangrante, y cuál es su riesgo de resangrado si no se trata?',
@@ -4262,7 +4262,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'hda-025',
+    id: 'q-277',
     topic: 'hda',
     difficulty: 'Fellow',
     text: 'Tras el control endoscópico exitoso de una úlcera péptica sangrante Forrest IIa, ¿cuál es el régimen recomendado de Inhibidores de Bomba de Protones?',
@@ -4276,7 +4276,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'hda-026',
+    id: 'q-278',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: '¿Cuál de los siguientes hallazgos define el Síndrome de Mallory-Weiss atípico o complicado que sí requiere terapia endoscópica?',
@@ -4290,7 +4290,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'hda-027',
+    id: 'q-279',
     topic: 'hda',
     difficulty: 'Fellow',
     text: 'En pacientes con fístula aorto-entérica, ¿cuál es la presentación clínica clásica ("Sangrado Heraldo")?',
@@ -4304,7 +4304,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Emergency'
   },
   {
-    id: 'hda-028',
+    id: 'q-280',
     topic: 'hda',
     difficulty: 'Staff',
     text: 'Ante el hallazgo incidental en una endoscopia de un coágulo adherente firme sobre una úlcera (Forrest IIb), tras lavarlo vigorosamente y no desprenderse, ¿qué conducta se prefiere hoy en centros especializados?',
@@ -4318,7 +4318,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'hda-029',
+    id: 'q-281',
     topic: 'hda',
     difficulty: 'Fellow',
     text: 'El "Rockall Score" se utiliza para estratificar riesgo en HDA. ¿A diferencia del score de Glasgow-Blatchford, qué elemento clave incorpora el Rockall clínico (post-endoscópico)?',
@@ -4332,7 +4332,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'hda-030',
+    id: 'q-282',
     topic: 'hda',
     difficulty: 'Subspecialist',
     text: 'La lesión de Cameron es una causa frecuentemente subdiagnosticada de anemia y sangrado oculto. ¿Dónde se localiza y cuál es su etiología?',
@@ -4348,7 +4348,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
 
   // --- SECTOR: DIARREA AGUDA (CIERRE 30 PREGUNTAS TOTALES) ---
   {
-    id: 'dag-018',
+    id: 'q-283',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: 'Un brote de gastroenteritis aguda cursa con diarrea secretora intensa e inmediata que se resuelve en 48 horas en un grupo de pasajeros de crucero. ¿Cuál es el patógeno viral más probable y su método de evasión?',
@@ -4362,7 +4362,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'dag-019',
+    id: 'q-284',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: '¿Cuál es el antibiótico de elección para la profilaxis de Diarrea del Viajero en pacientes estrictamente necesarios (ej. Inmunodeprimidos severos, EII activa) que visitan áreas de altísimo riesgo?',
@@ -4376,7 +4376,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'dag-020',
+    id: 'q-285',
     topic: 'diarrea_aguda',
     difficulty: 'Subspecialist',
     text: 'En la infección aguda por Giardia lamblia, ¿cuál es el mecanismo principal de la esteatorrea que observan algunos pacientes prolongadamente?',
@@ -4390,7 +4390,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'dag-021',
+    id: 'q-286',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: '¿Cuál de los siguientes patógenos entéricos se asocia clásicamente con una de las mayores frecuencias de Síndrome de Guillain-Barré postinfeccioso?',
@@ -4404,7 +4404,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'dag-022',
+    id: 'q-287',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: 'En un paciente en la unidad de cuidados intensivos para nutrición enteral crónica, ¿cuál es el factor desencadenante más frecuente de diarrea "aguda" adquirida en el hospital, descartando infección?',
@@ -4418,7 +4418,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'dag-023',
+    id: 'q-288',
     topic: 'diarrea_aguda',
     difficulty: 'Subspecialist',
     text: '¿Cual de las siguientes terapias suplementarias ha demostrado en metaanálisis acortar levemente la duración de la diarrea aguda infecciosa pediátrica, y está incluida en las recomendaciones de la OMS?',
@@ -4432,7 +4432,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Must-Know'
   },
   {
-    id: 'dag-024',
+    id: 'q-289',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: 'El examen directo "Leucocitos Fecales" fue tradicionalmente utilizado para diferenciar diarreas inflamatorias de las no inflamatorias. ¿Por qué ha sido progresivamente reemplazado en panel clínico avanzado?',
@@ -4446,7 +4446,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Board Prep'
   },
   {
-    id: 'dag-025',
+    id: 'q-290',
     topic: 'diarrea_aguda',
     difficulty: 'Staff',
     text: 'Ante un paciente con diagnóstico reciente de SIDA (con CD4 <50) que cursa con diarrea acuosa profunda e intratable (litros al día), ¿cuál es el diagnóstico oportunista más temido en el intestino delgado?',
@@ -4460,7 +4460,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Mastery'
   },
   {
-    id: 'dag-026',
+    id: 'q-291',
     topic: 'diarrea_aguda',
     difficulty: 'Subspecialist',
     text: 'Paciente sano presenta un cuadro disentérico agudo (sangre, mucosidad, gran pujo y tenesmo). Se detecta Entamoeba histolytica. Si no se trata, ¿cuál es la complicación extraintestinal clásica más frecuente?',
@@ -4474,7 +4474,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     pillar: 'Common Cases'
   },
   {
-    id: 'dag-027',
+    id: 'q-292',
     topic: 'diarrea_aguda',
     difficulty: 'Fellow',
     text: 'Durante la preparación pre-operatoria de un paciente hospitalizado, desarrolla fiebre, dolor cólico y leucocitosis (25.000) seguida por diarrea. La toxina C. difficile es positiva. Un TAC muestra dilatación de colon transverso de 9 cm. Esto indica:',
@@ -4486,5 +4486,1302 @@ export const PRELOADED_QUESTIONS: Question[] = [
     guideline: 'ASCRS Guidelines for the management of C. difficile infection.',
     whyWrong: { 1: 'La Loperamida puede emporar la parálisis muscular y acelerar la pared e íleo y el tóxico.', 2: 'Una colonoscopia en un megacolon tóxico está CONTRAINDICADA por el enorme riesgo de perforación por insuflación de gas.', 3: 'Es la variante fulminante de C. diff, fatalidad altísima.' },
     pillar: 'Emergency'
+  },
+
+  // --- SECTOR: ERGE (CIERRE 30 PREGUNTAS TOTALES) ---
+  {
+    id: 'q-293',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: '¿Cuál es el mecanismo fisiopatológico primario más frecuente documentado en pacientes con Enfermedad por Reflujo Gastroesofágico (ERGE) no complicada?',
+    options: ['Relajaciones transitorias del esfínter esofágico inferior (TLESRs)', 'Hipotensión basal permanente del EEI (< 10 mmHg)', 'Hernia hiatal gigante', 'Trastorno del vaciamiento gástrico (gastroparesia)'],
+    correctIndex: 0,
+    explanation: 'La mayoría de los episodios de reflujo ocurren durante relajaciones bruscas, prolongadas y no inducidas por la deglución del EEI, permitiendo el escape de contenido gástrico.',
+    fisiopato: 'Las TLESRs son un reflejo vagovagal originado por la distensión gástrica que fisiológicamente permite el eructo.',
+    clinicalPearl: 'Fármacos como el Baclofeno (agonista GABA-B) pueden disminuir las TLESRs, pero sus efectos adversos limitan su uso clínico frecuente.',
+    guideline: 'ACG Clinical Guideline for the Diagnosis and Management of Gastroesophageal Reflux Disease.',
+    whyWrong: { 1: 'Solo una minoría de pacientes tiene un EEI perennemente hipotenso.', 2: 'Agrava la ERGE pero no todos la tienen.', 3: 'Puede coexistir pero es un factor secundario, no el mecanismo principal en la mayoría.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-294',
+    topic: 'erge',
+    difficulty: 'Staff',
+    text: 'En un paciente con síntomas típicos de ERGE (pirosis y regurgitación) que no responde a IBP en doble dosis durante 8 semanas, la endoscopia alta es normal. ¿Cuál es el siguiente paso diagnóstico recomendado?',
+    options: ['pH-impedanciometría de 24 horas sin interrumpir la terapia con IBP', 'pH-metría convencional de 24 horas tras suspender el IBP por 7 días', 'Manometría esofágica de alta resolución aislada', 'Ensayo diagnóstico con Vonoprazan (P-CAB)'],
+    correctIndex: 0,
+    explanation: 'Para evaluar síntomas refractarios en pacientes YA diagnosticados o con alta sospecha bajo IBP, el estudio DEBE realizarse CON la medicación (on-therapy) usando impedanciometría para detectar reflujo no ácido o débilmente ácido.',
+    fisiopato: 'El IBP suprime el ácido, pero el volumen del reflujo líquido/gaseoso persiste, causando síntomas por distensión o hipersensibilidad (reflujo no ácido).',
+    clinicalPearl: 'Si nunca hubo evidencia objetiva previa de ERGE (endoscopia normal inicial), se prefiere hacer la pH-metría SIN IBP para confirmar/descartar la enfermedad de base.',
+    guideline: 'Lyon Consensus 2.0 on the diagnosis of GERD.',
+    whyWrong: { 1: 'Se prefiere la pH-impedancia para el reflujo no ácido on-therapy.', 2: 'La manometría evalúa la motilidad, no documenta episodios de reflujo.', 3: 'No aportará un diagnóstico etiológico en la refractariedad.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-295',
+    topic: 'erge',
+    difficulty: 'Subspecialist',
+    text: 'Según la Clasificación de Los Ángeles, ¿qué grado de esofagitis endoscópica constituye evidencia diagnóstica definitiva e irrefutable de ERGE que no requiere pruebas adicionales (pH-metría) para su confirmación?',
+    options: ['Grados C y D', 'Sólo Grado D', 'Grados B, C y D', 'Grados A, B, C y D'],
+    correctIndex: 0,
+    explanation: 'La esofagitis LA Grado C y D son pruebas definitivas de ERGE. La Grado A y B son hallazgos considerados insuficientes (borderline) para un diagnóstico definitivo sin síntomas claros o monitoreo de pH, dado que pueden verse en personas asintomáticas o ser transitorias.',
+    fisiopato: 'El compromiso de más de un pliegue mucoso (Grado C) o circunferencial (Grado D) implica una falla severa de la barrera antirreflujo y un clearence esofágico deteriorado.',
+    clinicalPearl: 'Pacientes con LA Grado C o D requieren IBP de mantenimiento a largo plazo para prevenir estenosis o esófago de Barrett.',
+    guideline: 'Lyon Consensus 2.0 on the diagnosis of GERD.',
+    whyWrong: { 1: 'La Grado C también es conclusiva.', 2: 'La Grado B requiere evidencia adjunta según el Consenso de Lyon 2.0.', 3: 'La Grado A no es evidencia concluyente.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-296',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: 'El Esófago de Barrett es una complicación temida del ERGE crónico. ¿Cúal es la condición histológica sine qua non para confirmar su diagnóstico en las biopsias esofágicas distales según las guías americanas (ACG)?',
+    options: ['Presencia de metaplasia intestinal especializada con células caliciformes', 'Presencia de metaplasia gástrica (cardial o fúndica)', 'Infiltración de neutrófilos en la lámina propia', 'Hiperplasia de la capa basal >15%'],
+    correctIndex: 0,
+    explanation: 'En Norteamérica (ACG), el Barrett requiere metaplasia intestinal (células caliciformes). La metaplasia gástrica sin intestinalización no confiere el mismo riesgo medible de adenocarcinoma.',
+    fisiopato: 'La mucosa escamosa es reemplazada por tejido columnar resistente al ácido y a los ácidos biliares, lo cual predispone a la cascada metaplasia-displasia-adenocarcinoma.',
+    clinicalPearl: 'En muchas guías europeas (BSG) y japonesas, la sola presencia de cualquier mucosa columnar en el esófago se considera Barrett, pero en EEUU se exige la metaplasia intestinal.',
+    guideline: 'ACG Clinical Guidelines for Diagnosis and Management of Barrett’s Esophagus.',
+    whyWrong: { 1: 'No basta para el diagnóstico en Norteamérica.', 2: 'Indica esofagitis aguda activa, no Barrett.', 3: 'Indica esofagitis crónica, no Barrett.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-297',
+    topic: 'erge',
+    difficulty: 'Staff',
+    text: 'Una paciente embarazada cursando su 2do trimestre consulta por pirosis severa intratable con cambios dietéticos. ¿Cuál es la terapia farmacológica de primera y segunda línea más segura?',
+    options: ['Antiácidos con alginatos (suplementarios) seguidos de IBP si no hay respuesta (Omeprazol es categoría B equivalente/seguro)', 'Misoprostol', 'Cirugía de Nissen en el segundo trimestre', 'Bicarbonato de sodio a altas dosis'],
+    correctIndex: 0,
+    explanation: 'Los alginatos (que forman una balsa física sobre el bolsillo ácido) son muy seguros. Si fallan, el uso de Omeprazol o Pantoprazol durante el embarazo ha demostrado ser seguro y no teratogénico.',
+    fisiopato: 'La progesterona relaja el EEI y disminuye el vaciamiento gástrico, sumado al aumento de presión intraabdominal por el feto.',
+    clinicalPearl: 'El bolsillo ácido postprandial flota sobre el quimo alimentario; los alginatos capturan este ácido y evitan su entrada al esófago.',
+    guideline: 'ACG Clinical Guideline / FDA Pregnancy Categories.',
+    whyWrong: { 1: 'El Misoprostol es oxitócico y abortivo (categoría X).', 2: 'Nunca está indicada en el embarazo por riesgo quirúrgico/fetal sin antes manejo médico pleno.', 3: 'Causa alcalosis metabólica e hipernatremia en la madre y el feto si se usa rutinariamente.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-298',
+    topic: 'erge',
+    difficulty: 'Subspecialist',
+    text: 'Al interpretar una pH-impedanciometría para evaluar "Hipersensibilidad al Reflujo", ¿qué métricas deben estar presentes para establecer el diagnóstico rigurosamente?',
+    options: ['Tiempo de exposición al ácido (AET) NORMAL (< 4%) y un Índice Sintomático (SI) o Probabilidad de Asociación Sintomática (SAP) POSITIVO', 'AET ANORMAL (> 6%) con SAP positivo', 'AET NORMAL (< 4%) con SAP negativo', 'AET ANORMAL pero sin relación sintomática'],
+    correctIndex: 0,
+    explanation: 'La Hipersensibilidad al Reflujo se da cuando la cantidad de reflujo cae en rangos fisiológicos normales, pero cada episodio que ocurre dispara un síntoma en el paciente (SAP/SI positivo).',
+    fisiopato: 'Demuestra nervios aferentes esofágicos sensibilizados, a menudo manejables con neuromoduladores (ej. antidepresivos tricíclicos o ISRS) más que con cirugía o incremento de IBP.',
+    clinicalPearl: 'Si el AET es < 4% y el SAP/SI son negativos, el diagnóstico es Pirosis Funcional.',
+    guideline: 'Rome IV Criteria for Esophageal Disorders.',
+    whyWrong: { 1: 'Es el diagnóstico de ERGE verdadero (no hipersensibilidad funcional pura).', 2: 'Es el diagnóstico de Pirosis Funcional.', 3: 'Es ERGE asintomático o el hallazgo clásico, sin componente funcional definitorio.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-299',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: '¿Cuál es un requerimiento absolutamente crítico y obligatorio PREVIO a someter a un paciente a una Funduplicatura de Nissen por ERGE refractario?',
+    options: ['Realizar una Manometría Esofágica de Alta Resolución (HRM)', 'Realizar una pH-metría intraoperatoria', 'Dar un curso de antibióticos para H. pylori', 'Tomar biopsias de duodeno'],
+    correctIndex: 0,
+    explanation: 'La manometría (HRM) es MANDATORIA antes de una cirugía antirreflujo para descartar trastornos motores mayores (Acalasia camuflada como ERGE, Esclerodermia o Aperistalsis severa).',
+    fisiopato: 'Si el cuerpo esofágico carece de peristalsis contráctil (ej. esclerodermia o espasmo distal ausente), la funduplicatura total de 360 grados actuará como un muro infranqueable, causando disfagia postoperatoria severa permanente.',
+    clinicalPearl: 'En presencia de motilidad inefectiva severa, los cirujanos pueden optar por funduplicaturas parciales (ej. Toupet 270 grados) o incluso desestimar la cirugía.',
+    guideline: 'SAGES guidelines for the surgical treatment of GERD.',
+    whyWrong: { 1: 'Inexistente clínicamente en la rutina prequirúrgica obligatoria; el pH ya debe estar documentado.', 2: 'Erradicar H. pylori no es mandatorio en ERGE.', 3: 'Descarta celiaquía pero no es necesario pre-reflujo quirúrgico.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-300',
+    topic: 'erge',
+    difficulty: 'Staff',
+    text: 'Los Bloqueadores de Ácido Competitivos de Potasio (P-CABs), como el Vonoprazan, han introducido ventajas sobre los IBPs tradicionales en el manejo del ERGE y erradicación de H. pylori. ¿Cuál es su principal ventaja farmacodinámica?',
+    options: ['Un inicio de acción mucho más rápido (suprime el ácido al máximo el primer día) y un efecto más duradero independientemente de las comidas', 'Su unión covalente e irreversible a la bomba de protones', 'Menor riesgo de hipergastrinemia crónica', 'Ausencia total de interacción con el sistema Citocromo P450'],
+    correctIndex: 0,
+    explanation: 'Los P-CABs alcanzan la concentración inhibitoria máxima rápidamente al no requerir activación en medio ácido, y bloquean reversiblemente el canal de potasio de la bomba H+/K+ ATPasa.',
+    fisiopato: 'Los IBP clásicos requieren de 3 a 5 días para alcanzar su concentración en equilibrio o steady state perdiendo su eficacia nocturna. El Vonoprazan lo logra en la primera toma.',
+    clinicalPearl: 'El Vonoprazan es extremadamente útil en esofagitis severa LA C/D y en H. pylori rebelde al proveer pH > 6 constante.',
+    guideline: 'Recent FDA Approvals / AGA Clinical Updates.',
+    whyWrong: { 1: 'Ese es el mecanismo de los IBP (unión a cisteínas). Los P-CABs son uniones reversibles.', 2: 'Tienen igual o ligeramente mayor hipergastrinemia (gastrina sérica muy alta).', 3: 'Tienen algunas interacciones hepáticas (ej. CYP3A4).' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-301',
+    topic: 'erge',
+    difficulty: 'Subspecialist',
+    text: 'Pacientes ancianos en terapia prolongada (años) con IBP reportan síntomas musculares, tetania leve y arritmias incidentales. ¿Qué trastorno de laboratorio específico y poco reportado debe sospechar de inmediato asociado estrictamente a este fármaco?',
+    options: ['Hipomagnesemia profunda secundaria a pérdida intestinal', 'Hipercalcemia fulminante', 'Hipertrigliceridemia grave', 'Baja saturación de Transferrina por mala absorción de hierro hemo'],
+    correctIndex: 0,
+    explanation: 'El uso crónico de IBP (generalmente > 1 año) puede causar hipomagnesemia profunda y potencialmente mortal debido a la inhibición del transportador TRPM6/7 en el intestino delgado.',
+    fisiopato: 'Esta mala absorción induce niveles bajos de Magnesio sérico que no responden siempre a la suplementación oral y requiere suspender el IBP.',
+    clinicalPearl: 'Todo paciente con espasmos musculares o arritmias bajo IBP debe tener el Magnesio medido. Puede causar de rebote hipocalcemia e hipopotasemia.',
+    guideline: 'FDA Drug Safety Communication on PPIs.',
+    whyWrong: { 1: 'Causa lo opuesto: hipocalcemia que acompaña a la hipomagnesemia.', 2: 'Infundado.', 3: 'El IBP afecta poco la absorción de hierro total a nivel clínico grave en poblaciones asintomáticas.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-302',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: 'El "Índice Post-Reflujo de Deglución Primaria" (PSPW index) en la pH-impedanciometría es una métrica novedosa que refleja:',
+    options: ['La integridad del aclaramiento (clearence) químico esofágico estimulado por el reflujo', 'La cantidad de bilis que refluía hacia el esófago', 'El número de ondas anti-peristálticas', 'La relajación del esfínter superior'],
+    correctIndex: 0,
+    explanation: 'El PSPW (post-reflux swallow-induced peristaltic wave) analiza si, después de un episodio de reflujo, ocurre una deglución secundaria en los siguientes 30 segundos.',
+    fisiopato: 'La deglución post-reflujo arrastra la saliva rica en bicarbonato para neutralizar el ácido remanente en la mucosa. Un PSPW bajo (< 61%) implica un reflejo de "lavado esofágico" deficiente.',
+    clinicalPearl: 'Junto a la Impedancia Basal Nocturna Media (MNBI), son métricas sumamente útiles en diagnósticos borderline de ERGE.',
+    guideline: 'Lyon Consensus 2.0 (Adjunctive metrics).',
+    whyWrong: { 1: 'Esto se detectaba históricamente con Bilitec.', 2: 'Término incorrecto, no existe "anti-peristalsis" habitual salvo vómito.', 3: 'El EEI, no el EES, es clave aquí.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-303',
+    topic: 'erge',
+    difficulty: 'Staff',
+    text: '¿Cuál es el síntoma extraesofágico atípico más fuertemente probado y correlacionado causalmente con el ERGE ("Laringofaríngeo")?',
+    options: ['Tos crónica asmatiforme no alérgica (peor de noche)', 'Ronquera matinal de evolución aguda (< 1 semana)', 'Otitis media a repetición en adultos', 'Sensación de ardor lingual exclusivo'],
+    correctIndex: 0,
+    explanation: 'El ERGE es una de las 3 causas principales de tos crónica, junto al goteo postnasal (rinitis) y la hiperreactividad bronquial (asma variante tos).',
+    fisiopato: 'Ocurre por dos vías: microaspiración directa de ácido al árbol traqueobronquial (irritación química) O el reflejo vagal inducido por el ácido que irrita el esófago distal (arco reflejo túrdigo).',
+    clinicalPearl: 'El ensayo empírico es el doble de dosis de IBP por 8-12 semanas ANTES de descartarlo. La ronquera matutina (disfonía) también es clásica, pero evolución crónica, no aguda.',
+    guideline: 'CHEST Guideline / ACG extraesophageal GERD.',
+    whyWrong: { 1: 'La disfonía del ERGE es silente y crónica, no aguda (eso sugiere causa viral o abuso vocal reciente).', 2: 'Complicación rarísima y mal probada.', 3: 'El síndrome de boca urente (burning mouth) no se ha validado consistentemente como síntoma de reflujo.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-304',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: 'Las Hernias de Hiato tipo IV se caracterizan específicamente por:',
+    options: ['Tener otro órgano intraabdominal (como colon, bazo o intestino) herniado a través del defecto del hiato en el tórax', 'Herniación por deslizamiento puro del cardias', 'Herniación paraesofágica solo del fondo gástrico', 'Una hernia estrangulada e isquémica'],
+    correctIndex: 0,
+    explanation: 'Tipos: I (deslizamiento); II (paraesofágica pura, EEI in situ); III (Mixta: EEI y fondo deslizados); IV (Mixta masiva con otros órganos).',
+    fisiopato: 'En la Tipo IV, el defecto diafragmático es colosal y la presión abdominal empuja estructuras colonicas completas (principalmente transverso o epiplón) al mediastino.',
+    clinicalPearl: 'Cualquier hernia tipo III severa o IV tiene inminente indicación quirúrgica antes de causar vólvulos gástricos, isquemia, o perforación en el tórax.',
+    guideline: 'SAGES Guidelines for Hiatal Hernia.',
+    whyWrong: { 1: 'Es la Tipo 1.', 2: 'Es la Tipo 2 y 3.', 3: 'Representa una complicación aguda de cualquiera de ellas, no una categoría de clasificación anatómica basal.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-305',
+    topic: 'erge',
+    difficulty: 'Staff',
+    text: 'Durante la endoscopia de rutina se encuentra en el cuerpo bajo un esófago con Anillo de Schatzki. El paciente reporta episodios esporádicos de "impactación alimentaria" con carne. ¿Cuál es el manejo preferido inmediato?',
+    options: ['Dilatación con balón de gran calibre o bujías de Savary seguida de IBP crónico', 'Inyección endoscópica de corticoides en el anillo', 'Cirugía de funduplicatura con remoción del anillo', 'Biopsiar extensamente la mucosa normal (pensando en EoE) y no dilatar el anillo'],
+    correctIndex: 0,
+    explanation: 'El anillo de Schatzki (anillo mucoso esofágico inferior, B-ring) es patognomónico de daño crónico por ácido no detectado en transición Z, y responde excelentemente a la dilatación para fracturarlo mecánicamente.',
+    fisiopato: 'Es un tejido cicatricial hipertrófico y simétrico que causa estenosis circunferencial.',
+    clinicalPearl: 'La regla de oro: después de dilatar, se debe dejar IBP crónico empírico al paciente para evitar recaída. A los jóvenes con anillos "parecidos/estriados" SIEMPRE se les toma biopsias en cuerpo/tercio proximal para EoE antes de asumir que es solo Schatzki.',
+    guideline: 'ASGE Eosinophilic Esophagitis and Benign Strictures.',
+    whyWrong: { 1: 'Se usan corticoides inyectados en la estenosis péptica refractaria compleja larga, no en un simple anillo membranoso mucosal.', 2: 'Exagerado para anillo fibroso simple.', 3: 'Sí se DEBE dilatar. Biopsiar para descartar EoE también es correcto, pero la dilatación es necesaria para resolver el cuadro clínico obstructivo subyacente de impactación.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-306',
+    topic: 'erge',
+    difficulty: 'Subspecialist',
+    text: 'En esófago de Barrett documentado, la Displasia de Alto Grado (HGD) y el Adenocarcinoma intramucoso (T1a) no ulcerados y confinados, ¿cuál es el estándar terapéutico de remoción actual pre-cirugía?',
+    options: ['Resección Endoscópica Mucosa (EMR) focal de la lesión seguida de Ablación por Radiofrecuencia (RFA) del Barrett residual', 'Esofagectomía total por abordaje de Ivor Lewis', 'Solo coagulación con gas Argón (APC)', 'Quimio y Radioterapia neoadyuvante (CROSS trial)'],
+    correctIndex: 0,
+    explanation: 'La terapia de erradicación endoscópica (EET) previene la amputación del esófago en pacientes con cáncer mucoso temprano (T1a).',
+    fisiopato: 'El riesgo de linfoadenectomía (metástasis a nódulos locales) para pT1a está confinado a 1-2%, por tanto la resección en bloque de la mucosa cura el cáncer, y el RFA trata el terreno pro-metaplásico circundante ("field effect").',
+    clinicalPearl: 'Si el tumor invade la capa submucosa pT1b profunda (sm2 o sm3), el riesgo linfático sube a > 20% y ya NO ES CURATIVO lo endoscópico rutinario (va a cirugía).',
+    guideline: 'ACG/ASGE Guidelines for management of Barrett’s esophagus.',
+    whyWrong: { 1: 'Injustificado por morbimortalidad al ser T1a curable endoscópicamente.', 2: 'El Argón no permite obtener tejido histológico curativo para asegurar bordes, es ciego.', 3: 'El trial CROSS es para cáncer invasivo avanzado (T2 en adelante). T1 va solo a cirugía o endoscopia curativa.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-307',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: '¿Cual de las siguientes terapias intervencionistas endoscópicas recientes para el ERGE consiste en insertar un anillo de imanes alrededor del EEI mediante cirugía laparoscópica?',
+    options: ['Procedimiento quirúrgico LINX (Aumento del esfínter magnético)', 'Funduplicatura Transoral sin Incisión (TIF 2.0)', 'Radiofrecuencia (Procedimiento STRETTA)', 'Terapia endoscópica con inyección de polímeros'],
+    correctIndex: 0,
+    explanation: 'El LINX usa una cadena de titanio con centro magnético; la fuerza de unión de los imanes aumenta la presión basal reposo del EEI pero cede a la alta presión de la deglución y paso del bolo.',
+    fisiopato: 'Corrige la hipotensión del esfínter inferior sin crear el bloqueo anatómico total y desfavorable al eructo/emesis que hace el Nissen.',
+    clinicalPearl: 'Tienen una limitante notoria: pacientes quedan formalmente e inicialmente restringidos de acceder a Resonancias Magnéticas nucleares intensas (aunque con modelos modernos <1.5T existe condicionalidad).',
+    guideline: 'SAGES Guidelines for GERD.',
+    whyWrong: { 1: 'TIF se realiza vía boca usando un endoscopio y suturas plásticas para formar una válvula con el tejido gástrico, pero no usa imanes ni laparoscopia.', 2: 'Usa una sonda térmica quemando, creando cicatriz en EEI.', 3: 'Poco probada históricamente (Enteryx) retirada del mercado.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-308',
+    topic: 'erge',
+    difficulty: 'Staff',
+    text: 'Paciente con síntomas atípicos referidos a la vía respiratoria que ocurren principalmente DE NOCHE durante el decúbito. Ud. sospecha de reflujo nocturno de grandes volúmenes y del receso gástrico. ¿Qué consejo anatómico no farmacológico para mejorar esto tiene mejor respaldo bibliográfico?',
+    options: ['Elevar la cabecera de la cama 15-20 cm y acostarse recostado estricto sobre el decúbito lateral IZQUIERDO', 'Acostarse en decúbito ventral (boca abajo) sobre tabla dura', 'Dormir sobre el Decúbito Lateral DERECHO', 'Acostarse sin elevar cabecera para facilitar el vaciamiento antral normal'],
+    correctIndex: 0,
+    explanation: 'El decúbito lateral izquierdo deja al estómago colgando debajo de la unión gastroesofágica (anatómicamente orientada a la derecha). Esto mantiene el reservorio gástrico lleno de líquido alejado de la boca del cardias.',
+    fisiopato: 'Si el paciente duerme sobre el decúbito derecho, el contenido gástrico baña directamente el cardias toda la noche.',
+    clinicalPearl: 'Hay cuñas de espuma comerciales estandarizadas (ej. MedClinis, almohadas antirreflujo) basadas en este principio gravitatorio que son extremadamente efectivas.',
+    guideline: 'ACG Guidelines for the treatment of GERD (Lifestyle interventions).',
+    whyWrong: { 1: 'Pone en peligro el EEI aumentando la PIA.', 2: 'Totalmente contrario a la anatomía, favorece el flujo gástrico al esófago por gravedad.', 3: 'Promueve microaspiraciones de grandes volúmenes líquidos en pacientes predispuestos.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-309',
+    topic: 'erge',
+    difficulty: 'Fellow',
+    text: 'En el Síndrome de Sandifer (una variante rara pediátrica), ¿cómo se manifiesta clásicamente el padecimiento asociado a la ERGE?',
+    options: ['Con torsiones cuello/cabeza peculiares (tortícolis) y posturas distónicas de arquear la espalda', 'A través de heces aceitosas masivas', 'Con hemoptisis recurrente sin esofagitis evidente', 'Hipersensibilidad corneal y sialorrea'],
+    correctIndex: 0,
+    explanation: 'El arqueamiento de la espalda o cuello es una respuesta protectora/fisiológica del infante buscando elongar el esófago o aliviar mecánicamente el dolor por el paso del bolo ácido.',
+    fisiopato: 'Con frecuencia se mal-diagnostica inicialmente como convulsión o enfermedad neurológica.',
+    clinicalPearl: 'Si ve un lactante o pre-escolar con hiperextensión cervical ("posición de opistótonos ocasional") que suele ocurrir relacionada a las comidas o rumiación, sospeche ERGE grave antes que una distonía primaria.',
+    guideline: 'ESPGHAN/NASPGHAN Guidelines for Pediatric Reflux.',
+    whyWrong: { 1: 'Es esteatorrea.', 2: 'Asume daño a vía aérea sangrante raro.', 3: 'Nada que ver con tubo digestivo basal.' },
+    pillar: 'Board Prep'
+  },
+
+  // --- SECTOR: HEPATITIS (CIERRE 30 PREGUNTAS TOTALES) ---
+  {
+    id: 'q-310',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: 'En el perfil serológico del Virus de Hepatitis B (VHB), ¿qué combinación de marcadores define una "infección crónica mutante precore"?',
+    options: ['HBsAg (+), HBeAg (-), Anti-HBe (+) y Carga Viral (ADN) elevada', 'HBsAg (+), HBeAg (+), Anti-HBe (-) y Carga Viral elevada', 'HBsAg (-), Anti-HBc IgG (+) y Anti-HBs (+)', 'HBsAg (+), Anti-HBc IgM (+) y Carga Viral elevada'],
+    correctIndex: 0,
+    explanation: 'El virus mutante precore es incapaz de sintetizar y secretar el antígeno "e" (HBeAg), pese a tener replicación activa.',
+    fisiopato: 'Una mutación en la región precore del gen viral (frecuentemente G1896A) crea un codón de parada prematuro, impidiendo la traducción del HBeAg pero no del HBsAg ni de la ADN polimerasa.',
+    clinicalPearl: 'Es la variante más común en la cuenca mediterránea y requiere tratamiento antiviral a pesar de tener el "presunto" marcador de buen pronóstico HBeAg negativo.',
+    guideline: 'EASL/AASLD Guidelines on Hepatitis B Management.',
+    whyWrong: { 1: 'Es la hepatitis crónica tipo "salvaje" (wild-type) altamente replicativa.', 2: 'Infección pasada resuelta e inmunidad.', 3: 'Patrón de infección aguda.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-311',
+    topic: 'hepatitis',
+    difficulty: 'Staff',
+    text: 'En una paciente embarazada de 32 semanas portadora de Hepatitis B crónica asintomática con HBeAg(+) y DNA viral > 200.000 UI/mL, ¿cuál es el manejo para prevenir la transmisión vertical?',
+    options: ['Iniciar Tenofovir disoproxilo fumarato (TDF) a las 28-32 semanas de gestación, más vacuna e inmunoglobulina al RN al nacer', 'Solo vacunar al recién nacido y dar Inmunoglobulina específica sin antiviral materno', 'Iniciar Entecavir inmediatamente y suspender lactancia materna', 'Programar cesárea electiva y no tratar con antivirales'],
+    correctIndex: 0,
+    explanation: 'Cuando la carga viral materna es alta (> 200,000 UI/mL o > 10^6 copias), la profilaxis solo al RN (vacuna+Ig) falla hasta en un 10-30%. Se debe reducir la carga viral materna pre-parto.',
+    fisiopato: 'La alta viremia burla el bloqueo de anticuerpos del neonato debido al masivo inóculo viral durante el paso por el canal del parto.',
+    clinicalPearl: 'El Tenofovir (TDF) es categoría B embarazos y altamente seguro. El Entecavir es categoría C (teratogénico en animales).',
+    guideline: 'AASLD/EASL HBV in Pregnancy Guidelines.',
+    whyWrong: { 1: 'Insuficiente ante viremias tan altas, asume alto riesgo de falla profiláctica.', 2: 'Entecavir está contraindicado en gestación.', 3: 'La cesárea no reduce la transmisión significativamente comparada con el parto vaginal si se usa antiviral.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-312',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: '¿Cuál es el esquema de tratamiento pangenotípico estándar para una Hepatitis Crónica C (sin cirrosis o con cirrosis compensada) en la era de los Antivirales de Acción Directa (AAD)?',
+    options: ['Sofosbuvir/Velpatasvir por 12 semanas o Glecaprevir/Pibrentasvir por 8 semanas', 'Interferón Pegilado alfa-2a + Ribavirina por 48 semanas', 'Sofosbuvir solo por 24 semanas', 'Lamivudina + Tenofovir indefinidamente'],
+    correctIndex: 0,
+    explanation: 'Los antivirales de acción directa han revolucionado el VHC, logrando tasas de Respuesta Viral Sostenida (RVS, cura) > 95% sin necesidad de genotipificar en la mayoría de los casos.',
+    fisiopato: 'Combinan la inhibición de la polimerasa NS5B (Sofosbuvir) con un inhibidor del complejo de replicación NS5A (Velpatasvir/Pibrentasvir) o proteasa NS3/4A (Glecaprevir).',
+    clinicalPearl: 'La eficacia y tolerancia cayeron a tal punto que el Interferón está casi completamente obsoleto en VHC.',
+    guideline: 'AASLD/IDSA HCV Guidance.',
+    whyWrong: { 1: 'Terapia histórica obsoleta, alta toxicidad.', 2: 'El Sofosbuvir no debe usarse como monoterapia por riesgo de resistencia y falla.', 3: 'Son antivirales para VHB, inútiles contra VHC.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-313',
+    topic: 'hepatitis',
+    difficulty: 'Subspecialist',
+    text: 'Un paciente tratado por VHC alcanza Respuesta Viral Sostenida a las 12 semanas (RVS12). Antes del tratamiento, una elastografía mostraba F4 (Cirrosis compensada). ¿Cuál es el manejo a largo plazo?',
+    options: ['Tamizaje ecográfico para Hepatocarcinoma (HCC) cada 6 meses de por vida', 'Alta médica con curación virológica y hepática, sin más seguimiento', 'Retratamiento anual con AADs cortos de 4 semanas', 'Repetir la biopsia hepática en 1 año para evaluar regresión del F4'],
+    correctIndex: 0,
+    explanation: 'La RVS elimina el virus y detiene la progresión, pero el riesgo residual de desarrollar HCC no desaparece si existió daño F3-F4 (tejido ya cirrótico o puenteante severo).',
+    fisiopato: 'El daño genético e inflamación crónica sobre los hepatocitos ya formó focos displásicos latentes, que la cura virológica reduce pero no anula (< 1-2% anual persistente).',
+    clinicalPearl: 'El peor error es dar de alta a un paciente F4 solo porque curó el virus. Siguen siendo población de riesgo neoplásico.',
+    guideline: 'AASLD/EASL Guidelines for HCC Surveillance.',
+    whyWrong: { 1: 'Grave error, aumenta muertes por HCC no detectado a tiempo.', 2: 'El VHC se "cura" sin re-tratamientos si alcanzó RVS y no se re-infecta.', 3: 'La elastografía puede repetirse a los 1-2 años, pero una biopsia control no está justificada hoy.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-314',
+    topic: 'hepatitis',
+    difficulty: 'Staff',
+    text: 'Un joven que viajó por el Sudeste Asiático presenta ictericia intensa, prurito incapacitante y transaminasas en 600 UI/L que llevan 10 semanas sin normalizar del todo, aunque se siente bien. IgM anti-VHA es reactivo. ¿Cómo se denomina este cuadro?',
+    options: ['Hepatitis A de presentación colestásica prolongada', 'Hepatitis A fulminante inminente', 'Coinfección con Virus E', 'Falla hepática crónica oculta'],
+    correctIndex: 0,
+    explanation: 'Una variante clínica conocida de la Hepatitis A es la fase colestásica prolongada, que puede durar hasta 3 a 6 meses con prurito severo y bilirrubina alta, pero que siempre es autolimitada y benigna.',
+    fisiopato: 'Una inflamación canalicular persistente post-viral retrasa el flujo biliar, aunque el virus ya no esté causando citotoxicidad hepatocelular necrotizante (transaminasas bajan asincrónicamente).',
+    clinicalPearl: 'Se trata sintomáticamente (ej. Colestiramina, Ácido Ursodesoxicólico) reconfortando al paciente de que sanará al 100% sin cronificar.',
+    guideline: 'Clinical manifestation of Viral Hepatitis A.',
+    whyWrong: { 1: 'La falla fulminante cursa con encefalopatía grave y coagulopatía en corto tiempo, no con buen estado general prolongado.', 2: 'Puede existir pero no explica persé este curso clásico.', 3: 'VHA no cronifica.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-315',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: '¿Cuál es la diferencia fundamental en el pronóstico entre la co-infección por VHB y VHD (Deltavirus) vs la superinfección VHD sobre un portador crónico de VHB?',
+    options: ['La superinfección VHD suele cronificar (hasta 80-90%) y llevar a cirrosis rápida; la co-infección se aclara espontáneamente (>90%) de ambos virus', 'La co-infección VHD/VHB siempre es mortal y fulminante (100% letalidad)', 'La superinfección no daña el hígado si el VHB era inactivo', 'Tienen el mismo pronóstico evolutivo a largo plazo'],
+    correctIndex: 0,
+    explanation: 'El VHD requiere la envoltura (HBsAg) del VHB para infectar.',
+    fisiopato: 'Si ambos entran a la vez (coinfección aguda), el sistema inmune robusto aclara el VHB y el VHD se queda sin "abrigo", muriendo ambos. Si el VHB ya es crónico tolerante (superinfección), el VHD secuestra las fábricas ya instaladas y produce daño necrótico masivo casi sin resistencia.',
+    clinicalPearl: 'La hepatitis Delta crónica es la forma viral más agresiva conocida y lleva a cirrosis en < 5-10 años.',
+    guideline: 'AASLD Hepatitis D Guidance.',
+    whyWrong: { 1: 'Suele tener más falla fulminante aguda que VHB solo, pero raramente es 100% mortal, suele despejarse.', 2: 'Falso, la superinfección en VHB inactivo suele reactivar necrosis intensa ("flare").', 3: 'Clínicamente y pronósticamente opuestas.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-316',
+    topic: 'hepatitis',
+    difficulty: 'Staff',
+    text: '¿Qué grupo poblacional tiene un altísimo riesgo de desarrollar falla hepática aguda (fulminante) con mortalidades del 20-30% si contrae infección aguda por el Virus de la Hepatitis E (VHE)?',
+    options: ['Mujeres en el tercer trimestre de embarazo (especialmente con variantes endémicas genotipo 1 y 2)', 'Adultos jóvenes masculinos sanos', 'Pacientes con antecedente de apendicectomía', 'Niños menores de 5 años'],
+    correctIndex: 0,
+    explanation: 'Las variantes de VHE transmitidas por agua (genotipos 1 y 2 en Asia/África/Norte de India) son notoriamente letales en embarazadas.',
+    fisiopato: 'Se cree que los cambios hormonales e inmunológicos del tercer trimestre (ambiente Th2) facilitan una replicación viral masiva y apoptosis hepatocelular fulminante.',
+    clinicalPearl: 'En países desarrollados predomina el VHE Genotipo 3 (transmitido por carne de cerdo cruda/zoológico), que es leve y puede cronificar en pacientes trasplantados o VIH+.',
+    guideline: 'EASL Clinical Practice Guidelines on Hepatitis E virus infection.',
+    whyWrong: { 1: 'En ellos causa hepatitis leve autolimitada.', 2: 'Infundado.', 3: 'Generalmente asintomáticos o leve (transaminasas bajas).' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-317',
+    topic: 'hepatitis',
+    difficulty: 'Subspecialist',
+    text: 'Una mujer de 18 años con amenorrea y acné presenta ALT/AST >1000 y aumento de IgG total. Los anticuerpos Antinucleares (ANA) y Anti-Músculo Liso (ASMA) son intensamente positivos. ¿Cuál es el diagnóstico más probable?',
+    options: ['Hepatitis Autoinmune Tipo 1', 'Hepatitis Autoinmune Tipo 2', 'Colangitis Biliar Primaria (CBP)', 'Enfermedad de Wilson'],
+    correctIndex: 0,
+    explanation: 'La HAI tipo 1 se caracteriza por positividad de ANA y/o ASMA. Es la forma clásica, afectando fuertemente a mujeres y con picos de presentación en adolescencia y post-menopausia.',
+    fisiopato: 'Existiría un gatillo ambiental que por mimetismo molecular activa células T autorreactivas contra autoantígenos hepáticos.',
+    clinicalPearl: 'La globulina IgG sérica francamente elevada (mucho más que IgM o IgA) es clave e indispensable para el "score simplificado" de diagnóstico de HAI.',
+    guideline: 'AASLD Practice Guidelines: Autoimmune Hepatitis.',
+    whyWrong: { 1: 'Se caracteriza por el anticuerpo Anti-LKM1 (anti-microsomal de hígado y riñón) y ocurre primariamente en infancia muy temprana.', 2: 'Es colestásica (FA/GGT altas), Anti-Mitocondrial (AMA) postivo y ocurre en mujeres >40 años.', 3: 'Puede causar amenorrea y ALT alta en jóvenes, pero no suele tener hipergammaglobulinemia severa ni ASMA muy altos (baja ceruloplasmina).' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-318',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: 'Histológicamente, ¿cuál es la lesión "clásica" considerada sello distintivo (aunque no patognomónica exclusiva) de la Hepatitis Autoinmune muy activa?',
+    options: ['Hepatitis de interfase (necrosis en sacabocados) con infiltrado portal a predominio linfoplasmocitario y emperipolesis', 'Cuerpos de Mallory-Denk y neutrófilos, degeneración balonizante y fibrosis en red de alambre', 'Infiltrado granulomatoso difuso sin caseificación y pérdida ductal biliar', 'Esteatosis macrovesicular masiva aislada'],
+    correctIndex: 0,
+    explanation: 'El linfocito y los plasmocitos (células plasmáticas pro-IgG) rompen la placa limitante del espacio portal "mordiendo" (sacabocados o piece-meal necrosis) el lóbulo hepático.',
+    fisiopato: 'La emperipolesis es el fenómeno microscópico en el que un linfocito parece "entrar o pasear" a través del citosol de un hepatocito vivo intacto.',
+    clinicalPearl: 'Estos hallazgos son dramáticamente de respuesta rápida tras el inicio de corticoides a altas dosis.',
+    guideline: 'Pathology of Autoimmune Liver Diseases.',
+    whyWrong: { 1: 'Clásicos de la esteatohepatitis alcohólica u obesa (MASH).', 2: 'Sugerente de colangitis biliar primaria o sarcoidosis.', 3: 'Solo es MASLD/ hígado graso no inflamado.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-319',
+    topic: 'hepatitis',
+    difficulty: 'Subspecialist',
+    text: 'Durante el tratamiento crónico de la Hepatitis Autoinmune (HAI) con Azatioprina (AZA) como ahorrador de corticoides, ¿la determinación genética de qué enzima previene la toxicidad hematológica severa por AZA?',
+    options: ['Tiopurina Metiltransferasa (TPMT)', 'Glucosa-6-Fosfato Deshidrogenasa (G6PD)', 'Citocromo CYP2D6', 'UGT1A1 (Glucuronosiltransferasa)'],
+    correctIndex: 0,
+    explanation: 'El metabolito 6-mercaptopurina (derivado de AZA) requiere de la enzima TPMT para ser inactivado.',
+    fisiopato: 'Los pacientes con alelos mutantes que confieren nula actividad TPMT (aprox. 1 en 300) acumularán masivamente nucleótidos de tioguanina y sufrirán mielosupresión pancitopénica rápidamente letal si se da dosis normal.',
+    clinicalPearl: 'Idealmente, evalúe la tiopurina fenotípica o genética antes de iniciar AZA crónicamente. Alternativamente, vigile muy estrictamente la serie blanca en el mes 1 y 2.',
+    guideline: 'ACG/EASL Management of Autoimmune Hepatitis.',
+    whyWrong: { 1: 'Prevención para favismo, cloroquina, dapsona (evita anemia hemolítica).', 2: 'Importante en metabolismo de psiquiátricos/betabloqueadores.', 3: 'Importante en el Síndrome de Gilbert y metabolismo de Irinotecán.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-320',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: 'En la evaluación del Daño Hepático Inducido por Drogas (DILI), el factor R o valor "R" de Roussel Uclaf Causality Assessment Method (RUCAM) divide la injuria en hepatocelular, mixta o colestásica. ¿Cómo se calcula y qué valor define daño Hepatocelular puro?',
+    options: ['R = (ALT / LSN de ALT) / (FA / LSN de FA). Un R > 5 define Hepatocelular', 'R = Bilirrubina x 2 / ALT. Un R > 2 define Hepatocelular', 'R = AST / ALT. Un R > 2 sugiere Hepatocelular', 'R = FA / GGT. Un R < 1 es Hepatocelular'],
+    correctIndex: 0,
+    explanation: 'El Factor R determina quién lidera el porcentaje de daño comparado con sus límites superiores normales (LSN). LSN es "Límite Superior Normal".',
+    fisiopato: 'Si ALT (Hepatocitos mortales) sube marcadamente más con relación a su basal que la Fosfatasa Alcalina (epitelio biliar lesionado respecto a la suya), es predominantemente necroinflamación y no oclusión portal.',
+    clinicalPearl: 'R > 5 = Hepatocelular. R entre 2 y 5 = Mixto. R < 2 = Colestásico.',
+    guideline: 'EASL Clinical Practice Guidelines: Drug-induced liver injury.',
+    whyWrong: { 1: 'Fórmula incorrecta.', 2: 'Ese es el ratio de De Ritis, usado para sugerir hepatitis alcohólica si >2, no para definir el DILI hepatocelular del RUCAM.', 3: 'Fórmula sin relevancia principal aquí.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-321',
+    topic: 'hepatitis',
+    difficulty: 'Staff',
+    text: 'Un joven que intentó suicidio hace 24 horas y tomó 20 gramos de Paracetamol llega con ALT de 4500 UI/L y Tiempo de Protrombina prolongado. Usted indica N-acetilcisteína (NAC) IV. ¿Cuál es el rol bioquímico exacto de la NAC en este escenario?',
+    options: ['Reponer y servir como precursor de Glutatión intracelular para detoxificar el NAPQI reactivo acumulado', 'Bloquear directamente la absorción gástrica del remanente', 'Inhibir irreversiblemente la COX-2 hepática', 'Actuar como un diurético forzado para barrer la droga del riñón'],
+    correctIndex: 0,
+    explanation: 'El paracetamol en sobredosis satura sus vías seguras (sulfatación y glucuronidación), derivándose por completo al citocromo P450 que produce NAPQI, un radical extremadamente citotóxico.',
+    fisiopato: 'Normalmente las reservas hepatocelulares de Glutatión neutralizan al NAPQI, pero en sobredosis se agotan. La NAC provee L-cisteína, el aminoácido limitante para re-sintetizar Glutatión salvador.',
+    clinicalPearl: 'Administrado antes de 8-10 horas el perfil protector de NAC roza el 100%. A las 24 hrs aún beneficia, pero el daño basal en ALT/AST ya ocurrió. Enzimas > 5.000 UI/L son clásicas.',
+    guideline: 'Acetaminophen Toxicity Guidelines.',
+    whyWrong: { 1: 'Ese sería el rol del carbón activado precoz <2h.', 2: 'Infundado, el paracetamol inhibe COX3 en SNC predominantemente.', 3: 'Totalmente irreal.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-322',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: '¿Cuál es el medicamento de uso hospitalario o ambulatorio que a nivel MUNDIAL causa la mayor cantidad de Daño Hepático Inducido por Drogas (DILI) idiosincrásico (no paracetamol) presentando clásicamente un patrón mixto o francamente colestásico prolongado (R<2)?',
+    options: ['Amoxicilina con Ácido Clavulánico (Augmentin)', 'Metotrexato', 'Isoniazida', 'Fenitoína'],
+    correctIndex: 0,
+    explanation: 'Es la primera causa de DILI inducido por drogas reportadas en la base de datos DILIN.',
+    fisiopato: 'Ocurre primariamente asociado al componente del "ácido clavulánico", a menudo 1 a 6 semanas DESPUÉS de haber terminado un ciclo antibiótico, confundiendo al paciente y médico tratante.',
+    clinicalPearl: 'Genera elevación marcada de FA y Bilirrubina; el paciente se vuelve ictérico con alto prurito de recuperación sumamente lenta (2-6 meses), pero raramente letal (buen pronóstico en general).',
+    guideline: 'Drug-Induced Liver Injury (DILIN) Network data.',
+    whyWrong: { 1: 'Causa hepatotoxicosis crónica fibrosante oculta tras años de dosis acumulada.', 2: 'Droga principal de DILI hepatocelular puro con elevación aguda (R > 5), muy letal en ancianos acetiladores lentos.', 3: 'Patrón hepatocelular similar a viral con inmunoalergia (eosinofilia).' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-323',
+    topic: 'hepatitis',
+    difficulty: 'Staff',
+    text: 'Paciente varón de 45 años con ingesta pesada de alcohol e ictericia de rápida instauración. Se descarta infección oculta activa. AST de 250 y ALT de 80. Índice discriminante de Maddrey de 45. ¿Cuál es la terapia farmacológica validada con reducción de mortalidad a 28 días?',
+    options: ['Prednisolona oral 40 mg al día por 4 semanas', 'Infliximab', 'Infusión de albúmina masiva sola', 'Trasplante hepático inmediato (listing 1er día)'],
+    correctIndex: 0,
+    explanation: 'La Hepatitis Alcohólica aguda severa se define clásicamente por una Maddrey > 32 o un MELD > 20.',
+    fisiopato: 'La lluvia masiva de citoquinas inflamatorias (TNF-alpha, IL-6) en el hígado dañado es suprimida agresivamente por corticoides.',
+    clinicalPearl: 'Los pacientes mueren de falla de infección y respuesta inflamatoria exacerbada; descartar infección oculta antes de iniciar los corticoesteroides es crítico, se administran solo si el cultivo es estéril o la infección está bajo tratamiento empírico.',
+    guideline: 'AASLD/EASL Guidelines on Management of Alcoholic Liver Disease.',
+    whyWrong: { 1: 'Aumentó drásticamente la mortalidad por infecciones inaceptables y está contraindicado.', 2: 'Protege riñones pero no inhibe de forma general la crisis inmune hepática subyacente de esta enfermedad (no reemplaza esteroide).', 3: 'Generalmente se pide 6 meses de abstinencia, aunque se valora actualmente en casos individuales severos sin rescate de terapia médica (early liver transplant).' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-324',
+    topic: 'hepatitis',
+    difficulty: 'Staff',
+    text: 'A nivel enzimático, ¿por qué el ratio AST/ALT en daño por abuso de alcohol es típicamente > 2 (a menudo > 3), mientras las transaminasas rara vez superan los 500 UI/L?',
+    options: ['Porque el alcohol causa desnutrición relativa de vitamina B6 (Piridoxina), cofactor para la ALT celular, a la vez que el daño celular libera también la AST residente mitocondrial', 'Porque AST es de origen puramente canalicular y el daño alcohólico inflama los conductillos', 'Porque el etanol causa inflamación sistémica en la pared muscular', 'Porque causa hipotiroidismo simultáneo'],
+    correctIndex: 0,
+    explanation: 'La ALT es casi exclusivamente citoplasmática, y su biosíntesis requiere Piridoxal-5-fosfato como cofactor. El daño alcohólico crónico deprime la síntesis de ALT.',
+    fisiopato: 'AST es tanto mitocondrial como citosólica (doble reserva) y es liberada más abultadamente por la destrucción de la pared mitocondrial causada por la toxicidad oxidativa celular del acetaldehído y ROS.',
+    clinicalPearl: 'Un nivel > 1000 UI/L sugiere un hígado en shock/isquemia o viral primario agregado; rara vez existe esa explosión en patología alcoholica pura.',
+    guideline: 'Liver enyzmes / EASL alcoholic liver disease.',
+    whyWrong: { 1: 'Cierto el ratio, pero la enzima de canales es la GGT/FA pura.', 2: 'Se eleva AST y creatinkinasa pero no justifica el patrón clásico del higado crónico.', 3: 'Infundado en la fisiopatología viral.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-325',
+    topic: 'hepatitis',
+    difficulty: 'Fellow',
+    text: 'Paciente masculino de 70 años sufre un paro cardiorrespiratorio presenciado. Al ingresar a la UCI (2º día) sus laboratorios muestran: ALT 4000 UI/L, AST 5500 UI/L y LDH altísima (>4000). Bilirrubina 2 mg/dL. ¿Cuál es el diagnóstico hepático con estos marcadores?',
+    options: ['Hepatitis Isquémica o "Hígado de Shock"', 'Daño hepático fulminante inducido por medicamentos', 'Obstrucción mecánica aguda del colédoco', 'Hepatitis E aguda'],
+    correctIndex: 0,
+    explanation: 'La isquemia sistémica en la red centrolobulillar hepática (zona 3) resulta en una necrosis brutal (transaminasas entre 2000 y 10000 UI/L).',
+    fisiopato: 'Afortunadamente, el hígado resucita funcionalmente rápido una vez la perfusión vuelve con recuperación enzimática paralela rápida (cae drásticamente a los 3 días si la hemodinamia resolvió).',
+    clinicalPearl: 'El cociente ALT frente al masivo LDH (> 1:1.5) y un pico precoz sin importante bilirrubina es la firma de laboratorio isquémica.',
+    guideline: 'Critical Care / Ischemic Hepatitis reviews.',
+    whyWrong: { 1: 'La LDH sube masivo puramente, usual en shock pero no clásico en DILI standard o acetaminofeno aislado sin otra causa predecible de base.', 2: 'No presenta elevaciones transaminásicas > 4000 inicial.', 3: 'Misma lógica, rara la afectación necrótica pura inicial sin otro agravante.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-326',
+    topic: 'hepatitis',
+    difficulty: 'Subspecialist',
+    text: 'Existen fármacos (ej. Atazanavir) que bloquean selectivamente los transportadores del polo sinusoidal y biliar SIN causar DILI necrótico ni inflamatorio. ¿Cuál es la principal manifestación analítica fenotípica?',
+    options: ['Hiperbilirrubinemia aislada severa (frecuentemente a predominio indirecto), sin alteración de AST, ALT o FA (pseudotoxicidad / Síndrome de Gilbert farmacológico)', 'Elevación de aminotransferasas (patrón hepático) silencioso', 'Rápido aumento de creatina sérica aislada', 'Colangitis esclerosante biliar química'],
+    correctIndex: 0,
+    explanation: 'El Atazanavir inhibe específicamente la enzima UGT1A1 de conjugación compitiendo directamente.',
+    fisiopato: 'Esto lleva a la retención inocente de bilirrubina plasmática indirecta en sangre (exactamente imitando un síndrome de Gilbert crónico). No existe ni rotura epitelial ni inflamación.',
+    clinicalPearl: 'Asintomáticos se reportan ictéricos sin otro fallo basal, lo cual es solo estético en un paciente bajo uso ARV.',
+    guideline: 'DILI / Liver Safe Practice.',
+    whyWrong: { 1: 'Es lo contrario, AST, ALT y FA normales.', 2: 'Eso causan otras drogas con falla real.', 3: 'Completamente opuesto a colangiopatía con daño (FA y GGT se alterarían).' },
+    pillar: 'Mastery'
+  },
+
+  // --- SECTOR: EII (ENFERMEDAD INFLAMATORIA INTESTINAL) (CIERRE 30 PREGUNTAS TOTALES) ---
+  {
+    id: 'q-327',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: '¿Cuál de las siguientes manifestaciones extraintestinales clásicas de la Enfermedad Inflamatoria Intestinal (EII) cursa su evolución clínica de manera totalmente INDEPENDIENTE de la actividad inflamatoria del intestino?',
+    options: ['Espondilitis anquilosante y Colangitis Esclerosante Primaria (CEP)', 'Eritema nodoso', 'Epiescleritis ocular', 'Artritis periférica pauciarticular (Tipo 1)'],
+    correctIndex: 0,
+    explanation: 'La afección axial (espondilitis anquilosante) y la CEP no mejoran cuando se induce la remisión (por medicamentos o cirugía) de la enfermedad colónica.',
+    fisiopato: 'Constituyen procesos autoinmunes genéticamente separados (ej. HLA-B27 para EA) que coexisten, mas no se retroalimentan bidireccionalmente en tiempo real con el intestino.',
+    clinicalPearl: 'Incluso después de una proctocolectomía total curativa por CU, la Colangitis Esclerosante Primaria sigue su curso progresivo e independiente hacia el hígado.',
+    guideline: 'ECCO Guidelines on Extraintestinal Manifestations in IBD.',
+    whyWrong: { 1: 'El eritema nodoso cursa en paralelo a la EII; curando la diarrea cura la piel.', 2: 'La epiescleritis responde agudamente al tratamiento del intestino inflamado.', 3: 'La artritis Tipo 1 es estrictamente dependiente de brotes agudos intestinales.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-328',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: 'En contraste, indique qué manifestación cutánea de la EII (más frecuente en Crohn) SÍ cursa de manera fluctuante y directamente proporcional a la gravedad y reactivación de la inflamación intestinal:',
+    options: ['Eritema nodoso (nódulos dolorosos, rojos, típicamente pretibiales)', 'Pioderma gangrenoso', 'Psoriasis vulgar en placas', 'Vitíligo extenso multifocal'],
+    correctIndex: 0,
+    explanation: 'El eritema nodoso acompaña la actividad de la EII de cerca. Su aparición predice recaídas y su desaparición corrobora respuesta a esteroides de la enfermedad de base.',
+    fisiopato: 'Es una paniculitis septal sin vasculitis aguda mediada probablemente por formación e implante de complejos inmunes originados por la masiva pérdida de barrera mucosa.',
+    clinicalPearl: 'Curiosamente, el pioderma gangrenoso (la úlcera necrotizante idiopática cutánea) suele tener un curso propio muy independiente en la mitad de los casos (puede persistir sin brote colónico activo).',
+    guideline: 'ACG Clinical Guidelines on management of Crohn’s Disease.',
+    whyWrong: { 1: 'El pioderma gangrenoso cursa 50% independiente y es muy rebelde.', 2: 'Es paralela autoinmune comórbida general, tratable casualmente con biológico, no indicador directo de masa luminal activa per sé.', 3: 'Sin relación aguda de brote sincrónico.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-329',
+    topic: 'eii',
+    difficulty: 'Staff',
+    text: 'En un paciente con un brote agudo LEVE a MODERADO de Enfermedad de Crohn (CD) confinado estrictamente al íleon terminal y/o colon ascendente, ¿cuál es el agente preferido de inducción?',
+    options: ['Budesonida oral a dosis de liberación ileal (9 mg/día)', 'Prednisona oral 40 mg', 'Infliximab 5 mg/kg IV', 'Mesalazina tópica (enemas de 4g)'],
+    correctIndex: 0,
+    explanation: 'Budesonida es un esteroide tópico intestinal que experimenta un exhaustivo (> 90%) metabolismo hepático de primer paso, reduciendo drásticamente la toxicidad esteroidea sistémica (Cara de luna, osteoporosis aguda).',
+    fisiopato: 'La formulación de budesonida de liberación controlada se destapa de su cubierta a pH > 5.5 a nivel del íleon terminal, maximizando el efecto antiinflamatorio tópico.',
+    clinicalPearl: 'En enfermedad extensa perianal o CD fistulizante, o de intestino alto, la Budesonida pura no basta (requiere inmunosupresión sistémica).',
+    guideline: 'ECCO-ESGAR Guidelines for diagnosis and management of CD.',
+    whyWrong: { 1: 'Evitable si es leve/mod debido a la enorme toxicidad, dejada para afecciones difusas severas o sistémicas.', 2: 'Exagerado (overkill) para un primer brote leve-moderado primario inducción estándar.', 3: 'No llega con retención hasta el íleon alto/colon ascendente.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-330',
+    topic: 'eii',
+    difficulty: 'Subspecialist',
+    text: 'Un joven con Crohn debuta con una gran fístula perianal compleja y formación profunda de absceso isquioanal. Es referido a Cirugía. ¿Cuál es la secuencia de manejo ideal (Multimodal) actual?',
+    options: ['1º Drenaje quirúrgico del absceso con colocación de setones y antibióticos. 2º Iniciar Terapia Biológica anti-TNF (Infliximab)', 'Exéresis proctocolectómica definitiva total inicial de emergencia', 'Iniciar Infliximab IV de inmediato para cerrar la fístula, sin tocar el área', 'Usar prednisona a dosis altísimas sin cirugía'],
+    correctIndex: 0,
+    explanation: 'NUNCA se debe iniciar terapia inmunosupresora (Biológico/Esteroides) en presencia de una colección séptica (absceso) no drenada. Es letal por riesgo de sepsis generalizada.',
+    fisiopato: 'El setón (hilo no cortante) mantiene el trayecto abierto previniendo que se cierre exteriormente mientras se purga internamente, logrando un control mecánico focal.',
+    clinicalPearl: 'Una vez el absceso se desmorona y queda el trayecto fistuloso simple maduro purgado (típicamente a las 2-4 semanas pos-quirúrgicas), es el momento ideal para introducir Infliximab que cura la raíz mucosal.',
+    guideline: 'AGA Clinical Practice Guideline on the Medical Management of Moderate to Severe Luminal and Perianal Fistulizing Crohn’s Disease.',
+    whyWrong: { 1: 'Excesivo como primera línea sin intento de salvataje médico o resección menor perianal.', 2: 'Sellaría falsamente la piel, empujando toneladas de pus al espacio retroperitoneal induciendo peritonitis masiva o sepsis.', 3: 'Esteroides empeoran el control de focos purulentos primarios no controlados quirúrgicamente.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-331',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: 'Un paciente con Colitis Ulcerosa (CU) activa fulminante no responde a la esteroidoterapia intravenosa en máximo límite (3 días). Para evitar el Megacolon o cirugías desastrosas, las guías permiten terapias intramusculares/intravenosas agresivas de "rescate". ¿Cuáles son los únicos dos fármacos validados para rescate agudo en CU resistente a esteroides IV con paciente internado?',
+    options: ['Ciclosporina IV o Infliximab IV', 'Ustekinumab o Vedolizumab SC', 'Azatioprina o 6-Mercaptopurina dosis alta orales', 'Clostridium difficile fecal transplant o Mesalazina masiva'],
+    correctIndex: 0,
+    explanation: 'Estos dos inmunosupresores potentes son los pilares del rescate médico hospitalario y reducen significativamente las tasas de colectomía de emergencia en cuadros pre-mórbidos fulminantes.',
+    fisiopato: 'Ciclosporina (inhibe Calcineurina) y el Infliximab (Neutraliza rápida y masivamente TNF) tienen inicios de acción dramáticamente fulminantes medidos en días o semanas (vs meses de Azatioprina).',
+    clinicalPearl: 'Son mutuamente excluyentes simultáneos en fase aguda en algunos centros (muy tóxico), y si no hay mejoría en 5-7 días bajo este rescate, la Colectomía ya no se aplaza más.',
+    guideline: 'ECCO Guidelines on Therapeutics in Ulcerative Colitis.',
+    whyWrong: { 1: 'Las terapias biológicas recientes SC no tienen aprobación ni velocidad demostrada rápida validada como salvatajes fulminantes en día 3 de internación clásica.', 2: 'Tardan 2 a 4 meses en lograr niveles estables terapéuticos. En evento activo el paciente habría muerto o estallado su colon.', 3: 'Sin lugar para eventos con necrosis inminente.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-332',
+    topic: 'eii',
+    difficulty: 'Staff',
+    text: 'En sujetos diagnosticados con Colitis Ulcerosa universal (pancolitis), ¿cuándo se recomienda tradicionalmente iniciar las colonoscopias programadas de VIGILANCIA específica para despistaje de Cáncer Colorrectal (CCR) y con qué intervalo ideal general posterior?',
+    options: ['A los 8 años desde el inicio de los síntomas, seguidas de repetición cada 1 a 3 años según riesgo', 'A los 10 años desde el diagnóstico histológico preciso, solo 1 vez en la vida', 'De inmediato al 1er año, anual de por vida', 'Los casos de CU no ameritan protocolo diferenciado respecto a población general normal'],
+    correctIndex: 0,
+    explanation: 'El inicio del reloj biológico para cáncer es desde la aparición de SÍNTOMAS y el factor de riesgo escala geométricamente desde los 8 a 10 años de inflamación crónica tisular.',
+    fisiopato: 'Ciclos agudos y crónicos de destrucción epitelial asimétrica y reparación forzada bajo microambiente tóxico con citoquinas favorecen acumulación temprana de mutaciones displásicas.',
+    clinicalPearl: 'Idealmente esta vigilancia se hace bajo "Cromoendoscopia" en fase inactiva (remitente), usando índigo carmín o azul de metileno y endoscopio de alta definición (virtual LCI/NBI).',
+    guideline: 'SCENIC International Consensus Statement on Surveillance in IBD.',
+    whyWrong: { 1: 'Es a partir del síntoma inicial, no diagnóstico tardío que puede confundir, y no es evento único.', 2: 'Sobreutilización costosa invasiva al inicio, riesgo casi nulo en primer lustro.', 3: 'El riesgo CCR de colitis extensa es 5-10 veces población basal tras década.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-333',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: 'La Calprotectina Fecal (CF) es el biomarcador no invasivo rey del seguimiento de la EII. ¿Qué célula es la fuente primaria exclusiva de esta proteína protectora citosólica vertida masivamente a la luz intestinal en brotes?',
+    options: ['El Neutrófilo migratorio masivo (polimorfonuclear)', 'El Linfocito T colaborador de memoria', 'El Enterocito maduro apical dañado', 'Las bacterias del bioma alteradas'],
+    correctIndex: 0,
+    explanation: 'La Calprotectina representa hasta un formidable 60% de las proteínas solubles citosólicas de un neutrófilo regular.',
+    fisiopato: 'Cuando los neutrófilos migran desde los vasos mucosos hacia la cripta inflamada (inflamación aguda) y mueren ahí por lisis, exudan torrentes de Calprotectina a la vía rectal, midiendo objetivamente la gravedad de la migración neutrofílica aguda de la mucosa.',
+    clinicalPearl: 'Es resistente al calor, bacterias y degradación (se mantiene estable en la caja pos-recolección por 5-7 días sin refri), facilitando envíos de muestras desde casa sin sesgos biológicos.',
+    guideline: 'ACG Ulcerative Colitis Clinical Practice Guidelines.',
+    whyWrong: { 1: 'Secretan citoquinas per se, no esta proteína estandarizada.', 2: 'No genera calprotectina.', 3: 'Exclusivamente humana.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-334',
+    topic: 'eii',
+    difficulty: 'Subspecialist',
+    text: 'Un ensayo diagnóstico endoscópico para distinguir Enfermedad de Crohn severa de CU es el análisis de los parches mucosos. ¿Cuál de los siguientes es un indicio MUY fuerte hacia Enfermedad de Crohn sobre etiología CU idiopática?',
+    options: ['Afectación del recto o inflamación difusa homogénea ininterrumpida desde esfínter', 'Presencia de granulomas no caseificantes en las biopsias mucosales profundas', 'Pseudopólipos postinflamatorios gigantes en remisión de brotes previos', 'Microulceraciones difusas de criptas con pérdida mucinosa'],
+    correctIndex: 1,
+    explanation: 'Los granulomas epitelioides no caseificantes en intestino son el sello patognomónico microscópico (si existen) de la Enfermedad de Crohn, si bien sólo se encuentran en 15-30% de las biopsias colonoscópicas superficiales.',
+    fisiopato: 'Traduce una respuesta inmune mediada por células Th1 extrema orientada por el secuestro macrofágico profundo local frente a antígenos focales.',
+    clinicalPearl: 'El segundo gran marcador es patrón inflamatorio o úlceras de manera DISCONTINUA, en "parches" asimétricos y el hallazgo de úlceras tipo aftosas aftas estrelladas sobre mucosa perilesional normal (skip lesions).',
+    guideline: 'ECCO Crohn’s Disease Pathology Criteria.',
+    whyWrong: { 1: 'Patrón rey de Colitis Ulcerosa progresiva clásica.', 2: 'Ocurren dramáticos y por igual en ambas al curar úlceras masivas residuales.', 3: 'Mecanismo histológico y macro genérico agudo de la CU y colitis infecciosas.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-335',
+    topic: 'eii',
+    difficulty: 'Staff',
+    text: 'Para la proctitis leve a moderada por Colitis Ulcerosa (CU que se limita estrictamente a los últimos 10-15 cm del recto bajo), el tratamiento de primera línea más farmacofectivo con menor carga tóxica es:',
+    options: ['Supositorios de Mesalazina (5-ASA tópica, 1 g diario al acostarse)', 'Mesalazina oral (4,8 g al día repartido)', 'Budesonida sistémica venosa MMX', 'Ciclosporina enemas directos masivos diarios'],
+    correctIndex: 0,
+    explanation: 'Ninguna terapia ORAL o INFUSIÓN le gana a poner la pomada o medicamento DIRECTO en contacto físico con la cara interior del tejido inflamado focal del canal (Vía tópica anal directa).',
+    fisiopato: 'Los supositorios impactan de lleno liberando 10,000 veces la concentración requerida tisular, mientras los orales apenas llegan arrastrados lavados diluidos o desactivados al tramo rectosigmoideo bajo extremo final.',
+    clinicalPearl: 'Aún en casos rebeldes "distales", los médicos a menudo añaden Mesalazina Oral, formando la "Doble Terapia" comprobada por la famosa investigación ECCO que supera aplastantemente la monoterapia oral sola, al nutrir desde dentro (vascular) e implantar foco físico (luz rectal) la mucosa del recto.',
+    guideline: 'ACG Ulcerative Colitis Guideline (Distal forms).',
+    whyWrong: { 1: 'Es la vía inefectiva y limitante final farmacológica tópica.', 2: 'MMX se usa si ya cruzó sigma-descendente, un overkill giganstesco y sistémico para 10 cm finales.', 3: 'No existen o es exageración letal pro-mortal.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-336',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: 'En el paciente femenino de 26 años con Enfermedad de Crohn activa que requiere iniciar terapia biológica Anti-TNF, ¿cuál de los siguientes es un pre-requisito (o screening de bioseguridad) OBLIGATORIO por un riesgo mortal subyacente inducido en un paciente que inicia Infliximab?',
+    options: ['Prueba clínica estricta (PPD, Quantiferon) de Tuberculosis latente y radiografía de tórax', 'Colonoscopia previa forzosa completa obligatoria', 'Concentración basal de TSH estimulante tiroides', 'Gastroscopia sedada (EGD) con recolección de Ureasa'],
+    correctIndex: 0,
+    explanation: 'El factor de necrosis tumoral (TNF) es indispensable para la estabilización y supervivencia perenne estructural de los famosos "granulomas" focales pulmonares calcificados que enquistan o apresan cepas latentes de la Tuberculosis.',
+    fisiopato: 'Bloquear terapéuticamente el TNF desarma el "muro" del granuloma protector permitiendo la invasión miliar, linfática o reactivación masiva de la diseminación bacilar tuberculosa mortal fulminante sistémica casi inmediata.',
+    clinicalPearl: 'Se aplica a TODOS los biológicos anti-TNF, así como se pide Serologías VHB, VHC, VIH completas.',
+    guideline: 'AGA Infection Prevention Guidelines in IBD.',
+    whyWrong: { 1: 'Útil diagnósticamente pero no previene riesgo fatal secundario farmacéuticamente subyacente agudo.', 2: 'Inofensivo si falla pero inútil preventivamente.', 3: 'Mismo criterio superior ineficaz.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-337',
+    topic: 'eii',
+    difficulty: 'Staff',
+    text: 'Aparte de infecciones serias activas latentes no controladas (TB), la iniciación de agentes bloqueadores Anti-TNF (como el Adalimumab, Infliximab etc.) en EII está rigurosamente CONTRAINDICADA de forma absoluta en otra gran condición sistémica. ¿Cuál?',
+    options: ['Insuficiencia cardíaca congestiva descontrolada (Clase NYHA III o IV severa) o antecedente de síndromes de desmielinización grave (Esclerosis Múltiple)', 'Cirrosis alcohólica asintomática sin fallo de coagulación', 'Antecedente de pancreatitis aguda biliar extirpada hace un año', 'Insuficiencia renal crónica (VFG 15 ml) sin diálisis'],
+    correctIndex: 0,
+    explanation: 'Altísimas dosis de anti-TNFs han empeorado bruscamente resultados y agravado letalmente una clase III cardíaca sistémica existente en infartados crónicos de ensayos históricos de reumatología.',
+    fisiopato: 'En modelos autoinmunes neurológicos como un desorden tipo neuritis óptica base o esclerosis múltiple, la inmunidad Th1 central falla e interfiere induciendo empeoramiento trágico por exacerbación en la placa desmielinizada de sustancia blanca bloqueada de factores pro-angiogénicos nerviosos.',
+    clinicalPearl: 'Un paciente joven con enfermedad inflamatoria y adormecimiento transitorio que simule "falla de vaina de mielina" previa debe usar biológicos NO asociados a este TNF (como el inhibidor T Vedolizumab etc).',
+    guideline: 'FDA ' + 'Black Box' + ' Warnings for Anti-TNF therapies.',
+    whyWrong: { 1: 'No contraindican estrictamente su uso, de hecho Infliximab es hepáticamente aclaroso inofensivo metabolito a veces en Hígado no alterado cirróptico base.', 2: 'Infundado sistémicamente sin vía en vivo.', 3: 'Seguro renalmente.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-338',
+    topic: 'eii',
+    difficulty: 'Subspecialist',
+    text: 'Vedolizumab es un Anticuerpo Monoclonal biológico moderno sumamente validado para Inducción en EII (CU y Crohn) ancianos o con riesgo sistémico, pero cuyo mecanismo de acción es "Inmunosupresión Selectiva". ¿Sobre qué receptor específico bloquea físicamente impidiendo la invasión celular?',
+    options: ['Se une exclusivamente a las integrinas α4β7 sobre leucocitos circulantes inhibiendo que anclen mediante MAdCAM-1 a la pared venular del intestino perimetral', 'Se une al receptor de la subunidad común de interlucina (IL-12/23) p40 bloqueando diferenciación CD4 polarizada a Th1', 'Es un ligando que reprime a fondo al JAK-STAT canal quinasa interior del Linfocito central y colónico', 'Bloquea el sitio intracelular activo del antígeno Calcineurina para Linfocitos T reactivos masivos'],
+    correctIndex: 0,
+    explanation: 'El intestino firma un "contrato" reclutador local fabricando proteínas MadCAM-1 que flotan atrayendo células inmunes de paso.',
+    fisiopato: 'Vedolizumab anula al α4β7 selecto, que es el imán o llave que usan estricta y únicamente los linfocitos "etiquetados para ir intestino". Por ende, no afecta en absoluto las células T vigilantes asignadas contra el cerebro ni virus de pulmones sistémicos, bajando drásticamente el riesgo de infección general u oportunista (PML, Neumato).',
+    clinicalPearl: 'Altamente deseado para individuos muy mayores de edad frágiles que sucumbirían ante un inmunosupresor sistémico masivo general (como Azatioprina) ante una resfrío neumónico normal.',
+    guideline: 'ECCO-AGA Guidelines, Molecular Mechanism.',
+    whyWrong: { 1: 'Corresponde a la molécula biológica moderna de rescate Ustekinumab.', 2: 'Corresponde primariamente a la molécula de pastilla diaria oral fuerte biológica Tofacitinib o Upadacitinib.', 3: 'Corresponde al viejo inmunosupresor químico IV agudo Ciclosporina/Tacrolimus.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-339',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: 'El Ustekinumab ha ganado terreno como agente biológico versátil con altísima tasa de seguridad sistémica, sobre todo en refractariedad (fallo inicial a anti-TNF en Crohn). ¿Cuál es su mecanismo biológico de diana inhibido?',
+    options: ['Anticuerpo directo anti-subunidad p40 de las Interleucinas IL-12 e IL-23 (vía Th1 y Th17)', 'Inhibidor competitivo S1P modulador genómico de linfocitos salientes al ganglio (Ozanimod equivalencia)', 'Bloqueo exclusivo de IL-6 receptor soluble transmembrana general transductivo (Tocilizumab)', 'Bloqueo receptor de TNF-alpha libre masivo'],
+    correctIndex: 0,
+    explanation: 'A diferencia de los Anti-TNF tempranos que eliminan la bala (la citoquina final agresora), las vías de receptores de las interleucinas 12 / 23 bloquean eficazmente a la fábrica superior, es decir, el desarrollo final del linfocito Th1 y Th17 nativo general genético de forma sistémica fina.',
+    fisiopato: 'Posee notable y alta tolerancia clínica general contra anticuerpos propios de formación cruzada neutralizante por el organismo que sí frustran al viejo Infliximab tras uso sostenido y con una sola infusión IV induciendo se transiciona a una cómoda subcutánea inyección (SC) de mantenimiento periódica rápida paciente domiciliario.',
+    clinicalPearl: 'Si el paciente fracasó o generó fuerte alergia cruzada inyectable grave o anafiláctica sistémica (Neutralizing ADA formation alta base) al Adalimumab, este y Risankizumab son hoy los primeros re-intentos de éxito subagudo demostrados por evidencia robusta.',
+    guideline: 'ACG Crohn\'s disease management new therapies update guidelines.',
+    whyWrong: { 1: 'Es otra nueva familia general inmunomoduladora oral de rescate moderna actual celular limitativa general de salida linfática ganglionar (Ozanimod).', 2: 'Reumatológico principalmente, inútil para la fisiopato luminal crónica en CU/Crohn basal masivo.', 3: 'Mecanismo clase Anti-TNF previo repetido obsoleto en refractarios a fallas base primarios.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-340',
+    topic: 'eii',
+    difficulty: 'Subspecialist',
+    text: 'Un joven con Colitis Ulcerosa grave en la UCI no cede al uso de megadosis esteroidea o de biológicos de salvataje transitorios. Es fundamental que antes de enviarlo por defecto a una resección intestinal curativa o añadir otro biológico un equipo realice diagnóstico endoscópico para descartar que este brote refractario inminente sea mantenido agudo por un invasor oportunista secundario ¿Cuál germen es su mayor amenaza endémica parasitando inflamación grave resistente ulcerada?',
+    options: ['Infección tisular incrustada aguda por Citomegalovirus (CMV) (colitis sobre agregada detectada vía tinciones IHO en la base de la masa necrótica profunda de cripta e inclusiones en el núcleo viral)', 'Clostridium difficile variante endoesporas gigantes', 'Salmonella typhi mutante resistente cruzada Cipro', 'Escherichia coli enterohemorrágica (O157:H7) adherida a moco epitelial fibrino purulento'],
+    correctIndex: 0,
+    explanation: 'El uso masivo crónico de esteroide para parar un brote tumba fatalmente las defensas naturales corporídicas y sumado a una barrera epitelial pelada llena de mallas úlceromembranosas sangrantes en el colon inflamado, el asintomático portador joven mundial general reactiva latentemente este virus celular herpético macrófago-endotelial incrustándolo e infestando perpetuamente de neo lesiones fatales al desvalido segmento base del intestino bajo.',
+    fisiopato: 'En vez de dar biológicos masivos o cirugía si la biopsia prueba cuerpos de inclusión herpética o tinción por anticuerpo IHQ para virus de Inclusión CM, se requiere freno, tratar enérgicamente al patógeno base antiviral (Ganciclovir), y la EII regresionará usualmente si erradicada esta co-lesión o al menos no será letalmente superada en morbimortalidad subyacente.',
+    clinicalPearl: 'Físicamente indistinguible "endoscópicamente macro" salvo por úlceras en geográficas masivas o huecos serpisnosos perforantes. Una biopsia con "ojo de búho" nuclear patognomónica salva colon y estancias hospitalares en 4 días letales.',
+    guideline: 'ECCO Management of Opportunistic Infections within IBD guidelines.',
+    whyWrong: { 1: 'Clostridium no cruza sistémica profunda con inclusión epitelial vital invasiva en general de células y se frena diagnosticable fácil por Heces vía directa por toxina o PC basal (test en 1hr), no justifica por sí biopsia profunda descartada primaria general estricta y se da AB de forma general paralela a cualquier paciente UCI severo con EII (Vancomicina) preventivo primario empíricamente. ', 2: 'Infundada la presentación de un brote refractario biológico masivo inminente con Tifoidea clásica subyacente como patógeno principal etiológico final de rescate sin cuadro previo de viaje.', 3: 'Mismo factor exótico agudo, resalta rápido y autolimitado per se si reacciona con hemolítico, no requiere de base de brote grave autoinducido y biológicos masivos.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-341',
+    topic: 'eii',
+    difficulty: 'Staff',
+    text: '¿Cuál de estos inmunomoduladores orales indicados para EII refractaria o moderada está estrictísimamente y forzosa prohibida (contemplada con categoría biológica máxima "X" absoluta de riesgo) procreativa de recetar a mujeres gestantes o intentando general basal inmediata embarazo por inducir toxicidad abortea profunda fetal?',
+    options: ['Metotrexato (MTX) (oral o subcutáneo semanal de formulación general de recete por dosis miligrámica) de purga base', 'Derivados generales de la 5-ASA bases o tópicos locales', 'Antagonista de receptores Corticoides base local de purga superficial del lumen de Íleon/Budesonida orales generales', 'Infliximab biológico trans fusional anti-TNF trans placentarios de paso final trimestre de dosis alta'],
+    correctIndex: 0,
+    explanation: 'Metotrexato está calificado formalmente como totalmente inaceptable y causaría inevitable deformidad dismórfica o el fallo mortinato genérico inducido fetal directo abortado agudo al robar activamente todos los folatos básicos de migración molecular vital formador del esqueleto neural embrionario (Vía Fólico antagonista inhibidor).',
+    fisiopato: 'Incluso su uso en los varones general sanos está a veces discutido o requiriendo ventanas de limpieza farmacogenética (esperma limpieza) recomendada previas de 3-6 meses por seguridad en intento mutagénico general para ser conservador basal.',
+    clinicalPearl: 'Se considera en EII una regla universal del pulgar general mundial obligar a contracepción dura combinatoria doble estricta en todo sexo femenino vital cruzando esta tableta semanal (a diferencia del MTX base biológico (MRA) Infliximab libre gestacional seguro, solo omitida su infusión fina en paso a las 30 semanas general limitativas base preventivas para vacunas neonatas vivas per se de un feto con base segura sin inducción de genéticas mal formativas).',
+    guideline: 'Toronto consensus / Pregnancy and IBD Guidelines 2.',
+    whyWrong: { 1: 'Totalmente limpios y la columna basal farmacológica de 1ra escala universal para mujeres seguras de forma mundial constante (Seguridad B-C genérica benigna probada).', 2: 'Budesonida es topica general absorbida pobre y tolerada sistémicamente segura sin eventos base letales mutagénicos informados masivos de daño directo fetal comprobado biológico fuerte.', 3: 'Considerado pilar seguro basal gestatorio activo hasta última etapa preparto (Ininflamatorio vital), con retensión profiláctica base pediátrica obligatoria biológica (rotavirus general suspendido neonatal lactante del recién nacido) pre parto nada abortiva al embrión biológicamente vivo humano primario.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-342',
+    topic: 'eii',
+    difficulty: 'Fellow',
+    text: 'Al comparar los principios e indicativos filosóficos detrás de la "intervención quirúrgica general" en ambas EII de forma universal histórica, el cirujano experto mundial le advertirá un gran precepto definitivo biológico de éxito patológico ¿Cuál afirmación diferencia el propósito exacto cirúrgico genérico final entre CU o el Crohn en la cama de operación del paciente en estado refractario limitativo o agónico final de daño profundo cicatrizal intratable biológico?',
+    options: ['Para Colitis Ulcerosa, extraer el órgano (Exéresis del colon/recto) es curativo final porque detiene integral y formalmente para siempre toda la expresión celular inmune original causante intestinal directa subyacente. Para Enfermedad de Crohn base general, ninguna cirugía extirpadora "elimina o cura", su fin reaccionario es exclusivo genérico previsor (desatasatar abscesos o puentes restrictivos fibróticos).', 'Ambas son radicalmente tratables y terminadas y se cortan las curaciones finales con simples ileostomías.', 'El Crohn puede ser finalmente detenido si se logra raspar todo el intestino delgado central asintomático.', 'CU debe tener múltiples derivaciones en varias cirugías, pero Crohn reacciona fácil para lograr eliminar su etiología general de primera línea local de curación final perenne en la mesa general.'],
+    correctIndex: 0,
+    explanation: 'A pesar que ambas EII surgen del error inmunológico-microbiómico innato personal profundo (mismas terapias), la Colitis es patológicamente exclusiva y de manera absoluta residente epitelial restringida al colon. No reacciona agresivamente al recambio primario extra epitelial mucoso (íleon y superiores exentos base formal). Cortar el colon extirpa y fulmina orgánicamente a este ente local físico general letal in vivo para el sujeto biológicamente para siempre, de forma universal validada sistémica como forma última salvadora de vida sana vital a base de bolsita (pouch IPAA funcional sustitutivo) perenne curativa asintomática.',
+    fisiopato: 'Crohn mutará, re-localizará infiltrativamente y atacará activamente agresivo las capas transmurales de la siguiente "neo conexión" suturada de base proximal ileal residual si se retira una masa afectada vieja enferma. Su base de existencia de ataque sistémico profundo en células saltando abismos de todo el diámetro general del tubo bucal a ano no permite "cura biológica de la enfermedad subyacente autoinmune perenne", obligando al biológico y solo permitiendo al genio bisturí como reparador o mitigador anatómico final local temporal paliativo de crisis peritonitis general fatal sistémica de estrechez obstructiva dolorosa perentoria local base ineludible por fibrogénesis acumulada del paciente.',
+    clinicalPearl: 'Nuevas técnicas macro base ("Stricturoplastia", ensanchamientos con cortes y cierre tipo sutura Heineke Mikulicz sin retirar pedazos formales longitudinal intraluminal de gran intestino primario central sano general valioso nutritivo conservador basal) nacieron exclusivas generadas para rescatar de la consúmida limitativa masiva temida falla base fatal de íleon corto absortivo biológicamente genérico post resecciones extremas masivas letales de un enfermo base de Crohn generalizado perenne sin curación etiopatogénica erradicadora biológica cirúrgica.',
+    guideline: 'Surgical Strategies ASCRS Guidelines in management IBD Crohn vs UC base concepts.',
+    whyWrong: { 1: 'Absurdo y peligroso médicamente asumir "remedio fácil simple por vía ileostomía rápida o curativa", ignorando el riesgo agresivo inmunológico continuo central recaída base de por sí y extra manifestaciones persistentes letales.', 2: 'Remoción de intestino delgado masivo induce un desastre incompatible biológicamente denominado ineludible general síndrome crónico letal y refractario permanente agónico del Intestino Corto fatal irreversible perenne dependiente sistémico final parenteral venosa TPN.', 3: 'Inversamente radical e incorrecto a la propia lógica fisiopatológica de cura.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-343',
+    topic: 'eii',
+    difficulty: 'Subspecialist',
+    text: 'A pesar de poseer una tremenda historia validada efectiva como inmunosupresores mantenedores centrales biológicamente base y seguros perennes por décadas orales y fáciles, los medicamentos basados puramente en "Tiopurinas" base químicas fundamentales (principal agente Azatioprina AZA y purina cruda central base asimilada 6-MP 6-Mercaptopurina dosis estricta mantenida anual), están siendo desplazados e injeridos temerosamente con profundo pavor general selectivo mundial por los médicos jóvenes en un grupo minoritario de fenotipo varón (Adolescente-joven genérico) en general EII base con y sin Infliximab por miedo cauto y alerta base de caja negra a desarrollar forzosamente este desenlace etiológico adverso hematológico irreversible de altísima brutal morbimortalidad subyacente latente fatal directa: ¿Cuál es este gran fatal padecer linfoproliferativo derivado adverso específico ineluctablemente de este grupo de orales?',
+    options: ['Linfoma T hepatoesplénico de rara fenotípia (Linfocítico T masivo base gamma delta extranodal sistémico) inducida general letal secundaria directa a un uso masivo prolongador superior subyacente (específicamente la base de años perenne basal)', 'Neoplasia mieloide aguda leucémica linfoblástica inducida base letal temprana genética ósea por medula blanca toxica primaria fatal paralítica subyacente inmediata', 'Adenopatías de linfoma difuso celular gran B genérica asintomática sistémica tipo remanente EBV viral mononucleosis leve tratable reversible benigna biológica subyacente central autolimitada al recambio y detención del mismo medicamento oral pilar asimilador o retirada de dosis subaguda en meses tempranos de EII joven pre existente subyacente general sana base inmuno inerte autómata', 'Trombocitemia crónica esencial base plaquetaria limitativa vascular central de medula base fatal letal masiva generada trombótica general profunda basal sistémica hiper activa'],
+    correctIndex: 0,
+    explanation: 'Aunque este fatal monstruoso diagnóstico general sanguíneo perenne centralizado tumoral general irreversible y mortal (muerte y morbimortalidad general del mas de alto un noventa a casi fatal cien por ciento masivo total) es una de los efectos formales letales extremadamente ultra más raros biológicos de efectos de drogas (población incidencial rarísima inusitadamente general con riesgo biológico y farmacocinético real bajo estadístico asintomático poblacional puro genérico bajo de <10 en cientos de miles crónicos genéricos basales), el factor de ser indubitablemente fulminantemente perentorio en pacientes en años flor de pubertad juventud de forma basal trágico lo ha marcado a fondo ineludible históricamente para erradicar agresivamente el combo "Doble base terapia cruzada base de Biológico + Azatioprina base" a futuro ideal central de base varón joven inmaculado.',
+    fisiopato: 'Tiopurinas integran en su metabolismo crónico celular e interfieren permanentemente con genoma linfocítico inmunológico (anulación de mismatch celular y bases purínicas toxicológicas reparadoras cromosómicas) empujando a un escape general crónico masivo letal formador maligno (en especial fenotipo varico T inmaduro hepato esplénico agresivo extra local resistente letal genérico perenne masivo orgánico).',
+    clinicalPearl: 'Idealmente y siempre, jamás o intente de la forma general biológica o evada usar doble inmunosupresión biológica conjunta genérica persistente (Anti TNF + una AZA formal basal mantenida) y la use solo como pilar preventor anti reactivo ADA autoinmune al biológico en temporalidad biológica de 6 meses limítrofe transitorio iniciales para pacientes jóvenes, suspendiendo a tiempo el oral de tiopurina agresivamente para obviar genéticamente o huirle al evento genérico T celular adverso de letal morbimortalidad previsible cruzando años limítrofes generales vitales crónicos.',
+    guideline: 'FDA ' + 'Black Box' + ' Immunotherapy Adverse Outcomes data and ACG safety warnings for generic Thiopurines risk young age males.',
+    whyWrong: { 1: 'Riesgo biológico base nulo reportado históricamente letal derivado puro cruzado a su uso.', 2: 'El riesgo sí lo promueve la droga y si existe la viral re activación leve linfática genérica autolimitada (EBV post viral proliferativo), se esfuma y es casi benévolo comparado de base frente al letal "Hepático-esplénico masivo tipo T" general adverso incontrolable intratable fulminante biológico real temido primario derivado letal reportado con pavor absoluto clínico histórico genérico formal y sistémico mortal adverso.', 3: 'Sin base primaria sistémica celular biológica reportada general.' },
+    pillar: 'Mastery'
+  },
+
+  // --- SECTOR: H_PYLORI (HELICOBACTER PYLORI) (CIERRE 30 PREGUNTAS TOTALES) ---
+  {
+    id: 'q-344',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'En una región donde la resistencia primaria a la Claritromicina excede el 15%, ¿cuál es el régimen empírico de primera línea recomendado incondicionalmente por el consenso de Maastricht VI y ACG para erradicar H. pylori?',
+    options: ['Terapia Cuádruple con Bismuto (IBP + Bismuto + Tetraciclina + Metronidazol) por 14 días', 'Terapia Triple clásica (IBP + Amoxicilina + Claritromicina) por 14 días', 'Terapia Doble a Altas Dosis (IBP + Amoxicilina) por 7 días', 'Monoterapia con Vonoprazan por 14 días'],
+    correctIndex: 0,
+    explanation: 'La Terapia Cuádruple con Bismuto es independiente de las resistencias a macrólidos e insensibiliza a cepas difíciles al agregar un cuarto factor de pared letal (el Bismuto metálico no sufre resistencia transferible cruzada).',
+    fisiopato: 'La Claritromicina es un macrólido muy propenso a resistencia cruzada por mutaciones ribosomales (eflujo o protección de sitio de unión). El bismuto destruye la membrana celular y frena enzimas vitales del patógeno mecánicamente.',
+    clinicalPearl: 'Si la Cuádruple con bismuto no está disponible de todo punto por desabastecimiento, la alternativa es la Terapia Concomitante sin Bismuto (IBP+Amoxi+Claritro+Metro simultáneos 14 días).',
+    guideline: 'ACG Clinical Guideline / Maastricht VI Florence Consensus Report.',
+    whyWrong: { 1: 'Fallaría inaceptablemente casi un tercio de las veces por claritromicina inutilizada per se.', 2: 'Todavía en perfeccionamiento posológico (necesita 14 días al menos general no 7 días probados globales para superioridad base mundial universal).', 3: 'No logra tasas erradicadoras curativas altas sola o asilada de antibióticos base activos mortales bactericidas sistémicos cruzados.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-345',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'A nivel metabólico genético humano poblacional, ¿cuál es uno de los factores inherentes hostiles principales que predispone abrumadoramente al FRACASO de casi cualquier régimen triple con IBP clásico frente al Helicobacter pylori?',
+    options: ['El paciente es un "Metabolizador Rápido" genético con alto ratio del Citocromo hepático CYP2C19 (elimina rápidamente la droga de la sangre)', 'Tener bajo ácido basal natural fúndico', 'Ser alérgico de base familiar general a la Penicilina', 'Poseer polimorfismos activos mutados basales cruzados para deficiencia de receptor hormonal IGF general gástrico'],
+    correctIndex: 0,
+    explanation: 'Los IBPs clásicos (especialmente Omeprazol de 1ra y 2da generación) son exhaustivamente aclarados por el potente complejo CYP2C19.',
+    fisiopato: 'Si el paciente tiene variantes hiperactivas rápidas (homocigotos rápidos usuales en genética asiática base en caucásicos occidentales mixtos), el fámaco no hace pico estable en plasma suprimiendo al ácido a su meta final, la amoxicilina gástrica se desactiva en ácido vivo por pH general hostil y el régimen fracasa abismalmente por sub-dosis relativa real.',
+    clinicalPearl: 'Esta es la principal causa por la cual Rabeprazol o el nuevo Esomeprazol / Vonoprazan (no dependientes netos principales del CYP2C19 sino de vías menores seguras alternas) son inmensamente superiores en curación general global que cruzar ciegamente Omeprato obsoleto.',
+    guideline: 'Maastricht VI Consensus / FDA pharmacogenomics drug warnings.',
+    whyWrong: { 1: 'Por el contrario, el bajo ácido ayudaría enormemente al antibiótico (Amoxicilina trabaja al 100% de fuerza mortal base a pPH >6 fisiológico estable).', 2: 'Obliga a usar el combo de Bismuto o Metronidazol pero de per se la alergia biológica no tumba el IBP o el poder base fisiológico metabólico perenne genérico basal humano.', 3: 'Sin repercusión farmacodinámica con esta vía.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-346',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: '¿Cuál es el factor de virulencia más oncológicamente directo y deletéreo del Helicobacter pylori, que inyectado por una jeringa bacteriana (Sistema de Secreción Tipo IV) altera el citoesqueleto y factores de transcripción oncogénicos intrahumanos?',
+    options: ['Proteína CagA (Citotoxin-associated gene A)', 'La enzima Ureasa soluble externa bacteriana', 'Citotoxina VacA generadora formal vacuolar lipídica local epitelial transitoria', 'Malla formadora flagelar motora genérica espiral base'],
+    correctIndex: 0,
+    explanation: 'Las cepas CagA-positivas confieren un riesgo altísimamente mayor de producir Adenocarcinomas Gástricos mortales y atrofia rápida maligna.',
+    fisiopato: 'Entra al citoplasmo del hepatocito/enterocito gástrico humano fosforilándose por tirosín-cinasas celulares Src y distorsiona irreversible o crónicamente a las cascadas mitogénicas oncogénicas centrales ERK, induciendo metaplasias biológicas displásicas base continuas genéricas basales perennes in situ letales irreversibles (Cascada Pelayo Correa biológica tumoral).',
+    clinicalPearl: 'Pacientes de Asia Oriental poseen variantes CagA biológicas con extrema afinidad pro-tumoral masiva celular profunda, explicando su alta fatalidad gástrica endémica.',
+    guideline: 'Pathogenesis review ASGE H. Pylori / ACG risk.',
+    whyWrong: { 1: 'No es oncogénica per se, su poder es vital protector general basal de formar una "nube de amonio protector" para vivir en HCl puro hostil vivo ácido disuelto mortal estomacal vital. Es neutralizadora vital base perenne.', 2: 'Infundada. Induce o promueve formación de túneles porosos o vacunas matando enterocitos locales por apoptosis para comer sus remanentes biológicos base (Citotoxina basal parasitaria genérica celular necrótica per se de subsistencia base viva).', 3: 'Inofensiva oncogénicamente directa en genética tumoral base basal letal de transcripción mutagénica somática humana directa precursora central biológica in situ vital final.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-347',
+    topic: 'h_pylori',
+    difficulty: 'Subspecialist',
+    text: 'La "Cascada o Secuencia de Pelayo Correa" describe un modelo paso o peldaños pre-neoplásico gástrico estricto promovido por el H. pylori crónico indetenido. ¿Cuál es el orden secuencial biológico aceptado patológicamente hasta el Cáncer final?',
+    options: ['Mucosa Normal → Gastritis superficial → Gastritis atrófica crónica → Metaplasia intestinal → Displasia → Cáncer (Adenocarcinoma tipo intestinal)', 'Mucosa Normal → Metaplasia intestinal → Úlcera péptica masiva aguda → Gastritis atrófica → Cáncer de tipo difuso', 'Metaplasia intestinal de entrada o de cuna genética → displasia per se → Gastritis autoinmune secundaria atrófica final', 'Gastritis eosinofílica base basal → Cáncer (MALT)'],
+    correctIndex: 0,
+    explanation: 'El patólogo colombiano dr. Pelayo Correa definió famosamente esta evolución de pasos biológicos en 1988.',
+    fisiopato: 'La inflamación crónica tumba y desaparece al ácido matriz basal glándulas gástricas (Atrofia). Este nicho pelado sin ácido ni ambiente es ocupado forzosamente biológicamente reactivo por tejido de base "símil o parecido biológicamente al intestinal natural genéricamente inferior resistente basal" con sus células de caliciformes (Metaplasia), lo que finalmente muta perenne crónico a (Displasia) general celular por años de base de agresor H. pylori.',
+    clinicalPearl: 'Matar tempranamente a H. pylori detiene en firme o retrasa biológicamente esta cascada previniendo atrofia en sus tempranas fases e incluso (a veces discutido limitante) regresar en reversa la atrofia (pero rarísima la metaplasia fija ya instalada celular perenne de base genética somática).',
+    guideline: 'Sydney/OLGA System / WHO gastric cancer pathways.',
+    whyWrong: { 1: 'Úlcera péptica o tipo cáncer difuso base genético hereditario (CDH1 gen base etc) no siguen estrictamente y de por perenne obligación los cánones biológicos restrictivos formales progresivos de la cascada tumoral local Pelayo C.', 2: 'Atrofia debe perentoriamente y de forma vital preceder orgánicamente la invasora u migración celular de base de metaplásica local defensiva general basal en la cúpula fisiopatológica celular humana tisular letal general estricta y restrictiva in vivo del humano base primario.', 3: 'Inversa o irreal basal genéticamente.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-348',
+    topic: 'h_pylori',
+    difficulty: 'Subspecialist',
+    text: 'Aparte del letal adenocarcinoma basal gástrico biológico, el H. pylori es la causa ineludible o biológica responsable formal etiopatológica subyacente comprobada abrumadoramente del 80-90% de qué rara otra entidad neoplásica curable solo exterminando abibióticamente al microorganismo originante local basal general biológico subyacente transitorio reactivo?',
+    options: ['Linfoma gástrico de tejido linfoide asociado a la mucosa (MALT de células B zona marginal grado bajo per se extranodal localizado temprano)', 'Linfoma cutáneo masivo general a células T (Micosis fungoide profunda subdérmica de placa avanzada local perenne invasora)', 'Sarcoma de Kaposi en remanente base no viral gástrico puro de tipo endémico focalizado crónico basal genérico perenne asintomático inicial', 'Mesotelioma retroperitoneal'],
+    correctIndex: 0,
+    explanation: 'Es de los pocos "cánceres biológicos humanos base reales vivos en diagnóstico tisular histológico general letales" en toda la vasta inminencia de la patología corporal genérica humana biológicamente viva que pueden curarse por su propio recambio biográfico (remitir de forma integral total definitiva general basal perenne biológica) exclusivamente tomando 14 días letales vivos efectivos orales curativos de dosis de antibióticos en sus estadios o grado 1 basales de baja malignidad temprana puramente gástrica de estadio Lugano IA vivo general perenne aséptico.',
+    fisiopato: 'La masa linfocítica per se no tiene autonomía oncogénica viva base independiente inicial pura real sino que esta secuestrada estimándose o reaccionando puramente empujada u sobreexcitada general activa agresivamente al estímulo letal crónico del antígeno o bicho vivo gástrico del H Pylori central perenne. Matarlo le quita gasolina genética inductora impulsora local autoinmune letal de la hiper reacción local perenne crónica de base sistémica linfocítica viva in situ.',
+    clinicalPearl: 'En cualquier paciente que usted endoscope biológicamente vivo con masas difusas carnosas sin úlcera biográfica letal diagnosticadas "MALT gástrico biológicamente base local vivo temprano", antes que quimio, erradique base de HP y monitorice mes a mes (biológicamente a fondo crónicamente basal vivo por regresión completa total).',
+    guideline: 'NCCN / ACG MALT Lymphoma Guidelines.',
+    whyWrong: { 1: 'Irreal a la bacteria.', 2: 'Causa primaria de origen tipo viral profundo VHS 8 inmuno asociado perenne puro.', 3: 'Irrelevante asbestosis.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-349',
+    topic: 'h_pylori',
+    difficulty: 'Staff',
+    text: 'Para CONFIRMAR ERADICACIÓN del Helicobacter pylori con máxima sensibilidad y especificidad validada obligatoria basal, usted solicita un Test de Aliento o Antígeno en Heces monoclonal vivo. ¿Cuál es el requisito incondicional y forzoso del "período ventana o lavado forzado basal" vivo post medicaciones activo de base inhibitorias o supresivas vivas de la enzima general antes de realizar o soplar este test?',
+    options: ['Al menos 4 semanas completas (28 días base) de haber finalizado el último antibiótico o bismuto total Y al menos 2 semanas de suspensión neta absoluta del uso vivo de bloqueadores bomba de protones (IBP) o base ácida (H2) total sistémico celular', 'Realizar al día siguiente del término basal formal total del tratamiento primario curativo de la infección oral inicial genérico basal de semanas asimilado de erradicación biológica completa vivo y sistémico perenne de fondo in vivo para seguridad perenne', 'Puede hacerlo bajo la medicina de IBP para comprobar basal si reacciona genéricamente asimilado biológico en fondo protector biológicamente crónico basal in situ letal temprano u protector', 'Suspensión base puramente de 3 a 5 días máximo asimilado vivo para no resurgimiento de tumor y cáncer atrófico biográfico letal temprano asintomático genético basal temporal paliativo transicional primario biológico formal paliativo basal genérico oral perenne'],
+    correctIndex: 0,
+    explanation: 'El microorganismo basa abrumadoramente su positividad del aliento de ureasa respirada viva (o heces antígeno secretorio basal local) y este IBP general lo frena basal orgánicamente perenne obligándolo a esconderse enquistado dormido apochado no reactivo general bacteriano inhibiendo la uretra letal marcadora y bajando forzosamente la densidad o carga micro bacteriana vivo transicional letal pero en estado crónico vivo perenne latente sistémico celular in situ indetectable basal vivo in situ real asintomático del paciente al test base.',
+    fisiopato: 'Si existe traza viva de droga general bactericida asintomática supresora basal, el resultado saldrá FALSO NEGATIVO inminente formal y general. Semanas sin IBP perenne garantizan revivifique masivamente re active a fondo reproduzca u genere masivo el patógeno vivo no exterminado u erradicado formal de base del sujeto si hubo falla biológica y resopla masivamente marcación detectable celular biográfica enzimática clínica de oro universal validada in vivo basal.',
+    clinicalPearl: 'Falso Negativo (Test negativo en paciente que AUN lo tiene y sigue fracaso bactericida asimilativo biológico de la doble terapia primaria fallida subyacente viva) por la precipitación base y apurada o prisa del doctor inexperto o del asustadizo basal clínico biológico oral temprano perenne es la pifia número 1 a evitar.',
+    guideline: 'ACG H. Pylori Management / Maastricht VI Consensus Eradication confirmation.',
+    whyWrong: { 1: 'Inducirá ineludible Falso negativo.', 2: 'Idem anterior basal.', 3: 'Sin sustento y opuesto biográfico de base genérico total.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-350',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'A la inversa de erradicar u controlar y verificar el suceso anterior o basal post erradicativo subyacente biológico de la inflamación bacteriana u basal transicional: ¿En qué escenario fisiológico agudo el test de aliento o el antígeno monoclonal heces basal puede presentar igualmente un peligroso perenne forzoso o temible FALSO NEGATIVO formal limitante sin influencia o freno o trampa uso biológica basal medicamentosa previa farmacéutica perenne inicial basal general restrictiva transicional o sistémica en el sujeto virgen asimilada biográfico in situ oral celular perenne?',
+    options: ['En medio de un gran episodio agudo (ej 48hrs) vivo actual basal u general masivo y letal de sangrado hemorrágico vivo in situ superior digestivo asimilado sangrante activo por gran úlcera formal celular (úlcera sangrante masiva general)', 'En el primer trimestre de pura gestación basal de hormonas prolíficas base fetales genéricas perennes subagudas limitativas de antígeno vivo basal in situ formal biológico celular temprano local', 'En la intolerancia inmunológica heredada al carbono marcador genérico (Carbono 14 ó 13 basal limitativo absorbible base orgánico puro perenne) o celiaquía profunda basal sistémica total celular formal masivo general', 'Si el paciente fuma media hora basa pre endoscópico general basal masivo respiratorio basal forzoso perenne biológicamente letal asimilativo formal en in vivo o al asma basal temprana atópica precaria en jóvenes asmáticos genéticos puros basales locales'],
+    correctIndex: 0,
+    explanation: 'La hemorragia gástrica aguda (sangre, suero alcalino u masivo basal lavador de flujos necróticos en chorro local base biológico) alcaliniza tampona genéricamente local frena subagudo u arrastra masivamente biológico físicamente perentorio los coágulos con el H Pylori vivo y sus antígenos general asimilados limitativos perennes de la pared o deforma brutal y biológica perenne genéricamente local el pH basal limitativo basal orgánico in situ del estómago enfermo vivo primario basal subyacente impidiendo la actividad bacteriana central.',
+    fisiopato: 'Por esto, si biografiamos o ensayamos una prueba viva biológica de aliento o fecales a un sangrante en su cama basal o shock uci, el resultado no excluye de forma universal perenne basal biológica obligatoria general formal su real colonización asimilida transicional biológica si el reporte resulta inoperante basal o falso negativo in vivo.',
+    clinicalPearl: 'A pesar del "riesgo Falso Negativo", TODAS las guías piden biopsiar o buscar u recolectar formal en este momento oro (es decir el día del choque o sangrado limitativo orgánico basal vivo del procedimiento terapéutico inicial general de emergencia u uci temprano biográfico). Si sale vivo POSITIVO allí biográfico, se toma por seguro y se erradica tras o biológicamente paralela perenne el alta sin base repetitiva formal basal general biográfica de retrasar in vivo.',
+    guideline: 'AGA/ACG GI Bleeding & H pylori co-guidelines 2.',
+    whyWrong: { 1: 'Total falsedad sin interferir.', 2: 'Inofensivo base y real absorbible sistémico.', 3: 'Infundado biográfico asimilativo base genéricamente falso a fondo basal total orgánico de pulmonares genéricos bronquiales respiratorios no estómagos perennes puramente inicial biográficos perennes basales sistémicos orales en sujeto base sanos vivos.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-351',
+    topic: 'h_pylori',
+    difficulty: 'Staff',
+    text: 'En el enfoque "Test and Treat" (Testear y Tratar a ciegas biológicas asintomáticas iniciales o perennes basales sin endoscopio base primario visual en el paciente vivo orgánico basal in situ genérico basal perenne transicional crónico inicial temprano), ¿para qué grupo puro o específico basal generalizado de fenotipo sintomatológico vivo basal estricto se aconseja primariamente u está altamente justificado formal in situ y validado por normas rectoras mundiales biográficamente orales usarlo a primer nivel médico de cabecera basal general temprana?',
+    options: ['Pacientes muy jóvenes (menores de 60 años en USA, etc) basal orgánico sano base celular sin ninguno o cero síntomas alarmantes basales de bandera roja general pero que claman viva dispepsia inespecífica no complicada puramente idiopática funcional o persistente base de semanas o meses temprana', 'Pacientes con sangrado basal vivo temprano oscuro oculto basal intermitente u diarrea mucopurulenta febril severa formal basal asimilada perenne in situ formal viva general basal puramente aguda persistente genéricamente', 'Anemia macrocítica de repeticiones sin folato o base fólico sano celular temprano inmunológico perenne o ictericias crónicas de piel esclera temprana base no vírica', 'Pérdida forzosamente masiva base 20 libras rápida general viva formal perenne y de ganglios tempranos supra claviculares izquierdos base en palpación o biográficos reales puros físicos base limitados orgánicos in situ transversales biológicamente tempranos perennes'],
+    correctIndex: 0,
+    explanation: 'La dispepsia (el estómago perenne formal pesadito genérico biográfico, llenura u ardor base dolor biológico puro alto sordo temprano joven no limituoso vivo sin alarmas) en pacientes bajo 60 años es frecuentemente funcional biográfica limitativa o perenne gástrica simple perenne.',
+    fisiopato: 'No se justifica meter una cámara de 500 dólares invasiva o endoscopio biográfico de cuna a cada joven genérico con gases o agruras de pizza si de fondo vive infectado o puramente en su país de base perenne y en caso basal es curable a 1 pastilla empíricamente o de ciego biográfico por test aliento oro genérico basal.',
+    clinicalPearl: 'Las llamadas formales biológicas Banderas Rojas perennes limitativas puras genéricas o in situ (ej. anemia feroz inexplicable de laboratorio pura sangrante genérica, emesis forzosamente negra, pérdida peso de tumor agudo, >60 años perenne) CANCELAN instantánea formalmente base y para siempre la ceguera general del ' + 'Test and Treat' + ', obligando a cámara física viva precoz o Endoscopia oro de regla.',
+    guideline: 'ACG / CAG Management of Dyspepsia Guidelines.',
+    whyWrong: { 1: 'Bandera Roja (indica cámara endoscopio u colonoscopia viva profunda asimilada urgente).', 2: 'Infundado biográfico asimilativo base etiopatológica ajena a tubo y cámara basal de primera entrada general base sistémica formal perenne in vivo biográfica limitante central basal in vivo transicional formal crónica u puramente subyacente genérico sistémica perenne.', 3: 'Mismo criterio superior asimilado (Ganglio Virchow biográfico perenne signo de Cáncer Invasor oro biológico masivo mortal ineludible metastásico genérico basal sistémico celular profundo puro subyacente base asintomático genético formal del paciente gástrico temprano de rescate letal).' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-352',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'Las llamadas terapias de rescate puras biológicas emergentes actuales denominadas "Duales a Altas Dosis biográficas" han irrumpido subrepticiamente y general la práctica oro biológica asiática pura formal y ya caucásica como armas asimilativas potentes frente a fracasos por resistencias letales masivas. ¿En qué fármacos exactos oro y posología formal genérica estricta descansa puramente de este éxito basal perenne letal exterminador microbiano?',
+    options: ['Solo Amoxicilina perenne muy frecuente genérico in situ oral puramente masiva (ej. 750mg o 1 gramo puro 3 o 4 veces diarias basal puro) más un IBP puro a dosis doble viva perenne asimilada (o P-CAB Vonoprazan formal basal dosis alta diaria)', 'Solo Claritromicina 2 veces al día más IBP simple perenne (una sola toma base viva matutina)', 'Solo Tetraciclina y base oral general bismuto sin antibiótico extra u inhibidor del estómago in situ formales biográficos tempranos basales letales orgánicos', 'Ciprofloxacino en solitario intravenoso basal más un protector de base sucrálfato biológico masticado general perenne diario'],
+    correctIndex: 0,
+    explanation: 'El patógeno bacteriano base nunca histórico u excepcionalmente ha desarrollado a la fecha la fatídica base formal resistente letal o biológica transicional o biográfica letal clínica masiva contra la pura y simple Amoxicilina bactericida formal.',
+    fisiopato: 'Sin embargo, Amoxicilina vive o posee semivida basal biológica corta in situ (se elimina base fisiológica rapidísima del humano vivo formal subyacente oral in vivo celular genético corporal). Y requiere puro pH general masivo por encima >6 intra estómago vivo para disolver y activar pared invasora biológica fatal del HP temprano o perenne. En vez de 2 tomas como antes, ahora se da 3 o 4 veces base puramente al día orales repartidas junto a la brutal carga viva de potente IBP o Vonoprazan basal vivo masivo diario para mantener la llave y candado vivo perenne de dosis limitante activa base masiva biográfica durante 14 días basales perennes oro fatales.',
+    clinicalPearl: 'Es altísimamente tolerable subyacente orgánicamente para genérica bases asimilativas floras del intestino puro colon sin arrasarlas masivamentes formal ni causar bases C diff o dolores biológicos de sabor metálico u general diarreas limitativas de las base cuádruple históricas formales base crónicas.',
+    guideline: 'Maastricht VI / Modern Tailored Therapies HP eradication dual regimens.',
+    whyWrong: { 1: 'Fuerte, muy vulnerable y limitativa genérica a mutación.', 2: 'Infundado biográfico in efectivas solas.', 3: 'Mismo factor basal irracional temprano.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-353',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: '¿Bajo qué precepto preventivo oro principal y puramente estricto biológico recomiendan forzosamente la mayoría de guías testear u exterminar al H Pylori pre general u tempranamente perenne asimilado in situ previo o de forma adelantada biográficamente activa celular a un paciente sano basal orgánico en general?',
+    options: ['Al paciente puro formal asimilado que está apunto formal basal genérico sistémico de empezar terapias orgánicas masiva bases de crónicos meses de AINEs basales puros letales u pura dosis bases de años mantenida de aspirina basal cardiología preventiva general', 'En todo obeso basal a miras de cirugías formal general pélvica u apendicectomías o biliar general temprana ortopédicas perennes de rutina in vivo', 'A los pacientes diagnosticados tempranamente puros de esofagitis de base barrett celular o ERGE genérico refractario en vivo crónico letal inicial temprano basal puramente transicional gástrica', 'En pacientes con base litiasis vesiculares y bilirrubina formal in situ altas asintomáticos tempranos basales funcionales puros de control asimilado temprano basal asimilado gástrico'],
+    correctIndex: 0,
+    explanation: 'La suma viva o purificada letal basó biológica in vivo e sinérgica perenne inflamatoria destructiva in situ de un agresor bacteriano H Pylori (degrada factor protector epitelial gástrico general biológico basal) y de los dañinos AINEs base sintéticos crónicos potentes o biológicos formales sistémicos orales (inhibidores totales de base vivos de prostaglandinas orales gástricas regenerativas vitales asimiladas tempranas biológicas en general moco sano celular puro in vivo humano) es abrumadoramente ulcerogénica masiva mortal perenne con sangrados mortales asimilativos basales.',
+    fisiopato: 'Erradicarlo disminuye biográfica a la mitad formalo biológica inicial o temprana general los episodios crónicos o basales perennes agudas puras crónicas fatales o incidentes catastróficos iniciales transicionales sangrado ulceroso asimilativo base genérico de su vida posterior base temprana celular vital u perenne crónico gástrico masivo sano sano oral asimilado sano primario orgánico en sujeto.',
+    clinicalPearl: 'El "test and treat" es indispensable oro formal si lo enviarán a 5 años o general meses doloroso formales reumatología puros o biográfico limitativo en base masivos puros de ibuprofeno.',
+    guideline: 'ACG / AGA Ulcer Bleeding prevention and HP rules.',
+    whyWrong: { 1: 'Excepcional irrealidad genérica clínica cruzada extra gástrica no probada formal in situ pura biográfica asintomática.', 2: 'La bacteria u enfermedad reflujo o esofágica no solo empeora sino que en algunos casos polémicos exóticos u biográficos iniciales puros, se cree el H Pylori puro los "protege levemente con atrofia basal de no producir acido base subiendo erge" basal irónico. NUNCA se manda erradicar un puramente ERGE para sanarlo o por perenne cuna oral biológico puro subyacente.', 3: 'Sin repercusión hepato biliar puramente base bacteriana gástrica de in situ limitativa luminal.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-354',
+    topic: 'h_pylori',
+    difficulty: 'Subspecialist',
+    text: 'Aunque su afectio primario o base orgánico tisular es puramente de estómago (luminal local), las sociedades o consensos médicos hematológicos mundiales oro exigen u ordenan perenne general investigar su base etiológica (buscar HP genérico in situ basal o erradicar vivo transicional cuna sistémica oral gástrica temprana biológico perenne temprano asimilativa biográfica perentorio fatal) ante la presencia biológica puramente sistémica idiopática crónica de dos entidades extra gástricas letales masivas puros de cuna extra digestiva que reaccionan pura e increíble curo a los biológicos basales erradicatorios: ¿Cuáles son las dos principales basales perennes hematológicas puros sistémicas reales de oro general reportadas clínicamente curadas formales en in vivo in situ?',
+    options: ['Púrpura Trombocitopénica Inmune Oculta basal idiopática (PTI o base inmune temprana) general y las Anemias ferropénicas puramente insólitas o crónicas asimiladas refractarias sin foco obvio real sangrante oral in vivo o general basal sistémica in situ', 'Neutropenias cíclicas bases de infancia limitativas idiopáticas general puros vivas base o los síndromes hematofagocíticos genéticos puramente masivos tempranos limitantes formales o biográficos orales sistémicos de la medula pura basal perentoria tempranas biológicas', 'Leucemia linfático crónica genérica de los añosos o síndromes mielo puramente displásicos base de células tallos basales tempranas perennes sistémicos cruzados general limitativas crónicos asintomáticos genéticos tempranos formales vital', 'Hemofilia genérica pura adquirida tipo base viral biográfica sistémica y la pura anemia general macrocítica de falla B12 base cruzada perenne biográfica subyacente limitativa crónica inicial gástrica o absorción masiva terminal de bocio sistémica temprana biológica'],
+    correctIndex: 0,
+    explanation: 'El antígeno de cuna bacteriana H Pylori vivo produce una reacción cruzada o cuna fenotípica mimética (autoanticuerpos puros biográficos moleculares o plaquetarios asimilativos basales crónicos oro limitativos tempranos perennes formales orales genérico puros basales generales base inmunes plaqueto destructivos asimilado). Al eliminar biológico base su matriz biográfica patógena viva erradical general basal oral transicional asintomática subyacente in vivo local estomacal o gástrica curativa asimilativa pura perenne, reaccionan plaquetas volviendo normal basales. En la ferropenia u hierro oral asimilado sano puramente celular biológico base temprana el microbio vivo puro se lo roba (compite in situ férrico base gástrica) e impide por pérdida cuna gástrica acidez (atrofia base temporal temprano perenne celular asimilativa in vivo pura general tisular basal de absorción viva sistémico).',
+    fisiopato: 'Por tanto buscar base erradicarlo en pacientes asilada basal sin otra cuna sangrante biológica (una regla de oro perenne limitativa de exclusión hematológica formal basal asintomática pura oro vivo).',
+    clinicalPearl: 'Hematólogos lo exigen primero de rutina oro puramente asintomática basal limitativa vivo basal in situ de PTI a ciego base antes biográfica viva general de corticoides o drogas orales in vivo.',
+    guideline: 'Maastricht VI/ ASH hematology rules on H pylori extra-gastric.',
+    whyWrong: { 1: 'Puro invencible falso y ficticio subyacente basal de base sistémica no relacionada in vivo biológica celular hematopoyética general primaria genético celular cuna perenne perentorio letal sistémico.', 2: 'Idem general limitativo anterior exótico base celular pura gástrico temprano celular', 3: 'Mismo factor bizarro de invenciones puros formales asimilados temprano genéticos base.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-355',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'Histológicamente, en la biopsia basal puramente gástrica de control temprano oro biológica o asintomática local tomada por endoscopio para oro corroborado u oro de estándar tisular visual humano diagnóstico, ¿cuál tinción básica especial perenne mundial u base simple biológica patológica visual de contraste asimilado temprano resalta vivo oro formales cuna oro abrumadoramente biológico los bacilos de aspecto forma base gaviota curva u de espiral letales vivo HP oculto puro general u puramente biológico basal en el moco vital?',
+    options: ['Tinción oro clásica in vivo simple de Giemsa asimilativa viva pura modificada general celular pura rápida oro basal u in vivo argéntica o Steiner de plata viva tempranas celulares orales asintomáticas biográfico temprano perenne visual in situ celulares', 'Rojo Congo (verde manzana biográfico basal) general tempranas celular puramente basales de polarizaciones celulares tempranas', 'Tinciones orales de Ziehl Neelsen general ácido alcohol resistente o Kinyoun tempranos celulares de oro bacteriológico general celular puros in vivo pulmonares o tisulares celulares biológicos asímil bronquiales perennes orales asymil', 'Tinción formal u puramente negro India in vivo cuna basal tempranas celulares biológicas oro asimiladas tempranas fungicas puramente vivas criptococos celulares basal perennes'],
+    correctIndex: 0,
+    explanation: 'Giemsa modificada, Warthin-Starry o de base formal plata o general inmunohistoquímica base específica son pilar o biográfico de oro universal visual para oro diagnóstico perenne basal de H pylori en tejido biopsiado.',
+    fisiopato: 'Se esconden bajo biográfica in vivo la densa cuna de la membrana puramente viva del moco gástrico subyacente tempranas basal asimilativo general foveolar no invasivo a la lámina propia genéricamente.',
+    clinicalPearl: 'Pida esta visual basal inmunohistoquímica especial viva a patólogos de base o dudosa Giemsa perenne oro asintomática oro in vivo formal temprana sistémica u formal biológico oro.',
+    guideline: 'Pathology guidelines on H. pylori diagnosis / biopsy protocols.',
+    whyWrong: { 1: 'Oro puro e idóneo biológico celular amiloidosis formal temprana.', 2: 'Basal asintomática puramente para o formalmente la bacteria u Mycobacterium general sistémica u oral Tuberculoso genérico basal in vivo.', 3: 'Oros asimilativos puros criptocócica fúngica viva de tinta asintomática temprano cuna puramente líquida raquídea tisular basal genérica.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-356',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'Históricamente y como terapia clásica "de Rescate puro genérico" ante el estrepitoso fracaso masivo general de primera línea cuádruple o base trío oro biológico general asimilativo basal en el paciente, ¿cuál de las siguientes opciones basal sistémica de base antibiótica quinolona viva oro perenne orales formales biográficas se añade u receta más frecuentada asimilada pura biológico in vivo para un curso oral masivo letal basal curativo celular in situ genéricamente de semanas vivos transicional?',
+    options: ['Levofloxacino general oral masivo bivalente o puro a dosis diarias vivas asimilados 500mg más base IBP masiva pura genérico bid y un gramo Amoxicilina base bid viva pura oro por catorce o base catorcenos días orales.', 'Vancomicina oral y tópica base pura asintomático biográfico sistémico más biográfica basal cuna genérica de Bismuto oral y Metronidazol vivos puros tempranos oro in vivo base orales asimilada.', 'Rifamicina o Rifabutina sistémica oral en exclusiva pastilla u base monodroga sin protectores masivas basales temprano orales', 'Clindamicina tópica y general masiva base in vivo tempranas celulares con Amoxicilinas bases cuna pura perenne orales biológicos genéricos sistémico orales puramente vivo cuna'],
+    correctIndex: 0,
+    explanation: 'La terapia base triple con Levofloxacino ha sido la bala de plata o "rescate vivo oro oficial" históricamente ante los fracasos de Claritromicinas orales iniciales vivo bases.',
+    fisiopato: 'Altera u base daña crónicamente basal in vivo oro enzima la ADN Girasa y topoisomerasa temprana viva celular en los basilos genérico asimilativos puros microbios orales.',
+    clinicalPearl: 'Su efectividad ha caido estrepitosamente mundial oro general y basalmente en recientes base años tempranos biológicos debido a su puramente perenne o general crónico sobre uso en cistitis (ITU o respiratoria orales) en las poblaciones (Resistencia primaria al cipro/levofloxacino general alta crónico basal y masiva cruzada viva puramente temprana perenne oro in vivo limitante).',
+    guideline: 'ACG Salvage therapies guidelines.',
+    whyWrong: { 1: 'Régimen puro para letales de general C diff.', 2: 'Se usa a veces de ultimísimo rescate vivo formal genérico (4ta base) o biológico, pero es de altísimo o perenne puro riesgo genérico toxicológico celular viva de médula asintomática (leucopenias puras temporales puros letales o sistémicas irreversibles a veces viva orgánicas celulares tempranas de cuidado biológico vivo asimilativas perennes oro basales formales perentoria cuna temprana sistémica.', 3: 'Irracional base exótica o cuna genérica no útil in situ activa temprana sistémic perentoria vital in vivo base oral viva in situ celular subyacente temprana perenne formal biográfico oral general in vivo oro celular.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-357',
+    topic: 'h_pylori',
+    difficulty: 'Staff',
+    text: 'A lo largo de su curso natural oral vivo, la bacteria del Helicobacter pylori ha co-evolucionado antropológicamente y de base oro celular formal humana in vivo en un nicho vital estomacal perenne por oro cuna basales milenios. Su ausencia repentina u base erradicatoria temprana general de oro masiva oro mundial moderna pura o base perenne in vivo en las orales biológicas cunas infancias y general biológica genérico occidental temprana orales vivo ha sido postulada pura o conjetural biográficamente (Hipótesis base sistémica cuna genérica de la higiene y biográfica inmunomodulación pura oro asimilativa limitante celular viva general sistémico celular biológica cuna perenne) general en estar asintomática biográficamente asociada u orgánicamente cruzado sistémica al inexplicable oral genérico masivo vivo biológico oro ascenso letal crónico puramente de oro general basal generalizado formal de qué tipo base biológica de oro pura enfermedad pediátrica genérica o sistémico adulto vivo puramente oro crónico?',
+    options: ['Al alergias oro sistémicas o inmunológicas atópicas orales perenne crónicos base asimilativo genérico oro formal asma orales basales in vivo', 'A los cánceres tempranas oro puros u linfomas sistémicas de general sistema puramente base in vivo crónicos cerebrales genérico', 'A la lepra base celular genérica cruzada sistémica basal biológica vital o sífilis genético perenne in vivo cuna orales primarios bases orales o temprana perenne in vivo orgánica biológico tempranos', 'Al Alzheimer de base demencia o perenne biológico o autismo general temprano orales bases biológicas o in situ genérica basal formales'],
+    correctIndex: 0,
+    explanation: 'Teoría (Hipótesis Higiene / Blaser). La bacteria modula subagudamente desde infante al general basal puro o sistema T regulador y linfocítico (Th2 / Th1 balance vivo o biológico de base puro celular inmunológica genérica).',
+    fisiopato: 'Su base o extirpación prematura precoz biológica celular oral de la infancia sin inmunomodulante de cuna base natural tolerado general, dispara oro basal celular in vivo el sistema Th2 general oro pro inflamatorio a cualquier oro oral alérgeno genéricamente vivo volador asimilado externo puro o in vivo de la piel asmático vivo genético (Asma perenne de cuna o eccema de manera atópica general).',
+    clinicalPearl: 'Pese al biológico "supuesto y relativo genérico u base teórico beneficio biológico del base asma", NO base pura u de cuna previene o detiene el mandato universal oro médico de exterminarlo oral en su nicho base formal u crónimo para puramente salvarlo de ulcerar u de letal Cáncer a los 50 celular formal genético oro o biótico temprano in vivo asintomático.',
+    guideline: 'Epidemiology of HP (Blaser hypothesis).',
+    whyWrong: { 1: 'Absurdo y fantasioso in vivo orales basales y subyacentes', 2: 'Irracional celular y exótico', 3: 'Mismo criterio general o irreal subyacente biológico a fondo temprano.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-358',
+    topic: 'h_pylori',
+    difficulty: 'Fellow',
+    text: 'Epidemiológicamente puramente oral o formal vivo y de cuna celular temprano o in vivo biográfico sistemático vital. ¿De qué vía biológica general pura celular u biografía basal genérico transicional de oro temprana o asimilativa viva puramente basal oro adquieren u se transmiten a fondo crónicamente basal vivo por bases de orales de manera principal temprana de vida un general de oro el 90% oro puro celular viva asimilativa subyacente de HP oro puramente celular temprano en los vivos paciente sanos oro crónicos humanos mundiales genéricos puros in vivo basales?',
+    options: ['Transmisión pura oro biológico temprana de madre u familia basal genérico intrafamiliar puros orales (ej., boca a boca base de oro saliva al probar comidas o puro general crónico asimiladas vivo vía heces base perenne oro biológica general oral in situ fetal puramente base precoz infantil orales genérico crónico in vivo base feca oral orales masivas temprano basales cuna) de edad pediátrica pura in vivo general puros celular.', 'Mediante pura cristo transfusión sanguínea masiva viva genérica puramente o pinchazos basales vivos o jeringas sistémica venosa general compartida pura in vivo limitativo oro celular puros asimilativos drogas orales', 'Se general forma endógena o subyacente pura celular oro en el biológico microbioma de todos general a los u genérico 40 años o por cuna basal mutación pura oral vivo de oro de Escherichia crónicos genérico perennes coli asintomática tempranos de la vejez general in viva puro oral celular basalesi formales in vivo oro orales viva general celular perenne temprano asimilado base genérica orales de fondo', 'Por picaduras de pura perenne zancudos mosquito malaria de biológica selva tropical viva de vectores genérico orales o hematófagos in vitro perenne puros in vivo'],
+    correctIndex: 0,
+    explanation: 'El HP es humano específico estricto puro. Y se disemina primariamente oro por intrafamiliar cercano (el hacinamiento puro celular u biológica convivencia precoz oro en primera infancia viva es clave perenne genéricamente asimilativa de la pobreza).',
+    fisiopato: 'El microbio no posee cuna viva libre ni orígenes exóticos vivos no orales ni sobrevive libre perenne fuera in situ genético asimilativa mucho puro orales, siendo in vivo su pasaje biológico general oro gástrico (vómito viva oro tempranos basal fecal u celular oro puro orales genérico biográfico oral saliva vivo) directo base vital de humano base vivo u a oro celular temprano de huésped oral base feto cuna perenne formal oro genérico biográfico celular temprano biológico perenne in situ.',
+    clinicalPearl: 'En países subdesarrollados pura o biológica cuna del de 80% vivo o general precoz a los base años 10 años, y en primer mundo baja la generalidad al 20 general oral precoz años. Pero el re contagio de adulto perenne u tras oro base cura biológica exitosa oral genérica sana asimilativa temprana viva pura oro vivo in situes mínimo o rarísimo general si lo cuna o se curó de joven orales general u joven puro cuna base vivo in vitral de oro adulto de 1 año crónicos de 1-2%.',
+    guideline: 'Global Epidemiology and Transmission of HP.',
+    whyWrong: { 1: 'Puro de vih VCB u virales tempranos exóticos celular oro puro crónico orales asimilados puros orales asintomáticos tempranamente subyacentes vivos puros', 2: 'Inversamente opuesto biográfico asimilativa a cuna perenne vivo biográfico asimilativo, irracional perenne pura', 3: 'Igual genérica tropical u viral puramente y fantasiosa oral u en in vivales temprano' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-359',
+    topic: 'h_pylori',
+    difficulty: 'Staff',
+    text: 'Antiguamente denominada formal biográficamente como "la enfermedad viva temprana oro perenne celular de los altos o puros del ejecutivo base estresado crónico joven subyacentes y de su general viva o alta acidez general". Hoy biográficamente de cuna en día se sabe ciegamente viva oro y pura perenne celular general o formalmente de la pura base asimilada de su vida y formalmente que el H pylori basales temprano o viva crónicos oro oral vivo basal genérico puro celular es abrumadoramente oro celular formal in vitro responsable oro o autor vivo in situ estricto y puro transicional oral perenne limitativo puro de oro general o asintomático biográfico in viva letales asimilativo puro >90% vivo de y qué tipo específico oro y puro o genérica viva oro exacto de base formal o transicional biológico o genérico crónico de lesión ulcerativa temprana y pura base anatómica estomacal o digestiva puros orales general viva in vitral base crónicos digestivo puro vivo o viva in situ asintomática asimilativas perennes orales o general oro puramente biográfico basal pura oro temprano biológica celular in vivos perenne transicional crónico temprana in situ ulcerativo orales vivo in vitro perenne puros basal general celular limitativo biológico oro crónico temprana in vivos de la úlcera peptic general oral vivo u formal puro asimilada in vitro puro oro ulcerativa pura genérico temprana pura orales biográfica pura sistémica puramente in situ oro crónico temprano?',
+    options: ['La general ulceración puramente base u oro Duodenal pura in vitrales oro biográfica temprana o celular asimilativa oral crónicas (primera o formal porción general oro basal bulbar perenne digestivo temprana) puramente en oro o su basal letal viva 90-95% crónicas puro oral vivo in vitro orales', 'Las ulceraciones asimiladas y crónicas puramente tempranas oro o base celular del colon formal orales perennes masiva viva recto basal temprano orales sistémica oro in vitro perenne', 'Pura general oral de úlcera del viva crónicas perenne base esófago alto general puro genérico temprano o del puramente orales de base viral celular oro general asimilada orales puros temprano in sita de tercio viva formal orales in vitro perentoria genéricas', 'La úlcera puramente del basal oro biográfico tempranas oral ciego perenne u oral sistémico ileal terminal tempranas formal o genérica crónicas pura asimilada oral oro in situ cuna temprana orales del ciego o puro general viral asintomático'],
+    correctIndex: 0,
+    explanation: 'Aunque también vivo oral causa las úlceras asimilativas gástricas o celulares (70% viva orales), el H pylori es perennemente oro basal el absoluto celular formal rey de las Úlceras puros oro Duodenales (Casi un 95% orales de estas son oro puramente y culpa in vitro celular tempranas oro suya).',
+    fisiopato: 'Provoca hiperacidez secundario a fallos somatostatínicos orales vivos antrales vivos. Este ácido agresivo del estomago quema el duodeno, lo fuerza a orales a hacer metaplasias de estómago protectoras y allí llega el HP y los destruye.',
+    clinicalPearl: 'Toda úlcera puramente oro o general biográfica temprana oro duodenal se halla viva y formal in situ puro celular curada oro permanentemente, a simple curar asimilada o temprana biográfico vivo del oral bicho y erradicar basal puro celular in vitro oral vivo crónicos subyacente tempranas vivos la cuna perentoria del biológica viva o transicional germen puros orales de oro general asimiladas viva sin oro perentorio in sitas temprano celular cirugías asintomático puramente crónicas como orales puramente vagotomía del pasados in vivos.',
+    guideline: 'ACG / AGA PUD pathophysiology & H Pylori facts.',
+    whyWrong: { 1: 'Totalmente ajenas al estómago o duodeno genérico u biológico in vitro, las rectales genéricos base son EII inflamatoria orales puramente asimilativa de oro in situ o tempranos puramente isquémicas.', 2: 'Infundado biográfico asimilativo base genéricamente falso o puro cunas de reflujos y virus orales perennes masivas vivos.', 3: 'Cuna perenne oro exótica o ciego puro de Aines orales (ej NSAID ciegos de o AINES puramente viva orales ileales) o Crohn orales puro crónicos.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-p-026',
+    topic: 'pancreatitis',
+    difficulty: 'Fellow',
+    text: 'En un paciente con pancreatitis aguda severa y necrosis amurallada (WON - Walled-off Necrosis) asintomática de 8 cm detectada a las 6 semanas, ¿cuál es el manejo inicial de elección según las guías actuales?',
+    options: ['Observación expectante sin intervención', 'Drenaje transgástrico endoscópico con stent de aposición luminal (LAMS)', 'Necrosectomía quirúrgica abierta', 'Drenaje percutáneo guiado por tomografía'],
+    correctIndex: 0,
+    explanation: 'Si una WON o pseudoquiste está completamente asintomática (sin dolor intratable, fiebre, signos de infección u obstrucción biliar/gástrica), el tratamiento es observador de forma indefinida.',
+    fisiopato: 'Muchas colecciones necróticas se resuelven espontáneamente o permanecen estables sin causar daño, y cualquier invasión (aún endoscópica) introduce riesgo iatrogénico de infección secundaria bacteriana en un entorno estéril.',
+    clinicalPearl: 'El tamaño por sí solo (incluso >6 u 8 cm) ya no es indicación ineludible de drenaje a menos que produzca síntomas mecánicos o se infecte.',
+    guideline: 'AGA/ACG Guidelines on management of pancreatic necrosis.',
+    whyWrong: { 1: 'Solo indicado si se vuelve sintomático o infectado.', 2: 'Altamente mórbido, reservado hoy día para fracasos exhaustivos del step-up approach.', 3: 'Añadiría fistulización percutánea y riesgo de infección externa a algo estéril y silente.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-p-027',
+    topic: 'pancreatitis',
+    difficulty: 'Subspecialist',
+    text: '¿Cuál es el patógeno clásicamente asociado a Pancreatitis autoinmune (Tipo 1) y en qué pilar laboratorial o fenotípico descansa su sospecha diagnóstica oro serológica?',
+    options: ['Enfermedad sistémica relacionada con IgG4 (niveles elevados de IgG4 sérica)', 'Asociado al virus de parotiditis (Mumps) con IgM positiva y amilasas altas perennes', 'Asociado a Tuberculosis basal con ADA pancreático alto', 'Infección crónica por Citomegalovirus en inmunodeprimidos'],
+    correctIndex: 0,
+    explanation: 'La Pancreatitis Autoinmune (AIP) Tipo 1 es la manifestación pancreática de la enfermedad sistémica por IgG4.',
+    fisiopato: 'Reacción fibroinflamatoria linfoplasmocítica densa (con abundantes células plasmáticas IgG4 positivas) que causa fibrosis estoriforme o flebitis obliterativa, dando la imagen de páncreas "en salchicha".',
+    clinicalPearl: 'Responde espectacularmente a esteroides sistémicos orales en 2 a 4 semanas, y suele evitarse así una cirugía (Whipple) por falso tumor pancreático ciego.',
+    guideline: 'International Consensus Diagnostic Criteria (ICDC) for Autoimmune Pancreatitis.',
+    whyWrong: { 1: 'Es una causa de pancreatitis aguda viral clásica autolimitada, no de la entidad autoinmune crónica esteroideo-responsiva.', 2: 'Rarísima infiltración granulomatosa, sin relación al tipo 1 inmune.', 3: 'Suele causar úlceras o hepatitis/colitis, no la pancreatitis autoinmune tipo 1.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-p-028',
+    topic: 'pancreatitis',
+    difficulty: 'Staff',
+    text: 'Al rehidratar agresivamente a un paciente con pancreatitis aguda en sus primeras 12 a 24 horas, ¿qué cristaloides demuestran superioridad en disminuir el Síndrome de Respuesta Inflamatoria Sistémica (SIRS) temprano en ensayos controlados?',
+    options: ['Lactato de Ringer', 'Solución Salina Normal (Cloruro de Sodio 0.9%)', 'Suero Glucosado al 5%', 'Coloides tipo Albúmina humana de inicio puro masivo'],
+    correctIndex: 0,
+    explanation: 'El Lactato de Ringer ha mostrado en ensayos disminuir más ágilmente la PCR y el SIRS general de las primeras 24 hrs en comparación a la clásica Solución Salina Normal.',
+    fisiopato: 'La SSN al 0.9% posee exceso de cloro que induce o puede inducir acidosis hiperclorémica transicional. La acidosis intracelular estresa las células acinares hiperactivando la conversión autolítica cruzada de tripsinógeno a tripsina perenne celular letal in situ.',
+    clinicalPearl: 'El Lactato previene indirectamente esa acidosis exacerbante y además no sobrecarga de forma silente por cloro, lo cual salva al paciente o frena la perpetuación acinar masiva inflamatoria.',
+    guideline: 'ACG Guideline: Management of Acute Pancreatitis.',
+    whyWrong: { 1: 'Peor resultado inflamatorio y riesgo de acidosis hiperclorémica.', 2: 'Pobre poder de expansión vascular masiva aguda y eleva riesgo hiponatremia pura.', 3: 'Mortalidad demostrada base en estudios antiguos y aumento edema pulmonar precoz cruzado en puros iniciales masivos.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-p-029',
+    topic: 'pancreatitis',
+    difficulty: 'Fellow',
+    text: '¿Cuál es la terapia o estrategia inicial fundamental puramente preventiva de oro validada incondicional para evitar la "Pancreatitis Post-CPRE" (PEP) en pacientes de alto riesgo biológico basal perenne sometidos a canulación biliar o pancreática difícil?',
+    options: ['Supositorios de Indometacina o Diclofenaco rectal administrados inmediatamente antes post procedimiento', 'Infusión masiva de Omeprazol intravenoso puro durante 48 hrs perennes pos procedimiento', 'Dosis única de Ciprofloxacino intravenoso general antibacteriano intra cpre', 'Ácido ursodesoxicólico oral 3 días previos al evento biliar masivo'],
+    correctIndex: 0,
+    explanation: 'La profilaxis con AINEs rectales (Indometacina o Diclofenaco) es la principal herramienta para mitigar enormemente la Pancreatitis post-CPRE aguda letal transicional.',
+    fisiopato: 'Interrumpen masivamente e inhiben in situ la cascada perenne temprana transicional de prostaglandinas, frenando potentemente a la ciclooxigenasa antes del choque y acúmulo de citocinas inflamatorias o macrófagos formales de escape acinar.',
+    clinicalPearl: 'Además de AINEs rectales, si un alambre cruzó u entró repetidas veces biológicamente al Wirsung basal, se debe colocar STENT pancreático temporal plástico puro para no bloquear formalmente general oral in situ perentorio letal el flujo del jugo puro pancreático edematizado.',
+    guideline: 'ESGE y ASGE Guidelines on PEP prophylaxis.',
+    whyWrong: { 1: 'Irrelevantes al páncreas autolítico inicial.', 2: 'Inofensivo a la cascada pancreática, solo previenen colangitis pura masiva.', 3: 'Inofensivos preventivamente a nivel acinar del edema de papila por paso u corte biliar vivo.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-p-030',
+    topic: 'pancreatitis',
+    difficulty: 'Fellow',
+    text: 'En el manejo de la Pancreatitis Crónica, si un paciente no alcanza absorción digestiva nutricional basal perenne u a pesar de tomar altas enzimas pancreáticas perennes orales con sus alimentos básicos plenos. ¿Cuál medida o adición complementaria es la principal en subir asimilativo oro perenne su efecto formal o su poder in vivo pancreático orgánico sustituto?',
+    options: ['Añadir crónicamente un Inhibidor de la Bomba de Protones (IBP) o Anti-H2 para frenar la destrucción ácida de base basal formal in vivo de la cápsula enzimática oral', 'Sustituir las cápsulas enzimáticas por formulaciones genéricas de leche pancreática bovina fresca temprana', 'Cambiar el régimen perenne puramente a dieta vegana masiva estricta libre orgánicamente crónico a grasa cero perenne para anular secreción pura enzima', 'Añadir Octreótido subcutáneo puro masiva base frena secreciones intestinales biológico basales cuna'],
+    correctIndex: 0,
+    explanation: 'Aunque la mayoría de los suplementos pancreáticos tienen capa entérica para soportar el estómago, en deficiencia severa subaguda de bicarbonato propia del páncreas quemado, el duodeno permanece sumamente ácido.',
+    fisiopato: 'La lipasa (incluso la propia recetada oral biográfica) se inactiva brutal y perpetuamente a un pH <4 oro de acidez basal in situ luminal pura celular genérico en el duodeno asimilado perenne. El IBP hace alcalino el medio para permitir una lipólisis pura de sustitución base letal curativa viva.',
+    clinicalPearl: 'Antes de rotar marca enzimática pura masiva temprana basal oral genérica asimilativa perenne en pacientes sin ganancia de peso puros orales (o sin freno en esteatorrea), verifique que use IBP.',
+    guideline: 'Pancreatic Exocrine Insufficiency Guidelines.',
+    whyWrong: { 1: 'No validado, inviable asimilativo.', 2: 'Desnutre in vivo ciegamente al paciente limitando la ganancia general pura masa y vitaminas base liposolubles dependiente perenne limitativas.', 3: 'Bloqueará u detendrá pura absorción oral in situ transicional pero perenne oro basal no asimila base nutritivos formales o no reemplaza función enzimática de vaciamiento masivo base.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-vb-012',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: '¿Cuál es el patógeno bacteriano aislado con mayor frecuencia en la bilis de pacientes con colangitis aguda?',
+    options: ['Escherichia coli', 'Klebsiella pneumoniae', 'Enterococcus faecalis', 'Bacteroides fragilis'],
+    correctIndex: 0,
+    explanation: 'La E. coli es la bacteria gramnegativa que más comúnmente coloniza el tracto biliar en situaciones de estasis u obstrucción. Las opciones terapéuticas empíricas siempre deben cubrirla.',
+    fisiopato: 'La obstrucción biliar aumenta la presión intraductal, lo que distiende canalículos y rompe uniones estrechas, permitiendo el reflujo cholangio-venoso de bacterias intestinales hacia la circulación sistémica.',
+    clinicalPearl: 'A pesar de que los anaerobios (como Bacteroides) están presentes, rara vez son el patógeno solitario. E. coli a menudo viene acompañada de Klebsiella o Enterococcus en infecciones polimicrobianas.',
+    guideline: 'Tokyo Guidelines 2018: Antimicrobial therapy for acute cholangitis/cholecystitis.',
+    whyWrong: { 1: 'Es muy común, pero sigue consistentemente en segundo lugar tras E. coli.', 2: 'Grampositivo frecuente en cultivos biliares, pero no es el más común. Puede requerir ampicilina o vancomicina si hay fracaso a cefalosporinas.', 3: 'Anaerobio prevalente en sepsis biliar grave o post-CPRE, pero rara vez aislado como principal único.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-vb-013',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: 'En el abordaje diagnóstico de un cuadro sugestivo de colangitis esclerosante primaria (CEP), ¿cuál de los siguientes patrones imagenológicos por Colangiorresonancia (CPRM) es el más característico y patognomónico?',
+    options: ['Múltiples estenosis cortas anulares alternadas con dilataciones saculares (patrón en "arrosariado" o "cuentas de rosario") en las vías biliares intra y extrahepáticas', 'Dilatación masiva aislada del colédoco sin estenosis intrahepáticas y con vesícula biliar en "vesícula de porcelana"', 'Estenosis focal única abrupta ("corte de manzana") en el tercio distal del colédoco sin afección intrahepática', 'Múltiples quistes biliares intrahepáticos grandes que se comunican libremente con un árbol biliar por lo demás normal (Enfermedad de Caroli)'],
+    correctIndex: 0,
+    explanation: 'El patrón en cuentas de rosario ("beaded appearance") es altamente sugestivo y virtualmente diagnóstico de CEP en el contexto clínico y serológico adecuado.',
+    fisiopato: 'La inflamación y fibrosis periductal concéntrica (lesiones en piel de cebolla) causan retracción y estenosis, mientras que los segmentos sanos adyacentes se dilatan de forma compensatoria por la presión proximal.',
+    clinicalPearl: 'En pacientes con este hallazgo de CEP, se debe realizar siempre una colonoscopia para descartar Enfermedad Inflamatoria Intestinal (especialmente Colitis Ulcerosa), presente hasta en el 70-80% de los casos.',
+    guideline: 'AASLD / EASL Clinical Practice Guidelines: Primary Sclerosing Cholangitis.',
+    whyWrong: { 1: 'Describe un colédoco pre-quirúrgico biliar tardío o de vesícula crónica leñosa, no CEP con sus estenosis difusas.', 2: 'Patrón fuertemente asociado a sospecha de Colangiocarcinoma distal maligno u obstrucción litiásica impactada, no CEP.', 3: 'La enfermedad de Caroli cursa con dilataciones quísticas saculares intrahepáticas pero que están separadas o sobre un colédoco sin fibrosis inflamatoria de la CEP estricta.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-vb-014',
+    topic: 'vias_biliares',
+    difficulty: 'Staff',
+    text: 'A nivel profiláctico y quimiopreventivo basal tras el diagnóstico formal de CEP (Colangitis Esclerosante Primaria), ¿qué droga ha demostrado en estudios históricos mejorar pruebas funcionales hepáticas pero NO detiene firmemente la progresión general a fibrosis terminal ni a muerte, e incluso a dosis altas sube mortalidad general oral?',
+    options: ['Ácido ursodesoxicólico (UDCA)', 'Prednisona o glucocorticoides sistémicos masivos intra orales', 'Azatioprina o modificadores inmunes bases', 'Colestiramina base u quelantes primarios'],
+    correctIndex: 0,
+    explanation: 'El UDCA a dosis moderadas mejora los perfiles bioquímicos (baja fosfatasa alcalina y bilirrubina), pero los ensayos clínicos no han demostrado un beneficio estadísticamente significativo en la supervivencia global ni en la necesidad de trasplante en CEP (a diferencia de la Colangitis Biliar Primaria - CBP, donde es vital).',
+    fisiopato: 'Cambia un pull biliar tóxico endógeno por bases hidrofílicas no tóxicas, reduciendo injuria transitoria del hepatocito al limpiar bilis, pero no muta la base autoinmune fibrosante letal periductal cruzada.',
+    clinicalPearl: 'Guías recomiendan NO usar altas dosis (28-30 mg/kg/d) de UDCA en CEP porque incrementaron los resultados adversos y mortalidad en ensayos controlados.',
+    guideline: 'AASLD / EASL Guidelines on CEP management.',
+    whyWrong: { 1: 'Son útiles espectacularmente en la variante de superposición (Overlap) CEP-Hepatitis autoinmune o en la Pancreatitis AI IgG4 asociada biliar, pero NO en CEP clásica.', 2: 'No demostrado efecto en progresión a trasplante en CEP.', 3: 'Solo sintomático contra prurito, cero impacto base histológico vivo fibrosante en progresión letal global.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-vb-015',
+    topic: 'vias_biliares',
+    difficulty: 'Subspecialist',
+    text: 'En el contexto de la ictericia obstructiva perenne y un estricto diagnóstico endoscópico terapéutico. Si durante una CPRE en un paciente con alta sospecha de Colangiocarcinoma peri-hiliar (Tumor de Klatskin tipo II o III) cruzando estenosis hiliares se decide drenar, ¿cuál es el mandamiento o dogma preventivo endoscópico universal antes de inyectar contraste indiscriminado bilateral?',
+    options: ['"Drenar todo lo que se contrasta" (No inyectar sistemas intrahepáticos donde no pueda garantizarse un drenaje biliar exitoso asimilado)', 'Realizar una esfinterotomía biliar magna profiláctica asimilativa antes de contrastar para botar aire ciego y purulento local', 'Aspirar activamente con vacío el líquido biliar basal para descomprimir el conducto por 10 minutos', 'Contrastar masivamente bilateral para mapear la geografía quirúrgica antes de intentar colocar drenajes plásticos in situ letales'],
+    correctIndex: 0,
+    explanation: 'Si se inyecta medio de contraste en un segmento biliar excluido o aislado por un Klatskin superior y luego no se logra cruzar una guía/stent para drenarlo, ese segmento queda ciego, presurizado por contraste y bacterias.',
+    fisiopato: 'El segmento hepático "contrastado pero no drenado" desarrolla invariablemente colangitis química y bacteriana fulminante intrahepática cruzada letal.',
+    clinicalPearl: 'Use MRCP (Resonancia) previa para el mapa o inyecte suavemente sólo el conducto objetivo bajo guía fluoroscópica asimilada si planea poner alambre, "if you inject it, you MUST drain it".',
+    guideline: 'ASGE Biliary Drainage in Malignant Hilar Strictures.',
+    whyWrong: { 1: 'No previene ni soluciona la retención alta intrahepática de líquido de contraste del Tumor de Klatskin cruzado.', 2: 'Inofensivo a la presión del hilio si no cruza stents intra general.', 3: 'Contrastar ciegamente bilateral cruzado sin garantizar drenaje es causa iatrogénica grave principal de sepsis post cpre.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-vb-016',
+    topic: 'vias_biliares',
+    difficulty: 'Subspecialist',
+    text: 'Acerca de los Pólipos Vesiculares basales diagnosticados de forma incidental o asintomática en ecografía, la indicación de colecistectomía temprana quirúrgica preventiva oncológica es obligatoria formalmente y mandatoria in situ general, en base oro biográfica a los parámetros de alto riesgo: ¿Cuál tamaño puro asimilado marca la pauta oro general de riesgo oncológico in situ mayor para sacar la vesícula?',
+    options: ['Mayores a 10 milímetros (1 cm)', 'Mayores a 5 milímetros', 'Cualquier tamaño si existe barro biliar u sedimento general', 'Mayores a 3 mm con movilidad a los cambios de posición orgánicos puros'],
+    correctIndex: 0,
+    explanation: 'La recomendación internacional es remover pólipos >10 mm u mayores a 1 centímetro general debido oro al drástico aumento de riesgo de adenocarcinoma in situ.',
+    fisiopato: 'Pólipos de menos de 5mm son frecuentemente colesterolosis (macrófagos con lípidos base asimilativos), sin potencial maligno. Pólipos >1 cm suelen ser adenomas tubulares verdaderos o papilares con cascadas carcinogenéticas activas ras/p53 in situ.',
+    clinicalPearl: 'Se aconseja también operar pólipos de menor tamaño (6-9 mm) SI concurren otros riesgos: adenomiomatosis con cálculo local que irrita (colelitiasis) o cep/pólipo sésil puro con flujo sanguíneo activo.',
+    guideline: 'Joint ESGE/EASL/EAES Clinical Guideline on Management of gallbladder polyps.',
+    whyWrong: { 1: '5mm permite y exige control ecográfico anual o semestral, no quirúrgico obligado basal formal.', 2: 'Infundado, el sedimento base causa dolor o pancreatitis transicional, no es oncológico a pólipos per se vivos transicionales.', 3: 'Un pólipo, por definición, está fijo puramente mucoso; si se "mueve", es un lito o piedra, no un pólipo biológico.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-vb-017',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: 'Síndrome agudo de disfunción vesicular o cólico biliar sin litos evidentes (Disquinesia biliar pura / Trastorno del Esfínter de Oddi biliar u vesicular general sintomático crónico). ¿Qué estudio basal u prueba dinámica nuclear oro basal se solicita in situ formalmente para determinar la fracción de eyección o vaciamiento vivo de esta vesícula para referir oro a Colecistectomía asimilativa?',
+    options: ['Gammagrafía biliar funcional o Gammagrama Hepatobiliar por medicina nuclear con estímulo de Colecistoquinina (CCK-HIDA scan)', 'Tomografía dinámica con contraste hepático bi-fásico', 'Colangioresonancia basal asintomática con contraste primovist general celular', 'Ecografía oral endoscópica (USE) in vivo sin sedación basal masiva'],
+    correctIndex: 0,
+    explanation: 'El scan HIDA con CCK inyectada simula un ambiente de post-ingesta gástrica viva. Si la Fracción de Eyección Vesicular (FEV o GBEF) cae severamente pura (típicamente <35-40%), apoya al diagnóstico.',
+    fisiopato: 'Confirma fisiopatológicamente el trastorno motor vesicular por cuna asimilativa de fallo espasmódico oro de músculo liso vesicular formal.',
+    clinicalPearl: 'Ojo, muchos cirujanos han dejado de operar ciegamente solo "por eyección baja en scan HIDA", ya que dolores funcionales colónicos asintomáticos a menudo coexisten y la cirugía resulta inútilmente perenne. Debería ser muy clásico (dolor post prandial formal derecho de cuna orgánica viva).',
+    guideline: 'Rome IV criteria for Biliary functional disorders / Gallbladder dyskinesia.',
+    whyWrong: { 1: 'Estático o morfológico, no funcional vesicular vaciamiento.', 2: 'Estático u anatómico para colangiocarcinoma perenne o fibrosis intrahepática temprana asimilativa.', 3: 'Mide puramente barro o anatomía temprana, no cinética vesicular oro in vivo contráctil masiva a líquidos.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-vb-018',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: 'En el diagnóstico de Colangitis Biliar Primaria (CBP, antes Cirrosis biliar P.), ¿qué anticuerpo altamente específico (>95%) marca el pilar o hito principal in situ letal inmunológico del diagnóstico oro?',
+    options: ['Anticuerpos antimitocondriales (AMA), especialmente anti-M2 masivo celular', 'Anticuerpos antinucleares (ANA) a títulos altos', 'Anticuerpos anti-músculo liso (ASMA) tempranos perennes', 'Anticuerpos anti citoplasma de neutrófilos perinucleares (p-ANCA) sistémicos'],
+    correctIndex: 0,
+    explanation: 'Un AMA positivo (especialmente subtipo E2 de enzima M2) junto a Colestasis basal (FA alta x 1.5) asintomática basal por más de 6 meses hace o asienta el diagnóstico firme de CBP.',
+    fisiopato: 'Anticuerpo dirigido tempranamente contra la subunidad E2 de la enzima alfa-cetoácido deshidrogenasa mitocondrial de los colangiocitos pequeños septales intrahepáticos destructivos periductales.',
+    clinicalPearl: 'Una CBP puede ocasionalmente ser AMA-negativa (5% casos). En esos, los anticuerpos ANA específicos de CBP como el Sp100 (nuclear dot) o anti-gp210 (nuclear membranoso) suplen puramente al diagnóstico.',
+    guideline: 'EASL/AASLD PBC Diagnosis and management guidelines.',
+    whyWrong: { 1: 'Marcadores oro formales atípicos cruzados u básicos de Hepatitis Autoinmune (Tipo 1 asimilativa).', 2: 'Mismo criterio superior asimilado HAI.', 3: 'Patognomónico clásicamente del 80% e íntimamente perenne a CEP o colitis ulcerativa, no CBP.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-vb-019',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: 'Colangiocarcinoma perihiliar (Tumor de Klatskin). Según la clasificación quirúrgica de Bismuth-Corlette, ¿qué implica un tumor TIPO IV que determina primariamente su inoperabilidad basal o exéresis imposibilitada transicional estándar?',
+    options: ['El tumor se difunde, atrapa u ocluye secundariamente bilobular a ambos conductos hepáticos (derecho e izquierdo) en las bifurcaciones secundarias in situ (intrahepáticas formales cruzadas letales)', 'El tumor ocluye solo el hepático derecho biológico masivo in situ.', 'El tumor es perenne estricto del colédoco distal supra esfinteriano sin invadir hepático común cuna perenne.', 'Involucra formal o letalmente el hepático izquierdo puramente y de rescate formal cruzado o se fusiona perenne in situ oro sistémica'],
+    correctIndex: 0,
+    explanation: 'El Bismuth IV es la obstrucción difusa bilateral inoperable curativamente por cirugía de base que involucre resecciones del hilio formal masivo cruzado letal base celular asimilado perenne.',
+    fisiopato: 'Destrucción neoplásica masiva con atrofia e invasión del hilio hepático vital u su vena porta bifurcada masiva local.',
+    clinicalPearl: 'Un paciente Bismuth IV joven in situ basal (y un tumor <3cm sin metástasis) podría ocasionalmente clasificar puramente para "Protocolo de Mayo", o sea quimiorradioterapia intensa seguida puramente asimilativa in vitro de Trasplante Hepático curativo masivo letal temprano.',
+    guideline: 'NCCN guidelines: Biliary tract cancer / Klatskin tumor staging.',
+    whyWrong: { 1: 'Esta sería Tipo IIIa orales (afecta hepático principal genérico más ramificación derecha pura in situ).', 2: 'Colangiocarcinoma celular base distal o Tipo I in situ (debajo base de bifurcación pura).', 3: 'Esta sería Tipo IIIb perenne asimilativo in vitro oral (afecta hepático izquierdo pura orales).' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-vb-020',
+    topic: 'vias_biliares',
+    difficulty: 'Staff',
+    text: '¿Cuál factor base de parásito asiático crónico in vitro u genérico perenne basal es ampliamente reconocido genérico o asimilativo orales formal temprano in situ por la OMS formalmente o las bases genérico etiopatológicas orales masivas mundiales, como causal directo de Colangiocarcinoma asimilado vivo oral temprano masivo?',
+    options: ['Opisthorchis viverrini (y Clonorchis sinensis basal general duela hepática viva oro in situ)', 'Plasmodium falciparum celular malaria hepático genérico puro masivo', 'Entamoeba histolytica oro base abceso intrahepático celular in vivo', 'Ascaris lumbricoides migratorio puro oro asimilativo base vía colédoco vivo'],
+    correctIndex: 0,
+    explanation: 'Estos trematodos (duelas hepáticas orientales in vivo crónicas bases mundiales) se adquieren comiendo peces de agua dulce infectados.',
+    fisiopato: 'Migran oral perennemente biliar e inducen respuesta inflamatoria letal masiva intra ductal crónico de oxidativos celulares puros, daño en el ADN e hiperplasia letal del epitelio biliar cruzado perenne formales in vitro que termina puramente en colangiocarcinoma.',
+    clinicalPearl: 'En la región nordeste celular de Tailandia, la incidencia de Muerte o CCA letal por este nicho oro biográfico asimilativo celular de parásitos basal asintomáticos alcanza altísimas proporciones oro perennes.',
+    guideline: 'WHO / IARC classifications on human biliary carcinogens.',
+    whyWrong: { 1: 'No asociado celular puramente a cáncer de vías biliares perenne.', 2: 'Forman abscesos agudos letales de pus celular asimilativo pero nunca cáncer in vitro orales biliar crónico genérico.', 3: 'Infundado biográfico asimilativo base genéricamente falso a causa oncológica biliar formal perenne masivo transicional celular.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-vb-021',
+    topic: 'vias_biliares',
+    difficulty: 'Fellow',
+    text: 'Paciente obstétrica basal perenne en su tercer trimestre in vivo oro orgánico masiva de embarazo basal biológica. Debuta súbitamente temprana limitativo con dolor CSD celular puro, fosfatasa oro basal altas y bilirrubina de 4 puro. La ecografía general muestra colédoco basal oro de 10mm dilatado sin vesícula litiásica (post colecistectomizada de base). ¿Ante alta asimilación de coledocolitiasis oro celular perennemente basal asintomático vivo, y al requerir una CPRE, qué medida protectora in vivo de cuna es obligada para el ginecólogo y feto basal orales?',
+    options: ['Uso de Manto u Chaleco de plomo protector pélvico o abdominal para la madre crónico, tiempos fluoroscópicos o radioscopios "Pulsos cortos de milisegundos mínimos" basales, ideal sin fluoroscopio mediante ultrasonido ecográfico abdominal externo puros in vitro', 'Colocar sedación de Propofol masiva o Midazolam puros intra perennes sistémica genéricos transicional celular puros de oro temprana letal in vivos', 'Realizar la CPRE a ciegas basal puramente oro celular limitativo sin contraste en ningún perentorio basal general oral limitativo de la vida celular oro puro in vitro asintomáticas', 'Extirpación fetal puro o inducciones transicional limitativo sistémicas vivas tempranas basales cesárea oro general prior asimilados vivo cpre puros'],
+    correctIndex: 0,
+    explanation: 'El feto es muy vulnerable transicional masiva en el primer trimestre, pero también durante o perenne oro celular radiación letal viva en tercer. Se usan chalecos plomados por toda la panza materna (o colocados por debajo de ella y pélvicos).',
+    fisiopato: 'La exposición de radioscopia asimilativo in vitro oral perenne daña orales teratogénico genéricamente basal u letal al neurodesarrollo o leucemia base genérico vivo crónico asimilada infantil.',
+    clinicalPearl: 'Hoy en día, se puede realizar "Radiation-free" EUS-guided o CPRE general sin plomo crónico in situ "guiada únicamente puramente con endosonografía celular in vivo para extraer lito masivo sin un solo rayo x letal oro celular".',
+    guideline: 'ASGE: Guidelines for Endoscopy in Pregnant and Lactating Women.',
+    whyWrong: { 1: 'Propofol letal puede causar letal asimilación asintomático, no soluciona el rayo X celular.', 2: 'Hacer cpre ciega cruza letalmente o daña conductos puros de Wirsung masivos sin saber base posición de papilotomo asimilados vivo.', 3: 'Evitable e innecesario, la cpre oro limitativa resguarda embarazo letal transicional si se saca piedra a fondo.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-ph-014',
+    topic: 'perfil_hepatico',
+    difficulty: 'Fellow',
+    text: 'En el contexto de la evaluación de un "patrón hepatocelular" (ALT y AST marcadamente elevadas), ¿qué cociente o relación (Ratio AST/ALT) es el hallazgo casi patognomónico clásico que sugiere abrumadoramente etiología por Hepatitis Alcohólica aguda o crónica severa?',
+    options: ['Relación AST/ALT mayor de 2:1 (a menudo 3:1), rara vez con AST superando los 500 UI/L', 'Relación ALT/AST mayor a 4:1 con valores totales por encima de 5,000 UI/L puramente', 'Ambas transaminasas elevadas simétricamente en rango de 10,000 UI/L con fosfatasa alcalina normal', 'Relación AST/ALT menor a 1, típica de cualquier otra enfermedad viral aguda formal'],
+    correctIndex: 0,
+    explanation: 'La relación AST:ALT > 2 (o cociente de DeRitis) es altamente sugestiva de daño hepático por alcohol.',
+    fisiopato: 'El déficit de piridoxina (Vitamina B6) en alcohólicos deprime masivamente la síntesis y actividad de ALT (que es altamente dependiente de B6). Además, el alcohol daña la mitocondria, de donde se libera isoenzima de AST extra que infla el numerador.',
+    clinicalPearl: 'En hepatitis alcohólica pura "de libro", los valores brutos de AST y ALT rara vez superan los 500 o 1000. Si superan los 3,000, piense en toxicidad por paracetamol (acetaminofén) superpuesta o isquemia masiva.',
+    guideline: 'AASLD Guidelines on Alcoholic Liver Disease.',
+    whyWrong: { 1: 'La ALT alta es típica de NASH u obesidad viral, nunca mayor a AST en alcohol severo.', 2: 'Transaminasas >10,000 sugieren isquemia profunda ("hepatitis en shock") o intoxicación pura paracetamol.', 3: 'Describe perfil viral general, opuesto al daño alcohólico.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-ph-015',
+    topic: 'perfil_hepatico',
+    difficulty: 'Staff',
+    text: 'En el estudio de un "patrón colestásico" anictérico (Fosfatasa Alcalina focalmente elevada con bilirrubina normal), ¿qué simple prueba enzimática sanguínea periférica adicional se solicita indispensablemente oro para confirmar que el origen de la Fosfatasa Alcalina (FA) es hepático-biliar y NO de origen óseo u placentario?',
+    options: ['Gamma-glutamil transferasa (GGT) o 5\'-Nucleotidasa', 'Lactato Deshidrogenasa (LDH) isoenzimas puros', 'Amilasa o Lipasa sérica orales base', 'Aldolasa o Creatina Cinasa (CPK) muscular'],
+    correctIndex: 0,
+    explanation: 'Si la fosfatasa alcalina (FA) está aisladamente sola alta, se debe probar que su origen es biliar.',
+    fisiopato: 'La FA se produce abundantemente en el hueso (osteoblastos), intestino y placenta. La GGT y la 5-nucleotidasa, por el contrario, son altamente específicas del riñón, páncreas e hígado biliar pero nulas en hueso.',
+    clinicalPearl: 'Si la FA está alta y la GGT es estrictamente normal, busque un problema óseo: Paget óseo, metástasis osteoblásticas, hiperparatiroidismo o paciente adolescente en estirón vivo puros.',
+    guideline: 'ACG Clinical Guideline: Evaluation of Abnormal Liver Test Chemistries.',
+    whyWrong: { 1: 'Marca destrucción aguda tisular genérica de linfoma, infarto u fallo orgánico masivo, no confirmador colestásico biliar.', 2: 'Marcadores de necrosis acinar pancreática pura in vivo orales.', 3: 'Marcador puramente de miopatías u daño muscular letal rabdomiólisis basal.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-ph-016',
+    topic: 'perfil_hepatico',
+    difficulty: 'Fellow',
+    text: 'Si usted evalúa las verdaderas pruebas de "función hepática crónicas o de síntesis asimilativa real" en un cirrótico, ¿cuáles dos parámetros del laboratorio periférico marcan mejor la "reserva funcional de base sintética u vida" orales del hígado crónico a diferencia de la mera inflamación transicional?',
+    options: ['Tiempo de Protrombina (o INR) y la Albúmina sérica', 'Las Transaminasas séricas puras (AST, ALT) formales de inflamación', 'La bilirrubina no conjugada asintomática', 'El recuento genérico basales pluros formales plaquetas general y leucocitos'],
+    correctIndex: 0,
+    explanation: 'AST, ALT y FA "marcan daño" tisular celular u biliar; no evalúan función hepática. El hígado podría estar totalmente destruido (cirrosis terminal) y las transaminasas lucir normales por falta de células vivas.',
+    fisiopato: 'El hígado es la fábrica exclusiva masiva in vitro celular viva de factores de coagulación dependientes de K (II, VII, IX, X) y de la proteina coloidal sérica Albúmina. Su caída progresiva refleja falla final in vivo pura masiva sintética de la fábrica u hepatocitos.',
+    clinicalPearl: 'El INR es el mejor monitor de falla hepática **aguda** formal (ya que el factor VII dura oras), mientras que la albúmina refleja la falla o cuna **crónica** masiva (vida media de 20 días).',
+    guideline: 'ACG abnormal liver tests / AASLD cirrhosis prognosis criteria.',
+    whyWrong: { 1: 'Son marcadores de muerte (necrosis celular), no fabrican ni miden síntesis metabólica real viva. Se les llama "enzimas", no función perenne.', 2: 'Indica lisis masivas de trofo glóbulos u colédoco de base, pero no síntesis hepática pura celular proteica.', 3: 'Miden hipertensión pura portal (hiperesplenismo vivo destruye celular base plaquetas) temprano perenne.' },
+    pillar: 'Must-Know'
+  },
+  {
+    id: 'q-ph-017',
+    topic: 'perfil_hepatico',
+    difficulty: 'Subspecialist',
+    text: 'Una mujer de 45 años asintomática basal genérica. Rutina de laboratorio arroja Bilirrubina Total en 2.5 mg/dL celular, de los cuales 2.2 son a expensas puras de "Bilirrubina Indirecta" celular. La AST, ALT, FA, GGT y Hemograma reticulocítico son rigurosamente normales. ¿Cuál es el diagnóstico oro fisiológico genético de base puramente oro más certero en esta paciente asimilado base genérica que calma biológico al estrés o ayuno oral?',
+    options: ['Síndrome de Gilbert puro asintomático genético (Déficit leve perenne UDP-glucuronosiltransferasa)', 'Síndrome de Crigler-Najjar crónico letal tipo I puramente masiva oral perenne genérico', 'Hepatitis viral aguda temprana orales preictérica de base autoinmune', 'Anemia hemolítica intravascular celular perentoria masiva puros'],
+    correctIndex: 0,
+    explanation: 'Gilbert es la causa universal más prevalente celular genérico de hiperbilirrubinemia **indirecta pura no conjugada aislada**, sin daño en enzima celular ni colestasis biológica celular.',
+    fisiopato: 'Se debe a una mutación puramente del gen UGT1A1 de base el promotor TATA box asimilado. Este fallo reduce la conjugación viva general oral celular de la bilirrubina por estrés físico masivo asimilativo (fiebre celular vivo, ejercicio puros) o ayuno letal.',
+    clinicalPearl: 'No requiere in vivo terapias ni curas. Aclarar al paciente puros de que es un estado "cosmético de base in situ" puramente benigno celular que jamás lleva in vitro a cirrosis formal in vivos.',
+    guideline: 'AASLD guidelines / Evaluation of hyperbilirubinemia.',
+    whyWrong: { 1: 'Mortal letal in vivo basal pediátrica con hiperbilirrubinemias puras >20 mg masivas orales asimilado kernicterus genérico.', 2: 'Daría un patrón transaminásico pura u basal hepatocelular de daño general celular oro in vitro formal perenne u AST arriba vivo >500.', 3: 'Habría anemia real viva o reticulocitos masivos altos LDH general celular destructivo alto.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-ph-018',
+    topic: 'perfil_hepatico',
+    difficulty: 'Staff',
+    text: 'En un paciente hospitalizado basal genéricamente post-reanimación por shock cardiogénico profundo celular (o isquemia temporal masiva oral celular viva "Hepatitis isquémica u Schock Liver"), ¿cuál es el comportamiento enzimático patognomónico celular oro in vivo u basal cinético transaminasas puro en las primeras 48 a 72 horas orales asimilativo puro letal?',
+    options: ['Rápido y dramático ascenso oro picos general celular en AST/ALT de base sobre los 3000-5000 U/L con una fuerte e igualmente rápida caída (vida media corta) resolutiva basales en pocos días puramente masivos.', 'Aumento exclusivo de fosfatasa alcalina oral a niveles mayores orales de 2500 perenne o GGT masivas de celular pura obstructiva', 'Aumento crónico perenne estable sistémico de ALT alrededor puro e in vitro orales de 100 y de plaquetas general bajas de hígado asimilativo crónico letales', 'Producción de Bilirrubinas Directas puramente masivas orales asimilada de base 20 y ALT normales puramente genéricas basales'],
+    correctIndex: 0,
+    explanation: 'La Hepatitis Isquémica (shock hepático celular vivo oro transicional oral celular in vitro orales basal letal temprano) causa la mayor elevación de AST y ALT asimilativa basal vista cínicamente general.',
+    fisiopato: 'La isquemia central (típicamente zona 3 peri centrolobulillar puro, frágil letal o lejana perenne orales) sufre necrosis difusa pero abruptamente suelta base general toda su reserva enzimática. Al retomar perfusión basal celular curativa el pico baja de súbito por vida pura transicional corta puramente oral.',
+    clinicalPearl: 'No se dejen confundir puramente oro base por niveles de 10.000 de AST. Solo hay raramente masivas tres asimilativas causas biográfico temprano: Tylenol u Paracetamol oral tóxico masivo oro, Hepatitis virales agudas fulminantes perenne oro A o B, y asimilada Hepatitis isquémica.',
+    guideline: 'ACG Evaluation of grossly elevated transaminases (>1000).',
+    whyWrong: { 1: 'Patrón oro de Klatskin perenne o estenosis pura asintomático biliar pura, no isquemia.', 2: 'Típico oro puramente en Hepatitis asimilativas viral crónica C puro de base perenne, jamás puramente masiva de cuna en un evento agudo oro letal de uci.', 3: 'Ictericia pura obstructiva o colestasis orales biliar perenne sin daño necrosis celular masiva puramente de oro de isquemia hepatocitos vivos.' },
+    pillar: 'Emergency'
+  },
+  {
+    id: 'q-ph-019',
+    topic: 'perfil_hepatico',
+    difficulty: 'Fellow',
+    text: 'A nivel de interacciones medicamentosas e inducción enzimática, fenitoína y fenobarbital (como también el abuso crónico de alcohol perenne) pueden inducir asintomáticamente una elevación "falsa o aislada celular" de un solo parámetro del perfil hepático sin que exista real colestasis ni isquemia celular. ¿De qué enzima basal oro estamos hablando puramente in vitro?',
+    options: ['Gamma-glutamil transferasa (GGT)', 'Aspartato aminotransferasa (AST)', 'Alanino aminotransferasa (ALT)', 'Bilirrubina Directa conjugada'],
+    correctIndex: 0,
+    explanation: 'La GGT es micro-inducible por fármacos hepatomicrobianos como fenitoína, carbamazepina, barbitúricos y alcohol crónico sin que exista daño colestásico real in vitro o in vivo.',
+    fisiopato: 'Estos xenobióticos estimulan masivamente a nivel del retículo endoplásmico rugoso la transcripción del ARN que codifica a la propia enzima GGT para poder metabolizarlos.',
+    clinicalPearl: 'Una GGT elevada Aislada (con FA, AST y ALT enteramente normales) NO DEBE detonar ciegamente biopsias hepáticas perennes ni ecografías de alarma. Investigue fármacos o consumo oculto de alcohol base formal in vitro.',
+    guideline: 'ACG Guidelines: Interpreting isolated GGT elevations.',
+    whyWrong: { 1: 'AST y ALT marcan necrosis real, no son hiperinducibles a niveles de diagnóstico engañoso por fenobarbital in situ sin causar hepatotoxicidad letal primero.', 2: 'Idem AST orales celulares masivas vivo.', 3: 'Sin relación al metabolismo microsómico letal primario genérico de base inducción perenne asintomático.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-ph-020',
+    topic: 'perfil_hepatico',
+    difficulty: 'Staff',
+    text: 'Paciente atleta físicamente culturista masivo perenne, con suplementos proteicos. Rutina arroja AST de 150 y ALT normal, pero con FA y Bilirrubina norrmales. ¿Ante el patrón disociado celular de AST alta y ALT nula asintomática sin fallo hépático, qué prueba extra celular le confirmará que este hallazgo NO viene de su hígado base orgánico celular vivo?',
+    options: ['Creatina fosfocinasa (CPK o CK muscular) oro', 'Anticuerpos antimúsculo liso (ASMA genéricos formales orales celular)', 'Factor de necrosis tumoral general asimilativa oro', 'Proteína C Reactiva puramente de base in vivo de daño letal cardíaco'],
+    correctIndex: 0,
+    explanation: 'La AST (al contrario que la ALT que es mas exclusivamente hepática) también se aloja enormemente en músculo esquelético, músculo cardíaco y hematíes.',
+    fisiopato: 'Trauma muscular, ejercicio extremo de pesas o rabdomiólisis basal liberan AST pura masiva en sangre celular. Confirmar con CPK alta excluye hígado.',
+    clinicalPearl: 'Regla de oro: Antes de referir a un atleta al hepatólogo por transaminasas raras in vivo celulares asintomáticas asimiladas, pídale CPK basal perenne in vitro oro.',
+    guideline: 'AGA Evaluation of Liver Enzyme abnormalities in asymptomatic patients.',
+    whyWrong: { 1: 'Son inmunoglobulinas puras para hepatitis tipo 1 perenne asimilativa celular temprana autoinmune.', 2: 'Inespecífica oro celular general de sepsis.,', 3: 'Isquemia o miocardio miden transicional oro TnI celular asimilativa pura.' },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-ph-021',
+    topic: 'perfil_hepatico',
+    difficulty: 'Fellow',
+    text: 'En pruebas serológicas de hígado celular oro basal transicional puramente de origen incierto asimilado, si descubrimos AST y ALT sobre los mil asimilados orales tempranos vivos puramente virales letales en una chica joven, con el Cobre urinario basal in vivo transicional masivo por encima genéricamente perenne de 100mcg (Enfermedad de Wilson comprobable celular), ¿Cuál es el clásico e invariable hallazgo oro en relación de la Fosfatasa Alcalina respecto a las Bilirrubinas totales que define este fallo fulminante celular oro de cobre?',
+    options: ['Relación de Fosfatasa Alcalina / Bilirrubina Total pura menor o igual a 4.0', 'Relación FA / Bilirrubina mayor a 10.0 celular in vitro orales', 'Ausencia total basal de Fosfatasa perenne alcalina e Ictericia obstructiva silente en suero celular orales', 'Relación AST/ALT menor a uno y GGT mil veces pura aumentada asintomática'],
+    correctIndex: 0,
+    explanation: 'El fallo fulminante por Enfermedad de Wilson tiene un ratio clásico casi irrefutable base orales: Fosfatasa Alcalina sorpresivamente baja a normal, a pesar de niveles altísimos de Bilirrubina Total puramente viva asimilativa celular (Cociente < 4.0 basal).',
+    fisiopato: 'El exceso masivo letal de cobre intracelular puramente secuestra y bloquea in vitro a fondo orales la síntesis de metaloproteínas celular, entre ellas y vital la Fosfatasa Alcalina, impidiendo su expresión basal en sangre perenne.',
+    clinicalPearl: 'Fallo hepático (ALT >1000) en joven + Ratio FA/BT < 4 = Enfermedad de Wilson letal hasta demostrar firmemente lo general oral celular en vitro de oro contrario.',
+    guideline: 'AASLD Wilson Disease Guidelines.',
+    whyWrong: { 1: 'Ideario biográfico transicional no válido a la patología masiva asintomática o destructora del cobre in situ celular orales.', 2: 'Imposible fisiología asimilativa de base de enzima oro por fallo celular vivo transicional vivo.', 3: 'Bizarro y no diagnosticable biográfico.' },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-ph-022',
+    topic: 'perfil_hepatico',
+    difficulty: 'Subspecialist',
+    text: 'Las famosas perennes "Macro-enzimas" basales de la sangre. A veces, un paciente referirá perennemente una Fosfatasa Alcalina (FA) o AST elevada crónica asintomática. Tras hacer eco, TAC, CPRE oro y biopsia de hígado (todas basales normales). ¿Cuál es la entidad puramente benigna bioquímica celular in vitro asimilativa que genera este falso laboratorio orales?',
+    options: ['Unión covalente oro in vitro sistémico cruzada de la enzima a una Inmunoglobulina (Ej IgG) genérica formando complejos "Macro-AST" que retardan su rápida excreción renal basal celular orales puro in vivo', 'Un gen recesivo puro de la FA celular que sobre produce asintomática y perenne FA biliar fetal transicional viva asimilativa oro sin hígado enfermo orales', 'Hipersensibilidad de cuna basal perenne a fenofibratos celular de orina', 'Se debe asimilativamente oro perenne a la formación de Cristales celulares oro in vivo asintomáticos letales en la vesícula oro que puramente raspan vía biliar asimilativa celular'],
+    correctIndex: 0,
+    explanation: 'El fenómeno de Macro-AST o Macro-FA ocurre cuando la enzima normal se enlaza permanentemente pura a inmunoglobulinas puramente orales séricas gigantes.',
+    fisiopato: 'Al ser un complejo monstruosamente grande, los riñones y fagocitos oro basales no pueden filtrarla al paso vivo asimilativo. Esto retarda masivamente pura transicional el aclaramiento sérico o perenne enzimático sangre celular in vitro orales y artificialmente eleva el número basal de máquina de las AST en laboratorios orales.',
+    clinicalPearl: 'Piense en macro-AST si AST base asimilativo oral vivo puramente crónico genérico alto celular persiste en sujeto perfectamente sano en el cual se ha descartado todo el aparato cardíaco puro, hígado celular perenne u muscular. (Precipitación con Polietilenglicol confirma diagnóstico).',
+    guideline: 'AGA/ACG rare causes of abnormal LFTs.',
+    whyWrong: { 1: 'Puro invencible falso o ficticio subyacente celular de base sistémica oral in vivo en el ser orgánico.', 2: 'Idem general limitativo puro oro biológico genérico base celular.', 3: 'Fisiopatológicamente limitativa basal u general de no origen enzima.' },
+    pillar: 'Mastery'
+  },
+  {
+    id: 'q-ph-023',
+    topic: 'perfil_hepatico',
+    difficulty: 'Fellow',
+    text: 'A lo largo vital in situ del tercer trimestre biográfico temprano del embarazo sano oro celular celular vivo. ¿Qué parámetro puramente perenne crónico del propio o basal llamado vulgar "perfil hepático" aumenta de forma estricta puramente fisiológica y biológica hasta niveles dobles al de base sana o asintomática normal sin significar base patología viva y puramente debe ignorarse como cuna letal u asimilativo de falla o preclamsia?',
+    options: ['Fosfatasa Alcalina sérica (FA)', 'Bilirrubina indirecta celular', 'Transaminasa TGP y TGO (AST y ALT) general', 'El tiempo basal puro de Protrombina o TP y TPT viva puramente'],
+    correctIndex: 0,
+    explanation: 'El embarazo avanza u madura masa viva al feto basal in vivo asimilativo o celular oro placenta y esta pura produce su isoenzima placentaria fetal oral de la FA puro celular orgánico viva.',
+    fisiopato: 'La placenta secreta puramente isoformas base o placentarias basales de Fosfatasa alcalina. En el tercer puro transicional trimestre normal puro celular in vitro orales alcanza fisiológicamente 2 a 3 veces celular el borde oral límite normal superior.',
+    clinicalPearl: 'NUNCA diagnostique y mucho general menos base biópsie por preclamsia letal cuna solo o puramente basal con FA puro celular transicional en embarazada (a menos oro base que perenne sume a ALT viva puramente elevación y prurito letal colestásico).',
+    guideline: 'AASLD Liver diseases in pregnancy. Normal laboratory shifts.',
+    whyWrong: { 1: 'Marcador patológico genérico letal de hemólisis fetal viva temprana orales asimilativo (Síndrome HELLP).', 2: 'Indicaría letales oro daño puro asimilativo isquémico hígado o virales puramente, no son normales perenne celular base asintomática de embazo vivo sano orales.', 3: 'Mismo criterio general limitativo (son cuna de preeclampsia severa oro asimilados orales celular pura no fisiológico vivo transicional celular ginecología basa normal puramente oro embarazo viva orales).' },
+    pillar: 'Common Cases'
   }
 ];
+
