@@ -19,7 +19,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
     ];
 
     const shuffledFocus = [...focusAreas].sort(() => Math.random() - 0.5);
-    const BATCH_SIZE = 5;
+    const BATCH_SIZE = 15;
     const allQuestions: Question[] = [];
     
     let remaining = count;
@@ -53,7 +53,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       ]`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: "gemini-3-flash-preview",
         contents: prompt,
         config: {
           responseMimeType: "application/json"

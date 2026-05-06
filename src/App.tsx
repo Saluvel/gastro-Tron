@@ -225,7 +225,7 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
       
       const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: "gemini-3-flash-preview",
         contents: userMsg,
         config: {
           systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
@@ -1067,7 +1067,8 @@ export default function App() {
         setRevealedOral(false);
       } else {
         setCurrentView('lobby');
-        alert("El sistema de IA (Gemini 3) está experimentando alta demanda o hay un problema de cuota. Por favor, intenta de nuevo en unos minutos o verifica tu API Key.");
+        const errorMsg = error instanceof Error ? error.message : "Desconocido";
+        alert(`Error al generar: ${errorMsg}\n\nEl sistema de IA está experimentando alta demanda o hay un problema de cuota. Por favor, intenta de nuevo en unos minutos o verifica tu API Key.`);
       }
     }
     setIsLoading(false);
