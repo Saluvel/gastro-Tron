@@ -110,29 +110,36 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
   const batches: { count: number; focus: string }[] = [];
   
   const focusAreas = [
-    "Epidemiología y Diagnóstico Diferencial",
-    "Fisiopatología y Presentación Clínica Atípica",
-    "Manejo Terapéutico y Farmacología",
-    "Complicaciones y Pronóstico",
-    "Interpretación de Guías y Estudios Recientes"
+    "Patógenos Virales y Parasitarios (Norovirus, Giardia, Amoeba, Cryptosporidium)",
+    "Bacterias Invasivas y Citotóxicas (Shigella, Campylobacter, Yersinia, Salmonella)",
+    "Diarrea No Infecciosa (Isquemia, Fármacos, Colitis Microscópica, Enfermedad Inflamatoria)",
+    "Manejo de Complicaciones Críticas (Sepsis, Desequilibrio Hidroelectrolítico, Megacolon)",
+    "Epidemiología en Poblaciones Especiales (Ancianos, Inmunosuprimidos, Viajeros)",
+    "Diagnóstico Avanzado y Novedades (PCR Multiplex, Interpretación de Bio-marcadores)"
   ];
 
   let remaining = count;
   let focusIdx = 0;
+  // Mezclar focusAreas para cada sesión
+  const shuffledFocus = [...focusAreas].sort(() => Math.random() - 0.5);
+
   while (remaining > 0) {
     const currentBatchCount = Math.min(remaining, BATCH_SIZE);
     batches.push({ 
       count: currentBatchCount, 
-      focus: focusAreas[focusIdx % focusAreas.length] 
+      focus: shuffledFocus[focusIdx % shuffledFocus.length] 
     });
     remaining -= currentBatchCount;
     focusIdx++;
   }
 
   // Fetch batches in parallel
-  const results = await Promise.all(
+  const resultsArr = await Promise.all(
     batches.map(batch => fetchBatch(topic, difficulty, batch.count, batch.focus))
   );
 
-  return results.flat();
+  const flatResults = resultsArr.flat();
+  
+  // Shuffle all questions before returning to avoid thematic grouping
+  return flatResults.sort(() => Math.random() - 0.5);
 }
