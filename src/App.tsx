@@ -996,8 +996,12 @@ export default function App() {
     } catch (error) {
       console.error(error);
       if (error instanceof Error && error.message === "MISSING_API_KEY") {
-        alert("Falta la variable de entorno GEMINI_API_KEY en Vercel. Asegúrate de configurarla en los ajustes (Environment Variables) de tu proyecto en Vercel para que la generación de preguntas con IA funcione. Se mostrarán solo las preguntas almacenadas en caché o por defecto.");
+        alert("Falta la variable de entorno GEMINI_API_KEY. Configúrala en los ajustes para que la IA funcione.");
+      } else {
+        // More descriptive error
+        console.warn("La generación por IA falló o está saturada. Usando banco de semillas por defecto.");
       }
+      
       if (existingQuestions.length > 0) {
         const fallback = [...existingQuestions].sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
         setQuestions(fallback);
@@ -1006,8 +1010,8 @@ export default function App() {
         setShowFeedback(false);
         setRevealedOral(false);
       } else {
-        // Use an inline message instead of alert for better UX in preview
         setCurrentView('lobby');
+        alert("El sistema de IA (Gemini 3) está experimentando alta demanda o hay un problema de cuota. Por favor, intenta de nuevo en unos minutos o verifica tu API Key.");
       }
     }
     setIsLoading(false);

@@ -87,13 +87,15 @@ async function fetchBatch(topicId: string, topicName: string, difficulty: string
 
   try {
     let attempts = 0;
-    const maxAttempts = 2;
+    const maxAttempts = 3; // Aumentar intentos
+    let lastError: any = null;
     let response;
 
     while (attempts < maxAttempts) {
       try {
+        console.log(`Intentando llamar al oráculo de GAS-TRON (intento ${attempts + 1})...`);
         response = await ai.models.generateContent({
-          model: "gemini-1.5-flash",
+          model: "gemini-3-flash-preview",
           contents: [{ parts: [{ text: prompt }] }],
           config: {
             responseMimeType: "application/json",
@@ -130,14 +132,24 @@ async function fetchBatch(topicId: string, topicName: string, difficulty: string
         });
         if (response && response.text) break;
       } catch (e) {
+        lastError = e;
         attempts++;
-        if (attempts >= maxAttempts) throw e;
-        await new Promise(res => setTimeout(res, 1000 * attempts)); // Backoff
+        console.warn(`Error en intento ${attempts}:`, e);
+        if (attempts >= maxAttempts) break;
+        await new Promise(res => setTimeout(res, 2000 * attempts)); // Backoff más agresivo
       }
     }
 
-    const text = response?.text || '[]';
-    const questions = JSON.parse(text) as Question[];
+    if (!response?.text) {
+      console.error("Fallo definitivo tras reintentos.", lastError);
+      return [];
+    }
+
+    const text = response.text.trim();
+    // Limpiar posibles backticks adicionales que el modelo pueda incluir a veces
+    const cleanText = text.startsWith('```') ? text.replace(/^```json/, '').replace(/```$/, '') : text;
+    
+    const questions = JSON.parse(cleanText) as Question[];
     return questions.map(q => ({
       ...q,
       id: q.id || Math.random().toString(36).substr(2, 9),
@@ -145,7 +157,7 @@ async function fetchBatch(topicId: string, topicName: string, difficulty: string
       difficulty: difficulty as Difficulty
     }));
   } catch (error) {
-    console.error("Error generating questions batch:", error);
+    console.error("Error crítico en la generación de preguntas:", error);
     return [];
   }
 }
