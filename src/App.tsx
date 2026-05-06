@@ -657,76 +657,103 @@ export default function App() {
   const [currentStreak, setCurrentStreak] = useState(0);
 
   const streakVisuals = useMemo(() => {
-    if (currentStreak >= 20) return { color: '#ff00ff', shadow: '0 0 60px #ff00ff', text: 'PROTOCOLO BERSERKER (OMEGA)', intensity: 'animate-pulse-fast', level: 5 };
-    if (currentStreak >= 15) return { color: '#ffb800', shadow: '0 0 50px #ffb800', text: 'Sincronía Divina', intensity: 'animate-pulse-fast', level: 4 };
-    if (currentStreak >= 10) return { color: '#ffb800', shadow: '0 0 40px #ffb800', text: 'Estado de Gracia (GOD MODE)', intensity: 'animate-pulse-fast', level: 3 };
-    if (currentStreak >= 6) return { color: '#ffffff', shadow: '0 0 30px #ffffff', text: 'Overdrive Activado', intensity: 'animate-pulse', level: 2 };
-    if (currentStreak >= 3) return { color: '#00f2ff', shadow: '0 0 20px #00f2ff', text: 'Sincronía Estable', intensity: '', level: 1 };
-    return { color: '#00f2ff', shadow: 'none', text: '', intensity: '', level: 0 };
+    if (currentStreak >= 20) return { color: '#ff00ff', shadow: '0 0 60px #ff00ff', text: 'DIOS DE LA GASTROENTEROLOGÍA', msg: '¡Imparable! Protocolo Omega Activado.', intensity: 'animate-pulse-fast', level: 5 };
+    if (currentStreak >= 15) return { color: '#ffb800', shadow: '0 0 50px #ffb800', text: 'MAESTRÍA ABSOLUTA', msg: 'Sincronía divina... estás on fire.', intensity: 'animate-pulse-fast', level: 4 };
+    if (currentStreak >= 10) return { color: '#00f2ff', shadow: '0 0 40px #00f2ff', text: 'ESTADO DE GRACIA', msg: '¡Una máquina clínica! God Mode.', intensity: 'animate-pulse-fast', level: 3 };
+    if (currentStreak >= 6) return { color: '#ffffff', shadow: '0 0 30px #ffffff', text: 'OVERDRIVE ACTIVADO', msg: '¡Excelente racha! Sigue así.', intensity: 'animate-pulse', level: 2 };
+    if (currentStreak >= 3) return { color: '#00f2ff', shadow: '0 0 20px #00f2ff', text: 'SINCRONÍA ESTABLE', msg: '¡Buen ritmo! Sigue acertando.', intensity: '', level: 1 };
+    return { color: '#00f2ff', shadow: 'none', text: '', msg: '', intensity: '', level: 0 };
   }, [currentStreak]);
 
   // --- STREAK LOGO COMPONENT ---
   const StreakLogo = ({ streak }: { streak: number }) => {
-    const level = streak >= 20 ? 5 : streak >= 15 ? 4 : streak >= 10 ? 3 : streak >= 6 ? 2 : streak >= 3 ? 1 : 0;
-    const color = level === 5 ? '#ff00ff' : (level >= 3 ? '#ffb800' : (level === 2 ? '#ffffff' : '#00f2ff'));
+    const { level, color, text, msg } = streakVisuals;
     
     return (
-      <div className="relative w-12 h-12 flex items-center justify-center">
-        {/* Core Glow */}
-        <motion.div 
-          className="absolute inset-0 rounded-full blur-xl opacity-20"
-          style={{ backgroundColor: color }}
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-        
-        <motion.svg 
-          viewBox="0 0 24 24" 
-          className="w-full h-full relative z-10"
-          animate={{ rotate: 360 }}
-          transition={{ duration: level >= 4 ? 1 : level >= 3 ? 2 : level === 2 ? 4 : 8, repeat: Infinity, ease: "linear" }}
-        >
-          {/* Level 0: Base */}
-          <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="0.5" strokeDasharray="1 3" className="opacity-20" />
-          <circle cx="12" cy="12" r="8" stroke={color} strokeWidth="1.5" strokeDasharray={level >= 1 ? "12 4" : "2 10"} className="transition-all duration-700" />
+      <div className="flex items-center gap-6">
+        <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0">
+          {/* Core Glow */}
+          <motion.div 
+            className="absolute inset-0 rounded-full blur-2xl opacity-30"
+            style={{ backgroundColor: color }}
+            animate={{ scale: [1, 1.3, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          />
           
-          {/* Level 2: Outer Ring Counter-Rotate */}
-          {level >= 2 && (
-            <motion.circle 
-              cx="12" cy="12" r="11" 
-              stroke={color} strokeWidth="0.5" 
-              strokeDasharray="4 8" 
-              animate={{ rotate: -360 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            />
-          )}
-
-          {/* Level 3: Inner Core */}
-          {level >= 3 && (
-            <circle cx="12" cy="12" r="4" fill={color} className={cn(level >= 5 ? "animate-pulse" : "opacity-80")} />
-          )}
-
-          {/* Level 4: Lightning / Sparkles */}
-          {level >= 4 && (
-             <motion.path 
-               d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" 
-               stroke={color} strokeWidth="1" strokeLinecap="round"
-               animate={{ opacity: [0, 1, 0] }}
-               transition={{ duration: 0.2, repeat: Infinity }}
-             />
-          )}
-          
-          <circle cx="12" cy="12" r="2" fill={color} />
-        </motion.svg>
-        
-        {/* Particles / Shockwaves */}
-        {level >= 2 && (
-          <div className="absolute inset-0 pointer-events-none">
-            <div className={cn("absolute inset-0 rounded-full border border-white/20 animate-ping", level >= 3 ? "duration-700" : "duration-1000")} />
-            {level >= 5 && (
-              <div className="absolute inset-[-10px] rounded-full border border-tron-sub/30 animate-pulse shadow-[0_0_20px_#ff00ff]" />
+          <motion.svg 
+            viewBox="0 0 24 24" 
+            className="w-full h-full relative z-10"
+            animate={{ rotate: 360 }}
+            transition={{ duration: level >= 4 ? 1 : level >= 3 ? 2 : level === 2 ? 4 : 8, repeat: Infinity, ease: "linear" }}
+          >
+            {/* Level 0: Base */}
+            <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="0.5" strokeDasharray="1 4" className="opacity-30" />
+            <circle cx="12" cy="12" r="8" stroke={color} strokeWidth="1.5" strokeDasharray={level >= 1 ? "12 4" : "2 10"} className="transition-all duration-700" />
+            
+            {/* Level 2: Outer Ring Counter-Rotate */}
+            {level >= 2 && (
+              <motion.circle 
+                cx="12" cy="12" r="11" 
+                stroke={color} strokeWidth="0.8" 
+                strokeDasharray="4 8" 
+                animate={{ rotate: -360 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              />
             )}
-          </div>
+
+            {/* Level 3: Inner Core */}
+            {level >= 3 && (
+              <circle cx="12" cy="12" r="5" fill={color} className={cn(level >= 5 ? "animate-pulse" : "opacity-90")} />
+            )}
+
+            {/* Level 4: Lightning / Sparkles */}
+            {level >= 4 && (
+               <motion.path 
+                 d="M12 1 L12 7 M12 17 L12 23 M1 12 L7 12 M17 12 L23 12 M4 4 L8 8 M16 16 L20 20 M4 20 L8 16 M16 8 L20 4" 
+                 stroke={color} strokeWidth="1.2" strokeLinecap="round"
+                 animate={{ opacity: [0, 1, 0], scale: [0.8, 1.2, 0.8] }}
+                 transition={{ duration: 0.5, repeat: Infinity }}
+               />
+            )}
+            
+            <circle cx="12" cy="12" r="2.5" fill={color} className="opacity-80" />
+          </motion.svg>
+          
+          {/* Particles / Shockwaves */}
+          {level >= 1 && (
+            <div className="absolute flex justify-center items-center pointer-events-none w-full h-full">
+              <span className="absolute font-black text-2xl drop-shadow-md z-20" style={{ color: color }}>{streak}</span>
+            </div>
+          )}
+
+          {level >= 2 && (
+            <div className="absolute inset-0 pointer-events-none">
+              <div className={cn("absolute inset-2 rounded-full border-2 animate-ping", level >= 3 ? "duration-500 scale-150 border-white/40" : "duration-1000 border-white/20 scale-125", 'opacity-0')} />
+              {level >= 5 && (
+                <div className="absolute inset-[-20px] rounded-full border-2 border-[#ff00ff]/50 animate-pulse shadow-[0_0_40px_#ff00ff]" />
+              )}
+            </div>
+          )}
+        </div>
+        
+        {level >= 1 && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, x: -20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            key={text}
+            className="flex flex-col hidden md:flex ml-2"
+          >
+            <span className="text-[11px] uppercase font-black tracking-[0.3em] text-white/70 mb-1 flex items-center gap-2">
+              <Zap size={14} className="text-tron-yellow animate-pulse" /> 
+              Serie {streak} • {msg}
+            </span>
+            <span 
+              className={cn("text-3xl lg:text-4xl font-display font-black tracking-tighter uppercase", streakVisuals.intensity)} 
+              style={{ color, textShadow: streakVisuals.shadow }}
+            >
+              {text}
+            </span>
+          </motion.div>
         )}
       </div>
     );
