@@ -48,6 +48,167 @@ export const SEED_QUESTIONS: Question[] = [
     }
   },
   {
+    id: 'seed_da_1',
+    topic: 'diarrea_aguda',
+    difficulty: 'Fellow',
+    text: '¿Cuál es el agente etiológico más común responsable de los brotes de gastroenteritis aguda a nivel mundial en todos los grupos de edad, frecuentemente asociado a cruceros, hospitales y escuelas?',
+    options: [
+      'Rotavirus',
+      'Norovirus',
+      'Escherichia coli enterotoxigénica (ETEC)',
+      'Salmonella enteritidis'
+    ],
+    correctIndex: 1,
+    explanation: 'Norovirus es la principal causa de gastroenteritis epidémica en todo el mundo. Es altamente contagioso debido a su baja dosis infectiva y resistencia ambiental.',
+    fisiopato: 'Se une a los antígenos de grupo sanguíneo histo-específicos (HBGA) en el epitelio intestinal, causando malabsorción transitoria.',
+    clinicalPearl: 'El Norovirus es la causa #1 de brotes; sospecharlo cuando múltiples personas enferman tras un evento común.',
+    guideline: 'CDC / ACG Acute Diarrheal Infections 2025',
+    whyWrong: {
+      0: 'Principal causa en niños antes de la vacuna, pero Norovirus lo supera en población general.',
+      1: 'Agente líder en brotes globales.',
+      2: 'Causa común de diarrea del viajero, pero menos común en brotes institucionales en países desarrollados.',
+      3: 'Causa bacteriana importante, pero menos frecuente que los virus en brotes masivos.'
+    }
+  },
+  {
+    id: 'seed_da_2',
+    topic: 'diarrea_aguda',
+    difficulty: 'Staff',
+    text: 'Un paciente de 75 años consulta por diarrea acuosa profusa (8-10 deposiciones/día) de 2 semanas de evolución. Recientemente inició Metformina y Sertralina. La colonoscopia es macroscópicamente normal. ¿Cuál es el siguiente paso diagnóstico más apropiado?',
+    options: [
+      'Tomar biopsias seriadas del colon para descartar Colitis Microscópica',
+      'Iniciar tratamiento empírico con Loperamida',
+      'Realizar test de aliento para sobrecrecimiento bacteriano (SIBO)',
+      'Suspender ambos fármacos y observar 48 horas'
+    ],
+    correctIndex: 0,
+    explanation: 'En pacientes mayores con colonoscopia normal y diarrea acuosa crónica/subaguda, se deben tomar biopsias para descartar colitis microscópica (colágena o linfocítica), a menudo desencadenada por fármacos (AINEs, ISRS, metformina).',
+    fisiopato: 'La inflamación linfocítica intraepitelial o el engrosamiento de la banda de colágeno subepitelial interfieren con la absorción neta de agua.',
+    clinicalPearl: 'Diarrea acuosa + Colonoscopia normal = Siempre tomar biopsias del colon derecho e izquierdo.',
+    guideline: 'AGA Clinical Practice Guidelines on Microscopic Colitis 2025',
+    whyWrong: {
+      0: 'Conducta estándar para diagnóstico definitivo.',
+      1: 'Acción paliativa que puede retrasar el diagnóstico de una entidad tratable.',
+      2: 'El SIBO es menos común como causa de este cuadro súbito que la colitis microscópica inducida por fármacos.',
+      3: 'Aunque es razonable, las biopsias son necesarias para confirmar la etiología inflamatoria y guiar el uso de Budesonida.'
+    }
+  },
+  {
+    id: 'seed_da_3',
+    topic: 'diarrea_aguda',
+    difficulty: 'Fellow',
+    text: '¿Cuál es la recomendación actual respecto al uso de antibióticos en la diarrea aguda por Escherichia coli productora de toxina Shiga (STEC/VTEC), como la cepa O157:H7?',
+    options: [
+      'Ciprofloxacino para reducir el tiempo de excreción viral',
+      'Azitromicina para prevenir el síndrome hemolítico urémico (SHU)',
+      'Evitar antibióticos puesto que pueden aumentar el riesgo de SHU',
+      'Antibióticos solo si el paciente presenta fiebre alta o sepsis'
+    ],
+    correctIndex: 2,
+    explanation: 'Se debe evitar el uso de antibióticos en sospecha de STEC, ya que el estrés bacteriano induce la liberación masiva de toxina Shiga, aumentando significativamente el riesgo de Síndrome Hemolítico Urémico (SHU).',
+    fisiopato: 'La toxina Shiga daña directamente las células endoteliales glomerulares, causando microangiopatía trombótica.',
+    clinicalPearl: 'Diarrea sanguinolenta sin fiebre es la presentación clásica de STEC; no dar antibióticos.',
+    guideline: 'IDSA / ACG Clinical Guidelines for Acute Diarrhea 2025',
+    whyWrong: {
+      0: 'Aumenta drásticamente el riesgo de SHU.',
+      1: 'No hay evidencia de beneficio y sí riesgo teórico de lisis bacteriana.',
+      2: 'Consenso internacional preventivo.',
+      3: 'Incluso en casos graves, el soporte es la prioridad sobre los antibióticos en STEC confirmada.'
+    }
+  },
+  {
+    id: 'seed_da_4',
+    topic: 'diarrea_aguda',
+    difficulty: 'Staff',
+    text: 'Un paciente de 35 años regresa de un viaje a Tailandia con diarrea líquida, cólicos intensos y náuseas. No presenta sangre ni moco. ¿Cuál es el tratamiento profiláctico o terapéutico de elección según las guías actuales para la diarrea del viajero?',
+    options: [
+      'Azitromicina 1000 mg dosis única o 500 mg por 3 días',
+      'Ciprofloxacino 500 mg dosis única',
+      'Metronidazol 500 mg por 5 días',
+      'Rifaximina solo si viaja a Asia'
+    ],
+    correctIndex: 0,
+    explanation: 'La Azitromicina es el tratamiento de elección para la diarrea del viajero en el sudeste asiático debido a las altas tasas de resistencia de Campylobacter a las fluoroquinolonas.',
+    fisiopato: 'Bloquea la síntesis de proteínas bacterianas al unirse a la subunidad 50S del ribosoma.',
+    clinicalPearl: 'En Sudeste Asiático prefiera Azitromicina; en México o América Latina las fluoroquinolonas aún son útiles.',
+    guideline: 'ISTM / ACG Guidelines for Traveler\'s Diarrhea 2024',
+    whyWrong: {
+      0: 'Tratamiento empírico de elección en áreas con resistencia a quinolonas.',
+      1: 'Mucha resistencia en Asia (Campylobacter resistente >80%).',
+      2: 'Indicado para parásitos, no es primera línea empírica.',
+      3: 'La Rifaximina no es eficaz contra patógenos invasivos como Campylobacter o Salmonella.'
+    }
+  },
+  {
+    id: 'seed_da_5',
+    topic: 'diarrea_aguda',
+    difficulty: 'Fellow',
+    text: 'Un excursionista que bebió agua de un arroyo presenta diarrea esteatorreica, flatulencia excesiva y pérdida de peso tras 3 semanas. ¿Cuál es el patógeno más probable y la prueba de elección?',
+    options: [
+      'Giardia lamblia - Coproantígeno o PCR',
+      'Entamoeba histolytica - Serología',
+      'Cryptosporidium - Tinción de Ziehl-Neelsen modificada',
+      'Vibrio cholerae - Cultivo en medio TCBS'
+    ],
+    correctIndex: 0,
+    explanation: 'La Giardia es el parásito protozoario más común en humanos. El cuadro de diarrea prolongada, esteatorrea y flatulencia tras exposición a aguas recreacionales o naturales es muy sugerente.',
+    fisiopato: 'Los trofozoítos de Giardia se adhieren al borde en cepillo del intestino delgado, causando atrofia vellositaria y deficiencia de disacaridasas.',
+    clinicalPearl: 'La Giardia puede causar intolerancia a la lactosa transitoria incluso después de la erradicación del parásito.',
+    guideline: 'ACG Guidelines for Acute Diarrhea 2025',
+    whyWrong: {
+      0: 'Cuadro clínico y método diagnóstico estándar.',
+      1: 'Suele causar diarrea sanguinolenta y abscesos hepáticos, no esteatorrea.',
+      2: 'Causa diarrea acuosa profusa, especialmente en inmunosuprimidos.',
+      3: 'Causa diarrea acuosa masiva de inicio agudo (agua de arroz).'
+    }
+  },
+  {
+    id: 'seed_da_6',
+    topic: 'diarrea_aguda',
+    difficulty: 'Staff',
+    text: 'Una mujer de 82 años con antecedentes de hipertensión presenta dolor abdominal tipo cólico en el flanco izquierdo seguido de una deposición con sangre roja fresca. ¿Cuál es la sospecha diagnóstica prioritaria?',
+    options: [
+      'Diverticulitis Aguda',
+      'Isquemia Mesentérica Aguda',
+      'Colitis Isquémica',
+      'Hemorragia por Divertículo de Meckel'
+    ],
+    correctIndex: 2,
+    explanation: 'La tríada de dolor abdominal, urgencia defecatoria y rectorragia en un paciente mayor sugiere fuertemente Colitis Isquémica, que afecta típicamente al colon izquierdo (punto de Griffith o punto de Sudeck).',
+    fisiopato: 'Es una forma de isquemia no oclusiva por bajo flujo en la microvasculatura colónica.',
+    clinicalPearl: 'A diferencia de la isquemia mesentérica, el dolor en la colitis isquémica suele ser menos severo y se asocia a sangrado precoz.',
+    guideline: 'ACG Guidelines on Ischemic Colitis 2025',
+    whyWrong: {
+      0: 'Suele presentarse con fiebre y dolor persistente, el sangrado es raro en diverticulitis.',
+      1: 'El dolor es desproporcionado y el sangrado es un signo tardío de infarto intestinal.',
+      2: 'Presentación clásica en el territorio de la arteria mesentérica inferior (AMI).',
+      3: 'Menos probable en este grupo de edad y con este patrón de dolor.'
+    }
+  },
+  {
+    id: 'seed_da_7',
+    topic: 'diarrea_aguda',
+    difficulty: 'Subspecialist',
+    text: 'Respecto al uso de Paneles Moleculares Multiplex (PCR) en el diagnóstico de diarrea aguda, ¿cuál es una limitación importante que debe considerar el clínico?',
+    options: [
+      'Baja sensibilidad en comparación con el coprocultivo',
+      'Incapacidad para detectar virus',
+      'No distingue entre infección activa y colonización/portación asintomática',
+      'Requiere más de una semana para obtener resultados'
+    ],
+    correctIndex: 2,
+    explanation: 'Debido a su altísima sensibilidad, los paneles de PCR pueden detectar material genético de patógenos que no son la causa actual de la diarrea (ej. C. diff en portadores o Salmonella persistente), lo que requiere correlación clínica estricta.',
+    fisiopato: 'La amplificación de ADN/ARN detecta fragmentos incluso si el organismo no está viable o está en baja cantidad.',
+    clinicalPearl: 'Un panel molecular positivo no siempre justifica el tratamiento; evalúe al paciente, no al resultado.',
+    guideline: 'ACG Clinical Practice Guidelines 2025',
+    whyWrong: {
+      0: 'Al contrario, la sensibilidad es muy superior al cultivo.',
+      1: 'Los paneles modernos incluyen múltiples virus (Norovirus, Rotavirus, etc.).',
+      2: 'Es el principal desafío clínico actual (sobre-diagnóstico).',
+      3: 'Los resultados suelen estar disponibles en horas (1-6h).'
+    }
+  },
+  {
     id: 'seed_3',
     topic: 'erge',
     difficulty: 'Staff',

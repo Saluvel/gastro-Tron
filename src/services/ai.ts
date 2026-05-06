@@ -16,13 +16,13 @@ async function fetchBatch(topic: string, difficulty: string, count: number, focu
 
   ESTÁNDARES PARA EL EXAMEN:
   1. ENFOQUE: Casos clínicos de alto impacto. El objetivo es evaluar el razonamiento crítico y la toma de decisiones.
-  2. MÁXIMA VARIEDAD OBLIGATORIA: Para el tema "${topic}", debes cubrir un espectro de 360 grados. NO te centres en un solo patógeno o condición. Si el tema es general (ej. Diarrea Aguda), debes incluir:
-     - Virus (Norovirus, Rotavirus).
-     - Bacterias (Salmonella, Campylobacter, Shigella, Yersinia, Vibrio).
-     - Parásitos (Giardia, Cryptosporidium).
-     - Causas no infecciosas (Fármacos, Autoinmune, Isquemia).
-     - Manejo de electrolitos y sepsis.
-     - NO permitas que más del 15% de las preguntas de este lote traten sobre la misma entidad específica (ej. C. diff).
+  2. MÁXIMA VARIEDAD OBLIGATORIA: Para el tema "${topic}", debes cubrir un espectro de 360 grados. 
+     - PROHIBICIÓN: No permitas que más del 10% de las preguntas traten sobre el mismo patógeno específico (ej. si ya preguntaste por C. diff, las siguientes 9 deben ser de temas distintos como Norovirus, Isquemia, Giardia, Salmonella, o manejo de deshidratación).
+     - DISTRIBUCIÓN: Debes incluir obligatoriamente una mezcla de:
+       * Epidemiología y causas más frecuentes según grupo etario.
+       * Fisiopatología y diagnóstico diferencial (no todo es infeccioso).
+       * Manejo terapéutico basado en guías recientes.
+       * Complicaciones y criterios de hospitalización.
   3. ESTRUCTURA DE RESPUESTA:
      A) Interpretación del hallazgo.
      B) Justificación clínica.
@@ -110,12 +110,12 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
   const batches: { count: number; focus: string }[] = [];
   
   const focusAreas = [
-    "Patógenos Virales y Parasitarios (Norovirus, Giardia, Amoeba, Cryptosporidium)",
-    "Bacterias Invasivas y Citotóxicas (Shigella, Campylobacter, Yersinia, Salmonella)",
-    "Diarrea No Infecciosa (Isquemia, Fármacos, Colitis Microscópica, Enfermedad Inflamatoria)",
-    "Manejo de Complicaciones Críticas (Sepsis, Desequilibrio Hidroelectrolítico, Megacolon)",
-    "Epidemiología en Poblaciones Especiales (Ancianos, Inmunosuprimidos, Viajeros)",
-    "Diagnóstico Avanzado y Novedades (PCR Multiplex, Interpretación de Bio-marcadores)"
+    "Epidemiología: Causas más frecuentes (Virus: Norovirus vs Bacterias: Campylobacter/Salmonella)",
+    "Diagnóstico Diferencial: Diarreas No Infecciosas (Fármacos, Isquemia, IBD incipiente)",
+    "Microbiología: Parásitos (Giardia, Cryptosporidium, Ameba) y Virus (Rotavirus, Adenovirus)",
+    "Manejo Clínico: Hidratación, Escalas de Gravedad y Criterios de Antibioticoterapia",
+    "Poblaciones de Riesgo: Viajeros (ETEC), Inmunosuprimidos y Brotes Institucionales",
+    "Tecnología: Interpretación de Paneles Multiplex de PCR vs Coprocultivo Clásico"
   ];
 
   let remaining = count;

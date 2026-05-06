@@ -558,11 +558,80 @@ export default function App() {
   const [currentStreak, setCurrentStreak] = useState(0);
 
   const streakVisuals = useMemo(() => {
-    if (currentStreak >= 10) return { color: '#ffb800', shadow: '0 0 40px #ffb800', text: 'Sincronía Legendaria (GOD MODE)', intensity: 'animate-pulse-fast' };
-    if (currentStreak >= 6) return { color: '#ffffff', shadow: '0 0 30px #ffffff', text: 'Overdrive Activado', intensity: 'animate-pulse' };
-    if (currentStreak >= 3) return { color: '#00f2ff', shadow: '0 0 20px #00f2ff', text: 'Sincronía Estable', intensity: '' };
-    return null;
+    if (currentStreak >= 20) return { color: '#ff00ff', shadow: '0 0 60px #ff00ff', text: 'PROTOCOLO BERSERKER (OMEGA)', intensity: 'animate-pulse-fast', level: 5 };
+    if (currentStreak >= 15) return { color: '#ffb800', shadow: '0 0 50px #ffb800', text: 'Sincronía Divina', intensity: 'animate-pulse-fast', level: 4 };
+    if (currentStreak >= 10) return { color: '#ffb800', shadow: '0 0 40px #ffb800', text: 'Estado de Gracia (GOD MODE)', intensity: 'animate-pulse-fast', level: 3 };
+    if (currentStreak >= 6) return { color: '#ffffff', shadow: '0 0 30px #ffffff', text: 'Overdrive Activado', intensity: 'animate-pulse', level: 2 };
+    if (currentStreak >= 3) return { color: '#00f2ff', shadow: '0 0 20px #00f2ff', text: 'Sincronía Estable', intensity: '', level: 1 };
+    return { color: '#00f2ff', shadow: 'none', text: '', intensity: '', level: 0 };
   }, [currentStreak]);
+
+  // --- STREAK LOGO COMPONENT ---
+  const StreakLogo = ({ streak }: { streak: number }) => {
+    const level = streak >= 20 ? 5 : streak >= 15 ? 4 : streak >= 10 ? 3 : streak >= 6 ? 2 : streak >= 3 ? 1 : 0;
+    const color = level === 5 ? '#ff00ff' : (level >= 3 ? '#ffb800' : (level === 2 ? '#ffffff' : '#00f2ff'));
+    
+    return (
+      <div className="relative w-12 h-12 flex items-center justify-center">
+        {/* Core Glow */}
+        <motion.div 
+          className="absolute inset-0 rounded-full blur-xl opacity-20"
+          style={{ backgroundColor: color }}
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+        
+        <motion.svg 
+          viewBox="0 0 24 24" 
+          className="w-full h-full relative z-10"
+          animate={{ rotate: 360 }}
+          transition={{ duration: level >= 4 ? 1 : level >= 3 ? 2 : level === 2 ? 4 : 8, repeat: Infinity, ease: "linear" }}
+        >
+          {/* Level 0: Base */}
+          <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="0.5" strokeDasharray="1 3" className="opacity-20" />
+          <circle cx="12" cy="12" r="8" stroke={color} strokeWidth="1.5" strokeDasharray={level >= 1 ? "12 4" : "2 10"} className="transition-all duration-700" />
+          
+          {/* Level 2: Outer Ring Counter-Rotate */}
+          {level >= 2 && (
+            <motion.circle 
+              cx="12" cy="12" r="11" 
+              stroke={color} strokeWidth="0.5" 
+              strokeDasharray="4 8" 
+              animate={{ rotate: -360 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          )}
+
+          {/* Level 3: Inner Core */}
+          {level >= 3 && (
+            <circle cx="12" cy="12" r="4" fill={color} className={cn(level >= 5 ? "animate-pulse" : "opacity-80")} />
+          )}
+
+          {/* Level 4: Lightning / Sparkles */}
+          {level >= 4 && (
+             <motion.path 
+               d="M12 2 L12 6 M12 18 L12 22 M2 12 L6 12 M18 12 L22 12" 
+               stroke={color} strokeWidth="1" strokeLinecap="round"
+               animate={{ opacity: [0, 1, 0] }}
+               transition={{ duration: 0.2, repeat: Infinity }}
+             />
+          )}
+          
+          <circle cx="12" cy="12" r="2" fill={color} />
+        </motion.svg>
+        
+        {/* Particles / Shockwaves */}
+        {level >= 2 && (
+          <div className="absolute inset-0 pointer-events-none">
+            <div className={cn("absolute inset-0 rounded-full border border-white/20 animate-ping", level >= 3 ? "duration-700" : "duration-1000")} />
+            {level >= 5 && (
+              <div className="absolute inset-[-10px] rounded-full border border-tron-sub/30 animate-pulse shadow-[0_0_20px_#ff00ff]" />
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const userRank = useMemo(() => {
     const xp = progress.totalCorrect * 10;
@@ -1729,7 +1798,7 @@ export default function App() {
               <span className="text-[10px] uppercase font-bold tracking-widest">Menú Principal</span>
             </button>
             <h2 className="text-tron-cyan font-display text-4xl font-black tracking-tighter flex items-center gap-4">
-              <Stethoscope size={32} className="text-tron-yellow" /> 
+              <StreakLogo streak={currentStreak} />
               {selectedTopic?.name} 
               <span className="text-xs bg-white/5 px-2 py-0.5 rounded text-white/40 font-mono tracking-widest ml-4 border border-white/10 uppercase">
                 {selectedDifficulty}
@@ -1818,31 +1887,13 @@ export default function App() {
 
       {/* Identity Discs & Grid Background Effects */}
       <AnimatePresence>
-        {currentStreak >= 3 && (
+        {currentStreak >= 6 && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
           >
-             {/* Top Disc */}
-             <motion.div 
-               className="absolute -top-[20%] -left-[10%] w-[60vw] aspect-square border border-tron-cyan/20 rounded-full animate-slow-spin-reverse"
-               style={{ boxShadow: streakVisuals?.shadow ? `inset 0 0 100px ${streakVisuals.color}22` : '' }}
-             />
-             
-             {/* Bottom Disc */}
-             <motion.div 
-               className="absolute -bottom-[20%] -right-[10%] w-[70vw] aspect-square border-2 border-tron-cyan/10 rounded-full animate-slow-spin"
-             />
-
-             {currentStreak >= 6 && (
-               <>
-                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tron-cyan/40 to-transparent animate-pulse" />
-                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tron-cyan/40 to-transparent animate-pulse" />
-               </>
-             )}
-
              {currentStreak >= 10 && (
                <motion.div 
                  animate={{ opacity: [0.05, 0.15, 0.05] }}
