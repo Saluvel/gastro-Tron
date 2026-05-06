@@ -37,7 +37,12 @@ import {
   MessageSquare,
   Send,
   Loader2,
-  BookOpen
+  BookOpen,
+  Lightbulb,
+  Activity,
+  ZoomIn,
+  Search,
+  BookMarked
 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
@@ -69,7 +74,8 @@ const INITIAL_PROGRESS: UserProgress = {
   settings: {
     sound: true,
     theme: 'tron'
-  }
+  },
+  savedPearls: []
 };
 
 const ACHIEVEMENTS = [
@@ -346,6 +352,98 @@ export default function App() {
   const [flashIndex, setFlashIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isOracleOpen, setIsOracleOpen] = useState(false);
+  const [showCalcs, setShowCalcs] = useState(false);
+  const [showPearls, setShowPearls] = useState(false);
+  const [showVisualDetail, setShowVisualDetail] = useState(false);
+
+  const savePearl = (question: Question) => {
+    if (!question.clinicalPearl) return;
+    if (progress.savedPearls?.some(p => p.questionId === question.id)) return;
+
+    playAudio('success');
+    setProgress(prev => ({
+      ...prev,
+      savedPearls: [
+        ...(prev.savedPearls || []),
+        {
+          questionId: question.id,
+          text: question.clinicalPearl!,
+          topic: question.topic,
+          date: Date.now()
+        }
+      ]
+    }));
+  };
+
+  // --- CALCULATORS COMPONENT ---
+  const MedicalCalculators = () => {
+    const [calcType, setCalcType] = useState<'meld' | 'fib4' | 'child' | 'maddrey'>('meld');
+    
+    // MELD-Na Calc
+    const [meldData, setMeldData] = useState({ bil: 1.2, inr: 1.1, cr: 0.9, na: 138 });
+    const meldScore = useMemo(() => {
+      const { bil, inr, cr, na } = meldData;
+      // Simplified MELD-Na calculation
+      const m = 3.78 * Math.log(bil) + 11.2 * Math.log(inr) + 9.57 * Math.log(cr) + 6.43;
+      let finalMeld = Math.round(m + 10);
+      if (finalMeld > 11) {
+        finalMeld = finalMeld + 1.32 * (137 - na) - 0.033 * finalMeld * (137 - na);
+      }
+      return Math.round(Math.min(40, Math.max(6, finalMeld)));
+    }, [meldData]);
+
+    return (
+      <div className="space-y-6">
+        <div className="flex gap-1 p-1 bg-white/5 rounded-lg border border-white/10 overflow-x-auto no-scrollbar">
+          {(['meld', 'fib4', 'child', 'maddrey'] as const).map(t => (
+            <button
+              key={t}
+              onClick={() => setCalcType(t)}
+              className={cn(
+                "flex-1 py-2 px-3 rounded-md text-[9px] uppercase font-black tracking-widest transition-all whitespace-nowrap",
+                calcType === t ? "bg-tron-cyan text-black" : "text-white/40 hover:text-white"
+              )}
+            >
+              {t === 'maddrey' ? 'Maddrey' : t === 'meld' ? 'MELD-Na' : t === 'fib4' ? 'FIB-4' : 'Child-Pugh'}
+            </button>
+          ))}
+        </div>
+
+        {calcType === 'meld' && (
+          <div className="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-4">
+            <div className="space-y-1">
+              <label className="text-[10px] uppercase text-white/40 font-bold">Bilirrubina (mg/dl)</label>
+              <input type="number" step="0.1" value={meldData.bil} onChange={e => setMeldData({...meldData, bil: +e.target.value})} className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white font-mono focus:border-tron-cyan focus:outline-none transition-colors" />
+            </div>
+            <div className="space-y-1">
+              <label className="text-[10px] uppercase text-white/40 font-bold">INR</label>
+              <input type="number" step="0.1" value={meldData.inr} onChange={e => setMeldData({...meldData, inr: +e.target.value})} className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white font-mono focus:border-tron-cyan focus:outline-none transition-colors" />
+            </div>
+            <div className="space-y-1">
+              <label className="text-[10px] uppercase text-white/40 font-bold">Creatinina (mg/dl)</label>
+              <input type="number" step="0.1" value={meldData.cr} onChange={e => setMeldData({...meldData, cr: +e.target.value})} className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white font-mono focus:border-tron-cyan focus:outline-none transition-colors" />
+            </div>
+            <div className="space-y-1">
+              <label className="text-[10px] uppercase text-white/40 font-bold">Sodio (mEq/L)</label>
+              <input type="number" value={meldData.na} onChange={e => setMeldData({...meldData, na: +e.target.value})} className="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-white font-mono focus:border-tron-cyan focus:outline-none transition-colors" />
+            </div>
+            <div className="col-span-2 p-6 border border-tron-cyan/20 bg-tron-cyan/5 text-center rounded-2xl group transition-all hover:bg-tron-cyan/10">
+              <div className="text-[10px] uppercase text-tron-cyan tracking-[0.4em] mb-2 font-black">Score de Priorización MELD-Na</div>
+              <div className="text-6xl font-black text-white font-display tracking-tighter text-glow-cyan">{meldScore}</div>
+              <div className="text-[10px] text-white/40 mt-4 italic uppercase tracking-wider">Pronóstico de supervivencia a 90 días optimizado</div>
+            </div>
+          </div>
+        )}
+
+        {calcType !== 'meld' && (
+          <div className="p-12 text-center border border-white/5 bg-white/2 rounded-2xl italic text-white/30 flex flex-col items-center gap-3">
+            <Database className="opacity-20" size={32} />
+            <p className="text-xs uppercase tracking-widest font-black">Módulo de Precisión en Desarrollo</p>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<UserProgress>(() => {
@@ -1859,87 +1957,117 @@ export default function App() {
               <span className="text-xs bg-white/5 px-2 py-0.5 rounded text-white/40 font-mono tracking-widest ml-4 border border-white/10 uppercase">
                 {selectedDifficulty}
               </span>
-              {selectedDifficulty !== 'Subspecialist' && (
-                <button
-                  onClick={upgradeDifficultyMidQuiz}
-                  className="ml-4 p-1 px-3 bg-tron-yellow/10 border border-tron-yellow/30 rounded text-tron-yellow text-[10px] uppercase font-bold tracking-tighter hover:bg-tron-yellow/20 transition-all flex items-center gap-1 group shadow-[0_0_10px_rgba(255,184,0,0.1)] hover:shadow-[0_0_20px_rgba(255,184,0,0.3)]"
-                  title="Subir dificultad del módulo"
-                >
-                  <TrendingUp size={12} className="group-hover:-translate-y-0.5 transition-transform" />
-                  Incrementar Nivel
-                </button>
-              )}
             </h2>
           </div>
-          <div className="flex items-center gap-4">
-            {currentQuestion && (
-              <button
-                 onClick={() => toggleBookmark(currentQuestion.id)}
-                 className={cn(
-                   "p-2 rounded-lg border transition-all hover:scale-110 active:scale-95",
-                   bookmarks.includes(currentQuestion.id) 
-                     ? "bg-tron-yellow text-black border-tron-yellow shadow-[0_0_15px_#ffb800]" 
-                     : "bg-white/5 text-white/30 border-white/10 hover:border-tron-yellow/50"
-                 )}
-              >
-                <ShieldCheck size={20} fill={bookmarks.includes(currentQuestion.id) ? "currentColor" : "none"} />
-              </button>
-            )}
-            {isSimMode && (
-              <div className={cn(
-                "px-4 py-2 border rounded-lg font-mono text-xl shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-3 animate-in fade-in slide-in-from-right-4",
-                timeLeft < 60 ? "text-tron-sub border-tron-sub animate-pulse" : "text-white border-white/20"
-              )}>
-                <Timer size={20} /> {formatTime(timeLeft)}
-              </div>
-            )}
-            <div className="text-right">
-            <span className="text-4xl font-mono text-white flex items-baseline gap-4">
-              {/* Session Streak Indicator */}
-              <AnimatePresence mode="wait">
-                {currentStreak > 0 && (
-                  <motion.div 
-                    key={currentStreak}
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 1.5, opacity: 0 }}
-                    className={cn(
-                      "flex items-center gap-1 text-sm font-black italic uppercase italic tracking-tighter",
-                      currentStreak >= 10 ? "text-tron-yellow" : currentStreak >= 6 ? "text-white" : "text-tron-cyan"
-                    )}
-                  >
-                    <Zap size={14} fill="currentColor" /> x{currentStreak}
-                  </motion.div>
-                )}
-              </AnimatePresence>
 
-              <span>
-                {String(currentQuestionIndex + 1).padStart(2, '0')}
-                <span className="text-white/10 mx-1">/</span>
-                {String(questions.length).padStart(2, '0')}
-              </span>
-            </span>
-            <div className="w-32 h-1 bg-white/5 mt-2 rounded-full overflow-hidden border border-white/5">
-               <motion.div 
-                className="h-full relative overflow-hidden"
-                initial={{ width: 0 }}
-                animate={{ 
-                  width: `${((currentQuestionIndex + (showFeedback ? 1 : 0)) / questions.length) * 100}%`,
-                  backgroundColor: streakVisuals?.color || 'var(--color-tron-cyan)'
-                }}
-                style={{ boxShadow: streakVisuals?.shadow }}
-               >
-                 <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)] animate-[shimmer_2s_infinite]" />
-               </motion.div>
-            </div>
-            {streakVisuals && (
-              <div className={cn("text-[8px] uppercase font-bold tracking-widest mt-1 text-right", streakVisuals.intensity)} style={{ color: streakVisuals.color }}>
-                {streakVisuals.text}
-              </div>
-            )}
+          <div className="flex gap-3">
+            <button 
+              onClick={() => { playAudio('click'); setShowPearls(!showPearls); }}
+              className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-tron-yellow/10 hover:border-tron-yellow/30 transition-all group flex items-center gap-3"
+            >
+              <Lightbulb size={16} className="text-tron-yellow group-hover:scale-110 transition-transform" />
+              <span className="text-[10px] uppercase font-black tracking-tighter text-white/60 hidden md:inline">Diario de Perlas</span>
+              <span className="bg-tron-yellow/20 text-tron-yellow px-1.5 py-0.5 rounded text-[8px] font-black">{progress.savedPearls?.length || 0}</span>
+            </button>
+            <button 
+              onClick={() => { playAudio('click'); setShowCalcs(!showCalcs); }}
+              className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-tron-cyan/10 hover:border-tron-cyan/30 transition-all group flex items-center gap-3"
+            >
+              <Activity size={16} className="text-tron-cyan group-hover:scale-110 transition-transform" />
+              <span className="text-[10px] uppercase font-black tracking-tighter text-white/60 hidden md:inline">Calculadoras</span>
+            </button>
           </div>
-        </div>
-      </header>
+        </header>
+
+        {/* MODAL: MEDICAL CALCULATORS */}
+        <AnimatePresence>
+          {showCalcs && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="w-full max-w-lg bg-tron-dark border border-white/10 p-10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] relative"
+              >
+                <div className="flex justify-between items-center mb-10">
+                  <div className="flex items-center gap-4">
+                     <div className="p-3 bg-tron-cyan/10 rounded-2xl border border-tron-cyan/30">
+                        <Activity className="text-tron-cyan" size={24} />
+                     </div>
+                     <div>
+                        <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">Protocolos de Precisión</h3>
+                        <p className="text-[9px] text-tron-cyan font-black tracking-[0.2em] uppercase opacity-60">Motor de cálculo clínico avanzado</p>
+                     </div>
+                  </div>
+                  <button onClick={() => setShowCalcs(false)} className="bg-white/5 hover:bg-white/10 p-2 rounded-full transition-colors">
+                    <X size={20} className="text-white/40" />
+                  </button>
+                </div>
+                
+                <MedicalCalculators />
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+
+        {/* MODAL: PEARLS LIBRARY */}
+        <AnimatePresence>
+          {showPearls && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9, x: -20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.9, x: -20 }}
+                className="w-full max-w-2xl bg-tron-dark border border-white/10 p-10 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] relative max-h-[85vh] flex flex-col"
+              >
+                <div className="flex justify-between items-center mb-10">
+                  <div className="flex items-center gap-4">
+                     <div className="p-3 bg-tron-yellow/10 rounded-2xl border border-tron-yellow/30">
+                        <Lightbulb className="text-tron-yellow" size={24} />
+                     </div>
+                     <div>
+                        <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter">Cognoscitium: Diario de Perlas</h3>
+                        <p className="text-[9px] text-tron-yellow font-black tracking-[0.2em] uppercase opacity-60">Repositorio de insights clínicos guardados</p>
+                     </div>
+                  </div>
+                  <button onClick={() => setShowPearls(false)} className="bg-white/5 hover:bg-white/10 p-2 rounded-full transition-colors">
+                    <X size={20} className="text-white/40" />
+                  </button>
+                </div>
+                
+                <div className="flex-1 overflow-y-auto pr-2 space-y-4 custom-scrollbar">
+                  {(!progress.savedPearls || progress.savedPearls.length === 0) ? (
+                    <div className="h-full flex flex-col items-center justify-center py-20 text-white/20 italic text-center px-10 gap-4">
+                      <Search size={48} className="opacity-10" />
+                      <p className="text-sm uppercase tracking-widest font-black leading-relaxed">Tu diario está vacío. Acierta preguntas complejas y guarda sus perlas para desbloquear el conocimiento.</p>
+                    </div>
+                  ) : (
+                    progress.savedPearls.map(pearl => (
+                      <div key={pearl.questionId} className="p-6 border border-white/5 bg-white/[0.01] rounded-2xl hover:bg-white/[0.03] transition-all group flex gap-5">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-tron-yellow/10 flex items-center justify-center border border-tron-yellow/20">
+                          <Zap size={14} className="text-tron-yellow" />
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 bg-tron-cyan/10 text-tron-cyan rounded-md border border-tron-cyan/20">
+                              {GASTRO_TOPICS.find(t => t.id === pearl.topic)?.name}
+                            </span>
+                            <span className="text-[8px] font-mono text-white/20 tracking-tighter uppercase">
+                              DATA_LINK_ESTABLISHED: {new Date(pearl.date).toLocaleDateString()}
+                            </span>
+                          </div>
+                          <p className="text-lg text-white/90 leading-relaxed font-serif italic pr-4">
+                            "{pearl.text}"
+                          </p>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
 
       {/* Identity Discs & Grid Background Effects */}
       <AnimatePresence>
@@ -1984,6 +2112,53 @@ export default function App() {
                     accentColor="rgba(0,242,255,0.4)" 
                     className="mb-8 p-10 min-h-[300px] flex flex-col bg-tron-card/50"
                   >
+                    {/* Feature 1: Visual Atlas Component during Question */}
+                    {currentQuestion?.visualHint && (
+                      <div className="mb-12">
+                        <button 
+                          onClick={() => { playAudio('magic'); setShowVisualDetail(!showVisualDetail); }}
+                          className={cn(
+                            "w-full p-6 border rounded-3xl transition-all flex items-center gap-6 group text-left",
+                            showVisualDetail 
+                              ? "bg-tron-cyan/5 border-tron-cyan/40 shadow-[0_0_20px_rgba(0,242,255,0.1)]" 
+                              : "bg-black/40 border-white/5 hover:border-tron-cyan/30"
+                          )}
+                        >
+                          <div className="p-4 bg-tron-cyan/10 rounded-2xl group-hover:scale-105 transition-transform">
+                            <ZoomIn size={24} className="text-tron-cyan" />
+                          </div>
+                          <div className="flex-1">
+                             <h4 className="text-xs uppercase font-black tracking-[0.2em] text-tron-cyan mb-1">Evidencia Visual Disponible (ATLAS_v2)</h4>
+                             <p className="text-xs text-white/40 italic">Haz clic para revelar el hallazgo de endoscopia/biopsia/imagen.</p>
+                          </div>
+                          {showVisualDetail && (
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-tron-cyan">
+                               <Star size={20} className="animate-pulse" />
+                            </motion.div>
+                          )}
+                        </button>
+
+                        <AnimatePresence>
+                          {showVisualDetail && (
+                            <motion.div 
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mt-4 p-8 bg-tron-cyan/5 border border-tron-cyan/20 rounded-3xl font-serif italic text-white/90 leading-relaxed text-lg border-dashed">
+                                <div className="flex items-center gap-3 mb-4 opacity-30">
+                                  <ImageIcon size={14} />
+                                  <span className="text-[10px] uppercase font-black tracking-widest underline">Descripción de Hallazgo Patognomónico</span>
+                                </div>
+                                {currentQuestion.visualHint}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
                     <h3 className="text-2xl md:text-3xl text-white font-serif font-light leading-relaxed mb-12">
                       {currentQuestion?.text ? renderWithAcronyms(currentQuestion.text) : null}
                     </h3>
@@ -2077,6 +2252,28 @@ export default function App() {
                     animate={{ opacity: 1, x: 0 }}
                     className="space-y-6"
                   >
+                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex gap-4">
+                       <button 
+                         onClick={() => { playAudio('magic'); setIsOracleOpen(true); }}
+                         className="flex-1 py-4 px-6 border border-tron-cyan/20 bg-tron-cyan/5 rounded-2xl hover:bg-tron-cyan/10 transition-all flex items-center justify-center gap-3 group"
+                       >
+                         <Search size={18} className="text-tron-cyan group-hover:scale-110 transition-transform" />
+                         <span className="text-[10px] uppercase font-black tracking-widest text-tron-cyan">Consultar Guía Extendida (Oráculo)</span>
+                       </button>
+                       <button 
+                         onClick={() => savePearl(currentQuestion)}
+                         className={cn(
+                           "px-6 py-4 border rounded-2xl transition-all flex items-center gap-3 group",
+                           progress.savedPearls?.some(p => p.questionId === currentQuestion.id)
+                            ? "bg-tron-yellow border-tron-yellow text-black"
+                            : "bg-white/5 border-white/10 hover:border-tron-yellow hover:text-tron-yellow text-white/40"
+                         )}
+                       >
+                         <Lightbulb size={18} className={progress.savedPearls?.some(p => p.questionId === currentQuestion.id) ? "text-black" : "text-white/40 group-hover:text-tron-yellow"} />
+                         <span className="text-[10px] uppercase font-black tracking-widest">{progress.savedPearls?.some(p => p.questionId === currentQuestion.id) ? 'Guardada' : 'Guardar Perla'}</span>
+                       </button>
+                     </motion.div>
+
                     <div className={cn(
                       "p-6 rounded-2xl border-2 flex flex-col gap-4 shadow-lg relative overflow-hidden",
                       isCorrect ? "border-tron-cyan bg-tron-cyan/5 shadow-tron-cyan/20" : "border-tron-yellow bg-tron-yellow/5 shadow-tron-yellow/20"

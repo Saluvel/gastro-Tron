@@ -23,8 +23,10 @@ async function fetchBatch(topic: string, difficulty: string, count: number, focu
 
   const prompt = `Eres un Profesor de Gastroenterología de nivel mundial evaluando candidatos en un examen de máxima exigencia.
   ${topicSpecificPrompt}
-  Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topic}".
-  ${focusArea ? `IMPORTANTE: Para este lote, prioriza el área de enfoque: "${focusArea}" asegurando que las preguntas sean variadas dentro de este nicho.` : ''}
+  Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema ESTRICTO: "${topic}".
+  CUALQUIER PREGUNTA QUE NO ESTÉ ESTRECHAMENTE RELACIONADA AL TEMA "${topic}" SERÁ RECHAZADA Y CAUSARÁ EL FRACASO DE LA EVALUACIÓN. SI EL TEMA ES "Diarrea Aguda", NO DEBES HABLAR DE INFECCIONES O PATOLOGÍAS CRÓNICAS QUE NO CAUSEN PRINCIPALMENTE DIARREA AGUDA (e.g. no EII crónica, no falla secundaria de biológicos, a menos que el tema sea Específicamente EII).
+  
+  ${focusArea ? `IMPORTANTE: Para este lote, centra el contexto (dentro del tema "${topic}") en: "${focusArea}"` : ''}
   
   LÓGICA DE ESCALAMIENTO SEGÚN NIVEL:
   - Nivel "Fellow": Enfoque en manejo estándar según guías internacionales (ASGE/ESGE/AGA). Casos de presentación clásica pero con distractores académicos.
@@ -41,13 +43,14 @@ async function fetchBatch(topic: string, difficulty: string, count: number, focu
        * Fisiopatología y diagnóstico diferencial (Causas no infecciosas como isquemia o fármacos).
        * Manejo terapéutico basado en guías recientes (ACG, AGA, EASL).
        * Complicaciones críticas y criterios de hospitalización en el adulto.
-  3. ESTRUCTURA DE RESPUESTA:
+  3. ESTRUCTURA DE EXPLICACIÓN (En la propiedad "explanation" del JSON):
      A) Interpretación del hallazgo.
      B) Justificación clínica.
      C) Justificación basada en Evidencia/Guía/Estudio Hito.
-  3. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser técnica y detallada.
-  4. PERLA CLÍNICA: Un "Axioma" médico definitivo.
-  5. ANÁLISIS DE DISTRACTORES (MANDATORIO): En el objeto "whyWrong", debes proporcionar una justificación fisiopatológica o clínica corta y precisa de POR QUÉ cada opción incorrecta es falsa en este escenario específico. Los distractores deben ser "plausibles" pero incorrectos por una razón científica clara.
+  4. FISIOPATOLOGÍA PROFUNDA EXTREMA: La sección "fisiopato" DEBE ser técnica y detallada.
+  5. PERLA CLÍNICA: Un "Axioma" médico definitivo.
+  6. ANÁLISIS DE DISTRACTORES (MANDATORIO): En el objeto "whyWrong", debes proporcionar una justificación fisiopatológica o clínica corta y precisa de POR QUÉ cada opción incorrecta es falsa en este escenario específico. Los distractores deben ser "plausibles" pero incorrectos por una razón científica clara.
+
   
   Estructura JSON requerida (DEBES DEVOLVER UNA MATRIZ JSON DE EXACTAMENTE ${count} OBJETOS DIFERENTES, repitiendo esta estructura para cada pregunta):
   [
@@ -128,14 +131,11 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
   const batches: { count: number; focus: string }[] = [];
   
   const focusAreas = [
-    "Patrón Hepatocelular: Transaminasas y Hepatitis (Virales, Autoinmune, Tóxica)",
-    "Patrón Colestásico e Infiltrativo: FA, GGT y Obstrucción Vía Biliar",
-    "Interpretación de Bilirrubinas: Pre-hepática, Hepática y Post-hepática",
-    "EII: Falla Primaria y Secundaria a Biológicos (Conducta y TDM)",
-    "EII: Reacciones Adversas (RAM) e Inmunogenicidad de Terapias Modernas",
-    "Epidemiología: Causas más frecuentes y brotes (Virus vs Bacterias vs Parásitos)",
-    "Diagnóstico Diferencial Avanzado: Causas No Infecciosas de Diarrea",
-    "Manejo de Crisis: Sepsis en Gastro, Megacolon Tóxico e Insuficiencia Hepática"
+    "Epidemiología, etiología y causas más frecuentes en la población adulta.",
+    "Fisiopatología, mecanismos de enfermedad y diagnóstico diferencial exhaustivo.",
+    "Presentación en casos clínicos de la vida real (clásica y atípica).",
+    "Manejo terapéutico, algoritmos de decisión basados en guías y farmacología clínica.",
+    "Complicaciones, criterios de hospitalización y situaciones de urgencia/emergencia gastroenterológica."
   ];
 
   let remaining = count;

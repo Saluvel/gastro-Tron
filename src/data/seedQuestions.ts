@@ -221,6 +221,7 @@ export const SEED_QUESTIONS: Question[] = [
     ],
     correctIndex: 1,
     explanation: 'La relación AST/ALT > 2 asociada a elevación de GGT y macrocitosis (VCM elevado) es altamente sugerente de daño hepático por alcohol. La AST mitocondrial se libera más que la ALT en este contexto.',
+    visualHint: 'Se observa una biopsia hepática con presencia de Cuerpos de Mallory-Denk (material eosinofílico hialino intracitoplasmático), infiltrado de PMN rodeando hepatocitos en degeneración y fibrosis en "alambrada" (pericelular).',
     fisiopato: 'El alcohol induce daño mitocondrial (liberación de AST) y déficit de Piridoxal-5-Fosfato (necesario para la síntesis de ALT), invirtiendo la relación habitual.',
     clinicalPearl: 'Relación De Ritis (AST/ALT) > 2 = Sospecha alcohol hasta demostrar lo contrario.',
     guideline: 'ACG Guidelines on Abnormal Liver Chemistries 2025',

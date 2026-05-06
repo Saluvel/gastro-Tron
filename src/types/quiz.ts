@@ -14,6 +14,7 @@ export interface Question {
   whyWrong?: {
     [key: number]: string;
   };
+  visualHint?: string;
 }
 
 export interface Topic {
@@ -43,4 +44,10 @@ export interface UserProgress {
     sound: boolean;
     theme: 'tron' | 'neon' | 'hacker';
   };
+  savedPearls: {
+    questionId: string;
+    text: string;
+    topic: string;
+    date: number;
+  }[];
 }
