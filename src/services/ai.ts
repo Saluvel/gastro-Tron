@@ -48,30 +48,36 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       console.log(`Llamando al oráculo de GAS-TRON para lote de ${currentBatchCount} preguntas adicionales (${focus})...`);
       
       const prompt = `${systemSourceInstruction}
-      Genera ${currentBatchCount} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topicName}".
+      Genera ${currentBatchCount} preguntas de opción múltiple de nivel alto y profesional en ESPAÑOL NEUTRO, CLARO Y MUY PROFESIONAL para el nivel "${difficulty}" sobre el tema: "${topicName}".
       Contexto específico: ${focus || 'General'}
       
-      IMPORTANTE: Las explicaciones deben ser técnicas y detalladas.
-      - 'fisiopato': Explicación profunda del mecanismo.
-      - 'clinicalPearl': Una perla de oro para el consultorio o el board.
-      - 'guideline': Cita la guía o el capítulo del manual correspondiente.
-      - 'whyWrong': Explica por qué cada una de las otras 3 opciones es incorrecta.
+      IMPORTANTE Y OBLIGATORIO: 
+      1. El lenguaje debe ser estrictamente académico y directo. 
+      2. ESTÁ TOTALMENTE PROHIBIDO usar palabras sin sentido, adjetivos extraños o alucinaciones lingüísticas (NO uses palabras como "estelar", "crural", "letánico", "inter-mensual", "focal puro", etc. repetitivamente ni fuera de contexto).
+      3. Mantén una sintaxis médica normal y realista.
       
-      Devuelve un JSON con este formato:
+      Otras reglas:
+      - 'fisiopato': Explicación profunda y real del mecanismo.
+      - 'clinicalPearl': Una perla de conocimiento útil, corta y altamente práctica para el board clínico.
+      - 'guideline': Cita una guía o consenso real y existente.
+      - 'whyWrong': Explica por qué cada una de las otras 3 opciones (las incorrectas) no son la respuesta correcta.
+      - 'correctIndex' DEBE ser siempre 0 (el sistema las mezclará después). Por tanto, la respuesta correcta debe ser siempre la primera de la lista de opciones.
+      
+      Devuelve un JSON estricto con este formato:
       [
         {
           "id": "unique_id",
           "topic": "${topicId}",
           "difficulty": "${difficulty}",
-          "text": "...",
-          "options": ["...", "...", "...", "..."],
+          "text": "[Pregunta clara y bien redactada]",
+          "options": ["[Opcion correcta]", "[Distractor 1]", "[Distractor 2]", "[Distractor 3]"],
           "correctIndex": 0,
-          "explanation": "...",
-          "fisiopato": "...",
-          "clinicalPearl": "...",
-          "guideline": "...",
+          "explanation": "[Breve explicación de la respuesta]",
+          "fisiopato": "[Fisiopatología]",
+          "clinicalPearl": "[Perla clínica]",
+          "guideline": "[Guía clínica]",
           "pillar": "Must-Know",
-          "whyWrong": { "0": "...", "1": "...", "2": "...", "3": "..." }
+          "whyWrong": { "1": "[Fallo del D1]", "2": "[Fallo del D2]", "3": "[Fallo del D3]" }
         }
       ]`;
 
@@ -99,7 +105,6 @@ export async function generateQuestions(topicId: string, topicName: string, diff
                 whyWrong: { 
                   type: Type.OBJECT, 
                   properties: {
-                    "0": { type: Type.STRING },
                     "1": { type: Type.STRING },
                     "2": { type: Type.STRING },
                     "3": { type: Type.STRING }

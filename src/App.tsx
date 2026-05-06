@@ -337,7 +337,26 @@ export default function App() {
   });
   const [pearlsSearch, setPearlsSearch] = useState('');
   const [pearlsFilterTopic, setPearlsFilterTopic] = useState<string | 'all'>('all');
+  const [pearlsCategory, setPearlsCategory] = useState<string>('all');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
+
+  const PEARL_CATEGORIES: Record<string, string[]> = {
+    'hepatobiliares': ['hepatitis', 'masld', 'cirrosis', 'vias_biliares', 'perfil_hepatico'],
+    'esofago_gastricas': ['erge', 'motores_esofago', 'cancer_esofago', 'h_pylori', 'ulcera_peptica', 'cancer_gastrico'],
+    'intestinales': ['diarrea_aguda', 'diarrea_cronica', 'celiaca', 'eii', 'eii_avanzada', 'dolor_abdominal'],
+    'pancreato_biliar': ['pancreatitis'],
+    'hemorragias': ['hda', 'hdb'],
+    'miscelaneas': ['biologia', 'nutricion', 'muerte_subita', 'protocolo_simulacro']
+  };
+
+  const CATEGORY_NAMES: Record<string, string> = {
+    'hepatobiliares': 'Hepatobiliares',
+    'esofago_gastricas': 'Gástricas y Esofágicas',
+    'intestinales': 'Intestinales y Colon',
+    'pancreato_biliar': 'Páncreas',
+    'hemorragias': 'Hemorragias',
+    'miscelaneas': 'Misceláneas'
+  };
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('Fellow');
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -2337,7 +2356,7 @@ export default function App() {
                       </div>
                     )}
 
-                    <h3 className="text-2xl md:text-3xl text-white font-serif font-light leading-relaxed mb-12">
+                    <h3 className="text-xl md:text-2xl text-white font-serif font-light leading-relaxed mb-12">
                       {currentQuestion?.text ? renderWithAcronyms(currentQuestion.text) : null}
                     </h3>
 
@@ -2799,22 +2818,31 @@ export default function App() {
     ];
 
     const filteredPearls = allKnownQuestions.filter(q => {
-      const matchesSearch = q.clinicalPearl.toLowerCase().includes(pearlsSearch.toLowerCase()) || 
-                            q.text.toLowerCase().includes(pearlsSearch.toLowerCase());
-      const matchesTopic = pearlsFilterTopic === 'all' || q.topic === pearlsFilterTopic;
-      return matchesSearch && matchesTopic;
+      if (!q.clinicalPearl) return false;
+      const pearlText = q.clinicalPearl;
+      const textParam = q.text || "";
+      const matchesSearch = pearlText.toLowerCase().includes(pearlsSearch.toLowerCase()) || 
+                            textParam.toLowerCase().includes(pearlsSearch.toLowerCase());
+      
+      let matchesCategory = true;
+      if (pearlsCategory !== 'all') {
+        const categoryTopics = PEARL_CATEGORIES[pearlsCategory] || [];
+        matchesCategory = categoryTopics.includes(q.topic);
+      }
+      
+      return matchesSearch && matchesCategory;
     });
     
     return (
       <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/40">
-        <header className="mb-12 space-y-8">
+        <header className="mb-8 space-y-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="flex items-center gap-6">
               <button 
                 onClick={() => {
                   setCurrentView('lobby');
                   setPearlsSearch('');
-                  setPearlsFilterTopic('all');
+                  setPearlsCategory('all');
                 }}
                 className="p-1 px-4 border border-white/10 rounded hover:bg-white/5 hover:text-tron-yellow transition-colors flex items-center gap-2 group"
               >
@@ -2837,17 +2865,35 @@ export default function App() {
                 />
                 <Target size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-tron-cyan opacity-50" />
               </div>
-              <select 
-                value={pearlsFilterTopic}
-                onChange={(e) => setPearlsFilterTopic(e.target.value)}
-                className="bg-black/40 border border-tron-cyan/30 rounded-lg py-2 px-4 text-sm text-white focus:outline-none focus:border-tron-cyan appearance-none cursor-pointer font-mono"
-              >
-                <option value="all">TODOS LOS TEMAS</option>
-                {GASTRO_TOPICS.map(t => (
-                  <option key={t.id} value={t.id}>{t.name.toUpperCase()}</option>
-                ))}
-              </select>
             </div>
+          </div>
+          
+          <div className="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+            <button
+              onClick={() => setPearlsCategory('all')}
+              className={cn(
+                "px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-lg transition-colors border",
+                pearlsCategory === 'all' 
+                  ? "bg-tron-cyan/20 border-tron-cyan text-tron-cyan" 
+                  : "bg-black/30 border-white/10 text-white/50 hover:bg-white/5 hover:text-white"
+              )}
+            >
+              TODAS LAS PERLAS
+            </button>
+            {Object.entries(CATEGORY_NAMES).map(([key, name]) => (
+              <button
+                key={key}
+                onClick={() => setPearlsCategory(key)}
+                className={cn(
+                  "px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-lg transition-colors border",
+                  pearlsCategory === key 
+                    ? "bg-tron-yellow/20 border-tron-yellow text-tron-yellow" 
+                    : "bg-black/30 border-white/10 text-white/50 hover:bg-white/5 hover:text-white"
+                )}
+              >
+                {name}
+              </button>
+            ))}
           </div>
         </header>
 
