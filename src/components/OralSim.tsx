@@ -45,7 +45,7 @@ export function OralSim({ onExit }: OralSimProps) {
       const ai = new GoogleGenAI({ apiKey });
       
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: prompt,
       });
 
@@ -86,7 +86,7 @@ export function OralSim({ onExit }: OralSimProps) {
 
       // Simplified: Just send the context + new evaluation instruction
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: [...newMessages.map(m => ({ 
           role: m.role === 'system' ? 'user' : m.role === 'assistant' ? 'model' : 'user', 
           parts: [{ text: m.content }] 
