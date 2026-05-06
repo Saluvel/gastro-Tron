@@ -35,6 +35,7 @@ export function OralSim({ onExit }: OralSimProps) {
     setIsTyping(true);
     
     const prompt = `Eres un estricto examinador del "Board" de Gastroenterología evaluando oralmente a un Fellow en el tema: ${topic.name}.
+    Tus bases de conocimientos son el MANUAL CHILENO DE GASTROENTEROLOGÍA (2025) y guías internacionales (AGA, ESGE, AASLD).
     Presenta un caso clínico complejo y abierto relacionado con este tema en 3-4 oraciones. Luego, haz UNA sola pregunta procedimental o diagnóstica de "Next Best Step".
     Tono: Académico, intimidante pero justo, directo al grano.
     No des opciones. Espera la respuesta del aspirante. Termina tu mensaje con la pregunta.`;
@@ -81,8 +82,10 @@ export function OralSim({ onExit }: OralSimProps) {
       const ai = new GoogleGenAI({ apiKey });
 
       const prompt = `El aspirante respondió: "${input}". 
-      Evalúa críticamente su respuesta en un parrafito. Si está mal o incompleto, indícale por qué de forma firme. 
-      Luego, si corresponde, haz una pregunta de seguimiento (follow-up) subiendo la dificultad. Si el caso ya se resolvió, dale una calificación final (Ej: "Aprobado", "Reprobado") y una perla de oro.`;
+      Evalúa críticamente su respuesta basándote en el Manual Chileno 2025 y guías internacionales. 
+      Indica claramente si la conducta es correcta o no. 
+      Luego, si corresponde, haz una pregunta de seguimiento (follow-up) subiendo la dificultad. 
+      Si el caso ya se resolvió, dale una calificación final (Ej: "Aprobado", "Reprobado") y una perla de oro técnica.`;
 
       // Simplified: Just send the context + new evaluation instruction
       const response = await ai.models.generateContent({

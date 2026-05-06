@@ -38,5 +38,15 @@ export const GASTRO_TOPICS: Topic[] = [
     id: 'eii_avanzada',
     name: 'EII: Manejo y Fallas',
     description: 'Decisión clínica en biológicos: falla primaria/secundaria y manejo de RAM.'
+  },
+  {
+    id: 'muerte_subita',
+    name: 'Muerte Súbita y Emergencias',
+    description: 'Paro cardiorrespiratorio en endoscopia, arritmias y soporte vital avanzado.'
+  },
+  {
+    id: 'protocolo_simulacro',
+    name: 'Protocolo Simulacro',
+    description: 'Escenarios críticos de alta fidelidad: toma de decisiones bajo presión y liderazgo.'
   }
 ];

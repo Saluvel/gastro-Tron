@@ -15,7 +15,7 @@ export interface Question {
     [key: number]: string;
   };
   visualHint?: string;
-  pillar?: 'Must-Know' | 'Board Prep' | 'Mastery';
+  pillar?: 'Must-Know' | 'Board Prep' | 'Mastery' | 'Common Cases' | 'Staff Level' | 'Clinical Logic' | 'Phatophysiology';
 }
 
 export interface Topic {

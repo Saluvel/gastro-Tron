@@ -1,7 +1,20 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Question, Difficulty } from "../types/quiz";
+import { PRELOADED_QUESTIONS } from "../data/questionBank";
 
 export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
+  // 1. Intentar obtener de las preguntas precargadas primero
+  const preloaded = PRELOADED_QUESTIONS.filter(q => q.topic === topicId && q.difficulty === difficulty)
+    .sort(() => Math.random() - 0.5);
+
+  const selectedPreloaded = preloaded.slice(0, count);
+  const remainingCount = count - selectedPreloaded.length;
+
+  // Si ya tenemos suficientes preguntas, las devolvemos
+  if (remainingCount <= 0) {
+    return selectedPreloaded;
+  }
+
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("La variable de entorno GEMINI_API_KEY no está configurada. Por favor, asegúrate de que esté configurada en los ajustes del proyecto.");
@@ -20,19 +33,29 @@ export async function generateQuestions(topicId: string, topicName: string, diff
 
     const shuffledFocus = [...focusAreas].sort(() => Math.random() - 0.5);
     const BATCH_SIZE = 5;
-    const allQuestions: Question[] = [];
+    const aiQuestions: Question[] = [];
     
-    let remaining = count;
+    let remaining = remainingCount;
     let focusIdx = 0;
+
+    // Instrucción para el oráculo sobre sus fuentes (Basado en lo solicitado por el usuario)
+    const systemSourceInstruction = `Utiliza como fuente principal el MANUAL CHILENO DE GASTROENTEROLOGÍA (2025) y guías internacionales de sociedades acreditadas (AGA, ACG, ESGE, AASLD).`;
 
     while (remaining > 0) {
       const currentBatchCount = Math.min(remaining, BATCH_SIZE);
       const focus = shuffledFocus[focusIdx % shuffledFocus.length];
       
-      console.log(`Llamando al oráculo de GAS-TRON para lote de ${currentBatchCount} preguntas (${focus})...`);
+      console.log(`Llamando al oráculo de GAS-TRON para lote de ${currentBatchCount} preguntas adicionales (${focus})...`);
       
-      const prompt = `Genera ${currentBatchCount} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topicName}".
+      const prompt = `${systemSourceInstruction}
+      Genera ${currentBatchCount} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topicName}".
       Contexto específico: ${focus || 'General'}
+      
+      IMPORTANTE: Las explicaciones deben ser técnicas y detalladas.
+      - 'fisiopato': Explicación profunda del mecanismo.
+      - 'clinicalPearl': Una perla de oro para el consultorio o el board.
+      - 'guideline': Cita la guía o el capítulo del manual correspondiente.
+      - 'whyWrong': Explica por qué cada una de las otras 3 opciones es incorrecta.
       
       Devuelve un JSON con este formato:
       [
@@ -104,18 +127,20 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       }
       
       const batch = JSON.parse(cleanText);
-      allQuestions.push(...batch);
+      aiQuestions.push(...batch);
       
       remaining -= currentBatchCount;
       focusIdx++;
     }
 
-    return allQuestions.map(q => ({
+    const finalQuestions = [...selectedPreloaded, ...aiQuestions.map(q => ({
       ...q,
       id: q.id || Math.random().toString(36).substr(2, 9),
       topic: topicId,
       difficulty: difficulty as Difficulty
-    })).sort(() => Math.random() - 0.5);
+    }))];
+
+    return finalQuestions.sort(() => Math.random() - 0.5);
   } catch (error) {
     console.error("Error al generar preguntas vía IA:", error);
     throw error;

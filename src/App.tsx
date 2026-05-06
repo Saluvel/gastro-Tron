@@ -53,6 +53,7 @@ import { OralSim } from './components/OralSim';
 import { RadarChart } from './components/RadarChart';
 import { ClinicalCases } from './components/ClinicalCases';
 import { Leaderboard } from './components/Leaderboard';
+import { MasterclassViewer } from './components/MasterclassViewer';
 import { playAudio, setSoundEnabled } from './lib/audio';
 import { cn } from './lib/utils';
 
@@ -228,7 +229,7 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
         model: "gemini-flash-latest",
         contents: userMsg,
         config: {
-          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
+          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA de ultra-élite experta en gastroenterología clínica. Tu base de datos principal es el Manual Chileno de Gastroenterología (2025) y las guías internacionales más recientes (AGA, ACG, ESGE, AASLD, ECCO). Tu objetivo es ayudar a Fellows y Residentes con dudas médicas complejas, perlas fisiopatológicas y algoritmos de manejo. Tus respuestas deben ser técnicas, precisas, con rigor académico, y mantener un tono professional 'cyberpunk/tron'. Siempre cita la fuente de tus recomendaciones (ej: 'Según Manual Chileno 2025...'). Aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional del médico tratante."
         }
       });
 
@@ -354,6 +355,7 @@ export default function App() {
   const [showCalcs, setShowCalcs] = useState(false);
   const [showPearls, setShowPearls] = useState(false);
   const [showVisualDetail, setShowVisualDetail] = useState(false);
+  const [isMasterclassRoute, setIsMasterclassRoute] = useState(false);
 
   const savePearl = (question: Question) => {
     if (!question.clinicalPearl) return;
@@ -991,6 +993,15 @@ export default function App() {
   };
 
   const startQuiz = async (topic: Topic) => {
+    const isMasterclass = ['perfil_hepatico', 'eii_avanzada'].includes(topic.id);
+    
+    // Si es masterclass y no hemos visto la teoría aún en esta sesión (o forzamos verla)
+    if (isMasterclass && !isMasterclassRoute && currentView !== 'quiz') {
+      setSelectedTopic(topic);
+      setIsMasterclassRoute(true);
+      return;
+    }
+
     // Intentar reanudar si es el mismo tema y no hemos terminado
     if (!isSimMode && !isSurvivalMode && selectedTopic?.id === topic.id && questions.length > 0 && currentView !== 'results') {
       playAudio('start');
@@ -1255,6 +1266,22 @@ export default function App() {
 
   // --- VIEWS ---
   
+  if (isMasterclassRoute && selectedTopic) {
+    return (
+      <div className="min-h-screen bg-tron-bg">
+        <MasterclassViewer 
+          topicId={selectedTopic.id} 
+          onComplete={() => {
+            setIsMasterclassRoute(false);
+            // After masterclass theory, start the quiz
+            startQuiz(selectedTopic);
+          }}
+          onExit={() => setIsMasterclassRoute(false)}
+        />
+      </div>
+    );
+  }
+
   if (currentView === 'lobby') {
     return (
       <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen flex flex-col border-x-4 border-tron-cyan/10 relative">
