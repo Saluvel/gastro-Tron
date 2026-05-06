@@ -38,8 +38,6 @@ import {
   Send,
   Loader2,
   BookOpen,
-  Lightbulb,
-  Activity,
   ZoomIn,
   Search,
   BookMarked
@@ -351,7 +349,7 @@ export default function App() {
     if (!question.clinicalPearl) return;
     if (progress.savedPearls?.some(p => p.questionId === question.id)) return;
 
-    playAudio('success');
+    playAudio('achievement');
     setProgress(prev => ({
       ...prev,
       savedPearls: [

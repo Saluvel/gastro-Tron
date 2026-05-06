@@ -2,7 +2,7 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
-import { GoogleGenAI, SchemaType as Type } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,39 +23,36 @@ async function startServer() {
     }
 
     try {
-      const genAI = new GoogleGenAI(apiKey);
-      // In sequential mode for better reliability
-      const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash", // Use 1.5-flash for stability in API routes
-        generationConfig: {
+      const ai = new GoogleGenAI({ apiKey });
+      
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: `Genera ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topicName}".
+        Contexto específico: ${focusArea || 'General'}
+        
+        Devuelve un JSON con este formato:
+        [
+          {
+            "id": "unique_id",
+            "topic": "${topicId}",
+            "difficulty": "${difficulty}",
+            "text": "...",
+            "options": ["...", "...", "...", "..."],
+            "correctIndex": 0,
+            "explanation": "...",
+            "fisiopato": "...",
+            "clinicalPearl": "...",
+            "guideline": "...",
+            "pillar": "Must-Know",
+            "whyWrong": { "0": "...", "1": "...", "2": "...", "3": "..." }
+          }
+        ]`,
+        config: {
           responseMimeType: "application/json",
         }
       });
 
-      const prompt = `Genera ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topicName}".
-      Contexto específico: ${focusArea || 'General'}
-      
-      Devuelve un JSON con este formato:
-      [
-        {
-          "id": "unique_id",
-          "topic": "${topicId}",
-          "difficulty": "${difficulty}",
-          "text": "...",
-          "options": ["...", "...", "...", "..."],
-          "correctIndex": 0,
-          "explanation": "...",
-          "fisiopato": "...",
-          "clinicalPearl": "...",
-          "guideline": "...",
-          "pillar": "Must-Know",
-          "whyWrong": { "0": "...", "1": "...", "2": "...", "3": "..." }
-        }
-      ]`;
-
-      const result = await model.generateContent(prompt);
-      const text = result.response.text();
-      res.json(JSON.parse(text));
+      res.json(JSON.parse(response.text || '[]'));
     } catch (error) {
       console.error("AI Error:", error);
       res.status(500).json({ error: "Failed to generate questions" });
@@ -72,10 +69,7 @@ async function startServer() {
     }
 
     try {
-      const genAI = new GoogleGenAI(apiKey);
-      const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
-      });
+      const ai = new GoogleGenAI({ apiKey });
 
       // Filter messages to match Gemini format
       const history = messages.slice(0, -1).map((m: any) => ({
@@ -85,14 +79,13 @@ async function startServer() {
       
       const lastMessage = messages[messages.length - 1].content;
 
-      // Start chat
-      const chat = model.startChat({
-        history: history,
+      // The new SDK uses a different approach for chat but we can just use generateContent with history
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: [...history, { role: 'user', parts: [{ text: lastMessage }] }]
       });
 
-      const result = await chat.sendMessage(lastMessage);
-      const response = await result.response;
-      res.json({ text: response.text() });
+      res.json({ text: response.text });
     } catch (error) {
       console.error("Oral Sim Error:", error);
       res.status(500).json({ error: "Failed to process simulation step" });
@@ -109,15 +102,16 @@ async function startServer() {
     }
 
     try {
-      const genAI = new GoogleGenAI(apiKey);
-      const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
-        systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
+      const ai = new GoogleGenAI({ apiKey });
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: prompt,
+        config: {
+          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
+        }
       });
 
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      res.json({ text: response.text() });
+      res.json({ text: response.text });
     } catch (error) {
       console.error("Oracle Error:", error);
       res.status(500).json({ error: "Failed to consult the Oracle" });
