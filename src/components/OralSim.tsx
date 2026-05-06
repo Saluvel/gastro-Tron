@@ -6,7 +6,6 @@ import { Topic } from '../types/quiz';
 import { TronCard } from './TronCard';
 import { GlowButton } from './GlowButton';
 import { cn } from '../lib/utils';
-import { GoogleGenAI } from '@google/genai';
 
 interface Message {
   role: 'system' | 'user' | 'assistant';
@@ -40,29 +39,27 @@ export function OralSim({ onExit }: OralSimProps) {
     No des opciones. Espera la respuesta del aspirante. Termina tu mensaje con la pregunta.`;
 
     try {
-      const apiKey = process.env.GEMINI_API_KEY || '';
-      if (!apiKey) throw new Error("API_KEY_MISSING");
-      const ai = new GoogleGenAI({ apiKey });
-      
-      const systemMessage: Message = { role: 'system', content: prompt };
-      
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      const initialMessages: Message[] = [
+        { role: 'system', content: prompt },
+        { role: 'user', content: 'Inicia el tribunal.' }
+      ];
+
+      const response = await fetch("/api/oral-sim", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: initialMessages })
       });
 
-      const text = response.text;
+      if (!response.ok) throw new Error("Server error");
+      const data = await response.json();
+
       setMessages([
-        systemMessage,
-        { role: 'assistant', content: text || "Error al generar caso." }
+        { role: 'system', content: prompt },
+        { role: 'assistant', content: data.text || "Error al iniciar simulación." }
       ]);
     } catch (error) {
       console.error(error);
-      if (error instanceof Error && error.message === "API_KEY_MISSING") {
-        setMessages([{ role: 'assistant', content: "[ERROR] Falta GEMINI_API_KEY en tu entorno Vercel. Configura esta variable para usar la simulación oral." }]);
-      } else {
-        setMessages([{ role: 'assistant', content: "Error de conexión con el tribunal del Board." }]);
-      }
+      setMessages([{ role: 'assistant', content: "Error de conexión con el tribunal del Board (Servidor saturado)." }]);
     }
     setIsTyping(false);
   };
@@ -78,35 +75,26 @@ export function OralSim({ onExit }: OralSimProps) {
     setIsTyping(true);
 
     try {
-      const apiKey = process.env.GEMINI_API_KEY || '';
-      if (!apiKey) throw new Error("API_KEY_MISSING");
-      const ai = new GoogleGenAI({ apiKey });
-
-      const conversationHistory = newMessages.map(m => ({
-        role: m.role === 'system' ? 'user' : m.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: m.content }]
-      }));
-
-      // Acomodar el sistema a un rol user falso (Gemini no siempre acepta system explícito en history normal sin instructions)
       const prompt = `El aspirante respondió: "${input}". 
       Evalúa críticamente su respuesta en un parrafito. Si está mal o incompleto, indícale por qué de forma firme. 
       Luego, si corresponde, haz una pregunta de seguimiento (follow-up) subiendo la dificultad. Si el caso ya se resolvió, dale una calificación final (Ej: "Aprobado", "Reprobado") y una perla de oro.`;
 
-      conversationHistory.push({ role: 'user', parts: [{ text: prompt }] });
+      // We send the current state + the evaluation prompt for context
+      const chatMessages = [...newMessages, { role: 'user', content: prompt }];
 
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: conversationHistory,
+      const response = await fetch("/api/oral-sim", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: chatMessages })
       });
 
-      setMessages([...newMessages, { role: 'assistant', content: response.text || "..." }]);
+      if (!response.ok) throw new Error("Server error");
+      const data = await response.json();
+
+      setMessages([...newMessages, { role: 'assistant', content: data.text || "..." }]);
     } catch (error) {
       console.error(error);
-      if (error instanceof Error && error.message === "API_KEY_MISSING") {
-        setMessages([...newMessages, { role: 'assistant', content: "[ERROR] Falta GEMINI_API_KEY en tu entorno Vercel. Configura esta variable." }]);
-      } else {
-        setMessages([...newMessages, { role: 'assistant', content: "Error de red." }]);
-      }
+      setMessages([...newMessages, { role: 'assistant', content: "Fallo en la sincronía con el tribunal (Error de red)." }]);
     }
     setIsTyping(false);
   };

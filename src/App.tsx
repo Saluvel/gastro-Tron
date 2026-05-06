@@ -44,7 +44,6 @@ import {
   Search,
   BookMarked
 } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
 import { Question, Difficulty, UserProgress, Topic } from './types/quiz';
@@ -201,9 +200,6 @@ export const renderWithAcronyms = (text: string) => {
   });
 };
 
-const apiKeyForOracle = process.env.GEMINI_API_KEY || '';
-const ai = apiKeyForOracle ? new GoogleGenAI({ apiKey: apiKeyForOracle }) : ({} as GoogleGenAI);
-
 const GastroChat = ({ onBack }: { onBack: () => void }) => {
   const [messages, setMessages] = useState<{ role: 'user' | 'model', text: string }[]>([]);
   const [input, setInput] = useState('');
@@ -222,22 +218,17 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    if (!apiKeyForOracle) {
-       setMessages(prev => [...prev, { role: 'model', text: "[ERROR] Falta configurar la variable GEMINI_API_KEY en tu entorno (Vercel). Configúrala para usar el Oráculo." }]);
-       setIsLoading(false);
-       return;
-    }
-
     try {
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: userMsg,
-        config: {
-          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA experta en gastroenterología clínica. Tu objetivo es ayudar a Fellows y Residentes con dudas médicas, perlas fisiopatológicas y guías de práctica clínica (AGA, ACG, ESGE, AASLD). Tus respuestas deben ser técnicas, precisas y con un tono 'cyberpunk/tron' pero profesional. Siempre aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional."
-        }
+      const response = await fetch("/api/oracle", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: userMsg })
       });
 
-      const modelText = response.text || "Error al procesar la respuesta del Oráculo.";
+      if (!response.ok) throw new Error("Server error");
+      const data = await response.json();
+
+      const modelText = data.text || "Error al procesar la respuesta del Oráculo.";
       setMessages(prev => [...prev, { role: 'model', text: modelText }]);
       playAudio('magic');
     } catch (error) {
