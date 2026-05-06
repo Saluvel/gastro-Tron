@@ -36,7 +36,8 @@ import {
   Database,
   MessageSquare,
   Send,
-  Loader2
+  Loader2,
+  BookOpen
 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
@@ -1611,7 +1612,62 @@ export default function App() {
 
               <div className="flex items-center justify-between mb-6 pt-4">
                  <h2 className="text-2xl font-display font-black text-white uppercase tracking-tighter italic">
-                   Módulos Especializados <span className="text-tron-cyan opacity-50 ml-2">[{targetQuestionCount} Preguntas]</span>
+                   Clínicas Especializadas <span className="text-tron-yellow opacity-50 ml-2">Masterclass</span>
+                 </h2>
+                 <div className="h-[1px] flex-1 bg-gradient-to-r from-tron-yellow/40 to-transparent ml-6" />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+              {GASTRO_TOPICS.filter(t => ['perfil_hepatico', 'eii_avanzada'].includes(t.id)).map((topic) => {
+                const topicStats = progress.byTopic[topic.id] || { attempted: 0, correct: 0 };
+                const completionPercent = Math.min(100, Math.round((topicStats.attempted / 20) * 100));
+                
+                return (
+                  <motion.div
+                    key={topic.id}
+                    whileHover={{ scale: 1.01, x: 5 }}
+                    onClick={() => startQuiz(topic)}
+                    className="cursor-pointer relative group"
+                  >
+                    <TronCard 
+                      accentColor="rgba(255,184,0,0.3)"
+                      className="h-full group hover:border-tron-yellow/50 transition-all flex flex-col border-tron-yellow/20 bg-tron-yellow/[0.02]"
+                    >
+                      <div className="flex justify-between items-start">
+                        <h3 className="text-lg font-black text-white group-hover:text-tron-yellow transition-all flex items-center gap-2">
+                          <BookOpen size={16} className="text-tron-yellow" />
+                          {topic.name}
+                        </h3>
+                        {topicStats.attempted > 0 && (
+                          <button 
+                            onClick={(e) => resetTopicProgress(topic.id, e)}
+                            className="p-1 text-white/20 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
+                          >
+                            <RotateCcw size={12} />
+                          </button>
+                        )}
+                      </div>
+                      <p className="text-xs text-white/60 mt-2 font-serif leading-relaxed italic">
+                        {topic.description}
+                      </p>
+                      <div className="mt-auto pt-6">
+                        <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+                          <motion.div 
+                            className="h-full bg-tron-yellow shadow-[0_0_10px_rgba(255,184,0,0.5)]"
+                            initial={{ width: 0 }}
+                            animate={{ width: `${completionPercent}%` }}
+                          />
+                        </div>
+                      </div>
+                    </TronCard>
+                  </motion.div>
+                );
+              })}
+              </div>
+
+              <div className="flex items-center justify-between mb-6 pt-4">
+                 <h2 className="text-2xl font-display font-black text-white uppercase tracking-tighter italic">
+                   Protocolos Base <span className="text-tron-cyan opacity-50 ml-2">[{targetQuestionCount} Preguntas]</span>
                  </h2>
                  <div className="h-[1px] flex-1 bg-gradient-to-r from-tron-cyan/40 to-transparent ml-6" />
               </div>
@@ -1644,7 +1700,7 @@ export default function App() {
               </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {GASTRO_TOPICS.map((topic) => {
+              {GASTRO_TOPICS.filter(t => !['perfil_hepatico', 'eii_avanzada'].includes(t.id)).map((topic) => {
                 const topicStats = progress.byTopic[topic.id] || { attempted: 0, correct: 0 };
                 const completionPercent = Math.min(100, Math.round((topicStats.attempted / 20) * 100));
                 

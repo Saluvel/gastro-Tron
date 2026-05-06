@@ -209,6 +209,52 @@ export const SEED_QUESTIONS: Question[] = [
     }
   },
   {
+    id: 'seed_hep_1',
+    topic: 'perfil_hepatico',
+    difficulty: 'Staff',
+    text: 'Un paciente de 45 años asintomático presenta en su chequeo: AST 180 U/L, ALT 75 U/L (Relación 2.4), GGT 210 U/L, VCM de 102 fL y Plaquetas 140,000. ¿Cuál es la sospecha diagnóstica prioritaria?',
+    options: [
+      'Infección por Virus de Hepatitis B Crónica',
+      'Enfermedad Hepática por Alcohol (EHA)',
+      'Hepatitis Autoinmune Tipo 1',
+      'MASLD (Hígado Graso Metabólico)'
+    ],
+    correctIndex: 1,
+    explanation: 'La relación AST/ALT > 2 asociada a elevación de GGT y macrocitosis (VCM elevado) es altamente sugerente de daño hepático por alcohol. La AST mitocondrial se libera más que la ALT en este contexto.',
+    fisiopato: 'El alcohol induce daño mitocondrial (liberación de AST) y déficit de Piridoxal-5-Fosfato (necesario para la síntesis de ALT), invirtiendo la relación habitual.',
+    clinicalPearl: 'Relación De Ritis (AST/ALT) > 2 = Sospecha alcohol hasta demostrar lo contrario.',
+    guideline: 'ACG Guidelines on Abnormal Liver Chemistries 2025',
+    whyWrong: {
+      0: 'Suele tener ALT > AST y no suele presentar macrocitosis.',
+      1: 'Patrón bioquímico clásico de hepatitis alcohólica persistente.',
+      2: 'Suele presentar elevación marcada de Globulinas e IgG.',
+      3: 'Típicamente la ALT es superior a la AST hasta etapas muy avanzadas de fibrosis.'
+    }
+  },
+  {
+    id: 'seed_eii_falla_1',
+    topic: 'eii_avanzada',
+    difficulty: 'Subspecialist',
+    text: 'Un paciente con Colitis Ulcerosa en tratamiento con Adalimumab 40mg c/2 semanas presenta recurrencia de síntomas tras 12 meses de remisión. Los niveles valle de Adalimumab son de 1.2 µg/mL (Meta > 7.5) y el título de anticuerpos anti-adalimumab (AAA) es de > 50 U/L (Alto). ¿Cuál es la conducta más apropiada?',
+    options: [
+      'Optimizar dosis a 40mg semanalmente',
+      'Cambiar a otro fármaco de la misma clase (Infliximab)',
+      'Cambiar a una familia de fármacos diferente (ej. Ustekinumab o Upadacitinib)',
+      'Añadir Azatioprina para rescatar el nivel del biológico'
+    ],
+    correctIndex: 2,
+    explanation: 'Estamos ante una Falla Secundaria con Inmunogenicidad de alto título (pérdida de respuesta mediada por anticuerpos). Al haber anticuerpos neutralizantes altos, optimizar la dosis es ineficaz. Cambiar de clase es preferible cuando hay inmunogenicidad persistente a un anticuerpo monoclonal.',
+    fisiopato: 'Los anticuerpos neutralizantes se unen al sitio activo del fármaco, bloqueando su unión al TNF y acelerando su depuración plasmática.',
+    clinicalPearl: 'Falla con Anticuerpos Altos = Cambiar de familia o biológico fuera de la inmunogenicidad.',
+    guideline: 'AGA Clinical Practice Guidelines on TDM in IBD 2025',
+    whyWrong: {
+      0: 'Inútil si los anticuerpos son altos; el fármaco se degradará igual de rápido.',
+      1: 'Riesgo de "inmunogenicidad de clase". Es mejor cambiar el mecanismo de acción.',
+      2: 'Conducta estándar para superar la resistencia inmunogénica.',
+      3: 'La inmunomodulación previene la formación de anticuerpos, pero raramente los revierte una vez que son de alto título.'
+    }
+  },
+  {
     id: 'seed_3',
     topic: 'erge',
     difficulty: 'Staff',
@@ -661,19 +707,24 @@ export const SEED_QUESTIONS: Question[] = [
   {
     id: 'seed_28',
     topic: 'vias_biliares',
-    difficulty: 'Fellow',
-    text: '¿Cuál es el principal determinante del pronóstico tras realizar una corrección quirúrgica (Kasai) en un recién nacido con Atresia Biliar?',
-    options: ['Tipo de atresia biliar', 'Estado nutricional materno', 'Gravedad de anomalías cardíacas', 'Nivel de bilirrubina transitoria'],
-    correctIndex: 2,
-    explanation: 'La supervivencia a largo plazo en la atresia biliar corregida depende críticamente de la presencia y gravedad de malformaciones cardíacas asociadas.',
-    fisiopato: 'La atresia biliar es a menudo parte de un síndrome de malformaciones esplénicas (situs inversus, poliesplenia).',
-    clinicalPearl: 'Si el procedimiento de Kasai falla antes de los 2 años, el trasplante hepático es la única opción.',
-    guideline: 'Sleisenger Review 11th Ed, Cap 8',
+    difficulty: 'Staff',
+    text: '¿Cuál es el hallazgo colangiográfico característico ("Gold Standard" radiológico) de la Colangitis Esclerosante Primaria (CEP)?',
+    options: [
+      'Dilatación difusa de la vía biliar intra y extrahepática',
+      'Imagen en "cuentas de rosario" (estenosis multifocales y dilataciones segmentarias)',
+      'Defecto de llenado móvil en el colédoco distal',
+      'Imagen en "cola de ratón" en el colédoco distal'
+    ],
+    correctIndex: 1,
+    explanation: 'La CEP se caracteriza por una inflamación crónica y fibrosis de los conductos biliares que genera un patrón típico de estenosis multifocales alternando con segmentos normales o dilatados, conocido como imagen en cuentas de rosario.',
+    fisiopato: 'La fibrosis obliterativa concéntrica de los conductos biliares (lesión en "piel de cebolla") interrumpe el flujo biliar, llevando a la cirrosis biliar secundaria.',
+    clinicalPearl: 'Aproximadamente el 70-80% de los pacientes con CEP tienen Enfermedad Inflamatoria Intestinal asociada, principalmente Colitis Ulcerosa.',
+    guideline: 'AASLD / EASL Guidelines on Primary Sclerosing Cholangitis 2024',
     whyWrong: {
-      0: 'Influye, pero las anomalías sistémicas dominan el pronóstico.',
-      1: 'No tiene impacto directo en el cierre ductal.',
-      2: 'Factor pronóstico sistémico principal en estos infantes.',
-      3: 'Es una consecuencia, no el factor causal determinante.'
+      0: 'Sugiere obstrucción mecánica distal, no CEP.',
+      1: 'Hallazgo patognomónico en CPRE o ColangioRM.',
+      2: 'Hallazgo típico de coledocolitiasis.',
+      3: 'Sugiere cáncer de cabeza de páncreas o colangiocarcinoma distal.'
     }
   },
   {
@@ -840,20 +891,20 @@ export const SEED_QUESTIONS: Question[] = [
   },
   {
     id: 'seed_38',
-    topic: 'pediatria',
+    topic: 'gastroscopia',
     difficulty: 'Staff',
-    text: 'Un lactante de 3 semanas presenta vómitos en proyectil, no biliosos, tras cada toma. Se palpa una masa en el epigastrio derecho. ¿Cuál es el diagnóstico más probable?',
-    options: ['Atresia Duodenal', 'Estenosis Pilórica Hipertrófica', 'Reflujo Gastroesofágico Grave', 'Vólvulo de intestino medio'],
-    correctIndex: 1,
-    explanation: 'La estenosis pilórica hipertrófica típicamente debuta entre la 3ra y 6ta semana de vida con vómitos no biliosos y la "oliva" pilórica palpable.',
-    fisiopato: 'La hipertrofia de las fibras musculares del píloro obstruye mecánicamente el vaciamiento gástrico.',
-    clinicalPearl: 'El diagnóstico confirmatorio es ecográfico y el tratamiento es la piloromiotomía de Ramstedt.',
-    guideline: 'NASPGHAN Guidelines',
+    text: '¿Cuál es el hallazgo endoscópico más específico para el diagnóstico de Esofagitis Eosinofílica (EoE) en un adulto con disfagia?',
+    options: ['Exudados blanquecinos (microabscesos)', 'Surcos longitudinales', 'Anillos concéntricos (traquealización)', 'Mucosa en papel de arroz'],
+    correctIndex: 2,
+    explanation: 'Aunque todos son hallazgos sugerentes de EoE (según el score EREFS), la traquealización o anillos concéntricos es uno de los signos más característicos de la remodelación esofágica crónica en adultos.',
+    fisiopato: 'La inflamación crónica mediada por Th2 induce fibrosis subepitelial y engrosamiento de la muscularis mucosae, causando la pérdida de distensibilidad.',
+    clinicalPearl: 'Se requieren al menos 15 eosinófilos por campo de mayor aumento (php) en al menos una biopsia para el diagnóstico.',
+    guideline: 'ACG / AGA Clinical Guidelines for EoE 2024',
     whyWrong: {
-      0: 'Vómitos suelen ser biliosos y presentes desde el día 1.',
-      1: 'Cuadro clínico patognomónico.',
-      2: 'Vómitos no suelen ser tan explosivos ni persistentes.',
-      3: 'Urgencia quirúrgica con vómitos biliosos y compromiso sistémico.'
+      0: 'Común en EoE pero inespecífico (puede ser candidiasis).',
+      1: 'Hallazgo frecuente pero menos espectacular que los anillos.',
+      2: 'Signo clásico de cronicidad y remodelación.',
+      3: 'Hallazgo raro asociado a fragilidad mucosa extrema.'
     }
   },
   {

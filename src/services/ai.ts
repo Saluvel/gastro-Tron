@@ -5,7 +5,24 @@ const apiKey = process.env.GEMINI_API_KEY || '';
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : ({} as GoogleGenAI);
 
 async function fetchBatch(topic: string, difficulty: string, count: number, focusArea?: string): Promise<Question[]> {
+  const specialPrompts: Record<string, string> = {
+    'perfil_hepatico': `
+      ESTE ES UN MÓDULO ESPECIAL DE INTERPRETACIÓN DE HEPATOGRAMA. 
+      Las preguntas DEBEN ser casos clínicos con valores de laboratorio (ALT, AST, FA, GGT, Bilirrubinas, Albúmina, TP).
+      El usuario debe deducir el patrón (Hepatocelular, Colestásico, Infiltrativo, Disociado) y la causa más probable basándose en relaciones enzimáticas (ej. AST/ALT > 2) y contexto clínico.
+    `,
+    'eii_avanzada': `
+      ESTE ES UN MÓDULO ESPECIAL DE EII AVANZADA (Manejo, RAM y Fallas). 
+      Enfócate en algoritmos de decisión: ¿Cuándo optimizar dosis? ¿Cuándo cambiar de familia de biológico?
+      Diferencia claramente Falla Primaria (No respuesta inicial) vs Falla Secundaria (Pérdida de respuesta).
+      Incluye monitoreo terapéutico de fármacos (TDM), anticuerpos y manejo de efectos adversos (RAM).
+    `
+  };
+
+  const topicSpecificPrompt = specialPrompts[topic] || "";
+
   const prompt = `Eres un Profesor de Gastroenterología de nivel mundial evaluando candidatos en un examen de máxima exigencia.
+  ${topicSpecificPrompt}
   Genera exactamente ${count} preguntas de opción múltiple en ESPAÑOL para el nivel "${difficulty}" sobre el tema: "${topic}".
   ${focusArea ? `IMPORTANTE: Para este lote, prioriza el área de enfoque: "${focusArea}" asegurando que las preguntas sean variadas dentro de este nicho.` : ''}
   
@@ -15,14 +32,15 @@ async function fetchBatch(topic: string, difficulty: string, count: number, focu
   - Nivel "Subspecialist" (Nivel Board Ultra): Máxima complejidad. Casos extremadamente raros, variantes genéticas, interpretación de data de Ensayos Clínicos fase III, controversias actuales en la literatura.
 
   ESTÁNDARES PARA EL EXAMEN:
-  1. ENFOQUE: Casos clínicos de alto impacto. El objetivo es evaluar el razonamiento crítico y la toma de decisiones.
+  1. ENFOQUE: Casos clínicos de alto impacto centrados EXCLUSIVAMENTE en pacientes ADULTOS. 
+     - PROHIBICIÓN: Queda terminantemente prohibido incluir casos pediátricos (neonatos, niños, adolescentes) o patologías exclusivas de la infancia. El examen es para especialistas de adultos.
   2. MÁXIMA VARIEDAD OBLIGATORIA: Para el tema "${topic}", debes cubrir un espectro de 360 grados. 
-     - PROHIBICIÓN: No permitas que más del 10% de las preguntas traten sobre el mismo patógeno específico (ej. si ya preguntaste por C. diff, las siguientes 9 deben ser de temas distintos como Norovirus, Isquemia, Giardia, Salmonella, o manejo de deshidratación).
+     - PROHIBICIÓN: No permitas que más del 10% de las preguntas traten sobre el mismo patógeno específico.
      - DISTRIBUCIÓN: Debes incluir obligatoriamente una mezcla de:
-       * Epidemiología y causas más frecuentes según grupo etario.
-       * Fisiopatología y diagnóstico diferencial (no todo es infeccioso).
-       * Manejo terapéutico basado en guías recientes.
-       * Complicaciones y criterios de hospitalización.
+       * Epidemiología en ADULTOS y causas más frecuentes según comorbilidades.
+       * Fisiopatología y diagnóstico diferencial (Causas no infecciosas como isquemia o fármacos).
+       * Manejo terapéutico basado en guías recientes (ACG, AGA, EASL).
+       * Complicaciones críticas y criterios de hospitalización en el adulto.
   3. ESTRUCTURA DE RESPUESTA:
      A) Interpretación del hallazgo.
      B) Justificación clínica.
@@ -110,12 +128,14 @@ export async function generateQuestions(topic: string, difficulty: Difficulty, c
   const batches: { count: number; focus: string }[] = [];
   
   const focusAreas = [
-    "Epidemiología: Causas más frecuentes (Virus: Norovirus vs Bacterias: Campylobacter/Salmonella)",
-    "Diagnóstico Diferencial: Diarreas No Infecciosas (Fármacos, Isquemia, IBD incipiente)",
-    "Microbiología: Parásitos (Giardia, Cryptosporidium, Ameba) y Virus (Rotavirus, Adenovirus)",
-    "Manejo Clínico: Hidratación, Escalas de Gravedad y Criterios de Antibioticoterapia",
-    "Poblaciones de Riesgo: Viajeros (ETEC), Inmunosuprimidos y Brotes Institucionales",
-    "Tecnología: Interpretación de Paneles Multiplex de PCR vs Coprocultivo Clásico"
+    "Patrón Hepatocelular: Transaminasas y Hepatitis (Virales, Autoinmune, Tóxica)",
+    "Patrón Colestásico e Infiltrativo: FA, GGT y Obstrucción Vía Biliar",
+    "Interpretación de Bilirrubinas: Pre-hepática, Hepática y Post-hepática",
+    "EII: Falla Primaria y Secundaria a Biológicos (Conducta y TDM)",
+    "EII: Reacciones Adversas (RAM) e Inmunogenicidad de Terapias Modernas",
+    "Epidemiología: Causas más frecuentes y brotes (Virus vs Bacterias vs Parásitos)",
+    "Diagnóstico Diferencial Avanzado: Causas No Infecciosas de Diarrea",
+    "Manejo de Crisis: Sepsis en Gastro, Megacolon Tóxico e Insuficiencia Hepática"
   ];
 
   let remaining = count;

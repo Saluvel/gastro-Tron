@@ -28,5 +28,15 @@ export const GASTRO_TOPICS: Topic[] = [
     id: 'nutricion',
     name: 'Nutrición e Inmunología',
     description: 'Absorción de micronutrientes, inmunidad mucosa y TPN.'
+  },
+  {
+    id: 'perfil_hepatico',
+    name: 'Interpretación de Hepatograma',
+    description: 'Taller de casos clínicos: patrones de daño, enzimas y escenarios complejos.'
+  },
+  {
+    id: 'eii_avanzada',
+    name: 'EII: Manejo y Fallas',
+    description: 'Decisión clínica en biológicos: falla primaria/secundaria y manejo de RAM.'
   }
 ];
