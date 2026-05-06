@@ -1,4 +1,4 @@
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import { Question, Difficulty } from "../types/quiz";
 
 export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
@@ -53,38 +53,10 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       ]`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-1.5-flash",
         contents: prompt,
         config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: {
-                id: { type: Type.STRING },
-                topic: { type: Type.STRING },
-                difficulty: { type: Type.STRING },
-                text: { type: Type.STRING },
-                options: { type: Type.ARRAY, items: { type: Type.STRING } },
-                correctIndex: { type: Type.INTEGER },
-                explanation: { type: Type.STRING },
-                fisiopato: { type: Type.STRING },
-                clinicalPearl: { type: Type.STRING },
-                guideline: { type: Type.STRING },
-                pillar: { type: Type.STRING },
-                whyWrong: { 
-                  type: Type.OBJECT, 
-                  properties: {
-                    "0": { type: Type.STRING },
-                    "1": { type: Type.STRING },
-                    "2": { type: Type.STRING },
-                    "3": { type: Type.STRING }
-                  }
-                }
-              }
-            }
-          }
+          responseMimeType: "application/json"
         }
       });
 
@@ -93,7 +65,16 @@ export async function generateQuestions(topicId: string, topicName: string, diff
         throw new Error("El modelo no devolvió texto.");
       }
 
-      const batch = JSON.parse(text);
+      let cleanText = text.trim();
+      if (cleanText.startsWith('```json')) {
+        cleanText = cleanText.substring(7);
+        if (cleanText.endsWith('```')) cleanText = cleanText.substring(0, cleanText.length - 3);
+      } else if (cleanText.startsWith('```')) {
+        cleanText = cleanText.substring(3);
+        if (cleanText.endsWith('```')) cleanText = cleanText.substring(0, cleanText.length - 3);
+      }
+      
+      const batch = JSON.parse(cleanText);
       allQuestions.push(...batch);
       
       remaining -= currentBatchCount;
