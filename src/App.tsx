@@ -939,7 +939,7 @@ export default function App() {
       let attempts = 0;
       while (currentPool.length < targetQuestionCount && attempts < 2) {
         const needed = targetQuestionCount - currentPool.length;
-        const newAIQuestions = await generateQuestions(topic.name, selectedDifficulty, needed);
+        const newAIQuestions = await generateQuestions(topic.id, topic.name, selectedDifficulty, needed);
         
         if (newAIQuestions && newAIQuestions.length > 0) {
           // Save to cache
@@ -1128,7 +1128,7 @@ export default function App() {
             let attempts = 0;
             while (collectedNew.length < remainingCount && attempts < 2) {
               const neededNow = remainingCount - collectedNew.length;
-              const nextQuestionsBatch = await generateQuestions(selectedTopic.name, nextLevel, neededNow);
+              const nextQuestionsBatch = await generateQuestions(selectedTopic.id, selectedTopic.name, nextLevel, neededNow);
               if (nextQuestionsBatch && nextQuestionsBatch.length > 0) {
                 collectedNew = [...collectedNew, ...nextQuestionsBatch];
                 // Also save to cache for later
@@ -2511,7 +2511,7 @@ export default function App() {
                 onClick={async () => {
                    setIsLoading(true);
                    try {
-                     const extras = await generateQuestions(selectedTopic!.name, selectedDifficulty, 5);
+                     const extras = await generateQuestions(selectedTopic!.id, selectedTopic!.name, selectedDifficulty, 5);
                      const updatedQuestions = [...questions, ...extras];
                      // Save to persistent cache
                      setCachedQuestions(prev => ({
