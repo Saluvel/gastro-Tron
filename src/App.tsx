@@ -2527,51 +2527,51 @@ export default function App() {
                         EBM Grade: 1A (High)
                       </div>
                       <h4 className={cn(
-                        "text-lg font-black uppercase tracking-tighter flex items-center gap-2",
+                        "text-base font-black uppercase tracking-tighter flex items-center gap-2",
                         isCorrect ? "text-tron-cyan" : "text-tron-yellow"
                       )}>
                         {isCorrect ? <Target /> : <AlertCircle />} 
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
-                      <p className="text-gray-200 text-sm md:text-base leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
+                      <p className="text-gray-200 text-sm leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
                         {currentQuestion?.explanation ? renderWithAcronyms(currentQuestion.explanation) : null}
                       </p>
                     </div>
 
-                    <TronCard accentColor="rgba(255,255,255,0.05)" className="p-4 md:p-6 bg-tron-feedback/60 backdrop-blur-lg">
-                      <h5 className="text-xs md:text-sm uppercase font-black text-tron-yellow mb-3 tracking-[0.2em] flex items-center gap-2">
+                    <TronCard accentColor="rgba(255,255,255,0.05)" className="p-4 md:p-5 bg-tron-feedback/60 backdrop-blur-lg">
+                      <h5 className="text-[10px] md:text-xs uppercase font-black text-tron-yellow mb-2 tracking-[0.2em] flex items-center gap-2">
                         <Brain size={14} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
-                      <p className="text-sm text-white/70 leading-relaxed font-mono">
+                      <p className="text-xs md:text-sm text-white/70 leading-relaxed font-mono">
                         {currentQuestion?.fisiopato ? renderWithAcronyms(currentQuestion.fisiopato) : null}
                       </p>
                     </TronCard>
 
-                    <div className="bg-black/80 p-4 md:p-6 rounded-xl border border-tron-yellow/30 border-l-4 border-l-tron-yellow shadow-inner">
-                       <h5 className="text-xs md:text-sm uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
+                    <div className="bg-black/80 p-4 md:p-5 rounded-xl border border-tron-yellow/30 border-l-4 border-l-tron-yellow shadow-inner">
+                       <h5 className="text-[10px] md:text-xs uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
                         <Lightbulb size={14} /> Perla Clínica
                       </h5>
-                      <p className="text-sm md:text-base text-white font-serif leading-relaxed italic">
+                      <p className="text-xs md:text-sm text-white font-serif leading-relaxed italic">
                         "{currentQuestion?.clinicalPearl ? renderWithAcronyms(currentQuestion.clinicalPearl) : null}"
                       </p>
                     </div>
 
                     {currentQuestion?.whyWrong && (
-                      <TronCard accentColor="rgba(255,184,0,0.1)" className="p-6 bg-black/40">
-                        <h5 className="text-sm uppercase font-black text-tron-yellow mb-4 tracking-[0.2em] flex items-center gap-2">
-                          <AlertTriangle size={16} className="text-tron-yellow" /> ¿Por qué fallan las otras?
+                      <TronCard accentColor="rgba(255,184,0,0.1)" className="p-4 md:p-5 bg-black/40">
+                        <h5 className="text-[10px] md:text-xs uppercase font-black text-tron-yellow mb-3 tracking-[0.2em] flex items-center gap-2">
+                          <AlertTriangle size={14} className="text-tron-yellow" /> ¿Por qué fallan las otras?
                         </h5>
-                        <div className="space-y-4">
+                        <div className="space-y-3">
                           {currentQuestion.options.map((opt, idx) => {
                             if (idx === currentQuestion.correctIndex) return null;
-                            const reason = currentQuestion.whyWrong?.[idx];
+                            const reason = currentQuestion.whyWrong?.[idx] || currentQuestion.whyWrong?.[String(idx)];
                             if (!reason) return null;
                             return (
-                              <div key={idx} className="border-l border-white/10 pl-4 py-1">
-                                <div className="text-[10px] text-white/40 uppercase font-black tracking-widest mb-1">
+                              <div key={idx} className="border-l border-white/10 pl-3 py-1">
+                                <div className="text-[9px] text-white/40 uppercase font-black tracking-widest mb-1">
                                   Opción {String.fromCharCode(65 + idx)}: {opt.length > 40 ? opt.substring(0, 40) + '...' : opt}
                                 </div>
-                                <p className="text-xs text-white/70 italic leading-relaxed">
+                                <p className="text-xs text-white/60 italic leading-relaxed">
                                   {renderWithAcronyms(reason)}
                                 </p>
                               </div>
@@ -3182,7 +3182,7 @@ export default function App() {
         desc: "Epitelio columnar metaplásico", 
         color: "text-tron-sub", 
         border: "border-tron-sub/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Barrett_esophagus_labeled.jpg/1200px-Barrett_esophagus_labeled.jpg",
+        url: "https://placehold.co/600x400/111111/ff00ff?text=Es%C3%B3fago+de+Barrett",
         hotspot: { x: "50%", y: "45%", label: "Unión Escamocolumnar Desplazada" },
         longDesc: "Presencia de epitelio columnar que tapiza el esófago distal. La clasificación de Praga evalúa la extensión circunferencial (C) y máxima (M)."
       },
@@ -3193,7 +3193,7 @@ export default function App() {
         desc: "Adenoma tubular con displasia", 
         color: "text-tron-yellow", 
         border: "border-tron-yellow/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Colon_polyp.JPG/1200px-Colon_polyp.JPG",
+        url: "https://placehold.co/600x400/111111/ffb800?text=P%C3%B3lipo+S%C3%A9sil",
         hotspot: { x: "40%", y: "40%", label: "Elevación Tipo Is" },
         longDesc: "Lesión sésil con patrón de criptas tipo III de Kudo, sugestivo de adenoma. Requiere mucosectomía endoscópica (EMR)."
       },
@@ -3204,7 +3204,7 @@ export default function App() {
         desc: "Vaso visible no sangrante", 
         color: "text-tron-cyan", 
         border: "border-tron-cyan/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gastric_ulcer.jpg/1200px-Gastric_ulcer.jpg",
+        url: "https://placehold.co/600x400/111111/00ffff?text=%C3%9Alcera+G%C3%A1strica",
         hotspot: { x: "55%", y: "50%", label: "Vaso Visible (Alto Riesgo)" },
         longDesc: "Úlcera de base limpia con vaso prominente. Riesgo de recidiva hemorrágica del 43%. Indicación de terapia dual (Adrenalina + Clip/Térmico)."
       },
@@ -3215,7 +3215,7 @@ export default function App() {
         desc: "Eritema severo, friabilidad, úlceras", 
         color: "text-tron-sub", 
         border: "border-tron-sub/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ulcerative_Colitis.jpg/1200px-Ulcerative_Colitis.jpg",
+        url: "https://placehold.co/600x400/111111/ff00ff?text=Colitis+Ulcerosa",
         hotspot: { x: "30%", y: "60%", label: "Friabilidad y Exudado" },
         longDesc: "Mucosa con pérdida total de patrón vascular, sangrado espontáneo y ulceración extensa. Sugiere actividad moderada-severa (Mayo 3)."
       },
@@ -3226,7 +3226,7 @@ export default function App() {
         desc: "Cordones gruesos confluyentes", 
         color: "text-tron-yellow", 
         border: "border-tron-yellow/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Esophageal_varices_01.jpg/1200px-Esophageal_varices_01.jpg",
+        url: "https://placehold.co/600x400/111111/ffb800?text=V%C3%A1rices+Esof%C3%A1gicas",
         hotspot: { x: "50%", y: "70%", label: "Puntos Rojos (Cherry Red)" },
         longDesc: "Várices de gran tamaño que ocupan más de un tercio de la luz. Los puntos rojos indican debilidad de la pared y alto riesgo de rotura inminente."
       },
@@ -3237,7 +3237,7 @@ export default function App() {
         desc: "Úlcera infiltrante con bordes elevados", 
         color: "text-tron-cyan", 
         border: "border-tron-cyan/30",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gastric_cancer_01.jpg/1200px-Gastric_cancer_01.jpg",
+        url: "https://placehold.co/600x400/111111/00ffff?text=C%C3%A1ncer+G%C3%A1strico",
         hotspot: { x: "45%", y: "30%", label: "Borde Infiltrativo Irregular" },
         longDesc: "Lesión ulcerada con infiltración de la pared circundante. La biopsia es mandatoria para determinar histología (tipo Laurén) y grado de diferenciación."
       },
