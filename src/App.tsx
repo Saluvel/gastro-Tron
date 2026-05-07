@@ -2527,31 +2527,31 @@ export default function App() {
                         EBM Grade: 1A (High)
                       </div>
                       <h4 className={cn(
-                        "text-xl font-black uppercase tracking-tighter flex items-center gap-2",
+                        "text-lg font-black uppercase tracking-tighter flex items-center gap-2",
                         isCorrect ? "text-tron-cyan" : "text-tron-yellow"
                       )}>
                         {isCorrect ? <Target /> : <AlertCircle />} 
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
-                      <p className="text-gray-200 text-lg leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
+                      <p className="text-gray-200 text-sm md:text-base leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
                         {currentQuestion?.explanation ? renderWithAcronyms(currentQuestion.explanation) : null}
                       </p>
                     </div>
 
-                    <TronCard accentColor="rgba(255,255,255,0.05)" className="p-6 bg-tron-feedback/60 backdrop-blur-lg">
-                      <h5 className="text-sm uppercase font-black text-tron-yellow mb-4 tracking-[0.2em] flex items-center gap-2">
-                        <Brain size={16} className="text-white" /> Núcleo Fisiopatológico
+                    <TronCard accentColor="rgba(255,255,255,0.05)" className="p-4 md:p-6 bg-tron-feedback/60 backdrop-blur-lg">
+                      <h5 className="text-xs md:text-sm uppercase font-black text-tron-yellow mb-3 tracking-[0.2em] flex items-center gap-2">
+                        <Brain size={14} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
-                      <p className="text-base text-white/70 leading-relaxed font-mono">
+                      <p className="text-sm text-white/70 leading-relaxed font-mono">
                         {currentQuestion?.fisiopato ? renderWithAcronyms(currentQuestion.fisiopato) : null}
                       </p>
                     </TronCard>
 
-                    <div className="bg-black/80 p-6 rounded-xl border border-tron-yellow/30 border-l-4 border-l-tron-yellow shadow-inner">
-                       <h5 className="text-sm uppercase font-black text-tron-yellow mb-3 tracking-widest flex items-center gap-2 underline underline-offset-4">
-                        <Lightbulb size={16} /> Perla Clínica
+                    <div className="bg-black/80 p-4 md:p-6 rounded-xl border border-tron-yellow/30 border-l-4 border-l-tron-yellow shadow-inner">
+                       <h5 className="text-xs md:text-sm uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
+                        <Lightbulb size={14} /> Perla Clínica
                       </h5>
-                      <p className="text-base text-white font-serif leading-relaxed italic">
+                      <p className="text-sm md:text-base text-white font-serif leading-relaxed italic">
                         "{currentQuestion?.clinicalPearl ? renderWithAcronyms(currentQuestion.clinicalPearl) : null}"
                       </p>
                     </div>
