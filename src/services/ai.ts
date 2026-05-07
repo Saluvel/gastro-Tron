@@ -138,12 +138,37 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       focusIdx++;
     }
 
-    const finalQuestions = [...selectedPreloaded, ...aiQuestions.map(q => ({
-      ...q,
-      id: q.id || Math.random().toString(36).substr(2, 9),
-      topic: topicId,
-      difficulty: difficulty as Difficulty
-    }))];
+    const finalQuestions = [...selectedPreloaded, ...aiQuestions.map(q => {
+      // Shuffle options and update correctIndex
+      let optionsWithIndex = q.options.map((opt: string, idx: number) => ({ text: opt, originalIndex: idx }));
+      // Fisher-Yates shuffle
+      for (let i = optionsWithIndex.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [optionsWithIndex[i], optionsWithIndex[j]] = [optionsWithIndex[j], optionsWithIndex[i]];
+      }
+      const newCorrectIndex = optionsWithIndex.findIndex(o => o.originalIndex === q.correctIndex);
+      const newOptions = optionsWithIndex.map(o => o.text);
+      
+      let newWhyWrong: any = undefined;
+      if (q.whyWrong) {
+        newWhyWrong = {};
+        optionsWithIndex.forEach((o, newIdx) => {
+          if (o.originalIndex !== q.correctIndex) {
+            newWhyWrong[newIdx] = q.whyWrong[o.originalIndex];
+          }
+        });
+      }
+      
+      return {
+        ...q,
+        id: q.id || Math.random().toString(36).substr(2, 9),
+        topic: topicId,
+        options: newOptions,
+        correctIndex: newCorrectIndex,
+        whyWrong: newWhyWrong || q.whyWrong,
+        difficulty: difficulty as Difficulty
+      };
+    })];
 
     return finalQuestions.sort(() => Math.random() - 0.5);
   } catch (error) {

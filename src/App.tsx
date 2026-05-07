@@ -60,6 +60,38 @@ import { MasterclassViewer } from './components/MasterclassViewer';
 import { playAudio, setSoundEnabled } from './lib/audio';
 import { cn } from './lib/utils';
 
+export const shuffleQuestionOptions = (questions: Question[]): Question[] => {
+  return questions.map(q => {
+    let optionsWithIndex = q.options.map((opt: string, idx: number) => ({ text: opt, originalIndex: idx }));
+    for (let i = optionsWithIndex.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [optionsWithIndex[i], optionsWithIndex[j]] = [optionsWithIndex[j], optionsWithIndex[i]];
+    }
+    const newCorrectIndex = optionsWithIndex.findIndex(o => o.originalIndex === q.correctIndex);
+    const newOptions = optionsWithIndex.map(o => o.text);
+    
+    let newWhyWrong: any = undefined;
+    if (q.whyWrong) {
+      newWhyWrong = {};
+      optionsWithIndex.forEach((o, newIdx) => {
+        if (o.originalIndex !== q.correctIndex && q.whyWrong && q.whyWrong[String(o.originalIndex)]) {
+          newWhyWrong[String(newIdx)] = q.whyWrong[String(o.originalIndex)];
+        } else if (o.originalIndex !== q.correctIndex && q.whyWrong && q.whyWrong[o.originalIndex]) {
+          // Fallback if keys were integers not strings
+          newWhyWrong[newIdx] = q.whyWrong[o.originalIndex];
+        }
+      });
+    }
+    
+    return {
+      ...q,
+      options: newOptions,
+      correctIndex: newCorrectIndex,
+      whyWrong: newWhyWrong || q.whyWrong
+    };
+  });
+};
+
 // --- INITIAL STATE & PERSISTENCE ---
 const INITIAL_PROGRESS: UserProgress = {
   totalAttempted: 0,
@@ -406,11 +438,18 @@ export default function App() {
     const [meldData, setMeldData] = useState({ bil: 1.2, inr: 1.1, cr: 0.9, na: 138 });
     const meldScore = useMemo(() => {
       const { bil, inr, cr, na } = meldData;
-      // Simplified MELD-Na calculation
-      const m = 3.78 * Math.log(bil) + 11.2 * Math.log(inr) + 9.57 * Math.log(cr) + 6.43;
-      let finalMeld = Math.round(m + 10);
+      // MELD variables bounded
+      const bBil = Math.max(1, bil);
+      const bInr = Math.max(1, inr);
+      const bCr = Math.min(4, Math.max(1, cr)); // Max 4.0
+      const bNa = Math.min(137, Math.max(125, na));
+
+      // MELD calculation
+      const m = 3.78 * Math.log(bBil) + 11.2 * Math.log(bInr) + 9.57 * Math.log(bCr) + 6.43;
+      let finalMeld = Math.round(m);
+      
       if (finalMeld > 11) {
-        finalMeld = finalMeld + 1.32 * (137 - na) - 0.033 * finalMeld * (137 - na);
+        finalMeld = finalMeld + 1.32 * (137 - bNa) - (0.033 * finalMeld * (137 - bNa));
       }
       return Math.round(Math.min(40, Math.max(6, finalMeld)));
     }, [meldData]);
@@ -910,7 +949,7 @@ export default function App() {
       setCurrentView('lobby');
       setIsSimMode(false);
     } else {
-      setQuestions(simQuestions);
+      setQuestions(shuffleQuestionOptions(simQuestions));
       setAnswers(new Array(simQuestions.length).fill(null));
       setCurrentQuestionIndex(0);
       setShowFeedback(false);
@@ -941,7 +980,7 @@ export default function App() {
       setCurrentView('lobby');
       setIsSurvivalMode(false);
     } else {
-      setQuestions(simQuestions);
+      setQuestions(shuffleQuestionOptions(simQuestions));
       setAnswers(new Array(simQuestions.length).fill(null));
       setCurrentQuestionIndex(0);
       setShowFeedback(false);
@@ -1003,7 +1042,7 @@ export default function App() {
         .sort(() => 0.5 - Math.random())
         .slice(0, 30);
       
-      setQuestions(mixedQuestions);
+      setQuestions(shuffleQuestionOptions(mixedQuestions));
       setAnswers(new Array(mixedQuestions.length).fill(null));
       setCurrentQuestionIndex(0);
       setShowFeedback(false);
@@ -1077,7 +1116,7 @@ export default function App() {
       const finalQuestions = currentPool.sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
       
       if (finalQuestions.length > 0) {
-        setQuestions(finalQuestions);
+        setQuestions(shuffleQuestionOptions(finalQuestions));
         setAnswers(new Array(finalQuestions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowFeedback(false);
@@ -1096,7 +1135,7 @@ export default function App() {
       
       if (existingQuestions.length > 0) {
         const fallback = [...existingQuestions].sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
-        setQuestions(fallback);
+        setQuestions(shuffleQuestionOptions(fallback));
         setAnswers(new Array(fallback.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowFeedback(false);
