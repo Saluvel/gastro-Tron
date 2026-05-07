@@ -2527,51 +2527,51 @@ export default function App() {
                         EBM Grade: 1A (High)
                       </div>
                       <h4 className={cn(
-                        "text-base font-black uppercase tracking-tighter flex items-center gap-2",
+                        "text-sm font-black uppercase tracking-tighter flex items-center gap-2",
                         isCorrect ? "text-tron-cyan" : "text-tron-yellow"
                       )}>
-                        {isCorrect ? <Target /> : <AlertCircle />} 
+                        {isCorrect ? <Target size={16} /> : <AlertCircle size={16} />} 
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
-                      <p className="text-gray-200 text-sm leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
+                      <p className="text-gray-300 text-[13px] leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
                         {currentQuestion?.explanation ? renderWithAcronyms(currentQuestion.explanation) : null}
                       </p>
                     </div>
 
-                    <TronCard accentColor="rgba(255,255,255,0.05)" className="p-4 md:p-5 bg-tron-feedback/60 backdrop-blur-lg">
-                      <h5 className="text-[10px] md:text-xs uppercase font-black text-tron-yellow mb-2 tracking-[0.2em] flex items-center gap-2">
-                        <Brain size={14} className="text-white" /> Núcleo Fisiopatológico
+                    <TronCard accentColor="rgba(255,255,255,0.05)" className="p-4 bg-tron-feedback/60 backdrop-blur-lg">
+                      <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-[0.2em] flex items-center gap-2">
+                        <Brain size={12} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
-                      <p className="text-xs md:text-sm text-white/70 leading-relaxed font-mono">
+                      <p className="text-[11px] text-white/70 leading-relaxed font-mono">
                         {currentQuestion?.fisiopato ? renderWithAcronyms(currentQuestion.fisiopato) : null}
                       </p>
                     </TronCard>
 
-                    <div className="bg-black/80 p-4 md:p-5 rounded-xl border border-tron-yellow/30 border-l-4 border-l-tron-yellow shadow-inner">
-                       <h5 className="text-[10px] md:text-xs uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
-                        <Lightbulb size={14} /> Perla Clínica
+                    <div className="bg-black/80 p-4 rounded-lg border border-tron-yellow/30 border-l-2 border-l-tron-yellow shadow-inner">
+                       <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
+                        <Lightbulb size={12} /> Perla Clínica
                       </h5>
-                      <p className="text-xs md:text-sm text-white font-serif leading-relaxed italic">
+                      <p className="text-[12px] text-white font-serif leading-relaxed italic">
                         "{currentQuestion?.clinicalPearl ? renderWithAcronyms(currentQuestion.clinicalPearl) : null}"
                       </p>
                     </div>
 
                     {currentQuestion?.whyWrong && (
-                      <TronCard accentColor="rgba(255,184,0,0.1)" className="p-4 md:p-5 bg-black/40">
-                        <h5 className="text-[10px] md:text-xs uppercase font-black text-tron-yellow mb-3 tracking-[0.2em] flex items-center gap-2">
-                          <AlertTriangle size={14} className="text-tron-yellow" /> ¿Por qué fallan las otras?
+                      <TronCard accentColor="rgba(255,184,0,0.1)" className="p-4 bg-black/40">
+                        <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-3 tracking-[0.2em] flex items-center gap-2">
+                          <AlertTriangle size={12} className="text-tron-yellow" /> ¿Por qué fallan las otras?
                         </h5>
-                        <div className="space-y-3">
+                        <div className="space-y-2">
                           {currentQuestion.options.map((opt, idx) => {
                             if (idx === currentQuestion.correctIndex) return null;
                             const reason = currentQuestion.whyWrong?.[idx] || currentQuestion.whyWrong?.[String(idx)];
                             if (!reason) return null;
                             return (
                               <div key={idx} className="border-l border-white/10 pl-3 py-1">
-                                <div className="text-[9px] text-white/40 uppercase font-black tracking-widest mb-1">
+                                <div className="text-[9px] text-white/40 uppercase font-black tracking-widest mb-0.5">
                                   Opción {String.fromCharCode(65 + idx)}: {opt.length > 40 ? opt.substring(0, 40) + '...' : opt}
                                 </div>
-                                <p className="text-xs text-white/60 italic leading-relaxed">
+                                <p className="text-[11px] text-white/60 italic leading-relaxed">
                                   {renderWithAcronyms(reason)}
                                 </p>
                               </div>
@@ -2728,8 +2728,7 @@ export default function App() {
                      setShowFeedback(false);
                      setCurrentView('quiz');
                    } catch (e) {
-                     console.error(e);
-                     alert("Error al expandir el banco de preguntas.");
+                     console.error("AI Generation Error: ", e);
                    }
                    setIsLoading(false);
                 }}
@@ -3182,7 +3181,7 @@ export default function App() {
         desc: "Epitelio columnar metaplásico", 
         color: "text-tron-sub", 
         border: "border-tron-sub/30",
-        url: "https://placehold.co/600x400/111111/ff00ff?text=Es%C3%B3fago+de+Barrett",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Barretts_esophagus.jpg/800px-Barretts_esophagus.jpg",
         hotspot: { x: "50%", y: "45%", label: "Unión Escamocolumnar Desplazada" },
         longDesc: "Presencia de epitelio columnar que tapiza el esófago distal. La clasificación de Praga evalúa la extensión circunferencial (C) y máxima (M)."
       },
@@ -3193,18 +3192,18 @@ export default function App() {
         desc: "Adenoma tubular con displasia", 
         color: "text-tron-yellow", 
         border: "border-tron-yellow/30",
-        url: "https://placehold.co/600x400/111111/ffb800?text=P%C3%B3lipo+S%C3%A9sil",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Colon_polyp.jpg/800px-Colon_polyp.jpg",
         hotspot: { x: "40%", y: "40%", label: "Elevación Tipo Is" },
         longDesc: "Lesión sésil con patrón de criptas tipo III de Kudo, sugestivo de adenoma. Requiere mucosectomía endoscópica (EMR)."
       },
       { 
         id: 3,
-        title: "Úlcera Gástrica (Forrest IIa)", 
+        title: "Úlcera Gástrica", 
         class: "Forrest IIa", 
         desc: "Vaso visible no sangrante", 
         color: "text-tron-cyan", 
         border: "border-tron-cyan/30",
-        url: "https://placehold.co/600x400/111111/00ffff?text=%C3%9Alcera+G%C3%A1strica",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cameron_ulcers_1.jpg/800px-Cameron_ulcers_1.jpg",
         hotspot: { x: "55%", y: "50%", label: "Vaso Visible (Alto Riesgo)" },
         longDesc: "Úlcera de base limpia con vaso prominente. Riesgo de recidiva hemorrágica del 43%. Indicación de terapia dual (Adrenalina + Clip/Térmico)."
       },
@@ -3215,7 +3214,7 @@ export default function App() {
         desc: "Eritema severo, friabilidad, úlceras", 
         color: "text-tron-sub", 
         border: "border-tron-sub/30",
-        url: "https://placehold.co/600x400/111111/ff00ff?text=Colitis+Ulcerosa",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ulcerative_colitis.jpg/800px-Ulcerative_colitis.jpg",
         hotspot: { x: "30%", y: "60%", label: "Friabilidad y Exudado" },
         longDesc: "Mucosa con pérdida total de patrón vascular, sangrado espontáneo y ulceración extensa. Sugiere actividad moderada-severa (Mayo 3)."
       },
@@ -3226,20 +3225,20 @@ export default function App() {
         desc: "Cordones gruesos confluyentes", 
         color: "text-tron-yellow", 
         border: "border-tron-yellow/30",
-        url: "https://placehold.co/600x400/111111/ffb800?text=V%C3%A1rices+Esof%C3%A1gicas",
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Esophageal_varices_-_1.jpg/800px-Esophageal_varices_-_1.jpg",
         hotspot: { x: "50%", y: "70%", label: "Puntos Rojos (Cherry Red)" },
         longDesc: "Várices de gran tamaño que ocupan más de un tercio de la luz. Los puntos rojos indican debilidad de la pared y alto riesgo de rotura inminente."
       },
       { 
         id: 6,
-        title: "Cáncer Gástrico", 
-        class: "Borrmann III", 
-        desc: "Úlcera infiltrante con bordes elevados", 
+        title: "Mucosa Gástrica Normal", 
+        class: "Normal", 
+        desc: "Mucosa de aspecto conservado", 
         color: "text-tron-cyan", 
         border: "border-tron-cyan/30",
-        url: "https://placehold.co/600x400/111111/00ffff?text=C%C3%A1ncer+G%C3%A1strico",
-        hotspot: { x: "45%", y: "30%", label: "Borde Infiltrativo Irregular" },
-        longDesc: "Lesión ulcerada con infiltración de la pared circundante. La biopsia es mandatoria para determinar histología (tipo Laurén) y grado de diferenciación."
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Normal_gastric_mucosa.jpg/800px-Normal_gastric_mucosa.jpg",
+        hotspot: { x: "45%", y: "30%", label: "Pliegues gástricos normales" },
+        longDesc: "Estudio que muestra pliegues gástricos de textura, coloración y distensibilidad conservadas. No hay lesiones focales ni signos inflamatorios."
       },
     ];
 
