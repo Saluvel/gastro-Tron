@@ -1753,7 +1753,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
   },
   "pillar": "Board Prep"
-},,
+},
 {
   "id": "q-biologia-006",
   "topic": "biologia",
@@ -2880,7 +2880,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
   },
   "pillar": "Common Cases"
-},,
+},
 {
   "id": "q-cancer-gastrico-008",
   "topic": "cancer_gastrico",
@@ -3846,7 +3846,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
   },
   "pillar": "Common Cases"
-},,
+},
 {
   "id": "q-cancer-esofago-007",
   "topic": "cancer_esofago",

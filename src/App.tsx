@@ -45,7 +45,10 @@ import {
 import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
+import { PRELOADED_QUESTIONS } from './data/questionBank';
 import { Question, Difficulty, UserProgress, Topic } from './types/quiz';
+
+const ALL_PRELOADED_QUESTIONS = [...SEED_QUESTIONS, ...PRELOADED_QUESTIONS];
 import { generateQuestions } from './services/ai';
 import { GlowButton } from './components/GlowButton';
 import { TronCard } from './components/TronCard';
@@ -376,8 +379,8 @@ export default function App() {
   const [showVisualDetail, setShowVisualDetail] = useState(false);
   const [isMasterclassRoute, setIsMasterclassRoute] = useState(false);
 
-  const savePearl = (question: Question) => {
-    if (!question.clinicalPearl) return;
+  const savePearl = (question: Question | undefined) => {
+    if (!question || !question.clinicalPearl) return;
     if (progress.savedPearls?.some(p => p.questionId === question.id)) return;
 
     playAudio('achievement');
@@ -387,7 +390,7 @@ export default function App() {
         ...(prev.savedPearls || []),
         {
           questionId: question.id,
-          text: question.clinicalPearl!,
+          text: question.clinicalPearl,
           topic: question.topic,
           date: Date.now()
         }
@@ -489,7 +492,7 @@ export default function App() {
   });
 
   const allKnownQuestions = useMemo(() => [
-    ...SEED_QUESTIONS,
+    ...ALL_PRELOADED_QUESTIONS,
     ...(Object.values(cachedQuestions).flat() as Question[])
   ], [cachedQuestions]);
 
@@ -501,7 +504,10 @@ export default function App() {
   }, [currentView]);
 
   const dailyPearl = useMemo(() => {
-    const allPearls = SEED_QUESTIONS.map(q => ({
+    const validQuestions = ALL_PRELOADED_QUESTIONS.filter(q => q && q.clinicalPearl);
+    if (validQuestions.length === 0) return { text: "No hay pearls", topic: "General", ref: "", question: "", explanation: "" };
+    
+    const allPearls = validQuestions.map(q => ({
       text: q.clinicalPearl,
       topic: GASTRO_TOPICS.find(t => t.id === q.topic)?.name,
       ref: q.guideline,
@@ -892,7 +898,7 @@ export default function App() {
     
     // Pick 5 questions from each major topic pool (seeds + cache)
     const pools = GASTRO_TOPICS.map(t => {
-      const seeds = SEED_QUESTIONS.filter(q => q.topic === t.id);
+      const seeds = ALL_PRELOADED_QUESTIONS.filter(q => q.topic === t.id);
       const cached = cachedQuestions[t.id] || [];
       return [...seeds, ...cached].sort(() => Math.random() - 0.5).slice(0, 5);
     });
@@ -926,7 +932,7 @@ export default function App() {
     setIsSurvivalMode(true);
     setCurrentView('quiz');
     
-    const allSeeds = SEED_QUESTIONS;
+    const allSeeds = ALL_PRELOADED_QUESTIONS;
     const allCached = Object.values(cachedQuestions).flat() as Question[];
     const simQuestions = [...allSeeds, ...allCached].sort(() => Math.random() - 0.5);
     
@@ -993,7 +999,7 @@ export default function App() {
     // In a real scenario we'd use generateQuestions with a generalized topic, or batch requests.
     // For now, let's use all seed questions mixed, or generate a batch on the fly.
     try {
-      const mixedQuestions = SEED_QUESTIONS
+      const mixedQuestions = ALL_PRELOADED_QUESTIONS
         .sort(() => 0.5 - Math.random())
         .slice(0, 30);
       
@@ -1021,8 +1027,8 @@ export default function App() {
       return;
     }
 
-    // Intentar reanudar si es el mismo tema y no hemos terminado
-    if (!isSimMode && !isSurvivalMode && selectedTopic?.id === topic.id && questions.length > 0 && currentView !== 'results') {
+    // Intentar reanudar si es el mismo tema y no hemos terminado (y el conteo coincide)
+    if (!isSimMode && !isSurvivalMode && selectedTopic?.id === topic.id && questions.length === targetQuestionCount && currentView !== 'results') {
       playAudio('start');
       setCurrentView('quiz');
       return;
@@ -1036,7 +1042,7 @@ export default function App() {
     setCurrentView('quiz');
     
     // 1. Get hardcoded seeds
-    const seeds = SEED_QUESTIONS.filter(q => q.topic === topic.id);
+    const seeds = ALL_PRELOADED_QUESTIONS.filter(q => q.topic === topic.id);
     
     // 2. Get previously AI-generated questions for this topic
     const cached = cachedQuestions[topic.id] || [];
@@ -1823,7 +1829,10 @@ export default function App() {
                         {[5, 10, 20, 30].map(count => (
                           <button
                             key={count}
-                            onClick={() => setTargetCount(count)}
+                            onClick={() => {
+                              setTargetCount(count);
+                              localStorage.setItem('gastro_quiz_target_count', count.toString());
+                            }}
                             className={cn(
                               "flex-1 py-2 rounded font-mono text-sm border transition-all",
                               targetQuestionCount === count 
@@ -2461,13 +2470,13 @@ export default function App() {
                          onClick={() => savePearl(currentQuestion)}
                          className={cn(
                            "px-6 py-4 border rounded-2xl transition-all flex items-center gap-3 group",
-                           progress.savedPearls?.some(p => p.questionId === currentQuestion.id)
+                           currentQuestion && progress.savedPearls?.some(p => p.questionId === currentQuestion.id)
                             ? "bg-tron-yellow border-tron-yellow text-black"
                             : "bg-white/5 border-white/10 hover:border-tron-yellow hover:text-tron-yellow text-white/40"
                          )}
                        >
-                         <Lightbulb size={18} className={progress.savedPearls?.some(p => p.questionId === currentQuestion.id) ? "text-black" : "text-white/40 group-hover:text-tron-yellow"} />
-                         <span className="text-[10px] uppercase font-black tracking-widest">{progress.savedPearls?.some(p => p.questionId === currentQuestion.id) ? 'Guardada' : 'Guardar Perla'}</span>
+                         <Lightbulb size={18} className={currentQuestion && progress.savedPearls?.some(p => p.questionId === currentQuestion.id) ? "text-black" : "text-white/40 group-hover:text-tron-yellow"} />
+                         <span className="text-[10px] uppercase font-black tracking-widest">{currentQuestion && progress.savedPearls?.some(p => p.questionId === currentQuestion.id) ? 'Guardada' : 'Guardar Perla'}</span>
                        </button>
                      </motion.div>
 
@@ -2744,7 +2753,7 @@ export default function App() {
 
   if (currentView === 'bookmarks') {
     const bookmarkedQuestions = [
-      ...SEED_QUESTIONS,
+      ...ALL_PRELOADED_QUESTIONS,
       ...(Object.values(cachedQuestions).flat() as Question[])
     ].filter(q => bookmarks.includes(q.id));
     
@@ -2813,12 +2822,12 @@ export default function App() {
 
   if (currentView === 'pearls') {
     const allKnownQuestions = [
-      ...SEED_QUESTIONS,
+      ...ALL_PRELOADED_QUESTIONS,
       ...(Object.values(cachedQuestions).flat() as Question[])
     ];
 
     const filteredPearls = allKnownQuestions.filter(q => {
-      if (!q.clinicalPearl) return false;
+      if (!q || !q.clinicalPearl) return false;
       const pearlText = q.clinicalPearl;
       const textParam = q.text || "";
       const matchesSearch = pearlText.toLowerCase().includes(pearlsSearch.toLowerCase()) || 
@@ -3367,7 +3376,7 @@ export default function App() {
 
   if (currentView === 'archive') {
     const errorQuestions = [
-      ...SEED_QUESTIONS,
+      ...ALL_PRELOADED_QUESTIONS,
       ...(Object.values(cachedQuestions).flat() as Question[])
     ].filter(q => progress.reviewIds.includes(q.id));
 
