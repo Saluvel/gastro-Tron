@@ -48,5 +48,10 @@ export const GASTRO_TOPICS: Topic[] = [
     id: 'protocolo_simulacro',
     name: 'Protocolo Simulacro',
     description: 'Escenarios críticos de alta fidelidad: toma de decisiones bajo presión y liderazgo.'
+  },
+  {
+    id: 'endoscopia_anticoagulados',
+    name: 'Endoscopia en Anticoagulados',
+    description: 'Guías ASGE/ESGE sobre manejo periendoscópico de anticoagulantes y antiagregantes.'
   }
 ];

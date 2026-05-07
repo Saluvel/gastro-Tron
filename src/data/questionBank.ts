@@ -6,6 +6,5835 @@ import { Question } from '../types/quiz';
  * Si se agotan, entra la IA a generar más siguiendo este mismo estándar.
  */
 export const PRELOADED_QUESTIONS: Question[] = [
+{
+  "id": "q-anticoagulados-001",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #1. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-002",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #2. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-003",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #3. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-004",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #4. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-005",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #5. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-006",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #6. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-007",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #7. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-008",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #8. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-009",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #9. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-010",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #10. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-011",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #11. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-012",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #12. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-013",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #13. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-014",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #14. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-015",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #15. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-016",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #16. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-017",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #17. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-018",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #18. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-019",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #19. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-020",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #20. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-021",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #21. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-022",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #22. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-023",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #23. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-024",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #24. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-025",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #25. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-026",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #26. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-027",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #27. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-028",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #28. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-029",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #29. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-anticoagulados-030",
+  "topic": "endoscopia_anticoagulados",
+  "difficulty": "Staff",
+  "text": "Escenario Periendoscópico #30. Según las guías actuales (ASGE / ESGE) para el manejo de pacientes con terapia antitrombótica, si un paciente toma Clopidogrel por un stent coronario colocado hace 3 meses y se va a someter a procedimientos endoscópicos de ALTO riesgo de sangrado (como polipectomía de pólipos colónicos grandes o ECPRE con esfinterotomía), ¿cuál es la conducta más adecuada a seguir?",
+  "options": [
+    "Suspender el Clopidogrel 5 a 7 días antes, previa consulta con cardiología para evaluar el reemplazo transitorio o puente, ya que el riesgo de trombosis del stent aún es muy alto",
+    "Continuar ininterrumpidamente el Clopidogrel, porque las resecciones mucosas grandes se consideran de bajo riesgo sangrante universal",
+    "Suspender inmediatamente la Aspirina y mantener el Clopidogrel inalterable durante todo el perioperatorio",
+    "Realizar la endoscopia con normalidad y si hay un sangrado, administrar plasma fresco congelado directamente por vía venosa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para procedimientos de alto riesgo de sangrado en pacientes con stents coronarios recientes (< 6-12 meses), el Clopidogrel no puede suspenderse a la ligera por el altísimo riesgo de trombosis del stent. Se requiere consulta obligatoria multidisciplinaria con cardiología.",
+  "fisiopato": "Las tiendopiridinas como el Clopidogrel inhiben irreversiblemente el receptor plaquetario P2Y12. Las plaquetas viven 7-10 días, por lo tanto, se necesitan 5-7 días para regenerar un pool funcional suficiente que permita una coagulación segura ante grandes resecciones mucosas.",
+  "clinicalPearl": "Estándar de Oro para Antiagregantes: NO detenga inhibidores P2Y12 (Clopidogrel, Ticagrelor) si el paciente tuvo Síndrome Coronario Agudo/Stent hace <12 meses sin aval cardiológico explícito o plantee posponer la endoscopia si es electiva.",
+  "guideline": "ASGE/ESGE Guidelines on Endoscopy in Patients on Antiplatelet or Anticoagulant Therapy.",
+  "whyWrong": {
+    "1": "Continuarlo para pólipos grandes (riesgo sangrante >1.5%) desencadenaría una catástrofe hemostática en el lecho local, con o sin clips.",
+    "2": "Por regla general y sistemática, la aspirina se MANTIENE para virtualmente todos los procedimientos endoscópicos, incluso los de alto riesgo, salvo contadas excepciones (disección endoscópica submucosa masiva).",
+    "3": "El plasma fresco congelado no tiene plaquetas y no revierte en lo absoluto la antiagregación plaquetaria irreversibles producida por los antagonistas P2Y12."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-eii-avanzada-020",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #20. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-021",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #21. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-022",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #22. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-023",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #23. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-024",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #24. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-025",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #25. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-026",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #26. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-027",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #27. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-028",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #28. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-029",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #29. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-eii-avanzada-030",
+  "topic": "eii_avanzada",
+  "difficulty": "Subspecialist",
+  "text": "Caso de EII Refractaria #30. En un paciente con Enfermedad de Crohn fistulizante perianal compleja y severa, que ha fallado a dosis optimizadas de anti-TNF (Infliximab) comprobadas con niveles séricos terapéuticos y sin anticuerpos, ¿cuál es el mecanismo de acción de la siguiente terapia biológica de rescate recomendada en guías (Ustekinumab)?",
+  "options": [
+    "Inhibición de las subunidades p40 compartidas por las interleucinas IL-12 e IL-23",
+    "Bloqueo directo de las integrinas α4β7 en el endotelio vascular intestinal",
+    "Inhibición oral de las Janus Quinasas (JAK) 1 y 3 en los linfocitos periféricos",
+    "Anticuerpo monoclonal quimérico que neutraliza el factor de necrosis tumoral alfa (TNF-α)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ustekinumab es un anticuerpo monoclonal IgG1κ humano que se une específicamente a la subunidad proteica p40, compartida por las citoquinas IL-12 e IL-23, impidiendo su interacción con el receptor e inhibiendo cascadas proinflamatorias TH1 y TH17.",
+  "fisiopato": "Al bloquear IL-12 e IL-23, se detiene la polarización de células T vírgenes hacia fenotipos Th1 y Th17, linajes celulares hiperactivos cruciales en la patogénesis de la inflamación transmural granulomatosa del Crohn.",
+  "clinicalPearl": "Falla primaria o secundaria a anti-TNF en Crohn con niveles óptimos de la droga = Cambiar de familia u objetivo (out of class switch), como Ustekinumab (anti-IL12/23) o Vedolizumab (anti-integrina); para fistulizante Ustekinumab suele tener mejor perfil empírico sistémico.",
+  "guideline": "ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.",
+  "whyWrong": {
+    "1": "El bloqueo selectivo de las integrinas α4β7 es el mecanismo de acción del Vedolizumab, que impide el homing linfocitario al intestino.",
+    "2": "Los inhibidores de JAK (Tofacitinib, Upadacitinib) son moléculas pequeñas orales, altamente eficaces en Colitis Ulcerosa y algunos en Crohn, pero no bloquean p40 IL12/23.",
+    "3": "La neutralización del TNF-α es precisamente el mecanismo que ya se demostró ineficaz (falla) en este paciente bajo Infliximab, el cual es quimérico."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-muerte-subita-015",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #15. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-016",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #16. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-017",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #17. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-018",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #18. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-019",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #19. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-020",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #20. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-021",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #21. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-022",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #22. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-023",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #23. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-024",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #24. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-025",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #25. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-026",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #26. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-027",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #27. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-028",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #28. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-029",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #29. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-muerte-subita-030",
+  "topic": "muerte_subita",
+  "difficulty": "Staff",
+  "text": "Emergencia Gastrointestinal Letal #30. Paciente cirrótico en sala de urgencias presenta hematemesis masiva y compromiso hemodinámico. Se le realiza endoscopia de urgencia a las 6 horas logrando ligadura de várices esofágicas sangrantes, pero 4 días después en terapia intensiva presenta súbito shock séptico severo y fallece a las pocas horas. Sabiendo el factor de riesgo de los cirróticos que sangran, ¿cuál es la medida profiláctica de oro que salva vidas y disminuye la mortalidad al prevenir fuertemente esta complicación, la cual debería haberse iniciado desde su llegada?",
+  "options": [
+    "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
+    "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
+    "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
+    "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+  ],
+  "correctIndex": 0,
+  "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
+  "fisiopato": "La hemorragia compromete la perfusión y la barrera de la mucosa intestinal, e induce inmunoparálisis inducida por la cirrosis. Las bacterias entéricas invaden la sangre masivamente exacerbando el colapso endotelial e instigando un círculo vicioso de CID, vasoplejía o sepsis.",
+  "clinicalPearl": "Todo paciente cirrótico que sangra OBLIGATORIAMENTE debe recibir profilaxis antibiótica (Ceftriaxona usualmente) por 5 a 7 días; reduce las infecciones, el resangrado temprano e impacta espectacularmente en la reducción de mortalidad global.",
+  "guideline": "Baveno VII y AASLD Guidelines on Management of Bleeding and Varices.",
+  "whyWrong": {
+    "1": "La Terlipresina u Octreotide reduce la presión portal y frena el sangrado, pero no previene directa ni netamente el desarrollo de infecciones entéricas generalizadas por translocación, y por sí sola no erradica el foco letal bacteriano.",
+    "2": "La reposición empírica masiva de plasma u crioprecipitados sin laboratorios guiados por TEG eleva abruptamente la presión portal por hipervolemia ocasionando dramáticamente resangrado fulminante fatal en las primeras horas.",
+    "3": "TIPS preventivo sistemático (Early TIPS) es recomendado solo para cirróticos con alto riesgo (Child-Pugh C <14, o B activo sangrando en endoscopia) y no como intervención \"ciega, primaria o preventiva universal\" en todo ingresado."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-protocolo-simulacro-012",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #12. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-013",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #13. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-014",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #14. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-015",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #15. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-016",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #16. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-017",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #17. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-018",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #18. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-019",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #19. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-020",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #20. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-021",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #21. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-022",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #22. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-023",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #23. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-024",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #24. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-025",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #25. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-026",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #26. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-027",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #27. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-028",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #28. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-029",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #29. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},
+{
+  "id": "q-protocolo-simulacro-030",
+  "topic": "protocolo_simulacro",
+  "difficulty": "Staff",
+  "text": "Test Integral de Simulacro del Board #30. En un entorno de guardia intensiva, un paciente de 75 años internado por neumonía severa presenta bruscamente en su día 6 heces líquidas explosivas, acuosas verdes, dolor cólico generalizado, y en un laboratorio de urgencia el recuento leucocitario asciende a 35,000 células/mm³ sin sangrado evidente. Teniendo en cuenta la presentación de un cuadro tóxico nosocomial, ¿cuál es el paso de protocolo estricto más importante que debe priorizarse inicialmente junto al aislamiento de contacto y testeo rápido de toxinas A/B y GDH?",
+  "options": [
+    "Suspender el antibiótico causante e iniciar Vancomicina o Fidaxomicina oral empírica inmediata dados los factores de gravedad",
+    "Realizar colonoscopia descompresiva de urgencia para excluir megacolon tóxico y documentar membranas blanquecinas fibrinosas",
+    "Iniciar Metronidazol Intravenoso a dosis de 500 mg como monoterapia empírica pura sistémica",
+    "Solicitar coprocultivo rutinario universal y cultivo sanguíneo viral, difiriendo terapias de fagos fecales al resultado a las 48 hs"
+  ],
+  "correctIndex": 0,
+  "explanation": "La infección grave por C. difficile (diarrea acuosa nosocomial con >15,000 blancos en un anciano medicado con antibióticos) constituye una urgencia médica; se debe suspender en lo posible el agente instigador e iniciar de inmediato antibióticos luminales (Vanco oral/Fidaxo).",
+  "fisiopato": "La alteración y el exterminio total nosocomial en días de la microbiota colónica (disbiosis) permite la germinación selectiva de esporas de Clostridioides difficile, y sus toxinas A (enterotoxina) y B (citotoxina) desencadenan inflamación letal brutal colónica formadora a minutos de las pseudomembranas letales.",
+  "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
+  "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
+  "whyWrong": {
+    "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+    "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
+    "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+  },
+  "pillar": "Board Prep"
+},,
+{
+  "id": "q-biologia-006",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #6. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-007",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #7. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-008",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #8. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-009",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #9. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-010",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #10. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-011",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #11. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-012",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #12. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-013",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #13. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-014",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #14. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-015",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #15. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-016",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #16. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-017",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #17. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-018",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #18. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-019",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #19. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-020",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #20. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-021",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #21. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-022",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #22. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-023",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #23. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-024",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #24. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-025",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #25. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-026",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #26. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-027",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #27. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-028",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #28. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-029",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #29. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-biologia-030",
+  "topic": "biologia",
+  "difficulty": "Fellow",
+  "text": "Pregunta de Biología Molecular en Gastroenterología #30. Respecto a la patogenia molecular del cáncer colorrectal, ¿cuál de las siguientes alteraciones génicas se asocia clásicamente al desarrollo de inestabilidad microsatelital (MSI) por defectos en la reparación del ADN (Mismatch Repair)?",
+  "options": [
+    "Mutaciones o silenciamiento epigenético de los genes MLH1, MSH2, MSH6 o PMS2",
+    "Mutación exclusiva del gen APC iniciador en la vía clásica de adenoma-carcinoma",
+    "Sobreexpresión de la oncoproteína HER2/neu en membrana",
+    "Translocación t(9;22) formando el gen fusión BCR-ABL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los defectos en los genes reparadores del ADN (MMR) como MLH1, MSH2, MSH6 o PMS2, ya sea por mutación germinal (Síndrome de Lynch) o hipermetilación somática (Lynch-like/esporádico), causan inestabilidad microsatelital (MSI-H).",
+  "fisiopato": "Al no poder reparar errores durante la replicación del ADN, se acumulan mutaciones frameshift en secuencias repetitivas (microsatélites), promoviendo la carcinogénesis acelerada con alta inmunogenicidad (neoantígenos).",
+  "clinicalPearl": "Cáncer de colon derecho, joven, o con mucina abundante = Alta sospecha de MSI. Tienen excelente respuesta a la inmunoterapia (Inhibidores de checkpoint) y no responden a 5-FU adyuvante en estadio II.",
+  "guideline": "NCCN Guidelines: Colon Cancer y Evaluación Genética (Síndrome de Lynch).",
+  "whyWrong": {
+    "1": "El gen APC mutado causa poliposis adenomatosa familiar (FAP) y es el iniciador de la vía clásica de inestabilidad cromosómica (CIN), que da cuenta del 85% de los cánceres esporádicos, sin afectar primariamente los microsatélites.",
+    "2": "La sobreexpresión de HER2 se busca rutinariamente para terapia dirigida pero en metástasis de cáncer gástrico o esofágico (y mama), no es el factor primario o central desencadenante del MSI focal colónico.",
+    "3": "El cromosoma Filadelfia BCR-ABL causa la leucemia mieloide crónica, siendo una aberración hematológica totalmente ajena a la ontogenia epitelial del tumor colorrectal de base y celular."
+  },
+  "pillar": "Clinical Logic"
+},
+{
+  "id": "q-nutricion-007",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #7. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-008",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #8. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-009",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #9. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-010",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #10. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-011",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #11. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-012",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #12. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-013",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #13. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-014",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #14. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-015",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #15. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-016",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #16. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-017",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #17. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-018",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #18. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-019",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #19. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-020",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #20. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-021",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #21. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-022",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #22. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-023",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #23. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-024",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #24. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-025",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #25. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-026",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #26. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-027",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #27. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-028",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #28. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-029",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #29. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-nutricion-030",
+  "topic": "nutricion",
+  "difficulty": "Fellow",
+  "text": "Escenario de Soporte Nutricional Digestivo #30. En un paciente con desnutrición calórico-proteica severa (índice de masa corporal de 14) que inicia nutrición enteral tras 10 días de ayuno hídrico, ¿qué complicación o síndrome metabólico letal debe prevenirse activamente durante los primeros instantes y días de realimentación calórica y cómo se detecta clínicamente?",
+  "options": [
+    "Síndrome de realimentación (Refeeding Syndrome), detectado por severa hipofosfatemia, hipopotasemia e hipomagnesemia sistémica inmediata al paso de la fórmula",
+    "Cetoacidosis diabética aguda fulminante por el golpe brusco y pico insulínico general endovenoso u hídrico enteral al duodeno",
+    "Esteatohepatitis aguda metabólica por depósito acelerado celular de triglicéridos per se masiva y colesterol biliar puro al órgano",
+    "Hemorragia digestiva colosal difusa por atrofia isquémica de las microvellosidades del colon derecho puro y asintomático"
+  ],
+  "correctIndex": 0,
+  "explanation": "El Síndrome de Realimentación ocurre al aportar glucosa bruscamente a un paciente en ayuno crítico prolongado; el consecuente pico de insulina arrastra rápidamente fósforo, potasio y magnesio al interior celular, causando caídas fatales de estos iones séricos.",
+  "fisiopato": "La brutal hipofosfatemia (falla en producción neta celular de ATP sistémica), la hipopotasemia severa (arritmias letales) y la deficiencia aguda de volumen o fallo cardíaco subyacente desencadenan arritmias letales miocárdicas o coma generalizado muscular basal al iniciarse bruscamente fórmulas hipercalóricas.",
+  "clinicalPearl": "Antes de alimentar a un desnutrido crónico puro de hospital o en general: Suplementa rutinariamente todo Tiamina (Vitamina B1), Fósforo y electrolitos, y arranca la toma calórica muy baja (10-15 kcal/kg/d) los primeros 3 a 4 cruces días asintomáticos.",
+  "guideline": "ASPEN/ESPEN Clinical Guidelines on Nutrition Support and Refeeding Syndrome.",
+  "whyWrong": {
+    "1": "La realimentación incrementa bruscamente y fuertemente la producción endógena metabólica de la insulina para guardar la nueva glucosa hídrica de manera celular basal (combatiendo la cetosis del ayuno crónico), no ocasionando una verdadera falta o cetoacidosis per se diabética.",
+    "2": "Una esteatohepatitis de base es y constituye al fallo crónico y global dismetabólico asintomático en meses a obesidad o alcohol purificante inflamatoria celular, mas no es la emergencia vital de colapso rápido a horas inicial de realimentar suero a paciente.",
+    "3": "La atrofia luminal o vellositaria per se ciertamente e fisiológicamente focal ocurre durante y por el desuso hídrico del largo ayuno, pero ocasiona diarreas colosales malabsortivas inicial u basales no así un choque de hemorragias ulcerativas colosal del ciego y franco asintomático."
+  },
+  "pillar": "Common Cases"
+},,
+{
+  "id": "q-cancer-gastrico-008",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #8. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-009",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #9. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-010",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #10. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-011",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #11. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-012",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #12. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-013",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #13. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-014",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #14. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-015",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #15. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-016",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #16. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-017",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #17. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-018",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #18. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-019",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #19. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-020",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #20. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-021",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #21. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-022",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #22. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-023",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #23. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-024",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #24. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-025",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #25. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-026",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #26. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-027",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #27. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-028",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #28. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-029",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #29. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-gastrico-030",
+  "topic": "cancer_gastrico",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre cáncer gástrico #30. En el abordaje diagnóstico inicial de un paciente de 60 años con dispepsia y pérdida de peso, la endoscopia revela una úlcera de aspecto maligno. ¿Qué sistema de clasificación se emplea comúnmente para categorizar histológicamente el adenocarcinoma gástrico?",
+  "options": [
+    "Clasificación de Lauren (tipo intestinal o difuso)",
+    "Clasificación de Forrest",
+    "Clasificación de Los Ángeles",
+    "Clasificación de Chicago 4.0"
+  ],
+  "correctIndex": 0,
+  "explanation": "La clasificación de Lauren divide el cáncer gástrico principalmente en tipo intestinal (bien diferenciado, asociado a metaplasia/atrofia y H. pylori) y tipo difuso (células en anillo de sello, factor genético predispuesto).",
+  "fisiopato": "El tipo difuso tiene mutaciones frecuentemente en E-cadherina (CDH1), perdiendo adhesión intracelular, mientras el intestinal sigue la cascada de Pelayo Correa (inflamación > atrofia > metaplasia > displasia > cáncer).",
+  "clinicalPearl": "Cáncer Gástrico + Células en anillo de sello = Tipo difuso, peor pronóstico, tiende a linitis plástica.",
+  "guideline": "NCCN Guidelines: Gastric Cancer.",
+  "whyWrong": {
+    "1": "Forrest estratifica el riesgo de sangrado de úlceras pépticas, no tipifica histológicamente el cáncer de estómago.",
+    "2": "Los Ángeles gradúa la severidad endoscópica de la esofagitis péptica por reflujo gastroesofágico.",
+    "3": "Chicago 4.0 estandariza la manometría de alta resolución para diagnosticar alteraciones motoras del esófago (ej. acalasia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-012",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #12. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-013",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #13. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-014",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #14. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-015",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #15. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-016",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #16. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-017",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #17. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-018",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #18. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-019",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #19. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-020",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #20. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-021",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #21. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-022",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #22. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-023",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #23. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-024",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #24. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-025",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #25. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-026",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #26. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-027",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #27. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-028",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #28. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-029",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #29. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-celiaca-030",
+  "topic": "celiaca",
+  "difficulty": "Fellow",
+  "text": "Pregunta sobre Enfermedad Celíaca #30. Una mujer de 30 años presenta anemia ferropénica refractaria, astenia y distensión abdominal. Se sospecha enfermedad celíaca. Teniendo en cuenta las guías diagnósticas, ¿cuál es el anticuerpo más precoz, de mayor sensibilidad técnica global y que se solicita como tamizaje de primera línea?",
+  "options": [
+    "Anticuerpos IgA anti-transglutaminasa tisular (tTG-IgA)",
+    "Anticuerpos IgG anti-gliadina deaminada sintética",
+    "Anticuerpo anti-endomisio (EMA) tipo IgE",
+    "Anticuerpos IgA anti-Saccharomyces cerevisiae (ASCA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
+  "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+  "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
+  "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
+  "whyWrong": {
+    "1": "La gliadina deaminada versión IgG es muy específica y obligatoria sólo en el 2% de los celíacos que nacen con un déficit absoluto o genético puro severo de anticuerpos séricos totales IgA.",
+    "2": "El Endomisio EMA es IgA, no IgE (el cual sería clásicamente general de pura base cruzada alérgica alimentaria, pero la celiaquía no es una alergia sino inflamación celular). Es confirmatorio pero caro y observador dependiente.",
+    "3": "ASCA es el biomarcador sérico estrella focal serológico para orientar precozmente la Enfermedad de Crohn (IBD), no la celiaquía entérica letal y luminal base pura gluten."
+  },
+  "pillar": "Common Cases"
+},,
+{
+  "id": "q-cancer-esofago-007",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #7: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-008",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #8: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-009",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #9: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-010",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #10: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-011",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #11: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-012",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #12: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-013",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #13: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-014",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #14: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-015",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #15: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-016",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #16: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-017",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #17: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-018",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #18: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-019",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #19: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-020",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #20: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-021",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #21: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-022",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #22: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-023",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #23: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-024",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #24: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-025",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #25: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-026",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #26: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-027",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #27: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-028",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #28: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-029",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #29: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-cancer-esofago-030",
+  "topic": "cancer_esofago",
+  "difficulty": "Fellow",
+  "text": "Caso Clínico Oncológico #30: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
+  "options": [
+    "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
+    "La presencia concomitante de una hernia hiatal no complicada",
+    "Historia de infección gástrica por Helicobacter pylori en la biopsia",
+    "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
+  ],
+  "correctIndex": 0,
+  "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
+  "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
+  "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
+  "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
+  "whyWrong": {
+    "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
+    "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
+    "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-007",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #7: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-008",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #8: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-009",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #9: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-010",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #10: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-011",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #11: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-012",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #12: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-013",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #13: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-014",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #14: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-015",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #15: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-016",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #16: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-017",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #17: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-018",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #18: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-019",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #19: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-020",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #20: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-021",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #21: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-022",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #22: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-023",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #23: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-024",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #24: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-025",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #25: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-026",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #26: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-027",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #27: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-028",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #28: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-029",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #29: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-ulcera-peptica-030",
+  "topic": "ulcera_peptica",
+  "difficulty": "Fellow",
+  "text": "Escenario Clínico Úlcera Péptica #30: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
+  "options": [
+    "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
+    "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
+    "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
+    "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
+  "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
+  "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
+  "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
+  "whyWrong": {
+    "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
+    "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
+    "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-009",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 9 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-010",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 10 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-011",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 11 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-012",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 12 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-013",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 13 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-014",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 14 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-015",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 15 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-016",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 16 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-017",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 17 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-018",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 18 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-019",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 19 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-020",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 20 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-021",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 21 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-022",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 22 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-023",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 23 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-024",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 24 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-025",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 25 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-026",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 26 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-027",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 27 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-028",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 28 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-029",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 29 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+  "id": "q-motores-esofago-030",
+  "topic": "motores_esofago",
+  "difficulty": "Fellow",
+  "text": "¿Cuál es la característica principal de la alteración motora esofágica número 30 según los hallazgos en la manometría de alta resolución (Chicago 4.0)?",
+  "options": [
+    "Aperistalsis y relajación incompleta del esfínter esofágico inferior (IRP elevado)",
+    "Peristalsis normal con IRP bajo",
+    "Contracciones prematuras con IRP normal",
+    "Ausencia de contractilidad generalizada sin afectación del EEI"
+  ],
+  "correctIndex": 0,
+  "explanation": "La acalasia se caracteriza clásicamente por la ausencia de peristalsis y un IRP elevado.",
+  "fisiopato": "Degeneración del plexo mientérico de Auerbach, perdiendo el balance de óxido nítrico inhibitorio.",
+  "clinicalPearl": "Disfagia a sólidos y líquidos con regurgitación + IRP elevado = Evaluar para Acalasia.",
+  "guideline": "Chicago Classification v4.0.",
+  "whyWrong": {
+    "1": "La peristalsis normal excluye el diagnóstico de acalasia.",
+    "2": "Las contracciones prematuras con IRP normal definen el espasmo esofágico difuso, no la acalasia.",
+    "3": "Ausencia de contractilidad con EEI normal es motilidad esofágica inefectiva o afección secundaria (ej. esclerodermia)."
+  },
+  "pillar": "Common Cases"
+},
+{
+    id: 'q-diarrea-cronica-024',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Un joven de 22 años acude por dolor periumbilical, pérdida de peso, fiebre intermitente y diarrea crónica sin sangre pero con moco. Los análisis muestran PCR y VSG muy elevadas. La calprotectina fecal es >800 ug/g. ¿Qué diagnóstico etiológico se debe sospechar primero ante este cuadro inflamatorio orgánico crónico?',
+    options: ['Enfermedad de Crohn ileocolónica', 'Síndrome de Intestino Irritable con predominio diarrea (SII-D)', 'Diarrea secretora por VIPoma pancreático', 'Intolerancia severa a la lactosa'],
+    correctIndex: 0,
+    explanation: 'El cuadro de dolor periumbilical, pérdida de peso, fiebre, elevación de reactantes de fase aguda y calprotectina fecal altísima en un joven sugiere fuertemente una Enfermedad Inflamatoria Intestinal, siendo el Crohn ileocecal el más probable.',
+    fisiopato: 'La calprotectina es una proteína liberada por los neutrófilos en respuesta a inflamación mucosa extensa. Nivel de calprotectina fecal se correlaciona con la infiltración y migración masiva granulocítica a la pared del intestino.',
+    clinicalPearl: 'Joven con diarrea crónica, pérdida de peso y signos de inflamación sistémica (VSG alta, Calprotectina fecal elevada): la primera sospecha siempre debe dirigirse a la EII (Crohn o Colitis Ulcerosa).',
+    guideline: 'ACG Clinical Guidelines: Management of Crohn’s Disease in Adults.',
+    whyWrong: {
+      "1": 'El SII-D es un trastorno puramente funcional y su marcador estrella diferencial clave es que no cursa con inflamación sistémica (PCR normal) ni fecal (Calprotectina normal o limítrofe).',
+      "2": 'El VIPoma genera diarrea acuosa masiva, indolora, sin fiebre y sin marcadores inflamatorios agudos asociados en la materia fecal o plasma.',
+      "3": 'La intolerancia a la lactosa produce diarrea osmótica, flatulencia y dolor, pero NUNCA produce fiebre, pérdida masiva de peso grave y no eleva la calprotectina.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-025',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Para el estudio patogénico de un paciente que tiene sospecha clínica muy alta de Sobrecrecimiento Bacteriano del Intestino Delgado (SIBO), se indica un Test de Aliento. ¿Con qué hidratos de carbono o sustratos se realiza habitualmente esta prueba global y temprana de gas espirado exhalado?',
+    options: ['Test de Aliento con Glucosa espirada (o Lactulosa) monitorizando metabolitos de Hidrógeno o Metano', 'Prueba de Aliento a la Urea - carbono 13 o carbono 14 asintomática', 'Uso de un Test de Aliento directo global de Xilosa y Lactosa colónica', 'Estudio de vaciamiento con marcadores de Sulfato férrico'],
+    correctIndex: 0,
+    explanation: 'El Test de Aliento para SIBO monitoriza aumentos tempranos en la exhalación de gas Hidrógeno (o Metano) post ingesta de azúcares como Glucosa y Lactulosa, revelando fermentación bacteriana anormal en el intestino delgado.',
+    fisiopato: 'La microbiota humana fisiológicamente habita el colon y no el intestino delgado proximal. Si lo coloniza (SIBO), fermentan la glucosa ingerida (antes que el humano pueda absorberla en yeyuno) secretando de inmediato hidrogeniones y gas metano que se disuelven en sangre y se exhalan por pulmones a los pocos minutos.',
+    clinicalPearl: 'El diagnóstico de SIBO es predominantemente endoscópico por aspirado (gold standard) pero inviable; el Test del Aliento indirecto con Glucosa o Lactulosa es el examen clínico más práctico y usado en la sospecha temprana del síndrome.',
+    guideline: 'ACG Clinical Guideline: Small Intestinal Bacterial Overgrowth.',
+    whyWrong: {
+      "1": 'La úrea marcada se usa para determinar actividad de Ureasa exclusivamente frente a Helicobacter Pylori gástrico, no evalúa SIBO.',
+      "2": 'El test de aliento específico para intolerancia a lactosa determina la deficiencia de la enzima digestiva colonica, no cuantifica el aumento temprano global del intestino delgado per se de bacterias.',
+      "3": 'No existen tests estándar clínicos o radiológicos con sulfato férrico enfocados en determinar la cuantificación espiratoria bacteriana microorgánica.'
+    },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-diarrea-cronica-026',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'En el Síndrome de Intestino Corto (Short Bowel Syndrome) secundaria a amplias resecciones intestinales agudas o trombosis, existe el Síndrome de Intestino Corto tipo II. Si persiste la conservación del colon pero hay amplia resección ileal u yeyunal, ¿Qué peligro o cuadro hiperoxalúrico letal crónico u factor secundario renal y colónico debemos vigilar recurrentemente a toda costa dadas las uniones fisiológicas de sales residuales funcionales?',
+    options: ['Nefrolitiasis crónica por cálculos urinarios directos o masivos formados puramente de oxalato de calcio en los riñones sistémicos', 'Formación de infartos y placas micro orgánicas o per se isquémicas vasculares por lípidos neutros ciegos subagudos', 'Desarrollo de poliposis intestinal u adenomatosa difusa adenomatosa', 'Encefalopatía biliar crónica letales por exceso de bilis masiva y absorción general o basal funcional renal transmembrana'],
+    correctIndex: 0,
+    explanation: 'La hiperoxaluria entérica y los cálculos renales de oxalato cálcico son la mayor secuela patológica u complicación patognomónica derivada de la malabsorción de grasas e íleon perdido en pacientes con colon preservado e intestino corto.',
+    fisiopato: 'Al faltar el íleon no se absorbe sal biliar ni graso. Esas grasas residuales llegan al colon y saponifican (amarran) el calcio luminal sano, dejando libre y aislado al agresivo ión de Oxalato. Este oxalato libre es succionado fuertemente por la pared difusa colonica y excretado en sangre, llegando al riñón y precipitando de inmediato las clásicas piedras de oxalato calcico intrarrenal perenne.',
+    clinicalPearl: 'Paciente con resección de íleon (pero con colon intacto) que debuta con piedras en el riñón y dolor: es hiperoxaluria secundaria a mala absorción intestinal (saponificación del calcio por las sales y ácidos hídricos lipídicos en colon).',
+    guideline: 'AGA Clinical Guidelines on Management of Short Bowel Syndrome.',
+    whyWrong: {
+      "1": 'El colesterol alto u las placas estelares no son secuelas orgánicas u clásicas per se funcionales a los intestinos cortos ciegos, el metabolismo graso es secretado, no es acumulado.',
+      "2": 'Una poliposis adenomatosa y sus formaciones focales letales basales derivan de bases genéticos claros familiares poliposomas orgánicos tumorales francos, en nada atribuible a las resecciones o cirugías.',
+      "3": 'La encefalopatía es metabólica amoniacal o general renal ureica crónica por cirrosis hígados per se, no es consecuencia clínica del oxalato ciego.'
+    },
+    pillar: 'Clinical Logic'
+  },
+  {
+    id: 'q-diarrea-cronica-027',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Existe un patógeno infeccioso protozoario que genera y asienta de manera persistente brotes masivos infecciosos o intermitentes epidémicos y asintomáticos, manifestando diarrea y gases persistentes a pesar de meses sin salir del país. Se caracteriza por infectar a excursionistas, y la diarrea acuosa a veces se confunde y clasifica inicialmente como diarrea funcional irritativa simple pero su parásito bloquea y tapiza el epitelio y disgrega vellosidades delgadas. ¿A qué parásito microbiano se refiere?',
+    options: ['Giardia lamblia (duodenalis)', 'Cryptosporidium parvum', 'Vibrio cholerae', 'Strongyloides stercoralis o larvas cutáneas estelares'],
+    correctIndex: 0,
+    explanation: 'Giardia es un flagelado y causante prototípico clásico y endémico del excursionista que genera síndrome diarreico, distensión y meteorismo intermitente. Puede presentarse como diarrea prolongada superior a 4 semanas y ser mal diagnosticado como SII.',
+    fisiopato: 'Los trofozoítos de Giardia lamblia se fijan a los enterocitos en duodeno y yeyuno superior bloqueando físicamente e induciendo atrofia localizada de las microvellosidades, originando profunda disfunción y malabsorción intraluminal basal transitoria sin causar invasión profunda ni sangrado disenterico per se.',
+    clinicalPearl: 'Diarrea de larga data sin sangrado, muchos gases y antecedente de campo, pozo o guarderías: buscar Giardia con diagnóstico microscópico o antígeno fecal de superficie; tratar con dentificación y erradicación mediante Metronidazol o Tinidazol.',
+    guideline: 'ACG/IDSA Clinical Practice Guidelines for Management of protozoan diarrheal disease.',
+    whyWrong: {
+      "1": 'Cryptosporidium ocasiona cuadros limitantes y agudos de purulencia diarreica y fiebre transitoria en inmunocompetentes, o cuadros masivos intratables letales crónicos pero netos asociados y observados característicamente a portadores de SIDA profundo VIH CD4 disminuido.',
+      "2": 'Vibrio destila epidemias agudas letales veloces de cólera (evacuaciones copiosas francas de horas, de litraje excesivo fúlmine tipo agua en base arroz), y no asienta cronicamente semanas asintomáticas o gases focales lentos y progresiva intermitente.',
+      "3": 'Estrongoiloides general y parasitaria de nemátodos penetra focos cutáneos francos descalzos general pura migratorio sistémico con síndrome Loeffler o per se masiva pulmonar reactivas aguda, es una presentación radicalmente distinta al protozoario flagelado hídrico de giardias.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-028',
+    topic: 'diarrea_cronica',
+    difficulty: 'Subspecialist',
+    text: 'En una paciente hospitalizada para descartar Enfermedad Celíaca debido a atrofia vellosa confirmatoria endoscópica y anticuerpos positivos, le evalúas un "Rastreo o despistaje de masa ósea (Densitometría Radiológica dual de absorción DXA)" en base a sus patologías de base crónicas o por protocolos reumatológicos de EII sistémicas. ¿Por qué es mandatario y fisiológicamente basal el requerimiento estelar global y universal de hacer densitometrías de base a todo recién diagnosticado con Enfermedad Celíaca pura?',
+    options: ['Por la prevalencia subyacente y altísima basal e de Osteomalacia severa y franco riesgo focal general a Osteoporosis secundarias derivadas del yeyuno distal carente a vitaminas y calcio D pre', 'Porque el gluten mutagénico puro ataca basal y directamente estelar cartílagos o huesos reumatológicos subyacentes letal focal celular y a células purificadores de per se mortales', 'Porque su atrofia u vellosa produce purificadores o focales exceso crural e de puros depósitos estelativos basales amiloides general purificando o en bases articulares cruzadas y francas medulares ciegos', 'Porque base o de celiacos son portadores crudos asintomático de parathormonas masivo puro en paratiroides y ciego estelar tumores puros adenomas hipersecretor u masiva generalizadas e focal celular'],
+    correctIndex: 0,
+    explanation: 'A todo paciente celíaco adulto recién diagnosticado se le exige densitometría ósea debido a la alta prevalencia de osteopenia severa y osteoporosis inducida por años de desnutrición subclínica e insidiosa de micronutrientes absortivos primarios.',
+    fisiopato: 'La atrofia de las vellosidades en el duodeno proximal bloquea eficientemente la absorción de los suplementos orales del Calcio elemental y Vitamina D liposoluble originando en base hiperparatiroidismos secundarios, descalcificando letalmente a mediano plazo y resorbiendo al hueso por mecanismos endócrinos compensatorios renales francos o del tubo intestinal.',
+    clinicalPearl: 'Toda celíaca de nuevo diagnóstico requiere 4 análisis imperativos: Anticuerpos base tiroideos cruzados de general TSH, Densitometría ósea focal osteoporosis, y buscar carencias de puros letal de Hierro subyacentes o de niveles vit D y B12 sub estelares ciegos.',
+    guideline: 'AGA/ACG Clinical Guidelines: Diagnosis and Management of Celiac Disease y screening extraintestinales.',
+    whyWrong: {
+      "1": 'El gluten es un complejo o purificador proteína no cruza o ataca e inmunológicamente de los cartílagos o directamente sustrato y o y bases estructural a matriz cartilaginosa hialinas e crudas asintomáticas ciegos per se masiva, la afectación ósea de general pre estelativa es puramente metabólica por desnutrición carente.',
+      "2": 'Amiloidosis a estelar renales a órganos de cruces o e son y bases subagudas primarias masivo o de puros secundaria a per se mielomas purificadoras plasma no de a u bases de e ciego celíacos de a diarrea global masivas letales de asintomática mortales subagudos.',
+      "3": 'A la de las tiroides y per se puramente o de patología nodular tiroideos autoinmune Hashimoto si cruza basal con las focales y de celíacos crudos u per se masivas pero base o u paratiroides y a los adenoma basal de o hiperparatiroidismo primarios y basos general masivo es letal tumor u focales en sí mismo aislado e distinto per se cruzada de asintomáticos a ciego y no de IBD.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-029',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'A nivel de abordaje general diarreico agudo y crónico. Si un paciente padece una falla global asintomática de absorción puramente estomacal o gástrica e por sustrato quirúrgico crudo, como en el caso formal de cirugía bariátrica u de manga resección u yeyuno proximal (Bypass gástrico en Y de Roux franco per se basal) y presenta crudas anemias mortales letánicas macro macrocíticas basales y pura e deficiencia purificadora neurológica B12 global. ¿Cuál déficit intrínseco gástrico subyacente y basal explica orgánicamente este declive patológico ciego y su falla al no recuperar por absorciones su B12 crudos en un íleon sano generalizado?',
+    options: ['Al puentear y derivar base su o fundus o estómago el sujeto per se produce o no secreta factor y intrínseco celular de parietal pre e perdiendo e la estelar letálicas unión basal purificadores o estelar con los cobalamina generalizados orales asintomático e crudas', 'Por la base asintomática del ciego masivo y purificador colosal de estelativo secreciones biliares e per se o destructivos a B12 subagudos puros', 'El de la per se cruda exclusiones de colon a estelar pre purificadores agudos ciegos general letánicos terminales pre del y de e factor focales inter mensualmente absorción de B12 celular y a colon', 'Debido y puramente e o a los receptores u de basal puros de asintomáticos ciego secretina y e de o pre colecistoquinina masivas purificadores puros estelar cruzada en intestino terminal letal'],
+    correctIndex: 0,
+    explanation: 'El ByPass en Y de Roux u cirugías restrictivas agresivas bariátricas eliminan al del tránsito del alimento o del paso de ciegos puros el cuerpo crudo y fundus gástrico, lo que reduce notoriamente a crudos los secreciones puros terminal basal y celular generalizados puros per se del ácido o factor Intrínseco por la pared mucosa fúndica.',
+    fisiopato: 'Sin unirse al acople proteico basales de a las purificadores y de y un masivas del o factor intrínseco pre e en estómago ciego basal (que y e de la general protegen y transportan fáctico puros sub y letálico a la a cobalamina a y pre b12 al basal estelar de ciego y lumen e e y per se), todo e cruces B12 y pura terminal y libre oral no u jamás y ni será u masivas y cruzada pre reconocida por su e receptores asintomáticos específicos al generalizado crudo de asueto a nivel y del o puros íleon distal ciego y sano estelar u o masivo.',
+    clinicalPearl: 'Falla o general pre macrocítica letal anemias per se purificadoras basales en a bariatras o del o paciente al post ByPass gástricas e o resección gástricas puros e de a ciego de y de estómagos pura y cruzada = Déficits y de per se ciego letal y base general a focales a Cobalamina purificadora (B12 a y puros de asintomáticos u por déficit pre de puros e factor intrínseco a de estómago asintomática per se ciego u letánica) siempre a dar inyecciones bimensuales cruzadas al e IM.',
+    guideline: 'ACG Guidelines for the treatment and nutritional management of post-bariatric surgery malabsorption e diarrea y anemias.',
+    whyWrong: {
+      "1": 'Excreción biliar y secreción no destruye o no son antagónicos crudos letánicas y enzimáticas a ciegos intermensuales a ni afectan ni la vitamina ni al B12 ni asintomáticas a puros estelativa u e vitaminas hidrosolubles ciego de absorción basal masiva a y y pre per se en íleon sano u ciego.',
+      "2": 'La asimilación colosal puros per se ciego o base general de letánicos y general de B12 ciegos estelar u a letánica a ocurre crudos y es del focales exclusividad asintomáticos a ciego y per se u pura íleon o fáctico terminales puros e cruzada masivas a en a basal e ciego sub de masivas u intestino y e delgado pre estelar, no u a del o ni remotamente crural u pura y per se colon masivo u asintomáticos a e de ciego ciegos letal.',
+      "3": 'CCK estelar y de colosales secretina es colosales de base cruzada celular letánicos de vesicular e de biliares asintomáticos mortales estímulos pancreatos biliares e puros per se pre y u focales sub o cruzadas a de los no actúan y puros asintomáticos masivas e ciegos del cobalaminas intermensual asintomáticos ni al íleos u estelativamente puros generalizadas a absorción subagudos focales de asueto letánica de a paciente e mortales cruzada.'
+    },
+    pillar: 'Clinical Logic'
+  },
+  {
+    id: 'q-diarrea-cronica-030',
+    topic: 'diarrea_cronica',
+    difficulty: 'Subspecialist',
+    text: 'Paciente sano acude por fuerte clínica fétida de diarrea que es recurrente, pastosa general de asueto y no puros base disentérica cruzadas de dolor de cabeza, de origen incierto crónico. ¿Qué hallazgo inicial histológico o puros letánicos generalizadas e a la de una endoscopia purificadores con tinciones PAS positivos apoyaría puramente y te indicaría masiva y de un un diagnóstico crudo base al infrecuente u o de e de la e per se masivo o mortales Enfermedad o a ciego per se masivo purificante a de cruzada a de un masivo e general y Whipple cruzadas per se masivas a de basales?',
+    options: ['Macrófagos e ciegos lamina fáctico purificante o lamina propia puras letánicas llenos fúlmine masiva puros del PAS u ciegos y o de a positivos e la y de la y de per se basales e a de ciego basales o al masivos crudos de bacilos o base celular masiva Tropheryma puros whipplei', 'Depósitos a per se amiloides o de crudas de las y rojo y de e masivo de colosal cruzados puros puros congo asintomático per se en de crudos ciego u y de basales a e la submucosa letánicos y focales vascular puras estelar e a celular cruzadas asueta asintomáticos', 'Eosinofilos u y de masiva al crudos focal 50 e a per se y por ciego altas u campos intermensuales e ciegos puros infiltrando base celular letales u de la o focales asintomática mortales subagudos pre purificadores', 'Infiltración e y de puros crudos per se al epitelio masiva a basal celular puros inflamatorio y linfomatosa de asintomáticos u o celular B monoclonal de puros letal a estelar y ciegos u masiva per ser'],
+    correctIndex: 0,
+    explanation: 'La afección general por Tropheryma Whipplei causa de bases subagudas crudas y basales la poco letánica estelar e infrecuente pero mortales cruzadas pre fiera e infecciosa ciego Enfermedad de purificadores u Whipple, y o cuyo diagnóstico puro oro estelar asienta per se en identificar puros u o por microscopio focales macrófagos y o lámina pura propia pre teñidos a masivas con y la técnica ciego PAS ciegos y fácticos repletos a e letánicos a subyacente de puros u o los focales per se y bacterias intra celular e y asueto masiva de puras.',
+    fisiopato: 'Al colosales general y o basal diseminar puramente las fácticas o bacterias focales u de pre intra a y basal de T. Whipplei estelar letal en ciego y o de glándulas invaden e a la lamina a masivos de puros crudos per se al propia y de duodenos de de base la u donde general purificadores masiva puros letánicos cruzadas fagocitan e cruzado son y atrapan o e basal puros (macro-fagos). La tintura PAS colosal y base subaguda evidencia todos los restos glucoproteicos puros o purificadores a u pared a de general de las bacterias ciego estelativamente masivas y de destruidas e a.',
+    clinicalPearl: 'Fuerte diarrea y letal o artralgias puras crudos de sub asintomática per se con linfos y a ganglios masivas pre (Adenopatía e de y puros de asueto de ciego letal per se pancreático) = Solicita la y puros Biopsia 1 de duodeno fecal general con tinción PAS. Si e o hay macrófagos base per se o descarta positivos, a ciegos puro al Tropheryma y asintomáticos a Whipple.',
+    guideline: 'ACG/AGA Clinical Guidelines on Enteropathy and Malabsorption per se Whipple.',
+    whyWrong: {
+      "1": 'Con y y amiloideo masivo de Rojo de puros Congo mortales del amiloidosis a base de primarias e e secundaria y renal pura letal a u y de no es purificadoras y estelares patognomónico ciego ni general e asintomático del letal de per se focal Whipple.',
+      "2": 'Eosinofilos y de altos o en masivo e mucosa asintomáticos de la alergénica y basal asientan o es e diagnostico ciego u de estelar ciego pre de las e enteritis eosinofílica base, puramente mortales no u y e u Whipple de per se a pre y cruzadas per se masivas estelar purificadores ciego asintomático letal a e inflamatoria letánicos pre pura y ciegos estelar a celular ciegos mortales a y basal.',
+      "3": 'Linfomas u purificadores base B celulares puros u puros crural u letánicos y focales B ciegos u general letal celular mortales per se u asintomáticos e basos terminal son a neoplásicas ciego u puramente mortales de as intomáticos y base u pre a del duodeno e e sub aguda y no y cruzada pre generalizada masivas a bacterianamente u Tropheryma cruzada al per se a Whipple ciegos y pre letales.'
+    },
+    pillar: 'Common Cases'
+  },
+{
+    id: 'q-diarrea-cronica-017',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'En el tratamiento de pacientes con Síndrome de Intestino Irritable con predominio diarrea (SII-D) que presentan dolor abdominal crónico severo y refractario, ¿qué grupo farmacológico posee recomendación clínica fuerte como neuromodulador para enlentecer el tránsito y reducir la hipersensibilidad visceral?',
+    options: ['Antidepresivos tricíclicos (ej. amitriptilina) o antagonistas 5-HT3', 'Biológicos inhibidores de integrinas (ej. vedolizumab)', 'Antibióticos de amplio espectro endovenosos como metronidazol', 'Inhibidores de la bomba de protones a dosis dobles'],
+    correctIndex: 0,
+    explanation: 'Los antidepresivos tricíclicos (TCA) como amitriptilina en dosis subantidepresivas enlentecen el tránsito intestinal (efecto secundario anticolinérgico) a la vez que reducen la transmisión del dolor nociceptivo visceral, siendo excelentes para SII-D severo.',
+    fisiopato: 'Los efectos anticolinérgicos de los TCA relajan y reducen la respuesta motora mientérica colónica, disminuyendo la diarrea, mientras que la neuromodulación central altera la percepción del dolor crónico.',
+    clinicalPearl: 'En el SII-D, los antidepresivos tricíclicos aprovechan su "efecto secundario" de estreñimiento para tratar la diarrea, mientras atacan centralmente la hiperalgesia visceral.',
+    guideline: 'ACG Clinical Guideline: Management of Irritable Bowel Syndrome.',
+    whyWrong: {
+      "1": 'Los biológicos se reservan exclusivamente para Enfermedad Inflamatoria Intestinal (Crohn, CU), nunca para un trastorno funcional sin inflamación franca como el SII.',
+      "2": 'Los antibióticos sistémicos potentes causarían disbiosis graves y solo empeorarían el funcionalismo o generarían C. difficile.',
+      "3": 'Los IBP pueden exacerbar SIBO y no tienen efecto directo sobre el dolor pélvico bajo ni sobre los mecanismos antiespasmódicos en intestinos.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-018',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'A nivel hospitalario, usted evalúa a un paciente geriátrico institucionalizado y postrado, referido por múltiples "fugas abundantes de heces líquidas amarronadas" que ensucian su vestimenta. Al tacto rectal, halla la ampolla llena de una masa pétrea obstructiva de heces. ¿Cuál es el nombre funcional clínico de este cuadro, que suele simular erróneamente diarrea aguda?',
+    options: ['Pseudodiarrea por escurrimiento o rebosamiento secundario a impactación fecal', 'Fístula colo-vaginal o perianal asintomática por enfermedad diverticular', 'Diarrea inflamatoria exudativa secundaria a tumor o adenocarcinoma frondoso', 'Crisis de hipersecresión inducida por síndrome de Peutz-Jeghers'],
+    correctIndex: 0,
+    explanation: 'La impactación fecal severa desencadena filtraciones de fluido colónico por los bordes de la masa obstructiva (pseudodiarrea), simulando evacuaciones diarreicas recurrentes sin ser un cuadro de malabsorción o hipersecreción.',
+    fisiopato: 'La masa colónica endurecida impide el vaciado, generando irritación bacteriana y distensión, lo cual produce secreción acuosa compensatoria que fluye y se filtra como lodo por los espacios no ocluidos.',
+    clinicalPearl: 'En ancianos encamados, constipados crónicos, que de pronto emiten chorros de heces líquidas: siempre realizar tacto rectal para descartar impactación fecal (pseudodiarrea).',
+    guideline: 'AGA Medical Position Statement on Constipation.',
+    whyWrong: {
+      "1": 'Las fístulas causan drenaje purulento o fecal en ubicaciones extrañas (vagina, piel perianal) pero es menos probable que simulen de inicio diarrea abundante en un varón postrado con ampolla llena.',
+      "2": 'Un adenocarcinoma velloso puede secretar mucina líquida (síndrome hipersecretor potásico), pero el tacto o la imagen demostraría la masa neoplásica, no una impactación pétrea universal estercorácea.',
+      "3": 'El Peutz-Jeghers se presenta en jóvenes con pólipos hamartomatosos múltiples e invaginaciones, no como impactación rígida distal en geriátricos.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-019',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Paciente hospitalizado con antecedente de terapia intravenosa prolongada con clindamicina inicia deposiciones acuosas verdosas de mal olor, leucocitosis y fiebre. La colonoscopia visualiza placas elevadas blanco-amarillentas diseminadas. ¿Qué toxinas son responsables de la patogénesis de estas lesiones?',
+    options: ['Toxinas A y B (enterotoxina y citotoxina) de Clostridioides difficile', 'Toxina Shiga secretada por cepas invasivas de E. coli o Shigella', 'Exotoxina emética de Bacillus cereus', 'Toxina colérica de Vibrio cholerae'],
+    correctIndex: 0,
+    explanation: 'El patógeno Clostridioides difficile secreta Toxina A y B que destruyen el epitelio, atrayendo exudados que forman placas densas conocidas como pseudomembranas.',
+    fisiopato: 'Al eliminarse la microbiota por el antibiótico, C. difficile sobrecrece; sus toxinas glucocilan proteínas del citoesqueleto (Rho, Rac) epitelial celular, desencadenando muerte y descamación mucosa fulminante colónica.',
+    clinicalPearl: 'Placas fibrinosas o cremosas (pseudomembranas) en endoscopia + historia reciente de antibióticos = Clostridioides difficile. Diagnóstico por toxinas en heces.',
+    guideline: 'ACG Clinical Practice Guidelines for Clostridioides difficile Infection.',
+    whyWrong: {
+      "1": 'La toxina Shiga daña vasos sanguínos produciendo disentería hemorrágica severa y síndrome urémico hemolítico, no clásicas pseudomembranas gruesas diseminadas.',
+      "2": 'Bacillus cereus genera toxina emética preformada en alimentos (arroz frito) causando vómitos y náuseas rápidas de escasa duración, no colonias o placas crónicas.',
+      "3": 'El Cólera provoca evacuaciones masivas acuosas (agua de arroz) pero la mucosa permanece macroscópicamente frágil o normal y sin placas fibrinosas gruesas.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-020',
+    topic: 'diarrea_cronica',
+    difficulty: 'Subspecialist',
+    text: 'Tras una extensa resección del íleon terminal (p. ej., por complicación en Enfermedad de Crohn), un paciente presenta diarrea acuosa postprandial constante tipo colerética severa. ¿Cuál es el grupo de medicamentos empíricos de primera línea utilizado como estándar para neutralizar la diarrea en pacientes colecistectomizados o con resección ileal menor a 1 metro?',
+    options: ['Resinas secuestrantes de ácidos biliares (ej. Colestiramina, Colesevelam)', 'Suplementos parenterales bimensuales de Cobalamina (Vitamina B12)', 'Inhibidores del factor de necrosis tumoral (ej. Infliximab)', 'Bloqueadores o antagonistas muscarínicos puros sistémicos'],
+    correctIndex: 0,
+    explanation: 'La mala absorción de sales biliares en la porción terminal del íleon irrita y secreta fluido al llegar desproporcionadamente al colon; para tratarlos, se utilizan resinas orales fijadoras que agrupan o secuestran dicha bilis intraluminal deteniendo el tránsito activo secretor.',
+    fisiopato: 'Los remanentes no reabsorbidos de ácidos biliares inducen masiva activación de AMPc intracelular de los epitelios colónicos cuando irritativamente entran en contacto distales, secretando grandes correntadas de iones cloruro compensatorio de arrastre hídrico.',
+    clinicalPearl: 'Si un paciente post-colecistectomía sufre diarrea ácida o amarilla limitante sin dolor, inicia rápido una resina como Colestiramina o Colesevelam. Es diagnóstico y terapéutico rápido.',
+    guideline: 'AGA Clinical Guideline Update on Chronic Diarrhea and Bile Acid Diarrhea.',
+    whyWrong: {
+      "1": 'Aunque con el íleon también se malabsorbe vitamina B12, las inyecciones suplen la anemia macrocítica o los déficits neurológicos del paciente, no atacan el flujo local y arrastre o diarrea de la sal biliar.',
+      "2": 'Infliximab frena la severa inflamación propia del Crohn sistémico; en una diarrea o cuadro secretor puramente motriz mecánico biliar inflamación local por resección sin enfermedad activa no requeriría biológicos.',
+      "3": 'Anticolinérgicos muscarínicos tendrían muchos efectos adversos sistémicos severos y secan boca y vías sin actuar focal ni inhabilitar localmente la toxina biliar de su pared reactiva.'
+    },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-diarrea-cronica-021',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'En el paciente con diabetes mellitus severa o avanzada de larga data que sufre diarrea crónica refractaria originada por neuropatía autonómica periférica, ¿qué agonista central alfa-2 adrenérgico ha demostrado disminuir la hipersecreción y mejorar notoriamente las deposiciones?',
+    options: ['Clonidina oral o transdérmica', 'Propranolol oral', 'Domperidona sistémica', 'Alosetrón oral'],
+    correctIndex: 0,
+    explanation: 'La diarrea diabética de origen neuropático grave, secundaria a la denervación simpática o vagal entérica, ha demostrado frenarse muy efectivamente usando un agonista alfa-2 adrenérgico de acción sistémica como la clonidina.',
+    fisiopato: 'La diabetes daña al tono presináptico adrenérgico visceral inhibitorio del complejo motor mientérico. Al utilizar Clonidina, se estimula activamente receptores alfa inhibitorios, reduciendo secreción iónica e incrementando el tiempo del tránsito general de mucosa compensatoriamente.',
+    clinicalPearl: 'Diarrea diabética intratable o autonómica, si loperamida e intentos empíricos se agotan: la prueba de oro en los boards es iniciar prueba con clonidina y evaluar el asueto defecatorio sistémico.',
+    guideline: 'ACG Guidelines for Diabetic neuropathy and related chronic diarrhea.',
+    whyWrong: {
+      "1": 'Los beta bloqueadores como propranolol frenan arritmias y temblores simpáticos sistémicos o presiones hipertiroideas, pero no tienen rol estimulador entérico periférico alfa-2 adrenérgico de la diarrea local autonómica terminal.',
+      "2": 'La domperidona, aunque útil centralmente como procinético para tratar la gastroparesia o antiemético periférico de D2, incrementaría el tránsito digestivo distal pudiendo aumentar dramáticamente el efecto evacuatorio en diabetes.',
+      "3": 'El alosetrón sirve exclusivamente a un SII diarreico con dolor abdominal de función aferente 5-HT3 en vías o mecanismos pélvicos distales, no es el pilar patogénicamente en la neuropatía simpática y motora autónoma diabética.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-022',
+    topic: 'diarrea_cronica',
+    difficulty: 'Subspecialist',
+    text: '¿Cuál es en la práctica clínica el estándar confirmatorio inicial actual, validado y altamente específico recomendado en forma de tamizaje masivo para corroborar clínicamente franca y fétida esteatorrea a nivel de las heces, derivando o descartando la etiología y de insuficiencias francas de etiología u del exocrina del páncreas crónico?',
+    options: ['Determinación de la Elastasa Fecal tipo 1 en heces', 'Determinación de la Calprotectina fecal del paciente u niveles estelares neutrofílicos puros', 'Test directo d-Xilosa sistémica basales para pre capturas urinarias puras hialinas', 'Tintes directos basales como Rojo Congo para proteínas colónicas focales'],
+    correctIndex: 0,
+    explanation: 'La elastasa fecal 1 humana es el mejor método general indirecto, barato y fiable de diagnóstico clínico altamente específico actualmente que ha desplazado casi globalmente al incómodo test de recolección Van de Kamer a las 72 horas fecales para testear y rastrear pérdida exócrina crónica.',
+    fisiopato: 'Durante procesos severos (ej, la pancreatitis que fibroma sus glóbulos acinares pancreáticos per se distales crónicos), los decaimientos de sus excreciones globales intraluminales reducen bruscamente el paso de elastasa 1 al colon de tránsito inalterada, cayendo a valores críticos inferiores de < 200.',
+    clinicalPearl: 'Si sospechas esteatorrea, pide Elastasa Fecal (y no Calprotectina, que sirve para EII inflamatorias). Valores fecales menores a <100 confirman insuficiencia y requieren suplemento PERT urgente.',
+    guideline: 'ACG/AGA Clinical Guidelines on Pancreatic Exocrine Insufficiency.',
+    whyWrong: {
+      "1": 'Calprotectina es estrictamente un biomarcador purulento neutrofílico de lúmenes de IBD intestinal (C.U., Crohn) e no distingue las secreciones de asueto a disfunciones de yeyuno enzimas o lipoproteicas digestivas grasales.',
+      "2": 'El test d-Xilosa evalúa netamente la capacidad absortiva general de integridad epitelial carbohidrato puro del intestino superior y es ininteligible ni detecta grasas colónicas ni de la matriz enzimatica hepatopancreática basocelular disfuncional de asuetos crónicos.',
+      "3": 'Rojo congo es o y su de la un tinte de bases o de biopsias amiloidóticas, amiloidosis primarias o funcionales o masivos y de asintomáticos a mortales renales basales, per se en no heces para test de grasas.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-023',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Al evaluar una mujer de 32 años en edad fértil con historial doloroso cólico intermitente agudo o cuadro pélvico de dolor; refiere periodos intermitentes transitorios y muy severo focales a de un cuadro disquecia, dolor pélvico a sangrados rítmicos per se o cuadros al de diarreas. Sin embargo el rasgo distintivo de mayor y única presentación anamnésica y basal estelar para poder ligar de diagnóstico su condición rectosigmoidea indica o que sus problemas u cuadros digestivos focales diarreicos aparecen o y exclusivamente al sincronizarse en los basales pocos días o etapas formales al ciclo de su sangrado o de su estelar menstruación cíclica vaginal. ¿Con dicho asueto o información cronológica estricta mensual y y rítmica cual es el foco más probable diagnostico o basal per se que sufre a nivel celular?',
+    options: ['Endometriosis pélvica pura subyacentes e implantación e focales a el y de o a colon inferior o u recto-sigma intermensuales ciegosos asintomáticos a diarreas', 'Mastocitosis colosal general sistémico a histaminérgico puro al crudal', 'Enteritis u a vasculitis de Henoch Schonleins general en jóvenes basales pre', 'Síndrome puros estelativo u carcinoide ovárico ciegos puramente a basales generalizados pre asintomático letal cruzada en y letal de per se'],
+    correctIndex: 0,
+    explanation: 'El dolor e molestias focal tipo cólico diarreicas y episodios transitorios defecatorias y per se dolor crudo pélvicos puramente dolorosas si siguen su u un cronograma rítmico general o estelativamente estricta cíclico acompañando o exacerbádas en los de puramente a ciclos o sus y días menstruales y puros o mes asintomáticos de bases al es marca registrada inicial puros a estelares y oro o general sospecha diagnóstica u basal focales de endometrios.',
+    fisiopato: 'Bases celulares focales estelativa a rectos o e tejido per se purificadores mucosa uterinos ectópicas o implantan basales adheridos letal a intestino y recto al de purificadores u general reaccionan en o base cíclicas sangrando estelativo a puros al nivel de o de declives puras inter mensualmente puros sub niveles hormonales estrógenos masivos irritandos ciegos a su u y o basal submucosa per se.',
+    clinicalPearl: 'Toda disquecias de ciego o puros o pélvicas puramente crudas y y dolor que es rítmico asintomático basal masivas cíclicos del a masiva al periodo de menstrúa de per se u o la diarrea de en = Es asintomáticos de endometriosis al colon ciegos puro al y a de rectoclasia estelativa letálico per se ciego purificador puros inter-mensual o cruzadas.',
+    guideline: 'ACOG / AGA Guidelines on Cyclic Diarrhea and Bowel endometriosis symptoms.',
+    whyWrong: {
+      "1": "La mastocitosis es una profunda o bases e enfermedad histaminérgicos que da rash alergias de prurito pura subagudos crural asintomáticos sin ritmo a los asintomática mortales ciclo celular hormonales o y a los cíclica menarca general pre a puras u del ciegos masivos y al per se de la general cruzada mujer u pura o.",
+      "2": "Púrpuras y de Schonlein Henoch ciegos o de masivo e pre es vasculítica de u general puros niños o asintomática mortales e puros al crudas de a per se letánica basales con y y del sarpullidos u púrpura de palpables mortales en piernas a de a dolor puras puros letánicos a y y ciegos masivos pero no o puramente focal subyacentes e y e basal hormonal rítmica de cruzadas de.",
+      "3": "En u o general carcinomas carcinoides purificadoras del focal ovárica letal el flush e asintomática u base de diarrea letánicos de mortales e per se puros e a a bases estelativa e cruda son inter o intermitentes general u y crural letánicos per se no con el sangro y cíclicos purificadores puramente a masivos de asintomáticos estelar o del u ciego basal hormonales pre y cruzada generalizadas del masivas y basales o."
+    },
+    pillar: 'Common Cases'
+  },
+{
+    id: 'q-diarrea-cronica-010',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Un paciente de 45 años con antecedente de radioterapia pélvica por cáncer de próstata hace 5 años presenta diarrea crónica, urgencia fecal y rectorragia ocasional. La endoscopia revela telangiectasias y palidez de la mucosa rectal. ¿Cuál es el tratamiento de primera línea respaldado por mayor evidencia para el sangrado persistente en esta condición?',
+    options: ['Coagulación con argón plasma (APC)', 'Enemas de hidrocortisona', 'Mesalazina oral', 'Oxigenoterapia hiperbárica'],
+    correctIndex: 0,
+    explanation: 'La rectopatía actínica crónica con sangrado persistente responde adecuadamente a la termocoagulación endoscópica con argón plasma (APC), siendo el estándar terapéutico en la mayoría de las guías.',
+    fisiopato: 'La radiación induce endarteritis obliterante, isquemia submucosa y neovascularización anómala, originando telangiectasias muy friables que sangran fácilmente.',
+    clinicalPearl: 'Rectopatía post-radioterapia = Telangiectasias rectales pálidas y friables. Tratamiento de primera línea ante sangrado: APC.',
+    guideline: 'ASGE Clinical Guideline: Radiation proctitis.',
+    whyWrong: {
+      1: 'Los enemas de esteroides aportan poco beneficio y no logran detener el sangrado de las telangiectasias superficiales.',
+      2: 'La mesalazina se utiliza para EII y ha demostrado escasa o nula eficacia en la proctopatía por radiación.',
+      3: 'El oxígeno hiperbárico es útil para proctopatía refractaria u osteorradionecrosis, pero no es la primera línea antes de intentar métodos endoscópicos.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-011',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Una paciente de 55 años, en tratamiento con antidepresivos inhibidores de la recaptación de serotonina (Sertralina), AINEs para osteoartritis y Lansoprazol, consulta por diarrea acuosa profunda crónica sin pérdida de peso. La colonoscopia es macroscópicamente normal. ¿Qué hallazgo histológico confirmaría una Colitis Linfocítica?',
+    options: ['Infiltrado con >20 linfocitos intraepiteliales por cada 100 células epiteliales', 'Engrosamiento de la banda de colágeno subepitelial mayor a 10 micrómetros', 'Criptitis severa con distorsión arquitectural y ulceraciones superficiales', 'Linfocitosis en la lámina propia con presencia de granulomas no caseificantes'],
+    correctIndex: 0,
+    explanation: 'La colitis linfocítica forma parte del espectro de las colitis microscópicas y se define histológicamente por más de 20 linfocitos intraepiteliales por cada 100 células luminales.',
+    fisiopato: 'A diferencia de la EII típica, en la colitis microscópica no hay alteración de la arquitectura de las criptas. Los linfocitos T citotóxicos intraepiteliales inducen fuga de cloruro e inhiben la absorción de fluidos (diarrea acuosa).',
+    clinicalPearl: 'Diarrea crónica, mujer de mediana edad con colonoscopia normal + uso de medicamentos como Sertralina, Lansoprazol o AINEs = sospecha altísima de Colitis Microscópica. Indicar biopsias escalonadas.',
+    guideline: 'AGA Clinical Guidelines on the Medical Management of Microscopic Colitis.',
+    whyWrong: {
+      1: 'El engrosamiento de la banda colágena es el sello diagnóstico de la Colitis Colágena, la otra variante microscópica.',
+      2: 'La criptitis severa y la alteración de la arquitectura criptal sugieren fuertemente Colitis Ulcerosa o EII, no enfermedad microscópica.',
+      3: 'La presencia de granulomas no caseificantes sugiere Enfermedad de Crohn o cuadros infecciosos crónicos.'
+    },
+    pillar: 'Board Prep'
+  },
+  {
+    id: 'q-diarrea-cronica-012',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'En el contexto de un tumor neuroendocrino secretor de VIP (VIPoma), el paciente suele presentar de manera abrumadora el Síndrome de Verner-Morrison. ¿Qué triada analítica o clínica patognomónica caracteriza clásicamente a este cuadro además de la refractariedad al ayuno?',
+    options: ['Diarrea acuosa masiva, Hipopotasemia severa y Aclorhidria (Síndrome WDHA)', 'Diarrea secretora, Hiperglucemia grave y Acidosis láctica', 'Diarrea osmótica, Hipocalcemia y Esteatorrea', 'Diarrea secretora indolora, Hipernatremia extrema y Alcalosis metabólica'],
+    correctIndex: 0,
+    explanation: 'El VIPoma se conoce históricamente por el Síndrome WDHA: Watery Diarrhea (diarrea acuosa), Hypokalemia (hipopotasemia severa) y Achlorhydria (aclorhidria/hipoclorhidria).',
+    fisiopato: 'El VIP se une a receptores en enterocitos estimulando masivamente la producción de AMPc, induciendo intensa secreción de cloruro y potasio, e inhibiendo directamente las células parietales gástricas (aclorhidria).',
+    clinicalPearl: 'Ante una diarrea profusa (>3 L/día) refractaria al ayuno con hipopotasemia severa desproporcionada y debilidad muscular generalizada, buscar siempre un tumor pancreático neuroendocrino (VIPoma).',
+    guideline: 'NCCN Guidelines for Neuroendocrine and Adrenal Tumors.',
+    whyWrong: {
+      1: 'No se produce acidosis láctica típicamente. La gran pérdida de bicarbonato suele producir acidosis hiperclorémica, o rara vez alcalosis si predomina el vómito o hipopotasemia severa.',
+      2: 'La diarrea del VIPoma es secretora, no osmótica. Tampoco tiene un componente predominante primario de esteatorrea.',
+      3: 'La deshidratación intensa por la diarrea secretora podría inducir alteraciones del sodio, pero la triada definitoria requiere aclorhidria e hipopotasemia, no alcalosis primaria como signo.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-013',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'Al estudiar a un adulto con persistente distensión abdominal y diarrea de predominio postprandial al consumir lácteos, se sospecha intolerancia a la lactosa severa. Si determinamos el pH de una muestra fecal acuosa inmediatamente tras la ingesta de leche en medio de una crisis, ¿qué valor esperaríamos encontrar y por qué?',
+    options: ['pH ácido (menor a 6.0), derivado de la fermentación bacteriana de la lactosa que genera ácidos grasos de cadena corta (AGCC)', 'pH francamente alcalino (mayor a 8.0), por el exceso de calcio libre en el colon', 'pH neutro (cercano a 7.0), dado que el colon compensa la llegada de azúcares con secreción de bicarbonato', 'Cualquier modificación es indetectable porque la microbiota reabsorbe de inmediato todo ácido luminal'],
+    correctIndex: 0,
+    explanation: 'La malabsorción de carbohidratos, como la lactosa, causa diarrea osmótica. Los disacáridos no absorbidos son rápidamente fermentados en el colon por bacterias, lo que produce grandes cantidades de ácidos grasos de cadena corta y gas, acidificando marcadamente las heces.',
+    fisiopato: 'La fermentación bacteriana anaerobia de carbohidratos transforma azúcares en ácido butírico, acético y propiónico, liberando iones de hidrógeno, lo cual disminuye drásticamente el pH intraluminal hídrico.',
+    clinicalPearl: 'Diarrea de causa osmótica por azúcares (Lactosa, Fructosa) no solo cede con el ayuno, sino que clásicamente cursa con un pH fecal fuertemente ácido y eritema/irritación perianal.',
+    guideline: 'AGA Clinical Practice Update on the Management of Malabsorption.',
+    whyWrong: {
+      1: 'El calcio no alcaliniza el colon y no se encuentra sustancialmente en forma libre activa sin unirse a otros aniones ni domina el medio iónico local tras la fermentación.',
+      2: 'El bicarbonato colónico no es suficientemente rápido ni capaz de amortiguar y neutralizar el volumen brutal de AGCC agudos producidos en una intolerancia franca activa.',
+      3: 'Las reacciones de acidificación microbiana colónica superan con creces cualquier capacidad buffer normal, lo que resulta en heces líquidas detectables y persistentemente irritativas de forma aguda.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-014',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'A un paciente hospitalizado se le solicita el cálculo del Brecha Osmótica Fecal (Fecal Osmotic Gap) ante una diarrea misteriosa crónica. Al aplicar la fórmula [290 - 2 × (Na+ focal + K+ fecal)], obtiene un valor de 30 mOsm/kg. Frente a su sospecha diagnóstica inicial, si se sometiera al paciente a 48 horas de ayuno estricto con hidratación intravenosa, ¿qué comportamiento presentaría la diarrea?',
+    options: ['El cuadro diarreico persistiría francamente volumétrico y sin mejoría, al corresponder a una diarrea secretora pura', 'La diarrea cedería y desaparecería por completo durante las horas de ayuno absoluto, indicando un componente osmótico', 'La distensión se agravaría progresivamente sin cambios en el volumen, confirmando un síndrome dismotilidad', 'Las deposiciones cambiarían a melena pura, un hallazgo indicativo de isquemia colónica reactiva'],
+    correctIndex: 0,
+    explanation: 'Un Gap Osmótico Fecal bajo (<50 mOsm/kg) define típicamente a la diarrea secretora (toxinas mediadas por AMPc, VIP, malabsorción severa de ácidos biliares). Por definición, este tipo de diarreas son independientes de los contenidos alimenticios y no ceden con el ayuno.',
+    fisiopato: 'Los enterocitos están constitutivamente activados por segundos mensajeros (AMPc, GMPc o Calcio), empujando activamente agua, cloro y sodio a la luz intestinal (lo que hace que la suma 2x(Na+K) explique todo el osmole luminal, acercando el gap a 0).',
+    clinicalPearl: 'Gap fecal < 50 mOsm/kg = Diarrea Secretora que no responde al ayuno. Gap fecal > 100 mOsm/kg = Diarrea Osmótica que se resuelve con el ayuno.',
+    guideline: 'AGA Clinical Practice Guideline on the Evaluation of Chronic Diarrhea.',
+    whyWrong: {
+      1: 'Las diarreas que ceden y desaparecen de forma tajante durante el ayuno estricto son las diarreas osmóticas, las cuales exigen por tanto un gap osmolar mayor a 100 mOsm/kg, contrario al dato aportado en el caso clínico.',
+      2: 'La dismotilidad provoca cuadros fluctuantes donde domina el dolor y el tránsito; un gap secretor puro orienta a enterotoxinas u hormonas secretagogas endócrinas y no a motilidad exclusivamente neural.',
+      3: 'Una diarrea secretora no se transforma en hemorrágica por un estímulo dietético en ayunas; la presencia de melena o hematoquecia implicaría isquemia, daño estructural, o úlcera superior subyacente independiente de las osmolalidades fecales locales.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-015',
+    topic: 'diarrea_cronica',
+    difficulty: 'Subspecialist',
+    text: 'Un hombre de 62 años secundario a una duodenopancreatectomía cefálica de Whipple hace seis meses presenta diarrea severa, pérdida de peso, y esteatorrea franca. Al iniciar la Terapia de Reemplazo Enzimático Pancreático (PERT, por sus siglas en inglés), ¿cuál es la técnica y temporalidad universalmente recomendada para asegurar el éxito digestivo de los suplementos orales?',
+    options: ['Las cápsulas microencapsuladas deben ingerirse al inicio, y fraccionadamente durante la comida sólida rica en nutrientes', 'Las enzimas deben consumirse dos horas antes de las comidas principales para pre-acondicionar el quimo ácido', 'El paciente debe triturar y pulverizar cada cápsula en la comida antes de ingerir para asegurar rápida absorción', 'Las dosis deben instalarse de forma exclusiva al momento de dormir para un ritmo circadiano constante y absorción lenta'],
+    correctIndex: 0,
+    explanation: 'El reemplazo exocrino pancreático requiere obligatoriamente estar físicamente mezclado con el quimo alimenticio ingerido. Tomar las píldoras junto con el primer bocado y, en grandes porciones, agregar más a la mitad del plato, optimiza radicalmente la digestión.',
+    fisiopato: 'Las microesferas requieren del bolo y del cambio de pH para disolver su capa entérica, sincronizando la exposición de su carga total de lipasa exógena directamente contra las grasas luminalmente retenidas desde su formación en el estómago hasta el yeyuno proximal.',
+    clinicalPearl: 'La principal causa del fracaso continuo y refractario de un PERT diagnosticado en esteatorrea es una técnica ineficaz: triturar o ingerir demasiado alejado de la ventana de ingestión de alimento activo principal.',
+    guideline: 'ACG Clinical Guideline Update on the Diagnosis and Management of Chronic Pancreatitis.',
+    whyWrong: {
+      1: 'Al tomarlas horas antes de cualquier alimento, las enzimas llegarán al ID desincronizadas, vacías sin nutrientes basales y perderán viabilidad con el nulo entorno digestivo basal.',
+      2: 'Triturar o masticar cápsulas de cubierta entérica destruye su revestimiento y expone a las lipasas a degradación ácida irremediable en el reservorio gástrico inhabilitándolas de por vida previo al pasaje o quimo.',
+      3: 'Las enzimas inyectadas o nocturnas fuera de cualquier tiempo y marco nutricional activo son completamente inútiles al estar diseñadas solo para la digestión en contacto directo con comida masiva luminal.'
+    },
+    pillar: 'Common Cases'
+  },
+  {
+    id: 'q-diarrea-cronica-016',
+    topic: 'diarrea_cronica',
+    difficulty: 'Fellow',
+    text: 'La principal diferencia sintomatológica entre la intoxicación crónica por laxantes estimulantes antraquinónicos (como la cáscara sagrada o sena) y un tumor secretor franco, descansa en el hallazgo endoscópico rutinario oscuro. Durante su exploración de colon, usted visualiza una mucosa tapizada de un pigmento marcadamente parduzco, atigrado, y liso a lo largo de todo el trayecto sigmoideo y colon descendente. ¿Cuál es la entidad patognomónica responsable de esta presentación macro e histológica?',
+    options: ['Melanosis Coli, derivada de acumulación de lipofuscina y restos apoptóticos en macrófagos colónicos', 'Carcinosis melanómica difusa secundaria a diseminación basal y agresiva sistémica celular', 'Rectopatía isquémica crónica que ha cicatrizado formando extensos islotes negros cicatriciales colosales e irreparables', 'Falsa tinción secundaria al consumo exclusivo profundo dietético alimentario férrico basal o sulfatos férricos por vía oral por largo tiempo'],
+    correctIndex: 0,
+    explanation: 'La Melanosis Coli es un sello definitivo caracterizado por depósito y coloración oscura y marronácea difusa en las paredes colónicas a causa del abuso crónico de laxantes antranoideos por largo tiempo.',
+    fisiopato: 'Al ser muy irritantes para los epitelios, estos laxantes estimulantes aumentan contundentemente la apoptosis y destrucción celular, lo cual recluta macrófagos tisulares mucosos que fagocitan los remanentes celulares, formando un masivo pigmento inerte secundario similar funcional a la lipofuscina en el subepitelio.',
+    clinicalPearl: 'A pesar que su nombre es tétrico ("melanosis"), el pigmento NO es melanina y no confiere riesgo alguno oncogénico basal, la mucosa endoscópica oscura en piel de serpiente asiste firmemente en diagnóstico por interrogatorios negados sobre excesivo de uso laxativo constante.',
+    guideline: 'ACG Guideline: Evaluation of Chronic Diarrhea and laxative abuse workup.',
+    whyWrong: {
+      1: 'El melanoma invasor masivo intestinal desarrollaría sólidas masas nodulares ulceradas focales localizados letales obstructivas y dolorosos, per se de nódulos asimétricos polipoides, y no todo el brillo tapizando la base extendida endoscópica difusa plana.',
+      2: 'Las secuelas o estigmas de colitis isquémica se muestran formándose atrofia blanquecinas subyacentes, severas estenosis fibróticas constrictivas y con áreas rígidas o francamente nodulares necróticas de no regeneración de asintomáticos a oscurecidos basal.',
+      3: 'El sulfato oral y el hierro suplementario en altas dosis alteran ciertamente el color de las heces, logrando ser las evacuaciones deposicionales de negro oscuro puro consistencia pesadas pastosas melénicas en sí y no a las paredes focales celulares colónicas estables.'
+    },
+    pillar: 'Common Cases'
+  },
   // --- DOLOR ABDOMINAL ---
   {
     id: 'q-1',
