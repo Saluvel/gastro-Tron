@@ -2303,12 +2303,12 @@ export default function App() {
                 >
                   <TronCard 
                     accentColor="rgba(0,242,255,0.4)" 
-                    className="mb-8 p-10 min-h-[300px] flex flex-col bg-tron-card/50 relative"
+                    className="mb-8 mt-6 p-8 md:p-10 min-h-[300px] flex flex-col bg-tron-card/50 relative"
                   >
                     {currentQuestion?.pillar && (
-                      <div className="absolute -top-3 left-10">
+                      <div className="mb-6 z-10 flex">
                         <span className={cn(
-                          "px-4 py-1 text-[9px] uppercase font-black tracking-widest rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] border",
+                          "px-4 py-1.5 text-[9px] uppercase font-black tracking-widest rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] border",
                           currentQuestion.pillar === 'Must-Know' ? "bg-tron-sub/20 text-tron-sub border-tron-sub" :
                           currentQuestion.pillar === 'Board Prep' ? "bg-tron-cyan/20 text-tron-cyan border-tron-cyan" :
                           "bg-tron-yellow/20 text-tron-yellow border-tron-yellow"
@@ -2365,13 +2365,13 @@ export default function App() {
                       </div>
                     )}
 
-                    <h3 className="text-xl md:text-2xl text-white font-serif font-light leading-relaxed mb-12">
+                    <h3 className="text-[15px] md:text-base text-white font-serif leading-relaxed mb-8">
                       {currentQuestion?.text ? renderWithAcronyms(currentQuestion.text) : null}
                     </h3>
 
                     <motion.div 
                       layout
-                      className="grid gap-4"
+                      className="grid gap-3"
                     >
                       {currentQuestion?.options?.map((opt, i) => {
                         const isSelected = answers[currentQuestionIndex] === i;
@@ -2402,7 +2402,7 @@ export default function App() {
                             disabled={showFeedback}
                             onClick={() => handleAnswerSelect(i)}
                             className={cn(
-                              "w-full text-left p-5 rounded-xl border-2 transition-all flex items-center gap-6 group text-lg",
+                              "w-full text-left p-3 md:p-3.5 rounded-xl border-2 transition-all flex items-center gap-4 group text-[13px] md:text-[14px]",
                               styleClass
                             )}
                           >

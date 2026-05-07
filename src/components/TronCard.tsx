@@ -19,7 +19,7 @@ export const TronCard: React.FC<TronCardProps> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn(
-        'bg-tron-card border-2 rounded-2xl p-6 transition-all duration-300 relative overflow-hidden',
+        'bg-tron-card border-2 rounded-2xl p-6 transition-all duration-300 relative',
         glow && 'shadow-[0_0_30px_rgba(0,242,255,0.05)]',
         className
       )}
