@@ -24,9 +24,22 @@ export interface Topic {
   description: string;
 }
 
+export interface ActiveQuiz {
+  topicId: string;
+  currentIndex: number;
+  questions: Question[];
+  answers: (number | null)[];
+  mode: 'normal' | 'sim' | 'survival' | 'bookmarks' | 'review';
+  targetCount: number;
+  isSimMode: boolean;
+  isSurvivalMode: boolean;
+  timeLeft?: number;
+}
+
 export interface UserProgress {
   totalAttempted: number;
   totalCorrect: number;
+  activeQuiz?: ActiveQuiz;
   byTopic: {
     [topicId: string]: {
       attempted: number;

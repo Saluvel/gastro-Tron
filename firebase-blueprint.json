@@ -9,6 +9,20 @@
         "totalAttempted": { "type": "number" },
         "totalCorrect": { "type": "number" },
         "streak": { "type": "number" },
+        "activeQuiz": {
+          "type": "object",
+          "properties": {
+            "topicId": { "type": "string" },
+            "currentIndex": { "type": "number" },
+            "questions": { "type": "array", "items": { "type": "object" } },
+            "answers": { "type": "array", "items": { "type": "number" } },
+            "mode": { "type": "string" },
+            "targetCount": { "type": "number" },
+            "isSimMode": { "type": "boolean" },
+            "isSurvivalMode": { "type": "boolean" },
+            "timeLeft": { "type": "number" }
+          }
+        },
         "byTopic": { "type": "object", "description": "Map of topic IDs to their stats" },
         "reviewIds": { "type": "array", "items": { "type": "string" }, "description": "Array of question IDs to review" },
         "achievements": { "type": "array", "items": { "type": "string" }, "description": "Unlocked achievements" },

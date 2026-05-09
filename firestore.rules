@@ -17,7 +17,6 @@ service cloud.firestore {
 
     function isValidUserProgress(data) {
       return data.keys().hasAll(['uid', 'totalAttempted', 'totalCorrect', 'streak', 'byTopic', 'reviewIds', 'achievements', 'updatedAt'])
-        && data.keys().size() == 8
         && data.uid is string && data.uid == request.auth.uid
         && data.totalAttempted is number 
         && data.totalCorrect is number
@@ -50,7 +49,7 @@ service cloud.firestore {
         && isValidId(userId)
         && isValidUserProgressUpdate(incoming())
         && incoming().uid == existing().uid
-        && incoming().diff(existing()).affectedKeys().hasOnly(['totalAttempted', 'totalCorrect', 'streak', 'byTopic', 'reviewIds', 'achievements', 'updatedAt']);
+        && incoming().diff(existing()).affectedKeys().hasOnly(['totalAttempted', 'totalCorrect', 'streak', 'byTopic', 'reviewIds', 'achievements', 'activeQuiz', 'updatedAt']);
       
       allow delete: if false;
 

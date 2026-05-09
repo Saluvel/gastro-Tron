@@ -113,7 +113,8 @@ const INITIAL_PROGRESS: UserProgress = {
     sound: true,
     theme: 'tron'
   },
-  savedPearls: []
+  savedPearls: [],
+  activeQuiz: undefined
 };
 
 const ACHIEVEMENTS = [
@@ -751,7 +752,8 @@ export default function App() {
                  streak: data.streak ?? prev.streak,
                  byTopic: data.byTopic ?? prev.byTopic,
                  reviewIds: data.reviewIds ?? prev.reviewIds,
-                 achievements: data.achievements ?? prev.achievements
+                 achievements: data.achievements ?? prev.achievements,
+                 activeQuiz: data.activeQuiz ?? prev.activeQuiz
                };
              });
              
@@ -817,6 +819,7 @@ export default function App() {
              byTopic: progress.byTopic,
              reviewIds: progress.reviewIds,
              achievements: progress.achievements,
+             activeQuiz: progress.activeQuiz || null,
              updatedAt: serverTimestamp()
            };
            await setDoc(doc(db, 'users', authUser.uid), payload, { merge: true });
@@ -1116,11 +1119,28 @@ export default function App() {
       setCurrentView('lobby');
       setIsSurvivalMode(false);
     } else {
-      setQuestions(shuffleQuestionOptions(simQuestions));
-      setAnswers(new Array(simQuestions.length).fill(null));
+      const shuffled = shuffleQuestionOptions(simQuestions);
+      setQuestions(shuffled);
+      const initialAnswers = new Array(shuffled.length).fill(null);
+      setAnswers(initialAnswers);
       setCurrentQuestionIndex(0);
       setShowFeedback(false);
       setTimeLeft(0); // No global timer, just death on wrong
+
+      // Update activeQuiz
+      setProgress(prev => ({
+        ...prev,
+        activeQuiz: {
+          topicId: 'survival',
+          currentIndex: 0,
+          questions: shuffled,
+          answers: initialAnswers,
+          mode: 'survival',
+          targetCount: shuffled.length,
+          isSimMode: false,
+          isSurvivalMode: true
+        }
+      }));
     }
     setIsLoading(false);
   };
@@ -1178,13 +1198,32 @@ export default function App() {
         .sort(() => 0.5 - Math.random())
         .slice(0, 30);
       
-      setQuestions(shuffleQuestionOptions(mixedQuestions));
-      setAnswers(new Array(mixedQuestions.length).fill(null));
+      const shuffled = shuffleQuestionOptions(mixedQuestions);
+      setQuestions(shuffled);
+      const initialAnswers = new Array(mixedQuestions.length).fill(null);
+      setAnswers(initialAnswers);
       setCurrentQuestionIndex(0);
       setShowFeedback(false);
-      setTimeLeft(mixedQuestions.length * 60); // 1 minute per question
+      const initialTime = mixedQuestions.length * 60;
+      setTimeLeft(initialTime); // 1 minute per question
       setSelectedTopic({ id: 'board_sim', name: 'Simulacro Clínico Global (Board Exam)', description: 'Simulación de 30 preguntas que abarcan todas las áreas. Condición estricta de tiempo.' });
       setCurrentView('quiz');
+
+      // Update activeQuiz
+      setProgress(prev => ({
+        ...prev,
+        activeQuiz: {
+          topicId: 'board_sim',
+          currentIndex: 0,
+          questions: shuffled,
+          answers: initialAnswers,
+          mode: 'sim',
+          targetCount: shuffled.length,
+          isSimMode: true,
+          isSurvivalMode: false,
+          timeLeft: initialTime
+        }
+      }));
     } catch (e) {
       console.error(e);
     } finally {
@@ -1252,11 +1291,28 @@ export default function App() {
       const finalQuestions = currentPool.sort(() => Math.random() - 0.5).slice(0, targetQuestionCount);
       
       if (finalQuestions.length > 0) {
-        setQuestions(shuffleQuestionOptions(finalQuestions));
-        setAnswers(new Array(finalQuestions.length).fill(null));
+        const shuffled = shuffleQuestionOptions(finalQuestions);
+        setQuestions(shuffled);
+        const initialAnswers = new Array(shuffled.length).fill(null);
+        setAnswers(initialAnswers);
         setCurrentQuestionIndex(0);
         setShowFeedback(false);
         setRevealedOral(false);
+
+        // Update activeQuiz
+        setProgress(prev => ({
+          ...prev,
+          activeQuiz: {
+            topicId: topic.id,
+            currentIndex: 0,
+            questions: shuffled,
+            answers: initialAnswers,
+            mode: 'normal',
+            targetCount: shuffled.length,
+            isSimMode: false,
+            isSurvivalMode: false
+          }
+        }));
       } else {
         throw new Error("No hay preguntas disponibles");
       }
@@ -1287,6 +1343,7 @@ export default function App() {
 
   const handleAnswerSelect = (index: number) => {
     if (showFeedback || isReviewingMode) return;
+    const isActiveQuiz = progress.activeQuiz && currentView === 'quiz';
     const isAnsCorrect = index === questions[currentQuestionIndex].correctIndex;
     if (isStudyMode) {
       if (isAnsCorrect) {
@@ -1301,6 +1358,14 @@ export default function App() {
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = index;
     setAnswers(newAnswers);
+
+    // Sync activeQuiz answers
+    if (isActiveQuiz) {
+      setProgress(prev => ({
+        ...prev,
+        activeQuiz: prev.activeQuiz ? { ...prev.activeQuiz, answers: newAnswers } : undefined
+      }));
+    }
     
     if (isStudyMode) {
       setShowFeedback(true);
@@ -1339,11 +1404,20 @@ export default function App() {
     }
 
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      const nextIdx = currentQuestionIndex + 1;
+      setCurrentQuestionIndex(nextIdx);
       if (!isReviewingMode) {
         setShowFeedback(false);
       }
       setRevealedOral(false);
+      
+      // Update activeQuiz
+      if (progress.activeQuiz && currentView === 'quiz') {
+        setProgress(prev => ({
+          ...prev,
+          activeQuiz: prev.activeQuiz ? { ...prev.activeQuiz, currentIndex: nextIdx } : undefined
+        }));
+      }
     } else {
       finishQuiz();
     }
@@ -1363,6 +1437,9 @@ export default function App() {
   };
 
   const finishQuiz = () => {
+    // Clear activeQuiz
+    setProgress(prev => ({ ...prev, activeQuiz: undefined }));
+
     // Update progress
     const correctCount = answers.filter((ans, idx) => ans === questions[idx].correctIndex).length;
     const attemptedCount = questions.length;
@@ -1488,16 +1565,31 @@ export default function App() {
     }
   };
 
+  const resumeQuiz = () => {
+    const active = progress.activeQuiz;
+    if (!active) return;
+    
+    playAudio('start');
+    setQuestions(active.questions);
+    setAnswers(active.answers);
+    setCurrentQuestionIndex(active.currentIndex);
+    setIsSimMode(active.isSimMode);
+    setIsSurvivalMode(active.isSurvivalMode);
+    setTimeLeft(active.timeLeft || 0);
+    
+    const topic = GASTRO_TOPICS.find(t => t.id === active.topicId);
+    if (topic) {
+       setSelectedTopic(topic);
+    } else if (active.topicId === 'board_sim') {
+       setSelectedTopic({ id: 'board_sim', name: 'Simulacro Clínico Global (Board Exam)', description: 'Recuperado de sesión anterior.' });
+    }
+    
+    setCurrentView('quiz');
+  };
+
   const quitQuiz = () => {
-    // Direct navigation is safer in iframes than window.confirm
+    playAudio('click');
     setCurrentView('lobby');
-    setSelectedTopic(null);
-    setQuestions([]);
-    setAnswers([]);
-    setCurrentQuestionIndex(0);
-    setIsSimMode(false);
-    setIsSurvivalMode(false);
-    setIsReviewingMode(false);
   };
 
   // --- VIEWS ---
@@ -1523,6 +1615,37 @@ export default function App() {
       <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen flex flex-col border-x-0 sm:border-x-4 border-tron-cyan/10 relative">
         <IntroOverlay />
         <AchievementNotification />
+
+        {progress.activeQuiz && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8 p-6 bg-tron-yellow/10 border-2 border-tron-yellow/50 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative z-10"
+          >
+             <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-tron-yellow/20 flex items-center justify-center text-tron-yellow animate-pulse">
+                   <RotateCcw size={24} />
+                </div>
+                <div className="text-left">
+                   <h3 className="text-tron-yellow font-black uppercase tracking-widest text-sm">Sesión Interrumpida</h3>
+                   <p className="text-white/60 text-xs text-left">Tienes un protocolo activo en {
+                     progress.activeQuiz?.topicId === 'survival' ? 'Modo Supervivencia' :
+                     progress.activeQuiz?.topicId === 'board_sim' ? 'Simulacro Global' :
+                     GASTRO_TOPICS.find(t => t.id === progress.activeQuiz?.topicId)?.name || 'Módulo Desconocido'
+                   }</p>
+                   <p className="text-[10px] text-white/40 font-mono mt-1 text-left">PROGRESO: {progress.activeQuiz.currentIndex + 1} / {progress.activeQuiz.targetCount}</p>
+                </div>
+             </div>
+             <div className="flex gap-3 w-full md:w-auto">
+                <GlowButton size="sm" variant="outline" onClick={() => setProgress(prev => ({ ...prev, activeQuiz: undefined }))}>
+                   Descartar
+                </GlowButton>
+                <GlowButton size="sm" onClick={resumeQuiz}>
+                   Reanudar Protocolo
+                </GlowButton>
+             </div>
+          </motion.div>
+        )}
 
         {/* Floating Chat FAB */}
         <motion.button
