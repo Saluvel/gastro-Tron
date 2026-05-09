@@ -96,7 +96,7 @@ export const shuffleQuestionOptions = (questions: Question[]): Question[] => {
   });
 };
 
-// --- INITIAL STATE & PERSISTENCE ---
+  // --- INITIAL STATE & PERSISTENCE ---
 const INITIAL_PROGRESS: UserProgress = {
   totalAttempted: 0,
   totalCorrect: 0,
@@ -377,6 +377,25 @@ const GastroChat = ({ onBack, contextQuestion = null }: { onBack: () => void; co
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking' | 'archive' | 'chat'>('lobby');
+  
+  useEffect(() => {
+    const scale = () => {
+      const width = window.innerWidth;
+      if (width < 430) {
+        // Mode for standard smartphones
+        document.documentElement.style.fontSize = '14px';
+      } else if (width < 768) {
+        // Large smartphones / Tablets
+        document.documentElement.style.fontSize = '15px';
+      } else {
+        document.documentElement.style.fontSize = '16px';
+      }
+    };
+    scale();
+    window.addEventListener('resize', scale);
+    return () => window.removeEventListener('resize', scale);
+  }, []);
+
   const [isSimMode, setIsSimMode] = useState(false);
   const [isSurvivalMode, setIsSurvivalMode] = useState(false);
   const [showDailyGuide, setShowDailyGuide] = useState(false);
@@ -531,7 +550,7 @@ export default function App() {
             </div>
             <div className="col-span-2 p-6 border border-tron-cyan/20 bg-tron-cyan/5 text-center rounded-2xl group transition-all hover:bg-tron-cyan/10">
               <div className="text-[10px] uppercase text-tron-cyan tracking-[0.4em] mb-2 font-black">Score de Priorización MELD-Na</div>
-              <div className="text-6xl font-black text-white font-display tracking-tighter text-glow-cyan">{meldScore}</div>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-white font-display tracking-tighter text-glow-cyan">{meldScore}</div>
               <div className="text-[10px] text-white/40 mt-4 italic uppercase tracking-wider">Pronóstico de supervivencia a 90 días optimizado</div>
             </div>
           </div>
@@ -1501,7 +1520,7 @@ export default function App() {
 
   if (currentView === 'lobby') {
     return (
-      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen flex flex-col border-x-4 border-tron-cyan/10 relative">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen flex flex-col border-x-0 sm:border-x-4 border-tron-cyan/10 relative">
         <IntroOverlay />
         <AchievementNotification />
 
@@ -1621,14 +1640,14 @@ export default function App() {
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-5xl md:text-6xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter flex items-center gap-3"
+              className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-glow-cyan text-tron-cyan tracking-tighter flex items-center gap-3"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 24 24" 
                 fill="none" 
                 stroke="currentColor" 
-                className="w-12 h-12 md:w-16 md:h-16 text-tron-cyan shrink-0 drop-shadow-[0_0_15px_rgba(0,242,255,0.8)] animate-[spin_8s_linear_infinite]"
+                className="w-10 h-10 sm:w-16 sm:h-16 text-tron-cyan shrink-0 drop-shadow-[0_0_15px_rgba(0,242,255,0.8)] animate-[spin_8s_linear_infinite]"
               >
                 <circle cx="12" cy="12" r="10" strokeWidth="2" strokeDasharray="16 4" />
                 <circle cx="12" cy="12" r="6" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.7" />
@@ -2329,7 +2348,7 @@ export default function App() {
 
   if (currentView === 'quiz') {
     return (
-      <div className="max-w-6xl mx-auto p-4 md:p-12 min-h-screen py-16 border-x-4 border-tron-cyan/5">
+      <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen py-16 border-x-0 sm:border-x-4 border-tron-cyan/5">
         <AnimatePresence>
           {showStreakMsg && <StreakMotivation />}
         </AnimatePresence>
@@ -2845,7 +2864,7 @@ export default function App() {
     const scorePercent = Math.round((correctCount / questions.length) * 100);
 
     return (
-      <div className="max-w-4xl mx-auto p-4 md:p-8 min-h-screen flex flex-col justify-center items-center">
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8 min-h-screen flex flex-col justify-center items-center">
         <motion.div
            initial={{ scale: 0.95, opacity: 0 }}
            animate={{ scale: 1, opacity: 1 }}
@@ -2853,7 +2872,7 @@ export default function App() {
         >
           <div className="text-center md:text-left">
             <Trophy size={100} className={isSurvivalMode ? "text-tron-sub mb-8 mx-auto md:mx-0" : "text-tron-staff mb-8 drop-shadow-[0_0_20px_#ff9500] mx-auto md:mx-0"} />
-            <h2 className={cn("text-5xl md:text-6xl font-display font-black mb-4 tracking-tighter uppercase leading-none", isSurvivalMode ? "text-tron-sub" : "text-white")}>
+            <h2 className={cn("text-3xl sm:text-5xl lg:text-6xl font-display font-black mb-4 tracking-tighter uppercase leading-none", isSurvivalMode ? "text-tron-sub" : "text-white")}>
               {isSurvivalMode ? "Fin de la Línea" : "Protocolo"} <br/><span className={isSurvivalMode ? "text-tron-sub/50 text-4xl" : "text-tron-cyan text-glow-cyan text-4xl"}>{isSurvivalMode ? "Simulación Terminada" : "Finalizado"}</span>
             </h2>
             <p className={cn("uppercase tracking-[0.4em] text-xs font-mono mb-8 border-l-2 pl-6 py-2", isSurvivalMode ? "text-tron-sub border-tron-sub" : "text-white/30 border-tron-yellow")}>
@@ -3080,7 +3099,7 @@ export default function App() {
     });
     
     return (
-      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/40">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen border-x-0 sm:border-x-4 border-tron-cyan/10 bg-black/40">
         <header className="mb-8 space-y-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="flex items-center gap-6">
@@ -3290,7 +3309,7 @@ export default function App() {
     const q = allKnownQuestions[flashIndex] || allKnownQuestions[0];
 
     return (
-      <div className="max-w-4xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/40 flex flex-col justify-center items-center">
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen border-x-0 sm:border-x-4 border-tron-cyan/10 bg-black/40 flex flex-col justify-center items-center">
         <header className="absolute top-0 w-full p-8 flex justify-between items-center max-w-4xl">
           <button 
             onClick={() => setCurrentView('pearls')}
@@ -3618,7 +3637,7 @@ export default function App() {
     ].filter(q => progress.reviewIds.includes(q.id));
 
     return (
-      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10 bg-black/60">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen border-x-0 sm:border-x-4 border-tron-cyan/10 bg-black/60">
         <header className="flex justify-between items-center mb-12 border-b border-tron-sub/30 pb-6">
           <div className="flex items-center gap-6">
             <button 
@@ -3722,7 +3741,7 @@ export default function App() {
                    <div className="absolute inset-2 rounded-full border border-white/5 pointer-events-none" />
                    <User size={56} className="text-tron-cyan mb-4 drop-shadow-[0_0_12px_#00f2ff] group-hover:scale-110 transition-transform" />
                    <div className="flex flex-col items-center">
-                     <span className="font-black text-6xl text-white text-glow-cyan leading-none tabular-nums">{accuracy}%</span>
+                     <span className="font-black text-4xl sm:text-5xl lg:text-6xl text-white text-glow-cyan leading-none tabular-nums">{accuracy}%</span>
                      <div className="flex items-center gap-2 mt-4">
                         <div className="w-2 h-2 rounded-full bg-tron-cyan animate-pulse" />
                         <span className="uppercase text-[11px] tracking-[0.5em] text-tron-cyan font-black">SYNC_LEVEL: STABLE</span>
@@ -3861,7 +3880,7 @@ export default function App() {
 
   if (currentView === 'chat') {
     return (
-      <div className="max-w-7xl mx-auto p-4 md:p-12 min-h-screen border-x-4 border-tron-cyan/10">
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen border-x-0 sm:border-x-4 border-tron-cyan/10">
         <header className="flex justify-between items-center mb-12">
           <button 
             onClick={() => { playAudio('click'); setCurrentView('lobby'); }}

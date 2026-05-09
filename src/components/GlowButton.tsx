@@ -25,9 +25,9 @@ export const GlowButton: React.FC<GlowButtonProps> = ({
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-xs uppercase tracking-widest font-bold',
-    md: 'px-6 py-3 text-sm uppercase tracking-widest font-bold',
-    lg: 'px-10 py-4 text-base uppercase tracking-[0.2em] font-black',
+    sm: 'px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs uppercase tracking-widest font-bold',
+    md: 'px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm uppercase tracking-widest font-bold',
+    lg: 'px-6 py-3 sm:px-10 sm:py-4 text-sm sm:text-base uppercase tracking-[0.2em] font-black',
   };
 
   return (
