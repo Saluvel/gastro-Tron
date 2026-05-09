@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "UserProgress": {
+      "title": "UserProgress",
+      "description": "User progress and settings state",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "totalAttempted": { "type": "number" },
+        "totalCorrect": { "type": "number" },
+        "streak": { "type": "number" },
+        "byTopic": { "type": "object", "description": "Map of topic IDs to their stats" },
+        "reviewIds": { "type": "array", "items": { "type": "string" }, "description": "Array of question IDs to review" },
+        "achievements": { "type": "array", "items": { "type": "string" }, "description": "Unlocked achievements" },
+        "updatedAt": { "type": "string", "description": "Firestore server timestamp" }
+      },
+      "required": ["uid", "totalAttempted", "totalCorrect", "streak", "byTopic", "reviewIds", "achievements", "updatedAt"]
+    },
+    "Pearl": {
+      "title": "Pearl",
+      "description": "Saved educational pearls (flashcards)",
+      "type": "object",
+      "properties": {
+        "qId": { "type": "string" },
+        "text": { "type": "string" },
+        "explanation": { "type": "string" },
+        "fisiopato": { "type": "string" },
+        "topic": { "type": "string" },
+        "createdAt": { "type": "string", "description": "Firestore server timestamp" }
+      },
+      "required": ["qId", "text", "explanation", "fisiopato", "topic", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProgress" },
+      "description": "Stores user's aggregate progress and settings"
+    },
+    "/users/{userId}/pearls/{pearlId}": {
+      "schema": { "$ref": "#/entities/Pearl" },
+      "description": "Stores individual saved pearls for a user"
+    }
+  }
+}

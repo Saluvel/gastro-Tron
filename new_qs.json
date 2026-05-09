@@ -1,0 +1,119 @@
+[
+  {
+    "text": "Escenario Clínico: Paciente masculino de 68 años con antecedente de Fibrilación Auricular no valvular en tratamiento con Apixabán, quien se someterá a una CPRE electiva por coledocolitiasis con planeación de esfinterotomía biliar. Función renal normal (CrCl 75 mL/min). ¿Cuál es el manejo periprocedimiento más apropiado según las guías conjuntas ASGE/ESGE?",
+    "options": [
+      "Suspender Apixabán 24 horas antes del procedimiento y reiniciar 48 horas después, sin puente con HBPM.",
+      "Suspender Apixabán 2 a 3 días (48-72 horas) antes, sin puente con HBPM, y reiniciar 2-3 días después valorando hemostasia.",
+      "Suspender Apixabán 5 días antes, iniciar puente con HBPM a dosis terapéutica, y reiniciar al día siguiente.",
+      "Continuar Apixabán hasta la mañana del procedimiento ya que es un procedimiento de bajo riesgo de sangrado."
+    ],
+    "correctIndex": 1,
+    "explanation": "La CPRE con esfinterotomía es un procedimiento de ALTO RIESGO de hemorragia. En pacientes con DOACs (como Apixabán) y con función renal normal, las guías de la ASGE recomiendan suspender el fármaco 48 a 72 horas previas al procedimiento de alto riesgo. El puenteo con heparina (HBPM) no está recomendado rutinariamente para DOACs por sus rápidos on/off. Se debe reiniciar 2 a 3 días (48-72h) tras el procedimiento dependiendo de si la hemostasia se ha validado.",
+    "fisiopato": "El apixabán es un inhibidor directo y altamente selectivo del factor Xa. Su vida media es de ~12 horas en función renal normal. Al suspenderlo ~72 horas antes se garantiza el aclaramiento de más de ~5-6 vidas medias, lo que lleva el efecto anticoagulante remanente a menos del 3%, ideal para procedimientos en áreas muy vascularizadas como la papila de Vater (irrigada por arteria retroduodenal o pancreaticoduodenal superior).",
+    "topic": "endoscopia_anticoagulados"
+  },
+  {
+    "text": "Escenario Clínico: Acude paciente de 55 años portador de un stent liberador de fármacos (DES) en arteria coronaria descendente anterior colocado hace 3 meses tras un IAM. Actualmente toma Aspirina (81 mg) y Ticagrelor (90 mg bid). Tiene agendada una polipectomía de un adenoma aserrado sésil de 3 cm en ciego en 4 semanas. ¿Qué conducta es la adecuada basada en las pautas cardiológicas y de endoscopia actuales?",
+    "options": [
+      "Realizar el procedimiento sin alterar el esquema antiagregante DAPT debido al alto riesgo embólico provocado por el DES reciente.",
+      "Suspender Aspirina y Ticagrelor durante 5-7 días para realizar la polipectomía para evitar sangrado masivo.",
+      "Posponer la polipectomía proctológica al mínimo vital de 6 meses post-DES si el procedimiento es electivo; si debe hacerse, suspender ticagrelor 3-5 días antes, manteniendo la aspirina.",
+      "Sustituir el ticagrelor temporalmente con clopidogrel para lograr menor afinidad de unión y proceder."
+    ],
+    "correctIndex": 2,
+    "explanation": "Una polipectomía mayor a 1 cm (especialmente 3 cm en ciego, alto riesgo) es de ALTO RIESGO de sangrado. Dado que tiene un DES reciente (< 6 meses en síndrome coronario agudo), el riesgo trombótico/isquémico es muy alto al suspender el inhibidor P2Y12 (Ticagrelor). La recomendación principal es DIFERIR terapias electivas gástricas o colonoscópicas hasta después de 6 meses (ideal 12 en SCA). Si se debe hacer obligatoriamente, se mantiene la aspirina en todo momento, pero el ticagrelor se debe suspender con 3-5 días de antelación.",
+    "fisiopato": "El ticagrelor se une de forma reversible pero rápida y potente al receptor P2Y12 plaquetario. Vida media es de 7-9 horas, requiriendo 3-5 días para recuperar suficiente función plaquetaria de novo para prevenir hemorragia. La reepitelización endotelial completa de un DES moderno puede tardar meses (riesgo de trombosis intrastent aguda u subaguda catastrófica si se interrumpe la doble terapia tempranamente, por falta de endotelio vascular maduro formador de NO y prostaciclinas natural sobre el stent).",
+    "topic": "endoscopia_anticoagulados"
+  },
+  {
+    "text": "Paciente de 72 años en profilaxis con Clopidogrel crónico por un ACV isquémico antiguo. Presenta un episodio perdedor de sangre oscura. Se endoscopiza de urgencia hallando una úlcera duodenal cara posterior con un vaso visible (Forrest IIa). Se logra hemostasia usando termocoagulación + clipaje. ¿Cuándo es ideal reiniciar el tratamiento antiagregante?",
+    "options": [
+      "Inmediatamente (el mismo día), dado el riesgo altísimo neurológico y habiendo la úlcera sido mecánicamente asegurada.",
+      "Al menos 7 a 10 días tras el evento, evitando que los clips se caigan por efecto antiplaquetario.",
+      "En cuanto haya evidencia clínica de hemostasia, normalmente a los 1-3 días tras el procedimiento hemostático primario exitoso.",
+      "No reiniciar terapia antiplaquetaria en este paciente; cambiarlo a un anticoagulante directo profiláctico."
+    ],
+    "correctIndex": 2,
+    "explanation": "No reanudar el tratamiento antiagregante (AAS o P2Y12) aumenta el riesgo de isquemia neurovascular/CV, doblando el riesgo de muerte global, a pesar de que el reinicio temprano aumenta el riesgo de resangrado en un margen estrecho. Las guías internacionales sugieren la reanudación del antiagregante 1 a 3 días después de lograr exitosamente hemostasia de una úlcera.",
+    "fisiopato": "Un vaso expuesto en la base de la úlcera ha perdido sus mecanismos vasoconstrictores locales y es muy susceptible a re-sangrar si la reparación endotelial mediante tapón plaquetario y andamiaje de fibrina está comprometido. El clopidogrel, al inhibir P2Y12 interfiere con la estabilización plaquetaria (inhibiendo la amplificación regulada por ADP); no obstante, pasado el periodo crítico inicial de 72 h (sostenido con endoscopia dual u mecánica + IV PPI), se logran estabilizar las biopelículas iniciales permitiendo restaurar la agregación requerida a nivel extra-gástrico sin desencadenar hemorragia excesiva local.",
+    "topic": "endoscopia_anticoagulados"
+  },
+  {
+    "text": "Femenina de 34 años con Colitis Ulcerosa Crónica (CUC) extensa reactivada. Se ha documentado resistencia clínica al Vedolizumab tras 3 infusiones y síntomas persistentes. Presenta nivel bajo de albúmina (2.8 g/dL) y PCR elevada, se plantea Infliximab (pauta acelerada de inducción). ¿A qué complicación se debe estar particularmente alerta si recibe este régimen acelerado?",
+    "options": [
+      "Linfoma hepatoesplénico de células T inmediatamente en las primeras dos semanas.",
+      "Inmunogenicidad acelerada, resultando en reacciones a infusión severas o pérdida de respuesta.",
+      "Estenosis esofágica inducida por la alta unión del TNF circulante en todo el tracto gastrointestinal superior.",
+      "Un evento coronario isquémico paradójico debido al Infliximab."
+    ],
+    "correctIndex": 1,
+    "explanation": "El esquema acelerado de IFX se utiliza en colitis aguda grave (vg., dosis de 5-10 mg/kg en los días 0, 5, y 15). Un aclaramiento rápido preexistente del IFX (por TNF sink, hipoalbuminemia importante y proteolisis en colon) predice baja exposición. Debido al aclaramiento rápido y los niveles séricos subterapéuticos continuos, este ambiente es ideal para la producción de anticuerpos anti-Infliximab (ATI), llevando a mayor pérdida de respuesta rápida o reacciones transfusionales.",
+    "fisiopato": "La CUC perdedora de proteínas causa fuga capilar, alta expresión del receptor de reciclamiento FcRn saturado, lo que disminuye la vida media de anticuerpos monoclonales monoclonales (IgG1). Un bajo nivel valle («trough») de infliximab deja la porción quimérica murina expuesta sin neutralizar antígenos blanco, promoviendo el reconocimiento por linfocitos T cooperadores y B para formar anticuerpos neutralizantes (inmunogenicidad endógena).",
+    "topic": "eii_avanzada"
+  },
+  {
+    "text": "Paciente de 25 años con Enfermedad de Crohn ileocolónica fistulizante. Ha sido manejado con metotrexato, y se decide escalamiento a un inhibidor selectivo de JAK (ej., Upadacitinib). ¿Cuál de los siguientes es un efecto adverso característico y por lo general dependiente de la dosis o clase, que demanda monitorización lipídica o hematológica estrecha?",
+    "options": [
+      "Reactividad severa inmediata tipo anafilaxia por el primer paso.",
+      "Reactivación agresiva a Herpes Zoster, hiperlipidemia venosa y tromboembolismos venosos.",
+      "Cardiomiopatía dilatada progresiva por inhibición de síntesis contráctil de actina.",
+      "Poliposis hiperplásica reactiva diseminada."
+    ],
+    "correctIndex": 1,
+    "explanation": "Los inhibidores de JAK (como Tofacitinib o Upadacitinib) conllevan advertencias de recuadro negro por ciertos de sus efectos pleiotrópicos, entre ellos Herpes Zóster (por mermar señalización local T/NK e inf. celular), aumento de LDL y HDL dependiente de la dosis, y un incremento en la tasa de Tromboembolismo Venoso en cohortes post-market/artritis reumatoide sobre todo en poblaciones de riesgo.",
+    "fisiopato": "El gen JAK cataliza la fosforilación de STAT, que al translocarse medía funciones críticas de la respuesta inmune, pero también modula la expresión lipoproteína en los macrófagos y la depuración del colesterol, además inhiben subfamilias inmunitarias víricas que suprimen permanentemente al VZV latente en los ganglios dorsales, permitiendo reactivaciones espontáneas independientemente del estado inmunitario local basal.",
+    "topic": "eii_avanzada"
+  },
+  {
+    "text": "Durante la realización de un procedimiento endoscópico rutinario (Veda) bajo sedación con Propofol a cargo del anestesiólogo, a un varón de 40 años obesos con SAOS no tratado. El paciente sufre depresión respiratoria que progresa a hipoxia severa y, secundariamente, a paro cardiorrespiratorio en Asistolia confirmada en monitor principal. ¿Bajo el protocolo ACLS/SVA vigente, cuál de estas medidas resulta INAPROPIADA de forma inicial?",
+    "options": [
+      "Aplicación de Compresiones Torácicas (RCP) continuas y efectivas casi sin pausa.",
+      "Administración inmediata de Adrenalina 1mg (intravenoso o intraóseo) repitiendo c/3-5 minutos.",
+      "Aseguramiento avanzado inmediato invasivo de vía aérea utilizando intubación orotraqueal prioritaria sobre las compresiones.",
+      "Buscar causas reversibles (las '5 H y 5 T', incluyendo hipoxia aguda periprocedimiento)."
+    ],
+    "correctIndex": 2,
+    "explanation": "En asistolia (y toda parada cardiaca), las guías de ACLS priorizan la reanimación cardiopulmonar precoz con compresiones torácicas eficaces ('push hard, push fast', minimizar interrupciones) y Adrenalina temprana por encima de la intubación invasiva, que podría retrasar la reanimación hemodinámica sistémica. La ventilación efectiva inicialmente suele ser lograda con bolsa-mascarilla.",
+    "fisiopato": "En Asistolia no hay ritmo eléctrico o shockeable presente. La fisiología requerida desesperadamente es lograr flujo coronario y flujo cerebral perfuncional y promover excitabilidad eléctrica ventricular. La Adrenalina provee alfa-1 vasotensión que presuriza la raíz aórtica alimentando coronarias, mientras las compresiones intentan generar el gradiente intratorácico necesario para gasto residual mínimo de 25-30% del volumen golpe original.",
+    "topic": "muerte_subita"
+  },
+  {
+    "text": "Como Coordinador de Calidad en CPRE/Endoscopia, el protocolo de Simulacros en Quirófano de Endoscopía debe incluir la verificación rutinaria según los estándares internacionales de varios dispositivos. Durante una emergencia de desaturación intratable con laringoespasmo con paciente bajo propofol ¿Qué maniobra clínica simple permite vencer mecánicamente pero sin medicamentos el laringoespasmo leve/moderado inicial intra-escenario en la recuperación?",
+    "options": [
+      "Maniobra de muesca de Larson (estimulación supraventricular / presión sobre el proceso mastoide/escotadura laringoespásmica) combinada con Empuje Mandibular.",
+      "Inversión de decúbito forzado en trendelemburg máximo (-30°).",
+      "Hiperextensión radical del cuello para tensar el esófago subyacente.",
+      "Punto de presión xifoideo directo repetitivo."
+    ],
+    "correctIndex": 0,
+    "explanation": "La 'Muesca de Larson' es una maniobra de estimulo doloroso/mecánico consistente en presionar firmemente de forma medial, detrás del pabellón auricular y en la hendidura inferior al proceso mastoideo. Sirve como mecanismo reflejo para lograr relajar las cuerdas vocales o quebrar el espasmo involuntario, al combinarse con subluxación/elevación anterior de la mandíbula mientras se asiste con bolsa-válvula-mascarilla (BVM) con oxígeno al 100%.",
+    "fisiopato": "El laringoespasmo es un efecto quimio/mecanorreceptor inducido desde el nervio laríngeo superior (por secreciones o tubos en vía área infraglótica o irritación parasimpática), bloqueando la glotis. Se trata de un arco reflejo protector patológicamente potenciado en anestesia parcial/ligera. El estímulo profundo facial con dolor (via trigémino / simpática) estimula un 'override' en el núcleo tracto solitario del tallo frenando brevemente el hipertono del nervio recurrente de las cuerdas.",
+    "topic": "protocolo_simulacro"
+  },
+  {
+    "text": "Se evalúa tejido gástrico de un hombre de 62 años proveniente de Bolivia con síntomas de saciedad precoz y pérdida de peso de 15 kg. La biopsia demuestra una proliferación de células atípicas 'en anillo de sello'. Este carcinoma de tipo Difuso en la clasificación de Lauren se asocia invariablemente con la alteración molecular de cuál de las siguientes proteínas:",
+    "options": [
+      "E-Cadherina (Disfunción o pérdida de CDH1).",
+      "c-KIT (mutación en exón 11).",
+      "Beta-catenina nuclear.",
+      "Mutación Kras."
+    ],
+    "correctIndex": 0,
+    "explanation": "El Cáncer Gástrico tipo difuso se asocia íntimamente a las alteraciones (mutación, metilación somática, o síndrome genético hereditario) en el gen CDH1 (E-Cadherina). Las otras mutaciones son de otros tumores.",
+    "fisiopato": "La E-Cadherina es una glicoproteína integral de la membrana celular que promueve adhesiones célula a célula mediadas por calcio ('uniones adherentes'). La pérdida de su expresión resulta en el desarraigo epitelial clásico (las células pierden su unión lateral y el patrón de polaridad), promoviendo la transición epitelio-mesénquima y su infiltración profunda difusa, asilada y separada en la lámina propia o submucosa (linitis plástica retrograda celular), resultando fenotípicamente como células en anillo de sello (vacuolas llenas de mucina repeliendo núcleo periférico).",
+    "topic": "cancer_gastrico"
+  },
+  {
+    "text": "Se realiza serología y biopsia de duodeno (bulb y segunda porción) a una mujer de 22 años con deficiencia de hierro intratable y diarrea oscilatoria. Los Anti-Transglutaminasa (tTG-IgA) son >10 veces el valor normal máximo. En la patología, se observa la lesión característica compatible con Enfermedad Celíaca: atrofia vellositaria, hiperplasia de criptas y linfocitosis intraepitelial. ¿Cuál es el principal péptido alergénico derivado del gluten responsable de inducir la presentación antigénica mediante interacción con HLA-DQ2/DQ8 en la mucosa?",
+    "options": [
+      "Lectina gliadinolítica de bajo peso.",
+      "Péptido 33-mer derivado de la α-gliadina.",
+      "Hordeína beta-terminal.",
+      "Gamma-Glutelina fibrilar."
+    ],
+    "correctIndex": 1,
+    "explanation": "El componente más inmunogénico del gluten (específicamente de las proteínas de trigo, centeno o cebada) resistente a la digestión lumínica gastrointestinal es el fragmento 33-mer de la α-gliadina (con alto contenido parolina-glutamina), que logra penetrar el epitelio intacto debido a inflamación incipiente u oclusión zona occuldens debilitada. Es luego deaminado y se ancla a péptidos de HLA en las células presentadoras.",
+    "fisiopato": "Las enzimas digestivas intraluminales y endopeptidasas no logran clivar los puentes prolina/glutamina del '33-mer'. Al internalizarse en la lámina propia, es deamidado por la enzima endógena Transglutaminasa tisular 2 (tTG2), convirtiendo residuos de glutamina en ácido glutámico y creando una molécula de alta carga negativa. Esa molécula modificada ensambla perfectamente en el surco positivamente cargado de las moléculas unidas a membrana HLA-DQ2 (y DQ8) en macrófagos o DC presentadoras de antígeno, detonando inmunidad Th1 local devastadora liberando IFN-gamma y activando Linfocitos T citotóxicos contra el enterocito mismo que promueve atrofia y regeneración criptal defectiva.",
+    "topic": "celiaca"
+  }
+]

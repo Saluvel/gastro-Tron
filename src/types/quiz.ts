@@ -1,16 +1,16 @@
 export type Difficulty = 'Fellow' | 'Staff' | 'Subspecialist';
 
 export interface Question {
-  id: string;
+  id?: string;
   topic: string;
-  difficulty: Difficulty;
+  difficulty?: Difficulty;
   text: string;
   options: string[];
   correctIndex: number;
   explanation: string;
-  fisiopato: string;
-  clinicalPearl: string;
-  guideline: string;
+  fisiopato?: string;
+  clinicalPearl?: string;
+  guideline?: string;
   whyWrong?: {
     [key: number]: string;
   };

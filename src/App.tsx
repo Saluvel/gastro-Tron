@@ -47,6 +47,10 @@ import { GASTRO_TOPICS } from './data/categories';
 import { SEED_QUESTIONS } from './data/seedQuestions';
 import { PRELOADED_QUESTIONS } from './data/questionBank';
 import { Question, Difficulty, UserProgress, Topic } from './types/quiz';
+import { auth, db, loginWithGoogle, logout, handleFirestoreError, serverTimestamp } from './lib/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import type { User as FirebaseUser } from 'firebase/auth';
+import { doc, getDoc, setDoc, updateDoc, collection, getDocs, deleteDoc, writeBatch } from 'firebase/firestore';
 
 const ALL_PRELOADED_QUESTIONS = [...SEED_QUESTIONS, ...PRELOADED_QUESTIONS];
 import { generateQuestions } from './services/ai';
@@ -235,21 +239,20 @@ export const renderWithAcronyms = (text: string) => {
   });
 };
 
-const GastroChat = ({ onBack }: { onBack: () => void }) => {
+const GastroChat = ({ onBack, contextQuestion = null }: { onBack: () => void; contextQuestion?: Question | null }) => {
   const [messages, setMessages] = useState<{ role: 'user' | 'model', text: string }[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Use a ref to ensure automatic fetch happens only once
+  const initialized = React.useRef(false);
 
-  useEffect(() => {
-    playAudio('magic');
-  }, []);
-
-  const sendMessage = async () => {
-    if (!input.trim() || isLoading) return;
+  const sendMessage = async (textToProcess?: string) => {
+    const userMsg = textToProcess || input.trim();
+    if (!userMsg || isLoading) return;
     
     playAudio('magic');
-    const userMsg = input.trim();
-    setInput('');
+    if (!textToProcess) setInput('');
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
@@ -260,11 +263,17 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
       }
       
       const ai = new GoogleGenAI({ apiKey });
+      
+      let contextStr = "";
+      if (contextQuestion) {
+        contextStr = `\nCONTEXTO DE PREGUNTA ACTUAL QUE ESTÁ VIENDO EL USUARIO:\nPregunta: ${contextQuestion.text}\nOpciones: ${contextQuestion.options.join(" | ")}\nRespuesta Correcta: ${contextQuestion.options[contextQuestion.correctIndex]}\nExplicación: ${contextQuestion.explanation || 'No disponible'}\n`;
+      }
+
       const response = await ai.models.generateContent({
         model: "gemini-flash-latest",
         contents: userMsg,
         config: {
-          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA de ultra-élite experta en gastroenterología clínica. Tu base de datos principal es el Manual Chileno de Gastroenterología (2025) y las guías internacionales más recientes (AGA, ACG, ESGE, AASLD, ECCO). Tu objetivo es ayudar a Fellows y Residentes con dudas médicas complejas, perlas fisiopatológicas y algoritmos de manejo. Tus respuestas deben ser técnicas, precisas, con rigor académico, y mantener un tono professional 'cyberpunk/tron'. Siempre cita la fuente de tus recomendaciones (ej: 'Según Manual Chileno 2025...'). Aclara que tus respuestas son informativas y no sustituyen el juicio clínico profesional del médico tratante."
+          systemInstruction: "Eres el Oráculo de GAS-TRON, una IA de ultra-élite experta en gastroenterología clínica. Tu base de datos principal es el Manual Chileno de Gastroenterología (2025) y guías internacionales (AGA, ACG, ESGE, AASLD, ECCO). Tu objetivo es ayudar a Fellows y Residentes con dudas complejas, perlas fisiopatológicas y algoritmos. Mantén un tono professional 'cyberpunk/tron'. Siempre cita guías si es posible. " + contextStr
         }
       });
 
@@ -274,14 +283,22 @@ const GastroChat = ({ onBack }: { onBack: () => void }) => {
     } catch (error) {
       console.error(error);
       if (error instanceof Error && error.message === "API_KEY_MISSING") {
-        setMessages(prev => [...prev, { role: 'model', text: "[ERROR] Falta configurar la variable GEMINI_API_KEY en los ajustes del proyecto para usar el Oráculo." }]);
+        setMessages(prev => [...prev, { role: 'model', text: "[ERROR] Falta configurar la variable GEMINI_API_KEY." }]);
       } else {
-        setMessages(prev => [...prev, { role: 'model', text: "Falla de conexión con el Oráculo. Los servidores de la Red están saturados." }]);
+        setMessages(prev => [...prev, { role: 'model', text: "Falla de conexión con el Oráculo. Red inestable." }]);
       }
     } finally {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    playAudio('magic');
+    if (contextQuestion && !initialized.current) {
+        initialized.current = true;
+        sendMessage("Analiza y profundiza fisiopatológicamente la pregunta que acabo de responder. ¿Por qué es la opción correcta según la última evidencia y cuál es el 'pivote' diagnóstico principal?");
+    }
+  }, [contextQuestion]);
 
   return (
     <div className="flex flex-col h-[calc(100vh-160px)] md:h-[calc(100vh-200px)] border border-tron-cyan/20 bg-tron-card/50 rounded-2xl overflow-hidden backdrop-blur-md">
@@ -364,6 +381,8 @@ export default function App() {
   const [isSurvivalMode, setIsSurvivalMode] = useState(false);
   const [showDailyGuide, setShowDailyGuide] = useState(false);
   const [isOralMode, setIsOralMode] = useState(true); // Default to true as per user interest
+  const [isStudyMode, setIsStudyMode] = useState(true); // Default to true
+  const [isReviewingMode, setIsReviewingMode] = useState(false);
   const [revealedOral, setRevealedOral] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
   const [targetQuestionCount, setTargetCount] = useState(() => {
@@ -406,28 +425,49 @@ export default function App() {
   const [flashIndex, setFlashIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isOracleOpen, setIsOracleOpen] = useState(false);
+  const [oracleContextMode, setOracleContextMode] = useState<boolean>(false);
   const [showCalcs, setShowCalcs] = useState(false);
   const [showPearls, setShowPearls] = useState(false);
   const [showVisualDetail, setShowVisualDetail] = useState(false);
   const [isMasterclassRoute, setIsMasterclassRoute] = useState(false);
 
-  const savePearl = (question: Question | undefined) => {
+  const savePearl = async (question: Question | undefined) => {
     if (!question || !question.clinicalPearl) return;
     if (progress.savedPearls?.some(p => p.questionId === question.id)) return;
 
     playAudio('achievement');
+    
+    const newPearl = {
+      questionId: question.id,
+      text: question.clinicalPearl,
+      topic: question.topic,
+      date: Date.now()
+    };
+    
     setProgress(prev => ({
       ...prev,
       savedPearls: [
         ...(prev.savedPearls || []),
-        {
-          questionId: question.id,
-          text: question.clinicalPearl,
-          topic: question.topic,
-          date: Date.now()
-        }
+        newPearl
       ]
     }));
+
+    if (authUser) {
+      try {
+        const pearlId = question.id || `pearl_${Date.now()}`;
+        const payload = {
+          qId: question.id || "",
+          text: question.clinicalPearl,
+          explanation: question.explanation || "",
+          fisiopato: question.fisiopato || "",
+          topic: question.topic,
+          createdAt: serverTimestamp()
+        };
+        await setDoc(doc(db, 'users', authUser.uid, 'pearls', pearlId), payload);
+      } catch (error) {
+        console.error("Failed to sync pearl to cloud:", error);
+      }
+    }
   };
 
   // --- CALCULATORS COMPONENT ---
@@ -672,6 +712,72 @@ export default function App() {
   };
 
   // Save target count
+  const [authUser, setAuthUser] = useState<FirebaseUser | null>(null);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
+
+  // Sync to Firebase on login
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setAuthUser(user || null);
+      if (user) {
+        try {
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          if (userDoc.exists()) {
+             const data = userDoc.data();
+             setProgress(prev => {
+               return {
+                 ...prev,
+                 totalAttempted: data.totalAttempted ?? prev.totalAttempted,
+                 totalCorrect: data.totalCorrect ?? prev.totalCorrect,
+                 streak: data.streak ?? prev.streak,
+                 byTopic: data.byTopic ?? prev.byTopic,
+                 reviewIds: data.reviewIds ?? prev.reviewIds,
+                 achievements: data.achievements ?? prev.achievements
+               };
+             });
+             
+             // Fetch pearls
+             try {
+               const pearlsSnapshot = await getDocs(collection(db, 'users', user.uid, 'pearls'));
+               const loadedPearls = pearlsSnapshot.docs.map(d => {
+                  const pearlData = d.data();
+                  return {
+                      questionId: pearlData.qId,
+                      text: pearlData.text,
+                      topic: pearlData.topic,
+                      date: pearlData.createdAt?.toMillis ? pearlData.createdAt.toMillis() : Date.now()
+                  };
+               });
+               if (loadedPearls.length > 0) {
+                 setProgress(prev => {
+                   const newPearls = [...(prev.savedPearls || [])];
+                   for (const cloudP of loadedPearls) {
+                     if (!newPearls.some(p => p.questionId === cloudP.questionId)) {
+                        newPearls.push(cloudP);
+                     }
+                   }
+                   return { ...prev, savedPearls: newPearls };
+                 });
+               }
+             } catch (e) {
+               console.error("Failed to load cloud pearls", e);
+             }
+          }
+        } catch (error) {
+           console.error("Failed to load cloud profile", error);
+        }
+      }
+      setIsAuthLoading(false);
+    });
+    return unsubscribe;
+  }, []);
+
+  const handleLogin = async () => {
+    try {
+      await loginWithGoogle();
+    } catch {}
+  };
+
   useEffect(() => {
     localStorage.setItem('gastro_quiz_target_count', targetQuestionCount.toString());
   }, [targetQuestionCount]);
@@ -679,7 +785,33 @@ export default function App() {
   // Save progress whenever it changes
   useEffect(() => {
     localStorage.setItem('gastro_quiz_progress', JSON.stringify(progress));
-  }, [progress]);
+    
+    // Cloud Sync
+    if (authUser && !isAuthLoading) {
+      const syncToCloud = async () => {
+         try {
+           const payload = {
+             uid: authUser.uid,
+             totalAttempted: progress.totalAttempted,
+             totalCorrect: progress.totalCorrect,
+             streak: progress.streak,
+             byTopic: progress.byTopic,
+             reviewIds: progress.reviewIds,
+             achievements: progress.achievements,
+             updatedAt: serverTimestamp()
+           };
+           await setDoc(doc(db, 'users', authUser.uid), payload, { merge: true });
+         } catch(e) {
+           console.warn("Cloud sync failed");
+         }
+      };
+      // Simple debounce
+      const timer = setTimeout(() => {
+        syncToCloud();
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [progress, authUser, isAuthLoading]);
 
   // Save cached questions
   useEffect(() => {
@@ -836,48 +968,33 @@ export default function App() {
   // --- STREAK MOTIVATION OVERLAY ---
   const StreakMotivation = () => {
     if (!showStreakMsg) return null;
-    const { color, text, msg } = streakVisuals;
+    const { color, text, msg, intensity } = streakVisuals;
 
     return (
-      <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 1.2 }}
-          className="bg-black/80 backdrop-blur-xl border-4 p-12 rounded-[3rem] text-center shadow-[0_0_100px_rgba(0,0,0,0.8)] relative overflow-hidden"
-          style={{ borderColor: color }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: -20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        className="fixed top-12 left-0 right-0 z-[200] flex justify-center pointer-events-none px-4"
+      >
+        <div 
+          className="bg-black/90 backdrop-blur-md border p-4 px-6 rounded-2xl flex items-center gap-4 shadow-2xl max-w-2xl w-full"
+          style={{ borderColor: color, boxShadow: `0 0 40px ${color}40` }}
         >
-          {/* Animated Background Rings */}
-          <div className="absolute inset-0 z-0">
-             <div className="absolute inset-[-100%] animate-[spin_10s_linear_infinite] opacity-10" 
-                  style={{ background: `conic-gradient(from 0deg, transparent, ${color}, transparent)` }} />
+          <div className="p-2 rounded-full bg-white/5 border border-white/10" style={{ color }}>
+            <Zap size={24} className={intensity} />
           </div>
-
-          <div className="relative z-10 flex flex-col items-center">
-            <motion.div 
-              animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }}
-              transition={{ duration: 0.5, repeat: 3 }}
-              className="mb-6 p-6 rounded-full bg-white/5 border border-white/10"
-            >
-              <Zap size={64} style={{ color }} className="drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
-            </motion.div>
-            
-            <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter mb-4 italic" style={{ color, textShadow: `0 0 30px ${color}` }}>
+          <div className="flex flex-col">
+            <h2 className="text-xl md:text-2xl font-display font-black tracking-widest uppercase italic" style={{ color }}>
               {text}
             </h2>
-            
-            <div className="flex items-center gap-4 mb-4">
-               <div className="h-px w-12 bg-white/20" />
-               <span className="text-white text-2xl font-black uppercase tracking-[0.2em]">{currentStreak} ACIERTOS SEGUIDOS</span>
-               <div className="h-px w-12 bg-white/20" />
+            <div className="flex items-center gap-2">
+              <span className="text-white text-xs font-black uppercase tracking-widest">{currentStreak} ACIERTOS SEGUIDOS</span>
+              <span className="text-white/40 text-[10px] uppercase">— {msg}</span>
             </div>
-            
-            <p className="text-white/60 text-xl font-serif italic max-w-md">
-              {msg}
-            </p>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     );
   };
 
@@ -1150,33 +1267,47 @@ export default function App() {
   };
 
   const handleAnswerSelect = (index: number) => {
-    if (showFeedback) return;
+    if (showFeedback || isReviewingMode) return;
     const isAnsCorrect = index === questions[currentQuestionIndex].correctIndex;
-    if (isAnsCorrect) {
-      playAudio('correct');
-      setCurrentStreak(prev => prev + 1);
-    } else {
-      playAudio('wrong');
-      setCurrentStreak(0);
+    if (isStudyMode) {
+      if (isAnsCorrect) {
+        playAudio('correct');
+        setCurrentStreak(prev => prev + 1);
+      } else {
+        playAudio('wrong');
+        setCurrentStreak(0);
+      }
     }
     
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = index;
     setAnswers(newAnswers);
-    setShowFeedback(true);
-
-    if (isAnsCorrect) {
-      unlockAchievement('first_win');
-      if (progress.streak + 1 >= 5) unlockAchievement('streak_5');
-      if (progress.totalCorrect + 1 >= 20 && (progress.totalCorrect + 1) / (progress.totalAttempted + 1) >= 0.9) unlockAchievement('master_endo');
+    
+    if (isStudyMode) {
+      setShowFeedback(true);
+      if (isAnsCorrect) {
+        unlockAchievement('first_win');
+        if (progress.streak + 1 >= 5) unlockAchievement('streak_5');
+        if (progress.totalCorrect + 1 >= 20 && (progress.totalCorrect + 1) / (progress.totalAttempted + 1) >= 0.9) unlockAchievement('master_endo');
+      } else {
+        // Track missed question for "Corrupted Data" review
+        const qId = questions[currentQuestionIndex].id;
+        if (qId && !progress.reviewIds.includes(qId)) {
+          setProgress(prev => ({
+            ...prev,
+            reviewIds: [...prev.reviewIds, qId]
+          }));
+        }
+      }
     } else {
-      // Track missed question for "Corrupted Data" review
-      const qId = questions[currentQuestionIndex].id;
-      if (qId && !progress.reviewIds.includes(qId)) {
-        setProgress(prev => ({
-          ...prev,
-          reviewIds: [...prev.reviewIds, qId]
-        }));
+      // Not study mode (Exam mode), go to next automatically without feedback
+      if (currentQuestionIndex < questions.length - 1) {
+        setTimeout(() => {
+          setCurrentQuestionIndex(currentQuestionIndex + 1);
+          setRevealedOral(false);
+        }, 150);
+      } else {
+        setTimeout(() => finishQuiz(), 150);
       }
     }
   };
@@ -1190,11 +1321,26 @@ export default function App() {
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setShowFeedback(false);
+      if (!isReviewingMode) {
+        setShowFeedback(false);
+      }
       setRevealedOral(false);
     } else {
       finishQuiz();
     }
+  };
+
+  const prevQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const startReviewMode = () => {
+    setIsReviewingMode(true);
+    setCurrentQuestionIndex(0);
+    setShowFeedback(true);
+    setCurrentView('quiz');
   };
 
   const finishQuiz = () => {
@@ -1326,6 +1472,13 @@ export default function App() {
   const quitQuiz = () => {
     // Direct navigation is safer in iframes than window.confirm
     setCurrentView('lobby');
+    setSelectedTopic(null);
+    setQuestions([]);
+    setAnswers([]);
+    setCurrentQuestionIndex(0);
+    setIsSimMode(false);
+    setIsSurvivalMode(false);
+    setIsReviewingMode(false);
   };
 
   // --- VIEWS ---
@@ -1890,6 +2043,32 @@ export default function App() {
 
                    <div className="mt-8 pt-6 border-t border-white/5 space-y-4">
                       <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold">Modo de Evaluación</p>
+
+                      <div className="flex bg-black/40 border border-white/10 rounded-xl p-1 relative overflow-hidden">
+                         <div 
+                           className="absolute top-1 bottom-1 left-1 w-[calc(50%-0.25rem)] bg-tron-cyan/20 rounded-lg border border-tron-cyan/50 transition-transform duration-300 pointer-events-none"
+                           style={{ transform: !isStudyMode ? 'translateX(0)' : 'translateX(100%)' }}
+                         />
+                         <button
+                           onClick={() => setIsStudyMode(false)}
+                           className={cn(
+                             "flex-1 py-3 text-xs uppercase font-bold tracking-widest z-10 transition-colors",
+                             !isStudyMode ? "text-tron-cyan" : "text-white/40 hover:text-white"
+                           )}
+                         >
+                           Simulacro
+                         </button>
+                         <button
+                           onClick={() => setIsStudyMode(true)}
+                           className={cn(
+                             "flex-1 py-3 text-xs uppercase font-bold tracking-widest z-10 transition-colors",
+                             isStudyMode ? "text-tron-cyan" : "text-white/40 hover:text-white"
+                           )}
+                         >
+                           Modo Estudio
+                         </button>
+                      </div>
+
                       <button 
                         onClick={() => setIsOralMode(!isOralMode)}
                         className={cn(
@@ -2167,8 +2346,8 @@ export default function App() {
             <div className="flex flex-col">
               <div className="flex items-center gap-4 mb-1">
                 <h2 className="text-tron-cyan font-display text-4xl font-black tracking-tighter flex items-center gap-4">
-                  <StreakLogo streak={currentStreak} />
-                  {selectedTopic?.name} 
+                  {isReviewingMode ? "REVISIÓN" : <StreakLogo streak={currentStreak} />}
+                  {isReviewingMode ? "" : selectedTopic?.name} 
                 </h2>
                 <div className="flex items-center gap-2">
                   <span className="text-xs bg-white/5 px-2 py-0.5 rounded text-white/40 font-mono tracking-widest border border-white/10 uppercase">
@@ -2460,25 +2639,25 @@ export default function App() {
                     </motion.div>
 
                     {isOralMode && !revealedOral && !showFeedback && (
-                      <div className="mt-8 flex flex-col items-center gap-6 py-12 border-2 border-dashed border-tron-cyan/20 rounded-2xl bg-tron-cyan/[0.02] backdrop-blur-sm">
+                      <div className="mt-4 flex flex-col items-center gap-3 py-6 border-2 border-dashed border-tron-cyan/20 rounded-2xl bg-tron-cyan/[0.02] backdrop-blur-sm">
                         <motion.div 
                           animate={{ scale: [1, 1.1, 1] }} 
                           transition={{ repeat: Infinity, duration: 2 }}
-                          className="p-6 bg-tron-cyan/10 rounded-full text-tron-cyan shadow-[0_0_30px_rgba(0,242,255,0.2)]"
+                          className="p-4 bg-tron-cyan/10 rounded-full text-tron-cyan shadow-[0_0_20px_rgba(0,242,255,0.2)]"
                         >
-                          <Mic size={48} />
+                          <Mic size={28} />
                         </motion.div>
-                        <div className="text-center space-y-2">
-                          <h4 className="text-white font-black uppercase tracking-[0.3em] text-lg">¡Responde en Voz Alta!</h4>
-                          <p className="text-white/40 text-sm max-w-xs mx-auto">
+                        <div className="text-center space-y-1">
+                          <h4 className="text-white font-black uppercase tracking-[0.2em]">¡Responde en Voz Alta!</h4>
+                          <p className="text-white/40 text-xs max-w-xs mx-auto">
                             Estructura tu respuesta oral antes de revelar las alternativas científicas.
                           </p>
                         </div>
                         <GlowButton 
                           onClick={() => setRevealedOral(true)}
-                          size="lg"
+                          size="sm"
                           variant="cyan"
-                          className="mt-4 px-12"
+                          className="mt-2 px-8"
                         >
                           Revelar Alternativas
                         </GlowButton>
@@ -2499,11 +2678,11 @@ export default function App() {
                   >
                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex gap-4">
                        <button 
-                         onClick={() => { playAudio('magic'); setIsOracleOpen(true); }}
+                         onClick={() => { playAudio('magic'); setOracleContextMode(true); setIsOracleOpen(true); }}
                          className="flex-1 py-4 px-6 border border-tron-cyan/20 bg-tron-cyan/5 rounded-2xl hover:bg-tron-cyan/10 transition-all flex items-center justify-center gap-3 group"
                        >
                          <Search size={18} className="text-tron-cyan group-hover:scale-110 transition-transform" />
-                         <span className="text-[10px] uppercase font-black tracking-widest text-tron-cyan">Consultar Guía Extendida (Oráculo)</span>
+                         <span className="text-[10px] uppercase font-black tracking-widest text-tron-cyan">Disección por IA (Oráculo)</span>
                        </button>
                        <button 
                          onClick={() => savePearl(currentQuestion)}
@@ -2582,6 +2761,16 @@ export default function App() {
                     )}
 
                     <div className="flex flex-col gap-4 pt-4">
+                      {isReviewingMode && currentQuestionIndex > 0 && (
+                        <GlowButton 
+                          size="lg" 
+                          variant="outline"
+                          onClick={prevQuestion}
+                          className="w-full text-base font-black tracking-[0.2em] mb-2"
+                        >
+                           <ChevronRight size={18} className="mr-2 inline rotate-180" /> Pregunta Anterior
+                        </GlowButton>
+                      )}
                       <div className="flex items-center gap-2 text-[10px] text-white/20 uppercase tracking-widest font-mono">
                          <FileText size={12} /> Ref: {currentQuestion?.guideline}
                       </div>
@@ -2590,7 +2779,7 @@ export default function App() {
                         onClick={nextQuestion}
                         className="w-full text-base font-black tracking-[0.2em]"
                       >
-                        Siguiente Desafío <ChevronRight size={18} className="ml-2 inline" />
+                        {isReviewingMode && currentQuestionIndex === questions.length - 1 ? "Finalizar Revisión" : (isReviewingMode ? "Siguiente Pregunta" : "Siguiente Desafío")} <ChevronRight size={18} className="ml-2 inline" />
                       </GlowButton>
                     </div>
                   </motion.div>
@@ -2617,7 +2806,7 @@ export default function App() {
                 className="w-[350px] md:w-[450px] shadow-[0_0_50px_rgba(0,0,0,0.8)]"
               >
                 <div className="h-[500px]">
-                  <GastroChat onBack={() => setIsOracleOpen(false)} />
+                  <GastroChat onBack={() => { setIsOracleOpen(false); setOracleContextMode(false); }} contextQuestion={oracleContextMode ? questions[currentQuestionIndex] : null} />
                 </div>
               </motion.div>
             )}
@@ -2625,6 +2814,7 @@ export default function App() {
 
           <button
             onClick={() => {
+              if (isOracleOpen) { setOracleContextMode(false); }
               setIsOracleOpen(!isOracleOpen);
               playAudio('click');
             }}
@@ -2698,6 +2888,15 @@ export default function App() {
                 >
                   Reiniciar Módulo
                 </GlowButton>
+              )}
+              {!isSurvivalMode && answers.length > 0 && (
+                 <GlowButton 
+                   variant="yellow"
+                   onClick={startReviewMode}
+                   className="flex-1"
+                 >
+                   Revisar Respuestas
+                 </GlowButton>
               )}
               {isSurvivalMode && (
                 <GlowButton 
@@ -3560,6 +3759,31 @@ export default function App() {
              </div>
 
 
+
+             <div className="mb-12">
+               <h3 className="text-[10px] uppercase text-white/30 font-black tracking-[0.4em] mb-6 flex items-center gap-2">
+                 <Database size={14} className="text-tron-cyan" /> Sincronización Cloud
+               </h3>
+               {authUser ? (
+                 <div className="bg-tron-cyan/10 border border-tron-cyan/30 p-6 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                      <p className="text-tron-cyan font-bold uppercase tracking-widest text-sm mb-1">{authUser.email}</p>
+                      <p className="text-[10px] text-white/60">Tu progreso está cifrado y resguardado en la Red.</p>
+                    </div>
+                    <GlowButton variant="outline" size="sm" onClick={logout}>Desconectar</GlowButton>
+                 </div>
+               ) : (
+                 <div className="bg-white/5 border border-white/10 p-6 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                      <p className="text-white font-bold uppercase tracking-widest text-sm mb-1">Backup Local</p>
+                      <p className="text-[10px] text-white/40">Inicia sesión con Google para sincronizar tu Identidad en la nube.</p>
+                    </div>
+                    <GlowButton variant="cyan" onClick={handleLogin}>
+                       Vincular Cuenta
+                    </GlowButton>
+                 </div>
+               )}
+             </div>
 
              <div className="mb-12">
                <h3 className="text-[10px] uppercase text-white/30 font-black tracking-[0.4em] mb-6 flex items-center gap-2">
