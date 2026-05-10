@@ -53,5 +53,10 @@ export const GASTRO_TOPICS: Topic[] = [
     id: 'endoscopia_anticoagulados',
     name: 'Endoscopia en Anticoagulados',
     description: 'Guías ASGE/ESGE sobre manejo periendoscópico de anticoagulantes y antiagregantes.'
+  },
+  {
+    id: 'dx_diferencial_mastery',
+    name: 'Causas de Enf y Dx Diferenciales',
+    description: 'Mastery en etiologías frecuentes y diagnósticos diferenciales complejos.'
   }
 ];

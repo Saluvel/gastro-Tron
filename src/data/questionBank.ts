@@ -2,6 +2,144 @@ import { Question } from '../types/quiz';
 
 export const PRELOADED_QUESTIONS: Question[] = [
   {
+    "id": "q-diarrea-cronica-new-001",
+    "topic": "diarrea_cronica",
+    "difficulty": "Fellow",
+    "text": "Un varón de 48 años con historia de artralgias migratorias, pérdida de peso, fiebre esporádica y diarrea crónica acude a consulta. En la analítica destaca anemia normocítica y PCR elevada. La biopsia duodenal revela vellosidades ensanchadas con macrófagos espumosos en la lámina propia que son PAS positivos y Ziehl-Neelsen negativos. ¿Cuál es el tratamiento de inducción recomendado para esta entidad?",
+    "options": [
+      "Ceftriaxona intravenosa o Meropenem por 2 semanas, seguido de Trimetoprim/Sulfametoxazol oral por 1 año",
+      "Glucocorticoides sistémicos a dosis altas en descenso gradual",
+      "Dieta estricta libre de gluten de por vida y suplementos vitamínicos",
+      "Tratamiento antituberculoso empírico con isoniazida, rifampicina, etambutol y pirazinamida (HRZE)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Enfermedad de Whipple (Tropheryma whipplei) clásica requiere tratamiento antibiótico prolongado para erradicar el patógeno celular, que suele acantonarse en sistema nervioso central.",
+    "fisiopato": "Este actinomiceto invade macrófagos bloqueando los linfáticos (lacteales) del intestino y causando diarrea exudativa-malabsortiva. Atravesar la barrera hematoencefálica es el mayor reto terapéutico, justificando la terapia inicial IV con una cefalosporina y mantención larga con TMP/SMX (para evitar la temida recaída en SNC).",
+    "clinicalPearl": "El hallazgo de macrófagos de color magenta oscuro (PAS+) en la mucosa duodenal que no son bacilos ácido-alcohol resistentes (Ziehl-Neelsen negativo) es la firma inequívoca de la Enf. de Whipple.",
+    "guideline": "ACG Clinical Guideline: Evaluation of Chronic Diarrhea.",
+    "whyWrong": {
+      "1": "Los glucocorticoides no combaten el patógeno; es más, una terapia inmunosupresora pura empeoraría dramáticamente el cuadro infeccioso bacteriano sistémico de Whipple.",
+      "2": "La dieta libre de gluten y suplementos trata la Enfermedad Celíaca, la cual provoca atrofia de las vellosidades y linfocitos intraepiteliales, no macrófagos espumosos PAS positivos.",
+      "3": "El esquema tetraconjugado trata Mycobacterium tuberculosis/avium complex (MAC); MAC también cursa con macrófagos espumosos y diarrea, pero es Ziehl-Neelsen POSITIVO (ácido-alcohol resistente)."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-diarrea-cronica-new-002",
+    "topic": "diarrea_cronica",
+    "difficulty": "Staff",
+    "text": "Se evalúa a un joven con antecedentes de infecciones sinusales a repetición desde la niñez, que presenta diarrea crónica refractaria y pérdida de peso ponderal. La colonoscopia y endoscopia alta no evidencian úlceras francas, pero las biopsias del duodeno reportan ausencia severa de células plasmáticas tisulares, pérdida vellositaria parcial y detección de trofozoítos correspondientes a Giardia lamblia hipercolonizantes. ¿Cuál es la deficiencia inmunológica subyacente más probable que vincula todo este panorama clínico?",
+    "options": [
+      "Inmunodeficiencia Común Variable (CVID) o Déficit selectivo de IgA",
+      "Infección por Virus de la Inmunodeficiencia Humana (VIH) fase SIDA",
+      "Síndrome de Wiskott-Aldrich congénito",
+      "Déficit en las enzimas del sistema del complemento clásico"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Inmunodeficiencia Común Variable (CVID) y el Déficit de IgA cursan clásicamente con alteraciones de la inmunidad humoral en mucosas, permitiendo infecciones respiratorias crónicas y proliferación libre de protozoarios en el duodeno (como Giardia).",
+    "fisiopato": "Las mucosas GI dependen críticamente de la secreción de Inmunoglobulina A secretora para unirse a patógenos e impedir su anclaje. Ante la ausencia franca de linfocitos diferenciados en células plasmáticas productoras de IgA e IgG, parásitos flagelados tienen libre albedrío para anclarse en el disco suctorio del ribete de cepillo.",
+    "clinicalPearl": "Ausencia de células plasmáticas en la biopsia gástrica/duodenal + antecedente de giardiasis crónica refractaria o infecciones a repetición pulmonares: descartar CVID o agammaglobulinemia.",
+    "guideline": "ACG Clinical Guidelines on Evaluation of Chronic Diarrhea.",
+    "whyWrong": {
+      "1": "El VIH arrasa y ataca netamente la inmunidad celular de linfocitos T CD4+, no causa depleción primaria o absoluta de células plasmáticas en la biopsia; además la susceptibilidad sería más hacia citomegalovirus o criptosporidio.",
+      "2": "El síndrome de Wiskott-Aldrich tiene la triada de inmunodeficiencia, eccema atópico severo y trombocitopenia temprana, cursando letal hematológicamente, no focalizado enteramente hacia un déficit de giardiasis crónica subyacente.",
+      "3": "Deficiencias de factores del complemento (Ej. C5-C9) predisponen invariablemente a infecciones por bacterias encapsuladas como Neisserias y patologías autoinmunes de recambio, no diarreas o parásitos luminales enterales."
+    },
+    "pillar": "Board Prep"
+  },
+  {
+    "id": "q-diarrea-cronica-new-003",
+    "topic": "diarrea_cronica",
+    "difficulty": "Fellow",
+    "text": "Se evalúa a una paciente femenina de 32 años con diarrea severa, de tipo secretora. En la colonoscopía se describe extensa coloración pardo-negruzca de la mucosa colónica con pequeñas áreas blanquecinas en patrón tigroide o reticular, respetando el íleon terminal. Al tacto y endoscopia la válvula ileocecal de vista profunda es normal. Teniendo en cuenta la fuerte sospecha, ¿cuál de los siguientes es el factor etiológico fisiopatológico de este cuadro crónico?",
+    "options": [
+      "Abuso o consumo crónico de laxantes antracenicos o antraquinónicos (ej. Sen, Cáscara sagrada)",
+      "Depósito focal masivo subyacente colónico de pigmentos lipofuscínicos asociados post radioterapia",
+      "Metástasis submucosas severas multicéntricas difusas por melanoma metastásico primario de focos oculares",
+      "Uso de preparativos de bismuto subsalicilato de manera puramente aguda y temporal"
+    ],
+    "correctIndex": 0,
+    "explanation": "El hallazgo endoscópico clásico de mucosa colónica oscurecida de color pardo o leopardo se denomina Melanosis Coli. Este hallazgo es altamente específico para la identificación visual del abuso o mal uso crónico prolongado de laxantes estimulantes del grupo de derivados de la antraquinona (sen, aloe, frángula, ruibarbo).",
+    "fisiopato": "Las antraquinonas inducen daño en los enterocitos (apoptosis). Los macrófagos en la lámina propia fagocitan estos enterocitos moribundos acumulando enormes cantidades del pigmento lipofuscina (no es verdaderamente melanina), dándole el color pardo netamente delimitado en el colon.",
+    "clinicalPearl": "Melanosis Coli a la endoscopia + historia misteriosa de diarrea = uso crónico (y frecuentemente subrepticio o por desórdenes alimenticios) de laxantes del Senna/Antraquinonas.",
+    "guideline": "ASGE: The role of endoscopy in the management of patients with diarrhea.",
+    "whyWrong": {
+      "1": "Radioterapia suele generar telangiectasias, endarteritis obliterativa isquémica y marcada palidez fibrótica de la mucosa (Proctopatía por radiación), pero jamás un tinte difuso reticular pardo de toda la vasculatura.",
+      "2": "El melanoma produce metástasis de color completamente negro y forma netamente pseudopolipoidea o nodular focal exofítica (lesiones en ojo de perdiz), no mancha todo el tejido o área macroscópica plana difusamente.",
+      "3": "El bismuto tiñe pero colorea clásicamente de color muy oscuro o negro las deposiciones propiamente dichas en la luz de emergencia, no produce depósitos de pigmentos reticulados fijos o persistentes lavables endoscópicamente en macrófagos colónicos."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-diarrea-cronica-new-004",
+    "topic": "diarrea_cronica",
+    "difficulty": "Staff",
+    "text": "Un anciano presenta un cuadro pre-renal, debilidad fulminante y se detecta una masa vellosa extensa o de amplia base focal que abarca todo el recto distal sésil con alta producción de moco a través de la ampolla, provocando diarrea crónica severa. El síndrome bioquímico asociado invariablemente (Sindrome de McKittrick-Wheelock) se caracteriza por un agotamiento u depleción de un catión primordial sistémico ocasionado por secreción colónica masiva basal. ¿De qué catión o ión se trata principal y focalmente este masivo e incapacitante escape tumoral?",
+    "options": [
+      "Potasio (provocando profunda hipocalemia paralítica sistémica)",
+      "Calcio iónico (causando tetania e hipocalcemia secundaria)",
+      "Sodio puramente (provocando cuadros letales crudos de hiponatremia con edema cerebral severo)",
+      "Magnesio libre (provocando hipomagnesemia con prolongación del Q-T franca)"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Síndrome de McKittrick-Wheelock se describe en pólipos colorrectales vellosos excepcionalmente grandes hipersecratores, generando diarrea acuosa que agota sistemáticamente los depósitos de potasio de un paciente (hipokalemia severa) y produce azoemia o falla renal.",
+    "fisiopato": "Las células o túbulos hiperplásicos adenomatosos vellosos logran la secreción o deplesión anormal masiva hacia la luz colónica de prostaglandina E2, la cual dispara o exacerba altamente las bombas secretorias cloradas de las bases crípticas luminales provocando pérdida masiva isotónica donde el potasio es el guión más francamente comprometido.",
+    "clinicalPearl": "Diarrea crónica que es 'pura mucina' originaria + Potasio muy bajo inexplicable + insuficiencia renal letal en ancianos = Buscar de urgencia un tumor velloso gigante rectal.",
+    "guideline": "ASGE Guidelines for Endoscopic Removal of Large Polyps.",
+    "whyWrong": {
+      "1": "El calcio corporal basal no se excreta ni masivamente fuga por hiperplasias ni masas mucolipídicas distales letales en el intestino o adenomas del aparato.",
+      "2": "Si bien todos pierden electrolitos y algo de agua sodada orgánicamente isosmótica y fluída subyacente rectal en deposiciones acuosas, el rasgo clínico letal por la magnitud metabólica de la lesión descrita clásicamente es la deficiencia pura disfuncional y descontrolada crónica de Potasio.",
+      "3": "Hipo magnesia franca y cruda severa se vincula a uso o abuso excesivos de Inhibidores de Bombas o pérdida subyacente originariamente del asa descendente de Henle francas orgánicas pre o post renal, pero raramente por secresión coloidal adenomatosa focal velluda o letales mucinosas francas netas."
+    },
+    "pillar": "Mastery"
+  },
+  {
+    "id": "q-diarrea-cronica-new-005",
+    "topic": "diarrea_cronica",
+    "difficulty": "Fellow",
+    "text": "Se atiende a un paciente hipertenso tratado con olmesartán sistémico desde hace unos 2 años. Consulta por diarrea severa volumétrica y gran pérdida de peso. Su endoscopia alta revela que el duodeno exhibe franca atrofia del ribete vellositario, sugestiva o compatible por biopsias con una presunta enfermedad celíaca seronegativa, pero sus análisis tTG-IgA, IgG y HLA DQ2/DQ8 son absolutamente negativos. Para frenar de forma curativa o fisiopatológicamente la progresión y tratar este asueto crónico secretor celular, ¿cuál debe ser la primera actitud curativa a instaurar?",
+    "options": [
+      "Interrumpir el tratamiento antihipertensivo subyacente per se y valorar clínicamente si mejora su histología basal y diarrea en el seguimiento subsiguiente",
+      "Descartar un linfoma pre críptico oculto mediante quimioterapia endovenosa masiva empírica biológica temporal rápida.",
+      "Uso de corticosteroides tópicos masivos duodenales (ej., budesonida oral sistémica ciega) como prueba biológica para frenar atrofia celular.",
+      "Proceder con infusiones endovenosas ciegas de biológicos anti TNFa francamente empíricas basales generalizando cuadros."
+    ],
+    "correctIndex": 0,
+    "explanation": "La enteropatía perdedora o atrófica inducida selectivamente por olmesartán genera un cuadro que mimetiza fiel e idénticamente una enfermedad celíaca seronegativa, pero sin serlo, la retirada radical del fármaco causante basta para permitir la repoblación celular o curación completa.",
+    "fisiopato": "El daño epitelial atrófico e hipertrofia nodular de las criptas se relaciona a un efecto directo pro-apoptósico, celular, tóxico o mediado por mecanismos inmunes basolaterales a nivel del lecho luminal en intestino delgado proximal netamente provocado puramente por este ARA II subyacente.",
+    "clinicalPearl": "La clave diagnóstica es un contexto o fenotipo celíaco que es anticuerpos y HLA negativo con clínica de esteatorrea masoquista crónica basal letal y que toma activamente medicamentos de la presión arterial: El bloqueador Olmesartán es la respuesta.",
+    "guideline": "ACG Review series: Enteropathies Induced by Specific Drugs.",
+    "whyWrong": {
+      "1": "El inicio de pautas agresivas u oncológicas para la curación se obvia netamente porque los tumores rara vez mejoran o mueren sin erradicaciones estériles neoplásicas, lo que no aplica en toxicodermias entéricas a medicamentos.",
+      "2": "Budesonida (y otros esteroides sistémicos u tópicos) se requerirían en Sprue refractarios o reales casos estériles colagenosos, pero es inútil y perjudicial no frenar el estímulo u agente agresor tóxico directo en primera línea.",
+      "3": "Biologias inmunes (anti TNFa) no reparan enteropatías per se u orgánicas o isquémicas focales inducidas basocelulares o tóxicas masivas letales de sartan o bloqueos químicos luminales funcionales inducidas."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-diarrea-cronica-new-006",
+    "topic": "diarrea_cronica",
+    "difficulty": "Staff",
+    "text": "Se evalúa de manera sistémica a un hombre de mediana edad que padece dolor abdominal severo basal puramente posprandial ('angina intestinal', temor crónico al comer) recurrente hace varios meses, asociado a gran baja ponderal y deposiciones pastosas esporádicas. Tiene fuertes predictores a biológicamente presentar o engrosar daños o placas estériles en el segmento visceral arterial; ¿Qué estudio fisiológico radiológico directo funcional u basal u invasivo representa clásicamente el de mayor exactitud formal diagnóstico para confirmar la etiología de la Isquemia Mesentérica Crónica, considerándose históricamente su principal estándar en el calvario diagnóstico anatómico celular o letal?",
+    "options": [
+      "Angiografía (Angio-TAC o Tomografía u directa mesentéricos) de los grandes vasos abdominales",
+      "Colonoscopia per se focal en fosa iliaca explorando el ciego de letales y difusas zonas y focos crudos estériles de penumbra isquémica o de colitis del ángulo esplénico",
+      "Biopsia de intestino delgado ciega identificando o buscando puramente disfuncional enteritis masoquistas necrótica subyacentes isquémica.",
+      "Radiografía de base abdomen simple visualizando las famosas letales calcificaciones ateroscleróticas orgánicas biológicas basocelulares del eje iliaco focal per se"
+    ],
+    "correctIndex": 0,
+    "explanation": "El diagnóstico etiológico certero formal en Isquemia Mesentérica Crónica (sospechada por baja ponderal crónica, diarreas e intolerancias alimenatrias sitofóbicas dolorosas vasculares) exige visualizar con material de contraste franco los ostium y tractos proximales de los orígenes vasculares, requieriéndose preferencialmente de una Angiografía por tomografía (Angio-TC) de manera ambulatoria u oro estándar de angiografía tradicional.",
+    "fisiopato": "Las arterias mesentérica superior, inferior y tronco celíaco crónicamente sufren obstrucciones francas ostiales arterioscleróticas (requiriéndose estenosis masiva en al menos 2 de los 3 vasos para cruzar o romper francamente el gran mecanismo subyacente de derivación colateral arterial y dar clínica prandial sistémica).",
+    "clinicalPearl": "El signo de 'Angina intestinal' per se o temor crónico orgánico a consumir grandes volumenes o sólidos con esteatorrea letal por fallo de absorción capilar vellosa indica que los 3 grandes ejes vasculares sufren letales y generalizados paros hemodinámicos; de confirmarse estenosis ostiales crudas en la Angio-TAC buscar stent profilácticos.",
+    "guideline": "ACG Clinical Guidelines on Intestinal Ischemia.",
+    "whyWrong": {
+      "1": "La colonoscopía detectaría crónicamente 'colitis' de origen puramente isquémico focalizadas estériles y transitorias en zonas divisorias (watershed) basales de la flexura pero es normal en isquemias u asuetos orgánicos letales de vasos celíacos u mesentérica superior letal del Delgado masivo.",
+      "2": "Las biopsias mucosales de esteatorrea arrojarían datos y generalizantes funcionales inflamatorias secundarias muy puras inespecíficas a per se letales alteraciones o basolateral vellosos focales basales isquémicos difusos subyacentes celular ciegos masoquistas.",
+      "3": "Rx crudos estériles abdominal simple focal no tiene franca ninguna penetrancia diagnóstica o sensible letal, salvo que de milagros existan francas y puramente crudas pélvicas masivas basocelular general o basocelulares calcificaciones ostiales aorta sistémica (e insuficiente e imperceptibles general a los orígenes francos o luz del letal y pura estéril de ramas mesentéricas)."
+    },
+    "pillar": "Common Cases"
+  },
+  {
     "id": "q-anticoagulados-001",
     "topic": "endoscopia_anticoagulados",
     "difficulty": "Staff",
@@ -56,7 +194,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
       "Uso de antibióticos profilácticos intravenosos (ej. Ceftriaxona o Quinolonas) al ingreso, preferentemente por 5 a 7 días",
       "Perfusión estrictamente precoz y profiláctica universal de Terlipresina endovenosa para detener la translocación endotoxínica esplácnica",
       "Administración profiláctica de factores de coagulación crioprecipitados masivos para contrarrestar la isquemia mesentérica letal pre",
-      "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital letálico estelar"
+      "Descompresión urgente universal sistemática con TIPS transyugular ciego en todo paciente que ingresa al hospital con compromiso vital"
     ],
     "correctIndex": 0,
     "explanation": "El sangrado variceal en un cirrótico incrementa drásticamente el paso de bacterias desde el intestino (translocación bacteriana), lo cual lleva a infecciones letales como peritonitis bacteriana espontánea (PBE) o sepsis, y resangrado temprano.",
@@ -87,9 +225,9 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "clinicalPearl": "Diarrea de hospital + leucocitosis (ej. > 15K) o falla renal incipiente = Cuadro severo por C. difficile. El tratamiento es Vanco ORAL o Fidaxomicina. El Metronidazol ya NO es línea inicial salvo desabastecimiento.",
     "guideline": "IDSA/SHEA y ACG Guidelines for Clostridioides difficile Infection.",
     "whyWrong": {
-      "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es preferida estelar como diagnóstico de imagen.",
+      "1": "La colonoscopia en un cuadro grave aumenta significativamente el riesgo letal de perforación iatrogénica del colon isquémico/tóxico inflamado; si hay sospecha de megacolon, la radiografía o TAC es de elección como diagnóstico de imagen.",
       "2": "El Metronidazol sea ORAL o IV tiene una eficacia inferior comprobada comparado a Vanco o Fidaxo en los estudios basales crudos; su uso actual fue relegado y no es primera línea ni recomendación prioritaria pura para un cuadro severo puro (>15,000 leucocitos).",
-      "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar el clostridium luminal salvaguarda el colon asintomático letálico generalizando vital pre."
+      "3": "Nunca se debe retrasar la terapia vital o profilaxis entérica esperando coprocultivos que duran 72 horas per se, y ante la fuerte sospecha sistémica, frenar la infección luminal previene la progresión a cuadros más graves como el megacolon tóxico."
     },
     "pillar": "Board Prep"
   },
@@ -152,7 +290,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     ],
     "correctIndex": 0,
     "explanation": "Los anticuerpos antitransglutaminasa tisular IgA son universalmente indicados como el test de cribado inicial más sensible, costo-efectivo y preciso para adultos.",
-    "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando brutalmente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente general produce autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
+    "fisiopato": "La enzima transglutaminasa tisular en la lámina propia deamina la gliadina del gluten incrementando marcadamente su afinidad por el HLA-DQ2/8; los linfocitos B del paciente producen autoanticuerpos IgA contra dicha enzima desencadenando destrucción enterocitaria focal.",
     "clinicalPearl": "Sospecha de celiaquía = Pedir screening inicial con IgA total + tTG-IgA. Si la IgA total es deficiente, recién pedir el panel versión IgG (tTG IgG / DGP IgG).",
     "guideline": "ACG/AGA Clinical Guidelines on the Diagnosis and Management of Celiac Disease.",
     "whyWrong": {
@@ -186,1068 +324,10 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Common Cases"
   },
   {
-    "id": "q-cancer-esofago-008",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #8: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-009",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #9: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-010",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #10: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-011",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #11: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-012",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #12: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-013",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #13: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-014",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #14: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-015",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #15: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-016",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #16: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-017",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #17: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-018",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #18: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-019",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #19: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-020",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #20: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-021",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #21: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-022",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #22: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-023",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #23: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-024",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #24: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-025",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #25: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-026",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #26: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-027",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #27: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-028",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #28: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-029",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #29: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-cancer-esofago-030",
-    "topic": "cancer_esofago",
-    "difficulty": "Fellow",
-    "text": "Caso Clínico Oncológico #30: En un paciente de 65 años con diagnóstico reciente de cáncer de esófago, ¿qué factor histopatológico y de etapificación define principalmente su pronóstico y conducta terapéutica a seguir?",
-    "options": [
-      "El grado de invasión en la pared esofágica (T) y el compromiso linfático regional (N)",
-      "La presencia concomitante de una hernia hiatal no complicada",
-      "Historia de infección gástrica por Helicobacter pylori en la biopsia",
-      "Desarrollo de infiltrado eosinofílico leve en mucosa próxima"
-    ],
-    "correctIndex": 0,
-    "explanation": "El pronóstico del cáncer de esófago depende fundamentalmente del estadio TNM, en especial la profundidad de invasión en las capas de la pared (T) y la afectación ganglionar o linfática (N).",
-    "fisiopato": "La diseminación submucosa y metastásica temprana es muy común debido a la rica e interconectada red linfática propia del esófago.",
-    "clinicalPearl": "Todo cáncer de esófago de diagnóstico reciente requiere estadiaje meticuloso con ecoendoscopia (USE) para evaluar T y N antes de operar o dar neoadyuvancia.",
-    "guideline": "NCCN Guidelines for Esophageal and Esophagogastric Junction Cancers.",
-    "whyWrong": {
-      "1": "La hernia hiatal es un factor de riesgo para ERGE, pero no define directamente el estadiaje pronóstico oncológico.",
-      "2": "H. pylori podría tener un efecto paradójico y no define de ninguna forma el pronóstico o estadiaje de la neoplasia esofágica.",
-      "3": "La esofagitis eosinofílica aguda o crónica no es una lesión precursora del adenocarcinoma ni afecta el TNM."
-    },
-    "pillar": "Common Cases"
-  },
-  {
     "id": "q-ulcera-peptica-007",
     "topic": "ulcera_peptica",
     "difficulty": "Fellow",
     "text": "Escenario Clínico Úlcera Péptica #7: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-008",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #8: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-009",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #9: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-010",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #10: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-011",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #11: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-012",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #12: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-013",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #13: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-014",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #14: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-015",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #15: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-016",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #16: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-017",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #17: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-018",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #18: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-019",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #19: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-020",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #20: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-021",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #21: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-022",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #22: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-023",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #23: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-024",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #24: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-025",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #25: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-026",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #26: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-027",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #27: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-028",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #28: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-029",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #29: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
-    "options": [
-      "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
-      "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
-      "Administración de IBP en bolo intravenoso inmediato sin realizar ninguna intervención hemostática",
-      "Derivación inmediata a cirugía gástrica de urgencia sin manipular la lesión endoscópicamente"
-    ],
-    "correctIndex": 0,
-    "explanation": "Las úlceras con sangrado activo (Forrest Ia arterial o Ib babeante) tienen alto riesgo de morbilidad y requieren tratamiento endoscópico hemostático urgente, idealmente empleando terapia dual.",
-    "fisiopato": "La erosión progresiva de la mucosa gástrica o duodenal alcanza y compromete una arteria o vaso submucoso, provocando hemorragia arterial sostenida u oxidante babeante que la hemostasia natural no logra detener.",
-    "clinicalPearl": "Úlcera Forrest Ib (sangrado babeante activo) = Terapia dual endoscópica (Inyección + Clip o cauterio) seguida obligatoriamente de IBP en infusión continua.",
-    "guideline": "ACG/ASGE Guidelines on Management of Non-variceal Upper Gastrointestinal Bleeding.",
-    "whyWrong": {
-      "1": "El lavado solo aclara el campo de visión momentáneamente; la mera observación conlleva un altísimo riesgo de resangrado inminente, shock hipovolémico y muerte.",
-      "2": "El manejo médico con IBP es un adyuvante vital preventivo y estabilizador, pero no sustituye en ningún escenario el cierre hemostático primario del vaso que está sangrando en vivo.",
-      "3": "La cirugía de urgencia ha quedado únicamente reservada para sangrados masivos refractarios a la terapia endoscópica dual óptima o ante perforaciones comprobadas."
-    },
-    "pillar": "Common Cases"
-  },
-  {
-    "id": "q-ulcera-peptica-030",
-    "topic": "ulcera_peptica",
-    "difficulty": "Fellow",
-    "text": "Escenario Clínico Úlcera Péptica #30: Un hombre de 55 años se presenta con HDA. En la endoscopia se evidencia una úlcera con sangrado activo babeante en bulbo duodenal (Clasificación Forrest Ib). ¿Cuál es el manejo endoscópico recomendado de primera línea?",
     "options": [
       "Terapia dual endoscópica combinada (Inyección de epinefrina más un método térmico o mecánico)",
       "Irrigación exclusiva con suero fisiológico frío, biopsia y observación cuidadosa",
@@ -1352,7 +432,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "clinicalPearl": "Paciente con resección de íleon (pero con colon intacto) que debuta con piedras en el riñón y dolor: es hiperoxaluria secundaria a mala absorción intestinal (saponificación del calcio por las sales y ácidos hídricos lipídicos en colon).",
     "guideline": "AGA Clinical Guidelines on Management of Short Bowel Syndrome.",
     "whyWrong": {
-      "1": "El colesterol alto u las placas estelares no son secuelas orgánicas u clásicas per se funcionales a los intestinos cortos ciegos, el metabolismo graso es secretado, no es acumulado.",
+      "1": "El colesterol alto o las placas de ateroma no son secuelas orgánicas clásicas de los intestinos cortos, el metabolismo graso se ve afectado por malabsorción, no por acumulación sistémica primaria.",
       "2": "Una poliposis adenomatosa y sus formaciones focales letales basales derivan de bases genéticos claros familiares poliposomas orgánicos tumorales francos, en nada atribuible a las resecciones o cirugías.",
       "3": "La encefalopatía es metabólica amoniacal o general renal ureica crónica por cirrosis hígados per se, no es consecuencia clínica del oxalato ciego."
     },
@@ -1463,7 +543,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     ],
     "correctIndex": 0,
     "explanation": "La diarrea diabética de origen neuropático grave, secundaria a la denervación simpática o vagal entérica, ha demostrado frenarse muy efectivamente usando un agonista alfa-2 adrenérgico de acción sistémica como la clonidina.",
-    "fisiopato": "La diabetes daña al tono presináptico adrenérgico visceral inhibitorio del complejo motor mientérico. Al utilizar Clonidina, se estimula activamente receptores alfa inhibitorios, reduciendo secreción iónica e incrementando el tiempo del tránsito general de mucosa compensatoriamente.",
+    "fisiopato": "La neuropatía autonómica diabética puede provocar daño sistemático de la inervación simpática inhibitoria (adrenérgica) del plexo mientérico, favoreciendo la aparición de diarrea. La clonidina es un agonista alfa-2 adrenérgico que estimula directamente los receptores presinápticos en el sistema nervioso entérico, lo cual incrementa el tiempo de absorción, disminuye la secreción iónica de la mucosa colónica y prolonga el tránsito intestinal crónico.",
     "clinicalPearl": "Diarrea diabética intratable o autonómica, si loperamida e intentos empíricos se agotan: la prueba de oro en los boards es iniciar prueba con clonidina y evaluar el asueto defecatorio sistémico.",
     "guideline": "ACG Guidelines for Diabetic neuropathy and related chronic diarrhea.",
     "whyWrong": {
@@ -1480,13 +560,13 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "text": "¿Cuál es en la práctica clínica el estándar confirmatorio inicial actual, validado y altamente específico recomendado en forma de tamizaje masivo para corroborar clínicamente franca y fétida esteatorrea a nivel de las heces, derivando o descartando la etiología y de insuficiencias francas de etiología u del exocrina del páncreas crónico?",
     "options": [
       "Determinación de la Elastasa Fecal tipo 1 en heces",
-      "Determinación de la Calprotectina fecal del paciente u niveles estelares neutrofílicos puros",
+      "Determinación de la Calprotectina fecal del paciente o niveles de calprotectina elevados",
       "Test directo d-Xilosa sistémica basales para pre capturas urinarias puras hialinas",
       "Tintes directos basales como Rojo Congo para proteínas colónicas focales"
     ],
     "correctIndex": 0,
     "explanation": "La elastasa fecal 1 humana es el mejor método general indirecto, barato y fiable de diagnóstico clínico altamente específico actualmente que ha desplazado casi globalmente al incómodo test de recolección Van de Kamer a las 72 horas fecales para testear y rastrear pérdida exócrina crónica.",
-    "fisiopato": "Durante procesos severos (ej, la pancreatitis que fibroma sus glóbulos acinares pancreáticos per se distales crónicos), los decaimientos de sus excreciones globales intraluminales reducen bruscamente el paso de elastasa 1 al colon de tránsito inalterada, cayendo a valores críticos inferiores de < 200.",
+    "fisiopato": "En procesos que causan daño acinar severo y crónico (como la pancreatitis crónica con fibrosis progresiva del tejido pancreático), la secreción exocrina disminuye drásticamente. Dado que la elastasa-1 pancreática humana no se degrada durante su tránsito intestinal, esta reducción en la secreción acinar se refleja directamente como niveles persistentemente bajos de elastasa en heces (< 200 mcg/g), confirmando con alta especificidad la insuficiencia pancreática exocrina.",
     "clinicalPearl": "Si sospechas esteatorrea, pide Elastasa Fecal (y no Calprotectina, que sirve para EII inflamatorias). Valores fecales menores a <100 confirman insuficiencia y requieren suplemento PERT urgente.",
     "guideline": "ACG/AGA Clinical Guidelines on Pancreatic Exocrine Insufficiency.",
     "whyWrong": {
@@ -3084,29 +2164,6 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Must-Know"
   },
   {
-    "id": "q-64",
-    "topic": "vias_biliares",
-    "difficulty": "Fellow",
-    "text": "¿Cuál es la tríada de Charcot?",
-    "options": [
-      "Dolor, Ictericia, Masa palpable",
-      "Fiebre, Ictericia, Dolor HD",
-      "Vómitos, Dolor, Ictericia",
-      "Fiebre, Sepsis, Choque"
-    ],
-    "correctIndex": 1,
-    "explanation": "Fiebre, ictericia y dolor en hipocondrio derecho definen la tríada de Charcot para colangitis.",
-    "fisiopato": "Refleja la infección de la bilis estancada bajo presión.",
-    "clinicalPearl": "La péntada de Reynolds añade choque y compromiso de conciencia.",
-    "guideline": "Manual Chileno 2025.",
-    "whyWrong": {
-      "0": "Sugerente de cáncer.",
-      "2": "Inespecífico.",
-      "3": "Partes de la péntada."
-    },
-    "pillar": "Must-Know"
-  },
-  {
     "id": "q-65",
     "topic": "vias_biliares",
     "difficulty": "Staff",
@@ -3174,29 +2231,6 @@ export const PRELOADED_QUESTIONS: Question[] = [
       "3": "Solo terapéutica si el sangrado es masivo."
     },
     "pillar": "Must-Know"
-  },
-  {
-    "id": "q-68",
-    "topic": "motores_esofago",
-    "difficulty": "Fellow",
-    "text": "¿Cuál es el hallazgo manométrico indispensable para el diagnóstico de Acalasia según Chicago 4.0?",
-    "options": [
-      "Ausencia de peristalsis",
-      "Presión de relajación integrada (IRP) elevada",
-      "Contracciones prematuras",
-      "Espasmo esofágico"
-    ],
-    "correctIndex": 1,
-    "explanation": "La relajación incompleta del esfínter esofágico inferior (IRP elevado) es el requisito sine qua non.",
-    "fisiopato": "Se produce por la pérdida de neuronas inhibidoras en el plexo mientérico de Auerbach.",
-    "clinicalPearl": "Si el IRP es normal, no puede ser acalasia clásica.",
-    "guideline": "Chicago Classification 4.0.",
-    "whyWrong": {
-      "0": "Se ve en acalasia pero no es lo que define la falla de relajación.",
-      "2": "Define acalasia tipo III.",
-      "3": "Otra entidad."
-    },
-    "pillar": "Board Prep"
   },
   {
     "id": "q-69",
@@ -3956,29 +2990,6 @@ export const PRELOADED_QUESTIONS: Question[] = [
       "3": "Aún no es estándar de primera línea mundial única."
     },
     "pillar": "Mastery"
-  },
-  {
-    "id": "q-102",
-    "topic": "h_pylori",
-    "difficulty": "Staff",
-    "text": "¿Qué prueba diagnóstica es de elección para confirmar la erradicación de H. pylori?",
-    "options": [
-      "Serología IgG",
-      "Test de aliento con C13 o Antígeno en deposiciones (monoclonal)",
-      "Endoscopia con biopsia obligatoria",
-      "PCR en saliva"
-    ],
-    "correctIndex": 1,
-    "explanation": "Ambos test funcionales son altamente sensibles y específicos para confirmar el éxito del tratamiento.",
-    "fisiopato": "Detectan la presencia de bacterias viables o sus productos metabólicos activos.",
-    "clinicalPearl": "Recuerde esperar 4 semanas tras antibióticos y 2 tras IBP.",
-    "guideline": "Manual Chileno 2025 / Maastricht VI.",
-    "whyWrong": {
-      "0": "Permanece positiva por meses/años tras erradicación.",
-      "2": "Innecesariamente invasivo si no hay otra indicación.",
-      "3": "No validado clínicamente."
-    },
-    "pillar": "Common Cases"
   },
   {
     "id": "q-103",
@@ -6854,29 +5865,6 @@ export const PRELOADED_QUESTIONS: Question[] = [
       "3": "Es un estándar de alta resolución moderno."
     },
     "pillar": "Mastery"
-  },
-  {
-    "id": "q-228",
-    "topic": "hdb",
-    "difficulty": "Staff",
-    "text": "¿Cuál es la causa más frecuente de Rectorragia indolora en el adulto mayor de 60 años?",
-    "options": [
-      "Diverticulosis colónica",
-      "Angiodisplasia",
-      "Hemorroides internas",
-      "Cáncer colorrectal"
-    ],
-    "correctIndex": 0,
-    "explanation": "La diverticulosis es la causa #1 de sangrado masivo e indoloro en este grupo etario.",
-    "fisiopato": "Herniación de la mucosa a través de los vasos rectos que se estiran y rompen.",
-    "clinicalPearl": "El 75% de los sangrados diverticulares se autolimitan.",
-    "guideline": "Manual Chileno 2025.",
-    "whyWrong": {
-      "1": "Causa sagrado venoso/capilar, suele ser menos masivo y más crónico.",
-      "2": "Suele causar hematoquecia tras el esfuerzo defecatorio, no rectorragia masiva.",
-      "3": "Suele ser oculto o cambios en el hábito, no típicamente hemorragia aguda masiva."
-    },
-    "pillar": "Common Cases"
   },
   {
     "id": "q-229",
@@ -9972,13 +8960,13 @@ export const PRELOADED_QUESTIONS: Question[] = [
     ],
     "correctIndex": 0,
     "explanation": "Los dolores tipo cólico recurrente post-colecistectomía episódicos acompañados de anormalidades en transaminasas plantean como alta presunción la Disfunción o discinesia/estenosis del Esfínter de Oddi, al causar elevación de las presiones coledocianas de manera paroxística.",
-    "fisiopato": "La Disfunción del esfínter causa obstáculo funcional para drenar, y la Manometría a veces en el CPRE evidencia las presiones basales francamente hipertróficas o espasmos estelares puros que reavivan agudamente todo este dolor insidioso.",
+    "fisiopato": "La Disfunción del esfínter causa obstáculo funcional para el drenaje, y la Manometría en el CPRE suele evidenciar presiones basales elevadas o espasmos que desencadenan el dolor biliar.",
     "clinicalPearl": "El dolor post-colecistectomía recurrente severo sin hallazgos obvios es clave de sospecha para Desórdenes de la vía biliar de Roma IV o DEO tipo funcional formal doloroso puramente esfinteriano subyacente.",
     "guideline": "Criterios de Roma IV de Trastornos Biliares y Pancreáticos",
     "whyWrong": {
       "1": "El SII no justifica las alzas agudas temporales de ALT/AST sistémicas formales hepáticas reportadas del caso.",
       "2": "La eco abdominal detecta fatal a microlitiasis y en un árbol de conductos subyacente normal y no dilatado mas isótropo al daño en orígenes microcósmicos basales; por ello, disfunción biliar lidera la etiología.",
-      "3": "Una pancreatitis generaría cambios en lipasa general aguda sintomática constante que acá no son la primicia estelar biliar dolorosa aguda referenciada principal a los episodios reportados crónicamente insuflados en la ampolla."
+      "3": "Una pancreatitis generaría cambios en lipasa general aguda sintomática constante que acá no son la causa principal del cuadro de dolor biliar agudo referenciado principal a los episodios reportados."
     },
     "pillar": "Mastery"
   },
@@ -10009,11 +8997,11 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "id": "q-dolor-abdominal-011",
     "topic": "dolor_abdominal",
     "difficulty": "Staff",
-    "text": "Un varón de 50 años alcohólico activo consulta por epigastralgia crónica insidiosa que irradia en cinturón a la región dorsal y empeora al comer y en decúbito. Tuvo gran pérdida de peso y se detecta esteatorrea y diabetes reciente de novo. La TC evidencia calcificaciones estelares corporales parenquimatosas y dilataciones disociadas del conducto central pancreático. Sumado a la agresión estructural local y estenótica causante fundamental de aumento de la presión tisular y compresión isquémica nociva; ¿Qué mecanismo neurobiológico intrínseco de progresión de la enfermedad contribuye masivamente al dolor intratable subyacente reportado típicamente en esta letal entidad pancreática crónica?",
+    "text": "Un varón de 50 años alcohólico activo consulta por epigastralgia crónica insidiosa que irradia en cinturón a la región dorsal y empeora al comer y en decúbito. Tuvo gran pérdida de peso y se detecta esteatorrea y diabetes reciente de novo. La TC evidencia calcificaciones parenquimatosas y dilataciones del conducto central pancreático. Sumado a la agresión estructural local y estenótica causante fundamental de aumento de la presión tisular y compresión isquémica nociva; ¿Qué mecanismo neurobiológico intrínseco de progresión de la enfermedad contribuye masivamente al dolor intratable subyacente reportado típicamente en esta entidad pancreática crónica?",
     "options": [
       "Inflamación persistente y desestructurante con infiltración leucocitaria e hipertrofia y perineuritis primaria severa de los nervios sensoriales intrapancreáticos intrínsecos",
-      "Obturación y espasmo crónico hipertrofiado basal letálico del píloro subyacente duodenal y ciego duodenal como evento sincrónico y reflejo originador global del calvario",
-      "Toxicidad química pura general isquémica secundaria de arterias celíacas estriadas colaterales de derivación general por su adicción estelar al etanol base global crónica",
+      "Obturación y espasmo crónico del esfínter de Oddi",
+      "Toxicidad química pancreática secundaria al consumo crónico de etanol",
       "Necrosis por deficiencia masiva focal linfocítica subcortical de su plexo mesentérico basal asociado de las asas proximales disfuncionales entéricas sincrónicamente crudas subyacentes"
     ],
     "correctIndex": 0,
@@ -10023,7 +9011,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "guideline": "ACG Clinical Guideline for Chronic Pancreatitis",
     "whyWrong": {
       "1": "Gastroparesia no genera este letal calvario inflamatorio hiperálgico intrapancreático crudo base doloroso nociceptivo en esta entidad clásica del bebedor crónico basal puro isquémico de la entidad de fondo.",
-      "2": "No hay toxicidad ni micro isquemias oclusivas puras como un evento primario doloroso en este engrosamiento neuropático estelar.",
+      "2": "No hay toxicidad ni microisquemias oclusivas puras como un evento primario doloroso en este cuadro.",
       "3": "Deficiencias plexales son inespecíficas del origen cráneo-caudal en un marco pancreático puramente originariamente crudo patológico."
     },
     "pillar": "Common Cases"
@@ -10737,125 +9725,791 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "whyWrong": {
       "1": "No causa aneurismas físicos fijos ni rompe paredes de grandes vasos por debilitamiento.",
       "2": "ELA toma años y da debilidad motora periférica degenerativa, no es inducida aguda subitamente en 48 horas.",
-      "3": "La TVP es mas común en EII, pero de sagital y cerebral puramente venosa no es la toxicidad estelar o firma biológica de la inhibición calcineurínica que hace PRES."
+      "3": "La TVP es mas común en EII, pero la afectación de senos venosos cerebrales es un efecto adverso raro asociado a inhibidores de la calcineurina o al cuadro sistémico."
     },
     "pillar": "Common Cases"
   },
   {
-    "text": "Escenario Clínico: Paciente masculino de 68 años con antecedente de Fibrilación Auricular no valvular en tratamiento con Apixabán, quien se someterá a una CPRE electiva por coledocolitiasis con planeación de esfinterotomía biliar. Función renal normal (CrCl 75 mL/min). ¿Cuál es el manejo periprocedimiento más apropiado según las guías conjuntas ASGE/ESGE?",
+    "id": "q-dx-001",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "Enumere 5 causas de colestasis de origen intrahepático (no obstructivo) que deben considerarse en el diagnóstico diferencial inicial de un patrón bioquímico colestásico.",
     "options": [
-      "Suspender Apixabán 24 horas antes del procedimiento y reiniciar 48 horas después, sin puente con HBPM.",
-      "Suspender Apixabán 2 a 3 días (48-72 horas) antes, sin puente con HBPM, y reiniciar 2-3 días después valorando hemostasia.",
-      "Suspender Apixabán 5 días antes, iniciar puente con HBPM a dosis terapéutica, y reiniciar al día siguiente.",
-      "Continuar Apixabán hasta la mañana del procedimiento ya que es un procedimiento de bajo riesgo de sangrado."
-    ],
-    "correctIndex": 1,
-    "explanation": "La CPRE con esfinterotomía es un procedimiento de ALTO RIESGO de hemorragia. En pacientes con DOACs (como Apixabán) y con función renal normal, las guías de la ASGE recomiendan suspender el fármaco 48 a 72 horas previas al procedimiento de alto riesgo. El puenteo con heparina (HBPM) no está recomendado rutinariamente para DOACs por sus rápidos on/off. Se debe reiniciar 2 a 3 días (48-72h) tras el procedimiento dependiendo de si la hemostasia se ha validado.",
-    "fisiopato": "El apixabán es un inhibidor directo y altamente selectivo del factor Xa. Su vida media es de ~12 horas en función renal normal. Al suspenderlo ~72 horas antes se garantiza el aclaramiento de más de ~5-6 vidas medias, lo que lleva el efecto anticoagulante remanente a menos del 3%, ideal para procedimientos en áreas muy vascularizadas como la papila de Vater (irrigada por arteria retroduodenal o pancreaticoduodenal superior).",
-    "topic": "endoscopia_anticoagulados"
-  },
-  {
-    "text": "Escenario Clínico: Acude paciente de 55 años portador de un stent liberador de fármacos (DES) en arteria coronaria descendente anterior colocado hace 3 meses tras un IAM. Actualmente toma Aspirina (81 mg) y Ticagrelor (90 mg bid). Tiene agendada una polipectomía de un adenoma aserrado sésil de 3 cm en ciego en 4 semanas. ¿Qué conducta es la adecuada basada en las pautas cardiológicas y de endoscopia actuales?",
-    "options": [
-      "Realizar el procedimiento sin alterar el esquema antiagregante DAPT debido al alto riesgo embólico provocado por el DES reciente.",
-      "Suspender Aspirina y Ticagrelor durante 5-7 días para realizar la polipectomía para evitar sangrado masivo.",
-      "Posponer la polipectomía proctológica al mínimo vital de 6 meses post-DES si el procedimiento es electivo; si debe hacerse, suspender ticagrelor 3-5 días antes, manteniendo la aspirina.",
-      "Sustituir el ticagrelor temporalmente con clopidogrel para lograr menor afinidad de unión y proceder."
-    ],
-    "correctIndex": 2,
-    "explanation": "Una polipectomía mayor a 1 cm (especialmente 3 cm en ciego, alto riesgo) es de ALTO RIESGO de sangrado. Dado que tiene un DES reciente (< 6 meses en síndrome coronario agudo), el riesgo trombótico/isquémico es muy alto al suspender el inhibidor P2Y12 (Ticagrelor). La recomendación principal es DIFERIR terapias electivas gástricas o colonoscópicas hasta después de 6 meses (ideal 12 en SCA). Si se debe hacer obligatoriamente, se mantiene la aspirina en todo momento, pero el ticagrelor se debe suspender con 3-5 días de antelación.",
-    "fisiopato": "El ticagrelor se une de forma reversible pero rápida y potente al receptor P2Y12 plaquetario. Vida media es de 7-9 horas, requiriendo 3-5 días para recuperar suficiente función plaquetaria de novo para prevenir hemorragia. La reepitelización endotelial completa de un DES moderno puede tardar meses (riesgo de trombosis intrastent aguda u subaguda catastrófica si se interrumpe la doble terapia tempranamente, por falta de endotelio vascular maduro formador de NO y prostaciclinas natural sobre el stent).",
-    "topic": "endoscopia_anticoagulados"
-  },
-  {
-    "text": "Paciente de 72 años en profilaxis con Clopidogrel crónico por un ACV isquémico antiguo. Presenta un episodio perdedor de sangre oscura. Se endoscopiza de urgencia hallando una úlcera duodenal cara posterior con un vaso visible (Forrest IIa). Se logra hemostasia usando termocoagulación + clipaje. ¿Cuándo es ideal reiniciar el tratamiento antiagregante?",
-    "options": [
-      "Inmediatamente (el mismo día), dado el riesgo altísimo neurológico y habiendo la úlcera sido mecánicamente asegurada.",
-      "Al menos 7 a 10 días tras el evento, evitando que los clips se caigan por efecto antiplaquetario.",
-      "En cuanto haya evidencia clínica de hemostasia, normalmente a los 1-3 días tras el procedimiento hemostático primario exitoso.",
-      "No reiniciar terapia antiplaquetaria en este paciente; cambiarlo a un anticoagulante directo profiláctico."
-    ],
-    "correctIndex": 2,
-    "explanation": "No reanudar el tratamiento antiagregante (AAS o P2Y12) aumenta el riesgo de isquemia neurovascular/CV, doblando el riesgo de muerte global, a pesar de que el reinicio temprano aumenta el riesgo de resangrado en un margen estrecho. Las guías internacionales sugieren la reanudación del antiagregante 1 a 3 días después de lograr exitosamente hemostasia de una úlcera.",
-    "fisiopato": "Un vaso expuesto en la base de la úlcera ha perdido sus mecanismos vasoconstrictores locales y es muy susceptible a re-sangrar si la reparación endotelial mediante tapón plaquetario y andamiaje de fibrina está comprometido. El clopidogrel, al inhibir P2Y12 interfiere con la estabilización plaquetaria (inhibiendo la amplificación regulada por ADP); no obstante, pasado el periodo crítico inicial de 72 h (sostenido con endoscopia dual u mecánica + IV PPI), se logran estabilizar las biopelículas iniciales permitiendo restaurar la agregación requerida a nivel extra-gástrico sin desencadenar hemorragia excesiva local.",
-    "topic": "endoscopia_anticoagulados"
-  },
-  {
-    "text": "Femenina de 34 años con Colitis Ulcerosa Crónica (CUC) extensa reactivada. Se ha documentado resistencia clínica al Vedolizumab tras 3 infusiones y síntomas persistentes. Presenta nivel bajo de albúmina (2.8 g/dL) y PCR elevada, se plantea Infliximab (pauta acelerada de inducción). ¿A qué complicación se debe estar particularmente alerta si recibe este régimen acelerado?",
-    "options": [
-      "Linfoma hepatoesplénico de células T inmediatamente en las primeras dos semanas.",
-      "Inmunogenicidad acelerada, resultando en reacciones a infusión severas o pérdida de respuesta.",
-      "Estenosis esofágica inducida por la alta unión del TNF circulante en todo el tracto gastrointestinal superior.",
-      "Un evento coronario isquémico paradójico debido al Infliximab."
-    ],
-    "correctIndex": 1,
-    "explanation": "El esquema acelerado de IFX se utiliza en colitis aguda grave (vg., dosis de 5-10 mg/kg en los días 0, 5, y 15). Un aclaramiento rápido preexistente del IFX (por TNF sink, hipoalbuminemia importante y proteolisis en colon) predice baja exposición. Debido al aclaramiento rápido y los niveles séricos subterapéuticos continuos, este ambiente es ideal para la producción de anticuerpos anti-Infliximab (ATI), llevando a mayor pérdida de respuesta rápida o reacciones transfusionales.",
-    "fisiopato": "La CUC perdedora de proteínas causa fuga capilar, alta expresión del receptor de reciclamiento FcRn saturado, lo que disminuye la vida media de anticuerpos monoclonales monoclonales (IgG1). Un bajo nivel valle («trough») de infliximab deja la porción quimérica murina expuesta sin neutralizar antígenos blanco, promoviendo el reconocimiento por linfocitos T cooperadores y B para formar anticuerpos neutralizantes (inmunogenicidad endógena).",
-    "topic": "eii_avanzada"
-  },
-  {
-    "text": "Paciente de 25 años con Enfermedad de Crohn ileocolónica fistulizante. Ha sido manejado con metotrexato, y se decide escalamiento a un inhibidor selectivo de JAK (ej., Upadacitinib). ¿Cuál de los siguientes es un efecto adverso característico y por lo general dependiente de la dosis o clase, que demanda monitorización lipídica o hematológica estrecha?",
-    "options": [
-      "Reactividad severa inmediata tipo anafilaxia por el primer paso.",
-      "Reactivación agresiva a Herpes Zoster, hiperlipidemia venosa y tromboembolismos venosos.",
-      "Cardiomiopatía dilatada progresiva por inhibición de síntesis contráctil de actina.",
-      "Poliposis hiperplásica reactiva diseminada."
-    ],
-    "correctIndex": 1,
-    "explanation": "Los inhibidores de JAK (como Tofacitinib o Upadacitinib) conllevan advertencias de recuadro negro por ciertos de sus efectos pleiotrópicos, entre ellos Herpes Zóster (por mermar señalización local T/NK e inf. celular), aumento de LDL y HDL dependiente de la dosis, y un incremento en la tasa de Tromboembolismo Venoso en cohortes post-market/artritis reumatoide sobre todo en poblaciones de riesgo.",
-    "fisiopato": "El gen JAK cataliza la fosforilación de STAT, que al translocarse medía funciones críticas de la respuesta inmune, pero también modula la expresión lipoproteína en los macrófagos y la depuración del colesterol, además inhiben subfamilias inmunitarias víricas que suprimen permanentemente al VZV latente en los ganglios dorsales, permitiendo reactivaciones espontáneas independientemente del estado inmunitario local basal.",
-    "topic": "eii_avanzada"
-  },
-  {
-    "text": "Durante la realización de un procedimiento endoscópico rutinario (Veda) bajo sedación con Propofol a cargo del anestesiólogo, a un varón de 40 años obesos con SAOS no tratado. El paciente sufre depresión respiratoria que progresa a hipoxia severa y, secundariamente, a paro cardiorrespiratorio en Asistolia confirmada en monitor principal. ¿Bajo el protocolo ACLS/SVA vigente, cuál de estas medidas resulta INAPROPIADA de forma inicial?",
-    "options": [
-      "Aplicación de Compresiones Torácicas (RCP) continuas y efectivas casi sin pausa.",
-      "Administración inmediata de Adrenalina 1mg (intravenoso o intraóseo) repitiendo c/3-5 minutos.",
-      "Aseguramiento avanzado inmediato invasivo de vía aérea utilizando intubación orotraqueal prioritaria sobre las compresiones.",
-      "Buscar causas reversibles (las '5 H y 5 T', incluyendo hipoxia aguda periprocedimiento)."
-    ],
-    "correctIndex": 2,
-    "explanation": "En asistolia (y toda parada cardiaca), las guías de ACLS priorizan la reanimación cardiopulmonar precoz con compresiones torácicas eficaces ('push hard, push fast', minimizar interrupciones) y Adrenalina temprana por encima de la intubación invasiva, que podría retrasar la reanimación hemodinámica sistémica. La ventilación efectiva inicialmente suele ser lograda con bolsa-mascarilla.",
-    "fisiopato": "En Asistolia no hay ritmo eléctrico o shockeable presente. La fisiología requerida desesperadamente es lograr flujo coronario y flujo cerebral perfuncional y promover excitabilidad eléctrica ventricular. La Adrenalina provee alfa-1 vasotensión que presuriza la raíz aórtica alimentando coronarias, mientras las compresiones intentan generar el gradiente intratorácico necesario para gasto residual mínimo de 25-30% del volumen golpe original.",
-    "topic": "muerte_subita"
-  },
-  {
-    "text": "Como Coordinador de Calidad en CPRE/Endoscopia, el protocolo de Simulacros en Quirófano de Endoscopía debe incluir la verificación rutinaria según los estándares internacionales de varios dispositivos. Durante una emergencia de desaturación intratable con laringoespasmo con paciente bajo propofol ¿Qué maniobra clínica simple permite vencer mecánicamente pero sin medicamentos el laringoespasmo leve/moderado inicial intra-escenario en la recuperación?",
-    "options": [
-      "Maniobra de muesca de Larson (estimulación supraventricular / presión sobre el proceso mastoide/escotadura laringoespásmica) combinada con Empuje Mandibular.",
-      "Inversión de decúbito forzado en trendelemburg máximo (-30°).",
-      "Hiperextensión radical del cuello para tensar el esófago subyacente.",
-      "Punto de presión xifoideo directo repetitivo."
+      "Sepsis, Nutrición parenteral, Drogas (ej. Amoxicilina/Clavulánico), CBP, Hepatitis Alcohólica",
+      "Colelitiasis, Coledocolitiasis, Quiste de colédoco, Cáncer de páncreas, Colangitis",
+      "Ascitis, Cirrosis avanzada, Hepatitis A aguda, Esteatosis simple, Gastritis",
+      "Síndrome de Gilbert, Hemólisis intravascular, Resorción de hematomas, Crigler-Najjar"
     ],
     "correctIndex": 0,
-    "explanation": "La 'Muesca de Larson' es una maniobra de estimulo doloroso/mecánico consistente en presionar firmemente de forma medial, detrás del pabellón auricular y en la hendidura inferior al proceso mastoideo. Sirve como mecanismo reflejo para lograr relajar las cuerdas vocales o quebrar el espasmo involuntario, al combinarse con subluxación/elevación anterior de la mandíbula mientras se asiste con bolsa-válvula-mascarilla (BVM) con oxígeno al 100%.",
-    "fisiopato": "El laringoespasmo es un efecto quimio/mecanorreceptor inducido desde el nervio laríngeo superior (por secreciones o tubos en vía área infraglótica o irritación parasimpática), bloqueando la glotis. Se trata de un arco reflejo protector patológicamente potenciado en anestesia parcial/ligera. El estímulo profundo facial con dolor (via trigémino / simpática) estimula un 'override' en el núcleo tracto solitario del tallo frenando brevemente el hipertono del nervio recurrente de las cuerdas.",
-    "topic": "protocolo_simulacro"
-  },
-  {
-    "text": "Se evalúa tejido gástrico de un hombre de 62 años proveniente de Bolivia con síntomas de saciedad precoz y pérdida de peso de 15 kg. La biopsia demuestra una proliferación de células atípicas 'en anillo de sello'. Este carcinoma de tipo Difuso en la clasificación de Lauren se asocia invariablemente con la alteración molecular de cuál de las siguientes proteínas:",
-    "options": [
-      "E-Cadherina (Disfunción o pérdida de CDH1).",
-      "c-KIT (mutación en exón 11).",
-      "Beta-catenina nuclear.",
-      "Mutación Kras."
+    "explanation": "La colestasis intrahepática resulta de una falla en la secreción biliar a nivel de los hepatocitos o pequeños conductos biliares, a diferencia de la extrahepática que es obstructiva. Causas comunes incluyen fármacos (DILI), sepsis, nutrición parenteral total (NPT), cirrosis biliar primaria (CBP) y colangitis esclerosante de pequeños conductos.",
+    "fisiopato": "Alteración en los transportadores de sales biliares (BSEP, MRP2) en la membrana canalicular por citoquinas proinflamatorias (sepsis) o daño inmunológico/químico directo a los colangiocitos.",
+    "clinicalPearl": "En colestasis intrahepática, la ecografía suele mostrar vías biliares NO dilatadas, lo que es la clave masiva para diferenciarla de la obstrucción mecánica.",
+    "whyWrong": {
+      "1": "Todas estas son causas de colestasis EXTRAHEPÁTICA u obstructiva.",
+      "2": "Estas causas suelen ser predominantemente hepatocelulares o cursan con ictericia sin colestasis clara (FA/GGT normales).",
+      "3": "Estas son causas de hiperbilirrubinemia indirecta (no conjugada), no de colestasis (que implica falla de flujo de sales biliares y elevación de FA)."
+    },
+    "pillar": "Clinical Logic",
+    "etiologyList": [
+      "Fármacos y Toxinas (Amoxicilina/Clavulánico, esteroides)",
+      "Sepsis y estados proinflamatorios",
+      "Nutrición Parenteral Total prolongada",
+      "Cirrosis Biliar Primaria (CBP)",
+      "Colangitis Esclerosante Primaria (CEP) - variante pequeños conductos"
     ],
-    "correctIndex": 0,
-    "explanation": "El Cáncer Gástrico tipo difuso se asocia íntimamente a las alteraciones (mutación, metilación somática, o síndrome genético hereditario) en el gen CDH1 (E-Cadherina). Las otras mutaciones son de otros tumores.",
-    "fisiopato": "La E-Cadherina es una glicoproteína integral de la membrana celular que promueve adhesiones célula a célula mediadas por calcio ('uniones adherentes'). La pérdida de su expresión resulta en el desarraigo epitelial clásico (las células pierden su unión lateral y el patrón de polaridad), promoviendo la transición epitelio-mesénquima y su infiltración profunda difusa, asilada y separada en la lámina propia o submucosa (linitis plástica retrograda celular), resultando fenotípicamente como células en anillo de sello (vacuolas llenas de mucina repeliendo núcleo periférico).",
-    "topic": "cancer_gastrico"
+    "differentialDiagnosis": "El diferencial principal es descartar la colestasis obstructiva EXTRAhepática (coledocolitiasis, tumores biliares o pancreáticos) usando Ecografía abdominal. Si la ecografía es normal (no hay dilatación), se orienta a origen intrahepático."
   },
   {
-    "text": "Se realiza serología y biopsia de duodeno (bulb y segunda porción) a una mujer de 22 años con deficiencia de hierro intratable y diarrea oscilatoria. Los Anti-Transglutaminasa (tTG-IgA) son >10 veces el valor normal máximo. En la patología, se observa la lesión característica compatible con Enfermedad Celíaca: atrofia vellositaria, hiperplasia de criptas y linfocitosis intraepitelial. ¿Cuál es el principal péptido alergénico derivado del gluten responsable de inducir la presentación antigénica mediante interacción con HLA-DQ2/DQ8 en la mucosa?",
+    "id": "q-dx-002",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuáles son las principales causas de 'Falla Primaria' (no alcanzar objetivos en inducción) a fármacos biológicos (anti-TNF) en un paciente con Enfermedad Inflamatoria Intestinal (EII)?",
     "options": [
-      "Lectina gliadinolítica de bajo peso.",
-      "Péptido 33-mer derivado de la α-gliadina.",
-      "Hordeína beta-terminal.",
-      "Gamma-Glutelina fibrilar."
+      "Inmunogenicidad temprana (anticuerpos anti-droga) únicamente",
+      "Baja albúmina, carga inflamatoria alta, polimorfismo FCGR3A y pérdida de fármaco por vía fecal",
+      "Hipersensibilidad de tipo I mediada por IgE a la proteína quimérica",
+      "Sobrecrecimiento bacteriano (SIBO) y colon irritable concomitante"
     ],
     "correctIndex": 1,
-    "explanation": "El componente más inmunogénico del gluten (específicamente de las proteínas de trigo, centeno o cebada) resistente a la digestión lumínica gastrointestinal es el fragmento 33-mer de la α-gliadina (con alto contenido parolina-glutamina), que logra penetrar el epitelio intacto debido a inflamación incipiente u oclusión zona occuldens debilitada. Es luego deaminado y se ancla a péptidos de HLA en las células presentadoras.",
-    "fisiopato": "Las enzimas digestivas intraluminales y endopeptidasas no logran clivar los puentes prolina/glutamina del '33-mer'. Al internalizarse en la lámina propia, es deamidado por la enzima endógena Transglutaminasa tisular 2 (tTG2), convirtiendo residuos de glutamina en ácido glutámico y creando una molécula de alta carga negativa. Esa molécula modificada ensambla perfectamente en el surco positivamente cargado de las moléculas unidas a membrana HLA-DQ2 (y DQ8) en macrófagos o DC presentadoras de antígeno, detonando inmunidad Th1 local devastadora liberando IFN-gamma y activando Linfocitos T citotóxicos contra el enterocito mismo que promueve atrofia y regeneración criptal defectiva.",
-    "topic": "celiaca"
+    "explanation": "La falla primaria ocurre cuando no hay respuesta clínica inicial. Factores dependientes del huésped como la hipoalbuminemia (que aumenta el catabolismo del anticuerpo) y una carga inflamatoria muy alta (elevado 'TNF-sink') agotan el fármaco antes de que haga efecto. La pérdida entérica del fármaco en casos de diarrea severa/inflamación masiva también contribuye.",
+    "fisiopato": "Aclaramieno aumentado de la IgG mediado por receptores Fc y pérdida de proteínas a través de la mucosa ulcerada, lo que lleva a niveles séricos infraterapéuticos desde el inicio.",
+    "clinicalPearl": "Antes de declarar fracaso al fármaco, verifique los niveles de albúmina; una albúmina < 2.5 g/dL predice fuertemente una respuesta pobre por farmacocinética alterada.",
+    "whyWrong": {
+      "0": "La inmunogenicidad suele ser causa de falla SECUNDARIA (pérdida de respuesta en el tiempo), no primaria.",
+      "2": "Aunque posible, la anafilaxia es un evento adverso, no el mecanismo habitual de falla en la inducción terapéutica.",
+      "3": "Estas entidades causan síntomas persistentes pero no explican la ausencia de mejoría en los marcadores de inflamación biológica de la mucosa."
+    },
+    "pillar": "Phatophysiology",
+    "etiologyList": [
+      "Baja concentración de albúmina sérica (< 3.0 g/dL)",
+      "Alta carga inflamatoria y úlceras profundas ('Sink' de anticuerpos)",
+      "Pérdida de fármaco por vía fecal debido a inflamación mucosa masiva",
+      "Polimorfismos genéticos (FCGR3A) o alteraciones de receptor",
+      "Aclaramiento acelerado idiopático"
+    ],
+    "differentialDiagnosis": "Diferenciar Falla Primaria (PK inicial alterada, pérdida fecal) de Inmunogenicidad Temprana (formación temprana de anticuerpos) o de Falla Secundaria (pierde el efecto meses/años después por anticuerpos antifármaco)."
+  },
+  {
+    "id": "q-dx-003",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "En el diagnóstico diferencial de hipergastrinemia con pH gástrico detectado como ÁCIDO, ¿cuál es la entidad principal que debe descartarse en presencia de úlceras refractarias?",
+    "options": [
+      "Síndrome de Zollinger-Ellison (Gastrinoma)",
+      "Anemia perniciosa y Gastritis atrófica Tipo A",
+      "Consumo crónico de Inhibidores de Bomba de Protones (IBP)",
+      "Infección aislada por H. pylori sin atrofia"
+    ],
+    "correctIndex": 0,
+    "explanation": "La hipergastrinemia con ácido gástrico alto es característica del Zollinger-Ellison (ZE). En esta entidad, la secreción autónoma de gastrina por un tumor estimula masivamente las células parietales. El pH bajo (< 2) diferencia al ZE de condiciones como la atrofia gástrica donde el pH es alto por falta de células parietales.",
+    "fisiopato": "Hiperplasia de células parietales secundaria a estimulación trófica por gastrina fuera del control de retroalimentación negativa del ácido.",
+    "clinicalPearl": "Siempre mida el pH gástrico al encontrar gastrina alta; si el pH es > 4, piense en atrofia o IBP. Si es < 2, descarte ZE o retención de antro.",
+    "whyWrong": {
+      "1": "Estas cursan con hipergastrinemia pero pH ALCALINO (Aclorhidria), ya que la falta de ácido es lo que dispara la secreción de gastrina.",
+      "2": "Los IBPs bloquean la bomba de protones, subiendo el pH; la hipergastrinemia resultante es secundaria al pH ALCALINO.",
+      "3": "H. pylori puede subir la gastrina levemente pero no al rango masivo ni con la agresividad ulcerosa del ZE/Retención de antro."
+    },
+    "pillar": "Mastery",
+    "etiologyList": [
+      "Síndrome de Zollinger-Ellison (Tumores neuroendocrinos esporádicos o MEN 1)",
+      "Retención de Antro Gástrico (tras gastrectomía B-II)",
+      "Infección masiva y severa por H. pylori (hipergastrinemia leve-moderada con hiperclorhidria transitoria)",
+      "Obstrucción de salida gástrica crónica (distensión secundaria del antro)"
+    ],
+    "differentialDiagnosis": "Gastritis Atrófica Autoinmune (Tipo A), uso crónico de IBP o Insuficiencia Renal Crónica causan hipergastrinemia pero cursando con hipoclorhidria o aclorhidria (pH > 4)."
+  },
+  {
+    "id": "q-dx-004",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuál es el diagnóstico diferencial principal de una falla hepática aguda (FHA) en un paciente joven que presenta anemia hemolítica Coombs negativa y niveles de fosfatasa alcalina (FA) paradójicamente bajos?",
+    "options": [
+      "Enfermedad de Wilson (presentación fulminante)",
+      "Hepatitis autoinmune variante 'flare' agudo",
+      "Toxicidad fulminante por Amanita phalloides",
+      "Hepatitis viral E (VHE) en embarazo"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Wilson fulminante es un reto diagnóstico. Se diferencia de otras FHA por la hemólisis microangiopática (por liberación masiva de cobre sistémico) y una relación FA/Bilirrubina < 4, junto a Transaminasas altas pero no en el rango de miles como en el paracetamol.",
+    "fisiopato": "Necrosis masiva hepatocitaria que libera cobre libre al torrente sanguíneo, el cual induce daño oxidativo en la membrana del eritrocito causando hemólisis.",
+    "clinicalPearl": "Un ratio FA/Bilirrubina < 4 y Transaminasas (AST/ALT) < 2.0 en FHA es altamente sugestivo de Wilson; no espere el anillo de Kayser-Fleischer (ausente en 50% de fulminantes).",
+    "whyWrong": {
+      "1": "La hepatitis autoinmune suele tener FA elevada o normal, pero no paradójicamente baja, y se asocia a hipergamma globulinemia.",
+      "2": "Amanita causa falla hepática con elevación extrema de transaminasas y no suele cursar con hemólisis Coombs negativa específica.",
+      "3": "El VHE causa falla fulminante en el tercer trimestre pero sin el patrón bioquímico mineral del Wilson."
+    },
+    "pillar": "Clinical Logic",
+    "etiologyList": [
+      "Enfermedad de Wilson",
+      "Toxicidad por fármacos idiosincráticos",
+      "Hepatitis Virales agudas graves (VHA, VHE, VHB)",
+      "Hepatitis Autoinmune (variante necrotizante severa)",
+      "Síndrome de Reye (en niños/jóvenes)"
+    ],
+    "differentialDiagnosis": "Diferenciar falla hepática por Wilson de Toxicidad por Acetaminofén (transaminasas altísimas >5000, sin hemólisis Coombs-negativa prominente). Otra entidad es el Síndrome de HELLP (relacionado solo al embarazo) o Hígado graso agudo del embarazo."
+  },
+  {
+    "id": "q-dx-005",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "Enumere 4 causas principales de diarrea crónica no responsiva o 'pseudorefractaria' en pacientes diagnosticados con Enfermedad Celíaca que sí cumplen rigurosamente la dieta libre de gluten.",
+    "options": [
+      "SIBO (Sobrecrecimiento bacteriano), Colitis Microscópica, Insuficiencia Pancreática Exocrina y Dieta con 'gluten oculto'",
+      "Linfoma de células T asociado a enteropatía (EATL) tipo I y II",
+      "Infección crónica por Strongyloides stercoralis y déficit de IgA",
+      "Presencia de HLA-DQ2 homocigoto únicamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cerca del 10-15% de los celíacos no responden perfectamente de inmediato. La causa #1 es la exposición persistente inadvertida al gluten. Si se confirma adherencia estricta, el SIBO y la Colitis Microscópica (asociación hasta 10 veces más frecuente en celíacos) son las siguientes causas a descartar.",
+    "fisiopato": "Inflamación persistente de la mucosa o dismotilidad/fermentación secundaria. En el caso de la insuficiencia pancreática, la falta de estímulo hormonal (CCK/Secretina) por atrofia duodenal reduce la secreción enzimática.",
+    "clinicalPearl": "Ante un celíaco que no mejora con dieta, pida una colonoscopia con biopsias escalonadas para descartar Colitis Microscópica.",
+    "whyWrong": {
+      "1": "Este es el diagnóstico de Celiaquía Refractaria Tipo II, una complicación maligna grave pero rara, no es la causa 'común' inicial.",
+      "2": "Si bien pueden coexistir, no son las causas más prevalentes de diarrea persistente 'no responsiva' del día a día.",
+      "3": "El genotipo explica susceptibilidad, pero no es una causa de falla al tratamiento dietético per se."
+    },
+    "pillar": "Clinical Logic",
+    "etiologyList": [
+      "Exposición inadvertida ('oculta') a gluten en la dieta",
+      "Sobrecrecimiento Bacteriano del Intestino Delgado (SIBO)",
+      "Colitis Microscópica (Linfocítica o Colágena)",
+      "Síndrome de Intestino Irritable (SII) concomitante",
+      "Insuficiencia Pancreática Exocrina"
+    ],
+    "differentialDiagnosis": "Antes de diagnosticar 'Enfermedad Celíaca Refractaria' (malignidad pre-linfomatosa), siempre se deben descartar las causas benignas y frecuentes como la ingestión oculta y la colitis microscópica."
+  },
+  {
+    "id": "q-dx-006",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "En el contexto de un estoma derivado del intestino delgado (Iliostomía), ¿cuál de los siguientes es el gatillo más común de un 'Estoma de Alto Débito' (>2000 mL/día) en el postoperatorio mediato?",
+    "options": [
+      "Resección intestinal masiva (Síndrome de Intestino Corto), SIBO y uso previo de procinéticos",
+      "Consumo excesivo de fibra insoluble y vegetales crudos",
+      "Bacteriemia por Enterococcus faecalis persistente",
+      "Fallo en la anastomosis ileo-anal con reservorio"
+    ],
+    "correctIndex": 0,
+    "explanation": "El estoma de alto débito puede llevar a deshidratación severa y falla renal. Las causas principales incluyen la longitud del remanente (<100-200cm), infecciones abdominales subyacentes, SIBO o la supresión súbita de fármacos que reducían el tránsito.",
+    "fisiopato": "Pérdida de la superficie de absorción y tránsito acelerado que impide la reabsorción de agua y electrolitos antes del bypass estomal.",
+    "clinicalPearl": "El manejo inicial consiste en restringir líquidos hipotónicos (que aumentan la pérdida por gradiente) y usar soluciones de rehidratación oral con alta concentración de sodio.",
+    "whyWrong": {
+      "1": "Esto suele causar obstrucción o disconfort, pero raramente un flujo volumétrico líquido acuoso masivo persistente por encima de 2 litros.",
+      "2": "La bacteriemia causa compromiso sistémico pero no es la causa mecánica/funcional primaria del débito estomal.",
+      "3": "Es una complicación quirúrgica, pero el 'alto débito' es un fenómeno de absorción/secreción luminal."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-007",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "¿Cuál es el diagnóstico diferencial más probable para un patrón de 'pliegues gástricos gigantes' localizados predominantemente en el cuerpo y fondo, que asocian hipoalbuminemia pero con ácido gástrico BAJO?",
+    "options": [
+      "Enfermedad de Ménétrier",
+      "Síndrome de Zollinger-Ellison",
+      "Linfoma Gástrico tipo MALT",
+      "Gastritis asociada a Citomegalovirus (CMV)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Enf. de Ménétrier es una gastropatía hipertrófica con pérdida de proteínas. Se caracteriza por pliegues gigantes que respetan el antro, hipoclorhidria (por atrofia de células parietales secundaria a hiperplasia de células mucosas) y edema por hipoalbuminemia.",
+    "fisiopato": "Sobreexpresión del receptor del factor de crecimiento epidérmico (EGFR) que induce hiperplasia de las células foveolares.",
+    "clinicalPearl": "Pliegues grandes + Ácido BAJO + Hipoalbuminemia = Ménétrier. Pliegues grandes + Ácido ALTO = Zollinger-Ellison.",
+    "whyWrong": {
+      "1": "Como se mencionó, cursa con hiperclorhidria (ácido exageradamente alto), no bajo.",
+      "2": "El MALT puede engrosar pliegues pero no cursa típicamente con gastropatía pierde-proteínas sistémica masiva.",
+      "3": "En niños puede simular Ménétrier pero en adultos no explica el cuadro de atrofia específica foveolar hiperplásica crónica."
+    },
+    "pillar": "Mastery"
+  },
+  {
+    "id": "q-dx-008",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuál es la causa más frecuente de Rectorragia masiva e indolora en el anciano, que obliga a descartar angiodisplasias en el diferencial?",
+    "options": [
+      "Enfermedad diverticular del colon",
+      "Cáncer de colon derecho ulcerado",
+      "Colitis isquémica aguda",
+      "Fisura anal complicada"
+    ],
+    "correctIndex": 0,
+    "explanation": "La enfermedad diverticular es la causa #1 de HDB masiva indolora. El sangrado ocurre por erosión de la arteria penetrante (vasa recta) en la base del divertículo. Cerca del 75% cede espontáneamente.",
+    "fisiopato": "Debilidad de la pared arterial secundaria a tracción crónica y diverticulosis que expone el vaso al lumen.",
+    "clinicalPearl": "A diferencia de la proctitis o isquemia, el sangrado diverticular es súbito y sin dolor abdominal previo significativo.",
+    "whyWrong": {
+      "1": "El cáncer suele dar sangrado crónico, anemia o cambios en el hábito, pero raramente una hemorragia masiva exanguinante brusca.",
+      "2": "La isquemia es EVOLUTIVA y cursa con dolor abdominal tipo cólico súbito seguido de diarrea sanguinolenta.",
+      "3": "La fisura es extremadamente dolorosa y el volumen de sangre es escaso (manchado)."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-009",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "Enumere las 3 causas de hipertensión portal de tipo pre-sinusoidal (el gradiente de presión venosa hepática - GPVH - puede ser falsamente normal a pesar de varices esofágicas).",
+    "options": [
+      "Trombosis de vena porta, Esquistosomiasis y Trombosis de vena esplénica",
+      "Cirrosis por VHC, Esteatohepatitis y Cirrosis Biliar Primaria inicial",
+      "Síndrome de Budd-Chiari, Pericarditis constrictiva y Fallo cardíaco derecho",
+      "Enfermedad veno-oclusiva (SOS) y Cirrosis por Alcohol"
+    ],
+    "correctIndex": 0,
+    "explanation": "En la hipertensión portal pre-sinusoidal, el punto de resistencia está antes de los sinusoides. Como el catéter de cuña mide la presión sinusoidal, ésta será normal a pesar de la presión portal alta. La trombosis de porta (extrahepática) y esquistosomiasis (intrahepática pre-sinusoidal) son clásicas.",
+    "fisiopato": "Obstrucción al flujo portal antes de su entrada al sistema capilar hepático, impidiendo que la presión se transmita al lecho sinusoidal medible por técnica de balón.",
+    "clinicalPearl": "Si un paciente tiene varices grandes pero un GPVH < 10 mmHg, sospeche seriamente una trombosis de vena porta u otra causa pre-sinusoidal.",
+    "whyWrong": {
+      "1": "Estas son causas SINUSOIDALES (típicas de la cirrosis franca).",
+      "2": "Estas son causas POST-SINUSOIDALES o post-hepáticas.",
+      "3": "Estas son causas predominantemente sinusoidales (daño endotelial capilar) o mixtas."
+    },
+    "pillar": "Phatophysiology"
+  },
+  {
+    "id": "q-dx-010",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "En el diagnóstico diferencial de la 'Colitis Isquémica', ¿qué áreas del colon se consideran las más vulnerables debido a su circulación colateral limitada (puntos de Watershed)?",
+    "options": [
+      "Ángulo esplénico (Punto de Griffith) y unión rectosigmoidea (Punto de Sudeck)",
+      "Ciego y colon ascendente",
+      "Colon transverso medio",
+      "Recto distal únicamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "La isquemia colónica suele ser no oclusiva (por hipoflujo). Las áreas más afectadas son el ángulo esplénico (donde termina la AMS y empieza el flujo de la AMI) y el punto de Sudeck en el sigmoides.",
+    "fisiopato": "Flujo sanguíneo marginal en regiones donde las arcadas marginales (como la de Drummond) son más tenues o discontinuas.",
+    "clinicalPearl": "Un paciente con hipotensión reciente que desarrolla dolor y sangre: si la lesión endoscópica respeta el recto pero afecta el sigmoides/ángulo esplénico, la sospecha de isquemia es altísima.",
+    "whyWrong": {
+      "1": "Afectación de colon derecho suele indicar isquemia 'oclusiva' (trombo en AMS) y es mucho más grave.",
+      "2": "Es una zona poco común de isquemia aislada aguda en comparación con los puntos de charnela.",
+      "3": "El recto es casi inmune a la isquemia por su triple irrigación arterial profusa."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-011",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "Enumere 5 causas genéticas y autoinmunes que deben descartarse ante una elevación crónica de transaminasas con serología viral para VHB/VHC negativa.",
+    "options": [
+      "MASLD (Hígado graso), Hepatitis Autoinmune (HAI), Hemocromatosis, Enfermedad de Wilson y Déficit de Alfa-1 Antitripsina",
+      "Síndrome de Gilbert, Síndrome de Dubin-Johnson, Crigler-Najjar, Alagille y Byler",
+      "Hepatitis A, E, Citomegalovirus, Virus de Epstein-Barr y Herpes Simple",
+      "Colelitiasis, Pancreatitis, Colangitis, Quiste de Colédoco e Hidatidosis"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una vez descartado el alcohol y los virus, el MASLD es la causa más común. La evaluación sistemática incluye ferritina (Hemocromatosis), ANA/SMA (HAI), Ceruloplasmina (Wilson) y niveles de Alfa-1 AT.",
+    "fisiopato": "Acumulación de lípidos, daño inmunológico o depósito de metales (hierro/cobre) que generan estrés oxidativo y apoptosis hepatocitaria.",
+    "clinicalPearl": "En un paciente joven con transaminasas altas inexplicable, siempre descarte Wilson aunque la serología sea negativa; es una enfermedad tratable y letal si se ignora.",
+    "whyWrong": {
+      "1": "Estas son causas de hiperbilirrubinemia genética, no cursan habitualmente con elevación significativa de Transaminasas (AST/ALT).",
+      "2": "Son causas virales, la pregunta pide descartar las no virales.",
+      "3": "Son causas obstructivas/biliares que suelen dar patrón colestásico (FA/GGT) más que de necrosis hepatocelular pura."
+    },
+    "pillar": "Clinical Logic"
+  },
+  {
+    "id": "q-dx-012",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "¿Cuál es el diagnóstico diferencial característico de una lesión hepática focal que en la RM muestra una 'cicatriz central' estrellada con captación de contraste en fase tardía?",
+    "options": [
+      "Hiperplasia Nodular Focal (HNF)",
+      "Adenoma Hepático",
+      "Hemangioma Cavernoso",
+      "Carcinoma Hepatocelular (CHC)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La HNF es una lesión benigna (respuesta hiperplásica a una malformación arterial). La cicatriz central estrellada es su sello radiológico. A diferencia del adenoma, la HNF tiene conductos biliares (aunque malformados) y suele ser un hallazgo incidental.",
+    "fisiopato": "Proliferación hepatocitaria desorganizada pero de aspecto normal en respuesta a un flujo arterial local excesivo centralizado.",
+    "clinicalPearl": "Si la RM muestra cicatriz central y captación en fases tardías, la HNF es el diagnóstico; es una lesión 'don't touch' que no requiere cirugía.",
+    "whyWrong": {
+      "1": "El adenoma no tiene cicatriz central y asocia riesgo de ruptura/malignización; asocia uso de anticonceptivos.",
+      "2": "El hemangioma tiene captación periférica 'globular' y centrípeta, no una cicatriz central real.",
+      "3": "El CHC muestra 'wash-out' (lavado) rápido del contraste, no captación tardía central."
+    },
+    "pillar": "Mastery"
+  },
+  {
+    "id": "q-dx-013",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Qué parásito debe sospecharse como causa de diarrea crónica en un paciente con VIH/SIDA (CD4 < 50) que muestra ooquistes ácido-alcohol resistentes (modificados) en el coprocultivo?",
+    "options": [
+      "Cryptosporidium parvum",
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+      "Ascaris lumbricoides"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cryptosporidium es una causa mayor de diarrea acuosa severa en inmunosuprimidos. Los ooquistes se detectan con la tinción de Kinyoun (Ziehl-Neelsen modificado). El tratamiento es difícil si no se restaura la inmunidad CD4.",
+    "fisiopato": "Invasión de los enterocitos del intestino delgado que provoca atrofia vellositaria y diarrea osmótica/secretora masiva.",
+    "clinicalPearl": "Diarrea de litros/día en SIDA: piense en Cryptosporidium si encuentra ooquistes ácido-alcohol resistentes.",
+    "whyWrong": {
+      "1": "Giardia no es ácido-alcohol resistente y se ve mejor en examen directo o antígenos.",
+      "2": "Entamoeba causa disentería (sangre/moco) y se ve como trofozoítos/quistes característicos, no con tinciones de BAAR.",
+      "3": "Es un helminto, se detecta por huevos característicos, no por ooquistes modoficados."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-014",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "Enumere 3 causas de sangrado digestivo de origen oscuro (intestino delgado) que son detectables mediante Cápsula Endoscópica en pacientes jóvenes vs adultos mayores.",
+    "options": [
+      "Jóvenes: Enfermedad de Crohn y Meckel. Adultos mayores: Angiodisplasias y ulceras por AINES.",
+      "Jóvenes: Várices esofágicas. Adultos mayores: Úlcera péptica.",
+      "Jóvenes: Colitis ulcerosa. Adultos mayores: Diverticulosis.",
+      "Jóvenes: Gastritis atrófica. Adultos mayores: Pólipos gástricos."
+    ],
+    "correctIndex": 0,
+    "explanation": "El diferencial cambia con la edad. En jóvenes el Crohn y el divertículo de Meckel son clave. En mayores (>65 años), las angiodisplasias (dilataciones vasculares) explican la mayoría de los casos de anemia ferropénica de origen oscuro.",
+    "fisiopato": "Erosión mucosa (AinEs/Crohn) vs degeneración vascular por envejecimiento de las comunicaciones arterio-venosas submucosas (Angiodisplasias).",
+    "clinicalPearl": "Si un paciente >70 años tiene anemia ferropénica recurrente y EDA/Colonoscopia son normales, la cápsula endoscópica encontrará angiodisplasias en el yeyuno/íleon.",
+    "whyWrong": {
+      "1": "Estas se ven en la endoscopia convencional (EDA), no son 'sangrado de origen oscuro' tras estudios iniciales negativos.",
+      "2": "Se ven en la colonoscopia, no requieren cápsula habitualmente.",
+      "3": "Son lesiones gástricas, detectables en el estudio inicial (EDA)."
+    },
+    "pillar": "Clinical Logic"
+  },
+  {
+    "id": "q-dx-015",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuál es la causa primaria del Síndrome de Budd-Chiari en la mayoría de los casos (hasta 50-70%) que debe buscarse dirigidamente con estudios genéticos?",
+    "options": [
+      "Trastornos mieloproliferativos (ej. Policitemia Vera con mutación JAK2)",
+      "Uso de anticonceptivos orales únicamente",
+      "Compresión extrínseca por tumores renales",
+      "Embarazo y puerperio inmediato"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Budd-Chiari (obstrucción al flujo de salida venoso hepático) se origina frecuentemente en un estado protrombótico. La Policitemia Vera y otras neoplasias mieloproliferativas (incluso ocultas) detectadas por la mutación JAK2 V617F son la principal etiología.",
+    "fisiopato": "Hipercoagulabilidad hereditaria o adquirida que lleva a la formación de trombos en las venas suprahepáticas o la vena cava inferior.",
+    "clinicalPearl": "Ante un Budd-Chiari, pida JAK2 aunque el hemograma no muestre poliglobulia (puede haber 'secuestro' esplénico).",
+    "whyWrong": {
+      "1": "Es el factor desencadenante más común en mujeres, pero raramente es la causa aislada 'primaria' única sin otro factor predisponente genético.",
+      "2": "Es una causa mecánica 'secundaria', no la más común sistémica.",
+      "3": "Son estados transitorios que disparan una patología subyacente predisponente."
+    },
+    "pillar": "Mastery"
+  },
+  {
+    "id": "q-dx-016",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "¿Cuál es la diferencia radiológica y clínica clava entre la Enfermedad de Crohn y la Tuberculosis (TB) Intestinal cuando ambas afectan el área ileocecal?",
+    "options": [
+      "La TB suele tener ganglios mesentéricos calcificados y úlceras transversas; el Crohn tiene úlceras longitudinales y ganglios no calcificados.",
+      "La TB respeta la válvula ileocecal mientras que el Crohn la destruye.",
+      "El Crohn siempre presenta bicitopenia mientras que la TB causa policitemia.",
+      "No existe diferencia posible sin cultivo biópsico de 6 semanas."
+    ],
+    "correctIndex": 0,
+    "explanation": "Es un diferencial difícil. Sin embargo, en el TAC los ganglios calcificados son altamente sugestivos de TB. Endoscópicamente, las úlceras del Crohn son 'serpenteantes' o longitudinales, mientras que en TB son 'anulares' o circunferenciales.",
+    "fisiopato": "Inflamación granulomatosa (necrotizante en TB, no necrotizante en Crohn).",
+    "clinicalPearl": "Si ve úlceras transversas anulares y una válvula ileocecal 'fija y abierta' en paraguas, piense en Tuberculosis antes que en Crohn.",
+    "whyWrong": {
+      "1": "Es al revés, la TB suele deformar y abrir la válvula (válvula patente) por cicatrización anular.",
+      "2": "Ninguna causa estos perfiles hematológicos específicos.",
+      "3": "Aunque el cultivo es el gold standard, hay signos orientativos macroscópicos y radiológicos descritos."
+    },
+    "pillar": "Phatophysiology"
+  },
+  {
+    "id": "q-dx-017",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "Enumere 3 causas de 'Falla Secundaria' (pérdida de respuesta tras efecto inicial) a biológicos en EII.",
+    "options": [
+      "Inmunogenicidad (anticuerpos anti-droga), niveles bajos por catabolismo aumentado y cambio del mecanismo inflamatorio dominante.",
+      "Falta de diagnóstico histológico inicial correcto.",
+      "Uso concomitante de mesalazina a dosis bajas.",
+      "Colonización crónica por Helicobacter pylori en el reservorio."
+    ],
+    "correctIndex": 0,
+    "explanation": "La pérdida de respuesta secundaria ocurre en 10-20% de los pacientes por año. La causa principal es la formación de anticuerpos que neutralizan el fármaco. También influye el aclaramiento aumentado (catabolismo) o que la vía del TNF ya no sea la predominante en el brote actual.",
+    "fisiopato": "Desarrollo de inmunogenicidad adaptativa contra las regiones variables del anticuerpo biológico.",
+    "clinicalPearl": "Al perder respuesta, mida niveles y anticuerpos. Si los niveles son bajos y no hay anticuerpos: escale dosis. Si hay anticuerpos altos: cambie de clase o biológico.",
+    "whyWrong": {
+      "1": "Esto explicaría el fracaso desde el inicio (falla primaria o error diagnóstico), no la pérdida de una respuesta previa efectiva.",
+      "2": "No influye en la pérdida de respuesta al biológico de manera relevante.",
+      "3": "No existe relación causal entre H. pylori y la pérdida de respuesta a fármacos biológicos en EII."
+    },
+    "pillar": "Clinical Logic"
+  },
+  {
+    "id": "q-dx-018",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "En el diferencial de las lesiones quísticas del páncreas, ¿cuál es el rasgo que identifica a un Cistoadenoma Seroso frente a una Neoplasia Mucinosa Quística?",
+    "options": [
+      "Apariencia en 'panel de abejas' (microquístico) con cicatriz central y ausencia de mucina.",
+      "Presencia de estroma tipo ovárico en la biopsia únicamente.",
+      "Nivel de CEA (antígeno carcinoembrionario) en líquido del quiste > 192 ng/mL.",
+      "Comunicación demostrada con el conducto pancreático principal."
+    ],
+    "correctIndex": 0,
+    "explanation": "El cistoadenoma seroso es casi siempre benigno. Radiológicamente se ve como múltiples quistes milimétricos (microquístico) agrupados. El nivel de CEA en el fluido es muy bajo (< 5), a diferencia de las lesiones mucinosas (CEA > 192).",
+    "fisiopato": "Proliferación de células ricas en glucógeno que no producen mucina.",
+    "clinicalPearl": "Un quiste con CEA bajo y glucosa alta en líquido es seroso (benigno). Si la glucosa es baja y el CEA es alto, es mucinoso (pre-maligno).",
+    "whyWrong": {
+      "1": "Este rasgo es patognomónico de la Neoplasia Mucinosa Quística (generalmente en mujeres, cuerpo/cola).",
+      "2": "Como se indicó, niveles altos de CEA indican contenido mucinoso.",
+      "3": "Este rasgo define a la IPMN (Neoplasia Papilar Mucinosa Intraductal), no a las lesiones quísticas aisladas serosas."
+    },
+    "pillar": "Mastery"
+  },
+  {
+    "id": "q-dx-019",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuál es la causa más común de colitis microscópica (variante colágena o linfocítica) asociada al uso farmacológico crónico?",
+    "options": [
+      "AINES (antiinflamatorios no esteroideos), IBP (lanzoprazol) e ISRS (sertralina)",
+      "Antibióticos de amplio espectro únicamente",
+      "Uso de estatinas para el colesterol",
+      "Preparación colónica para colonoscopia (polietilenglicol)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La colitis microscópica se asocia fuertemente con ciertos fármacos. El lanzoprazol y los AINES son los disparadores más estudiados. Suspender el fármaco suele ser curativo en estos casos.",
+    "fisiopato": "Reacción inmunológica/linfocítica de la mucosa colónica ante la exposición crónica a ciertas moléculas farmacológicas en sujetos predispuestos.",
+    "clinicalPearl": "Ante una diarrea acuosa en una mujer mayor que toma IBP o AINES, sospeche colitis microscópica antes que enfermedad inflamatoria de otro tipo.",
+    "whyWrong": {
+      "1": "Causan colitis pseudomembranosa o disbiosis, pero no el patrón histológico específico de colitis microscópica linfocítica.",
+      "2": "Aunque posibles, no tienen la asociación epidemiológica fuerte de los AINES o IBP.",
+      "3": "Es un evento agudo transitorio, no un factor etiológico crónico para el desarrollo de la entidad."
+    },
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-020",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "¿Cuál es el diferencial principal de niveles de ferritina elevados (>1000 ng/mL) en un paciente con síndrome metabólico, si la saturación de transferrina es < 45%?",
+    "options": [
+      "Hiperferritinemia dismetabólica (asociada a MASLD) y estados inflamatorios crónicos",
+      "Hemocromatosis Hereditaria clásica (C282Y)",
+      "Sobrecarga de hierro transfusional",
+      "Anemia sideroblástica hereditaria"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ferritina es un reactante de fase aguda. En pacientes con higado graso/obesidad es común ver ferritina alta pero con saturación de transferrina normal. La Hemocromatosis Hereditaria suele cursar con saturación de transferrina ALTA (> 45-50%).",
+    "fisiopato": "Liberación de ferritina por hepatocitos dañados (inflamación de bajo grado) sin que exista necesariamente una sobrecarga masiva de hierro tisular parénquima-tóxica.",
+    "clinicalPearl": "Si la saturación de transferrina es normal pero la ferritina está alta, no es Hemocromatosis (HFE); busque NASH o inflamación sistémica.",
+    "whyWrong": {
+      "1": "Requiere saturación de transferrina elevada como criterio bioquímico inicial.",
+      "2": "Generalmente cursa con saturación alta tras múltiples concentrados de hematíes.",
+      "3": "Es una causa de sobrecarga pero infrecuente en el contexto de síndrome metabólico primario."
+    },
+    "pillar": "Mastery"
+  }
+,
+
+  {
+    "id": "q-dx-021",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuál es la principal etiología a descartar en un paciente joven que presenta disfagia intermitente a sólidos, impactación alimentaria y cuyo endoscopio revela anillos traquealizados y exudados blancos?",
+    "options": [
+      "Esofagitis Eosinofílica",
+      "Acalasia Tipo I",
+      "Enfermedad por Reflujo Gastroesofágico no erosiva",
+      "Anillo de Schatzki"
+    ],
+    "correctIndex": 0,
+    "explanation": "La disfagia a sólidos en jóvenes con atopia, asociado a anillos ('traquealización') y exudados blancos es clínica y endoscópicamente indicativo de Esofagitis Eosinofílica. Se confirma con >15 eosinófilos/campo de gran aumento.",
+    "fisiopato": "Infiltración inflamatoria predominantemente eosinofílica mediada por Th2 secundaria a la exposición de antígenos alimentarios o aeroalérgenos.",
+    "clinicalPearl": "Paciente < 40 años con impactación alimentaria en la urgencia = Esofagitis Eosinofílica hasta demostrar lo contrario.",
+    "whyWrong": {
+      "1": "Cursa típicamente con disfagia mixta a líquidos y sólidos progresiva, y endoscópicamente hay retención de comida pero sin anillos inflamatorios ni exudados.",
+      "2": "Puede causar esofagitis, pero no exudados múltiples típicos ni anillos concéntricos rígidos.",
+      "3": "Suele ser un hallazgo aislado en la unión escamocolumnar y no causa anillos múltiples o exudados a lo largo del esófago."
+    },
+    "etiologyList": [
+      "Esofagitis Eosinofílica",
+      "Estenosis Peptica secundaria a ERGE severo",
+      "Anillos esofágicos (Schatzki)",
+      "Trastornos motores del esófago (Acalasia)",
+      "Divertículo de Zenker (en pacientes mayores)"
+    ],
+    "differentialDiagnosis": "El diagnóstico diferencial clave es la ERGE; en ERGE y Acalasia la biopsia no mostrará >15 eosinófilos por campo. Además, la Acalasia es una patología predominantemente motora evidenciada por manometría.",
+    "pillar": "Clinical Logic"
+  },
+  {
+    "id": "q-dx-022",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "Enumere 5 causas de diarrea aguda inflamatoria (Disentería) bacteriana, en orden descendente de probabilidad clínica en adultos de países desarrollados.",
+    "options": [
+      "Campylobacter, Salmonella no tifoidea, Shigella, E. coli enterohemorrágica (O157:H7) y Yersinia enterocolitica",
+      "Vibrio cholerae, Staphylococcus aureus, Bacillus cereus, Clostridium perfringens y Giardia lamblia",
+      "Rotavirus, Norovirus, Adenovirus, Astrovirus y Citomegalovirus",
+      "Entamoeba histolytica, Cryptosporidium, Cyclospora, Isospora y Microsporidia"
+    ],
+    "correctIndex": 0,
+    "explanation": "La disentería es diarrea sanguinolenta/mucosa con fiebre. Campylobacter es la causa bacteriana más frecuente de gastroenteritis en el mundo desarrollado, seguida de Salmonella y Shigella. E. coli O157:H7 causa colitis hemorrágica y Yersinia puede simular apendicitis.",
+    "fisiopato": "Invasión directa de la mucosa colónica o producción de citotoxinas (ej. toxina Shiga) causando necrosis celular y exudación purulenta.",
+    "clinicalPearl": "El uso rutinario de antibióticos empíricos no está recomendado en diarrea aguda simple, pero en caso de fiebre alta con heces sanguinolentas considere la azitromicina.",
+    "whyWrong": {
+      "1": "Vibrio causa diarrea voluminosa 'en agua de arroz', S. aureus y B. cereus causan intoxicación alimentaria (vómitos tempranos), Giardia es acuosa.",
+      "2": "Estos son agentes virales, causan diarrea acuosa, no inflamatoria disenteriforme severa.",
+      "3": "Son causas parasitarias. Entamoeba histolytica causa disentería pero las otras causan diarrea acuosa profunda crónica en inmunodeprimidos."
+    },
+    "etiologyList": [
+      "Campylobacter jejuni",
+      "Salmonella especies no tifoideas",
+      "Shigella spp.",
+      "Escherichia coli productora de toxina Shiga (STEC)",
+      "Yersinia enterocolitica"
+    ],
+    "differentialDiagnosis": "El principal diagnóstico diferencial NO infeccioso es el primer brote de una Enfermedad Inflamatoria Intestinal (Colitis Ulcerosa o Crohn) o una Colitis Isquémica.",
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-023",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "En el contexto de dolor abdominal en fosa ilíaca derecha, ¿cuál patología inflamatoria tiene máxima predilección por presentar dolor agudo indistinguible de apendicitis aguda?",
+    "options": [
+      "Ileítis por Yersinia enterocolitica o Campylobacter jejuni",
+      "Diverticulitis sigmoidea de lado izquierdo transpuesta",
+      "Colitis por Clostridioides difficile localizada",
+      "Gastroenteritis viral aguda por Norovirus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tanto Yersinia como Campylobacter pueden producir adenitis mesentérica o ileítis terminal aguda, que se presenta como pseudoapendicitis (dolor FID, fiebre, leucocitosis).",
+    "fisiopato": "Inflamación aguda del íleon terminal y ganglios mesentéricos regionales debida a tropismo patógeno por el tejido linfoide asociado al intestino (Placas de Peyer).",
+    "clinicalPearl": "Ante dolor en fosa iliaca derecha con íleon engrosado en el TAC y apéndice normal (pseudoapendicitis), indague epidemiología (ej. consumo de cerdo mal cocido en Yersinia).",
+    "whyWrong": {
+      "1": "Es anatómica y embriológicamente infrecuente. La presentación del sigmoides a la derecha requiere variaciones de situs muy raras o colon muy redundante.",
+      "2": "C. difficile típicamente causa colitis difusa, dolor cólico generalizado y diarrea acuosa, rara vez dolor focal en FID únicamente.",
+      "3": "Cursa con vómitos generalizados, diarrea acuosa masiva y dolor periumbilical, sin irritación peritoneal focal en cuadrante inferior."
+    },
+    "etiologyList": [
+      "Apendicitis aguda",
+      "Ileítis aguda e infección por Yersinia / Campylobacter",
+      "Primer brote de Enfermedad de Crohn ileocecal",
+      "Patología anexial (TQ de ovario, EPI)",
+      "Diverticulitis de Meckel compliicada"
+    ],
+    "differentialDiagnosis": "Es crucial descartar patología ginecológica en mujeres jóvenes (Embarazo ectópico, Torción Ovárica, EPI) y patología renal (Cólico nefrítico derecho), los cuales pueden presentarse exactamente igual a la clínica clásica de patología apendicular/ileal.",
+    "pillar": "Clinical Logic"
+  },
+  {
+    "id": "q-dx-024",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "Enliste de mayor a menor frecuencia las 4 causas fundamentales de Hipertensión Portal de origen predominantemente Intrahepático Sinusoidal.",
+    "options": [
+      "Cirrosis Hepática (VHC, Alcohol, MASLD), Cirrosis Biliar Primaria (Tardía), Colangitis Esclerosante Primaria (Tardía), Hepatitis Autoinmune (Tardía)",
+      "Trombosis de la vena porta, Cavernomatosis portal, Esquistosomiasis, Hiperplasia Nodular Regenerativa",
+      "Síndrome de Budd-Chiari, Falla cardíaca derecha, Pericarditis constrictiva, Enfermedad veno-oclusiva (SOS)",
+      "Enfermedad celíaca refrectaria, Linfoma hepático primario, Metástasis difusas calcificadas, Peliosis hepática"
+    ],
+    "correctIndex": 0,
+    "explanation": "La hipertensión portal puede clasificarse como prehepática, intrahepática y posthepática. La intrahepática sinusoidal (cuyo representante #1 es la cirrosis) asume un impacto directo crónico a nivel del parenquima vascular microcelular, elevando la resistencia en los sinusoides.",
+    "fisiopato": "Generación de tejido fibroso y nódulos de regeneración que alteran y comprimen mecánicamente el árbol vascular sinusoidal del lóbulo capilar hepático, acoplado a un defecto vasodilatador (baja producción endotelial de NO).",
+    "clinicalPearl": "El 90% de las complicaciones con varices ocurren por orígenes intrahepáticos sinusoidales. Medir GPVH con catéter ocluido confirmará el sitio exacto del bloqueo.",
+    "whyWrong": {
+      "1": "Tratan hipertensión portal Intrahepática PRESINUSOIDAL y prehepática.",
+      "2": "Son patologías que entran dentro de una dinámica POSTHEPÁTICA o post-sinusoidal.",
+      "3": "Aunque pueden invadir el hígado, no son primariamente formadoras de bloqueos sinusoidales crónicos difusos como causa principal a nivel global."
+    },
+    "etiologyList": [
+      "Cirrosis por Etanol y/o Virus Hepatitis C/B",
+      "Cirrosis por MASLD (Esteatohepatitis Metabólica)",
+      "Cirrosis Biliar Primaria / CEP avanzada",
+      "Hepatitis Autoinmune avanzada",
+      "Hemocromatosis hereditaria avanzada"
+    ],
+    "differentialDiagnosis": "La diferencia capital es con las etiologías Post-hepáticas (Budd-Chiari o Insuficiencia Cardíaca) que tenderán a presiones auriculares centrales muy elevadas a diferencia de una cirrosis típica con presiones centrales pulmonares conservadas.",
+    "pillar": "Must-Know"
+  },
+  {
+    "id": "q-dx-025",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "¿Cuál es la causa más común de Hiperbilirrubinemia Indirecta (no conjugada) aislada y crónica en población genéticamente caucásica?",
+    "options": [
+      "Síndrome de Gilbert",
+      "Hemólisis autoinmune compensada crónica",
+      "Síndrome de Crigler-Najjar tipo 2",
+      "Síndrome de Dubin-Johnson"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Síndrome de Gilbert es la causa funcional número uno sin lesión hepática (afecta hasta al 10% de la población caucásica).",
+    "fisiopato": "Mutación en el gen promotor UGT1A1 (inserción TA) que lleva a un déficit relativo del 30% en la enzima uridina difosfato glucuronosiltransferasa.",
+    "clinicalPearl": "Si el paciente tiene hiperbilirrubinemia indirecta leve en ayuno o fatiga mas transaminasas y fosfatasa normales y sin anemia, es Gilbert puro y duro no requiere mayor estudio.",
+    "whyWrong": {
+      "1": "Tendrá hallazgos de anemia (haptoglobina baja, reticulocitos altos y LDH superior).",
+      "2": "Es infrecuente. Sus niveles de BRB indirecta exceden comúnmente los 10-15 mg/dL en contraposición al 2-3 mg/dL del Gilbert.",
+      "3": "Afectan el transporte con origen de la Hiperbilirrubinemia predominantemente CONJUGADA (Directa)."
+    },
+    "etiologyList": [
+      "Síndrome de Gilbert",
+      "Hemólisis (Anemias hemolíticas, esferocitosis)",
+      "Resorción masiva de sangrados (grandes hematomas)",
+      "Tóxicos y fármacos (Rifampicina)",
+      "Síndrome de Crigler-Najjar (Tipos I y II)"
+    ],
+    "differentialDiagnosis": "Descartar siempre causas destructivas de hemólisis vascular mediante el estudio de un frotis, haptoglobina, LDH y test de Coombs. El Gilbert no causa fatiga real documentada metabólicamente.",
+    "pillar": "Common Cases"
+  }
+,
+
+  {
+    "id": "q-dx-026",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "Enumere 5 causas orgánicas de 'Enfermedad por Reflujo Gastroesofágico Refractario' antes de catalogarlo como refractariedad funcional (Pirosis funcional).",
+    "options": [
+      "Adherencia o dosis insuficiente de IBP, Hernia hiatal gigante, Esofagitis Eosinofílica, Retraso de vaciamiento gástrico, Reflujo débilmente ácido/biliar",
+      "Acalasia tipo III, Espasmo Esofágico Difuso, Esclerodermia, Disfagia Lusoria, Divertículo de Zenker",
+      "H. pylori avanzado, Cáncer Gástrico, Gastritis atrófica, Úlcera bulbar penetrante, Estenosis pilórica crónica",
+      "Mala técnica masticatoria, SIBO extremo, Consumo aislado de cafeína, Embarazo primer trimestre, Ascitis a tensión"
+    ],
+    "correctIndex": 0,
+    "explanation": "El ERGE refractario es no responder a escala de IBP dos veces al día tras 8 semanas. Siempre se debe descartar primero la falta de adherencia al medicamento, seguido de grandes hernias que desplazan el EEI y entidades intercurrentes como EoE, sobre todo si hay fracaso absoluto a doble dosis de inhibición ácida profunda.",
+    "fisiopato": "Permeabilidad patológica sostenida del cardias que asocia bolsas de acídez infradiafragmáticas crónicas no modificadas por la farmacocinética oral intermitente.",
+    "clinicalPearl": "El monitoreo de pH-Impedanciometría en pacientes bajo IBP permite diferenciar la exposición real no suprimida contra la hipersensibilidad al reflujo.",
+    "whyWrong": {
+      "1": "Son causas de trastornos del movimiento (Disfagia dolorosa) y no cursan con erge refractario primario a menos de superponerse. Pertenecen al síndrome manométrico.",
+      "2": "Constituyen la enfermedad ulcerosa y orgánica del estómago y están dominadas por dolor epigástrico, saciedad temprana o anemia, sin reflujo cardinal refractario predominante en la queja del paciente.",
+      "3": "Son agravantes agudos y episódicos de competencia en la unión, no justifican un ERGE refractario a doble dosis."
+    },
+    "etiologyList": [
+      "Incumplimiento del horario y adherencia farmacológica",
+      "Hernias hiatales de gran tamaño y competencia del esfínter alterada (bolsillos de ácido)",
+      "Reflujo no ácido pero volumétrico y biliar sostenido.",
+      "Esofagitis Eosinofílica subyacente (Diagnóstico dual)",
+      "Vaciamiento gástrico retardado con reflujo proximal estático activo"
+    ],
+    "differentialDiagnosis": "Los diagnósticos alternativos definitivos (funcionales) son la Hipersensibilidad al Reflujo y la Pirosis Funcional las cuales representan el 50% de las aparentes fallas IBP.",
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-027",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "¿Cuál es la causa infecciosa hepática más probable en una paciente adulta joven inmunocompetente que presenta un dolor brusco y terebrante en hipocondrio derecho irradiado al hombro, con un TAC de abdomen que muestra una cápsula de Glisson realzada y signos de inflamación perihepática?",
+    "options": [
+      "Infección pélvica ascendente por Chlamydia trachomatis o Neisseria gonorrhoeae (Síndrome de Fitz-Hugh-Curtis)",
+      "Absceso hepático amebiano roto encapsulado (Entamoeba histolytica)",
+      "Colecistitis aguda enfisematosa bacteriana (Clostridium perfringens)",
+      "Hepatitis fulminante autoinmune (Tipo I, IgG al descubierto)"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Síndrome de Fitz-Hugh-Curtis (Perihepatitis) es una complicación de la enfermedad inflamatoria pélvica. Ocurre por extensión de la infección por la gotera parietocólica derecha hacia el espacio perihepático. Genera dolor severo pero las enzimas hepáticas suelen ser normales o levemente elevadas.",
+    "fisiopato": "Inflamación directa de las cubiertas subcapsulares fibrinosas hepáticas asociadas al exudado pélvico bacteriano cráneo-dirigido y adhesiones 'en cuerda de violín'.",
+    "clinicalPearl": "Mujer joven, sexualmente activa, con dolor hepático irradiado al hombro derecho y transaminasas milimétricamente normales: Fitz-Hugh-Curtis.",
+    "whyWrong": {
+      "1": "Origina una cavidad y cuadro de toxemia progresiva sistémica. Tiene enzimas biliares modificadas y se asocia a disentería previa o procedencia exótica.",
+      "2": "Daño intrínseco de vesícula que requeriría alteración en imágenes sobre la misma además de fiebre y afectaría a diabéticos ancianos primariamente.",
+      "3": "Generaría daño del parenquima hepatocelular masivo interno con transaminasas altas sin generar perihepatitis fibrótica externa aguda pura"
+    },
+    "etiologyList": [
+      "Perihepatitis clamidial (o gonocócica) - Fitz-Hugh-Curtis",
+      "Colecistitis / Cólico biliar doloroso agudo",
+      "Absceso hepático piógeno",
+      "Neumonía basal derecha / Pleuritis diafragmática",
+      "Herpes Zoster en fase pre-eruptiva en dermatomos T8-T10"
+    ],
+    "differentialDiagnosis": "El diagnóstico difrencial clave ginecológico y de la gotera paracólica contra patología vesicular u oncológica subcapsular. En la laparoscopia, las adherencias en puente (cuerdas de violín) confirman al FHC.",
+    "pillar": "Mastery"
+  },
+  {
+    "id": "q-dx-028",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Staff",
+    "text": "Enumere 5 de los desencadenantes (triggers) más frecuentes evaluados en el diagnóstico diferencial para generar un fallo orgánico 'Acute-on-Chronic Liver Failure' (ACLF) en un paciente cirrótico estable precozmente compensado.",
+    "options": [
+      "Infecciones bacterianas sistémicas (ej. PBE), Sobreconsumo alcohólico severo, Reactivación viral hepática (VHB/VHC), Hemorragia variceal aguda, Toxicidad farmacológica.",
+      "Hiperparatiroidismo primario, Carencia prolongada de Ácido Fólico, Enfermedad ulcerosa, Hipotiroidismo, Arritmia supraventricular compensada.",
+      "Microtrombosis periféricas arteriales, Consumo extremo crónico de cafeína, Síndrome del Intestino Corto agudo, Obstrucción colónica baja.",
+      "Diabetes tipo 1 inicial, Deficiencia de alfa-1 antitripsina heterocigóta, Intolerancia a la histamina, Alergia grave por inmunocomplejos, Cirugía dermatológica limítrofe."
+    ],
+    "correctIndex": 0,
+    "explanation": "La falla aguda sobre crónica (ACLF) se define por la descompensación súbita de una cirrosis previa con alta mortalidad temprana. El desencadenante inflamatorio sistémico número uno son las infecciones. Un insulto agudo o extra hepático basta para romper la escasa homeostasis del hígado terminal.",
+    "fisiopato": "Tormenta inflamatoria de citoquinas extremas que suprime la función mitocondrial de los hepatocitos marginales sumado al robo masivo de flujo portal microvascular.",
+    "clinicalPearl": "Todo cirrótico que de pronto escala a encefalopatía + ictericia progresivas sin causa evidente: Cultive TODOS los fluidos fluidos (PBE oculta = Gatillo silente).",
+    "whyWrong": {
+      "1": "Ninguna de estas influye significativamente en la falla aguda multiórganica inmediata secundaria a fallo funcional en pacientes cirróticos.",
+      "2": "Pese a que las microtrombosis ocurren o pueden agravar, el resto no se reconoce clínicamente como detonantes universales de un ACLF canónico validado en estudios como los de la base CANONIC y EASL-CLIF.",
+      "3": "Son comorbilidades autoinmunes y secundarias, no factores primordiales precipitantes de ACLF."
+    },
+    "etiologyList": [
+      "Infecciones microbianas (PBE, IVU, Neumonía)",
+      "Hepatitis alcohólica aguda sobre impuesta",
+      "Sangrado digestivo variceal desencadenante intercurrente",
+      "Activación de virus hepáticos primarios o subyacentes DILI",
+      "Procedimientos quirúrgicos sistémicos mayores o anestesias prolongadas"
+    ],
+    "differentialDiagnosis": "Se debe diferenciar entre un deterioro progresivo inexorable del Child-Pugh puro de un ACLF abrupto donde el 40% puede fallar sin gatillo indentificable por fracaso total final de órganos no hepáticos y translocación brutal.",
+    "pillar": "Phatophysiology"
+  },
+  {
+    "id": "q-dx-029",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Mencione la causa subyacente más frecuente que se asocia fuertemente al diagnóstico incipiente y de presentación paradójica de Enfermedad Inflamatoria Intestinal del Adulto con un dolor en fosa iliaca izquierda post hemorragia baja microscópica intermitente?",
+    "options": [
+      "Enfermedad diverticular severa no controlada o isquémica regional segmentaria post sigmoidea",
+      "Tuberculosis colónica subaguda focalizada en mesenterio",
+      "Colitis isquémica aguda gangrenada severa transitoria",
+      "Disbiosis aislada sin afectación del sustrato hístico coloniano"
+    ],
+    "correctIndex": 0,
+    "explanation": "La colitis asociada a enfermedad diverticular masiva tiene presentación solapada y en algunos escenarios se le conoce como SCAD (Segmental Colitis Associated with Diverticulosis). En adultos mayores puede simular una EII inicial localizada.",
+    "fisiopato": "Estasis de material endoluminal seguido de isquemia focal local e inflamación linfocítica parecida morfológicamente e histológicamente a focos de Colitis Ulcerosa o Crohn localizados únicamente en la franja con carga diverticular.",
+    "clinicalPearl": "El SCAD se controla frecuentemente solo con el uso prolongado de antibióticos y probióticos a diferencia del EII clásica del adulto mayor la cual avanza a afectación del recto primariamente sin inflamación de los sacos diverticulares.",
+    "whyWrong": {
+      "1": "Ocurre clásicamente a nivel cecal y ciego transverso, a la derecha, mientras que la diverticular y la Cu se orientan más clásicamente al eje rectosigmoideo del lado izquierdo.",
+      "2": "Presenta dolor generalizado o sangrado brutal indoloro temporalizado al ángulo esplénico de Griffiths, no cursa crónicamente intermitente ni es un imitador de EII a de moderada inflamación",
+      "3": "La disbiosis no cursa con hemorragia focal visible en colonoscopía en parches sobrepoblada o inflamación linfoplasmocitaria activa."
+    },
+    "etiologyList": [
+      "Colitis ulcerativa idiopática izquierda incipiente",
+      "Colitis isquémica crónica leve pos oclusiva segmentaria (Angulo Esplénico / Sigmoides)",
+      "Colitis actínica subaguda / secuestral localizada post radioterapia prostática o pélvica",
+      "Colitis asociada con enfermedad diverticular (SCAD)",
+      "Colitis infecciosa transitoria residual autolimitada (Salmonella prolongada, Amoeba)"
+    ],
+    "differentialDiagnosis": "La colitis ulcerosa que cursa paradójicamente en ancianos siempre debe descartar la isquemia arterial de bajo flujo y procesos malignos invasivos localizados. En el paciente geronte de inicio tardío se presenta primariamente rectosigmoidea y suele carecer de historia de tabaquismo o ser protectivos ex fumadores inversos.",
+    "pillar": "Common Cases"
+  },
+  {
+    "id": "q-dx-030",
+    "topic": "dx_diferencial_mastery",
+    "difficulty": "Fellow",
+    "text": "¿Cuál es la fisiopatología primaria y el diferencial infeccioso responsable de inducir gastritis por 'Ménétrier-like' fulminante con pérdida masiva proteica en la infancia y resolución abrupta precoz?",
+    "options": [
+      "Infección por CMV a nivel gástrico",
+      "Sobreinfección Aguda por Strongyloides stercoralis",
+      "Parasitación por larvas Anisakis simple",
+      "Asociación bacteriana a Sífilis Terciaria reactivada"
+    ],
+    "correctIndex": 0,
+    "explanation": "El Citomegalovirus (CMV) es la principal causa documentada y demostrada en estudios internacionales asociada a la gastropatía hipertrófica transitoria tipo Ménétrier que emerge en pediatría con edema dramático hipoalbuminemico. Remite en pocas semanas contra la entidad idiopática adulta progresiva y a veces refractaria.",
+    "fisiopato": "Acantonamiento, replicación y posterior respuesta linfoide foveolar masiva autolimitada mediada ante reactivación y de lesión endocelular del TGI en respuesta al CMV endémico infantil que induce perdida por vía gástrica luminal proteica y apoptosis focal.",
+    "clinicalPearl": "El diagnóstico es con serología e inmunohistoquímica endoscópica para detectar cuerpos de inclusión en 'ojo de búho'. El tratamiento se orienta primariamente solo con medidas de soporte, pues se auto resuelve en el paciente menor pediátrico joven a diferencia del requerimiento de cetuximab por disrupción al nivel de las citoquinas adultas TGBF.",
+    "whyWrong": {
+      "1": "Principalmente induciría sintomatología oclusiva abdominal, perforaciones crónicas y cuadro duodenal/pulmonar en el hiperinfeccioso general.",
+      "2": "Induce reacciones anafilácticas o edemas focales granulomatosos subagudos focalizados por larva encallada pero no genera atrofias hiperplásicas difusas generalizadas totales transitorias pediátricas.",
+      "3": "Causaría un linitis plástica crónica indolente o neuro sífilis combinada tras el primario latente en paciente adulto y senil."
+    },
+    "etiologyList": [
+      "Infección temporal autolimitada por Citomegalovirus (CMV)",
+      "Infecciones virales intercurrentes inespecíficas tipo H. pylori temprano",
+      "Infiltrados Eosinofílicos de esofagitis irradiada hacia tejido perigástrico",
+      "Enfermedad de Ménétrier clásica general autoinmune (En adultos)",
+      "Linfomas, o lesiones pre neoplásicas (en los idiopáticos adultos no resueltos)."
+    ],
+    "differentialDiagnosis": "Frente al diagnóstico de Ménétrier en la etapa infantil o adolecente todo endoscopista tiene que obligatoriamente reaccionar a descartar el CMV debido a su total naturaleza curativa de pronóstico reverso en contraste con sus contrapartes adultas y crónicas neoplásicas las cuales resultan irreversibles requiriendo gastrectomias o inmunobiológicos.",
+    "pillar": "Phatophysiology"
   }
 ];

@@ -40,7 +40,12 @@ import {
   BookOpen,
   ZoomIn,
   Search,
-  BookMarked
+  BookMarked,
+  Smartphone,
+  Tablet,
+  Monitor,
+  Cpu,
+  Eye
 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 import { GASTRO_TOPICS } from './data/categories';
@@ -378,15 +383,39 @@ const GastroChat = ({ onBack, contextQuestion = null }: { onBack: () => void; co
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'lobby' | 'quiz' | 'results' | 'pearls' | 'sim' | 'bookmarks' | 'oral_sim' | 'flashcards' | 'atlas' | 'profile' | 'cases' | 'ranking' | 'archive' | 'chat'>('lobby');
+  const [scalingMode, setScalingMode] = useState<'auto' | 'phone' | 'tablet' | 'pc'>(() => {
+    const saved = localStorage.getItem('app_scaling_mode');
+    return (saved as any) || 'auto';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('app_scaling_mode', scalingMode);
+  }, [scalingMode]);
   
   useEffect(() => {
     const scale = () => {
-      const width = window.innerWidth;
+      let width = window.innerWidth;
+      
+      if (scalingMode === 'auto') {
+        const ua = navigator.userAgent.toLowerCase();
+        const isMobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sphone/i.test(ua);
+        const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(ua);
+        
+        if (isTablet) {
+          width = 768;
+        } else if (isMobile) {
+          width = 390;
+        } else {
+          width = 1280;
+        }
+      } else {
+        width = scalingMode === 'phone' ? 390 :
+                scalingMode === 'tablet' ? 768 : 1280;
+      }
+
       if (width < 430) {
-        // Mode for standard smartphones
         document.documentElement.style.fontSize = '14px';
-      } else if (width < 768) {
-        // Large smartphones / Tablets
+      } else if (width < 900) {
         document.documentElement.style.fontSize = '15px';
       } else {
         document.documentElement.style.fontSize = '16px';
@@ -395,7 +424,7 @@ export default function App() {
     scale();
     window.addEventListener('resize', scale);
     return () => window.removeEventListener('resize', scale);
-  }, []);
+  }, [scalingMode]);
 
   const [isSimMode, setIsSimMode] = useState(false);
   const [isSurvivalMode, setIsSurvivalMode] = useState(false);
@@ -1092,7 +1121,30 @@ export default function App() {
       setAnswers(new Array(simQuestions.length).fill(null));
       setCurrentQuestionIndex(0);
       setShowFeedback(false);
-      setTimeLeft(simQuestions.length * 60); // 60 seconds per question
+      const initialTime = simQuestions.length * 60;
+      setTimeLeft(initialTime); // 60 seconds per question
+      
+      const shuffled = shuffleQuestionOptions(simQuestions);
+      setQuestions(shuffled);
+      const initialAnswers = new Array(shuffled.length).fill(null);
+      setAnswers(initialAnswers);
+
+      // Update activeQuiz
+      setProgress(prev => ({
+        ...prev,
+        activeQuiz: {
+          topicId: 'sim',
+          currentIndex: 0,
+          questions: shuffled,
+          answers: initialAnswers,
+          mode: 'sim',
+          targetCount: shuffled.length,
+          isSimMode: true,
+          isSurvivalMode: false,
+          isStudyMode: false,
+          timeLeft: initialTime
+        }
+      }));
     }
     setIsLoading(false);
   };
@@ -1138,7 +1190,8 @@ export default function App() {
           mode: 'survival',
           targetCount: shuffled.length,
           isSimMode: false,
-          isSurvivalMode: true
+          isSurvivalMode: true,
+          isStudyMode: false
         }
       }));
     }
@@ -1221,6 +1274,7 @@ export default function App() {
           targetCount: shuffled.length,
           isSimMode: true,
           isSurvivalMode: false,
+          isStudyMode: false,
           timeLeft: initialTime
         }
       }));
@@ -1264,6 +1318,9 @@ export default function App() {
     // Combine them
     const existingQuestions = [...seeds, ...cached];
 
+    // Identify previously failed ones for reinforcement
+    const failedQuestions = existingQuestions.filter(q => progress.reviewIds.includes(q.id));
+
     try {
       let currentPool = [...existingQuestions];
 
@@ -1272,7 +1329,7 @@ export default function App() {
       let attempts = 0;
       while (currentPool.length < targetQuestionCount && attempts < 2) {
         const needed = targetQuestionCount - currentPool.length;
-        const newAIQuestions = await generateQuestions(topic.id, topic.name, selectedDifficulty, needed);
+        const newAIQuestions = await generateQuestions(topic.id, topic.name, selectedDifficulty, needed, existingQuestions, failedQuestions);
         
         if (newAIQuestions && newAIQuestions.length > 0) {
           // Save to cache
@@ -1310,7 +1367,8 @@ export default function App() {
             mode: 'normal',
             targetCount: shuffled.length,
             isSimMode: false,
-            isSurvivalMode: false
+            isSurvivalMode: false,
+            isStudyMode: isStudyMode
           }
         }));
       } else {
@@ -1345,6 +1403,7 @@ export default function App() {
     if (showFeedback || isReviewingMode) return;
     const isActiveQuiz = progress.activeQuiz && currentView === 'quiz';
     const isAnsCorrect = index === questions[currentQuestionIndex].correctIndex;
+    
     if (isStudyMode) {
       if (isAnsCorrect) {
         playAudio('correct');
@@ -1361,10 +1420,13 @@ export default function App() {
 
     // Sync activeQuiz answers
     if (isActiveQuiz) {
-      setProgress(prev => ({
-        ...prev,
-        activeQuiz: prev.activeQuiz ? { ...prev.activeQuiz, answers: newAnswers } : undefined
-      }));
+      setProgress(prev => {
+        if (!prev.activeQuiz) return prev;
+        return {
+          ...prev,
+          activeQuiz: { ...prev.activeQuiz, answers: newAnswers }
+        };
+      });
     }
     
     if (isStudyMode) {
@@ -1384,11 +1446,11 @@ export default function App() {
         }
       }
     } else {
+      const nextIdx = currentQuestionIndex + 1;
       // Not study mode (Exam mode), go to next automatically without feedback
-      if (currentQuestionIndex < questions.length - 1) {
+      if (nextIdx < questions.length) {
         setTimeout(() => {
-          setCurrentQuestionIndex(currentQuestionIndex + 1);
-          setRevealedOral(false);
+          moveToQuestion(nextIdx);
         }, 150);
       } else {
         setTimeout(() => finishQuiz(), 150);
@@ -1405,22 +1467,27 @@ export default function App() {
 
     if (currentQuestionIndex < questions.length - 1) {
       const nextIdx = currentQuestionIndex + 1;
-      setCurrentQuestionIndex(nextIdx);
-      if (!isReviewingMode) {
-        setShowFeedback(false);
-      }
-      setRevealedOral(false);
-      
-      // Update activeQuiz
-      if (progress.activeQuiz && currentView === 'quiz') {
-        setProgress(prev => ({
-          ...prev,
-          activeQuiz: prev.activeQuiz ? { ...prev.activeQuiz, currentIndex: nextIdx } : undefined
-        }));
-      }
+      moveToQuestion(nextIdx);
     } else {
       finishQuiz();
     }
+  };
+
+  const moveToQuestion = (index: number) => {
+    setCurrentQuestionIndex(index);
+    if (!isReviewingMode) {
+      setShowFeedback(false);
+    }
+    setRevealedOral(false);
+    
+    // Critical: Update activeQuiz in progress to ensure session persistence
+    setProgress(prev => {
+      if (!prev.activeQuiz || currentView !== 'quiz') return prev;
+      return {
+        ...prev,
+        activeQuiz: { ...prev.activeQuiz, currentIndex: index }
+      };
+    });
   };
 
   const prevQuestion = () => {
@@ -1533,7 +1600,9 @@ export default function App() {
             let attempts = 0;
             while (collectedNew.length < remainingCount && attempts < 2) {
               const neededNow = remainingCount - collectedNew.length;
-              const nextQuestionsBatch = await generateQuestions(selectedTopic.id, selectedTopic.name, nextLevel, neededNow);
+              const allKnownForTopic = [...ALL_PRELOADED_QUESTIONS.filter(q => q.topic === selectedTopic.id), ...(cachedQuestions[selectedTopic.id] || [])];
+              const failedQuestions = allKnownForTopic.filter(q => progress.reviewIds.includes(q.id));
+              const nextQuestionsBatch = await generateQuestions(selectedTopic.id, selectedTopic.name, nextLevel, neededNow, allKnownForTopic, failedQuestions);
               if (nextQuestionsBatch && nextQuestionsBatch.length > 0) {
                 collectedNew = [...collectedNew, ...nextQuestionsBatch];
                 // Also save to cache for later
@@ -1575,6 +1644,7 @@ export default function App() {
     setCurrentQuestionIndex(active.currentIndex);
     setIsSimMode(active.isSimMode);
     setIsSurvivalMode(active.isSurvivalMode);
+    setIsStudyMode(active.isStudyMode ?? true);
     setTimeLeft(active.timeLeft || 0);
     
     const topic = GASTRO_TOPICS.find(t => t.id === active.topicId);
@@ -1615,6 +1685,38 @@ export default function App() {
       <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12 min-h-screen flex flex-col border-x-0 sm:border-x-4 border-tron-cyan/10 relative">
         <IntroOverlay />
         <AchievementNotification />
+
+        {/* Device Scaling Selector */}
+        <div className="absolute top-2 right-4 sm:right-6 lg:right-12 z-50 flex items-center gap-1 bg-black/60 backdrop-blur-md border border-tron-cyan/20 p-1 rounded-full text-[9px] uppercase font-bold tracking-tighter">
+          <button 
+            onClick={() => { playAudio('click'); setScalingMode('auto'); }}
+            className={cn("p-1.5 px-2 rounded-full flex items-center gap-1 transition-colors", scalingMode === 'auto' ? "bg-tron-cyan text-black" : "text-white/40 hover:text-white/70")}
+            title="Auto-detección"
+          >
+            <Cpu size={12} /> <span className="hidden min-[380px]:inline">Auto</span>
+          </button>
+          <button 
+            onClick={() => { playAudio('click'); setScalingMode('phone'); }}
+            className={cn("p-1.5 px-2 rounded-full flex items-center gap-1 transition-colors", scalingMode === 'phone' ? "bg-tron-cyan text-black" : "text-white/40 hover:text-white/70")}
+            title="Smartphone Mode"
+          >
+            <Smartphone size={12} /> <span className="hidden min-[380px]:inline">Móvil</span>
+          </button>
+          <button 
+            onClick={() => { playAudio('click'); setScalingMode('tablet'); }}
+            className={cn("p-1.5 px-2 rounded-full flex items-center gap-1 transition-colors", scalingMode === 'tablet' ? "bg-tron-cyan text-black" : "text-white/40 hover:text-white/70")}
+            title="iPad / Tablet Mode"
+          >
+            <Tablet size={12} /> <span className="hidden min-[380px]:inline">iPad</span>
+          </button>
+          <button 
+            onClick={() => { playAudio('click'); setScalingMode('pc'); }}
+            className={cn("p-1.5 px-2 rounded-full flex items-center gap-1 transition-colors", scalingMode === 'pc' ? "bg-tron-cyan text-black" : "text-white/40 hover:text-white/70")}
+            title="Desktop Mode"
+          >
+            <Monitor size={12} /> <span className="hidden min-[380px]:inline">PC</span>
+          </button>
+        </div>
 
         {progress.activeQuiz && (
           <motion.div 
@@ -2327,9 +2429,55 @@ export default function App() {
                   </div>
                 </div>
               </motion.div>
+              
+              {/* Specialized Mastery Section: Differential Diagnosis */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="mb-10 p-1 border-2 border-tron-yellow/30 bg-tron-yellow/5 rounded-[2rem] overflow-hidden group hover:border-tron-yellow/60 transition-all cursor-pointer"
+                onClick={() => {
+                  const topic = GASTRO_TOPICS.find(t => t.id === 'dx_diferencial_mastery');
+                  if (topic) startQuiz(topic);
+                }}
+              >
+                <div className="bg-black/60 p-8 rounded-[1.8rem] border border-tron-yellow/20 flex flex-col md:flex-row items-center gap-8 relative">
+                   <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+                      <Target size={240} className="text-tron-yellow" />
+                   </div>
+                   
+                   <div className="w-20 h-20 rounded-full bg-tron-yellow/10 flex items-center justify-center border-2 border-tron-yellow/40 shadow-[0_0_20px_rgba(255,184,0,0.2)] group-hover:scale-110 transition-transform">
+                      <ShieldCheck className="text-tron-yellow" size={40} />
+                   </div>
+                   
+                   <div className="flex-1 text-center md:text-left">
+                      <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-3">
+                         <span className="bg-tron-yellow text-black text-[9px] font-black px-2 py-0.5 rounded-sm uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(255,184,0,0.4)]">
+                            Nuevo Módulo Mastery
+                         </span>
+                         <span className="border border-tron-yellow/30 text-tron-yellow text-[9px] font-black px-2 py-0.5 rounded-sm uppercase tracking-widest">
+                            {progress.byTopic['dx_diferencial_mastery']?.attempted || 0} Completadas
+                         </span>
+                      </div>
+                      <h2 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-2 group-hover:text-tron-yellow transition-colors">
+                        Causas de Enf y Dx Diferenciales
+                      </h2>
+                      <p className="text-white/60 font-serif italic max-w-xl text-sm leading-relaxed">
+                        Entrenamiento de alta intensidad enfocado en enumeración de causas frecuentes, fallas terapéuticas y diagnósticos diferenciales de oro. 
+                        Incluye 20 retos del Fellow y generación por IA adaptativa.
+                      </p>
+                   </div>
+                   
+                   <div className="flex flex-col items-center gap-2">
+                       <GlowButton variant="yellow" className="px-10 py-4 text-xs font-black">
+                          INICIAR MASTERY
+                       </GlowButton>
+                       <span className="text-[8px] text-tron-yellow/40 font-mono uppercase tracking-[0.3em] font-bold">Nivel: Expert Fellow</span>
+                   </div>
+                </div>
+              </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {GASTRO_TOPICS.filter(t => !['perfil_hepatico', 'eii_avanzada'].includes(t.id)).map((topic) => {
+              {GASTRO_TOPICS.filter(t => !['perfil_hepatico', 'eii_avanzada', 'dx_diferencial_mastery'].includes(t.id)).map((topic) => {
                 const topicStats = progress.byTopic[topic.id] || { attempted: 0, correct: 0 };
                 const completionPercent = Math.min(100, Math.round((topicStats.attempted / 20) * 100));
                 
@@ -2868,6 +3016,33 @@ export default function App() {
                       </p>
                     </TronCard>
 
+                    {currentQuestion?.etiologyList && currentQuestion.etiologyList.length > 0 && (
+                      <TronCard accentColor="rgba(0,255,255,0.1)" className="p-4 bg-black/40 border border-tron-cyan/30">
+                        <h5 className="text-[10px] uppercase font-black text-tron-cyan mb-3 tracking-[0.2em] flex items-center gap-2">
+                          <Target size={12} className="text-tron-cyan" /> Top Causas (Más a Menos Frecuente)
+                        </h5>
+                        <ul className="space-y-2">
+                          {currentQuestion.etiologyList.map((cause, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-sm text-gray-300 font-serif">
+                              <span className="text-tron-cyan text-[10px] mt-1 font-mono">{(idx + 1).toString().padStart(2, '0')}</span>
+                              <span>{renderWithAcronyms(cause)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </TronCard>
+                    )}
+
+                    {currentQuestion?.differentialDiagnosis && (
+                      <div className="bg-black/60 p-4 rounded-lg border border-purple-500/30 border-l-2 border-l-purple-500 shadow-inner">
+                         <h5 className="text-[10px] uppercase font-black text-purple-400 mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
+                          <Eye size={12} /> Diagnósticos Diferenciales
+                        </h5>
+                        <p className="text-[12px] text-white/80 font-serif leading-relaxed italic">
+                          {renderWithAcronyms(currentQuestion.differentialDiagnosis)}
+                        </p>
+                      </div>
+                    )}
+
                     <div className="bg-black/80 p-4 rounded-lg border border-tron-yellow/30 border-l-2 border-l-tron-yellow shadow-inner">
                        <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
                         <Lightbulb size={12} /> Perla Clínica
@@ -3056,7 +3231,9 @@ export default function App() {
                 onClick={async () => {
                    setIsLoading(true);
                    try {
-                     const extras = await generateQuestions(selectedTopic!.id, selectedTopic!.name, selectedDifficulty, 5);
+                     const allKnownForTopic = [...ALL_PRELOADED_QUESTIONS.filter(q => q.topic === selectedTopic!.id), ...(cachedQuestions[selectedTopic!.id] || [])];
+                     const failedQuestions = allKnownForTopic.filter(q => progress.reviewIds.includes(q.id));
+                     const extras = await generateQuestions(selectedTopic!.id, selectedTopic!.name, selectedDifficulty, 5, allKnownForTopic, failedQuestions);
                      const updatedQuestions = [...questions, ...extras];
                      // Save to persistent cache
                      setCachedQuestions(prev => ({

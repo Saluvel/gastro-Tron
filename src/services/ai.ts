@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { Question, Difficulty } from "../types/quiz";
 import { PRELOADED_QUESTIONS } from "../data/questionBank";
 
-export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3): Promise<Question[]> {
+export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3, existingQuestions: Question[] = [], failedQuestions: Question[] = []): Promise<Question[]> {
   // 1. Intentar obtener de las preguntas precargadas primero
   const preloaded = PRELOADED_QUESTIONS.filter(q => q.topic === topicId && q.difficulty === difficulty)
     .sort(() => Math.random() - 0.5);
@@ -31,6 +31,15 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       "Complicaciones y urgencias."
     ];
 
+    if (topicId === 'dx_diferencial_mastery') {
+      focusAreas.push(
+        "Enumeración de causas más frecuentes de una patología.",
+        "Diagnóstico diferencial detallado entre entidades con perfiles similares.",
+        "Fases de diagnóstico etiológico y algoritmos de causas.",
+        "Causas de falla a tratamientos y diagnósticos alternativos."
+      );
+    }
+
     const shuffledFocus = [...focusAreas].sort(() => Math.random() - 0.5);
     const BATCH_SIZE = 5;
     const aiQuestions: Question[] = [];
@@ -45,10 +54,32 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       const currentBatchCount = Math.min(remaining, BATCH_SIZE);
       const focus = shuffledFocus[focusIdx % shuffledFocus.length];
       
+      let specificTopicPrompt = ` Genera preguntas de nivel alto y profesional en ESPAÑOL NEUTRO, CLARO Y MUY PROFESIONAL para el nivel "${difficulty}" sobre el tema: "${topicName}".`;
+      
+      if (topicId === 'dx_diferencial_mastery') {
+        specificTopicPrompt = ` Genera preguntas enfocadas EXCLUSIVAMENTE en ETIOLOGÍAS Y DIAGNÓSTICO DIFERENCIAL sobre: "${topicName}".
+        Las preguntas deben seguir estos patrones:
+        - "Enumere X causas de [Patología]..."
+        - "¿Cuál es el diagnóstico diferencial principal entre [A] y [B]?"
+        - "¿Cuál de estas es la causa más probable dado el perfil [X]?"
+        La explicación fisiopatológica DEBE incluir además una comparativa con otros diagnósticos diferenciales.`;
+      }
+
+      if (existingQuestions.length > 0) {
+        // Obtenemos una muestra de preguntas existentes para no sobrecargar el prompt
+        const sampleExisting = existingQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+        specificTopicPrompt += `\n\nEVITA REPETIR O SER REDUNDANTE con las siguientes preguntas o conceptos ya evaluados en el sistema:\n${sampleExisting.map(q => "- " + q.text).join("\n")}\nBusca nuevos ángulos, detalles más profundos u otros aspectos del tema.`;
+      }
+
+      if (failedQuestions.length > 0) {
+        const sampleFailed = failedQuestions.sort(() => 0.5 - Math.random()).slice(0, 3);
+        specificTopicPrompt += `\n\nADEMÁS, el usuario ha fallado recientemente en estos conceptos. OBLIGATORIAMENTE incluye una o dos preguntas diferentes que REFUERCEN los siguientes escenarios clínicos, pero presentándolos desde OTRO ángulo, contexto clínico o formulación:\n${sampleFailed.map(q => "- " + q.text).join("\n")}`;
+      }
+
       console.log(`Llamando al oráculo de GAS-TRON para lote de ${currentBatchCount} preguntas adicionales (${focus})...`);
       
       const prompt = `${systemSourceInstruction}
-      Genera ${currentBatchCount} preguntas de opción múltiple de nivel alto y profesional en ESPAÑOL NEUTRO, CLARO Y MUY PROFESIONAL para el nivel "${difficulty}" sobre el tema: "${topicName}".
+      ${specificTopicPrompt}
       Contexto específico: ${focus || 'General'}
       
       IMPORTANTE Y OBLIGATORIO: 
@@ -62,6 +93,8 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       - 'guideline': Cita una guía o consenso real y existente.
       - 'whyWrong': Explica por qué cada una de las otras 3 opciones (las incorrectas) no son la respuesta correcta.
       - 'correctIndex' DEBE ser siempre 0 (el sistema las mezclará después). Por tanto, la respuesta correcta debe ser siempre la primera de la lista de opciones.
+      - 'etiologyList': Si la pregunta o el tema lo permite, un arreglo de 4 a 5 causas (strings), ordenadas desde la MÁS FRECUENTE a la MENOS FRECUENTE.
+      - 'differentialDiagnosis': Una explicación corta sobre los diagnósticos diferenciales más importantes a considerar.
       
       Devuelve un JSON estricto con este formato:
       [
@@ -77,7 +110,9 @@ export async function generateQuestions(topicId: string, topicName: string, diff
           "clinicalPearl": "[Perla clínica]",
           "guideline": "[Guía clínica]",
           "pillar": "Must-Know",
-          "whyWrong": { "1": "[Fallo del D1]", "2": "[Fallo del D2]", "3": "[Fallo del D3]" }
+          "whyWrong": { "1": "[Fallo del D1]", "2": "[Fallo del D2]", "3": "[Fallo del D3]" },
+          "etiologyList": ["[Causa 1]", "[Causa 2]"],
+          "differentialDiagnosis": "[Explicación de Dx dif]"
         }
       ]`;
 
@@ -102,6 +137,8 @@ export async function generateQuestions(topicId: string, topicName: string, diff
                 clinicalPearl: { type: Type.STRING },
                 guideline: { type: Type.STRING },
                 pillar: { type: Type.STRING },
+                etiologyList: { type: Type.ARRAY, items: { type: Type.STRING } },
+                differentialDiagnosis: { type: Type.STRING },
                 whyWrong: { 
                   type: Type.OBJECT, 
                   properties: {

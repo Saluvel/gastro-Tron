@@ -48,7 +48,7 @@ Asegúrate de NO incluir caracteres de markdown \`\`\`json u otra cosa fuera del
       }
     });
 
-    const text = response.text();
+    const text = response.text;
     const data = JSON.parse(text);
     return data;
   } catch (error) {
