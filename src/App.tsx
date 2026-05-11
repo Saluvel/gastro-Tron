@@ -2962,7 +2962,7 @@ export default function App() {
                       </div>
                     )}
 
-                    <h3 className="text-[15px] md:text-base text-white font-serif leading-relaxed mb-8">
+                    <h3 className="text-lg md:text-xl text-white font-serif leading-relaxed mb-8">
                       {currentQuestion?.text ? renderWithAcronyms(currentQuestion.text) : null}
                     </h3>
 
@@ -3091,7 +3091,7 @@ export default function App() {
                         {isCorrect ? <Target size={16} /> : <AlertCircle size={16} />} 
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
-                      <p className="text-gray-300 text-[13px] leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
+                      <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
                         {currentQuestion?.explanation ? renderWithAcronyms(currentQuestion.explanation) : null}
                       </p>
                     </div>
@@ -3100,7 +3100,7 @@ export default function App() {
                       <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-[0.2em] flex items-center gap-2">
                         <Brain size={12} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
-                      <p className="text-[11px] text-white/70 leading-relaxed font-mono">
+                      <p className="text-[12px] md:text-[13px] text-white/70 leading-relaxed font-mono">
                         {currentQuestion?.fisiopato ? renderWithAcronyms(currentQuestion.fisiopato) : null}
                       </p>
                     </TronCard>
@@ -3112,7 +3112,7 @@ export default function App() {
                         </h5>
                         <ul className="space-y-2">
                           {currentQuestion.etiologyList.map((cause, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-gray-300 font-serif">
+                            <li key={idx} className="flex items-start gap-2 text-[15px] text-gray-300 font-serif">
                               <span className="text-tron-cyan text-[10px] mt-1 font-mono">{(idx + 1).toString().padStart(2, '0')}</span>
                               <span>{renderWithAcronyms(cause)}</span>
                             </li>
@@ -3126,7 +3126,7 @@ export default function App() {
                          <h5 className="text-[10px] uppercase font-black text-purple-400 mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
                           <Eye size={12} /> Diagnósticos Diferenciales
                         </h5>
-                        <p className="text-[12px] text-white/80 font-serif leading-relaxed italic">
+                        <p className="text-[13px] md:text-sm text-white/80 font-serif leading-relaxed italic">
                           {renderWithAcronyms(currentQuestion.differentialDiagnosis)}
                         </p>
                       </div>
@@ -3136,7 +3136,7 @@ export default function App() {
                        <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
                         <Lightbulb size={12} /> Perla Clínica
                       </h5>
-                      <p className="text-[12px] text-white font-serif leading-relaxed italic">
+                      <p className="text-[13px] md:text-[14px] text-white font-serif leading-relaxed italic">
                         "{currentQuestion?.clinicalPearl ? renderWithAcronyms(currentQuestion.clinicalPearl) : null}"
                       </p>
                     </div>
@@ -3156,7 +3156,7 @@ export default function App() {
                                 <div className="text-[9px] text-white/40 uppercase font-black tracking-widest mb-0.5">
                                   Opción {String.fromCharCode(65 + idx)}: {opt.length > 40 ? opt.substring(0, 40) + '...' : opt}
                                 </div>
-                                <p className="text-[11px] text-white/60 italic leading-relaxed">
+                                <p className="text-[12px] md:text-[13px] text-white/60 italic leading-relaxed">
                                   {renderWithAcronyms(reason)}
                                 </p>
                               </div>
