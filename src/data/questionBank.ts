@@ -1911,27 +1911,22 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Mastery"
   },
   {
-    "id": "q-53",
+    "id": "q-53_repl",
     "topic": "cancer_esofago",
-    "difficulty": "Staff",
-    "text": "En el seguimiento de un paciente con Esófago de Barrett con displasia de bajo grado confirmada por dos patólogos, ¿cuál es la conducta recomendada?",
+    "difficulty": "Fellow",
+    "text": "En un paciente asintomático de 65 años de Asia oriental en el que se ejecuta una exploración con cromoendoscopia ligada por imagen ópticamente magnificada con LCI/BLI, se devela de improviso una pequeña zona francamente plana focal rojiza escamosa esofágica de 15 mm que exhibe intrapapilofilia ramificada y neovascularización densa focal tipo B1. Al resecarse en base submucosa revela Carcinoma Escamoso Esofágico netamente pT1a limitado estaminalmente a mucosa basal LP/m2, con bordes netamente francos limpios, sin invasión endolinfática (LVI) general. El paso sistémico de control y curativo inmediato subsiguiente estéril es:",
     "options": [
-      "Seguimiento endoscópico cada 3 meses",
-      "Esofaguectomía distal",
-      "Ablación por radiofrecuencia (RFA)",
-      "Dosis doble de IBP y control en 1 año"
+      "Seguimiento puro exclusivamente ambulatorio semestral endoscópico crudo y radiológico ya que se clasifica formal como estadio patológico pental curativo resuelto estricto",
+      "Proceder a esofagectomía cervical masiva paliativa inmediata obligatoria por enorme riesgo intrínseco natural difuso per se",
+      "Añadir radio-quimioterapia estéril definitiva basal en lecho focal per se curativa para esterilizar bordes basales masoquistas del paciente sistémico",
+      "Vigilancia oncológica ciega sin controles endoscópicos luminales focalizados hasta reportes asintomáticos o metástasis"
     ],
-    "correctIndex": 2,
-    "explanation": "La ablación endoscópica es preferida sobre el seguimiento para reducir el riesgo de progresión a adenocarcinoma.",
-    "fisiopato": "La radiofrecuencia elimina el epitelio metaplásico y displásico, permitiendo la re-epitelización con tejido escamoso normal.",
-    "clinicalPearl": "La displasia SIEMPRE debe ser confirmada por un segundo patólogo experto en GI antes de tomar conductas invasivas.",
-    "guideline": "Manual Chileno 2025 / Guías ASGE.",
-    "whyWrong": {
-      "0": "Opción válida anteriormente, pero hoy se prefiere erradicar.",
-      "1": "Morbilidad excesiva para una displasia de bajo grado.",
-      "3": "No elimina el riesgo de progresión."
-    },
-    "pillar": "Board Prep"
+    "correctIndex": 0,
+    "explanation": "Una disección submucosa o mucosectomía de un cáncer precoz escamoso estéril limitado firmemente a la lámina propia/epitelial basal pura per se de manera sistémica y con márgenes francos libres limpios estériles se clasifica uniformemente formalmente como un procedimiento masivo curativo completo y curación, en ausencia de permeaciones linfovasculares netas (donde el chance o riesgos locales basales sistémicos metástasis lumina ganglionares se estipulan como sumamente escasos <2%).",
+    "fisiopato": "La particular irrigación esofágica per se dictamina que si un daño neoplásico escamoso es netamente masivo m1 o m2 (sin raspar la muscularis mucosae pura u basal la submucosa sm1 letales), los abundantes nódulos limpios y linfáticos periféricos y masoquistas pélvicos per se quedan limpios libres formal e idealmente.",
+    "clinicalPearl": "Para Cáncer de Esófago el T1a puramente M1/M2 netamente formal e ideal y resuelto endoscópicamente por ESD sin invasiones general es estéril u general considerado formal curativo.",
+    "guideline": "ASGE/ESGE Guidelines for Early Esophageal Cancers.",
+    "pillar": "Management"
   },
   {
     "id": "q-54",
@@ -4395,27 +4390,22 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Common Cases"
   },
   {
-    "id": "q-164",
+    "id": "q-164_repl",
     "topic": "erge",
-    "difficulty": "Subspecialist",
-    "text": "En un paciente con Esófago de Barrett y displasia de bajo grado confirmada por dos patólogos expertos, ¿cuál es la conducta preferida actualmente?",
+    "difficulty": "Fellow",
+    "text": "Mujer de 55 años, usuaria crónica de Oxicodona por dolor espinal severo, se presenta con disfagia y dolor torácico retroesternal crónico atípico post pandrial esporádico, descartándose inicialmente patología isquémico cardiaca local. Se ejecuta manometría de alta resolución, diagnosticándose esófago hipercontráctil o 'jackhammer' severo, de gran longitud. Si se constata que los opioides basales son intocables por su cuadro clínico de base en general, ¿cuál es la mejor opción farmacológica luminal directa para aminorar francamente este trastorno motor reactivo secundario?",
     "options": [
-      "Endoscopia cada 6 meses indefinidamente",
-      "Ablación por radiofrecuencia (RFA) o vigilancia estrecha",
-      "Esofaguectomía",
-      "Duplicar dosis de IBP y no vigilar"
+      "Uso temporal de inhibidores selectivos de fosfodiesterasa y/o relajantes musculares pélvicos orales sistémicos ciegos",
+      "Dosis altas nocturnas continuas combinadas ciegas de Inhibidores de Bombas (IBPs) e Indometacina masiva parenteral",
+      "Uso de calcio antagonistas orales subfranqueos y eventualmente el uso de nitratos u sildenafilo de acción local miorrelajante sistémica",
+      "Bloqueadores directos crudos selectivos basales de la enzima convertidora de angiotensina (ECA) subyacente local"
     ],
-    "correctIndex": 1,
-    "explanation": "La ablación reduce significativamente el riesgo de progresión a adenocarcinoma en comparación con la vigilancia.",
-    "fisiopato": "La eliminación del epitelio metaplásico/displásico permite la re-epitelización con tejido escamoso normal.",
-    "clinicalPearl": "La decisión debe ser compartida con el paciente, explicando riesgos de progresión vs riesgos del procedimiento.",
-    "guideline": "ACG 2022 / ESGE guidelines.",
-    "whyWrong": {
-      "0": "Aceptable anteriormente, pero la RFA es superior hoy.",
-      "2": "Demasiado agresivo para displasia de bajo grado.",
-      "3": "Error clínico; la displasia requiere intervención o vigilancia activa."
-    },
-    "pillar": "Mastery"
+    "correctIndex": 2,
+    "explanation": "En los trastornos motores hiperparéticos dolorosos esofágicos inducidos o empeorados por opioides (que causan simultánea y paradójicamente esófago hipercontráctil y acalasia-like espasmos basales de esfínter transitorio) los nitratos de de corta acción u los bloqueadores directos puros de canales de calcio o el inhibidor de PDE5 aminoran las contracciones masoquistas simultáneas miorrelajándolas sistémicamente.",
+    "fisiopato": "Los opioides generalizados crudos y puros estimulan desbalanceamente a nivel puramente estéril y neural luminal subyacente la función contráctil excitatoria esofágica colinérgica, inhibiendo sub franqueamente la relajación coordinada cruda de las vías inhibitorias nítricas locales intermusculares.",
+    "clinicalPearl": "El uso masivo clínico crónico de opioides genera trastornos coléricos motores netamente fenotípicamente como Acalasia Tipo III puramente letales (espasmo tipo 'Jackhammer').",
+    "guideline": "ACG Clinical Guideline Update on Motility Disorders.",
+    "pillar": "Symptom Logic"
   },
   {
     "id": "q-165",
@@ -5591,27 +5581,22 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Board Prep"
   },
   {
-    "id": "q-216",
+    "id": "q-216_repl",
     "topic": "masld",
-    "difficulty": "Subspecialist",
-    "text": "¿Cuál es el primer fármaco aprobado por la FDA específicamente para el tratamiento de la NASH (MASH) con fibrosis significativa (F2-F3)?",
+    "difficulty": "Staff",
+    "text": "En un paciente de 45 años, con IMC de 42 kg/m², diabetes tipo 2 con difícil control y MASLD avanzada documentada fibrótica (F3) confirmada por elastografía MR y biopsia de hígado, ha fracasado en los intentos clínicos serios de pérdida de peso a pesar del uso reciente de análogos GLP-1/GIP a dosis puras y plenas. ¿Cuál de los siguientes está considerado el algoritmo más efectivo a largo plazo capaz de lograr la regresión más contundente tanto de la esteatosis masiva como de la progresión a fibrosis puente?",
     "options": [
-      "Resmetirom",
-      "Pioglitazona",
-      "Vitamina E",
-      "Semaglutida"
+      "Cirugía Metabólica/Bariátrica (ej. Bypass Gástrico de Roux-en-Y o Manga gástrica)",
+      "Instauración de terapia de reemplazo hormonal alta con T3 y anabólicos",
+      "Derivación empírica transyugular percutánea porto-sistémica temprana en ausencia total de portal",
+      "Suplementación estéril basal continua de Ácido Obeticólico 25mg combinada con pioglitazona sin modificar dieta"
     ],
     "correctIndex": 0,
-    "explanation": "El Resmetirom es un agonista selectivo del receptor de hormona tiroidea beta (THR-beta).",
-    "fisiopato": "Aumenta el metabolismo de los lípidos en el hígado y reduce la lipotoxicidad.",
-    "clinicalPearl": "Aprobado en 2024 tras los resultados del estudio MAESTRO-NASH.",
-    "guideline": "AASLD 2024 Practice Guidance.",
-    "whyWrong": {
-      "1": "Usado off-label con buena evidencia, pero no con indicación específica aprobada.",
-      "2": "Usado en no diabéticos, pero con evidencia limitada en fibrosis avanzada.",
-      "3": "Eficaz para pérdida de peso y resolución de MASH, pero aprobación específica para fibrosis está en curso."
-    },
-    "pillar": "Mastery"
+    "explanation": "La cirugía metabólica ha demostrado en estudios de cohortes grandes y consistentes revertir cruda y verdaderamente todo el espectro histológico agresivo (incluyendo regresión de fibrosis sistémica en NASH/MASH) en forma sostenida, muy superior al de manejos puramente farmacológicos ante la falla de pérdida general sostenida de un mínimo del 10%.",
+    "fisiopato": "La alteración subcelular masiva generada por el bypass promueve incrementos dramáticos tempranos sistémicos endógenos de polipéptido insulinotrópico dependiente y reducciones directas del ingreso de estrés oxidativo portal de grasas dislipidemias de novo.",
+    "clinicalPearl": "En la obesidad masoquiana hiper mórbida y metabólicamente dañina (índice >40) en estadio pre-cirrótico (F3 MASH) inmanejable, la intervención bariátrica suele ser históricamente la cura funcional directa curando comórbidos y detracando histología hepática.",
+    "guideline": "EASL/AASLD Joint Guidelines on Clinical Management of NAFLD/MASLD.",
+    "pillar": "Crucial Insight"
   },
   {
     "id": "q-217",
@@ -5660,27 +5645,22 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Board Prep"
   },
   {
-    "id": "q-219",
+    "id": "q-219_repl",
     "topic": "cirrosis",
-    "difficulty": "Subspecialist",
-    "text": "¿Cuál es el criterio para diagnosticar una Insuficiencia Hepática Aguda sobre Crónica (ACLF) según el consenso de la EASL-CLIF?",
+    "difficulty": "Fellow",
+    "text": "Un paciente cirrótico en estadio Child-Pugh B con reciente diagnóstico de carcinoma hepatocelular pequeño (<3 cm) presenta de forma aguda un cuadro de dolor abdominal masivo y ascitis de crecimiento acelerado. La tomografía abdominal revela un gran trombo agudo obstructivo reciente en el tronco de la vena porta, sin invasión tumoral luminal evidente. De acuerdo al manejo actual, ¿qué curso de acción terapéutico sistemático debe seguirse?",
     "options": [
-      "Presencia de falla multiorgánica (puntuación CLIF-C OF) en un paciente con cirrosis descompensada",
-      "Bilirrubina > 10 mg/dL únicamente",
-      "Ascitis refractaria",
-      "Encefalopatía grado I"
+      "Iniciar anticoagulación sistémica prolongada con heparinas de bajo peso molecular o antagonistas de vitamina K",
+      "Rechazar sistemáticamente terapias antitrombóticas debido a la historia oncológica coexistente y el Child-Pugh",
+      "Proceder de inmediato de urgencia con una derivación percutánea (TIPS) independiente de la tolerancia cardíaca",
+      "Observación rigurosa por 6 meses con ecografías doppler periódicas esperando la recanalización natural venosa"
     ],
     "correctIndex": 0,
-    "explanation": "La ACLF se define por la falla de órganos sistémicos y se asocia a una mortalidad muy alta a corto plazo.",
-    "fisiopato": "Una respuesta inflamatoria sistémica severa (SIRS) gatillada por infección o alcohol daña órganos distantes (riñón, pulmón, cerebro).",
-    "clinicalPearl": "El pronóstico depende del número de fallas orgánicas (Grado 1, 2 o 3).",
-    "guideline": "EASL-CLIF Consortium guidelines on ACLF.",
-    "whyWrong": {
-      "1": "Es un componente de la falla, no la definición per se.",
-      "2": "Es una descompensación clásica, no necesariamente ACLF.",
-      "3": "No define el síndrome de falla multiorgánica."
-    },
-    "pillar": "Mastery"
+    "explanation": "El tratamiento de la trombosis aguda u oclusiva venosa portal no neoplásica (blanda) en cirrosis descompensada o en portadores de HCC potencialmente tratable está fuertemente dirigido a preservar el lecho vascular, exigiendo el inicio rápido de anticoagulantes sistémicos (usualmente heparinas de bajo peso) para propiciar la recanalización.",
+    "fisiopato": "Contra los mitos clásicos, la cirrosis tiene una tendencia pro-trombótica innata general mediada por niveles elevados de Factor VIII y reducción dramática de anticoagulantes naturales como la Proteína C, S, y Antitrombina. El freno coagulatorio permite que la fibrinólisis lise los trombos agudos.",
+    "clinicalPearl": "Toda trombosis venosa portal (TVP) en cirroticos, de no ser por invasión maciza tumoral (tumor in vein), es candidata neta a ser anticoagulada. Ello puede reabrir opciones de trasplante hepático ortotópico limitadas por porta fibrosada.",
+    "guideline": "AASLD Guidelines on Portal Vein Thrombosis in Cirrhosis.",
+    "pillar": "Management"
   },
   {
     "id": "q-220",
@@ -5729,27 +5709,22 @@ export const PRELOADED_QUESTIONS: Question[] = [
     "pillar": "Board Prep"
   },
   {
-    "id": "q-222",
+    "id": "q-222_repl",
     "topic": "eii_avanzada",
-    "difficulty": "Subspecialist",
-    "text": "¿Cuál es el mecanismo de acción del Upadacitinib en la Colitis Ulcerosa?",
+    "difficulty": "Fellow",
+    "text": "En un paciente con Colitis Ulcerosa grave hospitalizado que ha fallado a 72 horas de esteroides intravenosos (criterios de Truelove-Witts sin mejoría), se decide iniciar terapia de rescate con Ciclosporina intravenosa. A nivel molecular, ¿cuál es el mecanismo de acción mediante el cual la ciclosporina logra su rápido efecto inmunosupresor en esta entidad?",
     "options": [
-      "Inhibidor selectivo de JAK-1",
-      "Antagonista de la integrina alfa-4-beta-7",
-      "Inhibidor de la IL-23 p19",
-      "Bloqueador de TNF-alfa"
+      "Se une a la ciclofilina e inhibe la calcineurina celular, bloqueando la transcripción de Interleucina-2 (IL-2)",
+      "Bloquea competitivamente los receptores alfa4-beta7 en los leucocitos intestinales",
+      "Inhibe de forma irreversible la actividad JAK1/JAK3 en la vía de señalización de STAT",
+      "Neutraliza directamente los niveles de citocinas quiméricas IL-12 e IL-23 extracelulares"
     ],
     "correctIndex": 0,
-    "explanation": "Upadacitinib es una pequeña molécula oral que bloquea la vía de señalización intracelular de múltiples citoquinas proinflamatorias.",
-    "fisiopato": "Al inhibir JAK-1, se detiene la transcripción mediada por STAT, reduciendo la activación linfocitaria.",
-    "clinicalPearl": "Muy eficaz en inducción rápida, incluso en fallas a anti-TNF.",
-    "guideline": "U-ACHIEVE clinical trials / FDA approval.",
-    "whyWrong": {
-      "1": "Mecanismo de Vedolizumab.",
-      "2": "Mecanismo de Risankizumab o Guselkumab.",
-      "3": "Mecanismo de Infliximab/Adalimumab."
-    },
-    "pillar": "Mastery"
+    "explanation": "La ciclosporina inhibe la vía de la calcineurina, impidiendo de forma rápida y profunda la maduración de los linfocitos T y su consiguiente producción de IL-2, lo que resulta en un rápido control de inflamaciones mediadas por linfocitos T de memoria.",
+    "fisiopato": "La enzima calcineurina normalmente desfosforila el factor nuclear NFAT. Cuando el complejo Ciclosporina-Ciclofilina bloquea a la calcineurina, el NFAT no viaja al núcleo, paralizando así de raíz la activación clonal de los Linfocitos T citotóxicos.",
+    "clinicalPearl": "La ciclosporina IV es un excelente puente biológico a rápido plazo en crisis severas de CU refractarias a esteroides, pero por su severa nefrotoxicidad general y neurotoxicidad exige estricta vigilancia niveles (objetivo usual 200-400 ng/mL).",
+    "guideline": "ECCO Guidelines on Therapeutics in Ulcerative Colitis.",
+    "pillar": "Clinical Logic"
   },
   {
     "id": "q-223",
@@ -10207,9 +10182,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
       "3": "Es una causa de sobrecarga pero infrecuente en el contexto de síndrome metabólico primario."
     },
     "pillar": "Mastery"
-  }
-,
-
+  },
   {
     "id": "q-dx-021",
     "topic": "dx_diferencial_mastery",
@@ -10359,9 +10332,7 @@ export const PRELOADED_QUESTIONS: Question[] = [
     ],
     "differentialDiagnosis": "Descartar siempre causas destructivas de hemólisis vascular mediante el estudio de un frotis, haptoglobina, LDH y test de Coombs. El Gilbert no causa fatiga real documentada metabólicamente.",
     "pillar": "Common Cases"
-  }
-,
-
+  },
   {
     "id": "q-dx-026",
     "topic": "dx_diferencial_mastery",

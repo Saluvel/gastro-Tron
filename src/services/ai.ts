@@ -3,18 +3,6 @@ import { Question, Difficulty } from "../types/quiz";
 import { PRELOADED_QUESTIONS } from "../data/questionBank";
 
 export async function generateQuestions(topicId: string, topicName: string, difficulty: Difficulty, count: number = 3, existingQuestions: Question[] = [], failedQuestions: Question[] = []): Promise<Question[]> {
-  // 1. Intentar obtener de las preguntas precargadas primero
-  const preloaded = PRELOADED_QUESTIONS.filter(q => q.topic === topicId && q.difficulty === difficulty)
-    .sort(() => Math.random() - 0.5);
-
-  const selectedPreloaded = preloaded.slice(0, count);
-  const remainingCount = count - selectedPreloaded.length;
-
-  // Si ya tenemos suficientes preguntas, las devolvemos
-  if (remainingCount <= 0) {
-    return selectedPreloaded;
-  }
-
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("La variable de entorno GEMINI_API_KEY no está configurada. Por favor, asegúrate de que esté configurada en los ajustes del proyecto.");
@@ -44,7 +32,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
     const BATCH_SIZE = 5;
     const aiQuestions: Question[] = [];
     
-    let remaining = remainingCount;
+    let remaining = count;
     let focusIdx = 0;
 
     // Instrucción para el oráculo sobre sus fuentes (Basado en lo solicitado por el usuario)
@@ -175,7 +163,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
       focusIdx++;
     }
 
-    const finalQuestions = [...selectedPreloaded, ...aiQuestions.map(q => {
+    const finalQuestions = aiQuestions.map(q => {
       // Shuffle options and update correctIndex
       let optionsWithIndex = q.options.map((opt: string, idx: number) => ({ text: opt, originalIndex: idx }));
       // Fisher-Yates shuffle
@@ -205,7 +193,7 @@ export async function generateQuestions(topicId: string, topicName: string, diff
         whyWrong: newWhyWrong || q.whyWrong,
         difficulty: difficulty as Difficulty
       };
-    })];
+    });
 
     return finalQuestions.sort(() => Math.random() - 0.5);
   } catch (error) {

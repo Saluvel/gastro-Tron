@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import confetti from 'canvas-confetti';
 import { 
   Stethoscope, 
   Brain, 
@@ -253,13 +254,13 @@ const GastroChat = ({ onBack, contextQuestion = null }: { onBack: () => void; co
   // Use a ref to ensure automatic fetch happens only once
   const initialized = React.useRef(false);
 
-  const sendMessage = async (textToProcess?: string) => {
-    const userMsg = textToProcess || input.trim();
+  const sendMessage = async (textToProcess?: string | React.SyntheticEvent) => {
+    let userMsg = typeof textToProcess === 'string' ? textToProcess : input.trim();
     if (!userMsg || isLoading) return;
     
     playAudio('magic');
-    if (!textToProcess) setInput('');
-    setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
+    if (typeof textToProcess !== 'string') setInput('');
+    setMessages(prev => [...prev, { role: 'user', text: userMsg as string }]);
     setIsLoading(true);
 
     try {
@@ -928,7 +929,13 @@ export default function App() {
     
     return (
       <div className="flex items-center gap-6">
-        <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0">
+        <motion.div 
+          key={streak}
+          initial={{ scale: 0.8, rotate: -15 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: 'spring', bounce: 0.6, duration: 0.6 }}
+          className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0"
+        >
           {/* Backplate / Shadow */}
           <motion.div 
             className="absolute inset-0 rounded-full blur-2xl opacity-40 mix-blend-screen"
@@ -1037,7 +1044,7 @@ export default function App() {
               )}
             </div>
           )}
-        </div>
+        </motion.div>
         
         {level >= 1 && (
           <motion.div 
@@ -1399,10 +1406,10 @@ export default function App() {
     setCurrentView('quiz');
     
     // 1. Get hardcoded seeds
-    const seeds = ALL_PRELOADED_QUESTIONS.filter(q => q.topic === topic.id);
+    const seeds = ALL_PRELOADED_QUESTIONS.filter(q => q.topic === topic.id && (!q.difficulty || q.difficulty === selectedDifficulty));
     
     // 2. Get previously AI-generated questions for this topic
-    const cached = cachedQuestions[topic.id] || [];
+    const cached = (cachedQuestions[topic.id] || []).filter(q => !q.difficulty || q.difficulty === selectedDifficulty);
     
     // Combine them
     const existingQuestions = [...seeds, ...cached];
@@ -1496,7 +1503,31 @@ export default function App() {
     if (isStudyMode) {
       if (isAnsCorrect) {
         playAudio('correct');
-        setCurrentStreak(prev => prev + 1);
+        setCurrentStreak(prev => {
+          const newStreak = prev + 1;
+          
+          // Fire confetti based on streak!
+          const colors = ['#00f2ff', '#ffb800', '#ffffff'];
+          if (newStreak % 3 === 0) {
+            // Big burst every 3 correct answers
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.6 },
+              colors: colors
+            });
+          } else {
+            // Small burst on regular correct answers
+            confetti({
+              particleCount: 40,
+              spread: 40,
+              origin: { y: 0.8 },
+              colors: colors
+            });
+          }
+          
+          return newStreak;
+        });
       } else {
         playAudio('wrong');
         setCurrentStreak(0);
@@ -1652,6 +1683,17 @@ export default function App() {
       missionProgress: missionProgress
     }));
 
+    if (attemptedCount > 0 && correctCount / attemptedCount >= 0.8) {
+      setTimeout(() => {
+        confetti({
+          particleCount: 200,
+          spread: 100,
+          origin: { y: 0.5 },
+          colors: ['#00f2ff', '#ffb800', '#ffffff', '#ff00ff']
+        });
+      }, 500);
+    }
+
     setCurrentView('results');
   };
 
@@ -1685,7 +1727,15 @@ export default function App() {
         try {
           const remainingCount = questions.length - (currentQuestionIndex + 1);
           if (remainingCount > 0) {
-            let collectedNew = [];
+            let collectedNew: Question[] = [];
+            
+            // Try to find existing questions in the new difficulty
+            const availableForNextLevel = [...ALL_PRELOADED_QUESTIONS.filter(q => q.topic === selectedTopic.id), ...(cachedQuestions[selectedTopic.id] || [])]
+              .filter(q => q.difficulty === nextLevel)
+              .sort(() => Math.random() - 0.5);
+              
+            collectedNew = availableForNextLevel.slice(0, remainingCount);
+
             let attempts = 0;
             while (collectedNew.length < remainingCount && attempts < 2) {
               const neededNow = remainingCount - collectedNew.length;
@@ -2962,7 +3012,7 @@ export default function App() {
                       </div>
                     )}
 
-                    <h3 className="text-lg md:text-xl text-white font-serif leading-relaxed mb-8">
+                    <h3 className="text-xl md:text-2xl text-white font-serif leading-relaxed mb-8">
                       {currentQuestion?.text ? renderWithAcronyms(currentQuestion.text) : null}
                     </h3>
 
@@ -3091,7 +3141,7 @@ export default function App() {
                         {isCorrect ? <Target size={16} /> : <AlertCircle size={16} />} 
                         {isCorrect ? "Sincronía Correcta" : "Desviación Clínica"}
                       </h4>
-                      <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
+                      <p className="text-gray-300 text-base md:text-lg leading-relaxed font-serif italic border-l-2 border-tron-cyan/30 pl-4 py-1">
                         {currentQuestion?.explanation ? renderWithAcronyms(currentQuestion.explanation) : null}
                       </p>
                     </div>
@@ -3100,7 +3150,7 @@ export default function App() {
                       <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-[0.2em] flex items-center gap-2">
                         <Brain size={12} className="text-white" /> Núcleo Fisiopatológico
                       </h5>
-                      <p className="text-[12px] md:text-[13px] text-white/70 leading-relaxed font-mono">
+                      <p className="text-sm md:text-base text-white/70 leading-relaxed font-mono">
                         {currentQuestion?.fisiopato ? renderWithAcronyms(currentQuestion.fisiopato) : null}
                       </p>
                     </TronCard>
@@ -3112,7 +3162,7 @@ export default function App() {
                         </h5>
                         <ul className="space-y-2">
                           {currentQuestion.etiologyList.map((cause, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-[15px] text-gray-300 font-serif">
+                            <li key={idx} className="flex items-start gap-2 text-base md:text-lg text-gray-300 font-serif">
                               <span className="text-tron-cyan text-[10px] mt-1 font-mono">{(idx + 1).toString().padStart(2, '0')}</span>
                               <span>{renderWithAcronyms(cause)}</span>
                             </li>
@@ -3126,7 +3176,7 @@ export default function App() {
                          <h5 className="text-[10px] uppercase font-black text-purple-400 mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
                           <Eye size={12} /> Diagnósticos Diferenciales
                         </h5>
-                        <p className="text-[13px] md:text-sm text-white/80 font-serif leading-relaxed italic">
+                        <p className="text-[15px] md:text-base text-white/80 font-serif leading-relaxed italic">
                           {renderWithAcronyms(currentQuestion.differentialDiagnosis)}
                         </p>
                       </div>
@@ -3136,7 +3186,7 @@ export default function App() {
                        <h5 className="text-[10px] uppercase font-black text-tron-yellow mb-2 tracking-widest flex items-center gap-2 underline underline-offset-4">
                         <Lightbulb size={12} /> Perla Clínica
                       </h5>
-                      <p className="text-[13px] md:text-[14px] text-white font-serif leading-relaxed italic">
+                      <p className="text-[15px] md:text-base text-white font-serif leading-relaxed italic">
                         "{currentQuestion?.clinicalPearl ? renderWithAcronyms(currentQuestion.clinicalPearl) : null}"
                       </p>
                     </div>
@@ -3156,7 +3206,7 @@ export default function App() {
                                 <div className="text-[9px] text-white/40 uppercase font-black tracking-widest mb-0.5">
                                   Opción {String.fromCharCode(65 + idx)}: {opt.length > 40 ? opt.substring(0, 40) + '...' : opt}
                                 </div>
-                                <p className="text-[12px] md:text-[13px] text-white/60 italic leading-relaxed">
+                                <p className="text-sm md:text-base text-white/60 italic leading-relaxed">
                                   {renderWithAcronyms(reason)}
                                 </p>
                               </div>
@@ -3320,20 +3370,23 @@ export default function App() {
                 onClick={async () => {
                    setIsLoading(true);
                    try {
-                     const allKnownForTopic = [...ALL_PRELOADED_QUESTIONS.filter(q => q.topic === selectedTopic!.id), ...(cachedQuestions[selectedTopic!.id] || [])];
-                     const failedQuestions = allKnownForTopic.filter(q => progress.reviewIds.includes(q.id));
+                     const allKnownForTopic = [...ALL_PRELOADED_QUESTIONS.filter(q => q && q.topic === selectedTopic!.id), ...(cachedQuestions[selectedTopic!.id] || [])];
+                     const reviewIds = progress?.reviewIds || [];
+                     const failedQuestions = allKnownForTopic.filter(q => q && reviewIds.includes(q.id));
                      const extras = await generateQuestions(selectedTopic!.id, selectedTopic!.name, selectedDifficulty, 5, allKnownForTopic, failedQuestions);
-                     const updatedQuestions = [...questions, ...extras];
-                     // Save to persistent cache
-                     setCachedQuestions(prev => ({
-                        ...prev,
-                        [selectedTopic!.id]: [...(prev[selectedTopic!.id] || []), ...extras]
-                     }));
-                     setQuestions(updatedQuestions);
-                     setAnswers(prev => [...prev, ...new Array(extras.length).fill(null)]);
-                     setCurrentQuestionIndex(questions.length); 
-                     setShowFeedback(false);
-                     setCurrentView('quiz');
+                     if (extras && extras.length > 0) {
+                       const updatedQuestions = [...questions, ...extras];
+                       // Save to persistent cache
+                       setCachedQuestions(prev => ({
+                          ...prev,
+                          [selectedTopic!.id]: [...(prev[selectedTopic!.id] || []), ...extras]
+                       }));
+                       setQuestions(updatedQuestions);
+                       setAnswers(prev => [...prev, ...new Array(extras.length).fill(null)]);
+                       setCurrentQuestionIndex(questions.length); 
+                       setShowFeedback(false);
+                       setCurrentView('quiz');
+                     }
                    } catch (e) {
                      console.error("AI Generation Error: ", e);
                    }
